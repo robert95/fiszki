@@ -16,7 +16,154 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-body{
-	background: url(../img/bg.png);
-	background-size: cover;
+body{ 
+	font-family: sans-serif;
+	margin: 0;display: table; position: absolute; height: 100%; width: 100%
+}
+.background {
+    z-index: -1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+	width: 100%;
+}
+.text{
+	width: 80%;
+	margin: 15px auto;
+	background-color: rgba(255, 255, 255, 0.59);    
+	border-radius: 15px;
+	text-align: center;
+	padding: 10px 0;
+	font-size: 28px;
+	cursor: pointer;
+	position: relative;    
+	min-height: 25px;
+}
+h1{
+	text-align: center;
+	color: white;
+	padding-top: 35px;
+	font-size: 30px;
+}
+h2{
+	width: 80%;
+	margin: 40px 0;
+	background-color: rgba(255, 255, 255, 0.59);
+	text-align: center;
+	padding: 20px 0;
+	font-size: 28px;
+	cursor: pointer;
+}
+section{
+	display: none;
+	vertical-align: middle;
+}
+#choose-your-l{
+	display: block;
+}
+#sub-categories input{
+	-webkit-transform: scale(3,3);
+    float: left;
+    position: relative;
+    left: 20px;
+    top: 3px;
+}
+.info-box{
+	text-align: center;
+	color: white;
+	margin-top: 13px;
+	font-size: 30px;
+}
+#learn img, #choose-words img{
+	width: 90px;
+}
+#learn table, #choose-words table{
+	width: 50%;
+    margin: 100px auto;
+    text-align: center;
+}
+#words-list input{
+	-webkit-transform: scale(3,3);
+    position: relative;
+    left: 20px;
+    top: 3px;
+}
+#words-list table{
+	width: 100%;
+}
+.count-word{
+	text-align: center;
+}
+.count-word-icon{
+    margin-top: 0;
+	margin-right:5px;
+	display: inline-block;
+    border-radius: 50%;
+    border: 20px green solid;
+    background: green;
+    width: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+	vertical-align: top;
+}
+.active-word-icon{
+	border: 20px red solid;
+    background: red;
+}
+h3{
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	margin-top: 0;
+}
+.count-word img{
+	height: 70px;
+}
+#word-lern-1 table{
+	width: 95%;
+    margin: auto;
+}
+#word-lern-1 table td:first-of-type{
+	width: 20%;
+	text-align: center;
+}
+#word-lern-1 table td:first-of-type img{
+    height: 50px;
+}
+#word-lern-1 table .text{
+	width: 100%;
+	font-size: 20px;
+}
+#word-lern-2, #word-lern-3, #word-lern-4, #word-lern-5{
+	text-align: center;
+}
+#word-lern-2 textarea, #word-lern-3 textarea, #word-lern-4 textarea, #word-lern-5 textarea{
+	height: 50px;
+	resize: none;
+	font-size: 20px;
+	font-family: sans-serif;
+	padding: 20px 10px;
+}
+.yes{
+	background-color: #8BC34A;
+	color: white;
+}
+.no{
+	background-color: #F44336;
+	color: white;
+}
+#sub-categories div{
+	width: 90%;
+	margin: auto auto;
+}
+#sub-categories .text{
+	display: inline-block;
+	width: 90%;
+}
+#sub-categories img{
+	margin-left: 10px;
+    height: 30px;
+    position: relative;
+    top: 5px;
 }
