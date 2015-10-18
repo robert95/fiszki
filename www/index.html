@@ -262,67 +262,67 @@
 		<script>
 			$("#choose-your-l p").click(function(){
 				hideAll();
-				$("#choose-lern-l").show("slow");
+				$("#choose-lern-l").show();
 			});
 			
 			$("#choose-lern-l p").click(function(){
 				hideAll();
-				$("#choose-words").show("slow");
+				$("#choose-words").show();
 			});
 			
 			$("#choose-words p").click(function(){
 				hideAll();
-				$("#categories").show("slow");
+				$("#categories").show();
 			});
 			
 			$("#categories p").click(function(){
 				hideAll();
-				$("#sub-categories").show("slow");
+				$("#sub-categories").show();
 			});
 			
 			$("#start_lern").click(function(){
 				hideAll();
-				$("#word-lern-1").show("slow");
+				$("#word-lern-1").show();
 				$("#my-text-1").focus();
 			});
 			
 			$(".more_words").click(function(){
 				hideAll();
-				$("#words-list").show("slow");
+				$("#words-list").show();
 			});
 			
 			$(".return-to-sub").click(function(){
 				hideAll();
-				$("#sub-categories").show("slow");
+				$("#sub-categories").show();
 			});
 			
 			$(".word-1").click(function(){
 				hideAll();
-				$("#word-lern-1").show("slow");
+				$("#word-lern-1").show();
 				$("#my-text-1").focus();
 			});
 			
 			$(".word-2").click(function(){
 				hideAll();
-				$("#word-lern-2").show("slow");
+				$("#word-lern-2").show();
 				$("#my-text-1").focus();
 			});
 			
 			$(".word-3").click(function(){
 				hideAll();
-				$("#word-lern-3").show("slow");
+				$("#word-lern-3").show();
 				$("#my-text-1").focus();
 			});
 			
 			$(".word-4").click(function(){
 				hideAll();
-				$("#word-lern-4").show("slow");
+				$("#word-lern-4").show();
 				$("#my-text-1").focus();
 			});
 			
 			$(".good-bad").click(function(){
 				hideAll();
-				$("#word-lern-5").show("slow");
+				$("#word-lern-5").show();
 			});
 			function hideAll(){
 				$("section").hide();
@@ -378,7 +378,7 @@
 					  setTimeout(function(){
 						//alert("ręcznie");
 						hideAll();
-						$("#categories").show("slow");
+						$("#categories").show();
 					  }, 1000);
 				}else if(parseInt($('#choose-words').css('top')) < -150){
 					$("#choose-words").animate({ 
@@ -387,7 +387,7 @@
 					setTimeout(function(){
 						//alert("auto");
 						hideAll();
-						$("#word-lern-1").show("slow");
+						$("#word-lern-1").show();
 					  }, 1000);
 				}else {
 					$("#choose-words").animate({ 
