@@ -426,22 +426,7 @@
 		<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
         <script type="text/javascript">
             app.initialize();
-			alert("jesten1");
-		module.controller('MyCtrl', function($scope, $cordovaFile) {
-alert("jesten2");
-  document.addEventListener('deviceready', function () {
-		alert("jesten3");
-    // CREATE
-    $cordovaFile.createDir(cordova.file.dataDirectory, "new_dir", false)
-      .then(function (success) {
-       alert("jesten4");
-      }, function (error) {
-        alert("dupa!");
-      });
-
-
-});
-});
+			alert("HTML - " + cordova.file);
         </script>
 		<script>
 			/*$("#choose-your-l p").click(function(){

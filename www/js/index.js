@@ -35,6 +35,8 @@ var app = {
 	
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+		alert("jestem");
+		alert("JS - " + cordova.file);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
