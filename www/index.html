@@ -424,13 +424,20 @@
         <script type="text/javascript">
             app.initialize();
 			
-		
-		$cordovaFile.createDir(cordova.file.dataDirectory, "lalalalaalla", false)
-		  .then(function (success) {
-			alert("możę teraz?")
-		  }, function (error) {
-			alert(error);
-		  });
+		module.controller('MyCtrl', function($scope, $cordovaFile) {
+
+  document.addEventListener('deviceready', function () {
+		alert("jesten");
+    // CREATE
+    $cordovaFile.createDir(cordova.file.dataDirectory, "new_dir", false)
+      .then(function (success) {
+        // success
+      }, function (error) {
+        alert("dupa!");
+      });
+
+
+});
         </script>
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
