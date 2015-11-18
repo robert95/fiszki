@@ -421,17 +421,18 @@
 		</section>-->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/file.js"></script>
         <script type="text/javascript">
             app.initialize();
-			
+			alert("jesten1");
 		module.controller('MyCtrl', function($scope, $cordovaFile) {
-
+alert("jesten2");
   document.addEventListener('deviceready', function () {
-		alert("jesten");
+		alert("jesten3");
     // CREATE
     $cordovaFile.createDir(cordova.file.dataDirectory, "new_dir", false)
       .then(function (success) {
-        // success
+       alert("jesten4");
       }, function (error) {
         alert("dupa!");
       });
