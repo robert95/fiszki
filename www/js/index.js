@@ -34,7 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        alert(cordova.file.dataDirectory);
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -48,3 +49,23 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+
+function gotFS(fileSystem) {
+	alert(1);
+   fileSystem.root.getDirectory("data", {create: true}, gotDir);
+}
+
+function gotDir(dirEntry) {
+	alert(2);
+    dirEntry.getFile("lockfile.txt", {create: true, exclusive: true}, gotFile);
+}
+
+function gotFile(fileEntry) {
+   alert(2);
+}
+
+function fail(){
+	alert("fail");
+	
+}
