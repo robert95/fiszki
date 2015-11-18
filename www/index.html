@@ -423,6 +423,14 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+			
+		
+		$cordovaFile.createDir(cordova.file.dataDirectory, "lalalalaalla", false)
+		  .then(function (success) {
+			alert("możę teraz?")
+		  }, function (error) {
+			alert(error);
+		  });
         </script>
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>

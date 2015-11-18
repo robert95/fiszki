@@ -35,13 +35,6 @@ var app = {
 	
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		
-		$cordovaFile.createDir(cordova.file.dataDirectory, "lalalalaalla", false)
-		  .then(function (success) {
-			alert("możę teraz?")
-		  }, function (error) {
-			alert(error);
-		  });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
