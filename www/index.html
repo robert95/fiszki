@@ -426,9 +426,11 @@
 		<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
         <script type="text/javascript">
             app.initialize();
-			function onDeviceReady() {
-                alert("HTML - " + cordova.file);
-            }			
+			document.addEventListener("deviceready", function(){
+				alert("HTML - " + cordova.file);
+			});
+                
+            			
         </script>
 		<script>
 			/*$("#choose-your-l p").click(function(){
