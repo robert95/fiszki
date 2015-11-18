@@ -424,6 +424,22 @@
         <script type="text/javascript">
             app.initialize();
         </script>
+		<script>
+			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onRequestFileSystemSuccess, null); 
+
+function onRequestFileSystemSuccess(fileSystem) { 
+        var entry=fileSystem.root; 
+        entry.getDirectory("example", {create: true, exclusive: false}, onGetDirectorySuccess, onGetDirectoryFail); 
+} 
+
+function onGetDirectorySuccess(dir) { 
+      console.log("Created dir "+dir.name); 
+} 
+
+function onGetDirectoryFail(error) { 
+     console.log("Error creating directory "+error.code); 
+}
+		</script>
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
@@ -670,5 +686,86 @@
 				});
 			});
 		</script>
+		<script>
+        var FILENAME = 'database.db',
+            $ = function (id) {
+                return document.getElementById(id);
+            },
+            failCB = function (msg) {
+                return function () {
+                    alert('[FAIL] ' + msg);
+                }
+            },
+            file = {
+                writer: { available: false },
+                reader: { available: false }
+            },
+            dbEntries = [];
+
+        document.addEventListener('deviceready', function () {
+            var fail = failCB('requestFileSystem');
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+        }, false);
+
+        function gotFS(fs) {
+            var fail = failCB('getFile');
+            fs.root.getFile(FILENAME, {create: true, exclusive: false},
+                            gotFileEntry, fail);
+        }
+
+        function gotFileEntry(fileEntry) {
+            var fail = failCB('createWriter');
+            file.entry = fileEntry;
+
+            fileEntry.createWriter(gotFileWriter, fail);
+            readText();
+        }
+
+        function gotFileWriter(fileWriter) {
+            file.writer.available = true;
+            file.writer.object = fileWriter;
+        }
+
+        function saveText(e) {
+            var name = $('name').value,
+                desc = $('desc').value,
+                fail;
+
+            dbEntries.push('<dt>' + name + '</dt><dd>' + desc + '</dd>')
+            $('name').value = '';
+            $('desc').value = '';
+
+            $('definitions').innerHTML = dbEntries.join('');
+
+            if (file.writer.available) {
+                file.writer.available = false;
+                file.writer.object.onwriteend = function (evt) {
+                    file.writer.available = true;
+                    file.writer.object.seek(0);
+                }
+                file.writer.object.write(dbEntries.join("\n"));
+            }
+
+            return false;
+        }
+
+        function readText() {
+            if (file.entry) {
+                file.entry.file(function (dbFile) {
+                    var reader = new FileReader();
+                    reader.onloadend = function (evt) {
+                        var textArray = evt.target.result.split("\n");
+
+                        dbEntries = textArray.concat(dbEntries);
+
+                        $('definitions').innerHTML = dbEntries.join('');
+                    }
+                    reader.readAsText(dbFile);
+                }, failCB("FileReader"));
+            }
+
+            return false;
+        }
+    </script>
     </body>
 </html>
