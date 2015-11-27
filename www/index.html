@@ -30,166 +30,39 @@
         <title>Fiszki</title>
     </head>
     <body>
+	<button onclick="copyFirstPath()">TUTAJ KOPSADASDAS</button>
 		<input type="hidden" id="myLang" value="0">
 		<input type="hidden" id="learnLang" value="0">
 		<input type="hidden" id="myCat" value="0">
+		<input type="hidden" id="myCatname" value="0">
+		<input type="hidden" id="myParentCat" value="0">
 	    <img class="background" src="img/bg.png" />
 		<img class="back" src="img/back.png" />
-		<div class="nav-circle">
+		<div class="nav-circle" id="nav-circle-main">
 			<p class="activ" data-target="choose-lang">1</p>
 			<p data-target="choose-cat">2</p>
 			<p data-target="list-of-word">3</p>
 		</div>
 		<section id="choose-lang">
+			<p id="odp"></p>
 			<h1>Choose a Course</h1>
-			<div>
-				<h1 class="text expand">For English Speakers</h1>
-					<div class="list-of-lang">
-						<p class="text setLang" data-mylang="1" data-learnlang="2">French</p>
-						<p class="text setLang" data-mylang="1" data-learnlang="3">German</p>
-						<p class="text setLang" data-mylang="1" data-learnlang="4">Polish</p>
-						<p class="text setLang" data-mylang="1" data-learnlang="5">Italian</p>
-						<p class="text setLang" data-mylang="1" data-learnlang="6">Spanish</p>
-					</div>
-			</div>
-			<div>
-				<h1 class="text expand">Dla mówiących po Polsku</h1>
-					<div class="list-of-lang">
-						<p class="text setLang" data-mylang="2" data-learnlang="1">French</p>
-						<p class="text setLang" data-mylang="2" data-learnlang="3">German</p>
-						<p class="text setLang" data-mylang="2" data-learnlang="4">English</p>
-						<p class="text setLang" data-mylang="2" data-learnlang="5">Italian</p>
-						<p class="text setLang" data-mylang="2" data-learnlang="6">Spanish</p>
-					</div>
-			</div>
-			<div>
-				<h1 class="text expand">For English Speakers</h1>
-					<div class="list-of-lang">
-						<p class="text setLang" data-mylang="3" data-learnlang="1">French</p>
-						<p class="text setLang" data-mylang="3" data-learnlang="2">German</p>
-						<p class="text setLang" data-mylang="3" data-learnlang="4">Polish</p>
-						<p class="text setLang" data-mylang="3" data-learnlang="5">Italian</p>
-						<p class="text setLang" data-mylang="3" data-learnlang="6">Spanish</p>
-					</div>
-			</div>
-			<div>
-				<h1 class="text expand">For English Speakers</h1>
-					<div class="list-of-lang">
-						<p class="text setLang" data-mylang="4" data-learnlang="1">French</p>
-						<p class="text setLang" data-mylang="4" data-learnlang="2">German</p>
-						<p class="text setLang" data-mylang="4" data-learnlang="3">Polish</p>
-						<p class="text setLang" data-mylang="4" data-learnlang="5">Italian</p>
-						<p class="text setLang" data-mylang="4" data-learnlang="6">Spanish</p>
-					</div>
-			</div>
+			<section id="langs">
+			</section>
 		</section>
 		<section id="choose-cat">
 			<h1>Choose a category</h1>
-			<div>
-				<h1 class="text expand">People</h1>
-					<div class="list-of-subcat">
-						<p class="text setCat" data-subcat="1">People 1</p>
-						<p class="text setCat" data-subcat="2">People 2</p>
-						<p class="text setCat" data-subcat="3">People 3</p>
-					</div>
-			</div>
-			<div>
-				<h1 class="text expand">People</h1>
-					<div class="list-of-subcat">
-						<p class="text setCat" data-subcat="4">People 1</p>
-						<p class="text setCat" data-subcat="5">People 2</p>
-						<p class="text setCat" data-subcat="6">People 3</p>
-					</div>
-			</div>
-			<div>
-				<h1 class="text expand">People</h1>
-					<div class="list-of-subcat">
-						<p class="text setCat" data-subcat="7">People 1</p>
-						<p class="text setCat" data-subcat="8">People 2</p>
-						<p class="text setCat" data-subcat="9">People 3</p>
-					</div>
-			</div>
-			<div>
-				<h1 class="text expand">People</h1>
-					<div class="list-of-subcat">
-						<p class="text setCat" data-subcat="10">People 1</p>
-						<p class="text setCat" data-subcat="11">People 2</p>
-						<p class="text setCat" data-subcat="12">People 3</p>
-					</div>
-			</div>
+			<section id="cats">
+			</section>
 		</section>
 		<section id="list-of-word">
 			<h1>Choose words you don't want to learn</h1>
-			<h2 class="text">People</h2>
-			<div class="word" data-id="1" data-check="1">
-				<table>
-					<tr>
-						<td><p class="text">Hello</p></td>
-						<td rowspan="2"><img src="img/check.png"></td>
-					</tr>
-					<tr>
-						<td><p class="text">Cześć</p></td>
-					</tr>
-				</table>
-			</div>
-			<div class="word" data-id="2" data-check="0">
-				<table>
-					<tr>
-						<td><p class="text">Hello</p></td>
-						<td rowspan="2"><img src="img/check.png"></td>
-					</tr>
-					<tr>
-						<td><p class="text">Cześć</p></td>
-					</tr>
-				</table>
-			</div>
-			<div class="word" data-id="3" data-check="1">
-				<table>
-					<tr>
-						<td><p class="text">Hello</p></td>
-						<td rowspan="2"><img src="img/check.png"></td>
-					</tr>
-					<tr>
-						<td><p class="text">Cześć</p></td>
-					</tr>
-				</table>
-			</div>
-			<div class="word" data-id="4" data-check="1">
-				<table>
-					<tr>
-						<td><p class="text">Hello</p></td>
-						<td rowspan="2"><img src="img/check.png"></td>
-					</tr>
-					<tr>
-						<td><p class="text">Cześć</p></td>
-					</tr>
-				</table>
-			</div>
-			<div class="word" data-id="5" data-check="1">
-				<table>
-					<tr>
-						<td><p class="text">Hello</p></td>
-						<td rowspan="2"><img src="img/check.png"></td>
-					</tr>
-					<tr>
-						<td><p class="text">Cześć</p></td>
-					</tr>
-				</table>
-			</div>
-			<div class="word" data-id="6" data-check="1">
-				<table>
-					<tr>
-						<td><p class="text">Hello</p></td>
-						<td rowspan="2"><img src="img/check.png"></td>
-					</tr>
-					<tr>
-						<td><p class="text">Cześć</p></td>
-					</tr>
-				</table>
-			</div>
+			<h2 class="text" id="catName">People</h2>
+			<section id="words">
+				
+			</section>
 			<p class="startLearn text yes">ZACZNIJ NAUKĘ</p>
 		</section>
-		<section id="info-box">
+		<!--<section id="info-box">
 			<h1>Informacyjna plansza:</h1>
 			<p>ID Twojego języka: <span id="info-mylang"></span></p>
 			<p>ID języka którego się chcesz nauczyć: <span id="info-learnLang"></span></p>
@@ -198,227 +71,36 @@
 				<span id="info-word">
 				</span>
 			</p>
+		</section> -->
+		<section id="learn-container">
+			<section id="words-nav">
+				<div class="nav-circle-word">
+					<img src="img/ok.png" class="good-bad" onclick="nextWord();"/>
+					<div id="nav-words-container">
+					</div>
+					<!--lista słów do nauki-->
+				</div>		
+			</section>
+			<section id="word-lern-1" data-id="-1" data-word="" data-trans="">
+				<input type="hidden" id="idWord" value="-1">
+				<h3>Powtórz głośno</h3>
+				<table>
+					<tr>
+						<td><img src="img/read.png" class="read" onclick="tellMe()"></td>
+						<td><p class="text" class="word cur-word" id="cur-word"> asdasd asd asd s</p></td>
+					</tr>
+					<tr>
+						<td id="show-translate"><!--<img src="img/ikon1.png">--></td>
+						<td><input type="text" class="text my-trans" id="my-trans"></td>
+					</tr>
+					<tr>
+						<td><img src="img/other.png"></td>
+						<td><input type="text" class="text my-add-text" id="my-text" data-id="-1"></td>
+					</tr>
+				</table>
+			</section>
 		</section>
-		<!--<section id="choose-your-l">
-			<h1>Wybierz Twój język</h1>
-			<p class="text">Polski</p>
-			<p class="text">Angielski</p>
-			<p class="text">Mandaryński</p>
-			<p class="text">Polski</p>
-			<p class="text">Angielski</p>
-			<p class="text">Mandaryński</p>
-			<p class="text">Polski</p>
-			<p class="text">Angielski</p>
-			<p class="text">Mandaryński</p>
-		</section>
-		<section id="choose-lern-l">
-			<h1>Wybierz język do nauki</h1>
-			<p class="text">Polski</p>
-			<p class="text">Angielski</p>
-			<p class="text">Mandaryński</p>
-			<p class="text">Polski</p>
-			<p class="text">Angielski</p>
-			<p class="text">Mandaryński</p>
-			<p class="text">Polski</p>
-			<p class="text">Angielski</p>
-			<p class="text">Mandaryński</p>
-		</section>
-		<section id="learn">
-			<h1>Ucz się</h1>
-			<p class="text">Tylko powtórki</p>
-			<p class="info-box">10 min</p>
-			<table>
-				<tr>
-					<td><img src="img/up.png"></td>
-					<td><img src="img/down.png"></td>
-				</tr>
-			</table>
-			<p class="text">Powtórka + Nowe słówka</p>
-			<p class="info-box">15 min</p>
-		</section>
-		<section id="choose-words">
-			<h1>Wybór słów</h1>
-			<p class="text">Automatycznie</p>
-			<table>
-				<tr>
-					<td><img src="img/up.png"></td>
-					<td><img src="img/down.png"></td>
-				</tr>
-			</table>
-			<p class="text">Ręcznie</p>
-		</section>
-		<section id="categories">
-			<h1>Wybierz kategorie</h1>
-			<p class="text">Powitania</p>
-			<p class="text">Czasowniki</p>
-			<p class="text">Powitania</p>
-			<p class="text">Czasowniki</p>
-			<p class="text">Powitania</p>
-			<p class="text">Czasowniki</p>
-			<p class="text">Powitania</p>
-			<p class="text">Czasowniki</p>
-		</section>
-		<section id="sub-categories">
-			<h1>Wybierz podkategorie</h1>
-			<h2>Czasowniki</h2>
-			<div>
-				<label for="p_1"><p class="text"><input type="checkbox" id="p_1">Powitania</p></label><img src="img/words.png" class="more_words">
-				<label for="p_2"><p class="text"><input type="checkbox" id="p_2">Czasowniki</p></label><img src="img/words.png" class="more_words">
-				<label for="p_3"><p class="text"><input type="checkbox" id="p_3">Powitania</p></label><img src="img/words.png" class="more_words">
-				<label for="p_4"><p class="text"><input type="checkbox" id="p_4">Czasowniki</p></label><img src="img/words.png" class="more_words">
-				<label for="p_5"><p class="text"><input type="checkbox" id="p_5">Powitania</p></label><img src="img/words.png" class="more_words">
-				<label for="p_6"><p class="text"><input type="checkbox" id="p_6">Czasowniki</p></label><img src="img/words.png" class="more_words">
-				<label for="p_7"><p class="text"><input type="checkbox" id="p_7">Powitania</p></label><img src="img/words.png" class="more_words">
-				<label for="p_8"><p class="text"><input type="checkbox" id="p_8">Czasowniki</p></label><img src="img/words.png" class="more_words">
-				<p class="text yes" id="start_lern">ROZPOCZNIJ NAUKĘ</p>
-			</div>
-		</section>
-		<section id="words-list">
-		    <img src="img/return.png" class="return-to-sub">
-			<h1>Wybierz słowa</h1>
-			<h2>Czasowniki</h2>
-			<table>
-				<tr>
-					<td>
-						<label for="w_1">
-							<p class="text">Powitania</p>
-							<p class="text">Czasowniki</p>
-						</label>
-					</td>
-					<td>
-						<input type="checkbox" id="w_1">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="w_2">
-							<p class="text">Powitania</p>
-							<p class="text">Czasowniki</p>
-						</label>
-					</td>
-					<td>
-						<input type="checkbox" id="w_2">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="w_3">
-							<p class="text">Powitania</p>
-							<p class="text">Czasowniki</p>
-						</label>
-					</td>
-					<td>
-						<input type="checkbox" id="w_3">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="w_4">
-							<p class="text">Powitania</p>
-							<p class="text">Czasowniki</p>
-						</label>
-					</td>
-					<td>
-						<input type="checkbox" id="w_4">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="w_5">
-							<p class="text">Powitania</p>
-							<p class="text">Czasowniki</p>
-						</label>
-					</td>
-					<td>
-						<input type="checkbox" id="w_5">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="w_6">
-							<p class="text">Powitania</p>
-							<p class="text">Czasowniki</p>
-						</label>
-					</td>
-					<td>
-						<input type="checkbox" id="w_6">
-					</td>
-				</tr>
-			</table>
-		</section>
-		<section id="word-lern-1">
-			<div class="count-word">
-				<p class="count-word-icon active-word-icon word-1" >1</p>
-				<p class="count-word-icon word-2">2</p>
-				<p class="count-word-icon word-3">3</p>
-				<p class="count-word-icon word-4">4</p>
-				<img src="img/ok.png" class="good-bad"/>
-			</div>
-			<h3>Powiedź do mikrofonu</h3>
-			<table>
-				<tr>
-					<td><img src="img/read.png" class="read"></td>
-					<td><p class="text">Mam na imię Bogdan</p></td>
-				</tr>
-				<tr>
-					<td id="show-translate"><img src="img/ikon1.png"></td>
-					<td><p class="text" id="translation-text-1" data-text="My name is Bogdan"> </p></td>
-				</tr>
-				<tr>
-					<td><img src="img/other.png"></td>
-					<td><input type="text" class="text" id="my-text-1"></td>
-				</tr>
-			</table>
-		</section>
-		<section id="word-lern-2">
-			<div class="count-word">
-				<p class="count-word-icon word-1">1</p>
-				<p class="count-word-icon active-word-icon word-2">2</p>
-				<p class="count-word-icon word-3">3</p>
-				<p class="count-word-icon word-4">4</p>
-				<img src="img/ok.png" class="good-bad""/>
-			</div>
-			<h3>Przypomnij po angielsku</h3>
-			<textarea class="text"></textarea>
-		</section>
-		<section id="word-lern-3">
-			<div class="count-word">
-				<p class="count-word-icon word-1">1</p>
-				<p class="count-word-icon word-2">2</p>
-				<p class="count-word-icon active-word-icon word-3">3</p>
-				<p class="count-word-icon word-4">4</p>
-				<img src="img/ok.png" class="good-bad"/>
-			</div>
-			<h3>Zadaj pytanie do zdania</h3>
-			<textarea class="text">MAM NA IMIĘ BOGDAN</textarea>
-		</section>
-		<section id="word-lern-4">
-			<div class="count-word">
-				<p class="count-word-icon word-1">1</p>
-				<p class="count-word-icon word-2">2</p>
-				<p class="count-word-icon word-3">3</p>
-				<p class="count-word-icon active-word-icon word-4">4</p>
-				<img src="img/ok.png" class="good-bad"/>
-			</div>
-			<h3>Przetłumacz zdanie</h3>
-			<textarea class="text">MAM NA IMIĘ BOGDAN</textarea><br>
-			<textarea class="text">MAM NA IMIĘ BOGDAN</textarea>
-		</section>
-		<section id="word-lern-5">
-			<div class="count-word">
-				<p class="count-word-icon word-1">1</p>
-				<p class="count-word-icon word-2">2</p>
-				<p class="count-word-icon word-3">3</p>
-				<p class="count-word-icon word-4">4</p>
-				<img src="img/ok.png" class="good-bad"/>
-			</div>
-			<h3>Poprawna odpowiedź</h3>
-			<p class="text yes">UMIEM</p> 
-			<textarea class="text">MAM NA IMIĘ BOGDAN</textarea><br>
-			<textarea class="text">MAM NA IMIĘ BOGDAN</textarea><br>
-			<textarea class="text">MAM NA IMIĘ BOGDAN</textarea><br>	
-			<p class="text no">NIE UMIEM</p> 		
-		</section>-->
+		
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -428,169 +110,32 @@
             app.initialize();   
         </script>
 		<script>
-			/*$("#choose-your-l p").click(function(){
-				hideAll();
-				$("#choose-lern-l").show();
-			});
-			
-			$("#choose-lern-l p").click(function(){
-				hideAll();
-				$("#choose-words").show();
-			});
-			
-			$("#choose-words p").click(function(){
-				hideAll();
-				$("#categories").show();
-			});
-			
-			$("#categories p").click(function(){
-				hideAll();
-				$("#sub-categories").show();
-			});
-			
-			$("#start_lern").click(function(){
-				hideAll();
-				$("#word-lern-1").show();
-				$("#my-text-1").focus();
-			});
-			
-			$(".more_words").click(function(){
-				hideAll();
-				$("#words-list").show();
-			});
-			
-			$(".return-to-sub").click(function(){
-				hideAll();
-				$("#sub-categories").show();
-			});
-			
-			$(".word-1").click(function(){
-				hideAll();
-				$("#word-lern-1").show();
-				$("#my-text-1").focus();
-			});
-			
-			$(".word-2").click(function(){
-				hideAll();
-				$("#word-lern-2").show();
-				$("#my-text-1").focus();
-			});
-			
-			$(".word-3").click(function(){
-				hideAll();
-				$("#word-lern-3").show();
-				$("#my-text-1").focus();
-			});
-			
-			$(".word-4").click(function(){
-				hideAll();
-				$("#word-lern-4").show();
-				$("#my-text-1").focus();
-			});
-			
-			$(".good-bad").click(function(){
-				hideAll();
-				$("#word-lern-5").show();
-			});
-			function hideAll(){
-				$("section").hide();
-			}*/
-		</script>
-		<script>
-			/*$("#show-translate").click(function(){
-				$("#translation-text-1").text($("#translation-text-1").data("text"));
-			});
-			$(".read").click(function(){
-				alert("Czytam text");
-			});*/
-		</script>
-		<script>
-		   /*$('#word-lern-5').draggable({ axis: "y", stop: function() {
-				if(parseInt($('#word-lern-5').css('top')) > 150){
-				    $("#word-lern-5").animate({ 
-						top: "1000px",
-					  }, 1000);
-					  setTimeout(function(){
-						alert("nie umiem");
-						$("#word-lern-5").animate({ 
-							top: "0px",
-						  }, 500);
-						//hideAll();
-						//$("#categories").show("slow");
-					  }, 1000);
-				}else if(parseInt($('#word-lern-5').css('top')) < -150){
-					$("#word-lern-5").animate({ 
-						top: "-1000px",
-					  }, 1000);
-					setTimeout(function(){
-						alert("umiem");
-						$("#word-lern-5").animate({ 
-							top: "0px",
-						}, 500);
-						//hideAll();
-						//$("#word-lern-1").show("slow");
-					  }, 1000);
-				}else {
-					$("#word-lern-5").animate({ 
-						top: "0px",
-					  }, 500);
-				}
-		   } });*/
-		</script>
-		<script>
-			/* $('#choose-words').draggable({ axis: "y", stop: function() {
-				if(parseInt($('#choose-words').css('top')) > 150){
-				    $("#choose-words").animate({ 
-						top: "1000px",
-					  }, 1000);
-					  setTimeout(function(){
-						//alert("ręcznie");
-						hideAll();
-						$("#categories").show();
-					  }, 1000);
-				}else if(parseInt($('#choose-words').css('top')) < -150){
-					$("#choose-words").animate({ 
-						top: "-1000px",
-					  }, 1000);
-					setTimeout(function(){
-						//alert("auto");
-						hideAll();
-						$("#word-lern-1").show();
-					  }, 1000);
-				}else {
-					$("#choose-words").animate({ 
-						top: "0px",
-					  }, 500);
-				}
-		   } });*/
-		</script>
-		<script>
-			$(".expand").click(function() {
-				if($(this).next("div").is(":visible")){
-					$(this).next("div").hide("slow");
+			function expand(obj){
+				if($(obj).next("div").is(":visible")){
+					$(obj).next("div").fadeOut();
 				}else{
-					$(this).next("div").show("slow");
+					$(obj).next("div").fadeIn();
 				}
-			});
+			}
 		</script>
 		<script>
 			$(".back").click(function(){
 				if($("#choose-cat").is(":visible")){
 					$("#choose-cat").hide();
-					$("#choose-lang").show("slow");
+					$("#choose-lang").fadeOut().fadeIn();
 					$(".nav-circle p").removeClass("activ");
 					$(".nav-circle p").eq(0).addClass("activ");
 					$(this).hide();
 				}
 				if($("#list-of-word").is(":visible")){
 					$("#list-of-word").hide();
-					$("#choose-cat").show("slow");
+					$("#choose-cat").fadeOut().fadeIn();
 					$(".nav-circle p").removeClass("activ");
 					$(".nav-circle p").eq(1).addClass("activ");
 				}
 				if($("#info-box").is(":visible")){
 					$("#info-box").hide();
-					$("#list-of-word").show("slow");
+					$("#list-of-word").fadeOut().fadeIn();
 					$(".nav-circle p").removeClass("activ");
 					$(".nav-circle p").eq(2).addClass("activ");
 				}
@@ -608,66 +153,77 @@
 						$(".back").hide();
 					}else if($(this).index() == 1){
 						$("#choose-lang").hide();
-						$("#choose-cat").show("slow");
+						$("#choose-cat").fadeIn();
 						$("#list-of-word").hide();
 						$(".back").show();
 					}else{
 						$("#choose-lang").hide();
 						$("#choose-cat").hide();
-						$("#list-of-word").show("slow");
+						$("#list-of-word").fadeIn();
 						$(".back").show();
 					}
 				}				
 			});
 		</script>
 		<script>
-			$(".word").click(function(){
-				if($(this).attr("data-check") == 1){
-					$(this).children("table").addClass("nocheck");
-					$(this).find("img").attr("src","img/nocheck.png");
-					$(this).attr("data-check", "0");					
+			function checkWord(obj){
+				if($(obj).attr("data-check") == 1){
+					$(obj).children("table").addClass("nocheck");
+					$(obj).find("img").attr("src","img/nocheck.png");
+					$(obj).attr("data-check", 0);					
 				}else{
-					$(this).children("table").removeClass("nocheck");
-					$(this).find("img").attr("src","img/check.png");
-					$(this).attr("data-check", "1");				
+					$(obj).children("table").removeClass("nocheck");
+					$(obj).find("img").attr("src","img/check.png");
+					$(obj).attr("data-check", 1);				
 				}
-			});
+			}
 		</script>
 		<script>
-			$(".setLang").click(function() {
-				var mylang = $(this).data('mylang');
-				var lernlang = $(this).data('learnlang');
+			function setLang(obj){
+				var mylang = $(obj).data('mylang');
+				var lernlang = $(obj).data('learnlang');
 				$("#myLang").val(mylang);
 				$("#learnLang").val(lernlang);
 				$("#choose-lang").hide();
-				$("#choose-cat").show("slow");
 				$("#list-of-word").hide();
 				$(".back").show();
 				$(".nav-circle p").removeClass("activ");
 				$(".nav-circle p").eq(1).addClass("activ");
-			});
+				getCatList();
+				$("#choose-cat").slideDown();
+			}		
 			
-			$(".setCat").click(function() {
-				var cat = $(this).data('subcat');
+			function setCat(obj){
+				var cat = $(obj).data('subcat');
+				var parent = $(obj).data('parent');
+				var name = $(obj).data('name');
 				$("#myCat").val(cat);
+				$("#myParentCat").val(parent);
+				$("#myCatname").val(name);
+				$("#catName").html(name);
 				$("#choose-cat").hide();
-				$("#list-of-word").show("slow");
+				getWordList();
+				$("#list-of-word").fadeIn();
 				$(".back").show();
 				$(".nav-circle p").removeClass("activ");
 				$(".nav-circle p").eq(2).addClass("activ");
-			});
+				$("#nav-words-container").width(window.innerWidth-150);
+			}
 			
 			$(".startLearn").click(function(){
 				$("#list-of-word").hide();
-				$("#info-box").show();
-				$("#info-mylang").html($("#myLang").val());
+				$("#nav-circle-main").hide();
+				$(".back").hide();
+				
+				/*$("#info-mylang").html($("#myLang").val());
 				$("#info-learnLang").html($("#learnLang").val());
 				$("#info-mycat").html($("#myCat").val());
 				$("#info-word").html("");
-				$(".word").each(function(index){
-					if($(this).attr('data-check') == "0")
-						$("#info-word").append("<br>" + $(this).data('id'));
-				});
+				$("#my-text-1").focus();*/
+				
+				$("#learn-container").fadeIn();
+				getNavWordList();
+				
 			});
 		</script>
     </body>

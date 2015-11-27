@@ -34,8 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
-        alert(cordova.file.dataDirectory);
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+		getLangList();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -49,23 +48,458 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
-
+/*
+function makeDir(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+}
+function fail() {
+	alert('fail');
+}
 function gotFS(fileSystem) {
-	alert(1);
-   fileSystem.root.getDirectory("data", {create: true}, gotDir);
+	window.FS = fileSystem;
+	
+	var printDirPath = function(entry){
+		console.log("Dir path - " + entry.fullPath);
+	}
+	
+	createDirectory("this/is/nested/dir", printDirPath);
+	createDirectory("simple_dir", printDirPath);
+}
+function createDirectory(path, success){
+	var dirs = path.split("/").reverse();
+	var root = window.FS.root;
+	
+	var createDir = function(dir){
+		dir = path() + dir;
+		root.getDirectory(dir, {
+			create : true,
+			exclusive : false
+		}, successCB, failCB);
+	};
+	
+	var successCB = function(entry){
+		console.log("dir created " + entry.fullPath);
+		root = entry;
+		if(dirs.length > 0){
+			createDir(dirs.pop());
+		}else{
+			console.log("all dir created");
+			success(entry);
+		}
+	};
+	
+	var failCB = function(){
+		console.log("failed to create dir " + dir);
+	};
+	
+	createDir(dirs.pop());
+}
+*/
+function path(){
+	var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
+	return (res.toString()).replace(/,/g,'/');
 }
 
-function gotDir(dirEntry) {
-	alert(2);
-    dirEntry.getFile("lockfile.txt", {create: true, exclusive: true}, gotFile);
+/* READ FILE */
+function readWriteFile() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onFSError);
+}
+function onFSSuccess(fileSystem) {
+    fileSystem.root.getFile(srcFile, {create:true, exclusive:false}, gotFileEntry, onFSError);
+}
+function gotFileEntry(fileEntry) {
+    fileEntry.file(gotFile, onFSError);
+}
+function gotFile(file) {
+    readAsText(file);
+}
+function readAsText(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(evt) {
+		res = evt.target.result; 
+  };
+  reader.readAsText(file);    
+}
+function onFSError(err) {
+    alert(err.code);
+}
+/* END READ FILE */
+/* GET LANG LIST */
+var res = false;
+var srcFile = false;
+function getLangList(){
+	srcFile = path() + "lang.json";
+	readWriteFile();
+	showLangList();
+}
+function showLangList(){
+	if(!res){
+        setTimeout(showLangList, 50);
+    }else{	
+		var langs = JSON.parse(res);
+		for(var x in langs){
+			var lang = langs[x];
+			var tmp = '<div><h1 class="text expand" onclick="expand(this);">'+ lang.label + '</h1><div class="list-of-lang">';
+			for(var y in langs){
+				var langTmp = langs[y];
+				if(y != x) tmp += '<p class="text setLang" onclick="setLang(this);" data-mylang="' + lang.id + '" data-learnlang="' + langTmp.id + '">' + langTmp.name + '</p>';
+			}
+			tmp += '</div></div>';
+			$("#langs").append(tmp);
+		}
+	}
+}
+/* END GET LAND LIST */
+
+/* GET CAT LIST */
+var subcats = false;
+function getCatList(){
+	res = false;
+	srcFile = false;
+	var idCat = $("#myLang").val();
+	srcFile = path() + idCat + "/cat.json";
+	readWriteFile();
+	showCatList();
+}
+function showCatList(){
+	if(!res){
+        setTimeout(showCatList, 50);
+    }else{	
+		var cats = JSON.parse(res);
+		$("#cats").html("");
+		for(var x in cats){
+			subcats = false;
+			var cat = cats[x];
+			var tmp = '<div><h1 class="text expand" onclick="expand(this);">'+ cat.name + '</h1>';
+			getSubCatList(cat.id);
+			setTimeout(
+				function(){
+					tmp += subcats + '</div>';
+					$("#cats").append(tmp);
+				}, 50);
+		}
+	}
+}
+/* END GET CAT LIST */
+
+/* GET SUBCAT LIST */
+var parent = false;
+function getSubCatList(idCat){
+	res = false;
+	srcFile = false;
+	var idLang = $("#myLang").val();
+	srcFile = path() + idLang + "/" + idCat + "/subcat.json";
+	readWriteFile();
+	parent = idCat;
+	showSubCatList();
+}
+function showSubCatList(){
+	if(!res){
+        setTimeout(showSubCatList, 50);
+    }else{
+		var cats = JSON.parse(res);
+		var tmp = '<div class="list-of-subcat">';
+		for(var x in cats){
+			var cat = cats[x];
+			tmp += '<p class="text setCat" onclick="setCat(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '">' + cat.name + '</p>';
+		}
+		tmp += '</div>';
+		subcats = tmp;
+	}
+}
+/* END GET SUBCAT LIST */
+
+/* GET WORD LIST */
+var idWord = false;
+var nameWord = false;
+function getWordList(){
+	res = false;
+	//resL = false;
+	srcFile = false;
+	var idLang = $("#myLang").val();
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var idLernLang = $("#learnLang").val();
+	srcFile = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
+	//srcFileL = path() + idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
+	readWriteFile();
+	wrapShowWordList();
+}
+var resL = false;
+function wrapShowWordList(){
+	if(!res){
+		setTimeout(wrapShowWordList, 50);
+	}else{
+		resL = res;
+		res = false;
+		var idLang = $("#myLang").val();
+		var idParentCat = $("#myParentCat").val();
+		var idSubCat = $("#myCat").val();
+		var idLernLang = $("#learnLang").val();
+		srcFile = path() + idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
+		readWriteFile();
+		showWordList();
+	}
+}
+var words, trans;
+function showWordList(){
+	if(!res){
+        setTimeout(showWordList, 50);
+    }else{
+		words = JSON.parse(resL);
+		trans = JSON.parse(res);
+		$("#words").html("");
+		var tmp = "";
+		for(var x in words){
+			nameWord = false;
+			var word = words[x];
+			var tran = trans[x];
+			tmp += '<div class="word" data-id="' + word.id + '" data-check="1" onclick="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
+		}
+		$("#words").html(tmp);
+	}
+}
+/* END GET WORD LIST */
+
+/* GET WORD LIST */
+/*function getWord(idLang, idParentCat, idSubCat, idword){
+	res = false;
+	srcFile = false;
+	idWord = idword;
+	var idLang = $("#learnLang").val();
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	srcFile = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
+	readWriteFile();
+	showWord();
+}
+function showWord(){
+	if(!res){
+        setTimeout(showWord, 50);
+    }else{
+		var words = JSON.parse(res);
+		var tmp2 = "";
+		for(var x in words){
+			var word = words[x];
+			if(word.id == idWord) {
+				tmp2 += word.name;				
+			}
+		}
+		nameWord = tmp2;
+	}
+}*/
+/* END GET WORD LIST */
+
+/* GET NAV WORD LIST */
+function getNavWordList(){
+	$("#my-trans").focus();
+	var i = 0;
+	var firstId = -1;
+	$(".word").each(function(index){
+		if($(this).attr('data-check') != 0){
+			i++;
+			var id = $(this).data('id');
+			if(i == 1) firstId = id;
+			$("#nav-words-container").append('<p onclick="setWordToLearn(' + id + ', this)" data-word-id="' + id + '">' + i + '</p>');
+		}
+	});
+	setTimeout(function(){setWordToLearn(firstId, $("#nav-words-container p").eq(0)); $("#my-trans").focus();}, 50);
+	
+}
+
+/*SET WORD TO LEARN*/
+function setWordToLearn(id, obj){
+	$("#nav-words-container p").removeClass("activ");
+	$(obj).addClass("activ");
+	$("#word-lern-1").fadeOut().fadeIn();
+	var curWord = setWordById(id); 
+	var curTrans = "tłumaczenie";//setTransById(id);
+	var curMyNote = "moja notatka";
+	$("#my-text").val(curMyNote);
+	$("#my-text").attr("data-id", id);
+	$("#idWord").val(id);
+	$("#word-lern-1").attr("data-id", id);
+	$("#word-lern-1").attr("data-word", curWord);
+	$("#word-lern-1").attr("data-trans", curTrans);
+	$("#my-trans").val("");
+	$("#my-trans").focus();
+}
+
+function nextWord(){
+	var length = $("#nav-words-container p").length;
+	var index = $("#nav-words-container p.activ").index() + 1;
+	var id = ($("#nav-words-container p").eq(index)).data('word-id');
+	setWordToLearn(id, $("#nav-words-container p").eq(index));	
+}
+
+function setWordById(id){
+	for(var x in words){
+		var word = words[x];
+		if(word.id == id) {
+			$("#cur-word").html(word.name);		
+		}
+	}
+}
+
+function setTransById(id){
+	for(var x in tran){
+		var word = trans[x];
+		if(word.id == id) {
+			return (word.name);				
+		}
+	}
+}
+/*END SET WORD TO LEARN*/
+/*PLAY SOUND*/
+function tellMe(){
+	$("#my-trans").focus();
+	var id = $("#idWord").val();
+	var idLang = $("#myLang").val();
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var src = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
+	var my_media = new Media(src,
+            // success callback
+             function () { console.log("playAudio():Audio Success"); },
+            // error callback
+             function (err) { console.log("playAudio():Audio Error: " + err); }
+    );
+           // Play audio
+    my_media.play();
+	$("#my-trans").focus();
+}
+/*END PLAY SOUND*/
+
+/*COPY FIRST PATCH*/
+var root;
+function copyFirstPath(){
+	alert("jestem");
+	
+	asset2sd.copyDir({
+        asset_directory: "www/images",
+        destination_directory: "funnyPhotos"
+    },
+    function() { alert('success'); }, 
+    function() { alert('fail'); }
+);   
+	
+	alert("jestem");
+	
+	/*//iinit();
+	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www", getDirectoryWin, getDirectoryFail);
+	/*window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+		function(fileSystem) {
+			root = fileSystem.root;
+			// get the directory we want to get within the root directory
+			var wwwPath = window.location.pathname;
+			var basePath = wwwPath.substring(0,wwwPath.length-10);
+			var srcDir = cordova.file.applicationDirectory + "www/a";
+			alert(srcDir);
+			root.getDirectory(srcDir, {create: false}, getDirectoryWin, getDirectoryFail);
+	});///*/
+}
+
+// the directory param should be a DirectoryEntry object that points to the srcDir    
+function getDirectoryWin(directory){
+	alert("git");
+    //console.log('got the directory');
+
+    // path to the parent directory that holds the dir that we want to copy to
+    // we'll set it as the root, but otherwise you'll
+    // need parentDir be a DirectoryEntry object
+    //var parentDir = path();
+
+    // name of the destination directory within the parentDir
+    //var dstDir = 'dstDir'; 
+
+    // use copyWin/copyFail to launch callbacks when it works/fails
+	var parent = cordova.file.externalDataDirectory,
+        parentName = 'files',
+        newName = 'www',
+        parentEntry = new DirectoryEntry(parentName, parent);
+	alert(parentEntry.toURL());
+	alert(directory.toURL());
+	
+    // copy the directory to a new directory and rename it
+   // directory.copyTo(parentEntry, newName, copyWin, copyFail);
+	
+// Retrieve an existing file, or create it if it does not exist
+	//directory.getFile("index.html", {create: false, exclusive: false}, success, fail);
+}
+
+function success(fileEntry) {
+    alert("File Name: " + fileEntry.name);
+}
+
+function fail(error) {
+    alert("Failed to retrieve file: " + error.code);
+}
+
+function getDirectoryFail(error){
+    alert("lipa:" + error.code);
+}
+
+function copyWin(){
+	alert('Copying worked!');
+}
+
+function copyFail(){
+    alert('I failed copying');
+}
+
+/*function iinit() {
+	
+	//This alias is a read-only pointer to the app itself
+	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www/index.html", gotFile, fail);
+
+}
+
+function fail(e) {
+	alert("dupa");
 }
 
 function gotFile(fileEntry) {
-   alert(2);
-}
 
-function fail(){
-	alert("fail");
-	
-}
+	fileEntry.file(function(file) {
+		alert(file.localURL);
+		var s = "";
+		s += "<b>name:</b> " + file.name + "<br/>";
+		s += "<b>localURL:</b> " + file.localURL + "<br/>";
+		s += "<b>type:</b> " + file.type + "<br/>";
+		s += "<b>lastModifiedDate:</b> " + (new Date(file.lastModifiedDate)) + "<br/>";
+		s += "<b>size:</b> " + file.size + "<br/>";
+		
+		document.querySelector("#status").innerHTML = s;
+		console.dir(file);
+	});
+}*/
+/*END COPY FIRST PATCH*/
+//getCategoryList(idLant)
+//getSubCategoryList(idCat)
+//getWordList(idLang, idCar, idSubCat)
+//getSound(idLang, idCat, idSubCat, idWord)
+
+//struktura plików
+/*
+ Aplikacja 	-> lang.json
+			-> 1 (foldery z id języka)
+			-> 2
+			-> 3
+				-> cat.json
+				-> 1 (foldery z id cat)
+				-> 2
+				-> 3
+					-> subcat.json
+					-> 1(foldery z id subCat)
+					-> 2
+					-> 3
+						-> sound (pliki z dźwiękami)
+							-> 1.m4p
+							-> 2.m4p
+							-> 3.m4p 
+						-> words.json
+							-> id : slowo : inne dane
+							-> id : slowo : inne dane
+							-> id : slowo : inne dane
+
+*/
