@@ -1,0 +1,22 @@
+[
+	{
+		"id": 1,
+		"name": "polski",
+		"label": "Dla mówiących po Polsku"
+	},
+	{
+		"id": 2,
+		"name": "angielski",
+		"label": "For English Speakers"
+	},
+	{
+		"id": 3,
+		"name": "niemiecki",
+		"label": "Dla mówiących po Niemiecku"
+	},
+	{
+		"id": 4,
+		"name": "norweski",
+		"label": "Dla mówiących po Norwesku"
+	}
+]

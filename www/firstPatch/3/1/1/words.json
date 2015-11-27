@@ -1,0 +1,74 @@
+[
+	{
+		"id": 1,
+		"name": "ich"
+	},
+	{
+		"id": 2,
+		"name": "ich und du"
+	},
+	{
+		"id": 3,
+		"name": "wir beide"
+	},
+	{
+		"id": 4,
+		"name": "er"
+	},
+	{
+		"id": 5,
+		"name": "er und sie"
+	},
+	{
+		"id": 6,
+		"name": "sie beide"
+	},
+	{
+		"id": 7,
+		"name": "der Mann"
+	},
+	{
+		"id": 8,
+		"name": "die Frau"
+	},
+	{
+		"id": 9,
+		"name": "das Kind"
+	},
+	{
+		"id": 10,
+		"name": "eine Familie"
+	},
+	{
+		"id": 11,
+		"name": "meine Familie"
+	},
+	{
+		"id": 12,
+		"name": "Meine Familie ist hier."
+	},
+	{
+		"id": 13,
+		"name": "Ich bin hier."
+	},
+	{
+		"id": 14,
+		"name": "Du bist hier."
+	},
+	{
+		"id": 15,
+		"name": "Er ist hier und sie ist hier."
+	},
+	{
+		"id": 16,
+		"name": "Wir sind hier."
+	},
+	{
+		"id": 17,
+		"name": "Ihr seid hier."
+	},
+	{
+		"id": 18,
+		"name": "Sie sind alle hier."
+	}
+]

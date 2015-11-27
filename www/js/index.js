@@ -371,78 +371,15 @@ function tellMe(){
 /*END PLAY SOUND*/
 
 /*COPY FIRST PATCH*/
-var root;
 function copyFirstPath(){
 	asset2sd.copyDir({
-        asset_directory: "www/a",
-        destination_directory: "a"
+        asset_directory: "firstPath",
+        destination_directory: path()
     },
     function() { alert('success'); }, 
     function() { alert('fail'); }
-);   
-	
-	/*//iinit();
-	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www", getDirectoryWin, getDirectoryFail);
-	/*window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
-		function(fileSystem) {
-			root = fileSystem.root;
-			// get the directory we want to get within the root directory
-			var wwwPath = window.location.pathname;
-			var basePath = wwwPath.substring(0,wwwPath.length-10);
-			var srcDir = cordova.file.applicationDirectory + "www/a";
-			alert(srcDir);
-			root.getDirectory(srcDir, {create: false}, getDirectoryWin, getDirectoryFail);
-	});///*/
-}
-
-// the directory param should be a DirectoryEntry object that points to the srcDir    
-function getDirectoryWin(directory){
-	alert("git");
-    //console.log('got the directory');
-
-    // path to the parent directory that holds the dir that we want to copy to
-    // we'll set it as the root, but otherwise you'll
-    // need parentDir be a DirectoryEntry object
-    //var parentDir = path();
-
-    // name of the destination directory within the parentDir
-    //var dstDir = 'dstDir'; 
-
-    // use copyWin/copyFail to launch callbacks when it works/fails
-	var parent = cordova.file.externalDataDirectory,
-        parentName = 'files',
-        newName = 'www',
-        parentEntry = new DirectoryEntry(parentName, parent);
-	alert(parentEntry.toURL());
-	alert(directory.toURL());
-	
-    // copy the directory to a new directory and rename it
-   // directory.copyTo(parentEntry, newName, copyWin, copyFail);
-	
-// Retrieve an existing file, or create it if it does not exist
-	//directory.getFile("index.html", {create: false, exclusive: false}, success, fail);
-}
-
-function success(fileEntry) {
-    alert("File Name: " + fileEntry.name);
-}
-
-function fail(error) {
-    alert("Failed to retrieve file: " + error.code);
-}
-
-function getDirectoryFail(error){
-    alert("lipa:" + error.code);
-}
-
-function copyWin(){
-	alert('Copying worked!');
-}
-
-function copyFail(){
-    alert('I failed copying');
-}
-
+);
+}  
 /*function iinit() {
 	
 	//This alias is a read-only pointer to the app itself
