@@ -376,14 +376,14 @@ function tellMe(){
 function copyFirstPath(){
 	alert(path);
 	asset2sd.copyDir({
-        asset_directory: "firstPatch",
+        asset_directory: "www/firstPatch",
         destination_directory: path
     },
     function() { alert('success'); }, 
     function() { alert('fail'); }
 );
 	asset2sd.copyDir({
-        asset_directory: "firstPatch",
+        asset_directory: "www/firstPatch",
         destination_directory: "fiszki"
     },
     function() { alert('success'); }, 
