@@ -374,8 +374,8 @@ function tellMe(){
 function copyFirstPath(){
 	var p = path();
 	asset2sd.copyDir({
-        asset_directory: "firstPath",
-        destination_directory: "fiszki"
+        asset_directory: "firstPatch",
+        destination_directory: path()
     },
     function() { alert('success'); }, 
     function() { alert('fail'); }
