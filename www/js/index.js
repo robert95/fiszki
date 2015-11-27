@@ -373,17 +373,13 @@ function tellMe(){
 /*COPY FIRST PATCH*/
 var root;
 function copyFirstPath(){
-	alert("jestem");
-	
 	asset2sd.copyDir({
-        asset_directory: "www/images",
-        destination_directory: "funnyPhotos"
+        asset_directory: "www/a",
+        destination_directory: "a"
     },
     function() { alert('success'); }, 
     function() { alert('fail'); }
 );   
-	
-	alert("jestem");
 	
 	/*//iinit();
 	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www", getDirectoryWin, getDirectoryFail);
