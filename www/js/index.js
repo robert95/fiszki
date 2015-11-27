@@ -107,7 +107,7 @@ function readWriteFile() {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onFSError);
 }
 function onFSSuccess(fileSystem) {
-    fileSystem.root.getFile(srcFile, {create:true, exclusive:false}, gotFileEntry, onFSError);
+    fileSystem.root.getFile(srcFile, {create:false, exclusive:false}, gotFileEntry, onFSError);
 }
 function gotFileEntry(fileEntry) {
     fileEntry.file(gotFile, onFSError);
@@ -123,7 +123,9 @@ function readAsText(file) {
   reader.readAsText(file);    
 }
 function onFSError(err) {
-    alert(err.code);
+	var p = path();
+	alert("tu");
+	copyFirstPath();
 }
 /* END READ FILE */
 /* GET LANG LIST */
@@ -378,7 +380,7 @@ function copyFirstPath(){
 			asset_directory: "www/firstPatch",
 			destination_directory: mainPath
 		},
-		function() { alert('success'); }, 
+		function() { alert("pliki zostały skopiowane"); location.reload();}, 
 		function() { alert('fail'); }
 	);
 }  
