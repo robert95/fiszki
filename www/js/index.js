@@ -124,7 +124,7 @@ function readAsText(file) {
 }
 function onFSError(err) {
 	var p = path();
-	alert("tu");
+	alert("Ładownie...proszę czekać...");
 	copyFirstPath();
 }
 /* END READ FILE */
