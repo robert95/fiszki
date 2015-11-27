@@ -95,10 +95,10 @@ function createDirectory(path, success){
 	createDir(dirs.pop());
 }
 */
-var path
+var mainPath;
 function path(){
 	var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
-	path = (res.toString()).replace(/,/g,'/');
+	mainPath = (res.toString()).replace(/,/g,'/');
 	return (res.toString()).replace(/,/g,'/');
 }
 
@@ -374,21 +374,13 @@ function tellMe(){
 
 /*COPY FIRST PATCH*/
 function copyFirstPath(){
-	alert(path);
 	asset2sd.copyDir({
-        asset_directory: "www/firstPatch",
-        destination_directory: path
-    },
-    function() { alert('success'); }, 
-    function() { alert('fail'); }
-);
-	asset2sd.copyDir({
-        asset_directory: "www/firstPatch",
-        destination_directory: "fiszki"
-    },
-    function() { alert('success'); }, 
-    function() { alert('fail'); }
-);
+			asset_directory: "www/firstPatch",
+			destination_directory: mainPath
+		},
+		function() { alert('success'); }, 
+		function() { alert('fail'); }
+	);
 }  
 /*function iinit() {
 	
