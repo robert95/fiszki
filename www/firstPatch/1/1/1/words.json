@@ -1,74 +1,110 @@
 [
 	{
 		"id": 1,
-		"name": "ja"
+		"name": "ja",
+		"notices": [
+		]
 	},
 	{
 		"id": 2,
-		"name": "ja i ty"
+		"name": "ja i ty",
+		"notices": [
+		]
 	},
 	{
 		"id": 3,
-		"name": "my obaj / obie / oboje"
+		"name": "my obaj / obie / oboje",
+		"notices": [
+		]
 	},
 	{
 		"id": 4,
-		"name": "on"
+		"name": "on",
+		"notices": [
+		]
 	},
 	{
 		"id": 5,
-		"name": "on i ona"
+		"name": "on i ona",
+		"notices": [
+		]
 	},
 	{
 		"id": 6,
-		"name": "oni oboje"
+		"name": "oni oboje",
+		"notices": [
+		]
 	},
 	{
 		"id": 7,
-		"name": "mężczyzna"
+		"name": "mężczyzna",
+		"notices": [
+		]
 	},
 	{
 		"id": 8,
-		"name": "kobieta"
+		"name": "kobieta",
+		"notices": [
+		]
 	},
 	{
 		"id": 9,
-		"name": "dziecko"
+		"name": "dziecko",
+		"notices": [
+		]
 	},
 	{
 		"id": 10,
-		"name": "rodzina"
+		"name": "rodzina",
+		"notices": [
+		]
 	},
 	{
 		"id": 11,
-		"name": "moja rodzina"
+		"name": "moja rodzina",
+		"notices": [
+		]
 	},
 	{
 		"id": 12,
-		"name": "Moja rodzina jest tutaj."
+		"name": "Moja rodzina jest tutaj.",
+		"notices": [
+		]
 	},
 	{
 		"id": 13,
-		"name": "(Ja) Jestem tutaj."
+		"name": "(Ja) Jestem tutaj.",
+		"notices": [
+		]
 	},
 	{
 		"id": 14,
-		"name": "Ty jesteś tutaj."
+		"name": "Ty jesteś tutaj.",
+		"notices": [
+		]
 	},
 	{
 		"id": 15,
-		"name": "On jest tutaj i ona jest tutaj."
+		"name": "On jest tutaj i ona jest tutaj.",
+		"notices": [
+		]
 	},
 	{
 		"id": 16,
-		"name": "(My) Jesteśmy tutaj."
+		"name": "(My) Jesteśmy tutaj.",
+		"notices": [
+		]
 	},
 	{
 		"id": 17,
-		"name": "Wy jesteście tutaj."
+		"name": "Wy jesteście tutaj.",
+		"notices": [
+		]
 	},
 	{
 		"id": 18,
-		"name": "Oni wszyscy są tutaj."
+		"name": "Oni wszyscy są tutaj.",
+		"notices": [
+		]
 	}
 ]

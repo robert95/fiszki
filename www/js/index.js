@@ -48,53 +48,7 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-/*
-function makeDir(){
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-}
-function fail() {
-	alert('fail');
-}
-function gotFS(fileSystem) {
-	window.FS = fileSystem;
-	
-	var printDirPath = function(entry){
-		console.log("Dir path - " + entry.fullPath);
-	}
-	
-	createDirectory("this/is/nested/dir", printDirPath);
-	createDirectory("simple_dir", printDirPath);
-}
-function createDirectory(path, success){
-	var dirs = path.split("/").reverse();
-	var root = window.FS.root;
-	
-	var createDir = function(dir){
-		dir = path() + dir;
-		root.getDirectory(dir, {
-			create : true,
-			exclusive : false
-		}, successCB, failCB);
-	};
-	
-	var successCB = function(entry){
-		console.log("dir created " + entry.fullPath);
-		root = entry;
-		if(dirs.length > 0){
-			createDir(dirs.pop());
-		}else{
-			console.log("all dir created");
-			success(entry);
-		}
-	};
-	
-	var failCB = function(){
-		console.log("failed to create dir " + dir);
-	};
-	
-	createDir(dirs.pop());
-}
-*/
+
 var mainPath;
 function path(){
 	var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
@@ -216,6 +170,7 @@ function showSubCatList(){
 /* GET WORD LIST */
 var idWord = false;
 var nameWord = false;
+var srcFileWordList = false;
 function getWordList(){
 	res = false;
 	//resL = false;
@@ -225,6 +180,7 @@ function getWordList(){
 	var idSubCat = $("#myCat").val();
 	var idLernLang = $("#learnLang").val();
 	srcFile = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
+	srcFileWordList = srcFile;
 	//srcFileL = path() + idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
 	readWriteFile();
 	wrapShowWordList();
@@ -265,35 +221,6 @@ function showWordList(){
 }
 /* END GET WORD LIST */
 
-/* GET WORD LIST */
-/*function getWord(idLang, idParentCat, idSubCat, idword){
-	res = false;
-	srcFile = false;
-	idWord = idword;
-	var idLang = $("#learnLang").val();
-	var idParentCat = $("#myParentCat").val();
-	var idSubCat = $("#myCat").val();
-	srcFile = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
-	readWriteFile();
-	showWord();
-}
-function showWord(){
-	if(!res){
-        setTimeout(showWord, 50);
-    }else{
-		var words = JSON.parse(res);
-		var tmp2 = "";
-		for(var x in words){
-			var word = words[x];
-			if(word.id == idWord) {
-				tmp2 += word.name;				
-			}
-		}
-		nameWord = tmp2;
-	}
-}*/
-/* END GET WORD LIST */
-
 /* GET NAV WORD LIST */
 function getNavWordList(){
 	$("#my-trans").focus();
@@ -304,11 +231,20 @@ function getNavWordList(){
 			i++;
 			var id = $(this).data('id');
 			if(i == 1) firstId = id;
-			$("#nav-words-container").append('<p onclick="setWordToLearn(' + id + ', this)" data-word-id="' + id + '">' + i + '</p>');
+			//$("#nav-words-container").append('<p onclick="setWordToLearn(' + id + ', this)" data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+			$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
 		}
 	});
-	setTimeout(function(){setWordToLearn(firstId, $("#nav-words-container p").eq(0)); $("#my-trans").focus();}, 50);
+	setTimeout(function(){setWordToLearn(firstId, $("#nav-words-container p").eq(0)); $("#my-trans").focus(); setNavWordPosition(0);}, 50);
 	
+}
+
+function setNavWordPosition(i){
+	var j;
+	if(i==0) j=3;
+	else{ j=i+2; i--;}
+
+	$('#nav-words-container p').hide().slice(i, j).show();
 }
 
 /*SET WORD TO LEARN*/
@@ -319,7 +255,7 @@ function setWordToLearn(id, obj){
 	var curWord = setWordById(id); 
 	var curTrans = "tłumaczenie";//setTransById(id);
 	var curMyNote = "moja notatka";
-	$("#my-text").val(curMyNote);
+	setNoteById(id);
 	$("#my-text").attr("data-id", id);
 	$("#idWord").val(id);
 	$("#word-lern-1").attr("data-id", id);
@@ -327,27 +263,54 @@ function setWordToLearn(id, obj){
 	$("#word-lern-1").attr("data-trans", curTrans);
 	$("#my-trans").val("");
 	$("#my-trans").focus();
+
+	var index = $("#nav-words-container p.activ").index();
+	setNavWordPosition(index);
+	setTimeout(tellMe, 100);
 }
 
 function nextWord(){
+	saveNotice();
 	var length = $("#nav-words-container p").length;
 	var index = $("#nav-words-container p.activ").index() + 1;
-	var id = ($("#nav-words-container p").eq(index)).data('word-id');
-	setWordToLearn(id, $("#nav-words-container p").eq(index));	
+	if(length <= index) alert("Wszystkiego już się nauczyłeś:)");
+	else{
+		var id = ($("#nav-words-container p").eq(index)).data('word-id');
+		setWordToLearn(id, $("#nav-words-container p").eq(index));	
+		setNavWordPosition(index);
+	}
 }
 
 function setWordById(id){
-	for(var x in words){
-		var word = words[x];
+	for(var x in trans){
+		var word = trans[x];
 		if(word.id == id) {
 			$("#cur-word").html(word.name);		
 		}
 	}
 }
 
+function setNoteById(id){
+	$("#my-text").val("");
+	var lang = $("#learnLang").val();
+	var result = "";
+	for(var x in words){
+		var word = words[x];
+		if(word.id == id) {
+			for(var n in word.notices){
+			//	alert(word.notices[n].idLang + " -> " + lang);
+				if(word.notices[n].idLang == lang){
+				//	alert(word.notices[n].text);
+					$("#my-text").val(word.notices[n].text);
+				}
+			}
+		}
+	}
+}
+
 function setTransById(id){
-	for(var x in tran){
-		var word = trans[x];
+	for(var x in words){
+		var word = words[x];
 		if(word.id == id) {
 			return (word.name);				
 		}
@@ -358,7 +321,7 @@ function setTransById(id){
 function tellMe(){
 	$("#my-trans").focus();
 	var id = $("#idWord").val();
-	var idLang = $("#myLang").val();
+	var idLang = $("#learnLang").val();
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
 	var src = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
@@ -383,7 +346,53 @@ function copyFirstPath(){
 		function() { alert("pliki zostały skopiowane"); location.reload();}, 
 		function() { alert('fail'); }
 	);
-}  
+} 
+/*END TELL ME*/
+
+/*START SAVE NOTATION*/
+function saveNotice(){
+	var text = $('#my-text').val();
+	var id = $('#idWord').val();
+	var lang = $("#learnLang").val();
+	
+	for(var x in words){
+		var word = words[x];
+		if(word.id == id) {
+			var add = false;
+			for(var n in word.notices){
+				if(word.notices[n].idLang == lang){
+					word.notices[n].text = text;
+					add = true;
+				}
+			}
+			if(!add) word.notices.push({"idLang": lang, "text": text});
+		}
+	}
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
+}
+
+function gotFSN(fileSystem) {
+	fileSystem.root.getFile(srcFileWordList, {create: false}, gotFileEntryN, failN);
+}
+
+function gotFileEntryN(fileEntry) {
+	fileEntry.createWriter(gotFileWriterN, failN);
+}
+
+function gotFileWriterN(writer) {
+	writer.onwrite = function(evt) {
+		console.log("write success");
+	};
+
+	writer.write(JSON.stringify(words));
+	writer.abort();
+	// contents of file now 'some different text'
+}
+
+function failN(error) {
+	console.log("error : "+error.code);
+}
+/*END SAVE NATATION*/
 /*function iinit() {
 	
 	//This alias is a read-only pointer to the app itself

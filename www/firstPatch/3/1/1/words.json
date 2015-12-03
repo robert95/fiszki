@@ -1,74 +1,110 @@
 [
 	{
 		"id": 1,
-		"name": "ich"
+		"name": "ich",
+		"notices": [
+		]
 	},
 	{
 		"id": 2,
-		"name": "ich und du"
+		"name": "ich und du",
+		"notices": [
+		]
 	},
 	{
 		"id": 3,
-		"name": "wir beide"
+		"name": "wir beide",
+		"notices": [
+		]
 	},
 	{
 		"id": 4,
-		"name": "er"
+		"name": "er",
+		"notices": [
+		]
 	},
 	{
 		"id": 5,
-		"name": "er und sie"
+		"name": "er und sie",
+		"notices": [
+		]
 	},
 	{
 		"id": 6,
-		"name": "sie beide"
+		"name": "sie beide",
+		"notices": [
+		]
 	},
 	{
 		"id": 7,
-		"name": "der Mann"
+		"name": "der Mann",
+		"notices": [
+		]
 	},
 	{
 		"id": 8,
-		"name": "die Frau"
+		"name": "die Frau",
+		"notices": [
+		]
 	},
 	{
 		"id": 9,
-		"name": "das Kind"
+		"name": "das Kind",
+		"notices": [
+		]
 	},
 	{
 		"id": 10,
-		"name": "eine Familie"
+		"name": "eine Familie",
+		"notices": [
+		]
 	},
 	{
 		"id": 11,
-		"name": "meine Familie"
+		"name": "meine Familie",
+		"notices": [
+		]
 	},
 	{
 		"id": 12,
-		"name": "Meine Familie ist hier."
+		"name": "Meine Familie ist hier.",
+		"notices": [
+		]
 	},
 	{
 		"id": 13,
-		"name": "Ich bin hier."
+		"name": "Ich bin hier.",
+		"notices": [
+		]
 	},
 	{
 		"id": 14,
-		"name": "Du bist hier."
+		"name": "Du bist hier.",
+		"notices": [
+		]
 	},
 	{
 		"id": 15,
-		"name": "Er ist hier und sie ist hier."
+		"name": "Er ist hier und sie ist hier.",
+		"notices": [
+		]
 	},
 	{
 		"id": 16,
-		"name": "Wir sind hier."
+		"name": "Wir sind hier.",
+		"notices": [
+		]
 	},
 	{
 		"id": 17,
-		"name": "Ihr seid hier."
+		"name": "Ihr seid hier.",
+		"notices": [
+		]
 	},
 	{
 		"id": 18,
-		"name": "Sie sind alle hier."
+		"name": "Sie sind alle hier.",
+		"notices": [
+		]
 	}
 ]

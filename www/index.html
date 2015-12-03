@@ -38,9 +38,21 @@
 	    <img class="background" src="img/bg.png" />
 		<img class="back" src="img/back.png" />
 		<div class="nav-circle" id="nav-circle-main">
-			<p class="activ" data-target="choose-lang">1</p>
-			<p data-target="choose-cat">2</p>
-			<p data-target="list-of-word">3</p>
+			<p class="activ" data-target="choose-lang">
+				<img src="img/nav-bg.png" class="no-activ-img">
+				<img src="img/nav-bg-activ.png" class="activ-img">
+				<span>1</span>
+			</p>
+			<p data-target="choose-cat">
+				<img src="img/nav-bg.png" class="no-activ-img">
+				<img src="img/nav-bg-activ.png" class="activ-img">
+				<span>2</span>
+			</p>
+			<p data-target="list-of-word">
+				<img src="img/nav-bg.png" class="no-activ-img">
+				<img src="img/nav-bg-activ.png" class="activ-img">
+				<span>3</span>
+			</p>
 		</div>
 		<section id="choose-lang">
 			<p id="odp"></p>
@@ -74,9 +86,17 @@
 		<section id="learn-container">
 			<section id="words-nav">
 				<div class="nav-circle-word">
-					<img src="img/ok.png" class="good-bad" onclick="nextWord();"/>
-					<div id="nav-words-container">
-					</div>
+					<table>
+						<tr>
+							<td><img src="img/read.png" class="read" onclick="tellMe()"></td>
+							<td><div id="nav-words-container"></div></td>
+							<td><img src="img/ok.png" class="good-bad" onclick="nextWord();"/></td>
+						</tr>
+					</table>
+					
+					
+					<!--<div id="nav-words-container">
+					</div>-->
 					<!--lista słów do nauki-->
 				</div>		
 			</section>
@@ -85,16 +105,15 @@
 				<h3>Powtórz głośno</h3>
 				<table>
 					<tr>
-						<td><img src="img/read.png" class="read" onclick="tellMe()"></td>
+						<!--<td><img src="img/read.png" class="read" onclick="tellMe()"></td>-->
 						<td><p class="text" class="word cur-word" id="cur-word"> asdasd asd asd s</p></td>
 					</tr>
 					<tr>
-						<td id="show-translate"><!--<img src="img/ikon1.png">--></td>
 						<td><input type="text" class="text my-trans" id="my-trans"></td>
 					</tr>
 					<tr>
-						<td><img src="img/other.png"></td>
-						<td><input type="text" class="text my-add-text" id="my-text" data-id="-1"></td>
+						<!--<td><img src="img/other.png"></td>-->
+						<td><input type="text" class="text my-add-text" id="my-text" data-id="-1" placeholder="<-wpisz swoją osobista notatkę->"></td>
 					</tr>
 				</table>
 			</section>

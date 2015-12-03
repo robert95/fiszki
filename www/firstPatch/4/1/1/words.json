@@ -1,74 +1,110 @@
 [
 	{
 		"id": 1,
-		"name": "jeg"
+		"name": "jeg",
+		"notices": [
+		]
 	},
 	{
 		"id": 2,
-		"name": "jeg og du"
+		"name": "jeg og du",
+		"notices": [
+		]
 	},
 	{
 		"id": 3,
-		"name": "vi to"
+		"name": "vi to",
+		"notices": [
+		]
 	},
 	{
 		"id": 4,
-		"name": "han"
+		"name": "han",
+		"notices": [
+		]
 	},
 	{
 		"id": 5,
-		"name": "han og hun"
+		"name": "han og hun",
+		"notices": [
+		]
 	},
 	{
 		"id": 6,
-		"name": "de to"
+		"name": "de to",
+		"notices": [
+		]
 	},
 	{
 		"id": 7,
-		"name": "mannen"
+		"name": "mannen",
+		"notices": [
+		]
 	},
 	{
 		"id": 8,
-		"name": "kvinnen"
+		"name": "kvinnen",
+		"notices": [
+		]
 	},
 	{
 		"id": 9,
-		"name": "barnet"
+		"name": "barnet",
+		"notices": [
+		]
 	},
 	{
 		"id": 10,
-		"name": "en familie"
+		"name": "en familie",
+		"notices": [
+		]
 	},
 	{
 		"id": 11,
-		"name": "familien min"
+		"name": "familien min",
+		"notices": [
+		]
 	},
 	{
 		"id": 12,
-		"name": "Familien min er her."
+		"name": "Familien min er her.",
+		"notices": [
+		]
 	},
 	{
 		"id": 13,
-		"name": "Jeg er her."
+		"name": "Jeg er her.",
+		"notices": [
+		]
 	},
 	{
 		"id": 14,
-		"name": "Du er her."
+		"name": "Du er her.",
+		"notices": [
+		]
 	},
 	{
 		"id": 15,
-		"name": "Han er her og hun er her."
+		"name": "Han er her og hun er her.",
+		"notices": [
+		]
 	},
 	{
 		"id": 16,
-		"name": "Vi er her."
+		"name": "Vi er her.",
+		"notices": [
+		]
 	},
 	{
 		"id": 17,
-		"name": "Dere er her."
+		"name": "Dere er her.",
+		"notices": [
+		]
 	},
 	{
 		"id": 18,
-		"name": "De er her alle sammen."
+		"name": "De er her alle sammen.",
+		"notices": [
+		]
 	}
 ]
