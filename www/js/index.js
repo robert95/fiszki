@@ -97,10 +97,10 @@ function showLangList(){
 		var langs = JSON.parse(res);
 		for(var x in langs){
 			var lang = langs[x];
-			var tmp = '<div><h1 class="text expand" onclick="expand(this);">'+ lang.label + '</h1><div class="list-of-lang">';
+			var tmp = '<div><h1 class="text expand" ontouchstart="expand(this);">'+ lang.label + '</h1><div class="list-of-lang">';
 			for(var y in langs){
 				var langTmp = langs[y];
-				if(y != x) tmp += '<p class="text setLang" onclick="setLang(this);" data-mylang="' + lang.id + '" data-learnlang="' + langTmp.id + '">' + langTmp.name + '</p>';
+				if(y != x) tmp += '<p class="text setLang" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" data-learnlang="' + langTmp.id + '">' + langTmp.name + '</p>';
 			}
 			tmp += '</div></div>';
 			$("#langs").append(tmp);
@@ -128,7 +128,7 @@ function showCatList(){
 		for(var x in cats){
 			subcats = false;
 			var cat = cats[x];
-			var tmp = '<div><h1 class="text expand" onclick="expand(this);">'+ cat.name + '</h1>';
+			var tmp = '<div><h1 class="text expand" ontouchstart="expand(this);">'+ cat.name + '</h1>';
 			getSubCatList(cat.id);
 			setTimeout(
 				function(){
@@ -159,7 +159,7 @@ function showSubCatList(){
 		var tmp = '<div class="list-of-subcat">';
 		for(var x in cats){
 			var cat = cats[x];
-			tmp += '<p class="text setCat" onclick="setCat(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '">' + cat.name + '</p>';
+			tmp += '<p class="text setCat" ontouchstart="setCat(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '">' + cat.name + '</p>';
 		}
 		tmp += '</div>';
 		subcats = tmp;
@@ -214,7 +214,7 @@ function showWordList(){
 			nameWord = false;
 			var word = words[x];
 			var tran = trans[x];
-			tmp += '<div class="word" data-id="' + word.id + '" data-check="1" onclick="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
+			tmp += '<div class="word" data-id="' + word.id + '" data-check="1" ontouchstart="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
 		}
 		$("#words").html(tmp);
 	}
@@ -231,8 +231,9 @@ function getNavWordList(){
 			i++;
 			var id = $(this).data('id');
 			if(i == 1) firstId = id;
-			//$("#nav-words-container").append('<p onclick="setWordToLearn(' + id + ', this)" data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
-			$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+			//$("#nav-words-container").append('<p ontouchstart="setWordToLearn(' + id + ', this)" data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+			//$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+			$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/' + i + '.png" class="no-activ-img"><img src="img/' + i + '.png" class="activ-img"></p>');
 		}
 	});
 	setTimeout(function(){setWordToLearn(firstId, $("#nav-words-container p").eq(0)); $("#my-trans").focus(); setNavWordPosition(0);}, 50);
@@ -253,7 +254,7 @@ function setWordToLearn(id, obj){
 	$(obj).addClass("activ");
 	$("#word-lern-1").fadeOut().fadeIn();
 	var curWord = setWordById(id); 
-	var curTrans = "tłumaczenie";//setTransById(id);
+	var curTrans = setTransById(id);
 	var curMyNote = "moja notatka";
 	setNoteById(id);
 	$("#my-text").attr("data-id", id);
@@ -270,6 +271,8 @@ function setWordToLearn(id, obj){
 }
 
 function nextWord(){
+	$('.confirm-swipe').hide();	  
+	$("#my-trans").focus();
 	saveNotice();
 	var length = $("#nav-words-container p").length;
 	var index = $("#nav-words-container p.activ").index() + 1;
@@ -312,9 +315,19 @@ function setTransById(id){
 	for(var x in words){
 		var word = words[x];
 		if(word.id == id) {
-			return (word.name);				
+			$("#confirm-correct").text(word.name);				
 		}
 	}
+}
+
+function checkMySelf(){
+	$("#word-lern-1").hide();
+	$("#confirm-my").text($("#my-trans").val());
+	$(".confirm-swipe").show();
+	$(".confirm-swipe table").show();
+	$(".confirm-swipe table").css({	top: "0px"});
+	$('.confirm-swipe table').removeClass('good');
+	$('.confirm-swipe table').removeClass('bad');
 }
 /*END SET WORD TO LEARN*/
 /*PLAY SOUND*/
