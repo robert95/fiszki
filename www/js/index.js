@@ -82,6 +82,7 @@ function onFSError(err) {
 	copyFirstPath();
 }
 /* END READ FILE */
+
 /* GET LANG LIST */
 var res = false;
 var srcFile = false;
@@ -214,7 +215,7 @@ function showWordList(){
 			nameWord = false;
 			var word = words[x];
 			var tran = trans[x];
-			tmp += '<div class="word" data-id="' + word.id + '" data-check="1" ontouchstart="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
+			tmp += '<div class="word" data-id="' + word.id + '" data-check="1" onclick="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
 		}
 		$("#words").html(tmp);
 	}
@@ -223,21 +224,27 @@ function showWordList(){
 
 /* GET NAV WORD LIST */
 function getNavWordList(){
-	$("#my-trans").focus();
+	//$("#my-trans").focus();
 	var i = 0;
 	var firstId = -1;
 	$(".word").each(function(index){
 		if($(this).attr('data-check') != 0){
 			i++;
 			var id = $(this).data('id');
-			if(i == 1) firstId = id;
+			if(i == 1){
+				firstId = id;
+				setActWord(id);
+			}
 			//$("#nav-words-container").append('<p ontouchstart="setWordToLearn(' + id + ', this)" data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
 			//$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
 			$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/' + i + '.png" class="no-activ-img"><img src="img/' + i + '.png" class="activ-img"></p>');
 		}
 	});
-	setTimeout(function(){setWordToLearn(firstId, $("#nav-words-container p").eq(0)); $("#my-trans").focus(); setNavWordPosition(0);}, 50);
-	
+	setTimeout(function(){
+		$("#nav-words-container p").eq(0).addClass("activ");
+		setWordToMethod(2)
+		setNavWordPosition(0);
+	}, 50);
 }
 
 function setNavWordPosition(i){
@@ -273,7 +280,7 @@ function setWordToLearn(id, obj){
 function nextWord(){
 	$('.confirm-swipe').hide();	  
 	$("#my-trans").focus();
-	saveNotice();
+	//saveNotice();
 	var length = $("#nav-words-container p").length;
 	var index = $("#nav-words-container p.activ").index() + 1;
 	if(length <= index) alert("Wszystkiego już się nauczyłeś:)");
@@ -285,26 +292,25 @@ function nextWord(){
 }
 
 function setWordById(id){
+	$("#idWord").val(id);
 	for(var x in trans){
 		var word = trans[x];
 		if(word.id == id) {
-			$("#cur-word").html(word.name);		
+			act_word = word.name;		
 		}
 	}
 }
 
 function setNoteById(id){
-	$("#my-text").val("");
+	//$("#my-text").val("");
 	var lang = $("#learnLang").val();
 	var result = "";
 	for(var x in words){
 		var word = words[x];
 		if(word.id == id) {
 			for(var n in word.notices){
-			//	alert(word.notices[n].idLang + " -> " + lang);
 				if(word.notices[n].idLang == lang){
-				//	alert(word.notices[n].text);
-					$("#my-text").val(word.notices[n].text);
+					act_text = word.notices[n].text;
 				}
 			}
 		}
@@ -315,7 +321,7 @@ function setTransById(id){
 	for(var x in words){
 		var word = words[x];
 		if(word.id == id) {
-			$("#confirm-correct").text(word.name);				
+			act_trans = word.name;				
 		}
 	}
 }
@@ -324,6 +330,13 @@ function checkMySelf(){
 	$("#word-lern-1").hide();
 	$("#confirm-my").text($("#my-trans").val());
 	$(".confirm-swipe").show();
+	$(".confirm-swipe table").show();
+	$(".confirm-swipe table").css({	top: "0px"});
+	$('.confirm-swipe table').removeClass('good');
+	$('.confirm-swipe table').removeClass('bad');
+}
+
+function clearDraggableField(){
 	$(".confirm-swipe table").show();
 	$(".confirm-swipe table").css({	top: "0px"});
 	$('.confirm-swipe table').removeClass('good');
@@ -363,8 +376,8 @@ function copyFirstPath(){
 /*END TELL ME*/
 
 /*START SAVE NOTATION*/
-function saveNotice(){
-	var text = $('#my-text').val();
+function saveNotice(text){
+	//var text = $('#my-text').val();
 	var id = $('#idWord').val();
 	var lang = $("#learnLang").val();
 	
@@ -406,6 +419,156 @@ function failN(error) {
 	console.log("error : "+error.code);
 }
 /*END SAVE NATATION*/
+/*START ALGORYTHM MANAGAMENT*/
+var act_word = "";
+var act_trans = "";
+var act_text = "a";
+
+function setWordToMethod(idM){
+	$(".learnMethod").hide();
+	switch(idM) {
+		case 1:
+			$("#confirm-correct-1").text(act_word);
+			$("#confirm-trans-1").text(act_trans);
+			break;
+		case 2:
+			$("#confirm-correct-2").text(act_word);
+			$("#confirm-trans-2").text(act_trans);
+			$("#confirm-text-2").val(act_text);			
+			break;
+		case 3:
+			$("#question-3").val("");
+			break;
+		case 4:
+			$("#confirm-correct-4").text("");
+			$("#confirm-trans-4").text(act_trans);
+			$("#confirm-text-4").val(act_text);			
+			break;
+		case 5:
+			$("#question-5").val("");
+			break;
+		case 6:
+			$("#confirm-correct-6").text("");
+			$("#confirm-trans-6").text(act_trans);		
+			break;
+		default:
+			console.log("error");
+	}
+	$("#word-lern-" + idM).show();
+}
+
+function setActWord(id){
+	setWordById(id);
+	setNoteById(id);
+	setTransById(id);
+}
+
+var round = 1;
+var nbMethod = 2;
+var nbStep = 0;
+
+function nextStep(){
+	setTimeout(function(){
+		clearDraggableField();
+	}, 100);
+	if(round == 1){
+		if(nbMethod == 2){
+			nbMethod = 3;
+			setWordToMethod(3);
+		}else if(nbMethod == 3){
+			saveNotice($("#confirm-text-2").val());
+			nbMethod = 2;
+			var length = $("#nav-words-container p").length;
+			var index = $("#nav-words-container p.activ").index() + 1;
+			if(length <= index){
+				round = 2;
+				nextStep();
+			}else{
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setActWord(id);
+				setNavWordPosition(index);
+				$("#nav-words-container p").removeClass("activ");
+				$("#nav-words-container p").eq(index).addClass("activ");
+				setTimeout(function(){
+					setWordToMethod(2);
+					tellMe();
+				}, 100);
+			}
+		}
+	}else if(round == 2){
+		var id = ($("#nav-words-container p").eq(0)).data('word-id');
+		setActWord(id);
+		setNavWordPosition(0);
+		$("#nav-words-container p").removeClass("activ");
+		$("#nav-words-container p").eq(0).addClass("activ");
+		setTimeout(function(){
+			tellMe();
+			setWordToMethod(4);
+		}, 100);
+		round = 3;
+		nbMethod = 4;
+	}else if(round == 3){
+		if(nbMethod == 4 && nbStep == 0){
+			saveNotice($("#confirm-text-4").val());
+			var length = $("#nav-words-container p").length;
+			var index = $("#nav-words-container p.activ").index() + 1;
+			if(length <= index){
+				round = 4;
+				nextStep();
+			}else{
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setActWord(id);
+				setNavWordPosition(index);
+				$("#nav-words-container p").removeClass("activ");
+				$("#nav-words-container p").eq(index).addClass("activ");
+				setTimeout(function(){
+					setWordToMethod(4);
+				}, 100);
+				nbMethod = 4;
+				nbStep = 1;
+			}
+		}else if(nbMethod == 4 && nbStep != 0){
+			saveNotice($("#confirm-text-4").val());
+			var index = $("#nav-words-container p.activ").index() - 1;
+			var id = ($("#nav-words-container p").eq(index)).data('word-id');
+			setActWord(id);
+			setNavWordPosition(index);
+			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").eq(index).addClass("activ");
+			setTimeout(function(){
+				setWordToMethod(5);
+			}, 100);
+			nbMethod = 5;
+			nbStep = 1;
+		}else if(nbMethod == 5 && nbStep == 1){
+			nbMethod = 6;
+			setWordToMethod(6);
+			nbStep = 2;
+		}else if(nbMethod == 6){
+			var index = $("#nav-words-container p.activ").index() + 1;
+			var id = ($("#nav-words-container p").eq(index)).data('word-id');
+			setActWord(id);
+			setNavWordPosition(index);
+			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").eq(index).addClass("activ");
+			setTimeout(function(){
+				setWordToMethod(5);
+			}, 100);
+			nbMethod = 5;
+		}else if(nbMethod == 5 && nbStep == 2){
+			nbMethod = 4;
+			nbStep = 0;
+			nextStep();
+		}		
+	}else{
+		alert("KONIEC!!!");
+	}
+}
+
+/*END ALGORYTHM MANAGAMENT*/
+
+
+
 /*function iinit() {
 	
 	//This alias is a read-only pointer to the app itself

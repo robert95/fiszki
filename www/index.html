@@ -30,12 +30,13 @@
         <title>Fiszki</title>
     </head>
     <body>
-	    <img class="background" src="img/bg.png" />
+		<img class="background" src="img/bg.png" />
 		<input type="hidden" id="myLang" value="0">
 		<input type="hidden" id="learnLang" value="0">
 		<input type="hidden" id="myCat" value="0">
 		<input type="hidden" id="myCatname" value="0">
 		<input type="hidden" id="myParentCat" value="0">
+		<input type="hidden" id="idWord" value="-1">
 		<img class="back" src="img/back.png" />
 		<div class="nav-circle" id="nav-circle-main">
 			<p class="activ" data-target="choose-lang">
@@ -77,13 +78,13 @@
 						<tr>
 							<td><img src="img/read.png" class="read" ontouchstart="tellMe()"></td>
 							<td><div id="nav-words-container"></div></td>
-							<td><img src="img/ok.png" class="good-bad" ontouchstart="checkMySelf();"/></td>
+							<td><img src="img/ok.png" class="good-bad" ontouchstart="nextStep();"/></td>
 						</tr>
 					</table>
 				</div>		
 			</section>
-			<section id="word-lern-1" data-id="-1" data-word="" data-trans="">
-				<input type="hidden" id="idWord" value="-1">
+			<!--<section id="word-lern-1" data-id="-1" data-word="" data-trans="">
+				
 				<h3>Powtórz głośno</h3>
 				<table>
 					<tr>
@@ -96,13 +97,55 @@
 						<td><input type="text" class="text my-add-text" id="my-text" data-id="-1" placeholder="<-wpisz swoją osobista notatkę->"></td>
 					</tr>
 				</table>
-			</section>
-			<section class="confirm-swipe">
+			</section>-->
+			<section id="word-lern-1" class="learnMethod confirm-swipe">
 				<p>UMIEM</p>
 				<table>
 					<tr><td><img src="img/up.png"></td></tr>
-					<tr><td><p class="text" id="confirm-correct"></p></td></tr>
-					<tr><td><p class="text" id="confirm-my"></p></td></tr>
+					<tr><td><p class="text" id="confirm-correct-1"></p></td></tr>
+					<tr><td><p class="text" id="confirm-trans-1"></p></td></tr>
+					<tr><td><img src="img/down.png"></td></tr>
+				</table>
+				<p>NIE UMIEM</p>
+			</section>
+			<section id="word-lern-2" class="learnMethod confirm-swipe">
+				<h3>Powtórz głośno</h3>
+				<table>
+					<tr><td><img src="img/up.png"></td></tr>
+					<tr><td><p class="text" id="confirm-correct-2"></p></td></tr>
+					<tr><td><p class="text" id="confirm-trans-2"></p></td></tr>
+					<tr><td><input type="text" class="text" id="confirm-text-2" placeholder="Twoja osobista notatka"/></td></tr>
+				</table>
+			</section>
+			<section id="word-lern-3" class="learnMethod confirm-swipe">
+				<h3>Zadaj pytanie do zdania</h3>
+				<table>
+					<tr><td><img src="img/up.png"></td></tr>
+					<tr><td><input type="text" class="text" id="question-3"/></p></td></tr>
+				</table>
+			</section>
+			<section id="word-lern-4" class="learnMethod confirm-swipe">
+				<h3>Powtórz głośno</h3>
+				<table>
+					<tr><td><img src="img/up.png"></td></tr>
+					<tr><td><p class="text" id="confirm-correct-4"></p></td></tr>
+					<tr><td><p class="text" id="confirm-trans-4"></p></td></tr>
+					<tr><td><input class="text" id="confirm-text-4" placeholder="Twoja osobista notatka"/></td></tr>
+				</table>
+			</section>
+			<section id="word-lern-5" class="learnMethod confirm-swipe">
+				<h3>Powtórz poprzednie zdanie</h3>
+				<table>
+					<tr><td><img src="img/up.png"></td></tr>
+					<tr><td><input type="text" class="text" id="question-5"/></td></tr>
+				</table>
+			</section>
+			<section id="word-lern-6" class="learnMethod confirm-swipe">
+				<p>UMIEM</p>
+				<table>
+					<tr><td><img src="img/up.png"></td></tr>
+					<tr><td><p class="text" id="confirm-correct-6"></p></td></tr>
+					<tr><td><p class="text" id="confirm-trans-6"></p></td></tr>
 					<tr><td><img src="img/down.png"></td></tr>
 				</table>
 				<p>NIE UMIEM</p>
@@ -243,7 +286,7 @@
 					  }, 500);
 					  $(this).fadeOut(500);
 					  setTimeout(function(){
-						nextWord();
+						nextStep();
 					  }, 1000);
 				}else if(parseInt($(this).css('top')) < -100){
 					$(this).addClass("good");
@@ -252,8 +295,7 @@
 					  }, 500);
 					$(this).fadeOut(500);
 					setTimeout(function(){
-						  
-					      nextWord();
+						  nextStep();
 					  }, 1000);
 				}else {
 					$(this).animate({ 
@@ -261,8 +303,8 @@
 					  }, 500);
 				}
 		   }, drag: function() {
-				if(parseInt($(this).css('top')) > 100){
-					$(this).addClass("bad");
+				if(parseInt($(this).css('top')) > 0){
+					$(this).css({top: "0px"});
 					return false;
 				}else if(parseInt($(this).css('top')) < -100){
 					$(this).addClass("good");
