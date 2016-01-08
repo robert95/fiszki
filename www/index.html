@@ -76,9 +76,9 @@
 				<div class="nav-circle-word">
 					<table>
 						<tr>
-							<td><img src="img/read.png" class="read" ontouchstart="tellMe()"></td>
+							<!--<td><img src="img/read.png" class="read"></td>-->
 							<td><div id="nav-words-container"></div></td>
-							<td><img src="img/ok.png" class="good-bad" ontouchstart="nextStep();"/></td>
+							<!--<td><img src="img/ok.png" class="good-bad" ontouchstart="nextStep();"/></td>-->
 						</tr>
 					</table>
 				</div>		
@@ -109,47 +109,60 @@
 				<p>NIE UMIEM</p>
 			</section>
 			<section id="word-lern-2" class="learnMethod confirm-swipe">
-				<h3>Powtórz głośno</h3>
+				<h3>POWTÓRZ GŁOŚNO</h3>
 				<table>
 					<tr><td><img src="img/up.png"></td></tr>
-					<tr><td><p class="text" id="confirm-correct-2"></p></td></tr>
-					<tr><td><p class="text" id="confirm-trans-2"></p></td></tr>
-					<tr><td><input type="text" class="text" id="confirm-text-2" placeholder="Twoja osobista notatka"/></td></tr>
+					<tr id="l-e-2" class="hidden"><td><p class="text"></p></td></tr>
+					<tr id="l-t-2"><td><p class="text" id="confirm-trans-2"></p></td></tr>
+					<tr id="l-n-2" class="hidden"><td><input type="text" class="text" id="confirm-text-2" placeholder="Twoja osobista notatka"/></td></tr>
+					<tr><td class="btn-container"><button ontouchstart="showNote(2);" class="left-btn">My note</button><button ontouchstart="showTrans(2);" class="right-btn">Translate</button></tr></td>
+					<tr ontouchstart="tellMe()"><td><p class="text" id="confirm-correct-2"></p></td></tr>
 				</table>
 			</section>
 			<section id="word-lern-3" class="learnMethod confirm-swipe">
-				<h3>Zadaj pytanie do zdania</h3>
+				<h3>ZADAJ PYTANIE DO ZDANIA</h3>
 				<table>
 					<tr><td><img src="img/up.png"></td></tr>
-					<tr><td><input type="text" class="text" id="question-3"/></p></td></tr>
+					<tr><td><input type="text" class="text" id="question-3"/></td></tr>
+					<tr><td class="btn-container"><button class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>
+					<tr ontouchstart="tellMe()"><td><p class="text"></p></td></tr>
 				</table>
 			</section>
 			<section id="word-lern-4" class="learnMethod confirm-swipe">
-				<h3>Powtórz głośno</h3>
+				<h3>POWTÓRZ GŁOŚNO</h3>
 				<table>
 					<tr><td><img src="img/up.png"></td></tr>
-					<tr><td><p class="text" id="confirm-correct-4"></p></td></tr>
-					<tr><td><p class="text" id="confirm-trans-4"></p></td></tr>
-					<tr><td><input class="text" id="confirm-text-4" placeholder="Twoja osobista notatka"/></td></tr>
+					<tr id="l-e-4" class="hidden"><td><p class="text"></p></td></tr>
+					<tr id="l-t-4"><td><p class="text" id="confirm-trans-4"></p></td></tr>
+					<tr id="l-n-4" class="hidden"><td><input class="text" id="confirm-text-4" placeholder="Twoja osobista notatka"/></td></tr>
+					<tr><td class="btn-container"><button ontouchstart="showNote(4);" class="left-btn">My note</button><button ontouchstart="showTrans(4);" class="right-btn">Translate</button></tr></td>
+					<tr ontouchstart="tellMe()"><td><p class="text" id="confirm-correct-4"></p></td></tr>
 				</table>
 			</section>
 			<section id="word-lern-5" class="learnMethod confirm-swipe">
-				<h3>Powtórz poprzednie zdanie</h3>
+				<h3>POWTÓRZ POPRZEDNIE ZDANIE</h3>
 				<table>
 					<tr><td><img src="img/up.png"></td></tr>
 					<tr><td><input type="text" class="text" id="question-5"/></td></tr>
+					<tr><td class="btn-container"><button class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>
+					<tr ontouchstart="tellMe()"><td><p class="text"></p></td></tr>
 				</table>
 			</section>
 			<section id="word-lern-6" class="learnMethod confirm-swipe">
-				<p>UMIEM</p>
+				<p class="no-margin">UMIEM</p>
 				<table>
 					<tr><td><img src="img/up.png"></td></tr>
-					<tr><td><p class="text" id="confirm-correct-6"></p></td></tr>
-					<tr><td><p class="text" id="confirm-trans-6"></p></td></tr>
+					<tr id="l-e-6" class="hidden"><td><p class="text"></p></td></tr>
+					<tr id="l-t-6"><td><p class="text" id="confirm-trans-6"></p></td></tr>
+					<tr id="l-n-6" class="hidden"><td><input class="text" id="confirm-text-6" placeholder="Twoja osobista notatka"/></td></tr>
+					<tr><td class="btn-container"><button ontouchstart="showNote(6);" class="left-btn">My note</button><button ontouchstart="showTrans(6);" class="right-btn">Translate</button></tr></td>
+					<tr ontouchstart="tellMe()"><td><p class="text" id="confirm-correct-6"></p></td></tr>
 					<tr><td><img src="img/down.png"></td></tr>
 				</table>
-				<p>NIE UMIEM</p>
+				<p class="no-margin">POWTÓRZ</p>
 			</section>
+			<img src="img/ok.png" class="good-bad" ontouchstart="goUp();"/>
+			<img src="img/no.png" class="bad-bad" ontouchstart="nextStep();"/>
 		</section>
 		
         <script type="text/javascript" src="cordova.js"></script>
@@ -311,6 +324,21 @@
 					return false;
 				}
 		   }});
+		   
+		   function goUp(){
+				$('.confirm-swipe table').each(function(){
+					if($(this).is(":visible") == true){
+						$(this).addClass("good");
+						$(this).animate({ 
+							top: "-300px",
+						  }, 500);
+						$(this).fadeOut(500);
+						setTimeout(function(){
+							  nextStep();
+						  }, 1000);
+					}
+				});
+		   }
 		</script>
     </body>
 </html>

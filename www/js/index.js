@@ -244,6 +244,7 @@ function getNavWordList(){
 		$("#nav-words-container p").eq(0).addClass("activ");
 		setWordToMethod(2)
 		setNavWordPosition(0);
+		tellMe();
 	}, 50);
 }
 
@@ -440,16 +441,18 @@ function setWordToMethod(idM){
 			$("#question-3").val("");
 			break;
 		case 4:
-			$("#confirm-correct-4").text("");
-			$("#confirm-trans-4").text(act_trans);
+			tellMe();
+			$("#confirm-correct-4").text(act_word);
+			$("#confirm-trans-4").text("");
 			$("#confirm-text-4").val(act_text);			
 			break;
 		case 5:
 			$("#question-5").val("");
 			break;
 		case 6:
-			$("#confirm-correct-6").text("");
-			$("#confirm-trans-6").text(act_trans);		
+			$("#confirm-correct-6").text(act_word);
+			$("#confirm-trans-6").text("");
+			$("#confirm-text-6").val(act_text);			
 			break;
 		default:
 			console.log("error");
@@ -502,7 +505,6 @@ function nextStep(){
 		$("#nav-words-container p").removeClass("activ");
 		$("#nav-words-container p").eq(0).addClass("activ");
 		setTimeout(function(){
-			tellMe();
 			setWordToMethod(4);
 		}, 100);
 		round = 3;
@@ -567,7 +569,33 @@ function nextStep(){
 
 /*END ALGORYTHM MANAGAMENT*/
 
+function showNote(x){
+	var target = "#l-n-" + x;
+	var target2 = "#l-t-" + x;
+	var targetE = "#l-e-" + x;
+	$(target2).hide();
+	if($(target).is(":visible") == true){
+		$(target).hide();
+		$(targetE).show();
+	}else{
+		$(targetE).hide();
+		$(target).show();
+	}
+}
 
+function showTrans(x){
+	var target = "#l-n-" + x;
+	var target2 = "#l-t-" + x;
+	var targetE = "#l-e-" + x;
+	$(target).hide();
+	if($(target2).is(":visible") == true){
+		$(target2).hide();
+		$(targetE).show();
+	}else{
+		$(targetE).hide();
+		$(target2).show();
+	}
+}
 
 /*function iinit() {
 	
