@@ -597,6 +597,12 @@ function showTrans(x){
 	}
 }
 
+function tellMeNow(obj){
+	var par = $(obj).parent().parent();
+	if(parseInt(par.css('top')) == 0){
+		tellMe();
+	}
+}
 /*function iinit() {
 	
 	//This alias is a read-only pointer to the app itself
