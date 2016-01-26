@@ -253,7 +253,7 @@ function setNavWordPosition(i){
 	if(i==0) j=3;
 	else{ j=i+2; i--;}
 
-	$('#nav-words-container p').hide().slice(i, j).show();
+	$('#nav-words-container p').hide("slow").slice(i, j).show("slow");
 }
 
 /*SET WORD TO LEARN*/
@@ -534,7 +534,7 @@ function nextStep(){
 			var index = $("#nav-words-container p.activ").index() - 1;
 			var id = ($("#nav-words-container p").eq(index)).data('word-id');
 			setActWord(id);
-			setNavWordPosition(index);
+			//setNavWordPosition(index);
 			$("#nav-words-container p").removeClass("activ");
 			$("#nav-words-container p").eq(index).addClass("activ");
 			setTimeout(function(){
