@@ -509,7 +509,7 @@ function nextStep(){
 	}
 	setTimeout(function(){
 		clearDraggableField();
-	}, 100);
+	}, 700);
 	if(round == 1){
 		if(nbMethod == 2){
 			nbMethod = 3;

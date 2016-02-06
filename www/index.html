@@ -297,42 +297,37 @@
 		<script>
 			$('.confirm-swipe table').draggable({ axis: "y", stop: function() {
 				if(parseInt($(this).css('top')) > 100){
-					$(this).addClass("bad");
-				    $(this).animate({ 
-						top: "300px",
-					  }, 500);
-					  $(this).fadeOut(500);
-					  setTimeout(function(){
-						alert("źle");
-						nextStepBlock();
-						nextStep();
-					  }, 500);
+					if($("#word-lern-6").css('display') != "none"){
+						$(this).addClass("bad");
+						$(this).animate({ 
+							top: "300px",
+						  }, 500);
+						  $(this).fadeOut(500);
+						  setTimeout(function(){
+							nextStepBlock();
+							nextStep();
+						  }, 500);
+					}else {
+						$(this).velocity({ top: "0px" }, 500);
+					}	
 				}else if(parseInt($(this).css('top')) < -100){
 					$(this).addClass("good");
-					/*$(this).animate({ 
-						top: "-300px",
-					  }, 500);*/
-					  $(this).velocity({ top: "-300px" }, 500);
+					$(this).velocity({ top: "-300px" }, 500);
 					$(this).fadeOut(500);
 					setTimeout(function(){
 						  nextStep();
 					  }, 500);
 				}else {
-					/*$(this).animate({ 
-						top: "0px",
-					  }, 500);*/
 					 $(this).velocity({ top: "0px" }, 500);
 				}
 		   }, drag: function() {round
-				if(parseInt($(this).css('top')) > 0){
-					if(parseInt($(this).css('top')) > 100 ){
-						if($("#word-lern-6").css('display') != "none"){
-							$(this).addClass("bad");
-						}else{
-							//$(this).css({top: "0px"});
-							$(this).velocity({ top: "0px" }, 200);
-							return false;
-						}
+				if(parseInt($(this).css('top')) > 100){
+					if($("#word-lern-6").css('display') != "none"){
+						$(this).addClass("bad");
+					}
+					else{
+						$(this).velocity({ top: "0px" }, 200);
+						return false;
 					}
 				}else if(parseInt($(this).css('top')) < -100){
 					$(this).addClass("good");
