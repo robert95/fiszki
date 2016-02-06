@@ -25,7 +25,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=0.7, maximum-scale=0.7, minimum-scale=0.7, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
@@ -168,12 +168,12 @@
 				<img src="img/no.png" class="bad-bad" ontouchstart="nextStep();"/>
 			</section>
 		</section>
-		
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+		<script type="text/javascript" src="js/velocity.min.js"></script>
         <script type="text/javascript">
             app.initialize();   
         </script>
@@ -215,7 +215,7 @@
 					$(this).addClass("activ");
 				
 					if($(this).index() == 0){
-						$("#choose-lang").show("slow");
+						$("#choose-lang").show();
 						$("#choose-cat").hide();
 						$("#list-of-word").hide();
 						$(".back").hide();
@@ -303,26 +303,37 @@
 					  }, 500);
 					  $(this).fadeOut(500);
 					  setTimeout(function(){
+						alert("źle");
+						nextStepBlock();
 						nextStep();
-					  }, 1000);
+					  }, 500);
 				}else if(parseInt($(this).css('top')) < -100){
 					$(this).addClass("good");
-					$(this).animate({ 
+					/*$(this).animate({ 
 						top: "-300px",
-					  }, 500);
+					  }, 500);*/
+					  $(this).velocity({ top: "-300px" }, 500);
 					$(this).fadeOut(500);
 					setTimeout(function(){
 						  nextStep();
-					  }, 1000);
-				}else {
-					$(this).animate({ 
-						top: "0px",
 					  }, 500);
+				}else {
+					/*$(this).animate({ 
+						top: "0px",
+					  }, 500);*/
+					 $(this).velocity({ top: "0px" }, 500);
 				}
-		   }, drag: function() {
+		   }, drag: function() {round
 				if(parseInt($(this).css('top')) > 0){
-					$(this).css({top: "0px"});
-					return false;
+					if(parseInt($(this).css('top')) > 100 ){
+						if($("#word-lern-6").css('display') != "none"){
+							$(this).addClass("bad");
+						}else{
+							//$(this).css({top: "0px"});
+							$(this).velocity({ top: "0px" }, 200);
+							return false;
+						}
+					}
 				}else if(parseInt($(this).css('top')) < -100){
 					$(this).addClass("good");
 					return false;

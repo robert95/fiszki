@@ -243,17 +243,28 @@ function getNavWordList(){
 	setTimeout(function(){
 		$("#nav-words-container p").eq(0).addClass("activ");
 		setWordToMethod(2)
-		setNavWordPosition(0);
+		setNavWordPosition(0,1);
 		tellMe();
 	}, 50);
 }
 
-function setNavWordPosition(i){
+function setNavWordPosition(i, k){
+	var k = k || 3;
 	var j;
-	if(i==0) j=3;
-	else{ j=i+2; i--;}
-
-	$('#nav-words-container p').hide("slow").slice(i, j).show("slow");
+	if(k == 3){
+		if(i==0) j=3;
+		else{ 
+			j=i+2; 
+			i--;
+		}
+	}else if(k == 1){
+		j=i+1;
+	}else if(k == 2){
+		j=i+1;
+		i--;
+	}
+	
+	$('#nav-words-container p').hide().slice(i, j).show();
 }
 
 /*SET WORD TO LEARN*/
@@ -469,8 +480,33 @@ function setActWord(id){
 var round = 1;
 var nbMethod = 2;
 var nbStep = 0;
+var canNextStep = 1;
+var noLerntStep = 0;
+
+function nextStepBlock(){
+	canNextStep = 0;
+}
+
+function noLearnt(){
+	canNextStep = 0;
+	setTimeout(function(){
+		clearDraggableField();
+	}, 100);
+	if(noLerntStep == 0){
+		setWordToMethod(3);
+		noLerntStep = 1;
+	}else{
+		setWordToMethod(4);
+		noLerntStep = 0;
+		canNextStep = 1;
+	}
+}
 
 function nextStep(){
+	if(canNextStep == 0){
+		noLearnt();
+		return;
+	}
 	setTimeout(function(){
 		clearDraggableField();
 	}, 100);
@@ -489,7 +525,7 @@ function nextStep(){
 			}else{
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
-				setNavWordPosition(index);
+				setNavWordPosition(index,1);
 				$("#nav-words-container p").removeClass("activ");
 				$("#nav-words-container p").eq(index).addClass("activ");
 				setTimeout(function(){
@@ -501,9 +537,11 @@ function nextStep(){
 	}else if(round == 2){
 		var id = ($("#nav-words-container p").eq(0)).data('word-id');
 		setActWord(id);
-		setNavWordPosition(0);
+		setNavWordPosition(1, 2);
 		$("#nav-words-container p").removeClass("activ");
+		$("#nav-words-container p").removeClass("pulse");
 		$("#nav-words-container p").eq(0).addClass("activ");
+		$("#nav-words-container p").eq(0).addClass("pulse");
 		setTimeout(function(){
 			setWordToMethod(4);
 		}, 100);
@@ -520,9 +558,11 @@ function nextStep(){
 			}else{
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
-				setNavWordPosition(index);
+				setNavWordPosition(index, 2);
 				$("#nav-words-container p").removeClass("activ");
+				$("#nav-words-container p").removeClass("pulse");
 				$("#nav-words-container p").eq(index).addClass("activ");
+				$("#nav-words-container p").eq(index).addClass("pulse");
 				setTimeout(function(){
 					setWordToMethod(4);
 				}, 100);
@@ -536,7 +576,9 @@ function nextStep(){
 			setActWord(id);
 			//setNavWordPosition(index);
 			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").removeClass("pulse");
 			$("#nav-words-container p").eq(index).addClass("activ");
+			$("#nav-words-container p").eq(index).addClass("pulse");
 			setTimeout(function(){
 				setWordToMethod(5);
 			}, 100);
@@ -550,9 +592,11 @@ function nextStep(){
 			var index = $("#nav-words-container p.activ").index() + 1;
 			var id = ($("#nav-words-container p").eq(index)).data('word-id');
 			setActWord(id);
-			setNavWordPosition(index);
+			setNavWordPosition(index, 2);
 			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").removeClass("pulse");
 			$("#nav-words-container p").eq(index).addClass("activ");
+			$("#nav-words-container p").eq(index).addClass("pulse");
 			setTimeout(function(){
 				setWordToMethod(5);
 			}, 100);
