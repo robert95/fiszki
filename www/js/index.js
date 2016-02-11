@@ -242,8 +242,9 @@ function getNavWordList(){
 	});
 	setTimeout(function(){
 		$("#nav-words-container p").eq(0).addClass("activ");
+		$("#nav-words-container p").eq(0).addClass("pulse");
 		setWordToMethod(2)
-		setNavWordPosition(0,1);
+		setNavWordPosition(0);
 		tellMe();
 	}, 50);
 }
@@ -498,11 +499,17 @@ function noLearnt(){
 	}else{
 		setWordToMethod(4);
 		noLerntStep = 0;
-		canNextStep = 1;
+		canNextStep = 2;
 	}
 }
 
 function nextStep(){
+	if(canNextStep == 2){
+		var index = $("#nav-words-container p.activ").index() - 1;
+		$("#nav-words-container p").eq(index).addClass("activ");
+		$("#nav-words-container p").removeClass("activ");
+		canNextStep = 1;
+	}
 	if(canNextStep == 0){
 		noLearnt();
 		return;
@@ -525,8 +532,10 @@ function nextStep(){
 			}else{
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
-				setNavWordPosition(index,1);
+				setNavWordPosition(index);
 				$("#nav-words-container p").removeClass("activ");
+				$("#nav-words-container p").removeClass("pulse");	
+				$("#nav-words-container p").eq(index).addClass("pulse");
 				$("#nav-words-container p").eq(index).addClass("activ");
 				setTimeout(function(){
 					setWordToMethod(2);
@@ -537,7 +546,7 @@ function nextStep(){
 	}else if(round == 2){
 		var id = ($("#nav-words-container p").eq(0)).data('word-id');
 		setActWord(id);
-		setNavWordPosition(1, 2);
+		setNavWordPosition(1);
 		$("#nav-words-container p").removeClass("activ");
 		$("#nav-words-container p").removeClass("pulse");
 		$("#nav-words-container p").eq(0).addClass("activ");
@@ -558,7 +567,7 @@ function nextStep(){
 			}else{
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
-				setNavWordPosition(index, 2);
+				setNavWordPosition(index);
 				$("#nav-words-container p").removeClass("activ");
 				$("#nav-words-container p").removeClass("pulse");
 				$("#nav-words-container p").eq(index).addClass("activ");
@@ -592,7 +601,7 @@ function nextStep(){
 			var index = $("#nav-words-container p.activ").index() + 1;
 			var id = ($("#nav-words-container p").eq(index)).data('word-id');
 			setActWord(id);
-			setNavWordPosition(index, 2);
+			setNavWordPosition(index);
 			$("#nav-words-container p").removeClass("activ");
 			$("#nav-words-container p").removeClass("pulse");
 			$("#nav-words-container p").eq(index).addClass("activ");
