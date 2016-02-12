@@ -502,12 +502,10 @@ function noLearnt(){
 		canNextStep = 2;
 	}
 }
-
+var noPlus = 0;
 function nextStep(){
 	if(canNextStep == 2){
-		var index = $("#nav-words-container p.activ").index() - 1;
-		$("#nav-words-container p").eq(index).addClass("activ");
-		$("#nav-words-container p").removeClass("activ");
+		noPlus = 1;
 		canNextStep = 1;
 	}
 	if(canNextStep == 0){
@@ -560,7 +558,11 @@ function nextStep(){
 		if(nbMethod == 4 && nbStep == 0){
 			saveNotice($("#confirm-text-4").val());
 			var length = $("#nav-words-container p").length;
-			var index = $("#nav-words-container p.activ").index() + 1;
+			if(noPlus == 0 ) var index = $("#nav-words-container p.activ").index() + 1;
+			else{
+				var index = $("#nav-words-container p.activ").index();
+				noPlus = 0;
+			}
 			if(length <= index){
 				round = 4;
 				nextStep();
