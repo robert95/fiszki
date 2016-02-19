@@ -441,8 +441,9 @@ function setWordToMethod(idM){
 	$(".learnMethod").hide();
 	switch(idM) {
 		case 1:
-			$("#confirm-correct-1").text(act_word);
+			$("#confirm-correct-1").text("");
 			$("#confirm-trans-1").text(act_trans);
+			$("#confirm-text-1").val(act_text);	
 			break;
 		case 2:
 			$("#confirm-correct-2").text(act_word);
@@ -503,15 +504,21 @@ function noLearnt(){
 	}
 }
 var noPlus = 0;
+var prepareToThird = 1;
+
 function nextStep(){
-	if(canNextStep == 2){
+	if(round == 3){
+		if(canNextStep == 2){
 		noPlus = 1;
 		canNextStep = 1;
-	}
-	if(canNextStep == 0){
-		noLearnt();
-		return;
-	}
+		nbMethod = 4;
+		nbStep = 0;
+		}
+		if(canNextStep == 0){
+			noLearnt();
+			return;
+		}
+	}	
 	setTimeout(function(){
 		clearDraggableField();
 	}, 700);
@@ -558,12 +565,16 @@ function nextStep(){
 		if(nbMethod == 4 && nbStep == 0){
 			saveNotice($("#confirm-text-4").val());
 			var length = $("#nav-words-container p").length;
-			if(noPlus == 0 ) var index = $("#nav-words-container p.activ").index() + 1;
+			if(true) var index = $("#nav-words-container p.activ").index() + 1;
 			else{
 				var index = $("#nav-words-container p.activ").index();
 				noPlus = 0;
 			}
 			if(length <= index){
+				$("#nav-words-container p").removeClass("activ");
+				$("#nav-words-container p").removeClass("pulse");
+				$("#nav-words-container p").eq(0).addClass("activ");
+				$("#nav-words-container p").eq(0).addClass("pulse");
 				round = 4;
 				nextStep();
 			}else{
@@ -617,11 +628,165 @@ function nextStep(){
 			nbStep = 0;
 			nextStep();
 		}		
+	}else if(round == 4){
+		if(canNextStep == 0){
+			canNextStep = 1; 
+			var index = $("#nav-words-container p.activ").index();
+			var id = ($("#nav-words-container p").eq(index)).data('word-id');
+			fst_id = id;
+		}
+		updateThirdNav();
+		if(nbStep == 0){
+			if(prepareToThird != 1){
+				var length = $("#nav-words-container p").length;
+				var index = $("#nav-words-container p.activ").index() + 1;
+				if(length <= index){
+					round = 5;
+					nextStep();	
+				}else{			
+					if( snd_id < 1 && thd_id < 1){
+						$("#nav-words-container-thd p").removeClass('pulse');
+						$("#nav-words-container-thd p").removeClass("activ");
+						var id = ($("#nav-words-container p").eq(index)).data('word-id');
+						setActWord(id);
+						setNavWordPosition(index);
+						$("#nav-words-container p").removeClass("activ");
+						$("#nav-words-container p").removeClass("pulse");
+						$("#nav-words-container p").eq(index).addClass("activ");
+						$("#nav-words-container p").eq(index).addClass("pulse");
+					}else{
+						$("#nav-words-container p").removeClass("pulse");
+						if(thd_id > 0){
+							repeatThrid(thd_id);
+							thd_id = 0;
+							return;
+						}
+						if(snd_id > 0){
+							repeatThrid(snd_id);
+							temp_id = snd_id;
+							snd_id = 0;
+							return;
+						}		
+					}
+				}
+			}else{
+				prepareToThird = 0;
+			}
+			
+			var index = $("#nav-words-container p.activ").index();
+			var id = ($("#nav-words-container p").eq(index)).data('word-id');
+			setActWord(id);
+			setNavWordPosition(index);
+			setTimeout(function(){
+				setWordToMethod(1);
+			}, 100);
+			nbMethod = 5;
+			nbStep = 1;
+		}else if(nbStep == 1){
+			$("#nav-words-container p.activ").eq(index).addClass("pulse");
+			saveNotice($("#confirm-text-1").val());
+			var id = ($("#nav-words-container p").eq(index)).data('word-id');
+			setTimeout(function(){
+				setWordToMethod(6);
+			}, 100);
+			nbStep = 0;
+			thd_id = temp_id;
+			snd_id = fst_id;
+			fst_id = 0;
+			temp_id = 0;
+		}else{
+			round = 5;
+			nextStep();
+		}		
 	}else{
-		alert("KONIEC!!!");
+		updateThirdNav();
+		if(thd_id > 0){
+			repeatThrid(thd_id);
+			thd_id = 0;
+			return;
+		}
+		if(snd_id > 0){
+			repeatThrid(snd_id);
+			temp_id = snd_id;
+			snd_id = 0;
+			return;
+		}
+		if(fst_id > 0){
+			repeatThrid(fst_id);
+			fin_id = fst_id;
+			fst_id = 0;
+			return;
+		}
+		if(temp_id > 0){
+			repeatThrid(temp_id);
+			temp_id = 0;
+			return;
+		}
+		if(fin_id > 0){
+			repeatThrid(fin_id);
+			fin_id = 0;
+			return;
+		}
+		alert("KONIEC!");
 	}
 }
 
+var fst_id = 0;
+var snd_id = 0;
+var thd_id = 0;
+var temp_id = 0;
+var fin_id = 0;
+
+function repeatThrid(id){
+	setTimeout(function(){
+		clearDraggableField();
+		setActWord(id);
+		setTimeout(function(){
+			setWordToMethod(5);
+			pulseThdNav(id);
+		}, 200);
+	}, 200);
+}
+
+function updateThirdNav(){
+	var i = 1;
+	var ids = [];
+	ids.push(fst_id);
+	ids.push(snd_id);
+	ids.push(thd_id);
+	ids.push(temp_id);
+	ids.push(fin_id);
+	$("#nav-words-container-thd p").hide();
+	$("#nav-words-container-thd p").attr('data-word-id', 0);
+	$("#nav-words-container p").each(function(){
+		var id = $(this).attr('data-word-id');
+		var src = $(this).children('img').attr('src');
+		for(k = 0; k < ids.length; k++){
+			if(id == ids[k]){
+				$("#nav-th-"+i).children('img').attr('src', src);
+				$("#nav-th-"+i).attr('data-word-id', id);
+				$("#nav-th-"+i).show();
+				i++;
+				ids.splice(k, 1);
+				break;
+			}
+		}
+	});
+}
+
+function pulseThdNav(idW){
+	setTimeout(function(){
+		$("#nav-words-container-thd p").removeClass('pulse');
+		$("#nav-words-container-thd p").removeClass("activ");
+		$("#nav-words-container-thd p").each(function(){
+			var id = $(this).attr('data-word-id');
+			if(idW == id){
+				$(this).addClass('pulse');
+				$(this).addClass('activ');
+			}
+		});
+	}, 200);
+}
 /*END ALGORYTHM MANAGAMENT*/
 
 function showNote(x){

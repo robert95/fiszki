@@ -25,7 +25,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=0.7, maximum-scale=0.7, minimum-scale=0.7, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
@@ -73,10 +73,24 @@
 		</section>
 		<section id="learn-container">
 			<section id="words-nav">
+				<div id="nav-words-container-thd">
+					<p id="nav-th-1">
+						<img src="img/2.png" class="no-activ-img">
+						<img src="img/2.png" class="activ-img">
+					</p>
+					<p id="nav-th-2">
+						<img src="img/1.png" class="no-activ-img">
+						<img src="img/1.png" class="activ-img">
+					</p>
+					<p id="nav-th-3">
+						<img src="img/2.png" class="no-activ-img">
+						<img src="img/2.png" class="activ-img">
+					</p>
+				</div>
 				<div class="nav-circle-word">
 					<table>
 						<tr>
-							<!--<td><img src="img/read.png" class="read"></td>-->
+							<!--<td></td>-->
 							<td><div id="nav-words-container"></div></td>
 							<!--<td><img src="img/ok.png" class="good-bad" ontouchstart="nextStep();"/></td>-->
 						</tr>
@@ -100,14 +114,15 @@
 			</section>-->
 			<div id="learn-panel">
 				<section id="word-lern-1" class="learnMethod confirm-swipe">
-					<p>UMIEM</p>
+					<h3>POWTÓRZ GŁOŚNO</h3>
 					<table>
 						<tr><td><img src="img/up.png"></td></tr>
+						<tr id="l-e-1" class="hidden"><td><p class="text"></p></td></tr>
+						<tr id="l-t-1"><td><p class="text" id="confirm-trans-1"></p></td></tr>
+						<tr id="l-n-1" class="hidden"><td><input type="text" class="text" id="confirm-text-1" placeholder="Twoja osobista notatka"/></td></tr>
+						<tr><td class="btn-container"><button ontouchstart="showNote(1);" class="left-btn">My note</button><button ontouchstart="showTrans(1);" class="right-btn">Translate</button></tr></td>
 						<tr><td><p class="text" id="confirm-correct-1"></p></td></tr>
-						<tr><td><p class="text" id="confirm-trans-1"></p></td></tr>
-						<tr><td><img src="img/down.png"></td></tr>
 					</table>
-					<p>NIE UMIEM</p>
 				</section>
 				<section id="word-lern-2" class="learnMethod confirm-swipe">
 					<h3>POWTÓRZ GŁOŚNO</h3>
@@ -221,13 +236,13 @@
 						$(".back").hide();
 					}else if($(this).index() == 1){
 						$("#choose-lang").hide();
-						$("#choose-cat").fadeIn();
+						$("#choose-cat").show();
 						$("#list-of-word").hide();
 						$(".back").show();
 					}else{
 						$("#choose-lang").hide();
 						$("#choose-cat").hide();
-						$("#list-of-word").fadeIn();
+						$("#list-of-word").show();
 						$(".back").show();
 					}
 				}				
@@ -258,7 +273,7 @@
 				$(".nav-circle p").removeClass("activ");
 				$(".nav-circle p").eq(1).addClass("activ");
 				getCatList();
-				$("#choose-cat").slideDown();
+				$("#choose-cat").show();
 			}		
 			
 			function setCat(obj){
@@ -271,7 +286,7 @@
 				$("#catName").html(name);
 				$("#choose-cat").hide();
 				getWordList();
-				$("#list-of-word").fadeIn();
+				$("#list-of-word").show();
 				$(".back").show();
 				$(".nav-circle p").removeClass("activ");
 				$(".nav-circle p").eq(2).addClass("activ");
@@ -289,7 +304,7 @@
 				$("#info-word").html("");
 				$("#my-text-1").focus();*/
 				
-				$("#learn-container").fadeIn();
+				$("#learn-container").show();
 				getNavWordList();
 				
 			});
