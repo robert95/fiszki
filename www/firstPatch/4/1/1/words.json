@@ -58,53 +58,5 @@
 		"name": "en familie",
 		"notices": [
 		]
-	},
-	{
-		"id": 11,
-		"name": "familien min",
-		"notices": [
-		]
-	},
-	{
-		"id": 12,
-		"name": "Familien min er her.",
-		"notices": [
-		]
-	},
-	{
-		"id": 13,
-		"name": "Jeg er her.",
-		"notices": [
-		]
-	},
-	{
-		"id": 14,
-		"name": "Du er her.",
-		"notices": [
-		]
-	},
-	{
-		"id": 15,
-		"name": "Han er her og hun er her.",
-		"notices": [
-		]
-	},
-	{
-		"id": 16,
-		"name": "Vi er her.",
-		"notices": [
-		]
-	},
-	{
-		"id": 17,
-		"name": "Dere er her.",
-		"notices": [
-		]
-	},
-	{
-		"id": 18,
-		"name": "De er her alle sammen.",
-		"notices": [
-		]
 	}
 ]

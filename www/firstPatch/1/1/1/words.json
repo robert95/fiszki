@@ -28,5 +28,35 @@
 		"name": "on i ona",
 		"notices": [
 		]
+	},
+	{
+		"id": 6,
+		"name": "oni oboje",
+		"notices": [
+		]
+	},
+	{
+		"id": 7,
+		"name": "mężczyzna",
+		"notices": [
+		]
+	},
+	{
+		"id": 8,
+		"name": "kobieta",
+		"notices": [
+		]
+	},
+	{
+		"id": 9,
+		"name": "dziecko",
+		"notices": [
+		]
+	},
+	{
+		"id": 10,
+		"name": "rodzina",
+		"notices": [
+		]
 	}
 ]

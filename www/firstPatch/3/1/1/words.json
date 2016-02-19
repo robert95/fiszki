@@ -58,53 +58,5 @@
 		"name": "eine Familie",
 		"notices": [
 		]
-	},
-	{
-		"id": 11,
-		"name": "meine Familie",
-		"notices": [
-		]
-	},
-	{
-		"id": 12,
-		"name": "Meine Familie ist hier.",
-		"notices": [
-		]
-	},
-	{
-		"id": 13,
-		"name": "Ich bin hier.",
-		"notices": [
-		]
-	},
-	{
-		"id": 14,
-		"name": "Du bist hier.",
-		"notices": [
-		]
-	},
-	{
-		"id": 15,
-		"name": "Er ist hier und sie ist hier.",
-		"notices": [
-		]
-	},
-	{
-		"id": 16,
-		"name": "Wir sind hier.",
-		"notices": [
-		]
-	},
-	{
-		"id": 17,
-		"name": "Ihr seid hier.",
-		"notices": [
-		]
-	},
-	{
-		"id": 18,
-		"name": "Sie sind alle hier.",
-		"notices": [
-		]
 	}
 ]
