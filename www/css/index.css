@@ -340,25 +340,6 @@ h3{
 .count-word img{
 	height: 70px;
 }
-/*#word-lern-1 table{
-	width: 95%;
-    margin: auto;
-}
-#word-lern-1 table td:first-of-type{
-	width: 20%;
-	text-align: center;
-}
-#word-lern-1 table td:first-of-type img{
-    height: 50px;
-}
-#word-lern-1 table .text{
-	width: 100%;
-	font-size: 45px;
-    text-align: center;
-}
-#word-lern-1 .text{
-	margin: 5px 0;
-}*/
 #word-lern-2, #word-lern-3, #word-lern-4, #word-lern-5{
 	text-align: center;
 }
@@ -526,4 +507,10 @@ h3{
 #ok-no-panel{
 	height: 20%;
 	display: none;
+}
+#nrDay{
+	font-size: 80px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
 }

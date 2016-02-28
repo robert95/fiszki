@@ -72,7 +72,7 @@ function gotFile(file) {
 function readAsText(file) {
   var reader = new FileReader();
   reader.onloadend = function(evt) {
-		res = evt.target.result; 
+		res = evt.target.result;
   };
   reader.readAsText(file);    
 }
@@ -82,30 +82,122 @@ function onFSError(err) {
 	copyFirstPath();
 }
 /* END READ FILE */
+/* SAVE FILE */
+function saveFile(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN2, failN);
+}
 
+function gotFSN2(fileSystem) {
+	fileSystem.root.getFile(srcSave, {create: false}, gotFileEntryN2, failN);
+}
+
+function gotFileEntryN2(fileEntry) {
+	fileEntry.createWriter(gotFileWriterN2, failN);
+}
+
+function gotFileWriterN2(writer) {
+	writer.onwrite = function(evt) {
+		console.log("write success");
+	};
+	
+	writer.write(JSON.stringify(datesJSON));
+	writer.abort();
+}
+
+function failN(error) {
+	alert("error : "+error.code);
+}
+
+/* END SAVE FILE */
 /* GET LANG LIST */
+var firstCycle = false;
+var secondCycle = false;
+var thirdCycle = false;
+var srcSave = false;
+var datesJSON = false;
 var res = false;
 var srcFile = false;
-function getLangList(){
-	srcFile = path() + "lang.json";
+var dayJSON = false;
+var toLearnJSON = false;
+var isFirstCycle = true;
+var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+function getDay(){
+	srcFile = path() + "day.json";
 	readWriteFile();
-	showLangList();
+	getDayHelper();
 }
-function showLangList(){
+function getDayHelper(){
+	if(res == false){
+        setTimeout(getDayHelper, 100);
+		return;
+	}else{
+		dayJSON = JSON.parse(res);
+		res = false;
+		$("#nrDay").text(dayJSON.day);
+	}
+}
+function getToLearn(){
+	srcFile = path() + "save.json";
+	readWriteFile();
+	getToLearnHelper();
+}
+function getToLearnHelper(){
 	if(!res){
-        setTimeout(showLangList, 50);
-    }else{	
-		var langs = JSON.parse(res);
-		for(var x in langs){
-			var lang = langs[x];
-			var tmp = '<div><h1 class="text expand" ontouchstart="expand(this);">'+ lang.label + '</h1><div class="list-of-lang">';
-			for(var y in langs){
-				var langTmp = langs[y];
-				if(y != x) tmp += '<p class="text setLang" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" data-learnlang="' + langTmp.id + '">' + langTmp.name + '</p>';
-			}
-			tmp += '</div></div>';
-			$("#langs").append(tmp);
+        setTimeout(getToLearnHelper, 100);
+	}else{
+		toLearnJSON = JSON.parse(res);
+		for(var x in toLearnJSON){
+			var pack = toLearnJSON[x];
+			var day = $("#nrDay").text();
+			var dayNr = day - pack.start;
+			switch(dayNr) {
+			case 1:
+				toLearn[0] = pack.catid + "/" + pack.subid;
+				toLearn[1] = pack.catid + "/" + pack.subid;
+				break;
+			case 4:
+				toLearn[2] = pack.catid + "/" + pack.subid;
+				toLearn[3] = pack.catid + "/" + pack.subid;
+				break;
+			case 10:
+				toLearn[4] = pack.catid + "/" + pack.subid;
+				toLearn[5] = pack.catid + "/" + pack.subid;
+				break;
+			case 27:
+				toLearn[6] = pack.catid + "/" + pack.subid;
+				break;
+			case 60:
+				toLearn[7] = pack.catid + "/" + pack.subid;
+				break;
+			default:
+				break;
+			} 
 		}
+	}
+}
+function saveDay(){
+	dayJSON.day = dayJSON.day + 1;  //zmienić na 1
+	datesJSON = dayJSON;
+	srcSave = path() + "day.json";
+	saveFile();
+}
+function getLangList(){
+	getDay();
+	$.get("date/lang.json", function(result) {
+		showLangList(result);
+    });
+}
+function showLangList(l){
+	var langs = JSON.parse(l);
+	for(var x in langs){
+		var lang = langs[x];
+		var tmp = '<div><h1 class="text expand" ontouchstart="expand(this);">'+ lang.label + '</h1><div class="list-of-lang">';
+		for(var y in langs){
+			var langTmp = langs[y];
+			if(y != x) tmp += '<p class="text setLang" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" data-learnlang="' + langTmp.id + '">' + langTmp.name + '</p>';
+		}
+		tmp += '</div></div>';
+		$("#langs").append(tmp);
 	}
 }
 /* END GET LAND LIST */
@@ -113,30 +205,26 @@ function showLangList(){
 /* GET CAT LIST */
 var subcats = false;
 function getCatList(){
-	res = false;
-	srcFile = false;
+	getToLearn();
+	saveDay();
 	var idCat = $("#myLang").val();
-	srcFile = path() + idCat + "/cat.json";
-	readWriteFile();
-	showCatList();
+	$.get("date/"+ idCat + "/cat.json", function(result) {
+		showCatList(result);
+    });
 }
-function showCatList(){
-	if(!res){
-        setTimeout(showCatList, 50);
-    }else{	
-		var cats = JSON.parse(res);
-		$("#cats").html("");
-		for(var x in cats){
-			subcats = false;
-			var cat = cats[x];
-			var tmp = '<div><h1 class="text expand" ontouchstart="expand(this);">'+ cat.name + '</h1>';
-			getSubCatList(cat.id);
-			setTimeout(
-				function(){
-					tmp += subcats + '</div>';
-					$("#cats").append(tmp);
-				}, 50);
-		}
+function showCatList(c){
+	var cats = JSON.parse(c);
+	$("#cats").html("");
+	for(var x in cats){
+		subcats = false;
+		var cat = cats[x];
+		var tmp = '<div><h1 class="text expand" ontouchstart="expand(this);">'+ cat.name + '</h1>';
+		getSubCatList(cat.id);
+		setTimeout(
+			function(){
+				tmp += subcats + '</div>';
+				$("#cats").append(tmp);
+			}, 50);
 	}
 }
 /* END GET CAT LIST */
@@ -144,71 +232,59 @@ function showCatList(){
 /* GET SUBCAT LIST */
 var parent = false;
 function getSubCatList(idCat){
-	res = false;
-	srcFile = false;
 	var idLang = $("#myLang").val();
-	srcFile = path() + idLang + "/" + idCat + "/subcat.json";
-	readWriteFile();
 	parent = idCat;
-	showSubCatList();
+	$.get("date/"+ idLang + "/" + idCat + "/subcat.json", function(result) {
+		showSubCatList(result);
+    });
 }
-function showSubCatList(){
-	if(!res){
-        setTimeout(showSubCatList, 50);
-    }else{
-		var cats = JSON.parse(res);
-		var tmp = '<div class="list-of-subcat">';
-		for(var x in cats){
-			var cat = cats[x];
-			tmp += '<p class="text setCat" ontouchstart="setCat(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '">' + cat.name + '</p>';
-		}
-		tmp += '</div>';
-		subcats = tmp;
+function showSubCatList(s){
+	var cats = JSON.parse(s);
+	var tmp = '<div class="list-of-subcat">';
+	for(var x in cats){
+		var cat = cats[x];
+		tmp += '<p class="text setCat" ontouchstart="setCat(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '">' + cat.name + '</p>';
 	}
+	tmp += '</div>';
+	subcats = tmp;
 }
 /* END GET SUBCAT LIST */
-
+function setNewCat(c, s){
+	toLearn[8] = c + "/" + s;
+	toLearn[9] = c + "/" + s;
+	srt = $("#nrDay").text();
+	toLearnJSON.push({"subid": s,"catid": c,"start": srt});
+	datesJSON = toLearnJSON;
+	srcSave = path() + "save.json";
+	saveFile();   //ODKOMENTOWAĆ POTEM
+}
+function showtoLearn(){
+	for(var i = 0; i < 10; i++) ;
+		//alert(i + ")" + toLearn[i]);
+}
 /* GET WORD LIST */
 var idWord = false;
 var nameWord = false;
 var srcFileWordList = false;
 function getWordList(){
-	res = false;
-	//resL = false;
-	srcFile = false;
 	var idLang = $("#myLang").val();
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
 	var idLernLang = $("#learnLang").val();
-	srcFile = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
-	srcFileWordList = srcFile;
-	//srcFileL = path() + idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
-	readWriteFile();
-	wrapShowWordList();
-}
-var resL = false;
-function wrapShowWordList(){
-	if(!res){
-		setTimeout(wrapShowWordList, 50);
-	}else{
-		resL = res;
-		res = false;
-		var idLang = $("#myLang").val();
-		var idParentCat = $("#myParentCat").val();
-		var idSubCat = $("#myCat").val();
-		var idLernLang = $("#learnLang").val();
-		srcFile = path() + idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json";
-		readWriteFile();
-		showWordList();
-	}
+	var words = false;
+	var trans = false;
+	$.get("date/"+ idLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function(result) {
+		words = result;
+		$.get("date/"+ idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function(trans) {
+			showWordList(words, trans);
+		});
+    });
 }
 var words, trans;
-function showWordList(){
-	if(!res){
-        setTimeout(showWordList, 50);
-    }else{
-		words = JSON.parse(resL);
-		trans = JSON.parse(res);
+function showWordList(w, t){
+	words = JSON.parse(w);
+	trans = JSON.parse(t);
+	if(isFirstCycle){
 		$("#words").html("");
 		var tmp = "";
 		for(var x in words){
@@ -218,19 +294,45 @@ function showWordList(){
 			tmp += '<div class="word" data-id="' + word.id + '" data-check="1" onclick="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
 		}
 		$("#words").html(tmp);
-	}
+		isFirstCycle = false;
+	}else{
+		getNavWordList();
+	}	
 }
 /* END GET WORD LIST */
 
 /* GET NAV WORD LIST */
 function getNavWordList(){
-	//$("#my-trans").focus();
+	$("#nav-words-container").text("");
 	var i = 0;
 	var firstId = -1;
-	$(".word").each(function(index){
-		if($(this).attr('data-check') != 0){
+	if(isFirstCycle){
+		$(".word").each(function(index){
+			if($(this).attr('data-check') != 0){
+				i++;
+				var id = $(this).data('id');
+				if(i == 1){
+					firstId = id;
+					setActWord(id);
+				}
+				//$("#nav-words-container").append('<p ontouchstart="setWordToLearn(' + id + ', this)" data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+				//$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+				$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/' + i + '.png" class="no-activ-img"><img src="img/' + i + '.png" class="activ-img"></p>');
+			}
+		});
+		isFirstCycle = false;
+		setTimeout(function(){
+			setNavWordPosition(0);
+			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").removeClass("pulse");
+			$("#nav-words-container p").eq(0).addClass("activ");
+			$("#nav-words-container p").eq(0).addClass("pulse");
+		}, 50);
+	}else{
+		for(var x in words){
+			var word = words[x];
+			var id = word.id;
 			i++;
-			var id = $(this).data('id');
 			if(i == 1){
 				firstId = id;
 				setActWord(id);
@@ -239,14 +341,15 @@ function getNavWordList(){
 			//$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
 			$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/' + i + '.png" class="no-activ-img"><img src="img/' + i + '.png" class="activ-img"></p>');
 		}
-	});
-	setTimeout(function(){
-		$("#nav-words-container p").eq(0).addClass("activ");
-		$("#nav-words-container p").eq(0).addClass("pulse");
-		setWordToMethod(2)
-		setNavWordPosition(0);
-		tellMe();
-	}, 50);
+		setTimeout(function(){
+		//	alert($("#nav-words-container").text(""));
+			setNavWordPosition(0);
+			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").removeClass("pulse");
+			$("#nav-words-container p").eq(0).addClass("activ");
+			$("#nav-words-container p").eq(0).addClass("pulse");
+		}, 50);
+	}	
 }
 
 function setNavWordPosition(i, k){
@@ -358,7 +461,7 @@ function clearDraggableField(){
 /*END SET WORD TO LEARN*/
 /*PLAY SOUND*/
 function tellMe(){
-	$("#my-trans").focus();
+	/*$("#my-trans").focus();
 	var id = $("#idWord").val();
 	var idLang = $("#learnLang").val();
 	var idParentCat = $("#myParentCat").val();
@@ -372,7 +475,7 @@ function tellMe(){
     );
            // Play audio
     my_media.play();
-	$("#my-trans").focus();
+	$("#my-trans").focus();*/
 }
 /*END PLAY SOUND*/
 
@@ -435,7 +538,7 @@ function failN(error) {
 /*START ALGORYTHM MANAGAMENT*/
 var act_word = "";
 var act_trans = "";
-var act_text = "a";
+var act_text = "";
 
 function setWordToMethod(idM){
 	$(".learnMethod").hide();
@@ -505,7 +608,7 @@ function noLearnt(){
 }
 var noPlus = 0;
 var prepareToThird = 1;
-
+var isPreparetoFirst = false;
 function nextStep(){
 	if(round == 3){
 		if(canNextStep == 2){
@@ -522,213 +625,244 @@ function nextStep(){
 	setTimeout(function(){
 		clearDraggableField();
 	}, 700);
-	if(round == 1){
-		if(nbMethod == 2){
-			nbMethod = 3;
-			setWordToMethod(3);
-		}else if(nbMethod == 3){
-			saveNotice($("#confirm-text-2").val());
-			nbMethod = 2;
-			var length = $("#nav-words-container p").length;
-			var index = $("#nav-words-container p.activ").index() + 1;
-			if(length <= index){
-				round = 2;
-				nextStep();
-			}else{
-				var id = ($("#nav-words-container p").eq(index)).data('word-id');
-				setActWord(id);
-				setNavWordPosition(index);
-				$("#nav-words-container p").removeClass("activ");
-				$("#nav-words-container p").removeClass("pulse");	
-				$("#nav-words-container p").eq(index).addClass("pulse");
-				$("#nav-words-container p").eq(index).addClass("activ");
-				setTimeout(function(){
-					setWordToMethod(2);
-					tellMe();
-				}, 100);
-			}
-		}
-	}else if(round == 2){
-		var id = ($("#nav-words-container p").eq(0)).data('word-id');
-		setActWord(id);
-		setNavWordPosition(1);
-		$("#nav-words-container p").removeClass("activ");
-		$("#nav-words-container p").removeClass("pulse");
-		$("#nav-words-container p").eq(0).addClass("activ");
-		$("#nav-words-container p").eq(0).addClass("pulse");
-		setTimeout(function(){
-			setWordToMethod(4);
-		}, 100);
-		round = 3;
-		nbMethod = 4;
-	}else if(round == 3){
-		if(nbMethod == 4 && nbStep == 0){
-			saveNotice($("#confirm-text-4").val());
-			var length = $("#nav-words-container p").length;
-			if(true) var index = $("#nav-words-container p.activ").index() + 1;
-			else{
-				var index = $("#nav-words-container p.activ").index();
-				noPlus = 0;
-			}
-			if(length <= index){
-				$("#nav-words-container p").removeClass("activ");
-				$("#nav-words-container p").removeClass("pulse");
-				$("#nav-words-container p").eq(0).addClass("activ");
-				$("#nav-words-container p").eq(0).addClass("pulse");
-				round = 4;
-				nextStep();
-			}else{
-				var id = ($("#nav-words-container p").eq(index)).data('word-id');
-				setActWord(id);
-				setNavWordPosition(index);
-				$("#nav-words-container p").removeClass("activ");
-				$("#nav-words-container p").removeClass("pulse");
-				$("#nav-words-container p").eq(index).addClass("activ");
-				$("#nav-words-container p").eq(index).addClass("pulse");
-				setTimeout(function(){
-					setWordToMethod(4);
-				}, 100);
-				nbMethod = 4;
-				nbStep = 1;
-			}
-		}else if(nbMethod == 4 && nbStep != 0){
-			saveNotice($("#confirm-text-4").val());
-			var index = $("#nav-words-container p.activ").index() - 1;
-			var id = ($("#nav-words-container p").eq(index)).data('word-id');
-			setActWord(id);
-			//setNavWordPosition(index);
-			$("#nav-words-container p").removeClass("activ");
-			$("#nav-words-container p").removeClass("pulse");
-			$("#nav-words-container p").eq(index).addClass("activ");
-			$("#nav-words-container p").eq(index).addClass("pulse");
-			setTimeout(function(){
-				setWordToMethod(5);
-			}, 100);
-			nbMethod = 5;
-			nbStep = 1;
-		}else if(nbMethod == 5 && nbStep == 1){
-			nbMethod = 6;
-			setWordToMethod(6);
-			nbStep = 2;
-		}else if(nbMethod == 6){
-			var index = $("#nav-words-container p.activ").index() + 1;
-			var id = ($("#nav-words-container p").eq(index)).data('word-id');
-			setActWord(id);
-			setNavWordPosition(index);
-			$("#nav-words-container p").removeClass("activ");
-			$("#nav-words-container p").removeClass("pulse");
-			$("#nav-words-container p").eq(index).addClass("activ");
-			$("#nav-words-container p").eq(index).addClass("pulse");
-			setTimeout(function(){
-				setWordToMethod(5);
-			}, 100);
-			nbMethod = 5;
-		}else if(nbMethod == 5 && nbStep == 2){
-			nbMethod = 4;
-			nbStep = 0;
-			nextStep();
-		}		
-	}else if(round == 4){
-		if(canNextStep == 0){
-			canNextStep = 1; 
-			var index = $("#nav-words-container p.activ").index();
-			var id = ($("#nav-words-container p").eq(index)).data('word-id');
-			fst_id = id;
-		}
-		updateThirdNav();
-		if(nbStep == 0){
-			if(prepareToThird != 1){
+	if(firstCycle){
+		if(!isPreparetoFirst){
+			setActWord(($("#nav-words-container p").eq(0)).data('word-id'));
+			$("#nav-words-container p").eq(0).addClass("activ");
+			$("#nav-words-container p").eq(0).addClass("pulse");
+			setWordToMethod(2)
+			setNavWordPosition(0);
+			isPreparetoFirst = true;
+		}else{
+			if(nbMethod == 2){
+				nbMethod = 3;
+				setWordToMethod(3);
+			}else if(nbMethod == 3){
+				saveNotice($("#confirm-text-2").val());
+				nbMethod = 2;
 				var length = $("#nav-words-container p").length;
 				var index = $("#nav-words-container p.activ").index() + 1;
 				if(length <= index){
-					round = 5;
-					nextStep();	
-				}else{			
-					if( snd_id < 1 && thd_id < 1){
-						$("#nav-words-container-thd p").removeClass('pulse');
-						$("#nav-words-container-thd p").removeClass("activ");
-						var id = ($("#nav-words-container p").eq(index)).data('word-id');
-						setActWord(id);
-						setNavWordPosition(index);
-						$("#nav-words-container p").removeClass("activ");
-						$("#nav-words-container p").removeClass("pulse");
-						$("#nav-words-container p").eq(index).addClass("activ");
-						$("#nav-words-container p").eq(index).addClass("pulse");
-					}else{
-						$("#nav-words-container p").removeClass("pulse");
-						if(thd_id > 0){
-							repeatThrid(thd_id);
-							thd_id = 0;
-							return;
-						}
-						if(snd_id > 0){
-							repeatThrid(snd_id);
-							temp_id = snd_id;
-							snd_id = 0;
-							return;
-						}		
-					}
+					round = 2;
+					firstCycle = false;
+					nextStep();
+					return;
+				}else{
+					var id = ($("#nav-words-container p").eq(index)).data('word-id');
+					setActWord(id);
+					setNavWordPosition(index);
+					$("#nav-words-container p").removeClass("activ");
+					$("#nav-words-container p").removeClass("pulse");	
+					$("#nav-words-container p").eq(index).addClass("pulse");
+					$("#nav-words-container p").eq(index).addClass("activ");
+					setTimeout(function(){
+						setWordToMethod(2);
+						tellMe();
+					}, 100);
 				}
-			}else{
-				prepareToThird = 0;
 			}
-			
-			var index = $("#nav-words-container p.activ").index();
-			var id = ($("#nav-words-container p").eq(index)).data('word-id');
-			setActWord(id);
-			setNavWordPosition(index);
-			setTimeout(function(){
-				setWordToMethod(1);
-			}, 100);
-			nbMethod = 5;
-			nbStep = 1;
-		}else if(nbStep == 1){
-			$("#nav-words-container p.activ").eq(index).addClass("pulse");
-			saveNotice($("#confirm-text-1").val());
-			var id = ($("#nav-words-container p").eq(index)).data('word-id');
-			setTimeout(function(){
-				setWordToMethod(6);
-			}, 100);
-			nbStep = 0;
-			thd_id = temp_id;
-			snd_id = fst_id;
-			fst_id = 0;
-			temp_id = 0;
-		}else{
-			round = 5;
-			nextStep();
 		}		
+	}else if(secondCycle){
+		if(round == 2){
+			var id = ($("#nav-words-container p").eq(0)).data('word-id');
+			setActWord(id);
+			setNavWordPosition(1);
+			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").removeClass("pulse");
+			$("#nav-words-container p").eq(0).addClass("activ");
+			$("#nav-words-container p").eq(0).addClass("pulse");
+			setTimeout(function(){
+				setWordToMethod(4);
+			}, 100);
+			round = 3;
+			nbMethod = 4;
+		}else if(round == 3){
+			if(nbMethod == 4 && nbStep == 0){
+				saveNotice($("#confirm-text-4").val());
+				var length = $("#nav-words-container p").length;
+				if(true) var index = $("#nav-words-container p.activ").index() + 1;
+				else{
+					var index = $("#nav-words-container p.activ").index();
+					noPlus = 0;
+				}
+				if(length <= index){
+					$("#nav-words-container p").removeClass("activ");
+					$("#nav-words-container p").removeClass("pulse");
+					$("#nav-words-container p").eq(0).addClass("activ");
+					$("#nav-words-container p").eq(0).addClass("pulse");
+					round = 4;
+					//nextStep();
+					secondCycle = false;
+					nextStep();
+					return;
+				}else{
+					var id = ($("#nav-words-container p").eq(index)).data('word-id');
+					setActWord(id);
+					setNavWordPosition(index);
+					$("#nav-words-container p").removeClass("activ");
+					$("#nav-words-container p").removeClass("pulse");
+					$("#nav-words-container p").eq(index).addClass("activ");
+					$("#nav-words-container p").eq(index).addClass("pulse");
+					setTimeout(function(){
+						setWordToMethod(4);
+					}, 100);
+					nbMethod = 4;
+					nbStep = 1;
+				}
+			}else if(nbMethod == 4 && nbStep != 0){
+				saveNotice($("#confirm-text-4").val());
+				var index = $("#nav-words-container p.activ").index() - 1;
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setActWord(id);
+				//setNavWordPosition(index);
+				$("#nav-words-container p").removeClass("activ");
+				$("#nav-words-container p").removeClass("pulse");
+				$("#nav-words-container p").eq(index).addClass("activ");
+				$("#nav-words-container p").eq(index).addClass("pulse");
+				setTimeout(function(){
+					setWordToMethod(5);
+				}, 100);
+				nbMethod = 5;
+				nbStep = 1;
+			}else if(nbMethod == 5 && nbStep == 1){
+				nbMethod = 6;
+				setWordToMethod(6);
+				nbStep = 2;
+			}else if(nbMethod == 6){
+				var index = $("#nav-words-container p.activ").index() + 1;
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setActWord(id);
+				setNavWordPosition(index);
+				$("#nav-words-container p").removeClass("activ");
+				$("#nav-words-container p").removeClass("pulse");
+				$("#nav-words-container p").eq(index).addClass("activ");
+				$("#nav-words-container p").eq(index).addClass("pulse");
+				setTimeout(function(){
+					setWordToMethod(5);
+				}, 100);
+				nbMethod = 5;
+			}else if(nbMethod == 5 && nbStep == 2){
+				nbMethod = 4;
+				nbStep = 0;
+				nextStep();
+				return;
+			}		
+		}
+	} else if(thirdCycle){
+		if(round == 4){
+			if(canNextStep == 0){
+				canNextStep = 1; 
+				var index = $("#nav-words-container p.activ").index();
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				fst_id = id;
+			}
+			updateThirdNav();
+			if(nbStep == 0){
+				if(prepareToThird != 1){
+					var length = $("#nav-words-container p").length;
+					var index = $("#nav-words-container p.activ").index() + 1;
+					if(length <= index){
+						round = 5;
+						thirdCycle = false;
+						nextStep();	
+						return;
+					}else{			
+						if( snd_id < 1 && thd_id < 1){
+							$("#nav-words-container-thd p").removeClass('pulse');
+							$("#nav-words-container-thd p").removeClass("activ");
+							var id = ($("#nav-words-container p").eq(index)).data('word-id');
+							setActWord(id);
+							setNavWordPosition(index);
+							$("#nav-words-container p").removeClass("activ");
+							$("#nav-words-container p").removeClass("pulse");
+							$("#nav-words-container p").eq(index).addClass("activ");
+							$("#nav-words-container p").eq(index).addClass("pulse");
+						}else{
+							$("#nav-words-container p").removeClass("pulse");
+							if(thd_id > 0){
+								repeatThrid(thd_id);
+								thd_id = 0;
+								return;
+							}
+							if(snd_id > 0){
+								repeatThrid(snd_id);
+								temp_id = snd_id;
+								snd_id = 0;
+								return;
+							}		
+						}
+					}
+				}else{
+					prepareToThird = 0;
+				}
+				
+				var index = $("#nav-words-container p.activ").index();
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setActWord(id);
+				setNavWordPosition(index);
+				setTimeout(function(){
+					setWordToMethod(1);
+				}, 100);
+				nbMethod = 5;
+				nbStep = 1;
+			}else if(nbStep == 1){
+				$("#nav-words-container p.activ").eq(index).addClass("pulse");
+				saveNotice($("#confirm-text-1").val());
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setTimeout(function(){
+					setWordToMethod(6);
+				}, 100);
+				nbStep = 0;
+				thd_id = temp_id;
+				snd_id = fst_id;
+				fst_id = 0;
+				temp_id = 0;
+			}else{
+				round = 5;
+				thirdCycle = false;
+				nextStep();
+				return;
+			}		
+		}else{
+			updateThirdNav();
+			if(thd_id > 0){
+				repeatThrid(thd_id);
+				thd_id = 0;
+				return;
+			}
+			if(snd_id > 0){
+				repeatThrid(snd_id);
+				temp_id = snd_id;
+				snd_id = 0;
+				return;
+			}
+			if(fst_id > 0){
+				repeatThrid(fst_id);
+				fin_id = fst_id;
+				fst_id = 0;
+				return;
+			}
+			if(temp_id > 0){
+				repeatThrid(temp_id);
+				temp_id = 0;
+				return;
+			}
+			if(fin_id > 0){
+				repeatThrid(fin_id);
+				fin_id = 0;
+				return;
+			}
+			thirdCycle = false;
+			nextStep();
+			return;
+		}
 	}else{
-		updateThirdNav();
-		if(thd_id > 0){
-			repeatThrid(thd_id);
-			thd_id = 0;
-			return;
-		}
-		if(snd_id > 0){
-			repeatThrid(snd_id);
-			temp_id = snd_id;
-			snd_id = 0;
-			return;
-		}
-		if(fst_id > 0){
-			repeatThrid(fst_id);
-			fin_id = fst_id;
-			fst_id = 0;
-			return;
-		}
-		if(temp_id > 0){
-			repeatThrid(temp_id);
-			temp_id = 0;
-			return;
-		}
-		if(fin_id > 0){
-			repeatThrid(fin_id);
-			fin_id = 0;
-			return;
-		}
-		alert("KONIEC!");
+		nextPack();
 	}
+}
+
+function nextPack(){
+	packControler();
 }
 
 var fst_id = 0;
@@ -776,6 +910,7 @@ function updateThirdNav(){
 
 function pulseThdNav(idW){
 	setTimeout(function(){
+		$("#nav-words-container p").removeClass('pulse');
 		$("#nav-words-container-thd p").removeClass('pulse');
 		$("#nav-words-container-thd p").removeClass("activ");
 		$("#nav-words-container-thd p").each(function(){
@@ -822,6 +957,119 @@ function tellMeNow(obj){
 	if(parseInt(par.css('top')) == 0){
 		tellMe();
 	}
+}
+
+function prepareGlobalForCycle(i){
+	switch(i){
+		case 1:
+			round = 1;
+			nbMethod = 2;
+			isPreparetoFirst = false;
+			firstCycle = true;
+			secondCycle = false;
+			thirdCycle = false;
+			break;
+		case 2:
+			round = 2;
+			nbMethod = 2;
+			nbStep = 0;
+			noPlus = 0;
+			canNextStep = 1;
+			noLerntStep = 0;
+			firstCycle = false;
+			secondCycle = true;
+			thirdCycle = false;
+			break;
+		case 3:
+			round = 4;
+			nbStep = 0;
+			canNextStep = 1;
+			prepareToThird = 1;
+			fst_id = 0;
+			snd_id = 0;
+			thd_id = 0;
+			temp_id = 0;
+			fin_id = 0;
+			firstCycle = false;
+			secondCycle = false;
+			thirdCycle = true;
+			break;
+	}
+	$("#nav-words-container p").removeClass("activ");
+	$("#nav-words-container p").removeClass("pulse");
+	$("#nav-words-container p").eq(0).addClass("activ");
+	$("#nav-words-container p").eq(0).addClass("pulse");
+}
+
+var continueLearning = false;
+function packControler(){
+	var endThis = false;
+	for(var i = 0; i < 10 && !endThis; i++){
+		if(toLearn[i] != -1){
+			setEveryThingToStartCat(toLearn[i]);
+			endThis = true;
+			continueLearning = true;
+			toLearn[i] = -1;
+			switch(i) {
+			case 0:
+				prepareGlobalForCycle(1);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			case 1:
+				prepareGlobalForCycle(2);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			case 2:
+				prepareGlobalForCycle(2);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			case 3:
+				prepareGlobalForCycle(3);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			case 4:
+				prepareGlobalForCycle(2);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			case 5:
+				prepareGlobalForCycle(3);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			case 6:
+				prepareGlobalForCycle(3);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			case 7:
+				prepareGlobalForCycle(3);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			case 8:
+				prepareGlobalForCycle(1);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			case 9:
+				prepareGlobalForCycle(2);
+				setTimeout(function(){ nextStep();}, 300);
+				break;
+			default:
+				break;
+			} 
+		}
+	}
+	if(!continueLearning){
+		alert("KONIEC");
+	}
+}
+
+function setEveryThingToStartCat(cat){
+	var res = cat.split("/");
+	var p = res[0];
+	var c = res[1];
+	$("#myParentCat").val(p);
+	$("#myCat").val(c);
+	setTimeout(function(){
+			getWordList();
+	}, 10);
 }
 /*function iinit() {
 	

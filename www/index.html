@@ -25,7 +25,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=0.7, maximum-scale=0.7, minimum-scale=0.7, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
@@ -51,15 +51,17 @@
 				<img src="img/3.png" class="no-activ-img">
 				<img src="img/3.png" class="activ-img">
 			</p>
+			<p id="nrDay"></p>
 		</div>
 		<section id="choose-lang">
 			<p id="odp"></p>
 			<h1>Choose a Course</h1>
+			<h2>Witaj w dniu nr: 1</h2>
 			<section id="langs">
 			</section>
 		</section>
 		<section id="choose-cat">
-			<h1>Choose a category</h1>
+			<h1>Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</h1>
 			<section id="cats">
 			</section>
 		</section>
@@ -184,20 +186,20 @@
 			</section>
 		</section>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
 		<script type="text/javascript" src="js/velocity.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();   
         </script>
 		<script>
 			function expand(obj){
 				if($(obj).next("div").is(":visible")){
-					$(obj).next("div").fadeOut();
+					$(obj).next("div").hide();
 				}else{
-					$(obj).next("div").fadeIn();
+					$(obj).next("div").show();
 				}
 			}
 		</script>
@@ -276,10 +278,23 @@
 				$("#choose-cat").show();
 			}		
 			
+			function startTmp(){
+				$("#myLang").val(1);
+				$("#learnLang").val(2);
+				$("#choose-lang").hide();
+				$("#list-of-word").hide();
+				$(".back").show();
+				$(".nav-circle p").removeClass("activ");
+				$(".nav-circle p").eq(1).addClass("activ");
+				getCatList();
+				$("#choose-cat").show();
+			}
+			
 			function setCat(obj){
 				var cat = $(obj).data('subcat');
 				var parent = $(obj).data('parent');
 				var name = $(obj).data('name');
+				setNewCat(parent, cat);
 				$("#myCat").val(cat);
 				$("#myParentCat").val(parent);
 				$("#myCatname").val(name);
@@ -298,15 +313,10 @@
 				$("#nav-circle-main").hide();
 				$(".back").hide();
 				
-				/*$("#info-mylang").html($("#myLang").val());
-				$("#info-learnLang").html($("#learnLang").val());
-				$("#info-mycat").html($("#myCat").val());
-				$("#info-word").html("");
-				$("#my-text-1").focus();*/
-				
+				//getNavWordList();
 				$("#learn-container").show();
-				getNavWordList();
-				
+				showtoLearn();
+				packControler();
 			});
 		</script>
 		<script>
