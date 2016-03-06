@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Wiem o tym â€“ wiedziaÅ‚em / wiedziaÅ‚am o tym.",
+			"name": "Chcia³by ktoœ jeszcze kawê?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "PiszÄ™ to â€“ napisaÅ‚em / napisaÅ‚am to.",
+			"name": "Œpisz tak d³ugo – nie œpij tak d³ugo!",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "SÅ‚ucham tego â€“ sÅ‚uchaÅ‚em / sÅ‚uchaÅ‚am tego.",
+			"name": "Œmiejesz siê tak g³oœno – nie œmiej siê tak g³oœno!",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "WezmÄ™ to â€“ wziÄ…Å‚em / wziÄ™Å‚am to.",
+			"name": "Proszê siedzieæ, panie Müller! / Niech pan siedzi, panie Müller!",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "KupujÄ™ to â€“ kupiÅ‚em / kupiÅ‚am to.",
+			"name": "Proszê nie byæ g³upim / g³upi¹!",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "spodziewam siÄ™ tego â€“ spodziewaÅ‚em / spodziewaÅ‚am siÄ™ tego.",
+			"name": "W¹tpiê, czy on do mnie napisze.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "WyjaÅ›niam to â€“ wyjaÅ›niÅ‚em / wyjaÅ›niÅ‚am to.",
+			"name": "Denerwuje mnie, ¿e siê spóŸniasz.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Znam to â€“ znaÅ‚em / znaÅ‚am to.",
+			"name": "Cieszy mnie, ¿e jest pan / pani zainteresowany / zainteresowana.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Ile pan wypiÅ‚ / pani wypiÅ‚a?",
+			"name": "Obawiam siê, ¿e ostatni autobus ju¿ odjecha³.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Ile pan pracowaÅ‚ / pani pracowaÅ‚a?",
+			"name": "Zgin¹³ klucz od gara¿u.",
 			"notices": [
 			]
 		}

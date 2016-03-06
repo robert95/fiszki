@@ -1,0 +1,62 @@
+[
+		{
+			"id": 1,
+			"name": "something has happened",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Some fishermen were talking on the bridge.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Kari doesn’t need any money",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": " ‘Some (men) believe that he’ll succeed",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": " ‘Certain (women) believe that he’ll fail.’",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": " ‘Several (children) hope that he’ll trip.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "‘Nothing is more unpleasant than pneumonia.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "No suggestion could be more stupid",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "The light went off.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "‘He pressed the mayonnaise out of the tube.",
+			"notices": [
+			]
+		}
+	]

@@ -1,31 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Wątpię, czy on do mnie napisze.",
+			"name": "We who are from Troms? often drink Mack beer",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Wątpię, czy on się ze mną ożeni.",
+			"name": "He who wins, gets a nice prize",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Czy on mnie naprawdę lubi?",
+			"name": "He turned fifty yesterday",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Czy on do mnie w ogóle napisze?",
+			"name": " �She was surprisingly tall",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Czy on się ze mną ożeni?",
+			"name": "He is not worth anything",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Eirik was as fast as Christopher",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Erik was faster than Christopher",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Eirik was the fastest of the Europeans",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Alfred Nobel was a very generous man.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "The vikings sailed slowly along the coast",
 			"notices": [
 			]
 		}

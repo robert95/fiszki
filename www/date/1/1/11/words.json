@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Czy on ciÄ™ zrozumiaÅ‚? On nie mÃ³gÅ‚ mnie zrozumieÄ‡.",
+			"name": "Chcia³bym / Chcia³abym potwierdziæ moj¹ rezerwacjê.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Dlaczego nie mogÅ‚eÅ› / mogÅ‚aÅ› przyjÅ›Ä‡ punktualnie?",
+			"name": "Chcia³bym / Chcia³abym zmieniæ moj¹ rezerwacjê.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Dlaczego nie mogÅ‚eÅ› / mogÅ‚aÅ› odnaleÅºÄ‡ tej drogi?",
+			"name": "Kiedy tam bêdziemy?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Dlaczego nie mogÅ‚eÅ› / mogÅ‚aÅ› go zrozumieÄ‡?",
+			"name": "Ile baga¿u mogê zabraæ?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Nie mogÅ‚em / mogÅ‚am przyjÅ›Ä‡ punktualnie, bo nie jechaÅ‚ Å¼aden autobus.",
+			"name": "Proszê wezwaæ taksówkê.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Nie mogÅ‚em / mogÅ‚am odnaleÅºÄ‡ drogi, poniewaÅ¼ nie miaÅ‚em / miaÅ‚am planu miasta.",
+			"name": "Proszê jechaæ prosto.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Nie mogÅ‚em / mogÅ‚am go zrozumieÄ‡, bo muzyka byÅ‚a za gÅ‚oÅ›no.",
+			"name": "Ile kosztuje wstêp?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "MusiaÅ‚em / MusiaÅ‚am wziÄ…Ä‡ taksÃ³wkÄ™.",
+			"name": "Czy jest tu jakieœ ³ó¿ko?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "MusiaÅ‚em / musiaÅ‚am kupiÄ‡ plan miasta.",
+			"name": "Chcia³bym / Chcia³abym siedzieæ zupe³nie z ty³u.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "MusiaÅ‚em / MusiaÅ‚am wyÅ‚Ä…czyÄ‡ radio.",
+			"name": "Czy mo¿e mi pan / pani za³atwiæ bilet?",
 			"notices": [
 			]
 		}

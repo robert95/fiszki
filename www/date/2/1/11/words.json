@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "?Te entendió? No me pudo entender.",
+			"name": "Jeg ?nsker ? bekrefte bestillingen min.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "?Por qué no pudiste llegar a tiempo?",
+			"name": "Jeg ?nsker ? endre bestillingen min",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "?Por qué no pudiste encontrar el camino?",
+			"name": "N?r er vi fremme?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "?Por qué no pudiste entenderlo?",
+			"name": "Hvor mye bagasje kan jeg ta med?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "No pude llegar a tiempo porque no pasaba ningún autobús.",
+			"name": "Kan du vennligst bestille en drosje?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "No pude encontrar el camino porque no tenía un plano.",
+			"name": "Vennligst kj?r rett fram.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "No pude entenderlo porque la música estaba demasiado alta.",
+			"name": "Hva koster inngangen?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Tuve que coger un taxi.",
+			"name": "Finnes det en seng her?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Tuve que comprar un plano (de la ciudad).",
+			"name": "Jeg vil sitte helt bakerst.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Tuve que apagar la radio.",
+			"name": "Kan du skaffe meg en billett?",
 			"notices": [
 			]
 		}
