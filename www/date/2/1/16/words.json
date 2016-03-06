@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "16.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "16.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "16.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "16.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "16.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "?A quién se ha encontrado (usted)?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "?A quién ha reconocido (usted)?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "?A qué hora se ha levantado (usted)?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "?A qué hora ha empezado (usted)?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "?A qué hora ha terminado?",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "?Por qué se ha despertado (usted)?",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "?Por qué se hizo (usted) maestro?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "?Por qué ha cogido / tomado (am.) (usted) un taxi?",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "?De dónde ha venido (usted)?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "?A dónde ha ido (usted)?",
+			"notices": [
+			]
+		}
+	]

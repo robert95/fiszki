@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "14.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "14.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "14.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "14.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "14.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Ile pan pisał / pani pisała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Jak pan spał / pani spała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Jak pan zdał / pani zdała ten egzamin?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Jak pan odnalazł / pani odnalazła drogę?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Z kim pan rozmawiał / pani rozmawiała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Z kim się pan umówił / pani umówiła?",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Z kim świętował pan / świętowała pani urodziny?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Gdzie pan był / pani była?",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Gdzie pan mieszkał / pani mieszkała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Gdzie pan pracował / pani pracowała?",
+			"notices": [
+			]
+		}
+	]

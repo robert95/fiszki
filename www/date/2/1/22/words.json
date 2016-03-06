@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "22.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "22.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "22.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "22.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "22.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Me han dicho que tu coche está completamente destrozado",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Me alegro de que hayan venido (ustedes).",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Me alegro de que tengan (ustedes) interés.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Me alegro de que quieran (ustedes) comprar la casa",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Me temo que el último autobús ya ha pasado.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Me temo que tendremos que coger / tomar (am.) un taxi.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Me temo que no llevo dinero.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "No sé si me quiere.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "No sé si volverá.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "No sé si me llamará.",
+			"notices": [
+			]
+		}
+	]

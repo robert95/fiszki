@@ -1,32 +1,32 @@
 [
-	{
-		"id": 1,
-		"name": "24.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "24.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "24.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "24.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "24.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Wątpię, czy on do mnie napisze.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Wątpię, czy on się ze mną ożeni.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Czy on mnie naprawdę lubi?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Czy on do mnie w ogóle napisze?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Czy on się ze mną ożeni?",
+			"notices": [
+			]
+		}
+	]

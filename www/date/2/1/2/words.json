@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "2.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "2.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "2.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "2.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "2.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Ayer escribí tres cartas.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Ayer no estuve en mi casa.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Ella no caminó por el parque.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Ellos no llegaron a las ocho.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Ayer no escribí tres cartas",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "?Cerraste la ventana?",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "?Qué hizo?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "?Los siguió?",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "?Durmió Ud. al aire libre?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Hacia calor.",
+			"notices": [
+			]
+		}
+	]

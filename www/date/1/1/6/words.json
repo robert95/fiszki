@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "6.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "6.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "6.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "6.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "6.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Reguły były powtarzane przez uczniów. ",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Pracownicy będą opłaceni przez szefa. ",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "To okno jest zamknięte.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Ta dziewczyna jest zakochana.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Sprzedaje się wodę.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Sprzedaje się kwiaty.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Pójdę do teatru jeśli będę miał czas.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Odwiedzę go jeśli będzie w domu.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Gdyby miał pieniądze pojechałby do Europy.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Gdyby mógł mieszkałby W Kairze.",
+			"notices": [
+			]
+		}
+	]

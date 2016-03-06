@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "8.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "8.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "8.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "8.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "8.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Trzymaj buzie zamknietą na kłódke ",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Nie szata zdobi człowieka ",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Nie ma tego złego co by na dobre nie wyszło",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Miłość jest ślepa",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Kłamstwo ma krótkie nogi",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Widziały gały co brały",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Kto się na gorącym sparzy, ten na zimne dmucha",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Śpiesz się powoli",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Widziałeś dziś restaurację?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "On pisał list.",
+			"notices": [
+			]
+		}
+	]

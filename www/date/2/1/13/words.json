@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "13.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "13.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "13.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "13.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "13.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Lo sé. – Lo supe / sabía.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Lo escribo. – Lo he escrito.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Lo oigo. – Lo he oído.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Lo traigo. – Lo he traído.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Lo compro. – Lo he comprado.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Lo espero. – Lo he esperado.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Lo explico. – Lo he explicado.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Lo conozco – Lo he conocido.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "?Cuánto ha bebido (usted)?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "?Cuánto ha trabajado (usted)?",
+			"notices": [
+			]
+		}
+	]

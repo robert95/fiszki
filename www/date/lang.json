@@ -2,11 +2,11 @@
 	{
 		"id": 1,
 		"name": "polski",
-		"label": "Dla mówiących po Polsku"
+		"label": "Dla mówiących po polsku"
 	},
 	{
 		"id": 2,
-		"name": "angielski",
-		"label": "For English Speakers"
+		"name": "hiszpański",
+		"label": "Dla mówiących po hiszpańsku"
 	}
 ]

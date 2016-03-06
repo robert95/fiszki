@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "20.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "20.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "20.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "20.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "20.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "To wino jest z pewnością stare.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Wie pan / pani to na pewno?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Przypuszczam, że ono jest stare.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Nasz szef dobrze wygląda.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Tak pan / pani uważa?",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Uważam, że on wygląda nawet bardzo dobrze.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Szef na pewno ma dziewczynę.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Tak pan / pani naprawdę uważa?",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "To całkiem możliwe, że ma dziewczynę.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Denerwuje mnie, że chrapiesz.",
+			"notices": [
+			]
+		}
+	]

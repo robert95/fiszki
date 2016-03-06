@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "16.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "16.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "16.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "16.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "16.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "ogo pan spotkał / pani spotkała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Kogo pan rozpoznał / pani rozpoznała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Kiedy pan wstał / pani wstała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Kiedy pan zaczął / pani zaczęła?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Kiedy pan skończył / pani skończyła?",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Dlaczego się pan obudził / pani obudziła?",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Dlaczego został pan nauczycielem?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Dlaczego wziął pan / wzięła pani taksówkę?",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Skąd pan przyjechał / pani przyjechała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Dokąd pan poszedł / pani poszła?",
+			"notices": [
+			]
+		}
+	]

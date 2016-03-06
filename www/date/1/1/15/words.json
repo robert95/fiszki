@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "15.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "15.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "15.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "15.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "15.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Co pan polecił / pani poleciła?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Co pan jadł / pani jadła?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "O czym się pan dowiedział / pani dowiedziała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Jak szybko pan jechał / pani jechała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Jak długo pan leciał / pani leciała?",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Jak wysoko pan skoczył / pani skoczyła?",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Który krawat nosiłeś / nosiłaś?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Które auto kupiłeś / kupiłaś?",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Którą gazetę zaprenumerowałeś / zaprenumerowałaś?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Kogo pan widział / pani widziała?",
+			"notices": [
+			]
+		}
+	]

@@ -223,7 +223,8 @@ function getLangList(){
 	getDay();
 	$.get("date/lang.json", function(result) {
 		showLangList(result);
-    });
+		startTmp();
+	});
 }
 function showLangList(l){
 	var langs = JSON.parse(l);
@@ -503,18 +504,16 @@ function tellMe(){
 	var idLang = $("#learnLang").val();
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
-	alert(window.location.pathname);
+	
 	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
-	//var src = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
 	var my_media = new Media(src,
             // success callback
              function () { console.log("playAudio():Audio Success"); },
             // error callback
-             function (err) { alert("playAudio():Audio Error: " + err.code); }
+             function (err) { console.log("playAudio():Audio Error: " + err.code); }
     );
            // Play audio
     my_media.play();
-	alert(src);
 	//var audio = new Audio(src);
 	//audio.play();
 }

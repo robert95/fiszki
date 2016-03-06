@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "10.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "10.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "10.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "10.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "10.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Él no tenía éxitos, sino fracasos.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Él no estaba satisfecho, sino insatisfecho.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Él no era feliz, sino infeliz.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Él no era simpático, sino antipático.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "?Tuviste que pedir una ambulancia?",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "?Tuviste que llamar al médico?",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "?Tuviste que llamar a la policía?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "?Tiene (usted) el número de teléfono? ",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "?(Él) llegó a tiempo? No pudo llegar a tiempo.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "?Encontró el camino? No pudo encontrar el camino.",
+			"notices": [
+			]
+		}
+	]

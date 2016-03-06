@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "21.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "21.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "21.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "21.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "21.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Denerwuje mnie, że pijesz tak dużo piwa.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Uważam, że on potrzebuje lekarza.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Uważam, że on jest chory.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Uważam, że on teraz śpi.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Denerwuje mnie, że się spóźniasz.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Mamy nadzieję, że on ożeni się z naszą córką.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Mamy nadzieję, że on ma dużo pieniędzy.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Mamy nadzieję, że on jest milionerem.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Słyszałem / Słyszałam, że twoja żona miała wypadek.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Słyszałem / Słyszałam, że (ona) leży w szpitalu.",
+			"notices": [
+			]
+		}
+	]

@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "10.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "10.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "10.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "10.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "10.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "On nie miał sukcesów, lecz niepowodzenia.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "On nie był zadowolony, lecz niezadowolony.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "On nie był szczęśliwy, lecz nieszczęśliwy.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "On nie był sympatyczny, lecz niesympatyczny.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Musiałeś / Musiałaś wezwać pogotowie?",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Musiałeś / Musiałaś wezwać lekarza?",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Musiałeś / Musiałaś wezwać policję?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Ma pan / pani ten numer telefonu? ",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Czy on przyszedł punktualnie? On nie mógł przyjść punktualnie.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Czy on znalazł drogę? On nie mógł znaleźć tej drogi.",
+			"notices": [
+			]
+		}
+	]

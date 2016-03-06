@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "11.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "11.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "11.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "11.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "11.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "?Te entendió? No me pudo entender.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "?Por qué no pudiste llegar a tiempo?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "?Por qué no pudiste encontrar el camino?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "?Por qué no pudiste entenderlo?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "No pude llegar a tiempo porque no pasaba ningún autobús.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "No pude encontrar el camino porque no tenía un plano.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "No pude entenderlo porque la música estaba demasiado alta.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Tuve que coger un taxi.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Tuve que comprar un plano (de la ciudad).",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Tuve que apagar la radio.",
+			"notices": [
+			]
+		}
+	]

@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "12.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "12.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "12.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "12.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "12.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Rozmawiałem / Rozmawiałam przez telefon.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Przez cały czas rozmawiałem / rozmawiałam przez telefon.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Zawsze pytałem / pytałam.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Opowiedziałem / Opowiedziałam całą historię.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Uczyłem / Uczyłam się przez cały wieczór.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Pracowałem / Pracowałam przez cały dzień.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Zjadłem / Zjadłam całe jedzenie.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Przeczytałem / Przeczytałam całą powieść.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Zrozumiałem / Zrozumiałam cały tekst.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Odpowiedziałem / Odpowiedziałam na wszystkie pytania.",
+			"notices": [
+			]
+		}
+	]

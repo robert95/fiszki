@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "17.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "17.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "17.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "17.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "17.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Gdzie pan był / pani była?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Komu pomagałeś / pomagałaś?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Do kogo pisałeś / pisałaś?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Komu odpowiadałeś / odpowiadałaś?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Musieliśmy / Musiałyśmy posprzątać mieszkanie.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Musieliśmy / Musiałyśmy pozmywać naczynia.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Musieliście / Musiałyście zapłacić ten rachunek?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Musieliście / Musiałyście zapłacić za wstęp?",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Musieliście / Musiałyście zapłacić karę?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Kto musiał się pożegnać?",
+			"notices": [
+			]
+		}
+	]

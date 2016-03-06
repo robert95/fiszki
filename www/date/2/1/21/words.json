@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "21.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "21.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "21.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "21.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "21.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Me molesta que bebas tanto.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "(Yo) creo que (él) debería ir al médico.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Creo que está enfermo.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Creo que ahora está durmiendo",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Me molesta que vengas tan tarde.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "(Nosotros) esperamos que (él) se case con nuestra hija.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Esperamos que tenga mucho dinero.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Esperamos que sea millonario.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Me han dicho que tu esposa ha tenido un accidente.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Me han dicho que está en el hospital.",
+			"notices": [
+			]
+		}
+	]

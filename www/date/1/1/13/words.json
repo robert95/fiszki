@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "13.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "13.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "13.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "13.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "13.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Wiem o tym – wiedziałem / wiedziałam o tym.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Piszę to – napisałem / napisałam to.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Słucham tego – słuchałem / słuchałam tego.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Wezmę to – wziąłem / wzięłam to.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Kupuję to – kupiłem / kupiłam to.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "spodziewam się tego – spodziewałem / spodziewałam się tego.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Wyjaśniam to – wyjaśniłem / wyjaśniłam to.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Znam to – znałem / znałam to.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Ile pan wypił / pani wypiła?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Ile pan pracował / pani pracowała?",
+			"notices": [
+			]
+		}
+	]

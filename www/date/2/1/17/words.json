@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "17.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "17.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "17.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "17.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "17.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "?Dónde ha estado (usted)?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "?A quién has ayudado?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "?A quién le has escrito?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "?A quién le has respondido / contestado?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Tuvimos que ordenar el piso.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Tuvimos que lavar los platos.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "?(Vosotros / vosotras) tuvisteis que pagar la cuenta?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "?Tuvisteis que pagar entrada?",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "?Tuvisteis que pagar una multa?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "?Quién tuvo que despedirse?",
+			"notices": [
+			]
+		}
+	]

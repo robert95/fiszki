@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "6.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "6.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "6.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "6.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "6.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Las reglas eran repetidas por los alumnos",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Los obradores sera´n pagados por su jefe.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Esta ventana está cerrada.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "La chica está enamorada.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Se vende aqua.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Se venden flores.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Iré al teatro si tengo tiempo",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Le visitaré si esta en casa.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Si tuviera bastante dinero, e´l iri´a a Europa",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Si pudiese, viviría en Kairo.",
+			"notices": [
+			]
+		}
+	]

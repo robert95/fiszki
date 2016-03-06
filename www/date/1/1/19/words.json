@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "19.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "19.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "19.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "19.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "19.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Myślałem / Myślałam, że chciałeś / chciałaś zamówić pizzę.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Może jutro pogoda będzie lepsza.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Skąd pan / pani to wie?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Mam nadzieję, że będzie lepsza.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "On przyjdzie na pewno.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Czy to jest pewne?",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Wiem, że on przyjdzie.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "On na pewno zadzwoni.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Naprawdę?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Sądzę, że on zadzwoni.",
+			"notices": [
+			]
+		}
+	]

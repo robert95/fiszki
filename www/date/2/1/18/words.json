@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "18.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "18.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "18.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "18.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "18.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "?Quién tuvo que irse pronto a casa?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "?Quién tuvo que coger / tomar (am.) el tren?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "(Nosotros / nosotras) no queríamos quedarnos mucho rato.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "No queríamos tomar nada.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "No queríamos molestar.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "(Yo) sólo quería hacer una llamada.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Quería pedir un taxi.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Es que quería irme a casa.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Pensaba que querías llamar a tu esposa.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Pensaba que querías llamar a Información.",
+			"notices": [
+			]
+		}
+	]

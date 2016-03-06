@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "8.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "8.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "8.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "8.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "8.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "En boca cerrada no entran moscas",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "El habite no hace al monjo",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "No hay mal que por bien no venga",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "El amor es ciego",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Antes se coge al mentiroso que al cojo",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "antes que te cases, mira lo que haces",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "gato escaldado del agua fría huye",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Despacito se va lejos",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "?Ha visto el restaurante hoy?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Él escribió una carta.",
+			"notices": [
+			]
+		}
+	]

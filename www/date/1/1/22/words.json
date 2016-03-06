@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "22.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "22.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "22.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "22.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "22.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Słyszałem / Słyszałam, że twoje auto jest zupełnie zniszczone.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Cieszy mnie, że pan przyszedł / pani przyszła.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Cieszy mnie, że jest pan / pani zainteresowany / zainteresowana.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Cieszy mnie, że chce pan / pani kupić ten dom.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Obawiam się, że ostatni autobus już odjechał.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Obawiam się, że musimy wziąć taksówkę.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Obawiam się, że nie mam przy sobie pieniędzy.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Nie wiem, czy on mnie kocha.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Nie wiem, czy on wróci.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Nie wiem, czy on do mnie zadzwoni.",
+			"notices": [
+			]
+		}
+	]

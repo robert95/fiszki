@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "11.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "11.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "11.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "11.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "11.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Czy on cię zrozumiał? On nie mógł mnie zrozumieć.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Dlaczego nie mogłeś / mogłaś przyjść punktualnie?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Dlaczego nie mogłeś / mogłaś odnaleźć tej drogi?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Dlaczego nie mogłeś / mogłaś go zrozumieć?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Nie mogłem / mogłam przyjść punktualnie, bo nie jechał żaden autobus.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Nie mogłem / mogłam odnaleźć drogi, ponieważ nie miałem / miałam planu miasta.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Nie mogłem / mogłam go zrozumieć, bo muzyka była za głośno.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Musiałem / Musiałam wziąć taksówkę.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Musiałem / musiałam kupić plan miasta.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Musiałem / Musiałam wyłączyć radio.",
+			"notices": [
+			]
+		}
+	]
