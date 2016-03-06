@@ -82,6 +82,27 @@ function onFSError(err) {
 	copyFirstPath();
 }
 /* END READ FILE */
+/* READ FILE2 */
+function readWriteFile2() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess2, onFSError);
+}
+function onFSSuccess2(fileSystem) {
+    fileSystem.root.getFile(srcFile2, {create:false, exclusive:false}, gotFileEntry2, onFSError);
+}
+function gotFileEntry2(fileEntry) {
+    fileEntry.file(gotFile2, onFSError);
+}
+function gotFile2(file) {
+    readAsText2(file);
+}
+function readAsText2(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(evt) {
+		res2 = evt.target.result;
+  };
+  reader.readAsText(file);    
+}
+/* END READ FILE */
 /* SAVE FILE */
 function saveFile(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN2, failN);
@@ -117,8 +138,11 @@ var srcSave = false;
 var datesJSON = false;
 var res = false;
 var srcFile = false;
+var res2 = false;
+var srcFile2 = false;
 var dayJSON = false;
 var toLearnJSON = false;
+var noticeJSON = false;
 var isFirstCycle = true;
 var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 function getDay(){
@@ -134,6 +158,20 @@ function getDayHelper(){
 		dayJSON = JSON.parse(res);
 		res = false;
 		$("#nrDay").text(dayJSON.day);
+	}
+}
+function getNotice(){
+	srcFile2 = path() + "notice.json";
+	readWriteFile2();
+	getNoticeHelper();
+}
+function getNoticeHelper(){
+	if(res2 == false){
+        setTimeout(getNoticeHelper, 100);
+		return;
+	}else{
+		noticeJSON = JSON.parse(res2);
+		res2 = false;
 	}
 }
 function getToLearn(){
@@ -206,7 +244,6 @@ function showLangList(l){
 var subcats = false;
 function getCatList(){
 	getToLearn();
-	saveDay();
 	var idCat = $("#myLang").val();
 	$.get("date/"+ idCat + "/cat.json", function(result) {
 		showCatList(result);
@@ -232,6 +269,7 @@ function showCatList(c){
 /* GET SUBCAT LIST */
 var parent = false;
 function getSubCatList(idCat){
+	getNotice();
 	var idLang = $("#myLang").val();
 	parent = idCat;
 	$.get("date/"+ idLang + "/" + idCat + "/subcat.json", function(result) {
@@ -243,7 +281,7 @@ function showSubCatList(s){
 	var tmp = '<div class="list-of-subcat">';
 	for(var x in cats){
 		var cat = cats[x];
-		tmp += '<p class="text setCat" ontouchstart="setCat(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '">' + cat.name + '</p>';
+		tmp += '<p class="text setCat" onclick="setCat(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '">' + cat.name + '</p>';
 	}
 	tmp += '</div>';
 	subcats = tmp;
@@ -265,7 +303,6 @@ function showtoLearn(){
 /* GET WORD LIST */
 var idWord = false;
 var nameWord = false;
-var srcFileWordList = false;
 function getWordList(){
 	var idLang = $("#myLang").val();
 	var idParentCat = $("#myParentCat").val();
@@ -418,18 +455,19 @@ function setWordById(id){
 }
 
 function setNoteById(id){
-	//$("#my-text").val("");
-	var lang = $("#learnLang").val();
-	var result = "";
-	for(var x in words){
-		var word = words[x];
-		if(word.id == id) {
-			for(var n in word.notices){
-				if(word.notices[n].idLang == lang){
-					act_text = word.notices[n].text;
-				}
-			}
-		}
+	act_text = "";
+	var idLang = $("#myLang").val();
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var idLernLang = $("#learnLang").val();
+	var tmp = idLang+"\\"+idParentCat+"\\"+idSubCat+"\\"+idLernLang+"\\"+id;
+	
+	for(var x in noticeJSON){
+		var notice = noticeJSON[x];
+		if(notice.word == tmp){
+			act_text = notice.notice;
+			return;
+		}			
 	}
 }
 
@@ -461,21 +499,24 @@ function clearDraggableField(){
 /*END SET WORD TO LEARN*/
 /*PLAY SOUND*/
 function tellMe(){
-	/*$("#my-trans").focus();
 	var id = $("#idWord").val();
 	var idLang = $("#learnLang").val();
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
-	var src = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
+	alert(window.location.pathname);
+	var src = 'date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
+	//var src = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
 	var my_media = new Media(src,
             // success callback
              function () { console.log("playAudio():Audio Success"); },
             // error callback
-             function (err) { console.log("playAudio():Audio Error: " + err); }
+             function (err) { alert("playAudio():Audio Error: " + err.code); }
     );
            // Play audio
     my_media.play();
-	$("#my-trans").focus();*/
+	alert(src);
+	//var audio = new Audio(src);
+	//audio.play();
 }
 /*END PLAY SOUND*/
 
@@ -493,28 +534,32 @@ function copyFirstPath(){
 
 /*START SAVE NOTATION*/
 function saveNotice(text){
-	//var text = $('#my-text').val();
+	if(text == "") return;
+	act_text = text;
+	var idLang = $("#myLang").val();
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var idLernLang = $("#learnLang").val();
 	var id = $('#idWord').val();
-	var lang = $("#learnLang").val();
 	
-	for(var x in words){
-		var word = words[x];
-		if(word.id == id) {
-			var add = false;
-			for(var n in word.notices){
-				if(word.notices[n].idLang == lang){
-					word.notices[n].text = text;
-					add = true;
-				}
-			}
-			if(!add) word.notices.push({"idLang": lang, "text": text});
+	var tmp = idLang+"\\"+idParentCat+"\\"+idSubCat+"\\"+idLernLang+"\\"+id;
+
+	var add = false;
+	for(var x in noticeJSON){
+		var notice = noticeJSON[x];
+		if(notice.word == tmp){
+			notice.notice = text;
+			add = true;
 		}
 	}
+	if(!add) noticeJSON.push({"word": tmp, "notice": text});
+	
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
 }
 
 function gotFSN(fileSystem) {
-	fileSystem.root.getFile(srcFileWordList, {create: false}, gotFileEntryN, failN);
+	var srcFileNotice = path() + "notice.json";
+	fileSystem.root.getFile(srcFileNotice, {create: false}, gotFileEntryN, failN);
 }
 
 function gotFileEntryN(fileEntry) {
@@ -525,8 +570,8 @@ function gotFileWriterN(writer) {
 	writer.onwrite = function(evt) {
 		console.log("write success");
 	};
-
-	writer.write(JSON.stringify(words));
+	
+	writer.write(JSON.stringify(noticeJSON));
 	writer.abort();
 	// contents of file now 'some different text'
 }
@@ -554,6 +599,7 @@ function setWordToMethod(idM){
 			$("#confirm-text-2").val(act_text);			
 			break;
 		case 3:
+			$("#confirm-text-3").val(act_text);		
 			$("#question-3").val("");
 			break;
 		case 4:
@@ -563,6 +609,7 @@ function setWordToMethod(idM){
 			$("#confirm-text-4").val(act_text);			
 			break;
 		case 5:
+			$("#confirm-text-5").val(act_text);	
 			$("#question-5").val("");
 			break;
 		case 6:
@@ -577,6 +624,7 @@ function setWordToMethod(idM){
 }
 
 function setActWord(id){
+	$('#idWord').val(id);
 	setWordById(id);
 	setNoteById(id);
 	setTransById(id);
@@ -609,7 +657,13 @@ function noLearnt(){
 var noPlus = 0;
 var prepareToThird = 1;
 var isPreparetoFirst = false;
+var readyToSaveNotice = false;
 function nextStep(){
+	if(readyToSaveNotice){
+		saveNotice($("#confirm-text-"+nbMethod).val());
+	}else{
+		readyToSaveNotice = true;
+	}
 	if(round == 3){
 		if(canNextStep == 2){
 		noPlus = 1;
@@ -638,7 +692,6 @@ function nextStep(){
 				nbMethod = 3;
 				setWordToMethod(3);
 			}else if(nbMethod == 3){
-				saveNotice($("#confirm-text-2").val());
 				nbMethod = 2;
 				var length = $("#nav-words-container p").length;
 				var index = $("#nav-words-container p.activ").index() + 1;
@@ -678,7 +731,7 @@ function nextStep(){
 			nbMethod = 4;
 		}else if(round == 3){
 			if(nbMethod == 4 && nbStep == 0){
-				saveNotice($("#confirm-text-4").val());
+				//saveNotice($("#confirm-text-4").val());
 				var length = $("#nav-words-container p").length;
 				if(true) var index = $("#nav-words-container p.activ").index() + 1;
 				else{
@@ -710,7 +763,7 @@ function nextStep(){
 					nbStep = 1;
 				}
 			}else if(nbMethod == 4 && nbStep != 0){
-				saveNotice($("#confirm-text-4").val());
+				//saveNotice($("#confirm-text-4").val());
 				var index = $("#nav-words-container p.activ").index() - 1;
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
@@ -807,7 +860,7 @@ function nextStep(){
 				nbStep = 1;
 			}else if(nbStep == 1){
 				$("#nav-words-container p.activ").eq(index).addClass("pulse");
-				saveNotice($("#confirm-text-1").val());
+				//saveNotice($("#confirm-text-1").val());
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setTimeout(function(){
 					setWordToMethod(6);
@@ -1005,6 +1058,7 @@ var continueLearning = false;
 function packControler(){
 	var endThis = false;
 	for(var i = 0; i < 10 && !endThis; i++){
+		continueLearning = false;
 		if(toLearn[i] != -1){
 			setEveryThingToStartCat(toLearn[i]);
 			endThis = true;
@@ -1057,7 +1111,8 @@ function packControler(){
 		}
 	}
 	if(!continueLearning){
-		alert("KONIEC");
+		saveDay();
+		alert("NA DZISIAJ KONIEC:)");
 	}
 }
 

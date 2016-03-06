@@ -25,7 +25,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=0.7, maximum-scale=0.7, minimum-scale=0.7, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
@@ -141,8 +141,9 @@
 					<h3>ZADAJ PYTANIE DO ZDANIA</h3>
 					<table>
 						<tr><td><img src="img/up.png"></td></tr>
-						<tr><td><input type="text" class="text" id="question-3"/></td></tr>
-						<tr><td class="btn-container"><button class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>
+						<tr id="l-e-3"><td><input type="text" class="text" id="question-3"/></td></tr>
+						<tr id="l-n-3" class="hidden"><td><input type="text" class="text" id="confirm-text-3" placeholder="Twoja osobista notatka"/></td></tr>
+						<tr><td class="btn-container"><button ontouchstart="showNote(3);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>
 						<tr ontouchend="tellMeNow(this);"><td><p class="text"></p></td></tr>
 					</table>
 				</section>
@@ -161,8 +162,9 @@
 					<h3>POWTÓRZ POPRZEDNIE ZDANIE</h3>
 					<table>
 						<tr><td><img src="img/up.png"></td></tr>
-						<tr><td><input type="text" class="text" id="question-5"/></td></tr>
-						<tr><td class="btn-container"><button class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>
+						<tr id="l-e-5"><td><input type="text" class="text" id="question-5"/></td></tr>
+						<tr id="l-n-5" class="hidden"><td><input type="text" class="text" id="confirm-text-5" placeholder="Twoja osobista notatka"/></td></tr>
+						<tr><td class="btn-container"><button ontouchstart="showNote(5);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>
 						<tr ontouchend="tellMeNow(this);"><td><p class="text"></p></td></tr>
 					</table>
 				</section>

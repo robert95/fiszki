@@ -147,7 +147,7 @@ function showLangList(){
 			tmp += '</div></div>';
 			$("#langs").append(tmp);
 		}
-		startTmp();
+		//startTmp();
 	}
 }
 /* END GET LAND LIST */
