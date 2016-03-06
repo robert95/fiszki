@@ -504,7 +504,7 @@ function tellMe(){
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
 	alert(window.location.pathname);
-	var src = 'date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
+	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
 	//var src = path() + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
 	var my_media = new Media(src,
             // success callback
