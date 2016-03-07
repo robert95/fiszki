@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "W³aœnie czytam tê ksi¹¿kê.",
+			"name": "On nie miaÅ‚ sukcesÃ³w, lecz niepowodzenia.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Bardzo. Ludzie s¹ mili.",
+			"name": "On nie byÅ‚ zadowolony, lecz niezadowolony.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Ile kosztuje pokój za jedn¹ dobê?",
+			"name": "On nie byÅ‚ szczÄ™Å›liwy, lecz nieszczÄ™Å›liwy.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Czy mogê obejrzeæ pokój?",
+			"name": "On nie byÅ‚ sympatyczny, lecz niesympatyczny.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Poproszê kawê z mlekiem.",
+			"name": "MusiaÅ‚eÅ› / MusiaÅ‚aÅ› wezwaÄ‡ pogotowie?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "ajko sadzone?",
+			"name": "MusiaÅ‚eÅ› / MusiaÅ‚aÅ› wezwaÄ‡ lekarza?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "O której ten poci¹g bêdzie w Wiedniu?",
+			"name": "MusiaÅ‚eÅ› / MusiaÅ‚aÅ› wezwaÄ‡ policjÄ™?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Czy muszê siê przesiadaæ?",
+			"name": "Ma pan / pani ten numer telefonu? ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Ile kosztuje miejsce w wagonie sypialnym?",
+			"name": "Czy on przyszedÅ‚ punktualnie? On nie mÃ³gÅ‚ przyjÅ›Ä‡ punktualnie.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Poproszê miejsce przy oknie, dla niepal¹cych.",
+			"name": "Czy on znalazÅ‚ drogÄ™? On nie mÃ³gÅ‚ znaleÅºÄ‡ tej drogi.",
 			"notices": [
 			]
 		}
