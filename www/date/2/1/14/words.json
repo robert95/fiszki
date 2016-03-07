@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "?Cuánto ha escrito (usted)?",
+			"name": "Datamaskinen til sjefen er ødelagt.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "?Cómo ha dormido (usted)?",
+			"name": "Hva heter hovedstaden i Sveits?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "?Con qué nota ha aprobado (usted) el examen?",
+			"name": "Vær aldri frekk!",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "?Cómo ha encontrado (usted) el camino?",
+			"name": "Kom godt hjem!",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "?Con quién ha hablado (usted)?",
+			"name": "Pass på deg selv! / Ta vare på deg selv!",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "?Con quién se ha citado?",
+			"name": "Hvor tung er pakken?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "?Con quién ha celebrado su cumplea?os (usted)?",
+			"name": "Hvor lenge tar det til det kommer?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "?Dónde ha estado (usted)?",
+			"name": "Du må taste null først!",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "?Dónde ha vivido (usted)?",
+			"name": "Har du lov til å reise alene til utlandet?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "?Dónde ha trabajado (usted)?",
+			"name": "Ta med deg solhatten.",
 			"notices": [
 			]
 		}
