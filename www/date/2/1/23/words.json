@@ -7,13 +7,13 @@
 		},
 		{
 			"id": 2,
-			"name": "Noe merkelig hendte i g?r.",
+			"name": "Noe merkelig hendte i går.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Har du noen s?sken? Ja, jeg har noen. ",
+			"name": "Har du noen søsken? Ja, jeg har noen. ",
 			"notices": [
 			]
 		},
@@ -25,25 +25,25 @@
 		},
 		{
 			"id": 5,
-			"name": "Vi har ikke kj?pt noe kj?tt  ",
+			"name": "Vi har ikke kjøpt noe kjøtt  ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Han fylte femti i g?r. ",
+			"name": "Han fylte femti i går. ",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Den lille isbj?rnen var vennlig. ",
+			"name": "Den lille isbjørnen var vennlig. ",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Vi l? p? den hvite stranda. ",
+			"name": "Vi lå på den hvite stranda. ",
 			"notices": [
 			]
 		},
@@ -55,7 +55,7 @@
 		},
 		{
 			"id": 10,
-			"name": "Han som tok prisen b?r f? ?ren",
+			"name": "Han som tok prisen bør få æren",
 			"notices": [
 			]
 		}

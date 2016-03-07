@@ -244,10 +244,13 @@ function showLangList(l){
 /* GET CAT LIST */
 var subcats = false;
 function getCatList(){
-	getToLearn();
 	var idCat = $("#myLang").val();
 	$.get("date/"+ idCat + "/cat.json", function(result) {
 		showCatList(result);
+		setTimeout(
+			function(){
+				getToLearn();
+			}, 100);
     });
 }
 function showCatList(c){

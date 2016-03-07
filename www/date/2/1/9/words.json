@@ -1,7 +1,7 @@
 [
 		{
 			"id": 1,
-			"name": "Kan du legge deg p? benken?",
+			"name": "Kan du legge deg på benken?",
 			"notices": [
 			]
 		},
@@ -13,7 +13,7 @@
 		},
 		{
 			"id": 3,
-			"name": "Vi skal nemlig kj?pe medikamenter.",
+			"name": "Vi skal nemlig kjøpe medikamenter.",
 			"notices": [
 			]
 		},
@@ -25,13 +25,13 @@
 		},
 		{
 			"id": 5,
-			"name": "Jeg har nemlig tenkt ? kj?pe en ring.",
+			"name": "Jeg har nemlig tenkt å kjøpe en ring.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Jeg har nemlig tenkt ? kj?pe en bl?tkake.",
+			"name": "Jeg har nemlig tenkt å kjøpe en bløtkake.",
 			"notices": [
 			]
 		},
@@ -43,19 +43,19 @@
 		},
 		{
 			"id": 8,
-			"name": "Han har en stokk i h?nden.",
+			"name": "Han har en stokk i hånden.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Beina er ogs? kraftige.",
+			"name": "Beina er også kraftige.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Mannen er laget av sn?.",
+			"name": "Mannen er laget av snø.",
 			"notices": [
 			]
 		}

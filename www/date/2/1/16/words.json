@@ -1,7 +1,7 @@
 [
 		{
 			"id": 1,
-			"name": "Jon m? v?re to meter lang",
+			"name": "Jon må være to meter lang",
 			"notices": [
 			]
 		},
@@ -13,19 +13,19 @@
 		},
 		{
 			"id": 3,
-			"name": "Han ble kj?rt over av en bil i g?r",
+			"name": "Han ble kjørt over av en bil i går",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": ". Han m? kunne l?pe fortere.",
+			"name": ". Han må kunne løpe fortere.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Det burde kunne la seg gj?re. ",
+			"name": "Det burde kunne la seg gjøre. ",
 			"notices": [
 			]
 		},
@@ -37,7 +37,7 @@
 		},
 		{
 			"id": 7,
-			"name": "Er hun ikke kommet enn?? ",
+			"name": "Er hun ikke kommet ennå? ",
 			"notices": [
 			]
 		},
@@ -49,13 +49,13 @@
 		},
 		{
 			"id": 9,
-			"name": "At han var syk  var ?penbart ",
+			"name": "At han var syk  var åpenbart ",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Planen min er at vi m?ter henne p? stasjonen .",
+			"name": "Planen min er at vi møter henne på stasjonen .",
 			"notices": [
 			]
 		}

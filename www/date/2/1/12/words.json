@@ -1,7 +1,7 @@
 [
 		{
 			"id": 1,
-			"name": "Finnes det en sv?mmehall her i n?rheten?",
+			"name": "Finnes det en svømmehall her i nærheten?",
 			"notices": [
 			]
 		},
@@ -25,7 +25,7 @@
 		},
 		{
 			"id": 5,
-			"name": "Hvilken avis har du abonnert p??",
+			"name": "Hvilken avis har du abonnert på?",
 			"notices": [
 			]
 		},
@@ -43,13 +43,13 @@
 		},
 		{
 			"id": 8,
-			"name": "Det er godt mulig at han har en kj?reste.",
+			"name": "Det er godt mulig at han har en kjæreste.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Ja, han holder p? ? jobbe.",
+			"name": "Ja, han holder på å jobbe.",
 			"notices": [
 			]
 		},

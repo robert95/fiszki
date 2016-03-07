@@ -7,31 +7,31 @@
 		},
 		{
 			"id": 2,
-			"name": "Noen fiskere stod og pratet p? brua",
+			"name": "Noen fiskere stod og pratet på brua",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Kari beh?ver ikke noen penger. ",
+			"name": "Kari behøver ikke noen penger. ",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Enkelte menn tror at hankommertil ? klare det",
+			"name": "Enkelte menn tror at hankommertil å klare det",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Visse (kvinner)tror at han kommertil ? mislykkes",
+			"name": "Visse (kvinner)tror at han kommertil å mislykkes",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Adskillige (barn) h?per at hankommertil ? snuble",
+			"name": "Adskillige (barn) håper at hankommertil å snuble",
 			"notices": [
 			]
 		},
@@ -43,7 +43,7 @@
 		},
 		{
 			"id": 8,
-			"name": "Intet forslag kunne v?re dummere. ",
+			"name": "Intet forslag kunne være dummere. ",
 			"notices": [
 			]
 		},
@@ -56,12 +56,6 @@
 		{
 			"id": 10,
 			"name": "Han trykte ut majonesen fra tuben.",
-			"notices": [
-			]
-		},
-		{
-			"id": 11,
-			"name": "",
 			"notices": [
 			]
 		}

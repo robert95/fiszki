@@ -1,7 +1,7 @@
 [
 		{
 			"id": 1,
-			"name": "Datamaskinen til sjefen er ?delagt.",
+			"name": "Datamaskinen til sjefen er ødelagt.",
 			"notices": [
 			]
 		},
@@ -13,7 +13,7 @@
 		},
 		{
 			"id": 3,
-			"name": "V?r aldri frekk!",
+			"name": "Vær aldri frekk!",
 			"notices": [
 			]
 		},
@@ -25,7 +25,7 @@
 		},
 		{
 			"id": 5,
-			"name": "Pass p? deg selv! / Ta vare p? deg selv!",
+			"name": "Pass på deg selv! / Ta vare på deg selv!",
 			"notices": [
 			]
 		},
@@ -43,13 +43,13 @@
 		},
 		{
 			"id": 8,
-			"name": "Du m? taste null f?rst!",
+			"name": "Du må taste null først!",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Har du lov til ? reise alene til utlandet?",
+			"name": "Har du lov til å reise alene til utlandet?",
 			"notices": [
 			]
 		},

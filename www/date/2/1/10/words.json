@@ -1,7 +1,7 @@
 [
 		{
 			"id": 1,
-			"name": "Jeg holder p? ? lese denne boken.",
+			"name": "Jeg holder på å lese denne boken.",
 			"notices": [
 			]
 		},
@@ -19,7 +19,7 @@
 		},
 		{
 			"id": 4,
-			"name": "Kan jeg f? se p? rommet?",
+			"name": "Kan jeg få se på rommet?",
 			"notices": [
 			]
 		},
@@ -37,25 +37,25 @@
 		},
 		{
 			"id": 7,
-			"name": "N?r ankommer toget i Wien?",
+			"name": "Når ankommer toget i Wien?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "M? jeg bytte tog?",
+			"name": "Må jeg bytte tog?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Hva koster en plass i sovekup�en?",
+			"name": "Hva koster en plass i sovekupéen?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Jeg ?nsker en vindusplass, ikke-r?yker, takk.",
+			"name": "Jeg ønsker en vindusplass, ikke-røyker, takk.",
 			"notices": [
 			]
 		}

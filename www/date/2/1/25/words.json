@@ -19,7 +19,7 @@
 		},
 		{
 			"id": 4,
-			"name": "Han er altfor rik til ? reise",
+			"name": "Han er altfor rik til å reise",
 			"notices": [
 			]
 		},
@@ -37,13 +37,13 @@
 		},
 		{
 			"id": 7,
-			"name": "Han har bodd utenlands i flere ?r",
+			"name": "Han har bodd utenlands i flere år",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "N? har han sannsynligvis kommet hjem",
+			"name": "Nå har han sannsynligvis kommet hjem",
 			"notices": [
 			]
 		},
@@ -55,7 +55,7 @@
 		},
 		{
 			"id": 10,
-			"name": "Denne avisen er fra f?r krigen",
+			"name": "Denne avisen er fra før krigen",
 			"notices": [
 			]
 		}

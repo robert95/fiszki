@@ -1,25 +1,25 @@
 [
 		{
 			"id": 1,
-			"name": "Du trenger lommet?rkler, s?pe og neglesaks.",
+			"name": "Du trenger lommetørkler, såpe og neglesaks.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "N?r g?r den siste T-banen?",
+			"name": "Når går den siste T-banen?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Da m? du betale bot.",
+			"name": "Da må du betale bot.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Jeg forst?r ikke betydningen.",
+			"name": "Jeg forstår ikke betydningen.",
 			"notices": [
 			]
 		},
@@ -37,7 +37,7 @@
 		},
 		{
 			"id": 7,
-			"name": "S?nnen min ville ikke leke med dukka.",
+			"name": "Sønnen min ville ikke leke med dukka.",
 			"notices": [
 			]
 		},
@@ -55,7 +55,7 @@
 		},
 		{
 			"id": 10,
-			"name": "Vi har kj?pt det r?de huset.",
+			"name": "Vi har kjøpt det røde huset.",
 			"notices": [
 			]
 		}

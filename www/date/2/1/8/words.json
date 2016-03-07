@@ -13,19 +13,19 @@
 		},
 		{
 			"id": 3,
-			"name": "Jeg venter til h?ret mitt er t?rt.",
+			"name": "Jeg venter til håret mitt er tørt.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Vent til det har sluttet ? regne.",
+			"name": "Vent til det har sluttet å regne.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Du m? alltid korrigere meg, takk.",
+			"name": "Du må alltid korrigere meg, takk.",
 			"notices": [
 			]
 		},
@@ -49,7 +49,7 @@
 		},
 		{
 			"id": 9,
-			"name": "Vennligst sett deg p? venterommet.",
+			"name": "Vennligst sett deg på venterommet.",
 			"notices": [
 			]
 		},

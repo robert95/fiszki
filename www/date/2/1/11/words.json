@@ -1,19 +1,19 @@
 [
 		{
 			"id": 1,
-			"name": "Jeg ?nsker ? bekrefte bestillingen min.",
+			"name": "Jeg ønsker å bekrefte bestillingen min.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Jeg ?nsker ? endre bestillingen min",
+			"name": "Jeg ønsker å endre bestillingen min",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "N?r er vi fremme?",
+			"name": "Når er vi fremme?",
 			"notices": [
 			]
 		},
@@ -31,7 +31,7 @@
 		},
 		{
 			"id": 6,
-			"name": "Vennligst kj?r rett fram.",
+			"name": "Vennligst kjør rett fram.",
 			"notices": [
 			]
 		},
