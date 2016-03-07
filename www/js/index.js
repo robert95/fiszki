@@ -296,9 +296,9 @@ function setNewCat(c, s){
 	toLearn[9] = c + "/" + s;
 	srt = $("#nrDay").text();
 	toLearnJSON.push({"subid": s,"catid": c,"start": srt});
-	datesJSON = toLearnJSON;
+	/*datesJSON = toLearnJSON;
 	srcSave = path() + "save.json";
-	saveFile();   //ODKOMENTOWAĆ POTEM
+	saveFile(); */  //ODKOMENTOWAĆ POTEM
 }
 function showtoLearn(){
 	for(var i = 0; i < 10; i++) ;
@@ -689,6 +689,7 @@ function nextStep(){
 			setWordToMethod(2)
 			setNavWordPosition(0);
 			isPreparetoFirst = true;
+			tellMe();
 		}else{
 			if(nbMethod == 2){
 				nbMethod = 3;
@@ -728,6 +729,7 @@ function nextStep(){
 			$("#nav-words-container p").eq(0).addClass("pulse");
 			setTimeout(function(){
 				setWordToMethod(4);
+				tellMe();
 			}, 100);
 			round = 3;
 			nbMethod = 4;
@@ -760,6 +762,7 @@ function nextStep(){
 					$("#nav-words-container p").eq(index).addClass("pulse");
 					setTimeout(function(){
 						setWordToMethod(4);
+						tellMe();
 					}, 100);
 					nbMethod = 4;
 					nbStep = 1;
@@ -1114,6 +1117,11 @@ function packControler(){
 	}
 	if(!continueLearning){
 		saveDay();
+		setTimeout(function(){ 
+			datesJSON = toLearnJSON;
+			srcSave = path() + "save.json";
+			saveFile();
+		}, 200);
 		alert("NA DZISIAJ KONIEC:)");
 	}
 }
