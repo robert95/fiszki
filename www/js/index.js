@@ -574,7 +574,7 @@ function tellMe(){
 	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
 	my_media = new Media(src,
             // success callback
-             function () { console.log("playAudio():Audio Success"); },
+             function () { console.log("playAudio():Audio Success");mediaRes.release(); },
             // error callback
              function (err) { console.log("M: " + err.message + " - " + err.code); }
     );
