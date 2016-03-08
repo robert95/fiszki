@@ -560,6 +560,7 @@ function clearDraggableField(){
 }
 /*END SET WORD TO LEARN*/
 /*PLAY SOUND*/
+var my_media;
 function tellMe(){
 	
 	var id = $("#idWord").val();
@@ -567,12 +568,11 @@ function tellMe(){
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
 	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
-	alert(src);
-	var my_media = new Media(src,
+	my_media = new Media(src,
             // success callback
              function () { console.log("playAudio():Audio Success"); },
             // error callback
-             function (err) { alert("M: " + err.message + " - " + err.code); }
+             function (err) { console.log("M: " + err.message + " - " + err.code); }
     );
            // Play audio
     my_media.play();

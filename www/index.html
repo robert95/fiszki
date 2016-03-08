@@ -328,8 +328,8 @@
 				if(parseInt($(this).css('top')) > 75){
 					if($("#word-lern-6").css('display') != "none"){
 						$(this).addClass("bad");
-						$(this).velocity({ top: "300px" }, 500);
-						  $(this).fadeOut(500);
+						$(this).velocity({ top: "300px" }, 300);
+						$(this).fadeOut(100);
 						  setTimeout(function(){
 							nextStepBlock();
 							nextStep();
@@ -339,13 +339,13 @@
 					}	
 				}else if(parseInt($(this).css('top')) < -75){
 					$(this).addClass("good");
-					$(this).velocity({ top: "-300px" }, 500);
-					$(this).fadeOut(500);
+					$(this).velocity({ top: "-300px" }, 300);
+					$(this).fadeOut(100);
 					setTimeout(function(){
 						  nextStep();
 					  }, 500);
 				}else {
-					 $(this).velocity({ top: "0px" }, 500);
+					 $(this).velocity({ top: "0px" }, 300);
 				}
 		   }, drag: function() {round
 				if(parseInt($(this).css('top')) > 75){
@@ -366,8 +366,8 @@
 				$('.confirm-swipe table').each(function(){
 					if($(this).is(":visible") == true){
 						$(this).addClass("good");
-						$(this).velocity({ top: "-300px" }, 500);
-						$(this).fadeOut(500);
+						$(this).velocity({ top: "-300px" }, 300);
+						$(this).fadeOut(100);
 						setTimeout(function(){
 							  nextStep();
 						  }, 1000);
