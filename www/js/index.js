@@ -150,12 +150,37 @@ function failN(error) {
 }
 
 /* END SAVE FILE */
+/* SAVE FILE2 */
+function saveFile5(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN5, failN);
+}
+
+function gotFSN5(fileSystem) {
+	fileSystem.root.getFile(srcSave5, {create: false}, gotFileEntryN5, failN);
+}
+
+function gotFileEntryN5(fileEntry) {
+	fileEntry.createWriter(gotFileWriterN5, failN);
+}
+
+function gotFileWriterN5(writer) {
+	writer.onwrite = function(evt) {
+		console.log("write success");
+	};
+	
+	writer.write(JSON.stringify(datesJSON5));
+	writer.abort();
+}
+
+/* END SAVE FILE */
 /* GET LANG LIST */
 var firstCycle = false;
 var secondCycle = false;
 var thirdCycle = false;
 var srcSave = false;
+var srcSave5 = false;
 var datesJSON = false;
+var datesJSON5 = false;
 var res = false;
 var srcFile = false;
 var res2 = false;
@@ -206,7 +231,6 @@ function getToLearnHelper(){
         setTimeout(getToLearnHelper, 100);
 	}else{
 		toLearnJSON = JSON.parse(res);
-		alert(res);
 		for(var x in toLearnJSON){
 			var pack = toLearnJSON[x];
 			var day = $("#nrDay").text();
@@ -238,9 +262,9 @@ function getToLearnHelper(){
 }
 function saveDay(){
 	dayJSON.day = dayJSON.day + 1;  //zmienić na 1
-	datesJSON = dayJSON;
-	srcSave = path() + "day.json";
-	saveFile();
+	datesJSON5 = dayJSON;
+	srcSave5 = path() + "day.json";
+	saveFile5();
 }
 function getLangList(){
 	getDay();
