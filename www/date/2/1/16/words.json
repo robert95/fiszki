@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Jon må være to meter lang",
+			"name": "?A quién se ha encontrado (usted)?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Nei han er lengre enn det",
+			"name": "?A quién ha reconocido (usted)?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Han ble kjørt over av en bil i går",
+			"name": "?A qué hora se ha levantado (usted)?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": ". Han må kunne løpe fortere.",
+			"name": "?A qué hora ha empezado (usted)?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Det burde kunne la seg gjøre. ",
+			"name": "?A qué hora ha terminado?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Skal jeg kanskje hente boka til deg?",
+			"name": "?Por qué se ha despertado (usted)?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Er hun ikke kommet ennå? ",
+			"name": "?Por qué se hizo (usted) maestro?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Er han glad eller ei? ",
+			"name": "?Por qué ha cogido / tomado (am.) (usted) un taxi?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "At han var syk  var åpenbart ",
+			"name": "?De dónde ha venido (usted)?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Planen min er at vi møter henne på stasjonen .",
+			"name": "?A dónde ha ido (usted)?",
 			"notices": [
 			]
 		}

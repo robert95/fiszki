@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Er det flere som vil ha kaffe?",
+			"name": "Lo sé. – Lo supe / sabía.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Du sover for lenge – du må lære deg å stå opp om morgenen.",
+			"name": "Lo escribo. – Lo he escrito.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Du ler alltid så høyt – det synes jeg du skulle moderere.",
+			"name": "Lo oigo. – Lo he oído.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Bli sittende, Müller.",
+			"name": "Lo traigo. – Lo he traído.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Ikke vær dum!",
+			"name": "Lo compro. – Lo he comprado.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Jeg er i tvil på om han vil skrive til meg.",
+			"name": "Lo espero. – Lo he esperado.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Det irriterer meg at du kommer så sent.",
+			"name": "Lo explico. – Lo he explicado.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Det gleder meg at du er interessert.",
+			"name": "Lo conozco – Lo he conocido.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Jeg er redd for at den siste bussen har gått.",
+			"name": "?Cuánto ha bebido (usted)?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Nøkkelen til garasjen er borte.",
+			"name": "?Cuánto ha trabajado (usted)?",
 			"notices": [
 			]
 		}

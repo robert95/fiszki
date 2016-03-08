@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Właśnie czytam tę książkę.",
+			"name": "On nie miał sukcesów, lecz niepowodzenia.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Bardzo. Ludzie są mili.",
+			"name": "On nie był zadowolony, lecz niezadowolony.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Ile kosztuje pokój za jedną dobę?",
+			"name": "On nie był szczęśliwy, lecz nieszczęśliwy.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Czy mogę obejrzeć pokój?",
+			"name": "On nie był sympatyczny, lecz niesympatyczny.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Poproszę kawę z mlekiem.",
+			"name": "Musiałeś / Musiałaś wezwać pogotowie?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "ajko sadzone?",
+			"name": "Musiałeś / Musiałaś wezwać lekarza?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "O której ten pociąg będzie w Wiedniu?",
+			"name": "Musiałeś / Musiałaś wezwać policję?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Czy muszę się przesiadać?",
+			"name": "Ma pan / pani ten numer telefonu? ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Ile kosztuje miejsce w wagonie sypialnym?",
+			"name": "Czy on przyszedł punktualnie? On nie mógł przyjść punktualnie.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Poproszę miejsce przy oknie, dla niepalących.",
+			"name": "Czy on znalazł drogę? On nie mógł znaleźć tej drogi.",
 			"notices": [
 			]
 		}

@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Chciałbym / Chciałabym potwierdzić moją rezerwację.",
+			"name": "Czy on cię zrozumiał? On nie mógł mnie zrozumieć.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Chciałbym / Chciałabym zmienić moją rezerwację.",
+			"name": "Dlaczego nie mogłeś / mogłaś przyjść punktualnie?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Kiedy tam będziemy?",
+			"name": "Dlaczego nie mogłeś / mogłaś odnaleźć tej drogi?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Ile bagażu mogę zabrać?",
+			"name": "Dlaczego nie mogłeś / mogłaś go zrozumieć?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Proszę wezwać taksówkę.",
+			"name": "Nie mogłem / mogłam przyjść punktualnie, bo nie jechał żaden autobus.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Proszę jechać prosto.",
+			"name": "Nie mogłem / mogłam odnaleźć drogi, ponieważ nie miałem / miałam planu miasta.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Ile kosztuje wstęp?",
+			"name": "Nie mogłem / mogłam go zrozumieć, bo muzyka była za głośno.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Czy jest tu jakieś łóżko?",
+			"name": "Musiałem / Musiałam wziąć taksówkę.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Chciałbym / Chciałabym siedzieć zupełnie z tyłu.",
+			"name": "Musiałem / musiałam kupić plan miasta.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Czy może mi pan / pani załatwić bilet?",
+			"name": "Musiałem / Musiałam wyłączyć radio.",
 			"notices": [
 			]
 		}
