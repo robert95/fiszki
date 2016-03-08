@@ -562,7 +562,11 @@ function clearDraggableField(){
 /*PLAY SOUND*/
 var my_media;
 function tellMe(){
-	
+	if(my_media!=null){
+            my_media.stop();
+            my_media.stopRecord();
+            my_media=null;
+	}
 	var id = $("#idWord").val();
 	var idLang = $("#learnLang").val();
 	var idParentCat = $("#myParentCat").val();
