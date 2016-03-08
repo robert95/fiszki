@@ -561,6 +561,7 @@ function clearDraggableField(){
 /*END SET WORD TO LEARN*/
 /*PLAY SOUND*/
 function tellMe(){
+	alert("jestem");
 	var id = $("#idWord").val();
 	var idLang = $("#learnLang").val();
 	var idParentCat = $("#myParentCat").val();
