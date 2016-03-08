@@ -325,7 +325,7 @@
 		</script>
 		<script>
 			$('.confirm-swipe table').draggable({ axis: "y", stop: function() {
-				if(parseInt($(this).css('top')) > 100){
+				if(parseInt($(this).css('top')) > 75){
 					if($("#word-lern-6").css('display') != "none"){
 						$(this).addClass("bad");
 						$(this).velocity({ top: "300px" }, 500);
@@ -337,7 +337,7 @@
 					}else {
 						$(this).velocity({ top: "0px" }, 500);
 					}	
-				}else if(parseInt($(this).css('top')) < -100){
+				}else if(parseInt($(this).css('top')) < -75){
 					$(this).addClass("good");
 					$(this).velocity({ top: "-300px" }, 500);
 					$(this).fadeOut(500);

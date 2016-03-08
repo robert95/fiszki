@@ -561,18 +561,18 @@ function clearDraggableField(){
 /*END SET WORD TO LEARN*/
 /*PLAY SOUND*/
 function tellMe(){
-	alert("jestem");
+	
 	var id = $("#idWord").val();
 	var idLang = $("#learnLang").val();
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
-	
 	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
+	alert(src);
 	var my_media = new Media(src,
             // success callback
              function () { console.log("playAudio():Audio Success"); },
             // error callback
-             function (err) { console.log("playAudio():Audio Error: " + err.code); }
+             function (err) { alert("M: " + err.message + " - " + err.code); }
     );
            // Play audio
     my_media.play();
