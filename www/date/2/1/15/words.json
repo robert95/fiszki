@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "?Qué ha recomendado (usted)?",
+			"name": "Du trenger lommetørkler, såpe og neglesaks.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "?Qué ha comido (usted)?",
+			"name": "Når går den siste T-banen?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "?De qué se ha enterado (usted)?",
+			"name": "Da må du betale bot.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "?A qué velocidad ha conducido (usted)?",
+			"name": "Jeg forstår ikke betydningen.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "?Cuántas horas ha volado (usted)?",
+			"name": "Bruker du elektrisk komfyr eller gasskomfyr?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "?Hasta qué altura ha saltado (usted)?",
+			"name": "Har du en korketrekker?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "?Qué corbata te pusiste?",
+			"name": "Sønnen min ville ikke leke med dukka.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "?Qué coche te has comprado?",
+			"name": "Hvordan vet du det?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "?A qué periódico te has suscrito?",
+			"name": "Vet du det med sikkerhet?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "?A quién ha visto (usted)?",
+			"name": "Vi har kjøpt det røde huset.",
 			"notices": [
 			]
 		}
