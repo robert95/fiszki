@@ -296,18 +296,20 @@
 				var cat = $(obj).data('subcat');
 				var parent = $(obj).data('parent');
 				var name = $(obj).data('name');
-				setNewCat(parent, cat);
-				$("#myCat").val(cat);
-				$("#myParentCat").val(parent);
-				$("#myCatname").val(name);
-				$("#catName").html(name);
-				$("#choose-cat").hide();
-				getWordList();
-				$("#list-of-word").show();
-				$(".back").show();
-				$(".nav-circle p").removeClass("activ");
-				$(".nav-circle p").eq(2).addClass("activ");
-				$("#nav-words-container").width(window.innerWidth-150);
+				setTimeout(function(){
+					setNewCat(parent, cat);
+					$("#myCat").val(cat);
+					$("#myParentCat").val(parent);
+					$("#myCatname").val(name);
+					$("#catName").html(name);
+					$("#choose-cat").hide();
+					getWordList();
+					$("#list-of-word").show();
+					$(".back").show();
+					$(".nav-circle p").removeClass("activ");
+					$(".nav-circle p").eq(2).addClass("activ");
+					$("#nav-words-container").width(window.innerWidth-150);
+				}, 150);
 			}
 			
 			$(".startLearn").click(function(){

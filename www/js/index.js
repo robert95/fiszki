@@ -55,7 +55,27 @@ function path(){
 	mainPath = (res.toString()).replace(/,/g,'/');
 	return (res.toString()).replace(/,/g,'/');
 }
-
+/* READ FILE3 */
+function readWriteFile3() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess3, onFSError);
+}
+function onFSSuccess3(fileSystem) {
+    fileSystem.root.getFile(srcFile3, {create:false, exclusive:false}, gotFileEntry3, onFSError);
+}
+function gotFileEntry3(fileEntry) {
+    fileEntry.file(gotFile3, onFSError);
+}
+function gotFile3(file) {
+    readAsText3(file);
+}
+function readAsText3(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(evt) {
+		res3 = evt.target.result;
+  };
+  reader.readAsText(file);    
+}
+/* END READ FILE */
 /* READ FILE */
 function readWriteFile() {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onFSError);
@@ -140,23 +160,25 @@ var res = false;
 var srcFile = false;
 var res2 = false;
 var srcFile2 = false;
+var res3 = false;
+var srcFile3 = false;
 var dayJSON = false;
 var toLearnJSON = false;
 var noticeJSON = false;
 var isFirstCycle = true;
 var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 function getDay(){
-	srcFile = path() + "day.json";
-	readWriteFile();
+	srcFile3 = path() + "day.json";
+	readWriteFile3();
 	getDayHelper();
 }
 function getDayHelper(){
-	if(res == false){
+	if(res3 == false){
         setTimeout(getDayHelper, 100);
 		return;
 	}else{
-		dayJSON = JSON.parse(res);
-		res = false;
+		dayJSON = JSON.parse(res3);
+		res3 = false;
 		$("#nrDay").text(dayJSON.day);
 	}
 }
@@ -184,6 +206,7 @@ function getToLearnHelper(){
         setTimeout(getToLearnHelper, 100);
 	}else{
 		toLearnJSON = JSON.parse(res);
+		alert(res);
 		for(var x in toLearnJSON){
 			var pack = toLearnJSON[x];
 			var day = $("#nrDay").text();
@@ -246,11 +269,15 @@ var subcats = false;
 function getCatList(){
 	var idCat = $("#myLang").val();
 	$.get("date/"+ idCat + "/cat.json", function(result) {
-		showCatList(result);
 		setTimeout(
 			function(){
+				setTimeout(
+					function(){
+						showCatList(result);
+					}, 200);
 				getToLearn();
-			}, 100);
+			}, 200);
+		
     });
 }
 function showCatList(c){
@@ -294,8 +321,15 @@ function showSubCatList(s){
 function setNewCat(c, s){
 	toLearn[8] = c + "/" + s;
 	toLearn[9] = c + "/" + s;
-	srt = $("#nrDay").text();
-	toLearnJSON.push({"subid": s,"catid": c,"start": srt});
+	setTimeout(
+	function(){
+		srt = $("#nrDay").text();
+		//alert(toLearnJSON); 			//MOŻE TU JEST COŚ ŹŁE? COŚ Z KOLEJNOŚCI!!!
+		toLearnJSON.push({"subid": s,"catid": c,"start": srt});
+	}, 150);
+	
+	
+	
 	/*datesJSON = toLearnJSON;
 	srcSave = path() + "save.json";
 	saveFile(); */  //ODKOMENTOWAĆ POTEM
