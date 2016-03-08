@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Chciałby ktoś jeszcze kawę?",
+			"name": "Wiem o tym – wiedziałem / wiedziałam o tym.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Śpisz tak długo – nie śpij tak długo!",
+			"name": "Piszę to – napisałem / napisałam to.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Śmiejesz się tak głośno – nie śmiej się tak głośno!",
+			"name": "Słucham tego – słuchałem / słuchałam tego.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Proszę siedzieć, panie Müller! / Niech pan siedzi, panie Müller!",
+			"name": "Wezmę to – wziąłem / wzięłam to.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Proszę nie być głupim / głupią!",
+			"name": "Kupuję to – kupiłem / kupiłam to.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Wątpię, czy on do mnie napisze.",
+			"name": "spodziewam się tego – spodziewałem / spodziewałam się tego.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Denerwuje mnie, że się spóźniasz.",
+			"name": "Wyjaśniam to – wyjaśniłem / wyjaśniłam to.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Cieszy mnie, że jest pan / pani zainteresowany / zainteresowana.",
+			"name": "Znam to – znałem / znałam to.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Obawiam się, że ostatni autobus już odjechał.",
+			"name": "Ile pan wypił / pani wypiła?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Zginął klucz od garażu.",
+			"name": "Ile pan pracował / pani pracowała?",
 			"notices": [
 			]
 		}

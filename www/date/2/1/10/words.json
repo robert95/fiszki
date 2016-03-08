@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Jeg holder på å lese denne boken.",
+			"name": "Él no tenía éxitos, sino fracasos.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Veldig godt. Folk er vennlige.",
+			"name": "Él no estaba satisfecho, sino insatisfecho.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Hva koster rommet per natt?",
+			"name": "Él no era feliz, sino infeliz.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Kan jeg få se på rommet?",
+			"name": "Él no era simpático, sino antipático.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Jeg vil gjerne ha en kaffe med melk.",
+			"name": "?Tuviste que pedir una ambulancia?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Et speilegg?",
+			"name": "?Tuviste que llamar al médico?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Når ankommer toget i Wien?",
+			"name": "?Tuviste que llamar a la policía?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Må jeg bytte tog?",
+			"name": "?Tiene (usted) el número de teléfono? ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Hva koster en plass i sovekupéen?",
+			"name": "?(Él) llegó a tiempo? No pudo llegar a tiempo.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Jeg ønsker en vindusplass, ikke-røyker, takk.",
+			"name": "?Encontró el camino? No pudo encontrar el camino.",
 			"notices": [
 			]
 		}

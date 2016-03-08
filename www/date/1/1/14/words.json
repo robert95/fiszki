@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Komputer szefa jest zepsuty.",
+			"name": "Ile pan pisał / pani pisała?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "ak nazywa się stolica Szwajcarii?",
+			"name": "Jak pan spał / pani spała?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Nigdy nie bądź niegrzeczny / niegrzeczna!",
+			"name": "Jak pan zdał / pani zdała ten egzamin?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Szczęśliwej drogi do domu!",
+			"name": "Jak pan odnalazł / pani odnalazła drogę?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Proszę na siebie uważać! / Niech pan / pani uważa na siebie!",
+			"name": "Z kim pan rozmawiał / pani rozmawiała?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Ile waży ta paczka?",
+			"name": "Z kim się pan umówił / pani umówiła?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Jak długo będzie to szło?",
+			"name": "Z kim świętował pan / świętowała pani urodziny?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Musi pan / pani najpierw wybrać zero!",
+			"name": "Gdzie pan był / pani była?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Wolno ci już samemu / samej jechać za granicę?",
+			"name": "Gdzie pan mieszkał / pani mieszkała?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Zabierz ze sobą kapelusz przeciwsłoneczny.",
+			"name": "Gdzie pan pracował / pani pracowała?",
 			"notices": [
 			]
 		}
