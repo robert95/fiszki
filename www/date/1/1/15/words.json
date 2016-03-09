@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Co pan polecił / pani poleciła?",
+			"name": "Potrzebne ci będą chusteczki, mydło i nożyczki do paznokci.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Co pan jadł / pani jadła?",
+			"name": "O której godzinie odjeżdża ostatnie metro?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "O czym się pan dowiedział / pani dowiedziała?",
+			"name": "No to musi pan / pani zapłacić karę.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Jak szybko pan jechał / pani jechała?",
+			"name": "Nie rozumiem tego znaczenia.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Jak długo pan leciał / pani leciała?",
+			"name": "Gotujesz na kuchence elektrycznej czy gazowej?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Jak wysoko pan skoczył / pani skoczyła?",
+			"name": "Masz korkociąg?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Który krawat nosiłeś / nosiłaś?",
+			"name": "Mój syn nie chciał bawić się lalką.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Które auto kupiłeś / kupiłaś?",
+			"name": "Skąd pan / pani to wie?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Którą gazetę zaprenumerowałeś / zaprenumerowałaś?",
+			"name": "Czy wiesz to na pewno?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Kogo pan widział / pani widziała?",
+			"name": "We have bought the red house.",
 			"notices": [
 			]
 		}

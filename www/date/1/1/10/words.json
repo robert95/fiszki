@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "On nie miał sukcesów, lecz niepowodzenia.",
+			"name": "Właśnie czytam tę książkę.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "On nie był zadowolony, lecz niezadowolony.",
+			"name": "Bardzo. Ludzie są mili.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "On nie był szczęśliwy, lecz nieszczęśliwy.",
+			"name": "Ile kosztuje pokój za jedną dobę?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "On nie był sympatyczny, lecz niesympatyczny.",
+			"name": "Czy mogę obejrzeć pokój?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Musiałeś / Musiałaś wezwać pogotowie?",
+			"name": "Poproszę kawę z mlekiem.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Musiałeś / Musiałaś wezwać lekarza?",
+			"name": "ajko sadzone?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Musiałeś / Musiałaś wezwać policję?",
+			"name": "O której ten pociąg będzie w Wiedniu?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Ma pan / pani ten numer telefonu? ",
+			"name": "Czy muszę się przesiadać?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Czy on przyszedł punktualnie? On nie mógł przyjść punktualnie.",
+			"name": "Ile kosztuje miejsce w wagonie sypialnym?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Czy on znalazł drogę? On nie mógł znaleźć tej drogi.",
+			"name": "Poproszę miejsce przy oknie, dla niepalących.",
 			"notices": [
 			]
 		}

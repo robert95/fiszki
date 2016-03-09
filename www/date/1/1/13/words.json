@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Wiem o tym – wiedziałem / wiedziałam o tym.",
+			"name": "Chciałby ktoś jeszcze kawę?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Piszę to – napisałem / napisałam to.",
+			"name": "Śpisz tak długo – nie śpij tak długo!",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Słucham tego – słuchałem / słuchałam tego.",
+			"name": "Śmiejesz się tak głośno – nie śmiej się tak głośno!",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Wezmę to – wziąłem / wzięłam to.",
+			"name": "Proszę siedzieć, panie Müller! / Niech pan siedzi, panie Müller!",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Kupuję to – kupiłem / kupiłam to.",
+			"name": "Proszę nie być głupim / głupią!",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "spodziewam się tego – spodziewałem / spodziewałam się tego.",
+			"name": "Wątpię, czy on do mnie napisze.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Wyjaśniam to – wyjaśniłem / wyjaśniłam to.",
+			"name": "Denerwuje mnie, że się spóźniasz.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Znam to – znałem / znałam to.",
+			"name": "Cieszy mnie, że jest pan / pani zainteresowany / zainteresowana.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Ile pan wypił / pani wypiła?",
+			"name": "Obawiam się, że ostatni autobus już odjechał.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Ile pan pracował / pani pracowała?",
+			"name": "Zginął klucz od garażu.",
 			"notices": [
 			]
 		}
