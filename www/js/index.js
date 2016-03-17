@@ -554,9 +554,12 @@ function checkMySelf(){
 
 function clearDraggableField(){
 	$(".confirm-swipe table").show();
-	$(".confirm-swipe table").css({	top: "0px"});
+	$(".confirm-swipe table").css({	left: "0px"});
+	//$(".confirm-swipe table").css({	top: "0px"});
 	$('.confirm-swipe table').removeClass('good');
 	$('.confirm-swipe table').removeClass('bad');
+	$('.confirm-swipe table').removeClass('good-right');
+	$('.confirm-swipe table').removeClass('bad-right');
 }
 /*END SET WORD TO LEARN*/
 /*PLAY SOUND*/
@@ -652,6 +655,8 @@ var act_text = "";
 
 function setWordToMethod(idM){
 	$(".learnMethod").hide();
+	if(idM == 6) $("#badBTN").show();
+	else $("#badBTN").hide();
 	switch(idM) {
 		case 1:
 			$("#confirm-correct-1").text("");
@@ -711,9 +716,11 @@ function noLearnt(){
 		clearDraggableField();
 	}, 100);
 	if(noLerntStep == 0){
+		whereGo = 0;
 		setWordToMethod(3);
 		noLerntStep = 1;
 	}else{
+		whereGo = -1;
 		setWordToMethod(4);
 		noLerntStep = 0;
 		canNextStep = 2;
@@ -723,6 +730,8 @@ var noPlus = 0;
 var prepareToThird = 1;
 var isPreparetoFirst = false;
 var readyToSaveNotice = false;
+var whereGo = 0;
+
 function nextStep(){
 	if(readyToSaveNotice){
 		saveNotice($("#confirm-text-"+nbMethod).val());
@@ -743,9 +752,10 @@ function nextStep(){
 	}	
 	setTimeout(function(){
 		clearDraggableField();
-	}, 700);
+	}, 400);
 	if(firstCycle){
 		if(!isPreparetoFirst){
+			whereGo = 0;
 			setActWord(($("#nav-words-container p").eq(0)).data('word-id'));
 			$("#nav-words-container p").eq(0).addClass("activ");
 			$("#nav-words-container p").eq(0).addClass("pulse");
@@ -755,9 +765,11 @@ function nextStep(){
 			tellMe();
 		}else{
 			if(nbMethod == 2){
+				whereGo = -1;
 				nbMethod = 3;
 				setWordToMethod(3);
 			}else if(nbMethod == 3){
+				whereGo = 0;
 				nbMethod = 2;
 				var length = $("#nav-words-container p").length;
 				var index = $("#nav-words-container p.activ").index() + 1;
@@ -783,6 +795,7 @@ function nextStep(){
 		}		
 	}else if(secondCycle){
 		if(round == 2){
+			whereGo = -1;
 			var id = ($("#nav-words-container p").eq(0)).data('word-id');
 			setActWord(id);
 			setNavWordPosition(1);
@@ -799,6 +812,7 @@ function nextStep(){
 		}else if(round == 3){
 			if(nbMethod == 4 && nbStep == 0){
 				//saveNotice($("#confirm-text-4").val());
+				whereGo = 1;
 				var length = $("#nav-words-container p").length;
 				if(true) var index = $("#nav-words-container p.activ").index() + 1;
 				else{
@@ -831,6 +845,7 @@ function nextStep(){
 					nbStep = 1;
 				}
 			}else if(nbMethod == 4 && nbStep != 0){
+				whereGo = 0;
 				//saveNotice($("#confirm-text-4").val());
 				var index = $("#nav-words-container p.activ").index() - 1;
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
@@ -846,10 +861,12 @@ function nextStep(){
 				nbMethod = 5;
 				nbStep = 1;
 			}else if(nbMethod == 5 && nbStep == 1){
+				whereGo = -1;
 				nbMethod = 6;
 				setWordToMethod(6);
 				nbStep = 2;
 			}else if(nbMethod == 6){
+				whereGo = -1;
 				var index = $("#nav-words-container p.activ").index() + 1;
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
@@ -863,6 +880,7 @@ function nextStep(){
 				}, 100);
 				nbMethod = 5;
 			}else if(nbMethod == 5 && nbStep == 2){
+				whereGo = -1;
 				nbMethod = 4;
 				nbStep = 0;
 				nextStep();
@@ -916,7 +934,7 @@ function nextStep(){
 				}else{
 					prepareToThird = 0;
 				}
-				
+				whereGo = 0;
 				var index = $("#nav-words-container p.activ").index();
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
@@ -927,6 +945,7 @@ function nextStep(){
 				nbMethod = 5;
 				nbStep = 1;
 			}else if(nbStep == 1){
+				whereGo = -1;
 				$("#nav-words-container p.activ").eq(index).addClass("pulse");
 				//saveNotice($("#confirm-text-1").val());
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
@@ -1083,6 +1102,7 @@ function tellMeNow(obj){
 function prepareGlobalForCycle(i){
 	switch(i){
 		case 1:
+			$("#nav-words-container-thd p").hide();
 			round = 1;
 			nbMethod = 2;
 			isPreparetoFirst = false;
@@ -1091,6 +1111,7 @@ function prepareGlobalForCycle(i){
 			thirdCycle = false;
 			break;
 		case 2:
+			$("#nav-words-container-thd p").hide();
 			round = 2;
 			nbMethod = 2;
 			nbStep = 0;
@@ -1102,6 +1123,7 @@ function prepareGlobalForCycle(i){
 			thirdCycle = false;
 			break;
 		case 3:
+			$("#nav-words-container-thd p").hide();
 			round = 4;
 			nbStep = 0;
 			canNextStep = 1;
@@ -1198,6 +1220,14 @@ function setEveryThingToStartCat(cat){
 	setTimeout(function(){
 			getWordList();
 	}, 10);
+}
+
+function whereGoNow(){ //-1 - left, 1- right, 0-no;
+	return whereGo;
+}
+
+function getsecondCycle(){
+		return secondCycle;
 }
 /*function iinit() {
 	
