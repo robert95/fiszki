@@ -553,6 +553,7 @@ function checkMySelf(){
 }
 
 function clearDraggableField(){
+	$(".confirm-swipe").removeClass('flipper-hide');
 	$(".confirm-swipe table").show();
 	$(".confirm-swipe table").css({	left: "0px"});
 	//$(".confirm-swipe table").css({	top: "0px"});

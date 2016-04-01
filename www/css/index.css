@@ -16,6 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+@font-face {
+    font-family: 'Ubuntu'; 
+    src: url(Ubuntu-B.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Ubuntu'; 
+    src: url(Ubuntu-R.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Ubuntu'; 
+    src: url(Ubuntu-L.ttf);
+    font-weight: light;
+}
 @-webkit-keyframes pulse {
     0% { -webkit-transform: scale(1); }
     50% { -webkit-transform: scale(1.14); }
@@ -33,7 +48,7 @@ html{
 	height: 100%;
 }
 body{ 
-	font-family: 'Arial' !important;
+	font-family: 'Ubuntu' !important;
 	font-weight: normal !important;
 	height: 100%; 
 	width: 100%;
@@ -110,37 +125,30 @@ body{
 .text{
 	width: 90%;
 	margin: 15px auto;
-	border-radius: 15px;
+	border-radius: 25px;
 	text-align: center;
-	padding: 10px 0;
+	padding: 20px 0;
 	font-size: 45px;
 	cursor: pointer;
 	position: relative;    
 	min-height: 25px;
-	
-	background: rgba(76,76,76,0.6);
-	background: -moz-linear-gradient(top, rgba(76,76,76,0.6) 0%, rgba(89,89,89,0.6) 12%, rgba(71,71,71,0.6) 24%, rgba(44,44,44,0.6) 35%, rgba(0,0,0,0.6) 54%, rgba(17,17,17,0.6) 60%, rgba(19,19,19,0.6) 75%, rgba(28,28,28,0.6) 91%, rgba(19,19,19,0.6) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,0.6)), color-stop(12%, rgba(89,89,89,0.6)), color-stop(24%, rgba(71,71,71,0.6)), color-stop(35%, rgba(44,44,44,0.6)), color-stop(54%, rgba(0,0,0,0.6)), color-stop(60%, rgba(17,17,17,0.6)), color-stop(75%, rgba(19,19,19,0.6)), color-stop(91%, rgba(28,28,28,0.6)), color-stop(100%, rgba(19,19,19,0.6)));
-	background: -webkit-linear-gradient(top, rgba(76,76,76,0.6) 0%, rgba(89,89,89,0.6) 12%, rgba(71,71,71,0.6) 24%, rgba(44,44,44,0.6) 35%, rgba(0,0,0,0.6) 54%, rgba(17,17,17,0.6) 60%, rgba(19,19,19,0.6) 75%, rgba(28,28,28,0.6) 91%, rgba(19,19,19,0.6) 100%);
-	background: -o-linear-gradient(top, rgba(76,76,76,0.6) 0%, rgba(89,89,89,0.6) 12%, rgba(71,71,71,0.6) 24%, rgba(44,44,44,0.6) 35%, rgba(0,0,0,0.6) 54%, rgba(17,17,17,0.6) 60%, rgba(19,19,19,0.6) 75%, rgba(28,28,28,0.6) 91%, rgba(19,19,19,0.6) 100%);
-	background: -ms-linear-gradient(top, rgba(76,76,76,0.6) 0%, rgba(89,89,89,0.6) 12%, rgba(71,71,71,0.6) 24%, rgba(44,44,44,0.6) 35%, rgba(0,0,0,0.6) 54%, rgba(17,17,17,0.6) 60%, rgba(19,19,19,0.6) 75%, rgba(28,28,28,0.6) 91%, rgba(19,19,19,0.6) 100%);
-	background: linear-gradient(to bottom, rgba(76,76,76,0.6) 0%, rgba(89,89,89,0.6) 12%, rgba(71,71,71,0.6) 24%, rgba(44,44,44,0.6) 35%, rgba(0,0,0,0.6) 54%, rgba(17,17,17,0.6) 60%, rgba(19,19,19,0.6) 75%, rgba(28,28,28,0.6) 91%, rgba(19,19,19,0.6) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
-
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.82) 2%, rgba(255,255,255,0) 40%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 2%,rgba(255,255,255,0) 40%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 2%,rgba(255,255,255,0) 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
     color: white !important;
-    border-style: outset;
-    border-color: #797979;
+	border-bottom: 1px solid white;
 }
-
 .text:hover{
-	background: rgba(19,19,19,0.8);
-	background: -moz-linear-gradient(top, rgba(19,19,19,0.6) 0%, rgba(28,28,28,0.6) 9%, rgba(19,19,19,0.6) 25%, rgba(17,17,17,0.6) 40%, rgba(0,0,0,0.6) 46%, rgba(44,44,44,0.6) 65%, rgba(71,71,71,0.6) 76%, rgba(89,89,89,0.6) 88%, rgba(76,76,76,0.6) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(19,19,19,0.6)), color-stop(9%, rgba(28,28,28,0.6)), color-stop(25%, rgba(19,19,19,0.6)), color-stop(40%, rgba(17,17,17,0.6)), color-stop(46%, rgba(0,0,0,0.6)), color-stop(65%, rgba(44,44,44,0.6)), color-stop(76%, rgba(71,71,71,0.6)), color-stop(88%, rgba(89,89,89,0.6)), color-stop(100%, rgba(76,76,76,0.6)));
-	background: -webkit-linear-gradient(top, rgba(19,19,19,0.6) 0%, rgba(28,28,28,0.6) 9%, rgba(19,19,19,0.6) 25%, rgba(17,17,17,0.6) 40%, rgba(0,0,0,0.6) 46%, rgba(44,44,44,0.6) 65%, rgba(71,71,71,0.6) 76%, rgba(89,89,89,0.6) 88%, rgba(76,76,76,0.6) 100%);
-	background: -o-linear-gradient(top, rgba(19,19,19,0.6) 0%, rgba(28,28,28,0.6) 9%, rgba(19,19,19,0.6) 25%, rgba(17,17,17,0.6) 40%, rgba(0,0,0,0.6) 46%, rgba(44,44,44,0.6) 65%, rgba(71,71,71,0.6) 76%, rgba(89,89,89,0.6) 88%, rgba(76,76,76,0.6) 100%);
-	background: -ms-linear-gradient(top, rgba(19,19,19,0.6) 0%, rgba(28,28,28,0.6) 9%, rgba(19,19,19,0.6) 25%, rgba(17,17,17,0.6) 40%, rgba(0,0,0,0.6) 46%, rgba(44,44,44,0.6) 65%, rgba(71,71,71,0.6) 76%, rgba(89,89,89,0.6) 88%, rgba(76,76,76,0.6) 100%);
-	background: linear-gradient(to bottom, rgba(19,19,19,0.6) 0%, rgba(28,28,28,0.6) 9%, rgba(19,19,19,0.6) 25%, rgba(17,17,17,0.6) 40%, rgba(0,0,0,0.6) 46%, rgba(44,44,44,0.6) 65%, rgba(71,71,71,0.6) 76%, rgba(89,89,89,0.6) 88%, rgba(76,76,76,0.6) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#4c4c4c', GradientType=0 );
+	border: 1px solid white;
+}
+.text-reverse{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+98,ffffff+100&0+89,1+100 */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 60%, rgba(255,255,255,0.82) 98%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 60%,rgba(255,255,255,0.82) 98%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,0) 60%,rgba(255,255,255,0.82) 98%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	border-top: 1px solid white;
 }
 .startLearn{
 	position: fixed;
@@ -171,11 +179,11 @@ body{
 }
 .confirm-swipe .text{
 	padding: 50px 0;
-	margin: 3px auto;
+	margin: -2px auto;
 }
 #langs div h1, #choose-cat div h1, #list-of-word h2{
 	color: black;
-	padding: 20px 0;
+	padding: 30px 0;
 }
 #choose-cat, #list-of-word{
 	display: none;
@@ -228,7 +236,7 @@ body{
 h1{
 	text-align: center;
 	color: white;
-	font-size: 45px;
+	font-size: 65px;
 }
 h2{
 	width: 80%;
@@ -270,10 +278,10 @@ section{
     width: 35%;
 }
 #learn-container .bad-bad{   
-    width: 25%;
+	width: 18%;
 	position: absolute;
-    bottom: 60px;
-    right: 5%;
+	bottom: 145px;
+	right: 5%;
 }
 #learn img, #choose-words img{
 	width: 90px;
@@ -348,7 +356,7 @@ h3{
 	height: 50px;
 	resize: none;
 	font-size: 45px;
-	font-family: 'Arial';
+	font-family: 'Ubuntu';
 	padding: 20px 10px;
 }
 .yes{
@@ -378,6 +386,11 @@ h3{
     font-size: 45px;
     text-align: center;
 	display: none;
+	
+	transition: 0.6s;
+	transform-origin: 100% 40%; /* half of height */
+	-webkit-transition: 0.6s;
+	-webkit-transform-origin: 100% 40%; /* half of height */
 }
 .confirm-swipe table{
 	width: 100%;
@@ -435,17 +448,17 @@ h3{
 	display: none;
 }
 .learnMethod button{
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: 'Arial';
-  color: #ffffff;
-  font-size: 30px;
-  background: #000000;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  margin-top: -40px;
-  margin-bottom: -40px;
+	-webkit-border-radius: 28;
+	-moz-border-radius: 28;
+	border-radius: 28px;
+	color: #1366b2;
+	font-size: 30px;
+	background: #FFF;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	margin-top: -40px;
+	margin-bottom: -40px;
+	font-weight: 600;
 }
 .learnMethod .text{
 	min-height: 70px;
@@ -453,6 +466,7 @@ h3{
 .btn-container{
 	position: relative;
 	font-size: 23px;
+	font-weight: bold;
 }
 .left-btn{
 	position: absolute;
@@ -532,4 +546,12 @@ h3{
 }
 .list-of-subcat{ /*DO USUNIĘCIA!!!!*/
 	display: block;
-}			
+}	
+.flipper-hide{
+	transform: rotateX(90deg);
+	-webkit-transform: rotateX(90deg);
+}
+.flipper-show{
+	transform: rotateX(-90deg);
+	-webkit-transform: rotateX(-90deg);	
+}

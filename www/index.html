@@ -123,7 +123,7 @@
 						<tr id="l-t-1"><td><p class="text" id="confirm-trans-1"></p></td></tr>
 						<tr id="l-n-1" class="hidden"><td><input type="text" class="text" id="confirm-text-1" placeholder="Twoja osobista notatka"/></td></tr>
 						<tr><td class="btn-container"><button ontouchstart="showNote(1);" class="left-btn">My note</button><button ontouchstart="showTrans(1);" class="right-btn">Translate</button></tr></td>
-						<tr><td><p class="text" id="confirm-correct-1"></p></td></tr>
+						<tr><td><p class="text text-reverse" id="confirm-correct-1"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-2" class="learnMethod confirm-swipe">
@@ -133,7 +133,7 @@
 						<tr id="l-t-2"><td><p class="text" id="confirm-trans-2"></p></td></tr>
 						<tr id="l-n-2" class="hidden"><td><input type="text" class="text" id="confirm-text-2" placeholder="Twoja osobista notatka"/></td></tr>
 						<tr><td class="btn-container"><button ontouchstart="showNote(2);" class="left-btn">My note</button><button ontouchstart="showTrans(2);" class="right-btn">Translate</button></tr></td>
-						<tr ontouchend="tellMeNow(this);"><td><p class="text" id="confirm-correct-2"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse" id="confirm-correct-2"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-3" class="learnMethod confirm-swipe">
@@ -142,7 +142,7 @@
 						<tr id="l-e-3"><td><input type="text" class="text" id="question-3"/></td></tr>
 						<tr id="l-n-3" class="hidden"><td><input type="text" class="text" id="confirm-text-3" placeholder="Twoja osobista notatka"/></td></tr>
 						<tr><td class="btn-container"><button ontouchstart="showNote(3);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>
-						<tr ontouchend="tellMeNow(this);"><td><p class="text"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-4" class="learnMethod confirm-swipe">
@@ -152,16 +152,16 @@
 						<tr id="l-t-4"><td><p class="text" id="confirm-trans-4"></p></td></tr>
 						<tr id="l-n-4" class="hidden"><td><input class="text" id="confirm-text-4" placeholder="Twoja osobista notatka"/></td></tr>
 						<tr><td class="btn-container"><button ontouchstart="showNote(4);" class="left-btn">My note</button><button ontouchstart="showTrans(4);" class="right-btn">Translate</button></tr></td>
-						<tr ontouchend="tellMeNow(this);"><td><p class="text" id="confirm-correct-4"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse" id="confirm-correct-4"></p></td></tr>
 					</table>
 				</section>
-				<section id="word-lern-5" class="learnMethod confirm-swipe">
+				<section id="word-lern-5" class="learnMethod confirm-swipe flipper">
 					<h3>POWTÓRZ POPRZEDNIE ZDANIE</h3>
 					<table>
 						<tr id="l-e-5"><td><input type="text" class="text" id="question-5"/></td></tr>
 						<tr id="l-n-5" class="hidden"><td><input type="text" class="text" id="confirm-text-5" placeholder="Twoja osobista notatka"/></td></tr>
 						<tr><td class="btn-container"><button ontouchstart="showNote(5);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>
-						<tr ontouchend="tellMeNow(this);"><td><p class="text"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-6" class="learnMethod confirm-swipe">
@@ -171,7 +171,7 @@
 						<tr id="l-t-6"><td><p class="text" id="confirm-trans-6"></p></td></tr>
 						<tr id="l-n-6" class="hidden"><td><input class="text" id="confirm-text-6" placeholder="Twoja osobista notatka"/></td></tr>
 						<tr><td class="btn-container"><button ontouchstart="showNote(6);" class="left-btn">My note</button><button ontouchstart="showTrans(6);" class="right-btn">Translate</button></tr></td>
-						<tr ontouchend="tellMeNow(this);"><td><p class="text" id="confirm-correct-6"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse" id="confirm-correct-6"></p></td></tr>
 					</table>
 				</section>
 			</div>
@@ -322,9 +322,10 @@
 			function isOk(){
 				var where = whereGoNow();
 				if(where == 0){
+					$(".confirm-swipe").addClass('flipper-hide');
 					setTimeout(function(){
-								  nextStep();
-							  }, 300);
+						  nextStep();
+					  }, 300);
 				}else if(where == -1){
 					goLeftTable();
 				}else if(where == 1){
@@ -334,6 +335,7 @@
 			function isNo(){
 				var where = whereGoNow();
 				if(where == 0 || getsecondCycle()){
+					$(".confirm-swipe").addClass('flipper-hide');
 					setTimeout(function(){
 								  nextStepBlock();
 								  nextStep();
