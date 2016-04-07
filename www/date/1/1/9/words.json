@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Proszę położyć się na kozetce!",
+			"name": " - Trzymać kciuki",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Ciśnienie krwi jest w porządku.",
+			"name": " - Lepiej późno niż wcale",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Chcielibyśmy / Chciałybyśmy kupić lekarstwa.",
+			"name": " - Przy okazji",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Szukam jubilera.",
+			"name": " - Zatrzymaj resztę",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Mam zamiar kupić pierścionek.",
+			"name": " - Co jest napisane na ogłoszeniu? ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Mam zamiar kupić tort.",
+			"name": " - Jak ci poszło? ",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Pleców też nie widać.",
+			"name": " - Lubicie Tańczyć ?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "W dłoniach trzyma laskę.",
+			"name": " - Co chcesz przez to powiedzieć ?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Nogi też są silne.",
+			"name": " - Płacę teraz czy później ?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Ten mężczyzna jest ze śniegu.",
+			"name": " - I’m thirsty",
 			"notices": [
 			]
 		}

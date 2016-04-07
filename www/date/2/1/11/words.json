@@ -1,61 +1,7 @@
 [
 		{
 			"id": 1,
-			"name": "Jeg ønsker å bekrefte bestillingen min.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Jeg ønsker å endre bestillingen min",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Når er vi fremme?",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Hvor mye bagasje kan jeg ta med?",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Kan du vennligst bestille en drosje?",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Vennligst kjør rett fram.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Hva koster inngangen?",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Finnes det en seng her?",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Jeg vil sitte helt bakerst.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Kan du skaffe meg en billett?",
+			"name": "Press the green button",
 			"notices": [
 			]
 		}

@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Jeg sier at Per ikke kommer i dag",
+			"name": "Tuve que apagar la radio.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Beate reiser til Afrika med faren sin.",
+			"name": "He hablado por teléfono.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "En som har en interessant jobb, trives på jobben. ",
+			"name": "He contado toda la historia.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Jan og Ole maler rommet sitt.",
+			"name": "He trabajado todo el día.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "fra A til Å –",
+			"name": "Me he comido toda la comida.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "i morgen er det atter en dag –",
+			"name": "Cuánto ha bebido?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "gå over bekken etter vann – ",
+			"name": "Cómo ha dormido ?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "En får ete som en koker til ",
+			"name": "Con quién se ha citado?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "når du snakker om sola så skinner den ",
+			"name": "Con quién ha hablado ?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "å bli tatt ved nesen",
+			"name": "A qué velocidad ha conducido",
 			"notices": [
 			]
 		}

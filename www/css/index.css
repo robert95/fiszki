@@ -547,11 +547,11 @@ h3{
 .list-of-subcat{ /*DO USUNIĘCIA!!!!*/
 	display: block;
 }	
-.flipper-hide{
+.flipper-hide table{
 	transform: rotateX(90deg);
 	-webkit-transform: rotateX(90deg);
 }
-.flipper-show{
+.flipper-show table{
 	transform: rotateX(-90deg);
 	-webkit-transform: rotateX(-90deg);	
 }

@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Właśnie czytam tę książkę.",
+			"name": " - zachwycony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Bardzo. Ludzie są mili.",
+			"name": " - przygnębiony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Ile kosztuje pokój za jedną dobę?",
+			"name": " - przerażony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Czy mogę obejrzeć pokój?",
+			"name": " - zraniony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Poproszę kawę z mlekiem.",
+			"name": " - niepewny ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "ajko sadzone?",
+			"name": " - niecierpliwy ",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "O której ten pociąg będzie w Wiedniu?",
+			"name": " - zazdrosny ",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Czy muszę się przesiadać?",
+			"name": " - cierpliwy ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Ile kosztuje miejsce w wagonie sypialnym?",
+			"name": " zadowolony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Poproszę miejsce przy oknie, dla niepalących.",
+			"name": " - dumny ",
 			"notices": [
 			]
 		}

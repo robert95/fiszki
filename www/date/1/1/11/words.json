@@ -1,61 +1,7 @@
 [
 		{
 			"id": 1,
-			"name": "Chciałbym / Chciałabym potwierdzić moją rezerwację.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Chciałbym / Chciałabym zmienić moją rezerwację.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Kiedy tam będziemy?",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Ile bagażu mogę zabrać?",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Proszę wezwać taksówkę.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Proszę jechać prosto.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Ile kosztuje wstęp?",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Czy jest tu jakieś łóżko?",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Chciałbym / Chciałabym siedzieć zupełnie z tyłu.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Czy może mi pan / pani załatwić bilet?",
+			"name": "Naciśnij zielony przycisk",
 			"notices": [
 			]
 		}
