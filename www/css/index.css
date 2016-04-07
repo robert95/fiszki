@@ -395,6 +395,10 @@ h3{
 .confirm-swipe table{
 	width: 100%;
 	position: relative;
+	transition: 0.6s;
+	transform-origin: 100% 40%; /* half of height */
+	-webkit-transition: 0.6s;
+	-webkit-transform-origin: 100% 40%; /* half of height */
    /* padding-bottom: 60%;/*150px;*/
   /* padding-top: 5%;/*380px;*/
    /* margin-top: 10%;*/
