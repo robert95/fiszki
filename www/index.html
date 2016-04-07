@@ -353,11 +353,11 @@
 						//$(this).velocity({ left: "-1000px" }, 300);
 						$(this).animate({ 
 							left: "-1000px",
-						  }, 500);
+						  }, 300);
 						//$(this).fadeOut();
 						setTimeout(function(){
 							  nextStep();
-						  }, 500);
+						  }, 300);
 					}
 				});
 			}
@@ -368,11 +368,11 @@
 						//$(this).velocity({ left: "-1000px" }, 300);
 						$(this).animate({ 
 							left: "1000px",
-						  }, 500);
+						  }, 300);
 						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStep();
-						 }, 500);
+						 }, 300);
 					}
 				});
 			}
@@ -383,12 +383,12 @@
 						//$(this).velocity({ left: "-1000px" }, 300);
 						$(this).animate({ 
 							left: "1000px",
-						  }, 500);
+						  }, 300);
 						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 500);
+						 }, 300);
 					}
 				});
 			}
@@ -399,12 +399,12 @@
 						//$(this).velocity({ left: "-1000px" }, 300);
 						$(this).animate({ 
 							left: "-1000px",
-						  }, 500);
+						  }, 300);
 						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 500);
+						 }, 300);
 					}
 				});
 			}
@@ -451,7 +451,7 @@
 		   function goUp(){
 				$('.confirm-swipe table').each(function(){
 					if($(this).is(":visible") == true){
-						//$(this).addClass("good");
+						$(this).addClass("good");
 						$(this).animate({ 
 							top: "-300px",
 						  }, 500);
