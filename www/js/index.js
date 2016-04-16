@@ -98,9 +98,9 @@ function readAsText(file) {
 }
 function onFSError(err) {
 	var p = path();
-	//alert("Ładownie...proszę czekać...");
-	//copyFirstPath();
-	res = "[]";
+	alert("Ładownie...proszę czekać...");
+	copyFirstPath();
+	//res = "[]";
 }
 /* END READ FILE */
 /* READ FILE2 */
