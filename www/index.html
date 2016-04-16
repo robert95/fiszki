@@ -25,7 +25,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
@@ -325,7 +325,7 @@
 					$(".confirm-swipe").addClass('flipper-hide');
 					setTimeout(function(){
 						  nextStep();
-					  }, 300);
+					  }, 800);
 				}else if(where == -1){
 					goLeftTable();
 				}else if(where == 1){
@@ -334,12 +334,12 @@
 			}
 			function isNo(){
 				var where = whereGoNow();
-				if(where == 0 || getsecondCycle()){
+				if(where == 0 || getsecondCycle() || getfirstCycle()){
 					$(".confirm-swipe").addClass('flipper-hide');
 					setTimeout(function(){
 								  nextStepBlock();
 								  nextStep();
-							  }, 300);
+							  }, 600);
 				}else if(where == -1){
 					goLeftNoTable();
 				}else if(where == 1){
@@ -349,15 +349,15 @@
 			function goLeftTable(){
 				$('.confirm-swipe table').each(function(){
 					if($(this).is(":visible") == true){
-						//$(this).addClass("good");
-						//$(this).velocity({ left: "-1000px" }, 300);
-						$(this).animate({ 
-							left: "-1000px",
-						  }, 300);
+						$(this).addClass("goLeft");
+						//$(this).velocity({ left: "-400px" }, 1000);
+						//$(this).animate({ 
+							//left: "-400px",
+						 // }, 1000);
 						//$(this).fadeOut();
 						setTimeout(function(){
 							  nextStep();
-						  }, 300);
+						  }, 600);
 					}
 				});
 			}
@@ -366,13 +366,11 @@
 					if($(this).is(":visible") == true){
 						//$(this).addClass("good-right");
 						//$(this).velocity({ left: "-1000px" }, 300);
-						$(this).animate({ 
-							left: "1000px",
-						  }, 300);
+						$(this).addClass("goRight");
 						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStep();
-						 }, 300);
+						 }, 600);
 					}
 				});
 			}
@@ -381,14 +379,12 @@
 					if($(this).is(":visible") == true){
 						//$(this).addClass("bad-right");
 						//$(this).velocity({ left: "-1000px" }, 300);
-						$(this).animate({ 
-							left: "1000px",
-						  }, 300);
+						$(this).addClass("goRight");
 						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 300);
+						 }, 1000);
 					}
 				});
 			}
@@ -397,14 +393,12 @@
 					if($(this).is(":visible") == true){
 						//$(this).addClass("bad");
 						//$(this).velocity({ left: "-1000px" }, 300);
-						$(this).animate({ 
-							left: "-1000px",
-						  }, 300);
+						$(this).addClass("goLeft");
 						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 300);
+						 }, 1000);
 					}
 				});
 			}

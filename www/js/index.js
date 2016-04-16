@@ -98,8 +98,9 @@ function readAsText(file) {
 }
 function onFSError(err) {
 	var p = path();
-	alert("Ładownie...proszę czekać...");
-	copyFirstPath();
+	//alert("Ładownie...proszę czekać...");
+	//copyFirstPath();
+	res = "[]";
 }
 /* END READ FILE */
 /* READ FILE2 */
@@ -555,12 +556,14 @@ function checkMySelf(){
 function clearDraggableField(){
 	$(".confirm-swipe").removeClass('flipper-hide');
 	$(".confirm-swipe table").show();
-	$(".confirm-swipe table").css({	left: "0px"});
+	//$(".confirm-swipe table").css({	left: "0px"});
 	//$(".confirm-swipe table").css({	top: "0px"});
 	$('.confirm-swipe table').removeClass('good');
 	$('.confirm-swipe table').removeClass('bad');
 	$('.confirm-swipe table').removeClass('good-right');
 	$('.confirm-swipe table').removeClass('bad-right');
+	$('.confirm-swipe table').removeClass('goLeft');
+	$('.confirm-swipe table').removeClass('goRight');
 }
 /*END SET WORD TO LEARN*/
 /*PLAY SOUND*/
@@ -656,7 +659,7 @@ var act_text = "";
 
 function setWordToMethod(idM){
 	$(".learnMethod").hide();
-	if(idM == 6) $("#badBTN").show();
+	if(idM == 6 || (idM == 1 && !thirdCycle)) $("#badBTN").show();
 	else $("#badBTN").hide();
 	switch(idM) {
 		case 1:
@@ -715,7 +718,8 @@ function noLearnt(){
 	canNextStep = 0;
 	setTimeout(function(){
 		clearDraggableField();
-	}, 100);
+	}, 200);
+	noLerntStep = 1;
 	if(noLerntStep == 0){
 		whereGo = 0;
 		setWordToMethod(3);
@@ -765,11 +769,18 @@ function nextStep(){
 			isPreparetoFirst = true;
 			tellMe();
 		}else{
+			if(!canNextStep){
+				whereGo = 0;
+				nbMethod = 2;
+				setWordToMethod(2);
+				canNextStep = true;
+				return;
+			}
 			if(nbMethod == 2){
 				whereGo = -1;
-				nbMethod = 3;
-				setWordToMethod(3);
-			}else if(nbMethod == 3){
+				nbMethod = 1;
+				setWordToMethod(1);
+			}else if(nbMethod == 1){
 				whereGo = 0;
 				nbMethod = 2;
 				var length = $("#nav-words-container p").length;
@@ -1189,7 +1200,7 @@ function packControler(){
 				setTimeout(function(){ nextStep();}, 300);
 				break;
 			case 8:
-				prepareGlobalForCycle(1);
+				prepareGlobalForCycle(1);   
 				setTimeout(function(){ nextStep();}, 300);
 				break;
 			case 9:
@@ -1228,7 +1239,10 @@ function whereGoNow(){ //-1 - left, 1- right, 0-no;
 }
 
 function getsecondCycle(){
-		return secondCycle;
+	return secondCycle;
+}
+function getfirstCycle(){
+	return firstCycle;
 }
 /*function iinit() {
 	
