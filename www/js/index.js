@@ -97,10 +97,10 @@ function readAsText(file) {
   reader.readAsText(file);    
 }
 function onFSError(err) {
-	//var p = path();
-	//alert("Ładownie...proszę czekać...");
-	//copyFirstPath();
-	res = "[]";
+	var p = path();
+	alert("Ładownie...proszę czekać...");
+	copyFirstPath();
+	//res = "[]";
 }
 /* END READ FILE */
 /* READ FILE2 */
