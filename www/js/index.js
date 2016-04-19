@@ -97,10 +97,10 @@ function readAsText(file) {
   reader.readAsText(file);    
 }
 function onFSError(err) {
-	var p = path();
-	alert("Ładownie...proszę czekać...");
-	copyFirstPath();
-	//res = "[]";
+	//var p = path();
+	//alert("Ładownie...proszę czekać...");
+	//copyFirstPath();
+	res = "[]";
 }
 /* END READ FILE */
 /* READ FILE2 */
@@ -736,6 +736,7 @@ var prepareToThird = 1;
 var isPreparetoFirst = false;
 var readyToSaveNotice = false;
 var whereGo = 0;
+var noFlipIfWrong = false;
 
 function nextStep(){
 	if(readyToSaveNotice){
@@ -822,6 +823,7 @@ function nextStep(){
 			round = 3;
 			nbMethod = 4;
 		}else if(round == 3){
+			noFlipIfWrong = false;
 			if(nbMethod == 4 && nbStep == 0){
 				//saveNotice($("#confirm-text-4").val());
 				whereGo = 1;
@@ -868,15 +870,16 @@ function nextStep(){
 				$("#nav-words-container p").eq(index).addClass("activ");
 				$("#nav-words-container p").eq(index).addClass("pulse");
 				setTimeout(function(){
-					setWordToMethod(5);
+					setWordToMethod(1);
 				}, 100);
-				nbMethod = 5;
+				nbMethod = 1;
 				nbStep = 1;
-			}else if(nbMethod == 5 && nbStep == 1){
+			}else if(nbMethod == 1 && nbStep == 1){
 				whereGo = -1;
 				nbMethod = 6;
 				setWordToMethod(6);
 				nbStep = 2;
+				noFlipIfWrong = true;
 			}else if(nbMethod == 6){
 				whereGo = -1;
 				var index = $("#nav-words-container p.activ").index() + 1;
@@ -888,10 +891,10 @@ function nextStep(){
 				$("#nav-words-container p").eq(index).addClass("activ");
 				$("#nav-words-container p").eq(index).addClass("pulse");
 				setTimeout(function(){
-					setWordToMethod(5);
+					setWordToMethod(1);
 				}, 100);
-				nbMethod = 5;
-			}else if(nbMethod == 5 && nbStep == 2){
+				nbMethod = 1;
+			}else if(nbMethod == 1 && nbStep == 2){
 				whereGo = -1;
 				nbMethod = 4;
 				nbStep = 0;
@@ -1028,7 +1031,7 @@ function repeatThrid(id){
 		clearDraggableField();
 		setActWord(id);
 		setTimeout(function(){
-			setWordToMethod(5);
+			setWordToMethod(1);
 			pulseThdNav(id);
 		}, 200);
 	}, 200);
@@ -1243,6 +1246,12 @@ function getsecondCycle(){
 }
 function getfirstCycle(){
 	return firstCycle;
+}
+function getNoFlipIfWrong(){
+	return noFlipIfWrong;
+}
+function setNoFlipIfWrong(val){
+	noFlipIfWrong = val;
 }
 /*function iinit() {
 	

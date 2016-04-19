@@ -334,12 +334,14 @@
 			}
 			function isNo(){
 				var where = whereGoNow();
-				if(where == 0 || getsecondCycle() || getfirstCycle()){
+				if((where == 0 || getsecondCycle() || getfirstCycle()) && !getNoFlipIfWrong()){
 					$(".confirm-swipe").addClass('flipper-hide');
 					setTimeout(function(){
 								  nextStepBlock();
 								  nextStep();
 							  }, 600);
+				}else if(getNoFlipIfWrong()){
+					goRightNoSimple();
 				}else if(where == -1){
 					goLeftNoTable();
 				}else if(where == 1){
@@ -371,6 +373,20 @@
 						setTimeout(function(){
 							nextStep();
 						 }, 600);
+					}
+				});
+			}
+			function goRightNoSimple(){
+				$('.confirm-swipe table').each(function(){
+					if($(this).is(":visible") == true){
+						//$(this).addClass("bad-right");
+						//$(this).velocity({ left: "-1000px" }, 300);
+						$(this).hide();
+						//$(this).fadeOut();
+						setTimeout(function(){
+							nextStepBlock();
+							nextStep();
+						 }, 1000);
 					}
 				});
 			}
