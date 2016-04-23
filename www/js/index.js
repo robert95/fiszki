@@ -98,9 +98,9 @@ function readAsText(file) {
 }
 function onFSError(err) {
 	var p = path();
-	//alert("Ładownie...proszę czekać...");
-	//copyFirstPath();
-	res = "[]";
+	alert("Ładownie...proszę czekać...");
+	copyFirstPath();
+	//res = "[]";
 }
 /* END READ FILE */
 /* READ FILE2 */
@@ -1293,11 +1293,11 @@ function packControler(){
 				setTimeout(function(){ nextStep();}, 300);
 				break;
 			case 8:
-				prepareGlobalForCycle(3);//1
+				prepareGlobalForCycle(1);
 				setTimeout(function(){ nextStep();}, 300);
 				break;
 			case 9:
-				prepareGlobalForCycle(3);//2
+				prepareGlobalForCycle(2);
 				setTimeout(function(){ nextStep();}, 300);
 				break;
 			default:
