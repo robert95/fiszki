@@ -98,9 +98,9 @@ function readAsText(file) {
 }
 function onFSError(err) {
 	var p = path();
-	alert("Ładownie...proszę czekać...");
-	copyFirstPath();
-	//res = "[]";
+	//alert("Ładownie...proszę czekać...");
+	//copyFirstPath();
+	res = "[]";
 }
 /* END READ FILE */
 /* READ FILE2 */
@@ -709,6 +709,8 @@ var nbMethod = 2;
 var nbStep = 0;
 var canNextStep = 1;
 var noLerntStep = 0;
+var ileSnd = 0;
+var ileThd = 0;
 
 function nextStepBlock(){
 	canNextStep = 0;
@@ -737,6 +739,18 @@ var isPreparetoFirst = false;
 var readyToSaveNotice = false;
 var whereGo = 0;
 var noFlipIfWrong = false;
+var lastWordSecondRound = true;
+var repeatSec = 1;
+var repeatThd = 1;
+var s_nowe = 0;
+var t_nowe = 0;
+var id_powt = -1;
+var s_bylo = 0;
+var t_bylo = 0;
+var step_pow = 0;
+var ile_s = 0;
+var ile_t = 0;
+var last_r_s = -1;
 
 function nextStep(){
 	if(readyToSaveNotice){
@@ -808,6 +822,7 @@ function nextStep(){
 		}		
 	}else if(secondCycle){
 		if(round == 2){
+			lastWordSecondRound = true;
 			whereGo = -1;
 			var id = ($("#nav-words-container p").eq(0)).data('word-id');
 			setActWord(id);
@@ -834,15 +849,23 @@ function nextStep(){
 					noPlus = 0;
 				}
 				if(length <= index){
-					$("#nav-words-container p").removeClass("activ");
-					$("#nav-words-container p").removeClass("pulse");
-					$("#nav-words-container p").eq(0).addClass("activ");
-					$("#nav-words-container p").eq(0).addClass("pulse");
-					round = 4;
-					//nextStep();
-					secondCycle = false;
-					nextStep();
-					return;
+					if(lastWordSecondRound){
+						index--;
+						setWordToMethod(6);
+						var id = ($("#nav-words-container p").eq(index)).data('word-id');
+						setActWord(id);
+						lastWordSecondRound = false;
+					}else{
+						$("#nav-words-container p").removeClass("activ");
+						$("#nav-words-container p").removeClass("pulse");
+						$("#nav-words-container p").eq(0).addClass("activ");
+						$("#nav-words-container p").eq(0).addClass("pulse");
+						round = 4;
+						//nextStep();
+						secondCycle = false;
+						nextStep();
+						return;
+					}
 				}else{
 					var id = ($("#nav-words-container p").eq(index)).data('word-id');
 					setActWord(id);
@@ -902,13 +925,29 @@ function nextStep(){
 				return;
 			}		
 		}
-	} else if(thirdCycle){
+	}else if(thirdCycle){
 		if(round == 4){
 			if(canNextStep == 0){
 				canNextStep = 1; 
-				var index = $("#nav-words-container p.activ").index();
-				var id = ($("#nav-words-container p").eq(index)).data('word-id');
-				fst_id = id;
+				if(id_powt > 0){
+					if(id_powt == snd_id){
+						ile_s = 2;
+					}else if(id_powt == thd_id){
+						ile_t = 2;
+					}
+				}else{					
+					var index = $("#nav-words-container p.activ").index();
+					var id = ($("#nav-words-container p").eq(index)).data('word-id');
+					if(snd_id > 0){
+						thd_id = id;
+						t_nowe = 1;
+						ile_t = 2;
+					}else{
+						snd_id = id;
+						s_nowe = 1;
+						ile_s = 2;					
+					}
+				}
 			}
 			updateThirdNav();
 			if(nbStep == 0){
@@ -917,34 +956,74 @@ function nextStep(){
 					var index = $("#nav-words-container p.activ").index() + 1;
 					if(length <= index){
 						round = 5;
-						thirdCycle = false;
 						nextStep();	
 						return;
-					}else{			
-						if( snd_id < 1 && thd_id < 1){
-							$("#nav-words-container-thd p").removeClass('pulse');
-							$("#nav-words-container-thd p").removeClass("activ");
-							var id = ($("#nav-words-container p").eq(index)).data('word-id');
-							setActWord(id);
-							setNavWordPosition(index);
-							$("#nav-words-container p").removeClass("activ");
-							$("#nav-words-container p").removeClass("pulse");
-							$("#nav-words-container p").eq(index).addClass("activ");
-							$("#nav-words-container p").eq(index).addClass("pulse");
-						}else{
-							$("#nav-words-container p").removeClass("pulse");
-							if(thd_id > 0){
-								repeatThrid(thd_id);
-								thd_id = 0;
+					}else{
+						//powtórka
+						$("#nav-words-container p").removeClass("pulse");
+						//alert(snd_id + " " + s_nowe + " " + s_bylo + " " + ile_s + " " + thd_id + " " + t_nowe + " " + t_bylo + " " + ile_t);
+						if(step_pow == 0){
+							if(ile_s == 0) snd_id = -1;
+							if(ile_t == 0) thd_id = -1;
+							updateThirdNav();
+							if(s_nowe == 0 && s_bylo == 0){
+								id_powt = snd_id;
+							}else if(t_nowe == 0 && t_bylo == 0){
+								id_powt = thd_id;
+							}else{
+								id_powt = -1;
+							}
+						}
+					//	alert(id_powt + " " + step_pow);
+						if(id_powt > 0){
+							if(step_pow == 0){
+								repeatThrid(id_powt, 1);
+								step_pow = 1;
+								return;
+							}else{
+								repeatThrid(id_powt, 6);
+								step_pow = 0;
+								if(id_powt == snd_id){
+									ile_s--;
+									s_bylo = 1;
+								}
+								if(id_powt == thd_id){
+									ile_t--;
+									t_bylo = 1;
+								}
+								last_r_s = id_powt;
 								return;
 							}
-							if(snd_id > 0){
-								repeatThrid(snd_id);
-								temp_id = snd_id;
-								snd_id = 0;
-								return;
-							}		
 						}
+						//end-powtórka
+						//warunke przejścia dalej
+							if(snd_id > 0 && thd_id > 0){
+								s_bylo = 0;
+								t_bylo = 0;
+								s_nowe = 0;
+								t_nowe = 0;
+								nextStep();
+								return;
+							}
+						//
+						id_powt = -1;
+						t_nowe = 0;
+						s_nowe = 0;
+						repeatSec = 1;
+						repeatThd = 1;
+						wasSndTime = 0;
+						wasThdTime = 0;
+						s_bylo = 0;
+						t_bylo = 0;
+						$("#nav-words-container-thd p").removeClass('pulse');
+						$("#nav-words-container-thd p").removeClass("activ");
+						var id = ($("#nav-words-container p").eq(index)).data('word-id');
+						setActWord(id);
+						setNavWordPosition(index);
+						$("#nav-words-container p").removeClass("activ");
+						$("#nav-words-container p").removeClass("pulse");
+						$("#nav-words-container p").eq(index).addClass("activ");
+						$("#nav-words-container p").eq(index).addClass("pulse");
 					}
 				}else{
 					prepareToThird = 0;
@@ -968,48 +1047,61 @@ function nextStep(){
 					setWordToMethod(6);
 				}, 100);
 				nbStep = 0;
-				thd_id = temp_id;
-				snd_id = fst_id;
-				fst_id = 0;
-				temp_id = 0;
 			}else{
 				round = 5;
 				thirdCycle = false;
 				nextStep();
 				return;
 			}		
-		}else{
-			updateThirdNav();
-			if(thd_id > 0){
-				repeatThrid(thd_id);
-				thd_id = 0;
-				return;
+		}else if(round == 5){
+			$("#nav-words-container p").removeClass("pulse");
+			//alert(snd_id + " " + s_nowe + " " + s_bylo + " " + ile_s + " " + thd_id + " " + t_nowe + " " + t_bylo + " " + ile_t);
+			if(step_pow == 0){
+				if(ile_s == 0) snd_id = -1;
+				if(ile_t == 0) thd_id = -1;
+				updateThirdNav();
+				if(s_nowe == 0 && s_bylo == 0){
+					id_powt = snd_id;
+				}else if(t_nowe == 0 && t_bylo == 0){
+					id_powt = thd_id;
+				}else{
+					id_powt = -1;
+				}
 			}
-			if(snd_id > 0){
-				repeatThrid(snd_id);
-				temp_id = snd_id;
-				snd_id = 0;
-				return;
+			//alert(id_powt + " " + step_pow);
+			if(id_powt > 0){
+				if(step_pow == 0){
+					repeatThrid(id_powt, 1);
+					step_pow = 1;
+					return;
+				}else{
+					repeatThrid(id_powt, 6);
+					step_pow = 0;
+					if(id_powt == snd_id){
+						ile_s--;
+						s_bylo = 1;
+					}
+					if(id_powt == thd_id){
+						ile_t--;
+						t_bylo = 1;
+					}
+					last_r_s = id_powt;
+					return;
+				}
 			}
-			if(fst_id > 0){
-				repeatThrid(fst_id);
-				fin_id = fst_id;
-				fst_id = 0;
-				return;
-			}
-			if(temp_id > 0){
-				repeatThrid(temp_id);
-				temp_id = 0;
-				return;
-			}
-			if(fin_id > 0){
-				repeatThrid(fin_id);
-				fin_id = 0;
-				return;
-			}
-			thirdCycle = false;
-			nextStep();
-			return;
+			//end-powtórka
+			//warunke przejścia dalej
+				if(snd_id > 0 && thd_id > 0){
+					s_bylo = 0;
+					t_bylo = 0;
+					s_nowe = 0;
+					t_nowe = 0;
+					nextStep();
+					return;
+				}else{
+					thirdCycle = false;
+				}
+			//
 		}
 	}else{
 		nextPack();
@@ -1025,13 +1117,14 @@ var snd_id = 0;
 var thd_id = 0;
 var temp_id = 0;
 var fin_id = 0;
-
-function repeatThrid(id){
+var repeatFstRound = true;
+//var repeatSecRound = false;
+function repeatThrid(id, met){
 	setTimeout(function(){
 		clearDraggableField();
 		setActWord(id);
 		setTimeout(function(){
-			setWordToMethod(1);
+			setWordToMethod(met);
 			pulseThdNav(id);
 		}, 200);
 	}, 200);
@@ -1040,11 +1133,8 @@ function repeatThrid(id){
 function updateThirdNav(){
 	var i = 1;
 	var ids = [];
-	ids.push(fst_id);
 	ids.push(snd_id);
 	ids.push(thd_id);
-	ids.push(temp_id);
-	ids.push(fin_id);
 	$("#nav-words-container-thd p").hide();
 	$("#nav-words-container-thd p").attr('data-word-id', 0);
 	$("#nav-words-container p").each(function(){
@@ -1203,11 +1293,11 @@ function packControler(){
 				setTimeout(function(){ nextStep();}, 300);
 				break;
 			case 8:
-				prepareGlobalForCycle(1);   
+				prepareGlobalForCycle(3);//1
 				setTimeout(function(){ nextStep();}, 300);
 				break;
 			case 9:
-				prepareGlobalForCycle(2);
+				prepareGlobalForCycle(3);//2
 				setTimeout(function(){ nextStep();}, 300);
 				break;
 			default:
