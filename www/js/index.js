@@ -556,8 +556,6 @@ function checkMySelf(){
 function clearDraggableField(){
 	$(".confirm-swipe").removeClass('flipper-hide');
 	$(".confirm-swipe table").show();
-	//$(".confirm-swipe table").css({	left: "0px"});
-	//$(".confirm-swipe table").css({	top: "0px"});
 	$('.confirm-swipe table').removeClass('good');
 	$('.confirm-swipe table').removeClass('bad');
 	$('.confirm-swipe table').removeClass('good-right');
@@ -720,7 +718,7 @@ function noLearnt(){
 	canNextStep = 0;
 	setTimeout(function(){
 		clearDraggableField();
-	}, 200);
+	}, 100);
 	noLerntStep = 1;
 	if(noLerntStep == 0){
 		whereGo = 0;
@@ -751,6 +749,7 @@ var step_pow = 0;
 var ile_s = 0;
 var ile_t = 0;
 var last_r_s = -1;
+var theSameMethod = false;
 
 function nextStep(){
 	if(readyToSaveNotice){
@@ -772,7 +771,7 @@ function nextStep(){
 	}	
 	setTimeout(function(){
 		clearDraggableField();
-	}, 400);
+	}, 300);
 	if(firstCycle){
 		if(!isPreparetoFirst){
 			whereGo = 0;
@@ -816,7 +815,7 @@ function nextStep(){
 					setTimeout(function(){
 						setWordToMethod(2);
 						tellMe();
-					}, 100);
+					}, 50);
 				}
 			}
 		}		
@@ -835,9 +834,11 @@ function nextStep(){
 				setWordToMethod(4);
 				tellMe();
 			}, 100);
+			theSameMethod = true;
 			round = 3;
 			nbMethod = 4;
 		}else if(round == 3){
+			theSameMethod = false;
 			noFlipIfWrong = false;
 			if(nbMethod == 4 && nbStep == 0){
 				//saveNotice($("#confirm-text-4").val());
@@ -966,15 +967,15 @@ function nextStep(){
 							if(ile_s == 0) snd_id = -1;
 							if(ile_t == 0) thd_id = -1;
 							updateThirdNav();
-							if(s_nowe == 0 && s_bylo == 0){
+							if(s_nowe == 0 && s_bylo == 0 && snd_id > 0){
 								id_powt = snd_id;
-							}else if(t_nowe == 0 && t_bylo == 0){
+							}else if(t_nowe == 0 && t_bylo == 0 && thd_id > 0){
 								id_powt = thd_id;
 							}else{
 								id_powt = -1;
 							}
 						}
-					//	alert(id_powt + " " + step_pow);
+						//alert(id_powt + " " + step_pow);
 						if(id_powt > 0){
 							if(step_pow == 0){
 								repeatThrid(id_powt, 1);
@@ -1054,21 +1055,30 @@ function nextStep(){
 				return;
 			}		
 		}else if(round == 5){
+			if(canNextStep == 0){
+				canNextStep = 1; 
+				if(id_powt > 0){
+					if(id_powt == snd_id){
+						ile_s = 2;
+					}else if(id_powt == thd_id){
+						ile_t = 2;
+					}
+				}
+			}
 			$("#nav-words-container p").removeClass("pulse");
-			//alert(snd_id + " " + s_nowe + " " + s_bylo + " " + ile_s + " " + thd_id + " " + t_nowe + " " + t_bylo + " " + ile_t);
 			if(step_pow == 0){
+				alert("t1");
 				if(ile_s == 0) snd_id = -1;
 				if(ile_t == 0) thd_id = -1;
 				updateThirdNav();
-				if(s_nowe == 0 && s_bylo == 0){
+				if(s_nowe == 0 && s_bylo == 0 && snd_id > 0){
 					id_powt = snd_id;
-				}else if(t_nowe == 0 && t_bylo == 0){
+				}else if(t_nowe == 0 && t_bylo == 0 && thd_id > 0){
 					id_powt = thd_id;
 				}else{
 					id_powt = -1;
 				}
 			}
-			//alert(id_powt + " " + step_pow);
 			if(id_powt > 0){
 				if(step_pow == 0){
 					repeatThrid(id_powt, 1);
@@ -1091,7 +1101,7 @@ function nextStep(){
 			}
 			//end-powtórka
 			//warunke przejścia dalej
-				if(snd_id > 0 && thd_id > 0){
+				if(snd_id > 0 || thd_id > 0){
 					s_bylo = 0;
 					t_bylo = 0;
 					s_nowe = 0;
@@ -1100,6 +1110,8 @@ function nextStep(){
 					return;
 				}else{
 					thirdCycle = false;
+					nextStep();
+					return;
 				}
 			//
 		}
@@ -1241,6 +1253,17 @@ function prepareGlobalForCycle(i){
 			firstCycle = false;
 			secondCycle = false;
 			thirdCycle = true;
+			repeatSec = 1;
+			repeatThd = 1;
+			s_nowe = 0;
+			t_nowe = 0;
+			id_powt = -1;
+			s_bylo = 0;
+			t_bylo = 0;
+			step_pow = 0;
+			ile_s = 0;
+			ile_t = 0;
+			last_r_s = -1;
 			break;
 	}
 	$("#nav-words-container p").removeClass("activ");
@@ -1342,6 +1365,9 @@ function getNoFlipIfWrong(){
 }
 function setNoFlipIfWrong(val){
 	noFlipIfWrong = val;
+}
+function isRoundTwoAndTheSameMethod(){
+	return (round == 3 && theSameMethod);
 }
 /*function iinit() {
 	

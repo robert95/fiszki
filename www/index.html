@@ -325,7 +325,7 @@
 					$(".confirm-swipe").addClass('flipper-hide');
 					setTimeout(function(){
 						  nextStep();
-					  }, 800);
+					  }, 750);
 				}else if(where == -1){
 					goLeftTable();
 				}else if(where == 1){
@@ -339,7 +339,7 @@
 					setTimeout(function(){
 								  nextStepBlock();
 								  nextStep();
-							  }, 600);
+							  }, 750);
 				}else if(getNoFlipIfWrong()){
 					goRightNoSimple();
 				}else if(where == -1){
@@ -349,17 +349,30 @@
 				}
 			}
 			function goLeftTable(){
+				
 				$('.confirm-swipe table').each(function(){
 					if($(this).is(":visible") == true){
+						var obj = $(this);
 						$(this).addClass("goLeft");
-						//$(this).velocity({ left: "-400px" }, 1000);
-						//$(this).animate({ 
-							//left: "-400px",
-						 // }, 1000);
-						//$(this).fadeOut();
-						setTimeout(function(){
-							  nextStep();
-						  }, 600);
+						if(isRoundTwoAndTheSameMethod()){
+							setTimeout(function(){
+								$(obj).hide();
+								$(obj).removeClass("goLeft");
+								setTimeout(function(){
+										$(obj).show();
+										$(obj).addClass("goRight");	
+										setTimeout(function(){
+											nextStep();
+										}, 150);
+								}, 150);
+							}, 400);
+						}else{
+							setTimeout(function(){
+								  nextStep();
+							  }, 450);
+						}
+					}else{
+						$(this).addClass("goRight");
 					}
 				});
 			}
@@ -372,7 +385,9 @@
 						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStep();
-						 }, 600);
+						 }, 450);
+					}else{
+						$(this).addClass("goLeft");
 					}
 				});
 			}
@@ -381,12 +396,13 @@
 					if($(this).is(":visible") == true){
 						//$(this).addClass("bad-right");
 						//$(this).velocity({ left: "-1000px" }, 300);
-						$(this).hide();
+						//$(this).hide();
+						$(".confirm-swipe").addClass('flipper-hide');
 						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 1000);
+						 }, 450);
 					}
 				});
 			}
@@ -400,7 +416,9 @@
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 1000);
+						 }, 450);
+					}else{
+						$(this).addClass("goLeft");
 					}
 				});
 			}
@@ -414,7 +432,9 @@
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 1000);
+						 }, 450);
+					}else{
+						$(this).addClass("goRight");
 					}
 				});
 			}
