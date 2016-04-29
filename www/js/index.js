@@ -570,6 +570,7 @@ function tellMe(){
 	if(my_media!=null){
             my_media.stop();
             my_media.stopRecord();
+			my_media.release();
             my_media=null;
 	}
 	var id = $("#idWord").val();
@@ -577,15 +578,18 @@ function tellMe(){
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
 	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
-	alert(src);
-	my_media = new Media(src,
+	//alert(src);
+	setTimeout(function(){
+		my_media = new Media(src,
             // success callback
              function () { /*this.release();*/ },
             // error callback
-             function (err) { alert("M: " + err.message + " - " + err.code); }
-    );
-           // Play audio
-    my_media.play();
+             function (err) { console.log("M: " + err.message + " - " + err.code); }
+		);
+			   // Play audio
+		my_media.play();
+	}, 100);
+	
 	//var audio = new Audio(src);
 	//audio.play();
 }
