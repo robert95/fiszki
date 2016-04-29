@@ -582,7 +582,7 @@ function tellMe(){
 	setTimeout(function(){
 		my_media = new Media(src,
             // success callback
-             function () { /*this.release();*/ },
+             function () { this.release(); },
             // error callback
              function (err) { console.log("M: " + err.message + " - " + err.code); }
 		);
@@ -793,6 +793,7 @@ function nextStep(){
 				nbMethod = 2;
 				setWordToMethod(2);
 				canNextStep = true;
+				tellMe();
 				return;
 			}
 			if(nbMethod == 2){
