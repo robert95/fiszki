@@ -361,7 +361,7 @@ function setNewCat(c, s){
 }
 function showtoLearn(){
 	for(var i = 0; i < 10; i++) ;
-		//alert(i + ")" + toLearn[i]);
+		//(i + ")" + toLearn[i]);
 }
 /* GET WORD LIST */
 var idWord = false;
@@ -577,11 +577,12 @@ function tellMe(){
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
 	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
+	alert(src);
 	my_media = new Media(src,
             // success callback
-             function () { this.release(); },
+             function () { /*this.release();*/ },
             // error callback
-             function (err) { console.log("M: " + err.message + " - " + err.code); }
+             function (err) { alert("M: " + err.message + " - " + err.code); }
     );
            // Play audio
     my_media.play();
@@ -1067,7 +1068,7 @@ function nextStep(){
 			}
 			$("#nav-words-container p").removeClass("pulse");
 			if(step_pow == 0){
-				alert("t1");
+				//alert("t1");
 				if(ile_s == 0) snd_id = -1;
 				if(ile_t == 0) thd_id = -1;
 				updateThirdNav();
@@ -1210,10 +1211,10 @@ function showTrans(x){
 }
 
 function tellMeNow(obj){
-	var par = $(obj).parent().parent();
-	if(parseInt(par.css('top')) == 0){
+	//var par = $(obj).parent().parent();
+	//if(parseInt(par.css('top')) == 0){
 		tellMe();
-	}
+	//}
 }
 
 function prepareGlobalForCycle(i){
