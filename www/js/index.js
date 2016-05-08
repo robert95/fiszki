@@ -98,6 +98,7 @@ function readAsTextLangR(file) {
   var reader = new FileReader();
   reader.onloadend = function(evt) {
 		resLang = evt.target.result;
+		alert("lang z pliku: " + resLang);
   };
   reader.readAsText(file);    
 }
@@ -105,7 +106,7 @@ function onFSErrorLangR(err) {
 	var p = path();
 	//alert("Pierwsze uruchomienie");
 	//copyFirstPath();
-	resLang = '{"lang":2}';
+	resLang = '{"lang":-1}';
 }
 /* END READ FILE */
 
@@ -293,7 +294,7 @@ function startApp(){
 			}, 1000);
 		}
 		
-	}, 1000);
+	}, 1500);
 }
 /*END START APP*/
 function getMyLang(){
@@ -306,7 +307,9 @@ function getMyLangHelper(){
         setTimeout(function() {getMyLangHelper();}, 100);
 	    return;
 	}else{
+		alert("lang w getMyLang: " + resLang);
 		langJSON = JSON.parse(resLang);
+		alert("lang w getMyLang 2:  " + JSON.stringify(langJSON));
 		resLang = false;
 		return;
 	}
