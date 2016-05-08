@@ -83,29 +83,23 @@ function readAsText3(file) {
 
 /* READ LANG */
 function readLang() {
-	alert("tu 1");
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLangR, onFSErrorLangR);
 }
 function onFSSuccessLangR(fileSystem) {
-	alert("tu 2" + srcLang);
     fileSystem.root.getFile(srcLang, {create:false, exclusive:false}, gotFileEntryLangR, onFSErrorLangR);
 }
 function gotFileEntryLangR(fileEntry) {
-	alert("tu 3");
     fileEntry.file(gotFileLangR, onFSErrorLangR);
 }
 function gotFileLangR(file) {
-	alert("tu 4");
-    readAsTextLang(file);
+    readAsTextLangR(file);
 }
 function readAsTextLangR(file) {
-	alert("tu 5");
-  var reader = new FileReader();
-  reader.onloadend = function(evt) {
+	var reader = new FileReader();
+	reader.onloadend = function(evt) {
 		resLang = evt.target.result;
-		alert("lang z pliku: " + resLang);
-  };
-  reader.readAsText(file);    
+	};
+	reader.readAsText(file);    
 }
 function onFSErrorLangR(err) {
 	var p = path();
@@ -284,16 +278,11 @@ function startApp(){
 		else{
 		//NIE
 			//getMyLang();
-			alert("jestem");
 			$("#myLang").val(lang);
-			alert("lang: " + lang);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
 			setTimeout(function(){
-				alert("day: " + JSON.stringify(dayJSON));
-				alert("toLearn: " + JSON.stringify(toLearnJSON));
-				alert("notcie: " + JSON.stringify(noticeJSON));
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 			}, 1000);
@@ -312,9 +301,7 @@ function getMyLangHelper(){
         setTimeout(function() {getMyLangHelper();}, 100);
 	    return;
 	}else{
-		alert("lang w getMyLang: " + resLang);
 		langJSON = JSON.parse(resLang);
-		alert("lang w getMyLang 2:  " + JSON.stringify(langJSON));
 		resLang = false;
 		return;
 	}
@@ -422,7 +409,6 @@ function showLangList(l){
 var subcats = false;
 function getCatList(){
 	var idCat = $("#myLang").val();
-	alert("date/"+ idCat + "/cat.json");
 	$.get("date/"+ idCat + "/cat.json", function(result) {
 		setTimeout(
 			function(){
@@ -1466,7 +1452,6 @@ function packControler(){
 	$("#ok-no-panel").show();
 	$("#learn-container").show();
 	for(var i = 0; i < 10 && !endThis; i++){
-		alert(i + " - " + toLearn[i]);
 		continueLearning = false;
 		if(toLearn[i] != -1){
 			setEveryThingToStartCat(toLearn[i]);
