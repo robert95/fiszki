@@ -83,18 +83,23 @@ function readAsText3(file) {
 
 /* READ LANG */
 function readLang() {
+	alert("tu 1");
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLangR, onFSErrorLangR);
 }
 function onFSSuccessLangR(fileSystem) {
+	alert("tu 2" + srcLang);
     fileSystem.root.getFile(srcLang, {create:false, exclusive:false}, gotFileEntryLangR, onFSErrorLangR);
 }
 function gotFileEntryLangR(fileEntry) {
+	alert("tu 3");
     fileEntry.file(gotFileLangR, onFSErrorLangR);
 }
 function gotFileLangR(file) {
+	alert("tu 4");
     readAsTextLang(file);
 }
 function readAsTextLangR(file) {
+	alert("tu 5");
   var reader = new FileReader();
   reader.onloadend = function(evt) {
 		resLang = evt.target.result;
