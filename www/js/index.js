@@ -83,27 +83,25 @@ function readAsText3(file) {
 
 /* READ LANG */
 function readLang() {
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLang, onFSErrorLang);
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLangR, onFSErrorLangR);
 }
-function onFSSuccessLang(fileSystem) {
-    fileSystem.root.getFile(srcLang, {create:false, exclusive:false}, gotFileEntryLang, onFSErrorLang);
+function onFSSuccessLangR(fileSystem) {
+    fileSystem.root.getFile(srcLang, {create:false, exclusive:false}, gotFileEntryLangR, onFSErrorLangR);
 }
-function gotFileEntryLang(fileEntry) {
-    fileEntry.file(gotFileLang, onFSErrorLang);
+function gotFileEntryLangR(fileEntry) {
+    fileEntry.file(gotFileLangR, onFSErrorLangR);
 }
-function gotFileLang(file) {
+function gotFileLangR(file) {
     readAsTextLang(file);
 }
-function readAsTextLang(file) {
+function readAsTextLangR(file) {
   var reader = new FileReader();
   reader.onloadend = function(evt) {
 		resLang = evt.target.result;
-		alert(JSON.stringify(langJSON));
-		alert(srcLang);
   };
   reader.readAsText(file);    
 }
-function onFSErrorLang(err) {
+function onFSErrorLangR(err) {
 	var p = path();
 	//alert("Pierwsze uruchomienie");
 	//copyFirstPath();
