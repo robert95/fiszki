@@ -349,8 +349,8 @@ function getToLearnHelper(){
 	if(!res){
         setTimeout(getToLearnHelper, 100);
 	}else{
-//		toLearnJSON = JSON.parse(res);
-		toLearnJSON = JSON.parse('[{"subid": 1,"catid": 1,"start": 1}]');
+		toLearnJSON = JSON.parse(res);
+	//	toLearnJSON = JSON.parse('[{"subid": 1,"catid": 1,"start": 1}]');
 		for(var x in toLearnJSON){
 			var pack = toLearnJSON[x];
 			var day = $("#nrDayFiled").text();
