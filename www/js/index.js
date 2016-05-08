@@ -105,7 +105,7 @@ function onFSErrorLangR(err) {
 	var p = path();
 	//alert("Pierwsze uruchomienie");
 	//copyFirstPath();
-	resLang = '{"lang":2}';
+	resLang = '{"lang":-1}';
 }
 /* END READ FILE */
 
@@ -476,11 +476,9 @@ function showSubCatList(s){
 function setNewCat(c, s){
 	toLearn[8] = c + "/" + s;
 	toLearn[9] = c + "/" + s;
-	alert(JSON.stringify(toLearnJSON));
 	setTimeout(	function(){
 		srt = $("#nrDayFiled").text();
 		toLearnJSON.push({"subid": s,"catid": c,"start": srt});
-		alert(JSON.stringify(toLearnJSON));
 	}, 150);
 	
 	/*datesJSON = toLearnJSON;
