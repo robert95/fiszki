@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Jak wysoko pan skoczył / pani skoczyła?",
+			"name": "Hasta qué altura ha saltado?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Który krawat nosiłeś?",
+			"name": "Qué corbata te pusiste?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Kogo pan widział widziała?",
+			"name": "A quién ha visto? ",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Kiedy pan zaczął?",
+			"name": "A qué hora ha empezado? ",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Dokąd pan poszedł?",
+			"name": "A dónde ha ido",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Komu pomagałeś?",
+			"name": "A quién has ayudado?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Do kogo pisałeś?",
+			"name": "A quién le has escrito?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": " Musiałyście zapłacić za wstęp?",
+			"name": "Tuvisteis que pagar entrada?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Kto musiał się pożegnać?",
+			"name": "Quién tuvo que despedirse?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Chciałam zamówić taksówkę.",
+			"name": "Quería pedir un taxi.",
 			"notices": [
 			]
 		}

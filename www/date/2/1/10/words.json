@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "encantado",
+			"name": " - zachwycony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "deprimido",
+			"name": " - przygnębiony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "asustado",
+			"name": " - przerażony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "dolido",
+			"name": " - zraniony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "inseguro",
+			"name": " - niepewny ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Impaciente",
+			"name": " - niecierpliwy ",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "celoso",
+			"name": " - zazdrosny ",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Paciente",
+			"name": " - cierpliwy ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "contento ",
+			"name": " zadowolony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "orgulloso",
+			"name": " - dumny ",
 			"notices": [
 			]
 		}

@@ -34,7 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
-		getLangList();
+		//getLangList();
+		startApp();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -49,14 +50,17 @@ var app = {
     }
 };
 
+/* OBSŁUGA ŚCIEŻKI */
 var mainPath;
 function path(){
 	var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
 	mainPath = (res.toString()).replace(/,/g,'/');
 	return (res.toString()).replace(/,/g,'/');
 }
+/* END OBSŁUGA ŚCIEŻKI */
+
 /* READ FILE3 */
-function readWriteFile3() {
+function readDayF() {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess3, onFSError);
 }
 function onFSSuccess3(fileSystem) {
@@ -76,6 +80,35 @@ function readAsText3(file) {
   reader.readAsText(file);    
 }
 /* END READ FILE */
+
+/* READ LANG */
+function readLang() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLang, onFSErrorLang);
+}
+function onFSSuccessLang(fileSystem) {
+    fileSystem.root.getFile(srcLang, {create:false, exclusive:false}, gotFileEntryLang, onFSErrorLang);
+}
+function gotFileEntryLang(fileEntry) {
+    fileEntry.file(gotFileLang, onFSErrorLang);
+}
+function gotFileLang(file) {
+    readAsTextLang(file);
+}
+function readAsTextLang(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(evt) {
+		resLang = evt.target.result;
+  };
+  reader.readAsText(file);    
+}
+function onFSErrorLang(err) {
+	var p = path();
+	//alert("Pierwsze uruchomienie");
+	//copyFirstPath();
+	resLang = '{"lang":-1}';
+}
+/* END READ FILE */
+
 /* READ FILE */
 function readWriteFile() {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onFSError);
@@ -98,11 +131,12 @@ function readAsText(file) {
 }
 function onFSError(err) {
 	var p = path();
-	alert("Ładownie...proszę czekać...");
-	copyFirstPath();
-	//res = "[]";
+	//alert("Ładownie...proszę czekać...");
+	//copyFirstPath();
+	res = "[]";
 }
 /* END READ FILE */
+
 /* READ FILE2 */
 function readWriteFile2() {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess2, onFSError);
@@ -124,6 +158,7 @@ function readAsText2(file) {
   reader.readAsText(file);    
 }
 /* END READ FILE */
+
 /* SAVE FILE */
 function saveFile(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN2, failN);
@@ -149,8 +184,34 @@ function gotFileWriterN2(writer) {
 function failN(error) {
 	alert("error : "+error.code);
 }
-
 /* END SAVE FILE */
+
+/* SAVE LANG */
+function saveMyLang(mylang){
+	langJSON.lang = mylang;
+	saveLang();
+}
+function saveLang(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSNLang, failN);
+}
+
+function gotFSNLang(fileSystem) {
+	fileSystem.root.getFile(srcLang, {create: false}, gotFileEntryLang, failN);
+}
+
+function gotFileEntryLang(fileEntry) {
+	fileEntry.createWriter(gotFileWriterLang, failN);
+}
+
+function gotFileWriterLang(writer) {
+	writer.onwrite = function(evt) {
+		console.log("write success");
+	};
+	writer.write(JSON.stringify(langJSON));
+	writer.abort();
+}
+/* END SAVE FILE */
+
 /* SAVE FILE2 */
 function saveFile5(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN5, failN);
@@ -174,14 +235,18 @@ function gotFileWriterN5(writer) {
 }
 
 /* END SAVE FILE */
-/* GET LANG LIST */
+
+/*POTRZEBNE ZMIENNE*/
 var firstCycle = false;
 var secondCycle = false;
 var thirdCycle = false;
 var srcSave = false;
 var srcSave5 = false;
+var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
+var langJSON = false;
+var resLang = false;
 var res = false;
 var srcFile = false;
 var res2 = false;
@@ -192,10 +257,57 @@ var dayJSON = false;
 var toLearnJSON = false;
 var noticeJSON = false;
 var isFirstCycle = true;
-var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+var startLearn = false;
+var toLearn = [ "1/1", -1, "1/2", -1, -1, -1, -1, -1, -1, -1];
+var countWord = 0;
+/* START APP*/
+function startApp(){
+	//sprawdź czy to pierwsze uruchomienia
+	$("#first-use-loading-page").show();
+	getMyLang(); //sprawdzamy czy jest ustawiony mój język
+	setTimeout(function(){
+		var lang = langJSON.lang;
+		//TAK
+		if(lang < 1){
+			$("#first-use-loading-page").hide();
+			startLearn = true; //po tutorialu zacznie naukę
+			getLangList(); //wybierz swój język
+			$("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
+			copyFirstPath(); //utwórz potrzebne pliki
+		}
+		else{
+		//NIE
+			getMyLang(); //pobierz język
+			getDay(); //pobierz numer dnia
+			getNotice(); //pobierz notice
+			getToLearn(); //pobierz toLearn
+			setTimeout(function(){
+				$("#first-use-loading-page").hide();				
+				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
+			}, 1000);
+		}
+		
+	}, 1000);
+}
+/*END START APP*/
+function getMyLang(){
+	srcLang = path() + "lang.json";
+	readLang();
+	setTimeout(function() {getMyLangHelper();}, 100);
+}
+function getMyLangHelper(){
+	if(resLang == false){
+        setTimeout(function() {getMyLangHelper();}, 100);
+	    return;
+	}else{
+		langJSON = JSON.parse(resLang);
+		resLang = false;
+		return;
+	}
+}
 function getDay(){
 	srcFile3 = path() + "day.json";
-	readWriteFile3();
+	readDayF();
 	getDayHelper();
 }
 function getDayHelper(){
@@ -205,7 +317,7 @@ function getDayHelper(){
 	}else{
 		dayJSON = JSON.parse(res3);
 		res3 = false;
-		$("#nrDay").text(dayJSON.day);
+		$("#nrDayFiled").text(dayJSON.day);
 	}
 }
 function getNotice(){
@@ -261,6 +373,13 @@ function getToLearnHelper(){
 		}
 	}
 }
+function setCountWord(){
+	for(var i = 0; i < 8; i++){
+		if(toLearn[i] > 0){
+			countWord += 10;
+		}		
+	}
+}
 function saveDay(){
 	dayJSON.day = dayJSON.day + 1;  //zmienić na 1
 	datesJSON5 = dayJSON;
@@ -271,19 +390,14 @@ function getLangList(){
 	getDay();
 	$.get("date/lang.json", function(result) {
 		showLangList(result);
-		startTmp();
+		//startTmp();
 	});
 }
 function showLangList(l){
 	var langs = JSON.parse(l);
 	for(var x in langs){
 		var lang = langs[x];
-		var tmp = '<div><h1 class="text expand" ontouchstart="expand(this);">'+ lang.label + '</h1><div class="list-of-lang">';
-		for(var y in langs){
-			var langTmp = langs[y];
-			if(y != x) tmp += '<p class="text setLang" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" data-learnlang="' + langTmp.id + '">' + langTmp.name + '</p>';
-		}
-		tmp += '</div></div>';
+		var tmp = '<h1 class="text" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" >'+ lang.label + '</h1>';
 		$("#langs").append(tmp);
 	}
 }
@@ -300,7 +414,7 @@ function getCatList(){
 					function(){
 						showCatList(result);
 					}, 200);
-				getToLearn();
+				//getToLearn();
 			}, 200);
 		
     });
@@ -319,6 +433,21 @@ function showCatList(c){
 				$("#cats").append(tmp);
 			}, 50);
 	}
+}
+function getSubCatName(cs){
+	var res = cs.split("/");
+	var idp = res[0];
+	var idc = res[1];
+	var idLang = $("#myLang").val();
+	$.get("date/"+ idLang + "/" + idp + "/subcat.json", function(result) {
+		var scat = JSON.parse(result);
+		for(var x in scat){
+			var cat = scat[x];
+			if(cat.id == idc) {	
+				nameCat = cat.name;
+			}
+		}
+    });
 }
 /* END GET CAT LIST */
 
@@ -384,6 +513,7 @@ var words, trans;
 function showWordList(w, t){
 	words = JSON.parse(w);
 	trans = JSON.parse(t);
+    isFirstCycle = false;
 	if(isFirstCycle){
 		$("#words").html("");
 		var tmp = "";
@@ -393,6 +523,7 @@ function showWordList(w, t){
 			var tran = trans[x];
 			tmp += '<div class="word" data-id="' + word.id + '" data-check="1" onclick="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
 		}
+		alert("jesten");
 		$("#words").html(tmp);
 		isFirstCycle = false;
 	}else{
@@ -580,6 +711,13 @@ function tellMe(){
 	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
 	//alert(src);
 	setTimeout(function(){
+		if(my_media!=null){/*jak coś to do usunięcia*/
+				my_media.stop();
+				my_media.stopRecord();
+				my_media.release();
+				my_media=null;
+		}
+		
 		my_media = new Media(src,
             // success callback
              function () { this.release(); },
@@ -601,7 +739,7 @@ function copyFirstPath(){
 			asset_directory: "www/firstPatch",
 			destination_directory: mainPath
 		},
-		function() { alert("pliki zostały skopiowane"); location.reload();}, 
+		function() { alert("pliki zostały skopiowane");}, 
 		function() { alert('fail'); }
 	);
 } 
@@ -1215,6 +1353,34 @@ function showTrans(x){
 	}
 }
 
+function showNoteForTut(x){
+	var target = "#t-l-n-" + x;
+	var target2 = "#t-l-t-" + x;
+	var targetE = "#t-l-e-" + x;
+	$(target2).hide();
+	if($(target).is(":visible") == true){
+		$(target).hide();
+		$(targetE).show();
+	}else{
+		$(targetE).hide();
+		$(target).show();
+	}
+}
+
+function showTransForTut(x){
+	var target = "#t-l-n-" + x;
+	var target2 = "#t-l-t-" + x;
+	var targetE = "#t-l-e-" + x;
+	$(target).hide();
+	if($(target2).is(":visible") == true){
+		$(target2).hide();
+		$(targetE).show();
+	}else{
+		$(targetE).hide();
+		$(target2).show();
+	}
+}
+
 function tellMeNow(obj){
 	//var par = $(obj).parent().parent();
 	//if(parseInt(par.css('top')) == 0){
@@ -1279,70 +1445,84 @@ function prepareGlobalForCycle(i){
 }
 
 var continueLearning = false;
+var nameCat;
+var newCategoryisSet = false;
 function packControler(){
 	var endThis = false;
+	$("#startDay").hide();
+	$("#words-nav").show();
+	$("#ok-no-panel").show();
+	$("#learn-container").show();
 	for(var i = 0; i < 10 && !endThis; i++){
 		continueLearning = false;
 		if(toLearn[i] != -1){
 			setEveryThingToStartCat(toLearn[i]);
+			getSubCatName(toLearn[i]);
 			endThis = true;
 			continueLearning = true;
 			toLearn[i] = -1;
-			switch(i) {
+			switch(i){
 			case 0:
 				prepareGlobalForCycle(1);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			case 1:
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			case 2:
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			case 3:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			case 4:
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			case 5:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			case 6:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			case 7:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			case 8:
+				newCategoryisSet = true;
 				prepareGlobalForCycle(1);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			case 9:
+				newCategoryisSet = true;
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ nextStep();}, 300);
+				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
 				break;
 			default:
 				break;
 			} 
 		}
-	}
+	}	
 	if(!continueLearning){
-		saveDay();
-		setTimeout(function(){ 
-			datesJSON = toLearnJSON;
-			srcSave = path() + "save.json";
-			saveFile();
-		}, 200);
-		alert("NA DZISIAJ KONIEC:)");
+		if(newCategoryisSet){
+			saveDay();
+			setTimeout(function(){ 
+				datesJSON = toLearnJSON;
+				srcSave = path() + "save.json";
+				saveFile();
+			}, 200);
+			alert("NA DZISIAJ KONIEC:)");
+		}else{
+			startSetNewCategory();
+		}
 	}
+	
 }
 
 function setEveryThingToStartCat(cat){
@@ -1375,6 +1555,68 @@ function setNoFlipIfWrong(val){
 function isRoundTwoAndTheSameMethod(){
 	return (round == 3 && theSameMethod);
 }
+
+function showStartCat(count, name){
+	$("#nav-circle-word").hide();
+	$("#learn-container").hide();
+	$("#main-text-next-cat").text(count + ". powtórka");
+	$("#name-next-cat").text(name);
+	$("#start-next-cat").show();
+}
+
+function nextCatBtn(){
+	$("#nav-circle-word").show();
+	$("#learn-container").show();
+	$("#start-next-cat").hide();
+	nextStep();
+}
+/*TUTORIAL*/
+var stepTut = 0;
+function startTut(){
+	stepTut = 0;
+	$("#tutorial").show();
+	$("#tut-lern-0").show();
+}
+function nextTutStep(){
+	stepTut++;
+	$(".tut-method").hide();
+	if(stepTut > 6) endTut();
+	else{
+		$("#tut-lern-" + stepTut).show();
+		setTimeout(function(){					  
+				$('.tut-method').removeClass('goLeft');
+				$('.tut-method').removeClass('goRight');
+		}, 300);
+	}
+}
+function endTut(){
+	stepTut = 0;
+	$("#tutorial").hide();
+	$(".tut-method").hide();
+	if(startLearn){
+		//zacznij naukę
+		showStartLessonPage();
+		startLearn = false;
+	}else{
+		//powrót do głównego
+	}
+}
+function startSetNewCategory(){
+	getCatList();
+	$('section').hide();
+	$("#choose-cat").show();
+	$("#cats").show();
+}
+
+function showStartLessonPage(){
+	$('seciton').hide();
+	$("#startDay").show();
+}
+
+function startLesson(){
+	packControler();	
+}
+/*END TUTORIAL*/
 /*function iinit() {
 	
 	//This alias is a read-only pointer to the app itself

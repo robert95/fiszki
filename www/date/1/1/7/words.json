@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": " - pilot",
+			"name": "El mando a distancia",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - bateria",
+			"name": "La pila",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - akumulator",
+			"name": "La pila recargable",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - ładowarka",
+			"name": "El cargador",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - rozgałęziacz",
+			"name": "El ladrón",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": " - żarówka",
+			"name": "La bombilla",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": " - bezpiecznik",
+			"name": "El fusible",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": " - nacisnąć guzik",
+			"name": "Pulsar el botón",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": " - naładować baterię",
+			"name": "Cargar la batería",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": " - używać produktu",
+			"name": "Utilizar el producto",
 			"notices": [
 			]
 		}

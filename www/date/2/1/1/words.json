@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Tuve que apagar la radio.",
+			"name": "Musiałam wyłączyć radio.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "He hablado por teléfono.",
+			"name": "Rozmawiałam przez telefon.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "He contado toda la historia.",
+			"name": "Opowiedziałam całą historię.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "He trabajado todo el día.",
+			"name": "Pracowałam przez cały dzień.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Me he comido toda la comida.",
+			"name": "Zjadłam całe jedzenie.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Cuánto ha bebido?",
+			"name": "Ile pan wypił / pani wypiła?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Cómo ha dormido ?",
+			"name": "Jak pan spał / pani spała?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Con quién se ha citado?",
+			"name": "Z kim się pan umówił / pani umówiła?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Con quién ha hablado ?",
+			"name": "Z kim pan rozmawiał / pani rozmawiała?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "A qué velocidad ha conducido",
+			"name": "Jak szybko pan jechał / pani jechała?",
 			"notices": [
 			]
 		}

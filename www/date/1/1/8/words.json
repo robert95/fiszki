@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Myślałam, że chciałeś zadzwonić do swojej żony.",
+			"name": "Pensaba que querías llamar a tu esposa.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "One nie chciały posprzątać pokoju.",
+			"name": "No querían ordenar la habitación.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " One nie chciały iść spać.",
+			"name": "No querían irse a cama.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Wolno mi było kupić sobie sukienkę.",
+			"name": "Pude comprar un vestido.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Wolno ci było palić w samolocie?",
+			"name": "Pudiste fumar en el avión?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "  okłamać kogoś",
+			"name": "mentirle a alguien",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "stracić zaufanie",
+			"name": "perder la confianza",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "rozstać się",
+			"name": "romper",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": " - być zakochanym",
+			"name": "estar enamorado",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "  - But I’m lacking a companion",
+			"name": "Pero me hace falta una companera",
 			"notices": [
 			]
 		}

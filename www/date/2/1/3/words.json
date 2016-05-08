@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Él era infiel",
+			"name": "On był niewierny",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Él cogió un cigarrillo.",
+			"name": "On wziął papierosa.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Y ella leyó un libro.",
+			"name": "A ona czytała książkę.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Él escribió una carta.",
+			"name": "On pisał list.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Él no era simpático",
+			"name": "On nie był sympatyczny",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Tuviste que llamar al médico?",
+			"name": "Musiałaś wezwać lekarza?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "No pudo encontrar el camino.",
+			"name": "On nie mógł znaleźć tej drogi.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Por qué no pudiste entenderlo?",
+			"name": "Dlaczego nie mogłeś / mogłaś go zrozumieć?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Tuve que coger un taxi.",
+			"name": "Musiałem wziąć taksówkę.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Él no estaba satisfecho",
+			"name": "On nie był zadowolony",
 			"notices": [
 			]
 		}

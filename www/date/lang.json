@@ -1,12 +1,13 @@
 [
+	
 	{
 		"id": 1,
-		"name": "polski",
-		"label": "Dla mówiących po polsku"
+		"name": "hiszpański",
+		"label": "Mówię po hiszpańku"
 	},
 	{
 		"id": 2,
-		"name": "hiszpański",
-		"label": "Dla mówiących po hiszpańsku"
+		"name": "polski",
+		"label": "Mówię po polsku"
 	}
 ]

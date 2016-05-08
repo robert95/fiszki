@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": " - zaprzyjaźnić się",
+			"name": "hacer amigos",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - flirtować z kimś",
+			"name": "ligar con alguien",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - dojrzewać",
+			"name": "madurar",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - chrześniak",
+			"name": "ahijado",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - zatroskany",
+			"name": "ansioso",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": " - zawstydzony",
+			"name": "avergonzado",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": " - znudzony ",
+			"name": "aburrido",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": " - odprężony",
+			"name": "cómodo",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": " - zły ",
+			"name": "enfadado",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": " - zdezorientowany ",
+			"name": "confundido",
 			"notices": [
 			]
 		}

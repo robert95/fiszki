@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "inquieto",
+			"name": " - niespokojny ",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "triste",
+			"name": " - smutny ",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "sorprendido",
+			"name": " - zaskoczony ",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "agradecido",
+			"name": " - wdzięczny",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Respetar las costumbres de otros",
+			"name": " - szanować zwyczaje innych",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Tratar igual",
+			"name": " - traktować w równy sposób",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Luchar contra la discriminación",
+			"name": " - walczyć przeciw dyskryminacji",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Respetar la cultura",
+			"name": " - szanować kulturę",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "El altavoz",
+			"name": " - głośnik",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "La fuente inagotable de información",
+			"name": " - niekończące się źródło informacji",
 			"notices": [
 			]
 		}

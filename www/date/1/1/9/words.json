@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": " - Trzymać kciuki",
+			"name": "Cruzar los dedos",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - Lepiej późno niż wcale",
+			"name": "Más vale tarde que nunca",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - Przy okazji",
+			"name": "A propósito",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - Zatrzymaj resztę",
+			"name": "Quédate con el cambio",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - Co jest napisane na ogłoszeniu? ",
+			"name": "Qué pone en el cartel ?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": " - Jak ci poszło? ",
+			"name": "Qué tal te ha ido?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": " - Lubicie Tańczyć ?",
+			"name": "Os gusta bailar ?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": " - Co chcesz przez to powiedzieć ?",
+			"name": "Qué está tratando decir?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": " - Płacę teraz czy później ?",
+			"name": "Pago ahora o después?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": " - I’m thirsty",
+			"name": "Tengo sed",
 			"notices": [
 			]
 		}

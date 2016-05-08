@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": " - burzowy dzień",
+			"name": "un día tormentoso",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - pogoda zepsuła nasze plany",
+			"name": "el tiempo nos estropeó los planes",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - zdaje się, że będzie padać",
+			"name": "parece que va a llover",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - oberwanie chmury",
+			"name": "un chaparrón",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - mroźna noc",
+			"name": "una noche de helada",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": " - fala upału",
+			"name": "una ola de calor",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": " - pogoda się zmieniła",
+			"name": "ha cambiado el tiempo",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": " - podmuch wiatru",
+			"name": "una racha",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": " - błyskawica",
+			"name": "un relámpago",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": " - grzmot",
+			"name": "el trueno",
 			"notices": [
 			]
 		}
