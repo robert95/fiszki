@@ -254,8 +254,8 @@ var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
 var dayJSON = false;
-var toLearnJSON = false;
-var noticeJSON = false;
+var toLearnJSON = [];
+var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
 var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
@@ -475,14 +475,12 @@ function showSubCatList(s){
 function setNewCat(c, s){
 	toLearn[8] = c + "/" + s;
 	toLearn[9] = c + "/" + s;
-	setTimeout(
-	function(){
-		srt = $("#nrDay").text();
-		//alert(toLearnJSON); 			//MOŻE TU JEST COŚ ŹŁE? COŚ Z KOLEJNOŚCI!!!
+	alert(JSON.stringify(toLearnJSON));
+	setTimeout(	function(){
+		srt = $("#nrDayFiled").text();
 		toLearnJSON.push({"subid": s,"catid": c,"start": srt});
+		alert(JSON.stringify(toLearnJSON));
 	}, 150);
-	
-	
 	
 	/*datesJSON = toLearnJSON;
 	srcSave = path() + "save.json";
@@ -1516,8 +1514,8 @@ function packControler(){
 				datesJSON = toLearnJSON;
 				srcSave = path() + "save.json";
 				saveFile();
+				alert("NA DZISIAJ KONIEC:)");
 			}, 200);
-			alert("NA DZISIAJ KONIEC:)");
 		}else{
 			startSetNewCategory();
 		}
