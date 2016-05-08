@@ -190,6 +190,8 @@ function failN(error) {
 function saveMyLang(mylang){
 	langJSON.lang = mylang;
 	saveLang();
+	alert(JSON.stringify(langJSON));
+	alert(srcLang);
 }
 function saveLang(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSNLang, failN);
@@ -277,7 +279,7 @@ function startApp(){
 		}
 		else{
 		//NIE
-			getMyLang(); //pobierz język
+			//getMyLang();
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
