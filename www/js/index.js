@@ -105,7 +105,7 @@ function onFSErrorLangR(err) {
 	var p = path();
 	//alert("Pierwsze uruchomienie");
 	//copyFirstPath();
-	resLang = '{"lang":-1}';
+	resLang = '{"lang":2}';
 }
 /* END READ FILE */
 
@@ -278,11 +278,16 @@ function startApp(){
 		else{
 		//NIE
 			//getMyLang();
+			alert("jestem");
 			$("#myLang").val(lang);
+			alert("lang: " + lang);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
 			setTimeout(function(){
+				alert("day: " + JSON.stringify(dayJSON));
+				alert("toLearn: " + JSON.stringify(toLearnJSON));
+				alert("notcie: " + JSON.stringify(noticeJSON));
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 			}, 1000);
@@ -344,10 +349,11 @@ function getToLearnHelper(){
 	if(!res){
         setTimeout(getToLearnHelper, 100);
 	}else{
-		toLearnJSON = JSON.parse(res);
+//		toLearnJSON = JSON.parse(res);
+		toLearnJSON = JSON.parse('[{"subid": 1,"catid": 1,"start": 1}]');
 		for(var x in toLearnJSON){
 			var pack = toLearnJSON[x];
-			var day = $("#nrDay").text();
+			var day = $("#nrDayFiled").text();
 			var dayNr = day - pack.start;
 			switch(dayNr) {
 			case 1:
@@ -408,6 +414,7 @@ function showLangList(l){
 var subcats = false;
 function getCatList(){
 	var idCat = $("#myLang").val();
+	alert("date/"+ idCat + "/cat.json");
 	$.get("date/"+ idCat + "/cat.json", function(result) {
 		setTimeout(
 			function(){
@@ -1451,6 +1458,7 @@ function packControler(){
 	$("#ok-no-panel").show();
 	$("#learn-container").show();
 	for(var i = 0; i < 10 && !endThis; i++){
+		alert(i + " - " + toLearn[i]);
 		continueLearning = false;
 		if(toLearn[i] != -1){
 			setEveryThingToStartCat(toLearn[i]);
