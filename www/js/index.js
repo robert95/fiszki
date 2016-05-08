@@ -98,6 +98,8 @@ function readAsTextLang(file) {
   var reader = new FileReader();
   reader.onloadend = function(evt) {
 		resLang = evt.target.result;
+		alert(JSON.stringify(langJSON));
+		alert(srcLang);
   };
   reader.readAsText(file);    
 }
@@ -190,8 +192,6 @@ function failN(error) {
 function saveMyLang(mylang){
 	langJSON.lang = mylang;
 	saveLang();
-	alert(JSON.stringify(langJSON));
-	alert(srcLang);
 }
 function saveLang(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSNLang, failN);
