@@ -105,7 +105,7 @@ function onFSErrorLangR(err) {
 	var p = path();
 	//alert("Pierwsze uruchomienie");
 	//copyFirstPath();
-	resLang = '{"lang":-1}';
+	resLang = '{"lang":2}';
 }
 /* END READ FILE */
 
@@ -278,6 +278,7 @@ function startApp(){
 		else{
 		//NIE
 			//getMyLang();
+			$("#myLang").val(lang);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
