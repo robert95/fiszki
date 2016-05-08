@@ -523,7 +523,7 @@ function showWordList(w, t){
 			var tran = trans[x];
 			tmp += '<div class="word" data-id="' + word.id + '" data-check="1" onclick="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
 		}
-		alert("jesten");
+		//alert("jesten");
 		$("#words").html(tmp);
 		isFirstCycle = false;
 	}else{
