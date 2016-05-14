@@ -245,7 +245,7 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = false;
+var langJSON = false;//JSON.parse('{"lang":2}');
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -253,13 +253,18 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;
-var toLearnJSON = [];
+var dayJSON = false;//JSON.parse('{"day":6}');
+var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"5"},{"subid":9,"catid":1,"start":"3"},{"subid":5,"catid":1,"start":"3"}]');
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
 var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 var countWord = 0;
+var countCatsToLearn = 0;
+var countWordsToLearn = 20; //2 cykle w nowej kategorii po 10 słów
+var learnedWords = 0;
+var suggestedCatPath = "";
+var suggestedCatName = "";
 /* START APP*/
 function startApp(){
 	//sprawdź czy to pierwsze uruchomienia
@@ -279,6 +284,7 @@ function startApp(){
 		//NIE
 			//getMyLang();
 			$("#myLang").val(lang);
+			setSuggestedCat(1, 0);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
@@ -310,6 +316,47 @@ function getDay(){
 	srcFile3 = path() + "day.json";
 	readDayF();
 	getDayHelper();
+
+	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
+	$("#end-nr-lesson").text(dayJSON.day);
+		for(var x in toLearnJSON){ //usunąc
+			var pack = toLearnJSON[x];
+			var day = dayJSON.day;
+			var dayNr = day - pack.start;
+			switch(dayNr) {
+			case 1:
+				toLearn[0] = pack.catid + "/" + pack.subid;
+				toLearn[1] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 20;
+				setSuggestedCat(pack.catid, pack.subid);
+				break;
+			case 4:
+				toLearn[2] = pack.catid + "/" + pack.subid;
+				toLearn[3] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 20;
+				break;
+			case 10:
+				toLearn[4] = pack.catid + "/" + pack.subid;
+				toLearn[5] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 20;
+				break;
+			case 27:
+				toLearn[6] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 10;
+				break;
+			case 60:
+				toLearn[7] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 10;
+				break;
+			default:
+				break;
+			} 
+		}*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -319,6 +366,7 @@ function getDayHelper(){
 		dayJSON = JSON.parse(res3);
 		res3 = false;
 		$("#nrDayFiled").text(dayJSON.day);
+		$("#end-nr-lesson").text(dayJSON.day);
 	}
 }
 function getNotice(){
@@ -345,7 +393,6 @@ function getToLearnHelper(){
         setTimeout(getToLearnHelper, 100);
 	}else{
 		toLearnJSON = JSON.parse(res);
-	//	toLearnJSON = JSON.parse('[{"subid": 1,"catid": 1,"start": 1}]');
 		for(var x in toLearnJSON){
 			var pack = toLearnJSON[x];
 			var day = $("#nrDayFiled").text();
@@ -354,20 +401,31 @@ function getToLearnHelper(){
 			case 1:
 				toLearn[0] = pack.catid + "/" + pack.subid;
 				toLearn[1] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 20;
+				setSuggestedCat(pack.catid, pack.subid);
 				break;
 			case 4:
 				toLearn[2] = pack.catid + "/" + pack.subid;
 				toLearn[3] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 20;
 				break;
 			case 10:
 				toLearn[4] = pack.catid + "/" + pack.subid;
 				toLearn[5] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 20;
 				break;
 			case 27:
 				toLearn[6] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 10;
 				break;
 			case 60:
 				toLearn[7] = pack.catid + "/" + pack.subid;
+				countCatsToLearn++;
+				countWordsToLearn += 10;
 				break;
 			default:
 				break;
@@ -418,7 +476,6 @@ function getCatList(){
 					}, 200);
 				//getToLearn();
 			}, 200);
-		
     });
 }
 function showCatList(c){
@@ -893,6 +950,7 @@ var last_r_s = -1;
 var theSameMethod = false;
 
 function nextStep(){
+	updateProgressBar();
 	if(readyToSaveNotice){
 		saveNotice($("#confirm-text-"+nbMethod).val());
 	}else{
@@ -941,6 +999,8 @@ function nextStep(){
 				nbMethod = 2;
 				var length = $("#nav-words-container p").length;
 				var index = $("#nav-words-container p.activ").index() + 1;
+				learnedWords++;
+				//alert(learnedWords);
 				if(length <= index){
 					round = 2;
 					firstCycle = false;
@@ -1048,6 +1108,8 @@ function nextStep(){
 				noFlipIfWrong = true;
 			}else if(nbMethod == 6){
 				whereGo = -1;
+				learnedWords++;
+			//	alert(learnedWords);
 				var index = $("#nav-words-container p.activ").index() + 1;
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
@@ -1098,6 +1160,8 @@ function nextStep(){
 					var length = $("#nav-words-container p").length;
 					var index = $("#nav-words-container p.activ").index() + 1;
 					if(length <= index){
+						learnedWords++;
+					//	alert(learnedWords);
 						round = 5;
 						nextStep();	
 						return;
@@ -1176,6 +1240,8 @@ function nextStep(){
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
 				setNavWordPosition(index);
+				learnedWords++;
+				//alert(learnedWords);
 				setTimeout(function(){
 					setWordToMethod(1);
 				}, 100);
@@ -1445,6 +1511,7 @@ function prepareGlobalForCycle(i){
 var continueLearning = false;
 var nameCat;
 var newCategoryisSet = false;
+var learnetCatToday = 1;
 function packControler(){
 	var endThis = false;
 	$("#startDay").hide();
@@ -1462,45 +1529,50 @@ function packControler(){
 			switch(i){
 			case 0:
 				prepareGlobalForCycle(1);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
 				break;
 			case 1:
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ nextStep(); }, 300);
+				learnetCatToday++;
 				break;
 			case 2:
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
 				break;
 			case 3:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ nextStep(); }, 300);
+				learnetCatToday++;
 				break;
 			case 4:
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
 				break;
 			case 5:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ nextStep(); }, 300);
+				learnetCatToday++;
 				break;
 			case 6:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
+				learnetCatToday++;
 				break;
 			case 7:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
+				learnetCatToday++;
 				break;
 			case 8:
 				newCategoryisSet = true;
 				prepareGlobalForCycle(1);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
 				break;
 			case 9:
 				newCategoryisSet = true;
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ showStartCat("1", nameCat);}, 300);
+				setTimeout(function(){ nextStep(); }, 300);
 				break;
 			default:
 				break;
@@ -1514,10 +1586,11 @@ function packControler(){
 				datesJSON = toLearnJSON;
 				srcSave = path() + "save.json";
 				saveFile();
-				alert("NA DZISIAJ KONIEC:)");
+				setTimeout(function(){ endLearn();}, 100);
 			}, 200);
 		}else{
-			startSetNewCategory();
+			startChoiceNewCategory();
+			//startSetNewCategory();
 		}
 	}
 	
@@ -1555,19 +1628,40 @@ function isRoundTwoAndTheSameMethod(){
 }
 
 function showStartCat(count, name){
+    removeAllProgressClass($("#progess-btn-stan"));
+	$("#start-next-cat").show();
 	$("#nav-circle-word").hide();
 	$("#learn-container").hide();
-	$("#main-text-next-cat").text(count + ". powtórka");
+	$("#main-text-next-cat").text("Powtórka: " + count + "/" + (countCatsToLearn+1));
 	$("#name-next-cat").text(name);
-	$("#start-next-cat").show();
+	
+	var percent = Math.round(((count-1)/(countCatsToLearn+1))*100);
+	$("#progess-btn-stan").addClass('p'+percent);
+	$("#progess-btn-per").text(percent+"%");
+	
+	setTimeout(function(){				
+		$("#start-next-cat").removeClass('next-cat-left');
+	}, 50);
 }
 
 function nextCatBtn(){
-	$("#nav-circle-word").show();
-	$("#learn-container").show();
-	$("#start-next-cat").hide();
-	nextStep();
+	$("#start-next-cat").addClass('next-cat-right');
+	setTimeout(function(){					  
+		$("#nav-circle-word").show();
+		$("#learn-container").show();
+		$("#start-next-cat").hide();
+		$("#start-next-cat").removeClass('next-cat-right');
+		$("#start-next-cat").addClass('next-cat-left');
+		nextStep();
+	}, 500);
 }
+
+/*END APP*/
+function endLearn(){
+	$('section').hide();
+	$("#end-panel").show();
+}
+/*END END APP*/
 /*TUTORIAL*/
 var stepTut = 0;
 function startTut(){
@@ -1605,6 +1699,45 @@ function startSetNewCategory(){
 	$("#choose-cat").show();
 	$("#cats").show();
 }
+function startChoiceNewCategory(){
+	$("#suggest-new-category").text(suggestedCatName);
+	$('section').hide();
+	$("#new-category-choice").show();	
+}
+
+function setSuggestedCat(par, cat){
+	cat = cat + 1;
+	suggestedCatPath = par + "/" + cat;
+	setSuggestedCatName(par, cat);
+}
+
+function setSuggestedCatName(idp, idc){
+	var idLang = $("#myLang").val();
+	$.get("date/"+ idLang + "/" + idp + "/subcat.json", function(result) {
+		var scat = JSON.parse(result);
+		for(var x in scat){
+			var cat = scat[x];
+			if(cat.id == idc) {	
+				suggestedCatName = cat.name;
+			}
+		}
+    });
+}
+
+function setSuggestedCatAsNew(){
+	$("#new-category-choice").hide();
+	var res = suggestedCatPath.split("/");
+	var parent = res[0];
+	var cat = res[1];
+	setTimeout(function(){
+		setNewCat(parent, cat);
+		$("#myCat").val(cat);
+		$("#myParentCat").val(parent);
+		$("#learn-container").show();
+		$("#words-nav").show();
+		packControler();
+	}, 300);
+}
 
 function showStartLessonPage(){
 	$('seciton').hide();
@@ -1613,6 +1746,20 @@ function showStartLessonPage(){
 
 function startLesson(){
 	packControler();	
+}
+
+function removeAllProgressClass(obj){
+	for(var i = 0; i < 101; i++){
+		obj.removeClass('p'+i);
+	}
+}
+
+function updateProgressBar(){
+	removeAllProgressClass($("#progess-btn-stan-in-cycle"));
+	setTimeout(function(){				
+		var percent = Math.round(((learnedWords)/(countWordsToLearn))*100);
+		$("#progess-btn-stan-in-cycle").addClass('p'+percent);
+	}, 50);
 }
 /*END TUTORIAL*/
 /*function iinit() {

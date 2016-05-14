@@ -190,7 +190,16 @@
 			</div>
 			<section id="ok-no-panel">
 				<div id="wrap-ok-no">
-					<img src="img/ok.png" class="good-bad" ontouchstart="isOk();"/>
+					<!--<img src="img/ok.png" class="good-bad" ontouchstart="isOk();"/>-->
+					<div id="progress-circle-in-cycle" >
+						<div id="progess-btn-stan-in-cycle" class="c100 p0" onclick="isOk();">
+							<span id="progess-btn-per-in-cycle"></span>
+							<div class="slice">
+								<div class="bar"></div>
+								<div class="fill"></div>
+							</div>
+						</div>
+					</div>
 					<img src="img/no.png" class="bad-bad" id="badBTN" ontouchstart="isNo();"/>
 				</div>
 			</section>
@@ -267,20 +276,19 @@
 				</div>
 			</div>
 		</section>
-		<section id="start-next-cat">
-			<p id="main-text-next-cat">  2. powtórka  </p>
+		<section id="start-next-cat" class="next-cat-left">
+			<p id="main-text-next-cat">Powtórka:  1/5</p>
 			<p id="name-next-cat"></p>
-			<!--<div id="progress-circle">
-				<div class="c100 p25">
-					<span>25%</span>
-					<div class="slice">
-						<div class="bar"></div>
-						<div class="fill"></div>
+			<div id="btn-next-cat">
+				<div id="progress-circle">
+					<div id="progess-btn-stan" class="c100 p25" onclick="nextCatBtn();">
+						<span id="progess-btn-per">25%</span>
+						<div class="slice">
+							<div class="bar"></div>
+							<div class="fill"></div>
+						</div>
 					</div>
 				</div>
-			</div>-->
-			<div id="btn-next-cat">
-				<img src="img/ok.png" ontouchstart="nextCatBtn();">
 			</div>
 		</section>
 		<section id="startDay">
@@ -288,8 +296,27 @@
 			<h2>Rozpocznij naukę</h2>
 			<div id="start-day-ok-no-panel">
 				<div id="start-day-wrap-ok-no">
-					<img src="img/ok.png" class="good-bad" ontouchstart="startLesson();"/>
+					<img src="img/ok.png" class="good-bad" onclick="startLesson();"/>
 					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
+				</div>
+			</div>			
+		</section>
+		<section id="end-panel">
+			<h1>GRATULUJEMY!<br><br><br>Ukończyłeś lekcję <span id="end-nr-lesson"></span></h1>
+			<div id="end-day-ok-no-panel">
+				<div id="end-day-wrap-ok-no">
+					<img src="img/ok.png" class="good-bad" onclick="location.reload(); "/>
+					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
+				</div>
+			</div>		
+		</section>
+		<section id="new-category-choice">
+			<h1>Wybierz nowy materiał</h1>
+			<h1 id="suggest-new-category"><strong>Zaimki</strong></h1>
+			<button class="text" onclick="startSetNewCategory();">Wybór ręczny</button>
+			<div id="new-cat-ok-no-panel">
+				<div id="new-cat-wrap-ok-no">
+					<img src="img/ok.png" class="good-bad" onclick="setSuggestedCatAsNew();"/>
 				</div>
 			</div>			
 		</section>
@@ -421,7 +448,7 @@
 					$("#learn-container").show();
 					$("#words-nav").show();
 					packControler();
-				}, 150);
+				}, 300);
 			}
 			
 			$(".startLearn").click(function(){

@@ -297,7 +297,7 @@ section{
 	display: none;
 	height: 100%
 }
-#wrap-ok-no, #tut-wrap-ok-no, #start-day-wrap-ok-no{
+#wrap-ok-no, #tut-wrap-ok-no, #start-day-wrap-ok-no, #end-day-wrap-ok-no, #new-cat-wrap-ok-no{
 	position: relative;
 	text-align: center;
 }
@@ -581,7 +581,7 @@ h3{
 	position: relative;
 	top: 0%;/*-50px;*/
 }
-#ok-no-panel, #tut-ok-no-panel, #start-day-ok-no-panel{
+#ok-no-panel, #tut-ok-no-panel, #start-day-ok-no-panel, #end-day-ok-no-panel, #new-cat-ok-no-panel{
 	height: 20%;
 	position: fixed;
 	bottom: 0;
@@ -617,6 +617,25 @@ h3{
 }
 #start-next-cat{
 	display: none;
+	position: relative;
+	transition: 1s;
+	transform-origin: 100% 40%; /* half of height */
+	-webkit-transition: 1s;
+	-webkit-transform-origin: 100% 40%; /* half of height */
+	-webkit-transition: left 1s ease;
+	-moz-transition: left 1s ease;
+	-o-transition: left 1s ease;
+	-ms-transition: left 1s ease;
+	transition: left 1s ease;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	left: 0;
+}
+.next-cat-left{
+	left: 400px !important;
+}
+.next-cat-right{
+	left: -400px !important;
 }
 #main-text-next-cat{
 	text-align: center;
@@ -658,7 +677,8 @@ h3{
     width: 3.33em;
     line-height: 3.33em;
     font-size: 0.3em;
-    color: #0a3356;
+    color: #000;
+	font-weight: bold;
 }
 .loading-waiting{
 	-webkit-animation-duration: 1s;
