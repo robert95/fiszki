@@ -1,13 +1,13 @@
 [
 		{
 			"id": 1,
-			"name": "Tuve que apagar la radio.",
+			"name": "Tuve que <b>apagar</b> la radio.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "He hablado por teléfono.",
+			"name": "He <b>hablado</b> por teléfono.",
 			"notices": [
 			]
 		},
