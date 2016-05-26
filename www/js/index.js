@@ -253,8 +253,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":6}');
-var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"5"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');
+var dayJSON = false;//JSON.parse('{"day":6}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"3"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -1434,6 +1434,14 @@ function pulseThdNav(idW){
 }
 /*END ALGORYTHM MANAGAMENT*/
 
+function showAllNote(){
+	showNote(1);
+	showNote(2);
+	showNote(3);
+	showNote(4);
+	showNote(5);
+	showNote(6);
+}
 function showNote(x){
 	var target = "#l-n-" + x;
 	var target2 = "#l-t-" + x;
@@ -1442,6 +1450,7 @@ function showNote(x){
 	if($(target).is(":visible") == true){
 		$(target).hide();
 		$(targetE).show();
+		showTrans(x);
 	}else{
 		$(targetE).hide();
 		$(target).show();
@@ -1605,7 +1614,7 @@ function packControler(){
 			switch(i){
 			case 0:
 				prepareGlobalForCycle(1);
-				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
 				break;
 			case 1:
 				prepareGlobalForCycle(2);
@@ -1614,7 +1623,7 @@ function packControler(){
 				break;
 			case 2:
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
 				break;
 			case 3:
 				prepareGlobalForCycle(3);
@@ -1623,7 +1632,7 @@ function packControler(){
 				break;
 			case 4:
 				prepareGlobalForCycle(2);
-				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
 				break;
 			case 5:
 				prepareGlobalForCycle(3);
@@ -1632,12 +1641,12 @@ function packControler(){
 				break;
 			case 6:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
 				learnetCatToday++;
 				break;
 			case 7:
 				prepareGlobalForCycle(3);
-				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 10);
+				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
 				learnetCatToday++;
 				break;
 			case 8:
@@ -1708,7 +1717,7 @@ function showStartCat(count, name){
 	$("#start-next-cat").show();
 	$("#nav-circle-word").hide();
 	$("#learn-container").hide();
-	$("#main-text-next-cat").text("Powtórka: " + count + "/" + countCatsToLearn);
+	$("#main-text-next-cat").text(count + "/" + countCatsToLearn);
 	$("#name-next-cat").text(name);
 	
 	var percent = Math.round(((count-1)/countCatsToLearn)*100);
@@ -1832,6 +1841,7 @@ function startLesson(){
 }
 
 function removeAllProgressClass(obj){
+	return;
 	for(var i = 0; i < 101; i++){
 		obj.removeClass('p'+i);
 	}

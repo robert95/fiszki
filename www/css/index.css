@@ -105,7 +105,7 @@ body{
 }
 .nav-circle p, .nav-circle-word p, #nav-words-container-thd p{
 	display: inline-block;
-    margin-top: 30px;
+    margin-top: 0px;
     height: 80px;
     width: 65px;
     padding: 15px 0;
@@ -183,6 +183,7 @@ body{
 	background: linear-gradient(to bottom,  rgba(255,255,255,0) 60%,rgba(255,255,255,0.82) 98%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	border-top: 1px solid white;
+	font-size: 25px !important;
 }
 .startLearn{
 	position: fixed;
@@ -379,14 +380,15 @@ h3{
 	position: absolute;
     width: 100%;
 	top: 0px;
+	font-weight: 400;
 }
 .count-word img{
 	height: 70px;
 }
-#word-lern-2, #word-lern-3, #word-lern-4, #word-lern-5{
+#word-lern-1 #word-lern-6 #word-lern-2, #word-lern-3, #word-lern-4, #word-lern-5{
 	text-align: center;
 }
-#word-lern-2 textarea, #word-lern-3 textarea, #word-lern-4 textarea, #word-lern-5 textarea{
+#word-lern-1 textarea, #word-lern-6 textarea, #word-lern-2 textarea, #word-lern-3 textarea, #word-lern-4 textarea, #word-lern-5 textarea{
 	resize: none;
 	font-size: 20px;
 	font-family: 'Ubuntu';
@@ -521,6 +523,8 @@ h3{
 }
 .learnMethod .text{
 	min-height: 30px;
+	background: 0;
+	border: 0;
 }
 .btn-container{
 	position: relative;
@@ -592,7 +596,7 @@ h3{
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	padding-bottom: 40px;
+	padding-bottom: 40px;    
 }
 #nrDay{
 	font-size: 50px;
@@ -643,18 +647,23 @@ h3{
 	left: -400px !important;
 }
 #main-text-next-cat{
-	text-align: center;
+	text-align: right;
 	color: white;
 	font-size: 30px;
-	text-decoration: underline;
 	margin: 50px;
 }
 #name-next-cat{
-	text-align: left;
+	text-align: center;
 	color: white;
 	font-size: 30px;
-	text-decoration: underline;
-	padding-left: 10%;
+	margin-top: 18%;
+}
+.before-start-info{
+	text-align: center;
+	color: white;
+	width: 80%;
+	margin: 21% auto 16%;
+	font-size: 18px;
 }
 #btn-next-cat{
 	text-align: center;
@@ -665,10 +674,11 @@ h3{
 .c100{
 	float: none;
 	margin: 20px auto;
-	background-color: #fff;
+	background-color: #3f8cb7;
+	border: 4px solid #3f8cb7;
 }
 .bar{
-	border: 0.08em solid #0a3356 !important;
+	border: 0.08em solid #6dd0f7 !important;
 }
 .c100::after{
 	top: 0.04em;
@@ -739,3 +749,70 @@ section{
 #cont-l-w-i-s-c h4{
 	margin-bottom: 5px;
 }
+.note-skip-btn{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	color: white;
+	width: 100%;
+	z-index: 0;
+}
+.note-skip-btn div{
+	width: 50%;
+	height: 87px;
+	float: left;
+	font-size: 26px;
+}
+.note-skip-btn  .note-btn{
+	background: transparent url("../img/note-btn.png") repeat scroll 0% 0% / cover;
+}
+.note-skip-btn  .skip-btn{
+	background: transparent url("../img/skip-btn.png") repeat scroll 0% 0% / cover;
+}
+.note-skip-btn  .note-btn p{
+	padding-left: 10px;
+	text-align: left;
+}
+.note-skip-btn  .skip-btn p{
+	padding-right: 10px;
+	text-align: right;
+}
+#progess-btn-stan-in-cycle{
+	z-index: 1;
+}
+#startDay h1, #start-next-cat h1, #new-category-choice h1{
+	font-weight: 400;
+    font-size: 34px;
+}
+.you-start-learned{
+    color: white;
+    text-align: center;
+    margin-top: 23%;
+    font-size: 21px;
+}
+.goToReverse{
+	color: white;
+	text-align: center;
+	margin-top: 45%;
+	font-size: 31px;
+}
+#start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img{
+	width: 35%;
+	margin-top: 22px;
+	z-index: 1;
+}
+#suggest-new-category{
+	margin-top: 10%;
+}
+#cont-l-w-i-s-c{
+	color: white;
+}
+#new-cat-ok-no-panel{
+	z-index: 2;
+    pointer-events: none;
+}
+#new-cat-ok-no-panel img{
+	z-index: 3;
+    pointer-events: all;
+}
+
