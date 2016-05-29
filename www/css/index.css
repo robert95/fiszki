@@ -33,12 +33,12 @@
 }
 @-webkit-keyframes pulse {
     0% { -webkit-transform: scale(1); }
-    50% { -webkit-transform: scale(1.14); }
+    50% { -webkit-transform: scale(1.1); }
     100% { -webkit-transform: scale(1); }
 }
 @keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.14); }
+    50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
 @-ms-keyframes spin { 
@@ -183,7 +183,7 @@ body{
 	background: linear-gradient(to bottom,  rgba(255,255,255,0) 60%,rgba(255,255,255,0.82) 98%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	border-top: 1px solid white;
-	font-size: 25px !important;
+	font-size: 30px !important;
 }
 .startLearn{
 	position: fixed;
@@ -380,7 +380,6 @@ h3{
 	position: absolute;
     width: 100%;
 	top: 0px;
-	font-weight: 400;
 }
 .count-word img{
 	height: 70px;
@@ -442,7 +441,8 @@ h3{
    left: 0;
 }
 .confirm-swipe table{
-	width: 100%;
+	width: 90%;
+	margin-left: 5%;
 	position: relative;
 	transition: 0.8s;
 	transform-origin: 100% 40%; /* half of height */
@@ -459,6 +459,8 @@ h3{
   /* padding-top: 5%;/*380px;*/
    /* margin-top: 10%;*/
    left: 0;
+   border: 1px solid white;
+   border-radius: 15px;
 }
 #word-lern-6{
 	position: relative;
@@ -525,6 +527,7 @@ h3{
 	min-height: 30px;
 	background: 0;
 	border: 0;
+	font-size: 30px !important;
 }
 .btn-container{
 	position: relative;
@@ -765,6 +768,7 @@ section{
 }
 .note-skip-btn  .note-btn{
 	background: transparent url("../img/note-btn.png") repeat scroll 0% 0% / cover;
+	position: relativ;
 }
 .note-skip-btn  .skip-btn{
 	background: transparent url("../img/skip-btn.png") repeat scroll 0% 0% / cover;
@@ -796,8 +800,8 @@ section{
 	margin-top: 45%;
 	font-size: 31px;
 }
-#start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img{
-	width: 35%;
+#start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
+	width: 38%;
 	margin-top: 22px;
 	z-index: 1;
 }
@@ -815,4 +819,15 @@ section{
 	z-index: 3;
     pointer-events: all;
 }
-
+.remind-img{
+	display: none;
+	position: absolute;
+	top: -50px;
+	left: 0px;
+	width: 35%;
+}
+#first-use-loading-page #progress-circle{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
