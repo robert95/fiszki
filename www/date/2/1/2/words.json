@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": " - burzowy dzień",
+			"name": "2.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - pogoda zepsuła nasze plany",
+			"name": "2.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - zdaje się, że będzie padać",
+			"name": "2.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - oberwanie chmury",
+			"name": "2.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - mroźna noc",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": " - fala upału",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": " - pogoda się zmieniła",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": " - podmuch wiatru",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": " - błyskawica",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": " - grzmot",
+			"name": "2.5",
 			"notices": [
 			]
 		}

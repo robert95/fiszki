@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": " - pilot",
+			"name": "7.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - bateria",
+			"name": "7.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - akumulator",
+			"name": "7.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - ładowarka",
+			"name": "7.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - rozgałęziacz",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": " - żarówka",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": " - bezpiecznik",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": " - nacisnąć guzik",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": " - naładować baterię",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": " - używać produktu",
+			"name": "7.5",
 			"notices": [
 			]
 		}

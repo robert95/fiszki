@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": "On był niewierny",
+			"name": "3.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "On wziął papierosa.",
+			"name": "3.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "A ona czytała książkę.",
+			"name": "3.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "On pisał list.",
+			"name": "3.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "On nie był sympatyczny",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Musiałaś wezwać lekarza?",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "On nie mógł znaleźć tej drogi.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Dlaczego nie mogłeś / mogłaś go zrozumieć?",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Musiałem wziąć taksówkę.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "On nie był zadowolony",
+			"name": "3.5",
 			"notices": [
 			]
 		}

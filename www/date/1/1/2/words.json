@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": "un día tormentoso",
+			"name": "2.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "el tiempo nos estropeó los planes",
+			"name": "2.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "parece que va a llover",
+			"name": "2.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "un chaparrón",
+			"name": "2.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "una noche de helada",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "una ola de calor",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "ha cambiado el tiempo",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "una racha",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "un relámpago",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "el trueno",
+			"name": "2.5",
 			"notices": [
 			]
 		}

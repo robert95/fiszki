@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": "Jak wysoko pan skoczył / pani skoczyła?",
+			"name": "5.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Który krawat nosiłeś?",
+			"name": "5.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Kogo pan widział widziała?",
+			"name": "5.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Kiedy pan zaczął?",
+			"name": "5.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Dokąd pan poszedł?",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Komu pomagałeś?",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Do kogo pisałeś?",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": " Musiałyście zapłacić za wstęp?",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Kto musiał się pożegnać?",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Chciałam zamówić taksówkę.",
+			"name": "5.5",
 			"notices": [
 			]
 		}

@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": " - niespokojny ",
+			"name": "6.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - smutny ",
+			"name": "6.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - zaskoczony ",
+			"name": "6.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - wdzięczny",
+			"name": "6.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - szanować zwyczaje innych",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": " - traktować w równy sposób",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": " - walczyć przeciw dyskryminacji",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": " - szanować kulturę",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": " - głośnik",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": " - niekończące się źródło informacji",
+			"name": "6.5",
 			"notices": [
 			]
 		}

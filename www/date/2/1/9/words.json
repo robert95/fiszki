@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": " - Trzymać kciuki",
+			"name": "9.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - Lepiej późno niż wcale",
+			"name": "9.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - Przy okazji",
+			"name": "9.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - Zatrzymaj resztę",
+			"name": "9.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - Co jest napisane na ogłoszeniu? ",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": " - Jak ci poszło? ",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": " - Lubicie Tańczyć ?",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": " - Co chcesz przez to powiedzieć ?",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": " - Płacę teraz czy później ?",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": " - I’m thirsty",
+			"name": "9.5",
 			"notices": [
 			]
 		}

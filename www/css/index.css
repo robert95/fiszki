@@ -272,6 +272,8 @@ h1{
 	text-align: center;
 	color: white;
 	font-size: 25px;
+	margin-top: 0px;
+	padding-top: 25px;
 }
 h2{
 	width: 80%;
@@ -391,6 +393,13 @@ h3{
 	resize: none;
 	font-size: 20px;
 	font-family: 'Ubuntu';
+	height: 38px;
+	border: 0;
+}
+textarea:focus, textarea:hover, textarea:active{
+	border: 0 !important;
+	box-shadow: unset !important;
+	outline: 0px none !important;
 }
 .yes{
 	background-color: #8BC34A;
@@ -714,7 +723,8 @@ h3{
 	color: white;
 }
 #first-use-loading-page p:first-of-type{
-	margin: 100px 0px;
+	margin: 0px 0px;
+	padding: 100px 0px;
 }
 section{
 	display: none;
@@ -764,7 +774,7 @@ section{
 	width: 50%;
 	height: 87px;
 	float: left;
-	font-size: 26px;
+	font-size: 24px;
 }
 .note-skip-btn  .note-btn{
 	background: transparent url("../img/note-btn.png") repeat scroll 0% 0% / cover;
@@ -774,12 +784,14 @@ section{
 	background: transparent url("../img/skip-btn.png") repeat scroll 0% 0% / cover;
 }
 .note-skip-btn  .note-btn p{
-	padding-left: 10px;
+	padding-left: 7px;
 	text-align: left;
+	margin-top: 32px;
 }
 .note-skip-btn  .skip-btn p{
-	padding-right: 10px;
+	padding-right: 7px;
 	text-align: right;
+	margin-top: 32px;
 }
 #progess-btn-stan-in-cycle{
 	z-index: 1;
@@ -787,6 +799,8 @@ section{
 #startDay h1, #start-next-cat h1, #new-category-choice h1{
 	font-weight: 400;
     font-size: 34px;
+	margin-top: 0;
+	padding-top: 34px;
 }
 .you-start-learned{
     color: white;

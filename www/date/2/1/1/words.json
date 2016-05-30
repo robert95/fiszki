@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": "Musiałam wyłączyć radio.",
+			"name": "1.1 Czy <b>Ty</b> mnie kochasz?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Rozmawiałam przez telefon.",
+			"name": "1.2 Nie lubię <i>go</i>",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Opowiedziałam całą historię.",
+			"name": "1.3 Rozumię <b>ją</b>",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Pracowałam przez cały dzień.",
+			"name": "1.4 Lubię <b>Cię</b>",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Zjadłam całe jedzenie.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Ile pan wypił / pani wypiła?",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Jak pan spał / pani spała?",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Z kim się pan umówił / pani umówiła?",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Z kim pan rozmawiał / pani rozmawiała?",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Jak szybko pan jechał / pani jechała?",
+			"name": "1.5 Nie cierpię <b>tego</b>",
 			"notices": [
 			]
 		}

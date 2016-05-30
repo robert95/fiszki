@@ -237,6 +237,7 @@ function gotFileWriterN5(writer) {
 /* END SAVE FILE */
 
 /*POTRZEBNE ZMIENNE*/
+var wordsInOneCat = 5;
 var firstCycle = false;
 var secondCycle = false;
 var thirdCycle = false;
@@ -245,7 +246,7 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = false;//JSON.parse('{"lang":2}');//
+var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":2}');//
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -253,7 +254,7 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":6}');//
+var dayJSON = false;//JSON.parse('{"day":1}');//
 var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"3"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
@@ -261,7 +262,7 @@ var startLearn = false;
 var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ];
 var countWord = 0;
 var countCatsToLearn = 0;
-var countWordsToLearn = 20; //2 cykle w nowej kategorii po 10 słów
+var countWordsToLearn = wordsInOneCat*2; //2 cykle w nowej kategorii po 10 słów
 var learnedWords = 0;
 var suggestedCatPath = "";
 var suggestedCatName = "";
@@ -287,10 +288,10 @@ function startApp(){
 		//NIE
 			//getMyLang();
 			$("#myLang").val(lang);
-			getCatWithPos(0);//setSuggestedCat(1, 0);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
+			getCatWithPos(0);
 			setTimeout(function(){
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
@@ -333,7 +334,7 @@ function getDay(){
 				toLearn[0] = pack.catid + "/" + pack.subid;
 				toLearn[1] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 20;
+				countWordsToLearn += wordsInOneCat*2;
 				setSuggestedCat(pack.catid, pack.subid);
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -341,26 +342,26 @@ function getDay(){
 				toLearn[2] = pack.catid + "/" + pack.subid;
 				toLearn[3] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 20;
+				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 10:
 				toLearn[4] = pack.catid + "/" + pack.subid;
 				toLearn[5] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 20;
+				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 27:
 				toLearn[6] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 10;
+				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 60:
 				toLearn[7] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 10;
+				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			default:
@@ -414,7 +415,7 @@ function getToLearnHelper(){
 				toLearn[0] = pack.catid + "/" + pack.subid;
 				toLearn[1] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 20;
+				countWordsToLearn += wordsInOneCat*2;
 				setSuggestedCat(pack.catid, pack.subid);
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -422,26 +423,26 @@ function getToLearnHelper(){
 				toLearn[2] = pack.catid + "/" + pack.subid;
 				toLearn[3] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 20;
+				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 10:
 				toLearn[4] = pack.catid + "/" + pack.subid;
 				toLearn[5] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 20;
+				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 27:
 				toLearn[6] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 10;
+				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 60:
 				toLearn[7] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += 10;
+				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			default:
@@ -453,7 +454,7 @@ function getToLearnHelper(){
 function setCountWord(){
 	for(var i = 0; i < 8; i++){
 		if(toLearn[i] > 0){
-			countWord += 10;
+			countWord += wordsInOneCat;
 		}		
 	}
 }
@@ -475,7 +476,7 @@ function showLangList(l){
 	for(var x in langs){
 		var lang = langs[x];
 		var tmp = '<h1 class="text" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" >'+ lang.label + '</h1>';
-		$("#langs").append(tmp);
+		if(x > 0) $("#langs").append(tmp);
 	}
 }
 /* END GET LAND LIST */
@@ -853,7 +854,6 @@ function saveNotice(text){
 	var id = $('#idWord').val();
 	
 	var tmp = idLang+"\\"+idParentCat+"\\"+idSubCat+"\\"+idLernLang+"\\"+id;
-
 	var add = false;
 	for(var x in noticeJSON){
 		var notice = noticeJSON[x];
@@ -1606,6 +1606,7 @@ function packControler(){
 	for(var i = 0; i < 10 && !endThis; i++){
 		continueLearning = false;
 		if(toLearn[i] != -1){
+			clearNoticeFields();
 			setEveryThingToStartCat(toLearn[i]);
 			getSubCatName(toLearn[i]);
 			endThis = true;
@@ -1679,6 +1680,15 @@ function packControler(){
 		}
 	}
 	
+}
+
+function clearNoticeFields(){
+	$("#confirm-text-1").val("");
+	$("#confirm-text-2").val("");
+	$("#confirm-text-3").val("");
+	$("#confirm-text-4").val("");
+	$("#confirm-text-5").val("");
+	$("#confirm-text-6").val("");
 }
 
 function setEveryThingToStartCat(cat){

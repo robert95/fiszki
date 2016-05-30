@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": " - zachwycony ",
+			"name": "10.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - przygnębiony ",
+			"name": "10.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - przerażony ",
+			"name": "10.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - zraniony ",
+			"name": "10.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - niepewny ",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": " - niecierpliwy ",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": " - zazdrosny ",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": " - cierpliwy ",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": " zadowolony ",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": " - dumny ",
+			"name": "10.5",
 			"notices": [
 			]
 		}

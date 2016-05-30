@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": " - zaprzyjaźnić się",
+			"name": "4.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": " - flirtować z kimś",
+			"name": "4.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": " - dojrzewać",
+			"name": "4.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": " - chrześniak",
+			"name": "4.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": " - zatroskany",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": " - zawstydzony",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": " - znudzony ",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": " - odprężony",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": " - zły ",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": " - zdezorientowany ",
+			"name": "4.5",
 			"notices": [
 			]
 		}

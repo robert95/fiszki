@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": "inquieto",
+			"name": "6.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "triste",
+			"name": "6.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "sorprendido",
+			"name": "6.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "agradecido",
+			"name": "6.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Respetar las costumbres de otros",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Tratar igual",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Luchar contra la discriminación",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Respetar la cultura",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "El altavoz",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "La fuente inagotable de información",
+			"name": "6.5",
 			"notices": [
 			]
 		}

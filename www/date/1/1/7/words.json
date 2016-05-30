@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": "El mando a distancia",
+			"name": "7.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "La pila",
+			"name": "7.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "La pila recargable",
+			"name": "7.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "El cargador",
+			"name": "7.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "El ladrón",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "La bombilla",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "El fusible",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Pulsar el botón",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Cargar la batería",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Utilizar el producto",
+			"name": "7.5",
 			"notices": [
 			]
 		}

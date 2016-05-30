@@ -1,61 +1,31 @@
 [
 		{
 			"id": 1,
-			"name": "hacer amigos",
+			"name": "4.1",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "ligar con alguien",
+			"name": "4.2",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "madurar",
+			"name": "4.3",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "ahijado",
+			"name": "4.4",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "ansioso",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "avergonzado",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "aburrido",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "cómodo",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "enfadado",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "confundido",
+			"name": "4.5",
 			"notices": [
 			]
 		}
