@@ -1,31 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "1.1 Do <b>you</b> love me",
+			"name": "Parece que hace algo.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "1.2 I don't like <i>him</i>",
+			"name": "El lugar donde nací.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "1.3 I <u>understand</u> <b>her</b>",
+			"name": "¿Qué es tan pesado como el plomo?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "1.4 I like you",
+			"name": "Hoy no hace tanto calor como ayer.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "1.5 I <u>hate</u> <b><i>it</i></b>",
+			"name": "Es menos difícil de lo que pensabas.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Es mejor de lo que parece.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Es más bueno que el pan.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "La cerveza es mejor que el agua.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "El coste es superior a los beneficios.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "La presión es más alta que lo normal.",
 			"notices": [
 			]
 		}

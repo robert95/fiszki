@@ -1,31 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "6.1",
+			"name": "Nie wiem, jak to zrobić.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "6.2",
+			"name": "Żałuje, że przegrał finał.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "6.3",
+			"name": "Co wam zakazali jeść?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "6.4",
+			"name": "Zapomniałeś do mnie zadzwonić.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "6.5",
+			"name": "Jeśli wszyscy będziemy współpracować, wygramy.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Stresuje mnie to.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Co (teraz) robisz?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Widział, że to jest dobre.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Co się stanie, jeśli to nacisnę?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Jeśli chce iść, niech idzie.",
 			"notices": [
 			]
 		}

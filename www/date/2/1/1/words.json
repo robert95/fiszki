@@ -1,31 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "1.1 Czy <b>Ty</b> mnie kochasz?",
+			"name": " Zdaje się, że coś robi.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "1.2 Nie lubię <i>go</i>",
+			"name": "Miejsce, w którym się urodziłem.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "1.3 Rozumię <b>ją</b>",
+			"name": "Co jest tak ciężkie jak ołów?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "1.4 Lubię <b>Cię</b>",
+			"name": "Dziś nie jest tak ciepło jak wczoraj.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "1.5 Nie cierpię <b>tego</b>",
+			"name": "To jest łatwiejsze, niż myślałem.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Jest lepszy, niż się zdaje.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Jest lepszy niż chleb.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Piwo jest lepsze niż woda.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Koszty są większe niż zyski.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Ciśnienie jest wyższe niż zwykle.",
 			"notices": [
 			]
 		}
