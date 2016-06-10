@@ -237,7 +237,7 @@ function gotFileWriterN5(writer) {
 /* END SAVE FILE */
 
 /*POTRZEBNE ZMIENNE*/
-var wordsInOneCat = 5;
+var wordsInOneCat = 10;
 var firstCycle = false;
 var secondCycle = false;
 var thirdCycle = false;
