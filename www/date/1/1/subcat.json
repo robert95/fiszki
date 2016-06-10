@@ -1,38 +1,34 @@
 [
 	{
 		"id": 1,
-		"name": "Kasia 1"
+		"name": "Dzień 1"
 	},
 	{
 		"id": 2,
-		"name": "Kasia 2"
+		"name": "Dzień 2"
 	},
 	{
 		"id": 3,
-		"name": "Kasia 3"
+		"name": "Dzień 3"
 	},
 	{
 		"id": 4,
-		"name": "Kasia 4"
+		"name": "Dzień 4"
 	},
 	{
 		"id": 5,
-		"name": "Kasia 5"
+		"name": "Dzień 5"
 	},
 	{
 		"id": 6,
-		"name": "różne 6"
+		"name": "Dzień 6"
 	},
 	{
 		"id": 7,
-		"name": "różne 7"
+		"name": "Dzień 7"
 	},
 	{
 		"id": 8,
-		"name": "różne 8"
-	},
-	{
-		"id": 9,
-		"name": "9"
+		"name": "Dzień 8"
 	}
 ]

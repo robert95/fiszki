@@ -1,12 +1,12 @@
 [
 	{
 		"id": 1,
-		"name": "norweski",
-		"label": "Mówię po norwesku"
+		"name": "hiszpański",
+		"label": "Mówię po hiszpańsku"
 	},
 	{
 		"id": 2,
-		"name": "english",
-		"label": "I speak english"
+		"name": "polski",
+		"label": "Mówię po polsku"
 	}
 ]

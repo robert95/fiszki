@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Nick owes me ten dollars.",
+			"name": "Chyba to byłem ja.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "She spends a lot of money on clothes.",
+			"name": "Może to wie.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "I don't remember exactly.",
+			"name": "Może się pomylili.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Next week the electrician is coming to fix the wires.",
+			"name": "Może przyjdzie później.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "You ought not to go out.",
+			"name": "Oby się to nigdy nie stało!",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Musisz to zrobić czy tego chcesz czy nie ",
+			"name": "Miej się dobrze!",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "That mountain is covered in snow all year round.",
+			"name": "Niech odpoczywają w pokoju.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Whose room is this?",
+			"name": "Z tego, co wiem, nie zrobiłem nic złego.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "You are responsible for what you have done.",
+			"name": "Wygląda na to, że się zgubiliśmy.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Without your assistance I would have failed.",
+			"name": "To jasne, że się martwisz.",
 			"notices": [
 			]
 		}
