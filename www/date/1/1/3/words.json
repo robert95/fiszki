@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Føler noen seg dårlig?",
+			"name": "utgående mail",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Gull er mye tyngre enn vann.",
+			"name": "å planlegge et møte ",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Politiet tok ham på fersk gjerning.",
+			"name": "å gjøre papirarbeidet ",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Han har ikke hode til hoderegning.",
+			"name": "skrive på datamaskinen",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Mary har allerede dratt.",
+			"name": "Notere noe ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Ikke forstyrr meg mens jeg studerer.",
+			"name": "feilaktig riktig",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Hvordan sprer denne sykdommen seg?",
+			"name": "forskrift",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Øya ligger vest for Japan",
+			"name": "tillate ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "På grensen ble jeg bedt om å vise pass.",
+			"name": "forbyr",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Det ser ut til at han kommer hit neste måned.",
+			"name": "den juridiske statusen for selskapet",
 			"notices": [
 			]
 		}

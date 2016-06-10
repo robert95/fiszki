@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Nick skylder meg ti dollar.",
+			"name": "Alle rettigheter reservert",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Hun bruker mye penger på klær.",
+			"name": "privat eiendom ",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Jeg husker ikke nøyaktig.",
+			"name": "opphavsrett",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Neste uke kommer elektrikeren og reparerer strømledningen.",
+			"name": "kommunisere klart og tydelig",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Du burde ikke gå ut.",
+			"name": "uleselig tekst ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Du må gjøre det, enten du vil eller ikke.",
+			"name": "sette en dato",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Dette fjellet er dekket av snø hele året.",
+			"name": "mottakeren",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Hvem sitt rom er dette?",
+			"name": "oppkrav",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Du er ansvarlig for det du har gjort.",
+			"name": "konfidensiell",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Uten din hjelp ville jeg ha mislyktes.",
+			"name": "ikke relevant",
 			"notices": [
 			]
 		}

@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Ikke gå inn der, det er en blindvei.",
+			"name": "dekke kostnadene for forsikringen ",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Det føles som om jeg har våknet fra et mareritt.",
+			"name": "kreve erstatning ",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "De satt i sofaen i stua vår.",
+			"name": "betale deg kompensasjon ",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Jeg bor i en by, men foreldrene mine bor på landet.",
+			"name": "sekretær ",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "En setning har vanligvis et subjekt og et verb.",
+			"name": "en papir ark",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Oversett denne setningen til engelsk.",
+			"name": "stabel av dokumenter",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Hver synes best om sine barn.",
+			"name": "Sett inn i porteføljen ",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Den saken bekymrer meg ikke i det hele tatt.",
+			"name": "merket som viktige ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Jeg vet ikke om jeg får tid.",
+			"name": "sortere post",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Når jeg ser dette bildet, minnes jeg alltid min far.",
+			"name": "innkommende anrop",
 			"notices": [
 			]
 		}

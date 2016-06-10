@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Does somebody feel unwell?",
+			"name": "wychodzący mail",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Gold is much heavier than water.",
+			"name": "to schedule a meeting",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "The Police caught him red handed.",
+			"name": "to do paperwork",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "He's doesn't have a head for numbers.",
+			"name": "pisać na komputerze",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Mary has already left.",
+			"name": "zanotować coś ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Don't disturb me while I'm studying.",
+			"name": "poprawny niepoprawny ",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "How does this disease spread?",
+			"name": "regulamin ",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "The island lies to the west of Japan.",
+			"name": "pozwalać ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "I was asked to show my passport at the border.",
+			"name": "zakazywać",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "It looks like he'll be coming here next month.",
+			"name": "status prawny spółki",
 			"notices": [
 			]
 		}
