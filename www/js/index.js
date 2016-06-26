@@ -36,6 +36,7 @@ var app = {
     onDeviceReady: function() {
 		//getLangList();
 		startApp();
+		saveProgressInFile();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -246,7 +247,7 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":2}');//
+var langJSON = JSON.parse('{"lang":2}');//JSON.parse('{"lang":-1}');//
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -254,8 +255,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":1}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"3"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
+var dayJSON = JSON.parse('{"day":1}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":5,"catid":1,"start":"3"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//[];//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -303,8 +304,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	readLang();
-	setTimeout(function() {getMyLangHelper();}, 100);
+	//readLang();
+	//setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -318,10 +319,10 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	readDayF();
-	getDayHelper();
+	//readDayF();
+	//getDayHelper();
 
-	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
+	$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$("#end-nr-lesson").text(dayJSON.day);
 		for(var x in toLearnJSON){ //usunąc
 			var pack = toLearnJSON[x];
@@ -367,7 +368,7 @@ function getDay(){
 			default:
 				break;
 			} 
-		}*/
+		}
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -382,8 +383,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	readWriteFile2();
-	getNoticeHelper();
+	//readWriteFile2();
+	//getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -396,8 +397,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-    readWriteFile();
-	getToLearnHelper();
+   // readWriteFile();
+	//getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
@@ -1878,6 +1879,8 @@ function getCatWithPos(pos){
 					var scat = scats[sc];
 					//alert(parseInt(scat.pos) + " - " +  (parseInt(pos)+1));
 					if(parseInt(scat.pos) == (parseInt(pos)+1)){
+						$("#sugCatPar").val(idP);
+						$("#sugCatSub").val(scat.id);
 						suggestedCatPath = idP + "/" + scat.id;
 						suggestedCatName = scat.name;
 						getWordToSuggestCat(idP + "/" + scat.id);
@@ -1889,6 +1892,48 @@ function getCatWithPos(pos){
 		}
     });
 }
+
+function getNextSugCat(){
+	var p = $("#sugCatPar").val();
+	var c = $("#sugCatSub").val();
+	setSuggestedCat(p, c);
+	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName);}, 100);
+}
+
+/* SAVE PROGRESS */
+var progressJSON = [];
+var srcSaveProgress = "myProgress.fiszki";
+function saveProgressInFile(){
+	progressJSON = '{"lang":-1}';
+	saveFileProgress();
+	alert("jestem");
+}
+
+function saveFileProgress(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSNProgress, failN);
+}
+
+function gotFSNProgress(fileSystem) {
+	fileSystem.root.getFile(srcSaveProgress, {create: true}, gotFileEntryNProgress, failN);
+}
+
+function gotFileEntryNProgress(fileEntry) {
+	fileEntry.createWriter(gotFileWriterNProgress, failN);
+}
+
+function gotFileWriterNProgress(writer) {
+	writer.onwrite = function(evt) {
+		console.log("write success");
+	};
+	
+	writer.write(JSON.stringify(progressJSON));
+	writer.abort();
+}
+
+function failN(error) {
+	alert("error : "+error.code);
+}
+/* END SAVE FILE */
 /*function iinit() {
 	
 	//This alias is a read-only pointer to the app itself

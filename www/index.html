@@ -38,6 +38,8 @@
 		<input type="hidden" id="myCatname" value="0">
 		<input type="hidden" id="myParentCat" value="0">
 		<input type="hidden" id="idWord" value="-1">
+		<input type="hidden" id="sugCatPar" value="-1">
+		<input type="hidden" id="sugCatSub" value="-1">
 		<img class="back" src="img/back.png" />
 		<!--<div class="nav-circle" id="nav-circle-main">
 			<p class="activ" data-target="choose-lang">
@@ -200,7 +202,7 @@
 							</div>
 						</div>
 					</div>
-					<img src="img/no.png" class="bad-bad" id="badBTN" ontouchstart="isNo();"/>
+					<!--<img src="img/no.png" class="bad-bad" id="badBTN" ontouchstart="isNo();"/>-->
 				</div>
 				<div class="note-skip-btn">
 					<div class="note-btn" onclick="showAllNote();">
@@ -208,7 +210,7 @@
 						<p>NOTE</p>
 					</div>
 					<div class="skip-btn">
-						<p>SKIP</p>
+						<p class="bad-bad" onclick="isNo();" id="badBTN" >REPEAT</p>
 					</div>
 				</div>
 			</section>
@@ -317,7 +319,7 @@
 			<h1>GRATULUJEMY!<br><br><br>Ukończyłeś lekcję <span id="end-nr-lesson"></span></h1>
 			<div id="end-day-ok-no-panel">
 				<div id="end-day-wrap-ok-no">
-					<img src="img/off.png" class="good-bad" onclick="navigator.app.exitApp();"/>
+					<img src="img/off.png" class="good-bad off-btn" onclick="navigator.app.exitApp();"/>
 					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
 				</div>
 			</div>		
@@ -337,7 +339,7 @@
 				</div>
 			</div>	
 			<div class="note-skip-btn">
-				<div class="note-btn" onclick="showAllNote();">
+				<div class="note-btn cat-btn-skip" onclick="getNextSugCat();">
 					<p>SKIP</p>
 				</div>
 				<div class="skip-btn" onclick="startSetNewCategory();">
@@ -677,6 +679,44 @@
 					}
 				});
 		   }
+		</script>
+		<script>
+			$('.c100').bind('touchstart', function(){
+				$(this).addClass('hoverBTN');
+			}).bind('touchend', function(){
+				var obj = this;
+				setTimeout(function(){$(obj).removeClass('hoverBTN');}, 500);
+			});
+			
+			$('.note-btn').bind('touchstart', function(){
+				if($(this).hasClass('note-btn-hover')) $(this).removeClass('note-btn-hover');
+				else $(this).addClass('note-btn-hover');
+			}).bind('touchend', function(){
+				var obj = this;
+				if($(this).hasClass('cat-btn-skip')) setTimeout(function(){$(obj).removeClass('note-btn-hover');}, 100);
+			});
+			
+			function hideHoverNoteBtn(obj){
+				setTimeout(function(){$(obj).removeClass('note-btn-hover');}, 100);
+			}
+			
+			$('.skip-btn').bind('touchstart', function(){
+				$(this).addClass('skip-btn-hover');
+			}).bind('touchend', function(){
+				var obj = this;
+				setTimeout(function(){$(obj).removeClass('skip-btn-hover');}, 800);
+			});
+			
+			$('.good-bad').bind('touchstart', function(){
+				if($(this).hasClass('off-btn')) $(this).attr('src', 'img/offH.png');
+				else $(this).attr('src', 'img/okNoPH.png');
+			}).bind('touchend', function(){
+				var obj = this;
+				setTimeout(function(){
+					if($(this).hasClass('off-btn')) $(obj).attr('src', 'img/off.png');
+					else $(obj).attr('src', 'img/okNoP.png');
+				}, 250);
+			});
 		</script>
     </body>
 </html>

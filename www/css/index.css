@@ -315,11 +315,12 @@ section{
 #learn-container .good-bad{   
     width: 35%;
 }
-#learn-container .bad-bad{   
-	width: 16%;
+#learn-container .bad-bad{
+	height: 30px;
+	/*width: 16%;
 	position: absolute;
 	bottom: 83px;
-	right: 9%;
+	right: 9%;*/
 }
 #learn img, #choose-words img{
 	width: 90px;
@@ -471,7 +472,15 @@ textarea:focus, textarea:hover, textarea:active{
    left: 0;
  
     background: rgba(47, 72, 87, 0.5);
-	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2), 0 24px 80px 0 rgba(0, 0, 0, 0.19);
+	  /*box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2), 0 24px 80px 0 rgba(0, 0, 0, 0.19);*/
+	
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.82) 2%, rgba(255,255,255,0) 15%);
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 2%,rgba(255,255,255,0) 15%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 2%,rgba(255,255,255,0) 15%);
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+color: white !important;
+border-bottom: 1px solid white;
+border-radius: 25px;
 }
 #word-lern-6{
 	position: relative;
@@ -701,6 +710,14 @@ textarea:focus, textarea:hover, textarea:active{
     height: 0.92em;
 	background: url("../img/ok.png");
 	background-size: cover;
+	-webkit-transition: 0s;
+	-moz-transition: 0s;
+	-o-transition: 0s;
+	-ms-transition: 0s;
+}
+.hoverBTN::after{
+	background: url("../img/okH.png") !important;
+	background-size: cover !important;
 }
 .c100 > span {
     width: 3.33em;
@@ -778,9 +795,16 @@ section{
 	float: left;
 	font-size: 24px;
 }
+.note-skip-btn  .note-btn-hover{
+	background: transparent url("../img/note-btn-h.png") repeat scroll 0% 0% / cover !important;
+	position: relativ;
+}
 .note-skip-btn  .note-btn{
 	background: transparent url("../img/note-btn.png") repeat scroll 0% 0% / cover;
 	position: relativ;
+}
+.note-skip-btn  .skip-btn-hover{
+	background: transparent url("../img/skip-btn-h.png") repeat scroll 0% 0% / cover !important;
 }
 .note-skip-btn  .skip-btn{
 	background: transparent url("../img/skip-btn.png") repeat scroll 0% 0% / cover;
