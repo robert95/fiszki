@@ -55,6 +55,7 @@ var mainPath;
 function path(){
 	var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
 	mainPath = (res.toString()).replace(/,/g,'/');
+	alert("main - " + mainPath);
 	return (res.toString()).replace(/,/g,'/');
 }
 /* END OBSŁUGA ŚCIEŻKI */
@@ -1962,6 +1963,7 @@ function gotFileProgress(file) {
 function readAsTextProgress(file) {
   var reader = new FileReader();
   reader.onloadend = function(evt) {
+	  alert(evt.target.result);
 		if(IsJsonString(evt.target.result)){
 			var res = JSON.parse(evt.target.result);
 			alert(JSON.stringify(res));
@@ -1992,7 +1994,7 @@ function readAsTextProgress(file) {
 				}, 500);
 			}, 500);
 		}else{
-			alert("Plik jest nieprawidłowy!");
+			alert("JSON jest nieprawidłowy!");
 		}
   };
   reader.readAsText(file);    
