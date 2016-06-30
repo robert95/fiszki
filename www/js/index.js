@@ -1948,7 +1948,7 @@ function loadProgress(uri){
 	alert(srcLoadProgress);
 	window.FilePath.resolveNativePath(srcLoadProgress, function(localFileUri) {
 		alert(localFileUri);
-        window.resolveLocalFileSystemURL("file://" + localFileUri, function(oFile) {
+        window.resolveLocalFileSystemURL(localFileUri, function(oFile) {
 			oFile.file(function(readyFile) {
 				var reader= new FileReader();
 				reader.onloadend= function(evt) {
