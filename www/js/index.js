@@ -2000,7 +2000,7 @@ function readAsTextProgress(file) {
   reader.readAsText(file);    
 }
 function onFSErrorP(err) {
-	alert("Plik jest nieprawidłowy!");
+	alert(err.code);
 }
 
 function IsJsonString(str) {
