@@ -1952,7 +1952,7 @@ function loadProgress(uri){
 			oFile.file(function(readyFile) {
 				var reader= new FileReader();
 				reader.onloadend= function(evt) {
-					alert(JSON.stringify(atob(evt.target.result)));
+					alert(JSON.stringify(Base64.decode(evt.target.result)));
 				};
 				reader.readAsDataURL(readyFile); 
 			});
