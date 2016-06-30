@@ -1944,19 +1944,22 @@ function failN(error) {
 /* READ PROGRESS */
 var srcLoadProgress = "";
 function loadProgress(uri){
-	srcLoadProgress = 'file:///' + uri.substr(10);
+	srcLoadProgress = uri;
 	alert(srcLoadProgress);
-	window.resolveLocalFileSystemURL(srcLoadProgress, function(oFile) {
-		oFile.file(function(readyFile) {
-			var reader= new FileReader();
-			reader.onloadend= function(evt) {
-				alert(JSON.stringify(evt.target.result));
-			};
-			reader.readAsDataURL(readyFile); 
+	window.FilePath.resolveNativePath(srcLoadProgress, function(localFileUri) {
+		alert(localFileUri);
+        window.resolveLocalFileSystemURL("file://" + localFileUri, function(oFile) {
+			oFile.file(function(readyFile) {
+				var reader= new FileReader();
+				reader.onloadend= function(evt) {
+					alert(JSON.stringify(evt.target.result));
+				};
+				reader.readAsDataURL(readyFile); 
+			});
+		}, function(err){
+			alert('### ERR: filesystem.directoryUp() - ' + (JSON.stringify(err)));
 		});
-	}, function(err){
-		alert('### ERR: filesystem.directoryUp() - ' + (JSON.stringify(err)));
-	});
+    });
 	//readProgress()
 }
 function readProgress() {
