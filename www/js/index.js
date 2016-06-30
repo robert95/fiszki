@@ -36,7 +36,6 @@ var app = {
     onDeviceReady: function() {
 		//getLangList();
 		startApp();
-		saveProgressInFile();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -247,7 +246,7 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = JSON.parse('{"lang":2}');//JSON.parse('{"lang":-1}');//
+var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":2}');//
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -255,8 +254,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = JSON.parse('{"day":1}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":5,"catid":1,"start":"3"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//[];//
+var dayJSON = false;//JSON.parse('{"day":1}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"3"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -304,8 +303,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	//readLang();
-	//setTimeout(function() {getMyLangHelper();}, 100);
+	readLang();
+	setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -319,10 +318,10 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	//readDayF();
-	//getDayHelper();
+	readDayF();
+	getDayHelper();
 
-	$("#nrDayFiled").text(dayJSON.day); //usunąć
+	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$("#end-nr-lesson").text(dayJSON.day);
 		for(var x in toLearnJSON){ //usunąc
 			var pack = toLearnJSON[x];
@@ -368,7 +367,7 @@ function getDay(){
 			default:
 				break;
 			} 
-		}
+		}*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -383,8 +382,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	//readWriteFile2();
-	//getNoticeHelper();
+	readWriteFile2();
+	getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -397,8 +396,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-   // readWriteFile();
-	//getToLearnHelper();
+    readWriteFile();
+	getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
@@ -1904,9 +1903,15 @@ function getNextSugCat(){
 var progressJSON = [];
 var srcSaveProgress = "myProgress.fiszki";
 function saveProgressInFile(){
-	progressJSON = '{"lang":-1}';
-	saveFileProgress();
-	alert("jestem");
+	var progress = '{"langJSON": "", "dayJSON": "", "toLearnJSON": "", "noticeJSON": ""}';
+	progressJSON = JSON.parse(progress);
+	progressJSON.langJSON = langJSON;
+	progressJSON.dayJSON = dayJSON;
+	progressJSON.toLearnJSON = toLearnJSON;
+	progressJSON.noticeJSON = noticeJSON;
+	
+	alert(JSON.stringify(progressJSON));
+	//saveFileProgress();
 }
 
 function saveFileProgress(){
@@ -1934,6 +1939,74 @@ function failN(error) {
 	alert("error : "+error.code);
 }
 /* END SAVE FILE */
+
+/* READ PROGRESS */
+function readProgress() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessProgress, onFSErrorP);
+}
+function onFSSuccessProgress(fileSystem) {
+	var src = $("#readP").val();
+	alert(src);
+    fileSystem.root.getFile(src, {create:false, exclusive:false}, gotFileEntryProgress, onFSErrorP);
+}
+function gotFileEntryProgress(fileEntry) {
+    fileEntry.file(gotFileProgress, onFSErrorP);
+}
+function gotFileProgress(file) {
+    readAsTextProgress(file);
+}
+function readAsTextProgress(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(evt) {
+		if(IsJsonString(evt.target.result)){
+			var res = JSON.parse(evt.target.result);
+			alert(JSON.stringify(res));
+			langJSON = progressJSON.langJSON;
+			dayJSON = progressJSON.dayJSON;
+			toLearnJSON = progressJSON.toLearnJSON;
+			noticeJSON = progressJSON.noticeJSON;
+			
+			saveLang(); //save lang
+			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN); //save notice
+			/*save day*/
+				datesJSON5 = dayJSON;
+				srcSave5 = path() + "day.json";
+				saveFile5();
+			/*end day*/
+			/*save tolearn*/
+			setTimeout(function(){ 
+				datesJSON = toLearnJSON;
+				srcSave = path() + "save.json";
+				saveFile();
+			}, 200);
+			/*end tolearn*/
+			/*komunikat i restart*/
+			setTimeout(function(){ 
+				alert("Plik pomyślnie wczytano! Aplikacja automatycznie uruchomi się ponownie");
+				setTimeout(function(){ 
+					location.reload(); 
+				}, 500);
+			}, 500);
+		}else{
+			alert("Plik jest nieprawidłowy!");
+		}
+  };
+  reader.readAsText(file);    
+}
+function onFSErrorP(err) {
+	alert("Plik jest nieprawidłowy!");
+}
+
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+/* END READ FILE */
+
 /*function iinit() {
 	
 	//This alias is a read-only pointer to the app itself

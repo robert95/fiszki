@@ -31,6 +31,19 @@
         <title>Fiszki</title>
     </head>
     <body>
+		<input type="file" id="readP">
+		<img src="img/menu.png" id="menu-switch">
+		<div id="menu">
+			<ul>
+				<li id="m1">ZAPISZ POSTĘP DO PLIKU</li>
+				<li id="m2">WCZYTAJ POSTĘP Z PLIKU</li>
+				<li id="m3">TUTORIAL</li>
+				<li id="m4">INNE WERSJE JĘZYKOWE</li>
+				<li id="m5">INNY PUNKT MENU</li>
+				<li id="m6">JESZCZE JAKIŚ PUNKT MENU</li>
+				<li id="mE">^</li>
+			</ul>
+		</div>
 		<img class="background" src="img/bg.png" />
 		<input type="hidden" id="myLang" value="0">
 		<input type="hidden" id="learnLang" value="1">
@@ -716,6 +729,26 @@
 					if($(this).hasClass('off-btn')) $(obj).attr('src', 'img/off.png');
 					else $(obj).attr('src', 'img/okNoP.png');
 				}, 250);
+			});
+		</script>
+		<script>
+			$("#menu-switch").click(function(){
+				$("#menu").addClass('showmenu');
+			});
+			$("#mE").click(function(){
+				$("#menu").removeClass('showmenu');
+			});
+			$("#m1").click(function(){
+				saveProgressInFile();
+				alert("Twoje postępy zostały zapisane w pamięci telefony w pliku 'myProgress.fiszki'");
+			});
+			$("#m2").click(function(){
+				$("#readP").click();
+			});
+		</script>
+		<script>
+			$( "#readP" ).change(function() {
+				readProgress();
 			});
 		</script>
     </body>
