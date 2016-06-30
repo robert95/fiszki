@@ -55,7 +55,6 @@ var mainPath;
 function path(){
 	var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
 	mainPath = (res.toString()).replace(/,/g,'/');
-	alert("main - " + mainPath);
 	return (res.toString()).replace(/,/g,'/');
 }
 /* END OBSŁUGA ŚCIEŻKI */
@@ -1952,33 +1951,49 @@ function loadProgress(uri){
 			oFile.file(function(readyFile) {
 				var reader= new FileReader();
 				reader.onloadend= function(evt) {
-					alert(evt.target.result);
+					if(IsJsonString(evt.target.result)){
+						var res = JSON.parse(evt.target.result);
+						alert(JSON.stringify(res));
+						langJSON = progressJSON.langJSON;
+						dayJSON = progressJSON.dayJSON;
+						toLearnJSON = progressJSON.toLearnJSON;
+						noticeJSON = progressJSON.noticeJSON;
+						
+						saveLang(); //save lang
+						window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN); //save notice
+						/*save day*/
+							datesJSON5 = dayJSON;
+							srcSave5 = path() + "day.json";
+							saveFile5();
+						/*end day*/
+						/*save tolearn*/
+						setTimeout(function(){ 
+							datesJSON = toLearnJSON;
+							srcSave = path() + "save.json";
+							saveFile();
+						}, 200);
+						/*end tolearn*/
+						/*komunikat i restart*/
+						setTimeout(function(){ 
+							alert("Plik pomyślnie wczytano! Aplikacja automatycznie uruchomi się ponownie");
+							setTimeout(function(){ 
+								location.reload(); 
+							}, 500);
+						}, 500);
+					}else{
+						alert("JSON jest nieprawidłowy!");
+					}
 				};
 				reader.readAsText(readyFile); 
 			});
 		}, function(err){
-			alert('### ERR: filesystem.directoryUp() - ' + (JSON.stringify(err)));
+			//alert('### ERR: filesystem.directoryUp() - ' + (JSON.stringify(err)));
 		});
     });
-	//readProgress()
-}
-function readProgress() {
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessProgress, onFSErrorP);
-}
-function onFSSuccessProgress(fileSystem) {
-	alert(srcLoadProgress);
-    fileSystem.root.getFile(srcLoadProgress, {create:false, exclusive:false}, gotFileEntryProgress, onFSErrorP);
-}
-function gotFileEntryProgress(fileEntry) {
-    fileEntry.file(gotFileProgress, onFSErrorP);
-}
-function gotFileProgress(file) {
-    readAsTextProgress(file);
 }
 function readAsTextProgress(file) {
-  var reader = new FileReader();
-  reader.onloadend = function(evt) {
-	  alert(evt.target.result);
+	var reader = new FileReader();
+	reader.onloadend = function(evt) {
 		if(IsJsonString(evt.target.result)){
 			var res = JSON.parse(evt.target.result);
 			alert(JSON.stringify(res));
@@ -2013,9 +2028,6 @@ function readAsTextProgress(file) {
 		}
   };
   reader.readAsText(file);    
-}
-function onFSErrorP(err) {
-	alert(err.code);
 }
 
 function IsJsonString(str) {
