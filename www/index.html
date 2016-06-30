@@ -743,7 +743,9 @@
 				alert("Twoje postępy zostały zapisane w pamięci telefony w pliku 'myProgress.fiszki'");
 			});
 			$("#m2").click(function(){
-				$("#readP").click();
+				fileChooser.open(function(uri) {
+					loadProgress(uri);
+				});
 			});
 		</script>
 		<script>

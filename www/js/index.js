@@ -1941,13 +1941,17 @@ function failN(error) {
 /* END SAVE FILE */
 
 /* READ PROGRESS */
+var srcLoadProgress = "";
+function loadProgress(uri){
+	srcLoadProgress = uri;
+	readProgress()
+}
 function readProgress() {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessProgress, onFSErrorP);
 }
 function onFSSuccessProgress(fileSystem) {
-	var src = $("#readP").val();
-	alert(src);
-    fileSystem.root.getFile(src, {create:false, exclusive:false}, gotFileEntryProgress, onFSErrorP);
+	alert(srcLoadProgress);
+    fileSystem.root.getFile(srcLoadProgress, {create:false, exclusive:false}, gotFileEntryProgress, onFSErrorP);
 }
 function gotFileEntryProgress(fileEntry) {
     fileEntry.file(gotFileProgress, onFSErrorP);
