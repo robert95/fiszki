@@ -1944,7 +1944,7 @@ function failN(error) {
 /* READ PROGRESS */
 var srcLoadProgress = "";
 function loadProgress(uri){
-	srcLoadProgress = uri.substr(8);
+	srcLoadProgress = uri.substr(10);
 	readProgress()
 }
 function readProgress() {
