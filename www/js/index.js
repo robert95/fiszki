@@ -1952,9 +1952,9 @@ function loadProgress(uri){
 			oFile.file(function(readyFile) {
 				var reader= new FileReader();
 				reader.onloadend= function(evt) {
-					alert(Base64.decode(evt.target.result));
+					alert(evt.target.result);
 				};
-				reader.readAsDataURL(readyFile); 
+				reader.readAsText(readyFile); 
 			});
 		}, function(err){
 			alert('### ERR: filesystem.directoryUp() - ' + (JSON.stringify(err)));
