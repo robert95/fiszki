@@ -1911,7 +1911,7 @@ function saveProgressInFile(){
 	progressJSON.noticeJSON = noticeJSON;
 	
 	alert(JSON.stringify(progressJSON));
-	//saveFileProgress();
+	saveFileProgress();
 }
 
 function saveFileProgress(){
