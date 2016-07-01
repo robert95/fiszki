@@ -1910,8 +1910,6 @@ function saveProgressInFile(){
 	progressJSON.dayJSON = dayJSON;
 	progressJSON.toLearnJSON = toLearnJSON;
 	progressJSON.noticeJSON = noticeJSON;
-	
-	alert(JSON.stringify(progressJSON));
 	saveFileProgress();
 }
 
@@ -1986,6 +1984,7 @@ function loadProgress(uri){
 			});
 		}, function(err){
 			//alert('### ERR: filesystem.directoryUp() - ' + (JSON.stringify(err)));
+			alert("Plik jest nieprawidłowy!");
 		});
     });
 }
