@@ -1954,10 +1954,10 @@ function loadProgress(uri){
 					if(IsJsonString(evt.target.result)){
 						var res = JSON.parse(evt.target.result);
 						alert(JSON.stringify(res));
-						langJSON = progressJSON.langJSON;
-						dayJSON = progressJSON.dayJSON;
-						toLearnJSON = progressJSON.toLearnJSON;
-						noticeJSON = progressJSON.noticeJSON;
+						langJSON = res.langJSON;
+						dayJSON = res.dayJSON;
+						toLearnJSON = res.toLearnJSON;
+						noticeJSON = res.noticeJSON;
 						
 						saveLang(); //save lang
 						window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN); //save notice
