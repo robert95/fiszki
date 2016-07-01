@@ -800,14 +800,17 @@ section{
 	position: relativ;
 }
 .note-skip-btn  .note-btn{
-	background: transparent url("../img/note-btn.png") repeat scroll 0% 0% / cover;
+	background: transparent url("../img/note-btn.png") repeat scroll 0% 0%;
 	position: relativ;
+	background-size: 100% 100%;
 }
 .note-skip-btn  .skip-btn-hover{
-	background: transparent url("../img/skip-btn-h.png") repeat scroll 0% 0% / cover !important;
+	background: transparent url("../img/skip-btn-h.png") repeat scroll 0% 0% !important;
+	background-size: 100% 100% !important;
 }
 .note-skip-btn  .skip-btn{
-	background: transparent url("../img/skip-btn.png") repeat scroll 0% 0% / cover;
+	background: transparent url("../img/skip-btn.png") repeat scroll 0% 0%;
+	background-size: 100% 100%;
 }
 .note-skip-btn  .note-btn p{
 	padding-left: 7px;

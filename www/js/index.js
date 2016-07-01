@@ -1491,6 +1491,7 @@ function backToNormalStateNote(){
 	$("#l-t-5").show();
 	$("#l-t-6").show();
 	hideKeyboard();
+	hideHoverNoteBtn('.note-btn');
 }
 
 function hideKeyboard(){
@@ -1944,21 +1945,18 @@ function failN(error) {
 var srcLoadProgress = "";
 function loadProgress(uri){
 	srcLoadProgress = uri;
-	alert(srcLoadProgress);
 	window.FilePath.resolveNativePath(srcLoadProgress, function(localFileUri) {
-		alert(localFileUri);
         window.resolveLocalFileSystemURL(localFileUri, function(oFile) {
 			oFile.file(function(readyFile) {
 				var reader= new FileReader();
 				reader.onloadend= function(evt) {
 					if(IsJsonString(evt.target.result)){
 						var res = JSON.parse(evt.target.result);
-						alert(JSON.stringify(res));
 						langJSON = res.langJSON;
 						dayJSON = res.dayJSON;
 						toLearnJSON = res.toLearnJSON;
 						noticeJSON = res.noticeJSON;
-						
+
 						saveLang(); //save lang
 						window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN); //save notice
 						/*save day*/
@@ -1981,7 +1979,7 @@ function loadProgress(uri){
 							}, 500);
 						}, 500);
 					}else{
-						alert("JSON jest nieprawidłowy!");
+						alert("Plik jest nieprawidłowy!");
 					}
 				};
 				reader.readAsText(readyFile); 
@@ -1991,45 +1989,6 @@ function loadProgress(uri){
 		});
     });
 }
-function readAsTextProgress(file) {
-	var reader = new FileReader();
-	reader.onloadend = function(evt) {
-		if(IsJsonString(evt.target.result)){
-			var res = JSON.parse(evt.target.result);
-			alert(JSON.stringify(res));
-			langJSON = progressJSON.langJSON;
-			dayJSON = progressJSON.dayJSON;
-			toLearnJSON = progressJSON.toLearnJSON;
-			noticeJSON = progressJSON.noticeJSON;
-			
-			saveLang(); //save lang
-			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN); //save notice
-			/*save day*/
-				datesJSON5 = dayJSON;
-				srcSave5 = path() + "day.json";
-				saveFile5();
-			/*end day*/
-			/*save tolearn*/
-			setTimeout(function(){ 
-				datesJSON = toLearnJSON;
-				srcSave = path() + "save.json";
-				saveFile();
-			}, 200);
-			/*end tolearn*/
-			/*komunikat i restart*/
-			setTimeout(function(){ 
-				alert("Plik pomyślnie wczytano! Aplikacja automatycznie uruchomi się ponownie");
-				setTimeout(function(){ 
-					location.reload(); 
-				}, 500);
-			}, 500);
-		}else{
-			alert("JSON jest nieprawidłowy!");
-		}
-  };
-  reader.readAsText(file);    
-}
-
 function IsJsonString(str) {
     try {
         JSON.parse(str);
