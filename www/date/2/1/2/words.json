@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Ma wszystko, co potrzebne.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Stało się najgorsze.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Rób, co chcesz.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Kto to czyta, jest głupcem.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Samochód, którego światła nie działają",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Rzeczy już nie są takie, jakie bywały.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Gdzie są klucze?",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Wcześniej uczyłem się więcej niż teraz.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Kiedy byłem młody, uprawiałem sport.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Chodził do kościoła w każdą niedzielę.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "2.1T",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "2.2T",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "2.3T",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "2.4T",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "2.5T",
+		"notices": [
+		]
+	}
+]

@@ -144,7 +144,7 @@
 			</section>-->
 			<div id="learn-panel">
 				<section id="word-lern-1" class="learnMethod confirm-swipe">
-					<h3>PRZETŁUMACZ</h3>
+					<h3>Przetłumacz <span class="wordNB"></span></h3>
 					<table>
 						<!--<tr><td><img src="img/up.png"></td></tr>-->
 						<tr id="l-e-1" class="hidden"><td><p class="text"></p></td></tr>
@@ -155,7 +155,7 @@
 					</table>
 				</section>
 				<section id="word-lern-2" class="learnMethod confirm-swipe">
-					<h3>POWTÓRZ</h3>
+					<h3>Powtórz <span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-2" class="hidden"><td><p class="text"></p></td></tr>
 						<tr id="l-t-2"><td><p class="text" id="confirm-trans-2"></p></td></tr>
@@ -165,7 +165,7 @@
 					</table>
 				</section>
 				<section id="word-lern-3" class="learnMethod confirm-swipe">
-					<h3>ZADAJ PYTANIE DO ZDANIA</h3>
+					<h3>ZADAJ PYTANIE DO ZDANIA <span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-3"><td><input type="text" class="text" id="question-3"/></td></tr>
 						<tr id="l-n-3" class="hidden"><td><textarea id="confirm-text-3" class="text" placeholder="Twoja notatka"></textarea></td></tr>
@@ -174,7 +174,7 @@
 					</table>
 				</section>
 				<section id="word-lern-4" class="learnMethod confirm-swipe">
-					<h3>POWTÓRZ</h3>
+					<h3>Powtórz <span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-4" class="hidden"><td><p class="text"></p></td></tr>
 						<tr id="l-t-4"><td><p class="text" id="confirm-trans-4"></p></td></tr>
@@ -184,7 +184,7 @@
 					</table>
 				</section>
 				<section id="word-lern-5" class="learnMethod confirm-swipe flipper">
-					<h3>POWTÓRZ POPRZEDNIE ZDANIE</h3>
+					<h3>Powtórz poprzednie zdanie <span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-5"><td><input type="text" class="text" id="question-5"/></td></tr>
 						<tr id="l-n-5" class="hidden"><td><textarea id="confirm-text-5" class="text" placeholder="Twoja notatka"></textarea></td></tr>
@@ -193,7 +193,7 @@
 					</table>
 				</section>
 				<section id="word-lern-6" class="learnMethod confirm-swipe">
-					<h3>SPRAWDŹ</h3>
+					<h3>Sprawdź <span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-6" class="hidden"><td><p class="text"></p></td></tr>
 						<tr id="l-t-6"><td><p class="text" id="confirm-trans-6"></p></td></tr>
@@ -235,7 +235,7 @@
 					<h5>ROZPOCZNIJ TUTORIAL</h5>
 				</section>
 				<section id="tut-lern-1" class="tut-method learnMethod confirm-swipe">
-					<h3>PRZETŁUMACZ</h3>
+					<h3>Przetłumacz</h3>
 					<h5>krótka instrukcja</h5>
 					<table>
 						<tr id="t-l-e-1" class="hidden"><td><p class="text"></p></td></tr>
@@ -246,7 +246,7 @@
 					</table>
 				</section>
 				<section id="tut-lern-2" class="tut-method learnMethod confirm-swipe">
-					<h3>POWTÓRZ</h3>
+					<h3>Powtórz</h3>
 					<h5>krótka instrukcja</h5>
 					<table>
 						<tr id="t-l-e-2" class="hidden"><td><p class="text"></p></td></tr>
@@ -257,7 +257,7 @@
 					</table>
 				</section>
 				<section id="tut-lern-3" class="tut-method learnMethod confirm-swipe">
-					<h3>ZADAJ PYTANIE DO ZDANIA</h3>
+					<h3>Zadaj pytanie do zdania</h3>
 					<h5>krótka instrukcja</h5>
 					<table>
 						<tr id="t-l-e-3"><td><input type="text" class="text" /></td></tr>
@@ -267,7 +267,7 @@
 					</table>
 				</section>
 				<section id="tut-lern-4" class="tut-method learnMethod confirm-swipe">
-					<h3>POWTÓRZ</h3>
+					<h3>Powtórz</h3>
 					<h5>krótka instrukcja</h5>
 					<table>
 						<tr id="t-l-e-4" class="hidden"><td><p class="text"></p></td></tr>
@@ -278,7 +278,7 @@
 					</table>
 				</section>
 				<section id="tut-lern-5" class="tut-method learnMethod confirm-swipe">
-					<h3>SPRAWDŹ</h3>
+					<h3>Sprawdź</h3>
 					<h5>krótka instrukcja</h5>
 					<table>
 						<tr id="t-l-e-6" class="hidden"><td><p class="text"></p></td></tr>
@@ -698,7 +698,7 @@
 				$(this).addClass('hoverBTN');
 			}).bind('touchend', function(){
 				var obj = this;
-				setTimeout(function(){$(obj).removeClass('hoverBTN');}, 500);
+				setTimeout(function(){$(obj).removeClass('hoverBTN');}, 150);
 			});
 			
 			$('.note-btn').bind('touchstart', function(){
@@ -710,14 +710,14 @@
 			});
 			
 			function hideHoverNoteBtn(obj){
-				setTimeout(function(){$(obj).removeClass('note-btn-hover');}, 100);
+				setTimeout(function(){$(obj).removeClass('note-btn-hover');}, 150);
 			}
 			
 			$('.skip-btn').bind('touchstart', function(){
 				$(this).addClass('skip-btn-hover');
 			}).bind('touchend', function(){
 				var obj = this;
-				setTimeout(function(){$(obj).removeClass('skip-btn-hover');}, 800);
+				setTimeout(function(){$(obj).removeClass('skip-btn-hover');}, 150);
 			});
 			
 			$('.good-bad').bind('touchstart', function(){
@@ -728,7 +728,7 @@
 				setTimeout(function(){
 					if($(this).hasClass('off-btn')) $(obj).attr('src', 'img/off.png');
 					else $(obj).attr('src', 'img/okNoP.png');
-				}, 250);
+				}, 150);
 			});
 		</script>
 		<script>

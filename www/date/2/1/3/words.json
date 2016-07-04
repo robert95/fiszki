@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Zawsze golił się brzytwą.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Nie dotykaj tego!",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Nie kłam!",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Nie waż się!",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Proszę przyjść jutro.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Powiedzmy to wprost.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Może dziś po południu przyjdziemy cię odwiedzić.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Może mnie pamiętasz.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Może nikt tego nie zauważy.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Może to zrobi.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "3.1T",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "3.2T",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "3.3T",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "3.4T",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "3.5T",
+		"notices": [
+		]
+	}
+]

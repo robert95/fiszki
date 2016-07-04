@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Parece que hace algo.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "El lugar donde nací.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "¿Qué es tan pesado como el plomo?",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Hoy no hace tanto calor como ayer.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Es menos difícil de lo que pensabas.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Es mejor de lo que parece.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Es más bueno que el pan.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "La cerveza es mejor que el agua.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "El coste es superior a los beneficios.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "La presión es más alta que lo normal.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "1.1",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "1.2",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "1.3",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "1.4",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "1.5",
+		"notices": [
+		]
+	}
+]

@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Hay que abrir la ventana.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Hay que pensar en el futuro.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "No para de tronar.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Siempre ha sido así.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Nunca me escuchas.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "A decir verdad, no me gusta.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Es fácil de comprender.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Es imposible de cumplir.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Tiene más de treinta pares de zapatos.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "No tengo coche ni siquiera bici.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "7.1",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "7.2",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "7.3",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "7.4",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "7.5",
+		"notices": [
+		]
+	}
+]

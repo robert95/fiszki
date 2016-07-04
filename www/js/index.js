@@ -237,7 +237,7 @@ function gotFileWriterN5(writer) {
 /* END SAVE FILE */
 
 /*POTRZEBNE ZMIENNE*/
-var wordsInOneCat = 10;
+var wordsInOneCat = 5;
 var firstCycle = false;
 var secondCycle = false;
 var thirdCycle = false;
@@ -1371,6 +1371,8 @@ function nextStep(){
 	}else{
 		nextPack();
 	}
+	
+	$(".wordNB").text($("#nav-words-container p.activ").index() + 1);
 }
 
 function nextPack(){
@@ -1935,7 +1937,7 @@ function gotFileWriterNProgress(writer) {
 }
 
 function failN(error) {
-	alert("error : "+error.code);
+	//alert("error : "+error.code);
 }
 /* END SAVE FILE */
 

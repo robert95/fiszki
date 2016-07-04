@@ -1,32 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Jak tylko będę mógł, pomogę ci.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Jest zimno, więc włóż płaszcz.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Nic nie jest tak łatwe, jak się wydaje.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Tampoco tú lo sabes.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Tú no lo sabes tampoco.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "8.1T",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "8.2T",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "8.3T",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "8.4T",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "8.5T",
+		"notices": [
+		]
+	}
+]

@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Widać, że nic go nie interesuje.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Nie powinieneś tyle palić.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Chciałbym was o coś poprosić.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Czy mógłby Pan podać mi szklankę wody?",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Nie myśl, że już cię nie kocham.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Nie śmiejcie się, to jest bardzo poważne.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Nie zrozumcie tego źle.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Nie umyłeś sobie uszu.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Zwracaj uwagę na szczegóły.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Mam nadzieję, że nie przeszkadzałem.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "5.1T",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "5.2T",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "5.3T",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "5.4T",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "5.5T",
+		"notices": [
+		]
+	}
+]

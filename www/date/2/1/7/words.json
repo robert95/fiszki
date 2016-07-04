@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Trzeba otworzyć okno.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Trzeba myśleć o przyszłości.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Nie przestaje grzmieć.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Zawsze tak było.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Nigdy mnie nie słuchasz.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Szczerze mówiąc, nie podoba mi się.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Łatwo to zrozumieć.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "To jest niewykonalne.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Ma więcej niż trzydzieści par butów.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Nie mam samochodu ani nawet roweru.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "7.1T",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "7.2T",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "7.3T",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "7.4T",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "7.5T",
+		"notices": [
+		]
+	}
+]
