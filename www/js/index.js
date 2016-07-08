@@ -1854,7 +1854,7 @@ function setSuggestedCatAsNew(){
 			$("#learn-container").show();
 			setTimeout(function(){				
 				$("#learn-container").removeClass('next-cat-left');
-			}, 500);
+			}, 2000);
 			$("#words-nav").show();
 			packControler();
 		}, 300);
