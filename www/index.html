@@ -101,7 +101,7 @@
 			</section>
 			<p class="startLearn text yes">ZACZNIJ NAUKĘ</p>
 		</section>
-		<section id="learn-container">
+		<section id="learn-container" class="next-cat-left">
 			<section id="words-nav">
 				<div id="nav-words-container-thd">
 					<p id="nav-th-1">
@@ -220,10 +220,10 @@
 				<div class="note-skip-btn">
 					<div class="note-btn" onclick="showAllNote();">
 						<img src="img/remind.png" class="remind-img pulse-btn">
-						<p>NOTE</p>
+						<p>Note</p>
 					</div>
 					<div class="skip-btn">
-						<p class="bad-bad" onclick="isNo();" id="badBTN" >REPEAT</p>
+						<p class="bad-bad" onclick="isNo();" id="badBTN" >Repeat</p>
 					</div>
 				</div>
 			</section>
@@ -319,7 +319,7 @@
 		</section>
 		<section id="startDay">
 			<h1>Welcome to <br>lesson <span id="nrDayFiled"></span></h1>
-			<p class="you-start-learned">Uczysz się z nami <span id="allWords"><span>0/3000 zdań</p>
+			<p class="you-start-learned">Uczysz się z nami <span id="allWords"></span>/3000 zdań</p>
 			<p class="goToReverse">Przejdź do powtórek</p>
 			<div id="start-day-ok-no-panel">
 				<div id="start-day-wrap-ok-no">
@@ -337,7 +337,7 @@
 				</div>
 			</div>		
 		</section>
-		<section id="new-category-choice">
+		<section id="new-category-choice" class="next-cat-left">
 			<h1>Wybierz nowy<br>materiał</h1>
 			<h1 id="suggest-new-category">Zaimki</h1>
 			<div id="cont-l-w-i-s-c">
@@ -353,10 +353,10 @@
 			</div>	
 			<div class="note-skip-btn">
 				<div class="note-btn cat-btn-skip" onclick="getNextSugCat();">
-					<p>SKIP</p>
+					<p>Skip</p>
 				</div>
 				<div class="skip-btn" onclick="startSetNewCategory();">
-					<p>MANUAL</p>
+					<p>Manual</p>
 				</div>
 			</div>		
 		</section>
@@ -489,6 +489,9 @@
 					$(".back").hide();
 					//getNavWordList();
 					$("#learn-container").show();
+					setTimeout(function(){				
+						$("#learn-container").removeClass('next-cat-left');
+					}, 50);
 					$("#words-nav").show();
 					packControler();
 				}, 300);
@@ -501,6 +504,9 @@
 				
 				//getNavWordList();
 				$("#learn-container").show();
+				setTimeout(function(){				
+					$("#learn-container").removeClass('next-cat-left');
+				}, 50);
 				showtoLearn();
 				packControler();
 			});

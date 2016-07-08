@@ -471,15 +471,14 @@ textarea:focus, textarea:hover, textarea:active{
    /* padding-bottom: 60%;/*150px;*/
   /* padding-top: 5%;/*380px;*/
    /* margin-top: 10%;*/
-   left: 0;
+    left: 0;
  
-    /*background: rgba(47, 72, 87, 0.5);
-	/*box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2), 0 24px 80px 0 rgba(0, 0, 0, 0.19);
+   /* background: rgba(47, 72, 87, 0.5);
+	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2), 0 24px 80px 0 rgba(0, 0, 0, 0.19);*/
 	
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.82) 2%, rgba(255,255,255,0) 15%);
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 2%,rgba(255,255,255,0) 15%);
-	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 2%,rgba(255,255,255,0) 15%);
-	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );*/
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.82) 1%, rgba(255,255,255,0) 8%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 1%,rgba(255,255,255,0) 8%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 1%,rgba(255,255,255,0) 8%);
 	color: white !important;
 	border-bottom: 1px solid white;
 	border-radius: 25px;
@@ -651,7 +650,7 @@ textarea:focus, textarea:hover, textarea:active{
 .goRight{
 	left: 400px !important;
 }
-#start-next-cat{
+#start-next-cat, #new-category-choice, #learn-container{
 	display: none;
 	position: relative;
 	transition: 1s;
@@ -666,6 +665,10 @@ textarea:focus, textarea:hover, textarea:active{
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	left: 0;
+}
+#new-category-choice{
+	height: 100%;
+	overflow: hidden;
 }
 .next-cat-left{
 	left: 400px !important;
@@ -801,40 +804,44 @@ section{
 }
 .note-skip-btn  .note-btn-hover{
 	/*background: transparent url("../img/note-btn-h.png") repeat scroll 0% 0% / cover !important;
-	*/position: relativ;
+	position: relativ;
 	border-bottom: 1px solid black !important;
-	border-top: 1px solid black !important;
+	border-top: 1px solid black !important;*/
+	text-decoration: underline;
 }
 .note-skip-btn  .note-btn{
 	/*background: transparent url("../img/note-btn.png") repeat scroll 0% 0%;
 	position: relativ;
-	background-size: 100% 100%;*/
+	background-size: 100% 100%;
 	border-bottom: 1px solid white;
 	border-radius: 25px;
-	border-top: 1px solid white;
+	border-top: 1px solid white;*/
 }
 .note-skip-btn  .skip-btn-hover{
 	/*background: transparent url("../img/skip-btn-h.png") repeat scroll 0% 0% !important;
-	background-size: 100% 100% !important;*/
+	background-size: 100% 100% !important;
 	border-bottom: 1px solid black !important;
-	border-top: 1px solid black !important;
+	border-top: 1px solid black !important;*/
+	text-decoration: underline;
 }
 .note-skip-btn  .skip-btn{
 	/*background: transparent url("../img/skip-btn.png") repeat scroll 0% 0%;
-	background-size: 100% 100%;*/
+	background-size: 100% 100%;
 	border-bottom: 1px solid white;
 	border-radius: 25px;
-	border-top: 1px solid white;
+	border-top: 1px solid white;*/
 }
 .note-skip-btn  .note-btn p{
-	padding-left: 10px;
+	padding-left: 15px;
 	text-align: left;
-	margin-top: 30px;
+	margin-top: 45px;
+	font-size: 22px;
 }
 .note-skip-btn  .skip-btn p{
-	padding-right: 10px;
+	padding-right: 15px;
     text-align: right;
-    margin-top: 30px;
+	margin-top: 45px;
+	font-size: 22px;
 }
 #progess-btn-stan-in-cycle{
 	z-index: 1;
@@ -858,7 +865,7 @@ section{
 	font-size: 31px;
 }
 #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
-	width: 38%;
+	width: 137px;
 	margin-top: 22px;
 	z-index: 1;
 }
@@ -886,7 +893,11 @@ section{
 #first-use-loading-page #progress-circle{
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+	width: 100%;    
+	overflow: hidden;
+}
+#first-use-loading-page #progress-circle .c100{
+	top: 15px;
 }
 #menu{
 	position: fixed;
@@ -939,7 +950,7 @@ section{
 }
 #menu-switch{
 	position: fixed;
-	top: 2px;
+	top: 25px;
 	right: 11px;
 	width: 4%;
 	z-index: 1000;

@@ -254,7 +254,7 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":1}');//
+var dayJSON = false;//JSON.parse('{"day":1, "words": 10, "time": 10}');//
 var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"3"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
@@ -322,6 +322,7 @@ function getDay(){
 	getDayHelper();
 
 	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
+	$("#allWords").text(dayJSON.words); //usunąć
 	$("#end-nr-lesson").text(dayJSON.day);
 		for(var x in toLearnJSON){ //usunąc
 			var pack = toLearnJSON[x];
@@ -377,6 +378,7 @@ function getDayHelper(){
 		dayJSON = JSON.parse(res3);
 		res3 = false;
 		$("#nrDayFiled").text(dayJSON.day);
+		$("#allWords").text(dayJSON.words);
 		$("#end-nr-lesson").text(dayJSON.day);
 	}
 }
@@ -935,6 +937,7 @@ function setWordToMethod(idM){
 			console.log("error");
 	}
 	$("#word-lern-" + idM).show();
+	$(".wordNB").text($("#nav-words-container p.activ").index() + 1);
 }
 
 function setActWord(id){
@@ -1371,8 +1374,6 @@ function nextStep(){
 	}else{
 		nextPack();
 	}
-	
-	$(".wordNB").text($("#nav-words-container p.activ").index() + 1);
 }
 
 function nextPack(){
@@ -1606,6 +1607,9 @@ function packControler(){
 	$("#words-nav").show();
 	$("#ok-no-panel").show();
 	$("#learn-container").show();
+	setTimeout(function(){				
+		$("#learn-container").removeClass('next-cat-left');
+	}, 2500);
 	for(var i = 0; i < 10 && !endThis; i++){
 		continueLearning = false;
 		if(toLearn[i] != -1){
@@ -1739,7 +1743,7 @@ function showStartCat(count, name){
 	
 	setTimeout(function(){				
 		$("#start-next-cat").removeClass('next-cat-left');
-	}, 50);
+	}, 500);
 }
 
 function nextCatBtn(){
@@ -1747,6 +1751,9 @@ function nextCatBtn(){
 	setTimeout(function(){					  
 		$("#nav-circle-word").show();
 		$("#learn-container").show();
+		setTimeout(function(){				
+			$("#learn-container").removeClass('next-cat-left');
+		}, 500);
 		$("#start-next-cat").hide();
 		$("#start-next-cat").removeClass('next-cat-right');
 		$("#start-next-cat").addClass('next-cat-left');
@@ -1801,6 +1808,9 @@ function startChoiceNewCategory(){
 	$("#suggest-new-category").text(suggestedCatName);
 	$('section').hide();
 	$("#new-category-choice").show();	
+	setTimeout(function(){				
+		$("#new-category-choice").removeClass('next-cat-left');
+	}, 50);
 }
 
 function setSuggestedCat(par, cat){
@@ -1830,18 +1840,25 @@ function setSuggestedCatName(idp, idc){
 }
 
 function setSuggestedCatAsNew(){
-	$("#new-category-choice").hide();
-	var res = suggestedCatPath.split("/");
-	var parent = res[0];
-	var cat = res[1];
+	$("#new-category-choice").addClass('next-cat-right');
 	setTimeout(function(){
-		setNewCat(parent, cat);
-		$("#myCat").val(cat);
-		$("#myParentCat").val(parent);
-		$("#learn-container").show();
-		$("#words-nav").show();
-		packControler();
-	}, 300);
+		$("#new-category-choice").hide();
+		dayJSON.words = dayJSON.words + wordsInOneCat;
+		var res = suggestedCatPath.split("/");
+		var parent = res[0];
+		var cat = res[1];
+		setTimeout(function(){
+			setNewCat(parent, cat);
+			$("#myCat").val(cat);
+			$("#myParentCat").val(parent);
+			$("#learn-container").show();
+			setTimeout(function(){				
+				$("#learn-container").removeClass('next-cat-left');
+			}, 500);
+			$("#words-nav").show();
+			packControler();
+		}, 300);
+	}, 500);
 }
 
 function showStartLessonPage(){
