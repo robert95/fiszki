@@ -237,7 +237,7 @@ function gotFileWriterN5(writer) {
 /* END SAVE FILE */
 
 /*POTRZEBNE ZMIENNE*/
-var wordsInOneCat = 5;
+var wordsInOneCat = 10;
 var firstCycle = false;
 var secondCycle = false;
 var thirdCycle = false;
@@ -254,8 +254,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":1, "words": 10, "time": 10}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"3"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
+var dayJSON = false;//JSON.parse('{"day":28, "words": 10, "time": 10}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -323,6 +323,7 @@ function getDay(){
 
 	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$("#allWords").text(dayJSON.words); //usunąć
+	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
 	$("#end-nr-lesson").text(dayJSON.day);
 		for(var x in toLearnJSON){ //usunąc
 			var pack = toLearnJSON[x];
@@ -380,6 +381,7 @@ function getDayHelper(){
 		$("#nrDayFiled").text(dayJSON.day);
 		$("#allWords").text(dayJSON.words);
 		$("#end-nr-lesson").text(dayJSON.day);
+		$("#countWordsToLearn").text(countWordsToLearn); //usunąć
 	}
 }
 function getNotice(){
@@ -937,7 +939,25 @@ function setWordToMethod(idM){
 			console.log("error");
 	}
 	$("#word-lern-" + idM).show();
-	$(".wordNB").text($("#nav-words-container p.activ").index() + 1);
+	
+	$(".wordNB").text($("#nav-words-container p.pulse").index() + 1);
+	if($("#nav-words-container p.pulse").index() < 0){
+		$(".wordNB").text("");
+		$("#nav-words-container-thd p").each(function(){
+			if($(this).hasClass('activ')){
+				var id = $(this).attr('data-word-id');
+				$(".wordNB").text(id);
+			}
+		});
+		setTimeout(function(){
+			$("#nav-words-container-thd p").each(function(){
+				if($(this).hasClass('activ')){
+					var id = $(this).attr('data-word-id');
+					$(".wordNB").text(id);
+				}
+			});
+		}, 300);
+	}
 }
 
 function setActWord(id){
@@ -1882,6 +1902,7 @@ function updateProgressBar(){
 	setTimeout(function(){				
 		var percent = Math.round(((learnedWords)/(countWordsToLearn))*100);
 		$("#progess-btn-stan-in-cycle").addClass('p'+percent);
+		$("#count-word-to-learn").text(countWordsToLearn-learnedWords);
 	}, 50);
 }
 /*END TUTORIAL*/

@@ -378,13 +378,13 @@ section{
 h3{
 	text-align: center;
 	color: white;
-	font-size: 34px;
+	font-size: 25px;
 	margin-top: 0;
 	margin-bottom: 0;/*-250px;*/
 	/*position: absolute;*/
     width: 100%;
 	top: 0px;
-	font-weight: 400;
+	font-weight: 600;
 	padding-top: 34px;
 }
 .count-word img{
@@ -550,7 +550,7 @@ textarea:focus, textarea:hover, textarea:active{
 	min-height: 30px;
 	background: 0;
 	border: 0;
-	font-size: 30px !important;
+	font-size: 25px !important;
 }
 .btn-container{
 	position: relative;
@@ -745,8 +745,9 @@ textarea:focus, textarea:hover, textarea:active{
 }
 #first-use-loading-page{
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	color: white;
+	font-weight: 600;
 }
 #first-use-loading-page p:first-of-type{
 	margin: 0px 0px;
@@ -847,8 +848,8 @@ section{
 	z-index: 1;
 }
 #startDay h1, #start-next-cat h1, #new-category-choice h1{
-	font-weight: 400;
-    font-size: 34px;
+	font-weight: 600;
+    font-size: 25px;
 	margin-top: 0;
 	padding-top: 34px;
 }
@@ -858,14 +859,21 @@ section{
     margin-top: 23%;
     font-size: 21px;
 }
+.you-start-learned2{
+    color: white;
+    text-align: center;
+    margin-top: 0%;
+    font-size: 21px;
+}
 .goToReverse{
 	color: white;
 	text-align: center;
-	margin-top: 45%;
-	font-size: 31px;
+	margin-top: 30%;
+	font-weight: 600;
+	font-size: 25px;
 }
 #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
-	width: 137px;
+	width: 128px;
 	margin-top: 22px;
 	z-index: 1;
 }
@@ -886,9 +894,9 @@ section{
 .remind-img{
 	display: none;
 	position: absolute;
-	top: -50px;
-	left: 0px;
-	width: 35%;
+	top: -5px;
+	left: 5px;
+	width: 29%;
 }
 #first-use-loading-page #progress-circle{
 	position: absolute;
@@ -950,9 +958,9 @@ section{
 }
 #menu-switch{
 	position: fixed;
-	top: 25px;
+	top: 10px;
 	right: 11px;
-	width: 4%;
+	width: 3%;
 	z-index: 1000;
 }
 #readP{
@@ -960,4 +968,14 @@ section{
 }
 #words-nav {
     display: none !important;
+}
+#count-word-to-learn{
+    padding-left: 15px;
+    text-align: left;
+    margin-top: 29px;
+    font-size: 22px;
+    color: white;
+    position: absolute;
+    top: 16px;
+    margin-top: 0px;
 }

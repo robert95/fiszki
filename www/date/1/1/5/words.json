@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "5.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "5.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "5.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "5.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "5.5",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Dette dårlige været vil nok påvirke avlingene.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Han oppdaget en ny stjerne.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Vi er veldig glade for å ha henne her.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Jeg lo godt av spøken hennes.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Hvem lot døren stå åpen?",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Mamma, jeg vil du skal kjøpe meg et granateple!",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Jeg var redd jeg skulle komme for sent.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Ikke forveksle begjær med kjærlighet.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Han nektet for det øyeblikkelig.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Jeg sverget at jeg aldri igjen skulle snakke med henne.",
+			"notices": [
+			]
+		}
+	]
