@@ -208,7 +208,7 @@
 				<div id="wrap-ok-no">
 					<!--<img src="img/ok.png" class="good-bad" ontouchstart="isOk();"/>-->
 					<div id="progress-circle-in-cycle" >
-						<div id="progess-btn-stan-in-cycle" class="c100 p0" onclick="isOk();">
+						<div id="progess-btn-stan-in-cycle" class="c100 p100" onclick="isOk();">
 							<span id="progess-btn-per-in-cycle"></span>
 							<div class="slice">
 								<div class="bar"></div>
@@ -533,7 +533,8 @@
 				if(where == 0){
 					$(".confirm-swipe").addClass('flipper-hide');
 					setTimeout(function(){
-						  nextStep();
+							increaseLearned();
+							nextStep();
 					  }, 700);
 				}else if(where == -1){
 					goLeftTable();
@@ -542,6 +543,7 @@
 				}
 			}
 			function isNo(){
+				setWaintingLearned();
 				var where = whereGoNow();
 				if((where == 0 || getsecondCycle() || getfirstCycle()) && !getNoFlipIfWrong()){
 					$(".confirm-swipe").addClass('flipper-hide');
@@ -570,13 +572,15 @@
 										$(obj).show();
 										$(obj).addClass("goRight");	
 										setTimeout(function(){
+											increaseLearned();
 											nextStep();
 										}, 150);
 								}, 150);
 							}, 400);
 						}else{
 							setTimeout(function(){
-								  nextStep();
+								increaseLearned();
+								nextStep();
 							  }, 450);
 						}
 					}else{
@@ -592,6 +596,7 @@
 						$(this).addClass("goRight");
 						//$(this).fadeOut();
 						setTimeout(function(){
+							increaseLearned();
 							nextStep();
 						 }, 450);
 					}else{

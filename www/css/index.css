@@ -272,7 +272,7 @@ body{
 h1{
 	text-align: center;
 	color: white;
-	font-size: 25px;
+	font-size: 28px;
 	margin-top: 0px;
 	padding-top: 25px;
 }
@@ -378,14 +378,14 @@ section{
 h3{
 	text-align: center;
 	color: white;
-	font-size: 25px;
+	font-size: 28px;
 	margin-top: 0;
 	margin-bottom: 0;/*-250px;*/
 	/*position: absolute;*/
     width: 100%;
 	top: 0px;
 	font-weight: 600;
-	padding-top: 34px;
+	padding-top: 55px;
 }
 .count-word img{
 	height: 70px;
@@ -429,7 +429,7 @@ textarea:focus, textarea:hover, textarea:active{
 }
 .confirm-swipe{
 	color: white;
-    font-size: 25px;
+    font-size: 28px;
     text-align: center;
 	display: none;
 	
@@ -547,7 +547,7 @@ textarea:focus, textarea:hover, textarea:active{
 	font-weight: 600;
 }
 .learnMethod .text{
-	min-height: 30px;
+	min-height: 80px;
 	background: 0;
 	border: 0;
 	font-size: 25px !important;
@@ -745,7 +745,7 @@ textarea:focus, textarea:hover, textarea:active{
 }
 #first-use-loading-page{
 	text-align: center;
-	font-size: 25px;
+	font-size: 28px;
 	color: white;
 	font-weight: 600;
 }
@@ -849,7 +849,7 @@ section{
 }
 #startDay h1, #start-next-cat h1, #new-category-choice h1{
 	font-weight: 600;
-    font-size: 25px;
+    font-size: 28px;
 	margin-top: 0;
 	padding-top: 34px;
 }
@@ -870,7 +870,7 @@ section{
 	text-align: center;
 	margin-top: 30%;
 	font-weight: 600;
-	font-size: 25px;
+	font-size: 28px;
 }
 #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
 	width: 128px;
@@ -970,7 +970,6 @@ section{
     display: none !important;
 }
 #count-word-to-learn{
-    padding-left: 15px;
     text-align: left;
     margin-top: 29px;
     font-size: 22px;
@@ -978,4 +977,13 @@ section{
     position: absolute;
     top: 16px;
     margin-top: 0px;
+	border: 1px solid white;
+	border-radius: 100%;
+	margin-left: 15px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 50%;
+	width: 27px;
+	height: 27px;
+	padding-left: 11px;
 }

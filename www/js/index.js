@@ -262,7 +262,7 @@ var startLearn = false;
 var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ];
 var countWord = 0;
 var countCatsToLearn = 0;
-var countWordsToLearn = wordsInOneCat*2; //2 cykle w nowej kategorii po 10 słów
+var countWordsToLearn = wordsInOneCat*2 + (wordsInOneCat*4-2)//wordsInOneCat*2; //2 cykle w nowej kategorii po 10 słów
 var learnedWords = 0;
 var suggestedCatPath = "";
 var suggestedCatName = "";
@@ -337,6 +337,7 @@ function getDay(){
 				toLearn[1] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
 				countWordsToLearn += wordsInOneCat*2;
+				countWordsToLearn += wordsInOneCat*4-2;
 				setSuggestedCat(pack.catid, pack.subid);
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -344,6 +345,7 @@ function getDay(){
 				toLearn[2] = pack.catid + "/" + pack.subid;
 				toLearn[3] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countWordsToLearn += wordsInOneCat*4-2;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -351,19 +353,20 @@ function getDay(){
 				toLearn[4] = pack.catid + "/" + pack.subid;
 				toLearn[5] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countWordsToLearn += wordsInOneCat*4-2;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 27:
 				toLearn[6] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += wordsInOneCat;
+				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 60:
 				toLearn[7] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += wordsInOneCat;
+				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			default:
@@ -420,6 +423,7 @@ function getToLearnHelper(){
 				toLearn[1] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
 				countWordsToLearn += wordsInOneCat*2;
+				countWordsToLearn += wordsInOneCat*4-2;
 				setSuggestedCat(pack.catid, pack.subid);
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -427,6 +431,7 @@ function getToLearnHelper(){
 				toLearn[2] = pack.catid + "/" + pack.subid;
 				toLearn[3] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countWordsToLearn += wordsInOneCat*4-2;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -434,19 +439,20 @@ function getToLearnHelper(){
 				toLearn[4] = pack.catid + "/" + pack.subid;
 				toLearn[5] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countWordsToLearn += wordsInOneCat*4-2;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 27:
 				toLearn[6] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += wordsInOneCat;
+				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 60:
 				toLearn[7] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
-				countWordsToLearn += wordsInOneCat;
+				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			default:
@@ -1067,7 +1073,7 @@ function nextStep(){
 				nbMethod = 2;
 				var length = $("#nav-words-container p").length;
 				var index = $("#nav-words-container p.activ").index() + 1;
-				learnedWords++;
+				//learnedWords++;
 				//alert(learnedWords);
 				if(length <= index){
 					round = 2;
@@ -1176,7 +1182,7 @@ function nextStep(){
 				noFlipIfWrong = true;
 			}else if(nbMethod == 6){
 				whereGo = -1;
-				learnedWords++;
+			//	learnedWords++;
 			//	alert(learnedWords);
 				var index = $("#nav-words-container p.activ").index() + 1;
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
@@ -1228,7 +1234,7 @@ function nextStep(){
 					var length = $("#nav-words-container p").length;
 					var index = $("#nav-words-container p.activ").index() + 1;
 					if(length <= index){
-						learnedWords++;
+					//	learnedWords++;
 					//	alert(learnedWords);
 						round = 5;
 						nextStep();	
@@ -1308,7 +1314,7 @@ function nextStep(){
 				var id = ($("#nav-words-container p").eq(index)).data('word-id');
 				setActWord(id);
 				setNavWordPosition(index);
-				learnedWords++;
+				//learnedWords++;
 				//alert(learnedWords);
 				setTimeout(function(){
 					setWordToMethod(1);
@@ -1622,6 +1628,7 @@ var nameCat;
 var newCategoryisSet = false;
 var learnetCatToday = 1;
 function packControler(){
+	waintingLearned = 0;
 	var endThis = false;
 	$("#startDay").hide();
 	$("#words-nav").show();
@@ -1781,6 +1788,53 @@ function nextCatBtn(){
 	}, 500);
 }
 
+var waintingLearned = 0;
+function increaseLearned(){
+	if(waintingLearned > 0){
+		waintingLearned--;
+	}else{
+		if(thirdCycle){
+			var bylo = false;
+			$("#nav-words-container-thd p").each(function(){
+				if($(this).hasClass('activ')){
+					bylo = true;
+				}
+			});
+			setTimeout(function(){
+				if(!bylo){
+					learnedWords++;
+				}
+			}, 50);
+		}else{
+			learnedWords++;
+		}
+	}
+}
+
+function setWaintingLearned(){
+	if(getfirstCycle()){
+		waintingLearned = 1;
+	}else if(getsecondCycle()){
+		if(nbMethod == 6){
+			waintingLearned += 3;
+		}else{
+			waintingLearned += 2;
+		}
+	}
+	if(thirdCycle){
+		var bylo = false;
+		$("#nav-words-container-thd p").each(function(){
+			if($(this).hasClass('activ')){
+				bylo = true;
+			}
+		});
+		setTimeout(function(){
+			if(!bylo){
+				learnedWords++;
+			}
+		}, 50);
+	}
+}
 /*END APP*/
 function endLearn(){
 	$('section').hide();
@@ -1897,11 +1951,18 @@ function removeAllProgressClass(obj){
 	}
 }
 
+function removeProgressClassMin(obj, min){
+	for(var i = 100; i > min; i--){
+		obj.removeClass('p'+i);
+	}
+}
+
 function updateProgressBar(){
 	removeAllProgressClass($("#progess-btn-stan-in-cycle"));
 	setTimeout(function(){				
-		var percent = Math.round(((learnedWords)/(countWordsToLearn))*100);
+		var percent = 100 - Math.round(((learnedWords)/(countWordsToLearn))*100);
 		$("#progess-btn-stan-in-cycle").addClass('p'+percent);
+		removeProgressClassMin($("#progess-btn-stan-in-cycle"), percent)
 		$("#count-word-to-learn").text(countWordsToLearn-learnedWords);
 	}, 50);
 }
