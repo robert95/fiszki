@@ -31,6 +31,7 @@
         <title>Fiszki</title>
     </head>
     <body>
+		<button onclick="StatusBar.show();">Status Bar Show</button><br><button onclick="StatusBar.hide();">Status Bar Hide</button>
 		<input type="file" id="readP">
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
@@ -768,6 +769,7 @@
 		</script>
 		<script>
 			$(".noteTEXT").blur(function() {
+				alert("chowaj się!");
 				StatusBar.hide();
 			});
 		</script>
