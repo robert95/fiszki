@@ -35,11 +35,6 @@ var app = {
 	
     onDeviceReady: function() {
 		//getLangList();
-		setTimeout(function(){
-			$("html").addClass('fullHEIGHT');
-			$("body").addClass('fullHEIGHT');			
-			$(".background").addClass('fullHEIGHT');			
-		}, 1000);
 		startApp();
     },
     // Update DOM on a Received Event
@@ -243,6 +238,8 @@ function gotFileWriterN5(writer) {
 
 /*POTRZEBNE ZMIENNE*/
 var wordsInOneCat = 10;
+var kmCat = 0.3;
+var countOfCycle = 2;
 var firstCycle = false;
 var secondCycle = false;
 var thirdCycle = false;
@@ -259,7 +256,7 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":28, "words": 10, "time": 10}');//
+var dayJSON = false;//JSON.parse('{"day":28, "words": 10, "km": 10}');//
 var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
@@ -329,6 +326,7 @@ function getDay(){
 	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$("#allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
+	$("#countKMLearned").text(dayJSON.km*kmCat); //usunąć
 	$("#end-nr-lesson").text(dayJSON.day);
 		for(var x in toLearnJSON){ //usunąc
 			var pack = toLearnJSON[x];
@@ -341,6 +339,8 @@ function getDay(){
 				toLearn[0] = pack.catid + "/" + pack.subid;
 				toLearn[1] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*2;
 				countWordsToLearn += wordsInOneCat*4-2;
 				setSuggestedCat(pack.catid, pack.subid);
@@ -350,6 +350,8 @@ function getDay(){
 				toLearn[2] = pack.catid + "/" + pack.subid;
 				toLearn[3] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*4-2;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
@@ -358,6 +360,8 @@ function getDay(){
 				toLearn[4] = pack.catid + "/" + pack.subid;
 				toLearn[5] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*4-2;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
@@ -365,12 +369,14 @@ function getDay(){
 			case 27:
 				toLearn[6] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 60:
 				toLearn[7] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -389,7 +395,8 @@ function getDayHelper(){
 		$("#nrDayFiled").text(dayJSON.day);
 		$("#allWords").text(dayJSON.words);
 		$("#end-nr-lesson").text(dayJSON.day);
-		$("#countWordsToLearn").text(countWordsToLearn); //usunąć
+		$("#countWordsToLearn").text(countWordsToLearn); 
+		$("#countKMLearned").text(dayJSON.km*kmCat); 
 	}
 }
 function getNotice(){
@@ -475,6 +482,7 @@ function setCountWord(){
 }
 function saveDay(){
 	dayJSON.day = dayJSON.day + 1;  //zmienić na 1
+	dayJSON.km = dayJSON.km + countOfCycle;  
 	datesJSON5 = dayJSON;
 	srcSave5 = path() + "day.json";
 	saveFile5();
