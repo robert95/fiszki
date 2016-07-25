@@ -8,6 +8,7 @@
   <preference name="target-device" value="universal"/>
   <preference name="fullscreen" value="true"/>
   <preference name="webviewbounce" value="true"/>
+  <preference name="HideKeyboardFormAccessoryBar" value="true"/>
   <preference name="prerendered-icon" value="true"/>
   <preference name="iosPersistentFileLocation" value="Compatibility" />
   <preference name="AndroidPersistentFileLocation" value="Compatibility" />
