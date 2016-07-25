@@ -45,7 +45,7 @@
   <plugin name="com.gkcgautam.asset2sd" />
   <plugin name="cordova-plugin-filepath" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
-  <plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
+  <plugin src="https://github.com/apache/cordova-plugin-statusbar.git" />
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
