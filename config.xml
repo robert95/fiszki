@@ -46,6 +46,7 @@
   <plugin name="cordova-plugin-filepath" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
   <plugin src="https://github.com/apache/cordova-plugin-statusbar.git" />
+  <plugin src="https://github.com/mesmotronic/cordova-plugin-fullscreen.git" />
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
