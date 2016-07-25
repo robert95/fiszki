@@ -35,8 +35,11 @@ var app = {
 	
     onDeviceReady: function() {
 		//getLangList();
-		$("html").addClass('fullHEIGHT');
-		$("body").addClass('fullHEIGHT');
+		setTimeout(function(){
+			$("html").addClass('fullHEIGHT');
+			$("body").addClass('fullHEIGHT');			
+			$(".background").addClass('fullHEIGHT');			
+		}, 1000);
 		startApp();
     },
     // Update DOM on a Received Event
