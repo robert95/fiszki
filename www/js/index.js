@@ -248,7 +248,7 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = JSON.parse('{"lang":2}');//JSON.parse('{"lang":-1}');//
+var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":2}');//
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -256,8 +256,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = JSON.parse('{"day":28, "words": 10, "km": 10}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//[];//
+var dayJSON = false;//JSON.parse('{"day":28, "words": 10, "km": 10}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -305,8 +305,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	//readLang();
-	//setTimeout(function() {getMyLangHelper();}, 100);
+	readLang();
+	setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -320,10 +320,10 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	//readDayF();
-	//getDayHelper();
+	readDayF();
+	getDayHelper();
 
-	$("#nrDayFiled").text(dayJSON.day); //usunąć
+	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
 	$(".countKMLearned").text(dayJSON.km*kmCat); //usunąć
@@ -384,7 +384,7 @@ function getDay(){
 				break;
 			} 
 		}
-		setTimeout(showInProgressCat, 100);
+		setTimeout(showInProgressCat, 100);*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -402,8 +402,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	//readWriteFile2();
-	//getNoticeHelper();
+	readWriteFile2();
+	getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -416,8 +416,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-   // readWriteFile();
-	//getToLearnHelper();
+    readWriteFile();
+	getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
