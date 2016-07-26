@@ -248,7 +248,7 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":2}');//
+var langJSON = JSON.parse('{"lang":2}');//JSON.parse('{"lang":-1}');//
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -256,8 +256,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":28, "words": 10, "km": 10}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
+var dayJSON = JSON.parse('{"day":28, "words": 10, "km": 10}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//[];//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -305,8 +305,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	readLang();
-	setTimeout(function() {getMyLangHelper();}, 100);
+	//readLang();
+	//setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -320,13 +320,13 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	readDayF();
-	getDayHelper();
+	//readDayF();
+	//getDayHelper();
 
-	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
-	$("#allWords").text(dayJSON.words); //usunąć
+	$("#nrDayFiled").text(dayJSON.day); //usunąć
+	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
-	$("#countKMLearned").text(dayJSON.km*kmCat); //usunąć
+	$(".countKMLearned").text(dayJSON.km*kmCat); //usunąć
 	$("#end-nr-lesson").text(dayJSON.day);
 		for(var x in toLearnJSON){ //usunąc
 			var pack = toLearnJSON[x];
@@ -383,7 +383,8 @@ function getDay(){
 			default:
 				break;
 			} 
-		}*/
+		}
+		setTimeout(showInProgressCat, 100);
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -393,16 +394,16 @@ function getDayHelper(){
 		dayJSON = JSON.parse(res3);
 		res3 = false;
 		$("#nrDayFiled").text(dayJSON.day);
-		$("#allWords").text(dayJSON.words);
+		$(".allWords").text(dayJSON.words);
 		$("#end-nr-lesson").text(dayJSON.day);
 		$("#countWordsToLearn").text(countWordsToLearn); 
-		$("#countKMLearned").text(dayJSON.km*kmCat); 
+		$(".countKMLearned").text(dayJSON.km*kmCat); 
 	}
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	readWriteFile2();
-	getNoticeHelper();
+	//readWriteFile2();
+	//getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -415,8 +416,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-    readWriteFile();
-	getToLearnHelper();
+   // readWriteFile();
+	//getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
@@ -471,6 +472,7 @@ function getToLearnHelper(){
 				break;
 			} 
 		}
+		setTimeout(showInProgressCat, 100);
 	}
 }
 function setCountWord(){
@@ -959,20 +961,20 @@ function setWordToMethod(idM){
 	}
 	$("#word-lern-" + idM).show();
 	
-	$(".wordNB").text($("#nav-words-container p.pulse").index() + 1);
+	$(".nbWordInCycle").text(($("#nav-words-container p.pulse").index() + 1) + "/10");
 	if($("#nav-words-container p.pulse").index() < 0){
-		$(".wordNB").text("");
+		$(".nbWordInCycle").text("");
 		$("#nav-words-container-thd p").each(function(){
 			if($(this).hasClass('activ')){
 				var id = $(this).attr('data-word-id');
-				$(".wordNB").text(id);
+				$(".nbWordInCycle").text(id + "/10");
 			}
 		});
 		setTimeout(function(){
 			$("#nav-words-container-thd p").each(function(){
 				if($(this).hasClass('activ')){
 					var id = $(this).attr('data-word-id');
-					$(".wordNB").text(id);
+					$(".nbWordInCycle").text(id + "/10");
 				}
 			});
 		}, 300);
@@ -1972,11 +1974,14 @@ function removeProgressClassMin(obj, min){
 
 function updateProgressBar(){
 	removeAllProgressClass($("#progess-btn-stan-in-cycle"));
+	removeAllProgressClass($("#progess-btn-stan-in-cycle-2"));
 	setTimeout(function(){				
 		var percent = 100 - Math.round(((learnedWords)/(countWordsToLearn))*100);
 		$("#progess-btn-stan-in-cycle").addClass('p'+percent);
+		$("#progess-btn-stan-in-cycle-2").addClass('p'+percent);
 		removeProgressClassMin($("#progess-btn-stan-in-cycle"), percent)
-		$("#count-word-to-learn").text(countWordsToLearn-learnedWords);
+		removeProgressClassMin($("#progess-btn-stan-in-cycle-2"), percent)
+		$("#progess-btn-per-in-cycle-2").text(countWordsToLearn-learnedWords);
 	}, 50);
 }
 /*END TUTORIAL*/
@@ -2111,6 +2116,33 @@ function IsJsonString(str) {
     return true;
 }
 /* END READ FILE */
+/* START statistic */
+var isInList = [];
+function showInProgressCat(){
+	for(var p in inProgressCat){
+		var res = inProgressCat[p].split("/");
+		var idp = res[0];
+		var idc = res[1];
+		setinProgressCatList(idp, idc);
+	}
+}
+function setinProgressCatList(idp, idc){
+	if(!(isInList.indexOf(idp+"/"+idc) >= 0)){
+		isInList.push(idp+"/"+idc);
+		var idLang = $("#myLang").val();
+		$.get("date/"+ idLang + "/" + idp + "/subcat.json", function(result) {
+			var scat = JSON.parse(result);
+			for(var x in scat){
+				var cat = scat[x];
+				if(cat.id == idc) {	
+					if($(".inProgressCatList").text() != "") $(".inProgressCatList").append(" ,");
+					$(".inProgressCatList").append(cat.name);
+				}
+			}
+		});
+	}
+}
+/* END statistic */
 
 /*function iinit() {
 	

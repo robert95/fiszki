@@ -38,9 +38,7 @@
 				<li id="m1">ZAPISZ POSTĘP DO PLIKU</li>
 				<li id="m2">WCZYTAJ POSTĘP Z PLIKU</li>
 				<li id="m3">TUTORIAL</li>
-				<li id="m4">INNE WERSJE JĘZYKOWE</li>
-				<li id="m5">INNY PUNKT MENU</li>
-				<li id="m6">JESZCZE JAKIŚ PUNKT MENU</li>
+				<li id="m4">STATYSTYKI</li>
 				<li id="mE">^</li>
 			</ul>
 		</div>
@@ -102,7 +100,15 @@
 			<p class="startLearn text yes">ZACZNIJ NAUKĘ</p>
 		</section>
 		<section id="learn-container" class="next-cat-left">
-			<p id="count-word-to-learn">21</p>
+			<div id="count-word-to-learn">
+				<div id="progess-btn-stan-in-cycle-2" class="c100 p100">
+					<span id="progess-btn-per-in-cycle-2">21</span>
+					<div class="slice">
+						<div class="bar"></div>
+						<div class="fill"></div>
+					</div>
+				</div>
+			</div>
 			<section id="words-nav">
 				<div id="nav-words-container-thd">
 					<p id="nav-th-1">
@@ -145,14 +151,14 @@
 			</section>-->
 			<div id="learn-panel">
 				<section id="word-lern-1" class="learnMethod confirm-swipe">
-					<h3>Przetłumacz <span class="wordNB"></span></h3>
+					<h3>Przetłumacz <span class="worddNB"></span></h3>
 					<table>
 						<!--<tr><td><img src="img/up.png"></td></tr>-->
 						<tr id="l-e-1" class="hidden"><td><p class="text"></p></td></tr>
 						<tr id="l-t-1"><td><p class="text" id="confirm-trans-1"></p></td></tr>
 						<tr id="l-n-1" class="hidden"><td><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(1);" class="left-btn">My note</button><button ontouchstart="showTrans(1);" class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse" id="confirm-correct-1"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse" id="confirm-correct-1"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-2" class="learnMethod confirm-swipe">
@@ -162,7 +168,7 @@
 						<tr id="l-t-2"><td><p class="text" id="confirm-trans-2"></p></td></tr>
 						<tr id="l-n-2" class="hidden"><td><textarea id="confirm-text-2" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(2);" class="left-btn">My note</button><button ontouchstart="showTrans(2);" class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse" id="confirm-correct-2"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse" id="confirm-correct-2"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-3" class="learnMethod confirm-swipe">
@@ -171,7 +177,7 @@
 						<tr id="l-e-3"><td><input type="text" class="text" id="question-3"/></td></tr>
 						<tr id="l-n-3" class="hidden"><td><textarea id="confirm-text-3" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(3);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-4" class="learnMethod confirm-swipe">
@@ -181,7 +187,7 @@
 						<tr id="l-t-4"><td><p class="text" id="confirm-trans-4"></p></td></tr>
 						<tr id="l-n-4" class="hidden"><td><textarea id="confirm-text-4" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(4);" class="left-btn">My note</button><button ontouchstart="showTrans(4);" class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse" id="confirm-correct-4"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse" id="confirm-correct-4"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-5" class="learnMethod confirm-swipe flipper">
@@ -190,7 +196,7 @@
 						<tr id="l-e-5"><td><input type="text" class="text" id="question-5"/></td></tr>
 						<tr id="l-n-5" class="hidden"><td><textarea id="confirm-text-5" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(5);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-6" class="learnMethod confirm-swipe">
@@ -200,7 +206,7 @@
 						<tr id="l-t-6"><td><p class="text" id="confirm-trans-6"></p></td></tr>
 						<tr id="l-n-6" class="hidden"><td><textarea id="confirm-text-6" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(6);" class="left-btn">My note</button><button ontouchstart="showTrans(6);" class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td><p class="text text-reverse" id="confirm-correct-6"></p></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse" id="confirm-correct-6"></p></td></tr>
 					</table>
 				</section>
 			</div>
@@ -320,9 +326,9 @@
 		</section>
 		<section id="startDay">
 			<h1>Welcome to <br>lesson <span id="nrDayFiled"></span></h1>
-			<p class="you-start-learned">Uczysz się z nami <span id="allWords"></span>/3000 zdań</p>
+			<p class="you-start-learned">Uczysz się z nami <span class="allWords"></span>/3000 zdań</p>
 			<p class="you-start-learned2">Na dziś zaplanowane jest <span id="countWordsToLearn"></span> zdań</p>
-			<p class="you-start-learned3">Przeszedłeś już z nami <span id="countKMLearned"></span> km</p>
+			<p class="you-start-learned3">Przeszedłeś już z nami <span class="countKMLearned"></span> km</p>
 			<p class="goToReverse">Przejdź do powtórek</p>
 			<div id="start-day-ok-no-panel">
 				<div id="start-day-wrap-ok-no">
@@ -362,6 +368,14 @@
 					<p>Manual</p>
 				</div>
 			</div>		
+		</section>
+		<section id="statistic" class="goLeft">
+			<img src="img/back2.png" onclick="hideStatistic();">
+			<h3>Statystyki:</h3>
+			<p class="you-start-learned">Uczysz się z nami <span class="allWords"></span>/3000 zdań</p>
+			<p class="you-start-learned3">Przeszedłeś już z nami <span class="countKMLearned"></span> km</p>
+			<h3>Kategorie w trakcie nauki:</h3>
+			<div class="inProgressCatList"></div>
 		</section>
         <script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -761,6 +775,12 @@
 					loadProgress(uri);
 				});
 			});
+			$("#m4").click(function(){
+				$("#statistic").show();
+				setTimeout(function(){
+					$("#statistic").removeClass('goLeft');
+				}, 300);
+			});
 		</script>
 		<script>
 			$( "#readP" ).change(function() {
@@ -771,6 +791,14 @@
 			$(".noteTEXT").blur(function() {
 				StatusBar.hide();
 			});
+		</script>
+		<script>
+			function hideStatistic(){
+				$("#statistic").addClass('goLeft');
+				setTimeout(function(){
+					$("#statistic").hide();
+				}, 800);
+			}
 		</script>
     </body>
 </html>
