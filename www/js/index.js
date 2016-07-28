@@ -248,7 +248,7 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = JSON.parse('{"lang":2}');//JSON.parse('{"lang":-1}');//
+var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":2}');//
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -256,8 +256,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = JSON.parse('{"day":27, "words": 10, "km": 10}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//[];//
+var dayJSON = false;//JSON.parse('{"day":27, "words": 10, "km": 10}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -305,8 +305,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	//readLang();
-	//setTimeout(function() {getMyLangHelper();}, 100);
+	readLang();
+	setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -323,7 +323,7 @@ function getDay(){
 	readDayF();
 	getDayHelper();
 
-	$("#nrDayFiled").text(dayJSON.day); //usunąć
+	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
 	$(".countKMLearned").text(dayJSON.km*kmCat); //usunąć
@@ -384,7 +384,7 @@ function getDay(){
 				break;
 			} 
 		}
-		setTimeout(showInProgressCat, 100);
+		setTimeout(showInProgressCat, 100);*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -416,8 +416,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-   // readWriteFile();
-	//getToLearnHelper();
+    readWriteFile();
+	getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
@@ -527,7 +527,7 @@ function showCatList(c){
 	for(var x in cats){
 		subcats = false;
 		var cat = cats[x];
-		var tmp = '<div><h1 class="text expand" ontouchstart="expand(this);">'+ cat.name + '</h1>';
+		var tmp = '<div><h1 class="text supercat expand" ontouchstart="expand(this);">'+ cat.name + '</h1>';
 		getSubCatList(cat.id);
 		setTimeout(
 			function(){
@@ -569,6 +569,7 @@ function getWordToSuggestCat(cs){
 
 /* GET SUBCAT LIST */
 var parent = false;
+var firstGenerationCat = true;
 function getSubCatList(idCat){
 	getNotice();
 	var idLang = $("#myLang").val();
@@ -594,6 +595,7 @@ function showSubCatList(s){
 			cl = "inProgressCat";
 		}
 		tmp += '<p class="text setCat '+ cl +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">w trakcie nauki</span> <span class="missingCatInfo">kategoria pominięta</span> <span class="learnedCatInfo">nauka zakończona</span></p>';
+		if(firstGenerationCat) $(".list").append('<li><p class="cat-name" data-id="' + cat.id + '" data-par="' + parent + '">' + cat.name + '</p></li>');
 	}
 	tmp += '</div>';
 	subcats = tmp;
@@ -1891,6 +1893,10 @@ function startSetNewCategory(){
 	getCatList();
 	$("#new-category-choice").addClass('next-cat-left');
 	setTimeout(function(){	
+		if(firstGenerationCat){
+			firstGenerationCat = false;
+			activateSearch();
+		}
 		$('section').hide();			
 		$("#choose-cat").show();
 		setTimeout(function(){		

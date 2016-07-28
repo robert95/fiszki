@@ -1090,3 +1090,22 @@ section{
 .missingCat .missingCatInfo{
 	display: block !important;
 }
+.list{
+	display: none;
+}
+.fuzzy-search, .fuzzy-search:focus, .fuzzy-search:hover {
+	display: block;
+	margin: auto;
+	width: 70%;
+	padding: 5px;
+	background: transparent none repeat scroll 0% 0%;
+	color: white;
+	border: 0px;
+	border-bottom: 2px solid white;
+	border-width: 0px 0px 2px;
+	border-style: none none solid;
+	border-color: -moz-use-text-color -moz-use-text-color white;
+	box-shadow: 0px;
+	outline: 0px;
+	outline: none;
+}

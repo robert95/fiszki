@@ -88,6 +88,11 @@
 		</section>
 		<section id="choose-cat" class="next-cat-right">
 			<h1>Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</h1>
+			<div id="cat-list">
+				<input type="text" class="fuzzy-search" placeholder="Wyszukaj..."/>
+				<ul class="list">
+				</ul>
+			</div>
 			<section id="cats">
 			<!--	<div>
 					<h1 class="text expand" ontouchstart="expand(this);">Kat 1</h1>
@@ -394,6 +399,8 @@
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
 		<script type="text/javascript" src="js/velocity.min.js"></script>
+		<script type="text/javascript" src="js/list.min.js"></script>
+		<script type="text/javascript" src="js/fizzy.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();   
@@ -810,6 +817,50 @@
 				setTimeout(function(){
 					$("#statistic").hide();
 				}, 800);
+			}
+		</script>
+		<script>
+			var monkeyList;
+			function activateSearch(){
+					monkeyList = new List('cat-list', { 
+						valueNames: ['cat-name'], 
+						plugins: [ ListFuzzySearch() ] 
+					});
+					
+					monkeyList.on('searchComplete',updateCatList);
+					
+			}
+			
+			function updateCatList(){
+				$( ".setCat" ).hide();
+				$( ".cat-name" ).each(function( index ) {
+					var p = $(this).data('par');
+					var c = $(this).data('id');
+					if(p > 0 && c > 0){
+						$( ".setCat" ).each(function( index ) {
+							var pp = $(this).data('parent');
+							var cc = $(this).data('subcat');
+							if(pp == p && cc == c){
+								$(this).show();
+							}
+						});
+					}
+				});
+				setTimeout(function(){
+					updateSuperCat();
+				}, 200)
+			}
+			
+			function updateSuperCat(){
+				$(".supercat").each(function( index ) {
+					$(this).next("div").show();
+					$(this).hide();
+					$(this).next('.list-of-subcat').children('.setCat').each(function( index ) {
+						if($(this).is(":visible") == true){
+							$(this).parent(".list-of-subcat").prev('.supercat').show();
+						}
+					});
+				});
 			}
 		</script>
     </body>
