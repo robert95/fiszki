@@ -86,9 +86,15 @@
 			<div id="langs">
 			</div>
 		</section>
-		<section id="choose-cat">
+		<section id="choose-cat" class="next-cat-right">
 			<h1>Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</h1>
 			<section id="cats">
+			<!--	<div>
+					<h1 class="text expand" ontouchstart="expand(this);">Kat 1</h1>
+					<div>
+						<p class="text setCat inProgressCat" onclick="setCat(this);">cat 1 <span class="inProgressCatInfo">w trakcie nauki</span> <span class="missingCatInfo">kategoria pominięta</span> <span class="learnedCatInfo">nauka zakończona</span></p>
+					</div>
+				</div> -->
 			</section>
 		</section>
 		<section id="list-of-word">
@@ -154,59 +160,65 @@
 					<h3>Przetłumacz <span class="worddNB"></span></h3>
 					<table>
 						<!--<tr><td><img src="img/up.png"></td></tr>-->
-						<tr id="l-e-1" class="hidden"><td><p class="text"></p></td></tr>
-						<tr id="l-t-1"><td><p class="text" id="confirm-trans-1"></p></td></tr>
-						<tr id="l-n-1" class="hidden"><td><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-e-1" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
+						<tr id="l-t-1"><td colspan="3"><p class="text" id="confirm-trans-1"></p></td></tr>
+						<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(1);" class="left-btn">My note</button><button ontouchstart="showTrans(1);" class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse" id="confirm-correct-1"></p></td></tr>
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse" id="confirm-correct-1"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-2" class="learnMethod confirm-swipe">
 					<h3>Powtórz <span class="wordNB"></span></h3>
 					<table>
-						<tr id="l-e-2" class="hidden"><td><p class="text"></p></td></tr>
-						<tr id="l-t-2"><td><p class="text" id="confirm-trans-2"></p></td></tr>
-						<tr id="l-n-2" class="hidden"><td><textarea id="confirm-text-2" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-e-2" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
+						<tr id="l-t-2"><td colspan="3"><p class="text" id="confirm-trans-2"></p></td></tr>
+						<tr id="l-n-2" class="hidden"><td colspan="3"><textarea id="confirm-text-2" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(2);" class="left-btn">My note</button><button ontouchstart="showTrans(2);" class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse" id="confirm-correct-2"></p></td></tr>
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse" id="confirm-correct-2"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-3" class="learnMethod confirm-swipe">
 					<h3>ZADAJ PYTANIE DO ZDANIA <span class="wordNB"></span></h3>
 					<table>
-						<tr id="l-e-3"><td><input type="text" class="text" id="question-3"/></td></tr>
-						<tr id="l-n-3" class="hidden"><td><textarea id="confirm-text-3" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-e-3"><td colspan="3"><input type="text" class="text" id="question-3"/></td></tr>
+						<tr id="l-n-3" class="hidden"><td colspan="3"><textarea id="confirm-text-3" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(3);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse"></p></td></tr>
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-4" class="learnMethod confirm-swipe">
 					<h3>Powtórz <span class="wordNB"></span></h3>
 					<table>
-						<tr id="l-e-4" class="hidden"><td><p class="text"></p></td></tr>
-						<tr id="l-t-4"><td><p class="text" id="confirm-trans-4"></p></td></tr>
-						<tr id="l-n-4" class="hidden"><td><textarea id="confirm-text-4" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-e-4" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
+						<tr id="l-t-4"><td colspan="3"><p class="text" id="confirm-trans-4"></p></td></tr>
+						<tr id="l-n-4" class="hidden"><td colspan="3"><textarea id="confirm-text-4" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(4);" class="left-btn">My note</button><button ontouchstart="showTrans(4);" class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse" id="confirm-correct-4"></p></td></tr>
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse" id="confirm-correct-4"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-5" class="learnMethod confirm-swipe flipper">
 					<h3>Powtórz poprzednie zdanie <span class="wordNB"></span></h3>
 					<table>
-						<tr id="l-e-5"><td><input type="text" class="text" id="question-5"/></td></tr>
-						<tr id="l-n-5" class="hidden"><td><textarea id="confirm-text-5" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-e-5"><td colspan="3"><input type="text" class="text" id="question-5"/></td></tr>
+						<tr id="l-n-5" class="hidden"><td colspan="3"><textarea id="confirm-text-5" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(5);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse"></p></td></tr>
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse"></p></td></tr>
 					</table>
 				</section>
 				<section id="word-lern-6" class="learnMethod confirm-swipe">
 					<h3>Sprawdź <span class="wordNB"></span></h3>
 					<table>
-						<tr id="l-e-6" class="hidden"><td><p class="text"></p></td></tr>
-						<tr id="l-t-6"><td><p class="text" id="confirm-trans-6"></p></td></tr>
-						<tr id="l-n-6" class="hidden"><td><textarea id="confirm-text-6" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-e-6" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
+						<tr id="l-t-6"><td colspan="3"><p class="text" id="confirm-trans-6"></p></td></tr>
+						<tr id="l-n-6" class="hidden"><td colspan="3"><textarea id="confirm-text-6" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(6);" class="left-btn">My note</button><button ontouchstart="showTrans(6);" class="right-btn">Translate</button></tr></td>-->
-						<tr ontouchend="tellMeNow(this);"><td class="middle-line"><span class="nbWordInCycle">1/10</span><p class="text text-reverse" id="confirm-correct-6"></p></td></tr>
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
+						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse" id="confirm-correct-6"></p></td></tr>
 					</table>
 				</section>
 			</div>

@@ -248,7 +248,7 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":2}');//
+var langJSON = JSON.parse('{"lang":2}');//JSON.parse('{"lang":-1}');//
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -256,8 +256,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":28, "words": 10, "km": 10}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
+var dayJSON = JSON.parse('{"day":27, "words": 10, "km": 10}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//[];//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -293,7 +293,7 @@ function startApp(){
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
-			getCatWithPos(0);
+			getCatWithPos(0, 1);
 			setTimeout(function(){
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
@@ -305,8 +305,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	readLang();
-	setTimeout(function() {getMyLangHelper();}, 100);
+	//readLang();
+	//setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -323,7 +323,7 @@ function getDay(){
 	readDayF();
 	getDayHelper();
 
-	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
+	$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
 	$(".countKMLearned").text(dayJSON.km*kmCat); //usunąć
@@ -384,7 +384,7 @@ function getDay(){
 				break;
 			} 
 		}
-		setTimeout(showInProgressCat, 100);*/
+		setTimeout(showInProgressCat, 100);
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -416,8 +416,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-    readWriteFile();
-	getToLearnHelper();
+   // readWriteFile();
+	//getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
@@ -593,7 +593,7 @@ function showSubCatList(s){
 		if(inProgressCat.indexOf(catSgn) >= 0){
 			cl = "inProgressCat";
 		}
-		tmp += '<p class="text setCat '+ cl +'" onclick="setCat(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '">' + cat.name + '</p>';
+		tmp += '<p class="text setCat '+ cl +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">w trakcie nauki</span> <span class="missingCatInfo">kategoria pominięta</span> <span class="learnedCatInfo">nauka zakończona</span></p>';
 	}
 	tmp += '</div>';
 	subcats = tmp;
@@ -1889,9 +1889,25 @@ function endTut(){
 }
 function startSetNewCategory(){
 	getCatList();
-	$('section').hide();
-	$("#choose-cat").show();
-	$("#cats").show();
+	$("#new-category-choice").addClass('next-cat-left');
+	setTimeout(function(){	
+		$('section').hide();			
+		$("#choose-cat").show();
+		setTimeout(function(){		
+			$("#choose-cat").removeClass('next-cat-right');
+		}, 50);
+		$("#cats").show();
+	}, 500);
+}
+function backToSetNewCategory(){
+	$("#choose-cat").addClass('next-cat-right');
+	setTimeout(function(){				
+		$("#choose-cat").hide();
+		$("#new-category-choice").show();	
+		setTimeout(function(){				
+			$("#new-category-choice").removeClass('next-cat-left');
+		}, 50);
+	}, 500);
 }
 function startChoiceNewCategory(){
 	$("#suggest-new-category").text(suggestedCatName);
@@ -1909,7 +1925,20 @@ function setSuggestedCat(par, cat){
 		for(var x in scat){
 			var c = scat[x];
 			if(c.id == cat) {	
-				getCatWithPos(c.pos);
+				getCatWithPos(c.pos, 1);
+			}
+		}
+    });
+}
+
+function setThisAsSuggestedCat(par, cat){
+	var idLang = $("#myLang").val();
+	$.get("date/"+ idLang + "/" + par + "/subcat.json", function(result) {
+		var scat = JSON.parse(result);
+		for(var x in scat){
+			var c = scat[x];
+			if(c.id == cat) {	
+				getCatWithPos(c.pos, 0);
 			}
 		}
     });
@@ -1922,7 +1951,7 @@ function setSuggestedCatName(idp, idc){
 		for(var x in scat){
 			var cat = scat[x];
 			if(cat.id == idc) {	
-				getCatWithPos(cat.pos);
+				getCatWithPos(cat.pos, 1);
 			}
 		}
     });
@@ -1986,7 +2015,7 @@ function updateProgressBar(){
 }
 /*END TUTORIAL*/
 
-function getCatWithPos(pos){
+function getCatWithPos(pos, off){
 	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
 		var cats = JSON.parse(result);
 		for(var x in cats){
@@ -1997,13 +2026,13 @@ function getCatWithPos(pos){
 				for(var sc in scats){
 					var scat = scats[sc];
 					//alert(parseInt(scat.pos) + " - " +  (parseInt(pos)+1));
-					if(parseInt(scat.pos) == (parseInt(pos)+1)){
+					if(parseInt(scat.pos) == (parseInt(pos)+off)){
 						$("#sugCatPar").val(idP);
 						$("#sugCatSub").val(scat.id);
 						suggestedCatPath = idP + "/" + scat.id;
 						suggestedCatName = scat.name;
 						getWordToSuggestCat(idP + "/" + scat.id);
-					}else if(parseInt(scat.pos) < (parseInt(pos)+1)){
+					}else if(parseInt(scat.pos) < (parseInt(pos)+off)){
 						missingCat.push(idP + "/" + scat.id);
 					}
 				}
@@ -2017,6 +2046,13 @@ function getNextSugCat(){
 	var c = $("#sugCatSub").val();
 	setSuggestedCat(p, c);
 	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName);}, 100);
+}
+
+function getThisCatAsSug(obj){
+	var p = $(obj).attr('data-parent');
+	var c = $(obj).attr('data-subcat');
+	setThisAsSuggestedCat(p, c);
+	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName); backToSetNewCategory();}, 100);
 }
 
 /* SAVE PROGRESS */
