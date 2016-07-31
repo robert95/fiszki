@@ -479,6 +479,8 @@ textarea:focus, textarea:hover, textarea:active{
   /* padding-top: 5%;/*380px;*/
    /* margin-top: 10%;*/
     left: 0;
+	margin-right: 5%;
+	display: inline-block;
  
    /* background: rgba(47, 72, 87, 0.5);
 	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2), 0 24px 80px 0 rgba(0, 0, 0, 0.19);*/
@@ -630,6 +632,7 @@ textarea:focus, textarea:hover, textarea:active{
 	left: 0;
 	width: 100%;
 	padding-bottom: 40px;    
+    transform: translate3d(0,0,0);
 }
 #nrDay{
 	font-size: 50px;
@@ -652,10 +655,10 @@ textarea:focus, textarea:hover, textarea:active{
 	-webkit-transform: rotateX(-90deg);	
 }
 .goLeft{
-	left: -400px !important;
+	transform: translateX(-130%) !important;
 }
 .goRight{
-	left: 400px !important;
+	transform: translateX(130%) !important;
 }
 #start-next-cat, #new-category-choice, #learn-container, #choose-cat{
 	display: none;
@@ -664,11 +667,11 @@ textarea:focus, textarea:hover, textarea:active{
 	transform-origin: 100% 40%; /* half of height */
 	-webkit-transition: 1s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: left 1s ease;
-	-moz-transition: left 1s ease;
-	-o-transition: left 1s ease;
-	-ms-transition: left 1s ease;
-	transition: left 1s ease;
+	-webkit-transition: transform 1s ease;
+	-moz-transition: transform 1s ease;
+	-o-transition: transform 1s ease;
+	-ms-transition: transform 1s ease;
+	transition: transform 1s ease;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	left: 0;
@@ -678,10 +681,10 @@ textarea:focus, textarea:hover, textarea:active{
 	overflow: hidden;
 }
 .next-cat-left{
-	left: 400px !important;
+   transform: translateX(130%) !important;
 }
 .next-cat-right{
-	left: -400px !important;
+    transform: translateX(-130%) !important;
 }
 #main-text-next-cat{
 	text-align: right;
@@ -985,17 +988,17 @@ section{
 	top: 0;
 	left: 0;
 	z-index: 2222222;	
-	-webkit-transition: left 0.8s ease;
-	-moz-transition: left 0.8s ease;
-	-o-transition: left 0.8s ease;
-	-ms-transition: left 0.8s ease;
-	transition: left 0.8s ease;
+	-webkit-transition: transform 0.8s ease;
+	-moz-transition: transform 0.8s ease;
+	-o-transition: transform 0.8s ease;
+	-ms-transition: transform 0.8s ease;
+	transition: transform 0.8s ease;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background: url('../img/bg.png') 100% 100%;
+	background: url('../img/bg.png') 100% 100%;\
 }
 #statistic img{
 	width: 20px;
