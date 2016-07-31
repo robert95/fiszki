@@ -301,14 +301,15 @@ function startApp(){
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 			}, 1000);
 		}
-		
+		StatusBar.show();
+		StatusBar.hide();
 	}, 1500);
 }
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	//readLang();
-	//setTimeout(function() {getMyLangHelper();}, 100);
+	readLang();
+	setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -322,10 +323,10 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	//readDayF();
-	//getDayHelper();
+	readDayF();
+	getDayHelper();
 
-	$("#nrDayFiled").text(dayJSON.day); //usunąć
+	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
 	$(".countKMLearned").text(dayJSON.km*kmCat); //usunąć
@@ -386,7 +387,7 @@ function getDay(){
 				break;
 			} 
 		}
-		setTimeout(showInProgressCat, 100);
+		setTimeout(showInProgressCat, 100);*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -404,8 +405,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	//readWriteFile2();
-	//getNoticeHelper();
+	readWriteFile2();
+	getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -418,8 +419,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-    //readWriteFile();
-	//getToLearnHelper();
+    readWriteFile();
+	getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
