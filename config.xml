@@ -8,7 +8,6 @@
   <preference name="target-device" value="universal"/>
   <preference name="fullscreen" value="true"/>
   <preference name="webviewbounce" value="true"/>
-  <preference name="HideKeyboardFormAccessoryBar" value="true"/>
   <preference name="prerendered-icon" value="true"/>
   <preference name="iosPersistentFileLocation" value="Compatibility" />
   <preference name="AndroidPersistentFileLocation" value="Compatibility" />
@@ -22,8 +21,6 @@
   <preference name="android-minSdkVersion" value="14"/>
   <preference name="android-installLocation" value="auto"/>
   <preference name="EnableViewportScale" value="true" />
-  <preference name="StatusBarOverlaysWebView" value="true" />
-  <preference name="disableImmersive" value="true" />
   <gap:plugin name="org.apache.cordova.battery-status"/>
   <gap:plugin name="org.apache.cordova.camera"/>
   <gap:plugin name="org.apache.cordova.media-capture"/>
@@ -46,6 +43,7 @@
   <plugin name="cordova-plugin-filepath" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
   <plugin src="https://github.com/apache/cordova-plugin-statusbar.git" />
+  <plugin src="https://github.com/cranberrygame/cordova-plugin-navigationbar.git" />
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
@@ -86,7 +84,4 @@
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
   </platform>
-  <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true" />
-  </feature>
 </widget>

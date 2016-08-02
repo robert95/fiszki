@@ -343,9 +343,9 @@
 		</section>
 		<section id="startDay">
 			<h1>Welcome to <br>lesson <span id="nrDayFiled"></span></h1>
-			<p class="you-start-learned">Uczysz się z nami <span class="allWords"></span>/3000 zdań</p>
-			<p class="you-start-learned2">Na dziś zaplanowane jest <span id="countWordsToLearn"></span> zdań</p>
-			<p class="you-start-learned3">Przeszedłeś już z nami <span class="countKMLearned"></span> km</p>
+			<p class="you-start-learned">Spedziłeś z nami: <span class="countKMLearned"></span> h <span class="countMinLearned"></span> min</p>
+			<p class="you-start-learned2">Uczysz się z nami <span class="allWords"></span>/3000 zdań</p>
+			<p class="you-start-learned3">Zaplanowana liczba zadań: <span id="countWordsToLearn"></span></p>
 			<p class="goToReverse">Przejdź do powtórek</p>
 			<div id="start-day-ok-no-panel">
 				<div id="start-day-wrap-ok-no">
@@ -809,6 +809,7 @@
 		<script>
 			$(".noteTEXT").blur(function() {
 				StatusBar.hide();
+				window.navigationbar.hide();
 			});
 		</script>
 		<script>
