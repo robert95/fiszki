@@ -194,6 +194,7 @@ function failN(error) {
 /* SAVE LANG */
 function saveMyLang(mylang){
 	langJSON.lang = mylang;
+	getCatWithPos(0, 1);
 	saveLang();
 }
 function saveLang(){

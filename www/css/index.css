@@ -314,7 +314,8 @@ section{
 }
 #learn-container{
 	display: none;
-	height: 100%
+	height: 100%;
+	overflow-x: hidden;
 }
 #wrap-ok-no, #tut-wrap-ok-no, #start-day-wrap-ok-no, #end-day-wrap-ok-no, #new-cat-wrap-ok-no{
 	position: relative;
@@ -481,7 +482,7 @@ textarea:focus, textarea:hover, textarea:active{
    /* margin-top: 10%;*/
     left: 0;
 	margin-right: 5%;
-	display: inline-block;
+	display: table;
  
    /* background: rgba(47, 72, 87, 0.5);
 	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2), 0 24px 80px 0 rgba(0, 0, 0, 0.19);*/
@@ -616,9 +617,9 @@ textarea:focus, textarea:hover, textarea:active{
 }
 #learn-panel{
 	position: relative;
-	height: 60%;
+	height: 75%;
 	display:table;
-	width:100%;
+	width: 100%;
 }
 .learnMethod{
 	display: block;
@@ -666,6 +667,16 @@ textarea:focus, textarea:hover, textarea:active{
 .goRight{
 	transform: translateX(130%) !important;
 	-webkit-transform: translateX(130%) !important;
+}
+#start-next-cat{
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+#btn-next-cat{
+	position: absolute;
+	width: 100%;
+	bottom: -11px;
 }
 #start-next-cat, #new-category-choice, #learn-container, #choose-cat{
 	display: none;
