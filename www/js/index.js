@@ -36,16 +36,11 @@ var app = {
     onDeviceReady: function() {
 		//getLangList();
 		startApp();
-		document.addEventListener("resume", hideBars, false);
 		window.navigationbar.setUp(false);
+		document.addEventListener("resume", hideBars, false);
 		if (AndroidFullScreen) {
-			// Extend your app underneath the status bar (Android 4.4+ only)
 			AndroidFullScreen.showUnderStatusBar();
-
-			// Extend your app underneath the system UI (Android 4.4+ only)
 			AndroidFullScreen.showUnderSystemUI();
-
-			// Hide system UI and keep it hidden (Android 4.4+ only)
 			AndroidFullScreen.immersiveMode();
 		}
     },
@@ -296,6 +291,7 @@ function startApp(){
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){	
 		var lang = langJSON.lang;
+		hideBars();
 		//TAK
 		if(lang < 1){
 			$("#first-use-loading-page").hide();
