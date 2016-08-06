@@ -39,7 +39,7 @@ var app = {
 		document.addEventListener("resume", hideBars, false);
 		window.navigationbar.setUp(false);
 		StatusBar.hide();	
-		//alert("w:" + $( window ).height() + " d: " + $( document ).height() + " h: "+ $("html").height() + " b: " + $( "body").height() );
+		alert("w:" + $( window ).height() + " d: " + $( document ).height() + " h: "+ $("html").height() + " b: " + $( "body").height() );
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
