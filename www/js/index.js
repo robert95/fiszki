@@ -38,7 +38,6 @@ var app = {
 		startApp();
 		document.addEventListener("resume", hideBars, false);
 		window.navigationbar.setUp(false);
-		StatusBar.hide();	
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -287,6 +286,8 @@ function startApp(){
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){
 		alert("w:" + $( window ).height() + " d: " + $( document ).height() + " h: "+ $("html").height() + " b: " + $( "body").height() );
+		StatusBar.show();	
+		StatusBar.hide();	
 		var lang = langJSON.lang;
 		//TAK
 		if(lang < 1){
