@@ -291,7 +291,7 @@ function startApp(){
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){	
 		var lang = langJSON.lang;
-		hideBars();
+		//hideBars();
 		//TAK
 		if(lang < 1){
 			$("#first-use-loading-page").hide();
