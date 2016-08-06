@@ -38,11 +38,6 @@ var app = {
 		startApp();
 		document.addEventListener("resume", hideBars, false);
 		window.navigationbar.setUp(false);
-		/*if (AndroidFullScreen) {
-			AndroidFullScreen.showUnderStatusBar();
-			AndroidFullScreen.showUnderSystemUI();
-			AndroidFullScreen.immersiveMode();
-		}*/
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -286,6 +281,7 @@ var inProgressCat = [];
 var missingCat = [];
 /* START APP*/
 function startApp(){
+	StatusBar.hide();
 	//sprawdź czy to pierwsze uruchomienia
 	$("#first-use-loading-page").show();
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
