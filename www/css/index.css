@@ -936,21 +936,21 @@ section{
 #menu{
 	position: fixed;
 	width: 100%;
-	top: -700px;
 	transform-origin: 100% 40% 0px;
 	-webkit-transition: 0.8s;
 	-webkit-transform-origin: 100% 40%;
 	-webkit-transition: all 0.8s ease;
 	transition: all 0.8s ease 0s;
-	transform: translate3d(0, 0, 0);
-	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, -700px, 0);
+	-webkit-transform: translate3d(0, -700px, 0);
 	background: rgb(63, 140, 183) none repeat scroll 0% 0%;
 	z-index: 1001;
 	background: transparent url("../img/bg.png") repeat scroll 0% 0%;
 	background-size: 100% 100%;
 }
 .showmenu{
-	top: 0px !important;
+	transform: translate3d(0, 0, 0) !important;
+	-webkit-transform: translate3d(0, 0, 0) !important;
 }
 #menu li{
 	display: block;
@@ -1112,7 +1112,7 @@ section{
 	display: block !important;
 }
 .missingCat .missingCatInfo{
-	display: block !important;
+	display: none !important;
 }
 .list{
 	display: none;
@@ -1132,4 +1132,18 @@ section{
 	box-shadow: 0px;
 	outline: 0px;
 	outline: none;
+}
+#list-word-in-sug-cat{
+	display: block;
+	width: 95%;
+	margin: auto auto;
+}
+.l2, .l3{
+	display: none;
+}
+.lang2 .l2{
+	display: inline !important;
+}
+.lang3 .l3{
+	display: inline !important;
 }

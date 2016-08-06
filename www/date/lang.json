@@ -8,5 +8,10 @@
 		"id": 2,
 		"name": "english",
 		"label": "I speak english"
+	},
+	{
+		"id": 3,
+		"name": "polski",
+		"label": "Mówię po polsku"
 	}
 ]

@@ -36,8 +36,10 @@ var app = {
     onDeviceReady: function() {
 		//getLangList();
 		startApp();
-		document.addEventListener("resume", appReturnedFromBackground, false);
-		window.navigationbar.setUp(false);	
+		document.addEventListener("resume", hideBars, false);
+		window.navigationbar.setUp(false);
+		StatusBar.hide();	
+		//alert("w:" + $( window ).height() + " d: " + $( document ).height() + " h: "+ $("html").height() + " b: " + $( "body").height() );
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -51,7 +53,7 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-function appReturnedFromBackground() {
+function hideBars() {
 	StatusBar.hide();	
 	window.navigationbar.hide();
 }
@@ -262,7 +264,7 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":28, "words": 10, "km": 10}');//
+var dayJSON = false;//JSON.parse('{"day":27, "words": 10, "km": 10}');//
 var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
@@ -298,6 +300,7 @@ function startApp(){
 		//NIE
 			//getMyLang();
 			$("#myLang").val(lang);
+			$("body").addClass('lang'+lang);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
@@ -1023,6 +1026,7 @@ function noLearnt(){
 		setWordToMethod(3);
 		noLerntStep = 1;
 	}else{
+		theSameMethod = true;
 		whereGo = -1;
 		setWordToMethod(4);
 		noLerntStep = 0;
@@ -1050,6 +1054,7 @@ var last_r_s = -1;
 var theSameMethod = false;
 
 function nextStep(){
+	StatusBar.hide();
 	backToNormalStateNote();
 	updateProgressBar();
 	if(readyToSaveNotice){
@@ -1441,14 +1446,15 @@ var fin_id = 0;
 var repeatFstRound = true;
 //var repeatSecRound = false;
 function repeatThrid(id, met){
+	if(met == 6) whereGo = -1;
+	else whereGo = 0;
 	setTimeout(function(){
-		clearDraggableField();
 		setActWord(id);
 		setTimeout(function(){
 			setWordToMethod(met);
 			pulseThdNav(id);
-		}, 200);
-	}, 200);
+		}, 5);
+	}, 100);
 }
 
 function updateThirdNav(){
@@ -1859,7 +1865,11 @@ function setWaintingLearned(){
 		if(nbMethod == 6){
 			waintingLearned += 3;
 		}else{
-			waintingLearned += 2;
+			if(nbStep == 2){
+				waintingLearned += 0;
+			}else{
+				waintingLearned += 2;
+			}
 		}
 	}
 	if(thirdCycle){
