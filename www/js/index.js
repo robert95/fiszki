@@ -37,7 +37,8 @@ var app = {
 		//getLangList();
 		startApp();
 		document.addEventListener("resume", hideBars, false);
-		window.navigationbar.setUp(false);
+		var autoHideNavigationBar = true;
+		window.navigationbar.setUp(autoHideNavigationBar);  
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
