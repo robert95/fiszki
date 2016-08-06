@@ -36,13 +36,13 @@ var app = {
     onDeviceReady: function() {
 		//getLangList();
 		startApp();
-		window.navigationbar.setUp(false);
 		document.addEventListener("resume", hideBars, false);
-		if (AndroidFullScreen) {
+		window.navigationbar.setUp(false);
+		/*if (AndroidFullScreen) {
 			AndroidFullScreen.showUnderStatusBar();
 			AndroidFullScreen.showUnderSystemUI();
 			AndroidFullScreen.immersiveMode();
-		}
+		}*/
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
