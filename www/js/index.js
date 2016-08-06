@@ -284,10 +284,7 @@ function startApp(){
 	//sprawdź czy to pierwsze uruchomienia
 	$("#first-use-loading-page").show();
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
-	setTimeout(function(){
-		alert("w:" + $( window ).height() + " d: " + $( document ).height() + " h: "+ $("html").height() + " b: " + $( "body").height() );
-		StatusBar.show();	
-		StatusBar.hide();	
+	setTimeout(function(){	
 		var lang = langJSON.lang;
 		//TAK
 		if(lang < 1){
