@@ -30,7 +30,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
-    <body>
+    <body class="lang3">
 		<input type="file" id="readP">
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
@@ -252,75 +252,209 @@
 				</div>
 			</section>
 		</section>
-		<section id="tutorial">
+		<section id="tutorial" class="next-cat-left">
+			<div id="count-word-to-learn-tut">
+				<div id="progess-btn-stan-in-cycle-2-tut" class="c100 p100">
+					<span id="progess-btn-per-in-cycle-2-tut">178</span>
+					<div class="slice">
+						<div class="bar"></div>
+						<div class="fill"></div>
+					</div>
+				</div>
+			</div>
 			<div id="tut-learn-panel">
-				<section id="tut-lern-0" class="tut-method">
-					<h3>Tutaj wstepne informacje, takie wstęp do omówienia każdego ekranu, jakieś informacje ogólne, np: o funkcji myNote</h3>
-					<h5>ROZPOCZNIJ TUTORIAL</h5>
-				</section>
-				<section id="tut-lern-1" class="tut-method learnMethod confirm-swipe">
-					<h3>Przetłumacz</h3>
-					<h5>krótka instrukcja</h5>
+				<section id="tut-lern-0" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Witamy w Speak...</span><span class="l3">Witamy w Speak...</span></h3>
 					<table>
-						<tr id="t-l-e-1" class="hidden"><td><p class="text"></p></td></tr>
-						<tr id="t-l-t-1"><td><p class="text">Pies</p></td></tr>
-						<tr id="t-l-n-1" class="hidden"><td><input type="text" class="text noteTEXT" placeholder="Twoja notatka"/></td></tr>
-						<tr><td class="btn-container"><button ontouchstart="showNote(1);" class="left-btn">My note</button><button ontouchstart="showTrans(1);" class="right-btn">Translate</button></tr></td>
-						<tr><td><p class="text text-reverse"></p></td></tr>
+						<tr><td colspan="3"><p class="text">Aplikacji uczącej języka angielskiego w najbardziej efektywny sposób:</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">1/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Poprzez mówienie pełnymi zdaniami!</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-1" data-flip="1" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_W trakcie 200 lekcji w Speak...</span><span class="l3">W trakcie 200 lekcji w Speak...</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Będziesz trenował wymowę z native speakerami przez ponad 60h</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">2/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Poznasz ponad 4000 najczęściej używanych  słów oraz ich odmian</p></td></tr>
 					</table>
 				</section>
 				<section id="tut-lern-2" class="tut-method learnMethod confirm-swipe">
-					<h3>Powtórz</h3>
-					<h5>krótka instrukcja</h5>
+					<h3><span class="l2">ENG_W trakcie 200 lekcji w Speak...</span><span class="l3">W trakcie 200 lekcji w Speak...</span></h3>
 					<table>
-						<tr id="t-l-e-2" class="hidden"><td><p class="text"></p></td></tr>
-						<tr id="t-l-t-2"><td><p class="text">Pies</p></td></tr>
-						<tr id="t-l-n-2" class="hidden"><td><input type="text" class="text noteTEXT" placeholder="Twoja notatka"/></td></tr>
-						<tr><td class="btn-container"><button ontouchstart="showNote(2);" class="left-btn">My note</button><button ontouchstart="showTrans(2);" class="right-btn">Translate</button></tr></td>
-						<tr><td><p class="text text-reverse">Dog</p></td></tr>
+						<tr><td colspan="3"><p class="text">Utrwalisz 100 najważniejszych zagadnień gramatycznych w praktyce</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">2/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Powtarzanie zdobytych już informacji zgodnie z krzywą zapamiętywania Edinhausa</p></td></tr>
 					</table>
 				</section>
-				<section id="tut-lern-3" class="tut-method learnMethod confirm-swipe">
-					<h3>Zadaj pytanie do zdania</h3>
-					<h5>krótka instrukcja</h5>
+				<section id="tut-lern-3" data-flip="1" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Liczba zadań</span><span class="l3">Liczba zadań</span></h3>
 					<table>
-						<tr id="t-l-e-3"><td><input type="text" class="text" /></td></tr>
-						<tr id="t-l-n-3" class="hidden"><td><input type="text" class="text noteTEXT" placeholder="Twoja notatka"/></td></tr>
-						<tr><td class="btn-container"><button ontouchstart="showNote(3);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>
-						<tr><td><p class="text text-reverse"></p></td></tr>
+						<tr><td colspan="3"><p class="text">Średnia liczba zadań w trakcie 1 lekcji to:</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">3/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">178</p></td></tr>
 					</table>
 				</section>
 				<section id="tut-lern-4" class="tut-method learnMethod confirm-swipe">
-					<h3>Powtórz</h3>
-					<h5>krótka instrukcja</h5>
+					<h3><span class="l2">ENG_Liczba zadań</span><span class="l3">Liczba zadań</span></h3>
 					<table>
-						<tr id="t-l-e-4" class="hidden"><td><p class="text"></p></td></tr>
-						<tr id="t-l-t-4"><td><p class="text" ></p></td></tr>
-						<tr id="t-l-n-4" class="hidden"><td><input class="text noteTEXT" placeholder="Twoja notatka"/></td></tr>
-						<tr><td class="btn-container"><button ontouchstart="showNote(4);" class="left-btn">My note</button><button ontouchstart="showTrans(4);" class="right-btn">Translate</button></tr></td>
-						<tr><td><p class="text text-reverse" ></p></td></tr>
+						<tr><td colspan="3"><p class="text">3 rodzaje zadań:</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">3/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Powtarzanie (na glos)<br>Tłumaczenie (na glos)<br>Sprawdzanie odpowiedzi</p></td></tr>
 					</table>
 				</section>
-				<section id="tut-lern-5" class="tut-method learnMethod confirm-swipe">
-					<h3>Sprawdź</h3>
-					<h5>krótka instrukcja</h5>
+				<section id="tut-lern-5" data-flip="1" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Asocjacje:</span><span class="l3">Asocjacje:</span></h3>
 					<table>
-						<tr id="t-l-e-6" class="hidden"><td><p class="text"></p></td></tr>
-						<tr id="t-l-t-6"><td><p class="text"></p></td></tr>
-						<tr id="t-l-n-6" class="hidden"><td><input class="text noteTEXT" placeholder="Twoja notatka"/></td></tr>
-						<tr><td class="btn-container"><button ontouchstart="showNote(6);" class="left-btn">My note</button><button ontouchstart="showTrans(6);" class="right-btn">Translate</button></tr></td>
-						<tr><td><p class="text text-reverse"></p></td></tr>
+						<tr><td colspan="3"><p class="text">Podczas nauki nowego słownictwa:</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">4/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Zalecamy korzystanie z funkcji note.</p></td></tr>
 					</table>
 				</section>
-				<section id="tut-lern-6" class="tut-method">
-					<h3>Tutaj zakończenie tutoriału, podziękowanie i życzenie powodzenia w nauce</h3>
-					<h5>ZAKOŃCZ TUTORIAL</h5>
+				<section id="tut-lern-6" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Asocjacje:</span><span class="l3">Asocjacje:</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Poprzez zapisanie skojarzenia nowego słowa ze słowem, które jest podobne w wymowie i które już znamy</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">4/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse"></p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-7" data-flip="1" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Chmurka przypomnij</span><span class="l3">Chmurka przypomnij</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Gdy pojawi się pulsująca chmurka</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">5/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Pamiętaj aby sprawdzić czy pamiętasz daną asocjację.</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-8" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Chmurka przypomnij</span><span class="l3">Chmurka przypomnij</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Metoda jest opisana dokładniej na naszej stronie internetowej</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">5/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse"></p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-9" data-flip="1" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Powtórki</span><span class="l3">Powtórki</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Każda lekcja rozpoczyna się od powtórek.</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">6/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Jest to nieodzowny element nauki, który zwiększa.Poziom zapamiętania materiału do 95%*.</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-10" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Powtórki</span><span class="l3">Powtórki</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Nowy materiał można wybrać automatycznie</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">6/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">lub ręcznie</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-11" data-flip="1" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Zapisywanie wyników</span><span class="l3">Zapisywanie wyników</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">W razie wymiany telefonu istnieje</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">7/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">możliwość zapisania/wczytania postępu.</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-12" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Zapisywanie wyników</span><span class="l3">Zapisywanie wyników</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Funkcja jest dostępna w menu aplikacji</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">7/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse"></p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-13" data-flip="1" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Reklamy</span><span class="l3">Reklamy</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Reklamy cz. 1</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">8/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Reklamy cz. 1</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-14" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Reklamy</span><span class="l3">Reklamy</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Reklamy cz. 2</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">8/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Reklamy cz. 2</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-15" data-flip="1" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Wersji premium</span><span class="l3">Wersji premium</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Wersji premium cz. 1</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">9/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Wersji premium cz. 1</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-16" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Wersji premium</span><span class="l3">Wersji premium</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Wersji premium cz. 2</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">9/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Wersji premium cz. 2</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-17" data-flip="1" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Zakonczenie</span><span class="l3">Zakonczenie</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Zakonczenie cz. 1</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">10/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Zakonczenie cz. 1</p></td></tr>
+					</table>
+				</section>
+				<section id="tut-lern-18" class="tut-method learnMethod confirm-swipe">
+					<h3><span class="l2">ENG_Zakonczenie</span><span class="l3">Zakonczenie</span></h3>
+					<table>
+						<tr><td colspan="3"><p class="text">Zakonczenie cz. 2</p></td></tr>
+						<!--<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>-->
+						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle-tut">10/10</span></td><td class="middle-line"></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse">Zakonczenie cz. 2</p></td></tr>
+					</table>
 				</section>
 			</div>
 			<div id="tut-ok-no-panel">
 				<div id="tut-wrap-ok-no">
-					<img src="img/okNoP.png" class="good-bad" onclick="isOkTut();" />
-					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
+					<div id="progress-circle-in-cycle-tut2" >
+						<div id="progess-btn-stan-in-cycle-tut2" class="c100 p100" onclick="isOkTut();">
+							<span id="progess-btn-per-in-cycle-tut2"></span>
+							<div class="slice">
+								<div class="bar"></div>
+								<div class="fill"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="note-skip-btn">
+					<div class="note-btn" onclick="showAllNote();">
+						<img src="img/remind.png" class="remind-img pulse-btn" id="remind-tut">
+						<p id="noteInTut">Note</p>
+					</div>
+					<div class="skip-btn">
+						<!--<p class="bad-bad" onclick="isNo();" id="badBTN" >Repeat</p>-->
+					</div>
 				</div>
 			</div>
 		</section>
@@ -354,7 +488,7 @@
 				</div>
 			</div>			
 		</section>
-		<section id="end-panel">
+		<section id="end-panel" class="next-cat-left">
 			<h1><span class="l2">ENG_GRATULUJEMY!</span><span class="l3">GRATULUJEMY!</span><br><br><br><span class="l2">ENG_Ukończyłeś lekcję</span><span class="l3">Ukończyłeś lekcję</span> <span id="end-nr-lesson"></span></h1>
 			<div id="end-day-ok-no-panel">
 				<div id="end-day-wrap-ok-no">
@@ -374,17 +508,26 @@
 		<!--<button class="text" onclick="startSetNewCategory();">Wybór ręczny</button>-->
 			<div id="new-cat-ok-no-panel">
 				<div id="new-cat-wrap-ok-no">
-					<img src="img/okNoP.png" class="good-bad" onclick="setSuggestedCatAsNew();"/>
-				</div>
+					<!--<img src="img/okNoP.png" class="good-bad" onclick="setSuggestedCatAsNew();"/>-->
+					<div id="progress-circle-in-cycle-ncat" >
+						<div id="progess-btn-stan-in-cycle-ncat" class="c100 p0" onclick="setSuggestedCatAsNew();">
+							<span id="progess-btn-per-in-cycle-ncat"></span>
+							<div class="slice">
+								<div class="bar"></div>
+								<div class="fill"></div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="note-skip-btn">
+					<div class="note-btn cat-btn-skip" onclick="getNextSugCat();">
+						<p>Skip</p>
+					</div>
+					<div class="skip-btn" onclick="startSetNewCategory();">
+						<p>Manual</p>
+					</div>
+				</div>	
 			</div>	
-			<div class="note-skip-btn">
-				<div class="note-btn cat-btn-skip" onclick="getNextSugCat();">
-					<p>Skip</p>
-				</div>
-				<div class="skip-btn" onclick="startSetNewCategory();">
-					<p>Manual</p>
-				</div>
-			</div>		
 		</section>
 		<section id="statistic" class="goLeft">
 			<img src="img/back2.png" onclick="hideStatistic();">
@@ -489,7 +632,7 @@
 				$("#choose-lang").hide();
 				startTut();
 				setTimeout(function(){
-					getCatWithPos(0);
+					getCatWithPos(0,1);
 				}, 300);
 			}
 			
@@ -552,10 +695,23 @@
 			function isOkTut(){
 				$('.tut-method').each(function(){
 					if($(this).is(":visible") == true){
+						if($(this).attr('data-flip') == 1){
+							$('.tut-method').addClass('flipper-hide');
+							setTimeout(function(){
+								nextTutStep();
+							}, 700);
+						}
+						else goLeftTableTut();
+					}
+				});
+			}
+			function goLeftTableTut(){
+				$('.tut-method').each(function(){
+					if($(this).is(":visible") == true){
 						$(this).addClass("goLeft");
 						setTimeout(function(){
 							  nextTutStep();
-						  }, 450);
+						}, 700);
 					}else{
 						$(this).addClass("goRight");
 					}
@@ -619,7 +775,6 @@
 							  }, 450);
 						}
 					}else{
-						//trzeba dodać warunek, że jak w 3 cyklu jesteśmy w powtórka ma wchodzić z lewej
 						$(this).addClass("goRight");
 					}
 				});
@@ -627,10 +782,7 @@
 			function goRightTable(){
 				$('.confirm-swipe table').each(function(){
 					if($(this).is(":visible") == true){
-						//$(this).addClass("good-right");
-						//$(this).velocity({ left: "-1000px" }, 300);
 						$(this).addClass("goRight");
-						//$(this).fadeOut();
 						setTimeout(function(){
 							increaseLearned();
 							nextStep();
@@ -643,11 +795,7 @@
 			function goRightNoSimple(){
 				$('.confirm-swipe table').each(function(){
 					if($(this).is(":visible") == true){
-						//$(this).addClass("bad-right");
-						//$(this).velocity({ left: "-1000px" }, 300);
-						//$(this).hide();
 						$(".confirm-swipe").addClass('flipper-hide');
-						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
@@ -658,10 +806,7 @@
 			function goRightNoTable(){
 				$('.confirm-swipe table').each(function(){
 					if($(this).is(":visible") == true){
-						//$(this).addClass("bad-right");
-						//$(this).velocity({ left: "-1000px" }, 300);
 						$(this).addClass("goRight");
-						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
@@ -674,10 +819,7 @@
 			function goLeftNoTable(){
 				$('.confirm-swipe table').each(function(){
 					if($(this).is(":visible") == true){
-						//$(this).addClass("bad");
-						//$(this).velocity({ left: "-1000px" }, 300);
 						$(this).addClass("goLeft");
-						//$(this).fadeOut();
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
@@ -687,45 +829,6 @@
 					}
 				});
 			}
-			/*$('.confirm-swipe table').draggable({ axis: "y", stop: function() {
-				if(parseInt($(this).css('top')) > 100){
-					if($("#word-lern-6").css('display') != "none"){
-						$(this).addClass("bad");
-						$(this).animate({ 
-							top: "300px",
-						  }, 500);
-						  $(this).fadeOut(500);
-						  setTimeout(function(){
-							nextStepBlock();
-							nextStep();
-						  }, 500);
-					}else {
-						$(this).velocity({ top: "0px" }, 500);
-					}	
-				}else if(parseInt($(this).css('top')) < -100){
-					$(this).addClass("good");
-					$(this).velocity({ top: "-300px" }, 500);
-					$(this).fadeOut(500);
-					setTimeout(function(){
-						  nextStep();
-					  }, 500);
-				}else {
-					 $(this).velocity({ top: "0px" }, 500);
-				}
-		   }, drag: function() {round
-				if(parseInt($(this).css('top')) > 100){
-					if($("#word-lern-6").css('display') != "none"){
-						$(this).addClass("bad");
-					}
-					else{
-						$(this).velocity({ top: "0px" }, 200);
-						return false;
-					}
-				}else if(parseInt($(this).css('top')) < -100){
-					$(this).addClass("good");
-					return false;
-				}
-		   }});*/
 		   
 		   function goUp(){
 				$('.confirm-swipe table').each(function(){

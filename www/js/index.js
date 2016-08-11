@@ -263,8 +263,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":27, "words": 10, "km": 10}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"1"},{"subid":9,"catid":1,"start":"3"},{"subid":1,"catid":1,"start":"3"}]');//
+var dayJSON = JSON.parse('{"day":23, "words": 10, "km": 10, "skiped": ["1/2", "1/3", "1/7", "1/8"]}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":8,"catid":1,"start":"12"},{"subid":8,"catid":1,"start":"1"},{"subid":1,"catid":1,"start":"3"}]');//[];//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -280,6 +280,7 @@ var suggestedCatName = "";
 var learnedCat = [];
 var inProgressCat = [];
 var missingCat = [];
+var gameIsBegin = false;
 /* START APP*/
 function startApp(){
 	StatusBar.hide();
@@ -288,7 +289,6 @@ function startApp(){
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){	
 		var lang = langJSON.lang;
-		//hideBars();
 		//TAK
 		if(lang < 1){
 			$("#first-use-loading-page").hide();
@@ -302,11 +302,12 @@ function startApp(){
 			//getMyLang();
 			$("#myLang").val(lang);
 			$("body").addClass('lang'+lang);
+			getCatWithPos(0, 1);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
-			getCatWithPos(0, 1);
 			setTimeout(function(){
+				gameIsBegin = true;
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 			}, 1000);
@@ -316,8 +317,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	readLang();
-	setTimeout(function() {getMyLangHelper();}, 100);
+	//readLang();
+	//setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -331,10 +332,10 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	readDayF();
-	getDayHelper();
-
-	/*$("#nrDayFiled").text(dayJSON.day); //usunąć
+	//readDayF();
+	//getDayHelper();
+	
+	$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
 	$(".countKMLearned").text( Math.floor( dayJSON.km*minCat / 60)); //usunąć
@@ -396,7 +397,7 @@ function getDay(){
 				break;
 			} 
 		}
-		setTimeout(showInProgressCat, 100);*/
+		setTimeout(showInProgressCat, 100);
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -415,8 +416,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	readWriteFile2();
-	getNoticeHelper();
+	//readWriteFile2();
+	//getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -429,8 +430,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-    readWriteFile();
-	getToLearnHelper();
+   // readWriteFile();
+	//getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
@@ -599,7 +600,7 @@ function showSubCatList(s){
 		var cat = cats[x];
 		var cl = "";
 		var catSgn = parent + "/" + cat.id;
-		if(missingCat.indexOf(catSgn) >= 0){
+		if(dayJSON.skiped.indexOf(catSgn) >= 0){
 			cl = "missingCat";
 		}
 		if(learnedCat.indexOf(catSgn) >= 0){
@@ -823,15 +824,20 @@ function checkMySelf(){
 	$('.confirm-swipe table').removeClass('bad');
 }
 
+var blockClear = false;
 function clearDraggableField(){
-	$(".confirm-swipe").removeClass('flipper-hide');
-	$(".confirm-swipe table").show();
-	$('.confirm-swipe table').removeClass('good');
-	$('.confirm-swipe table').removeClass('bad');
-	$('.confirm-swipe table').removeClass('good-right');
-	$('.confirm-swipe table').removeClass('bad-right');
-	$('.confirm-swipe table').removeClass('goLeft');
-	$('.confirm-swipe table').removeClass('goRight');
+	if(!blockClear){
+		$(".confirm-swipe table").show();
+		setTimeout(function(){
+			$(".confirm-swipe").removeClass('flipper-hide');
+			$('.confirm-swipe table').removeClass('good');
+			$('.confirm-swipe table').removeClass('bad');
+			$('.confirm-swipe table').removeClass('good-right');
+			$('.confirm-swipe table').removeClass('bad-right');
+			$('.confirm-swipe table').removeClass('goLeft');
+			$('.confirm-swipe table').removeClass('goRight');
+		}, 50);
+	}
 }
 /*END SET WORD TO LEARN*/
 /*PLAY SOUND*/
@@ -1162,6 +1168,7 @@ function nextStep(){
 					if(lastWordSecondRound){
 						index--;
 						setWordToMethod(6);
+						whereGo = -1;
 						var id = ($("#nav-words-container p").eq(index)).data('word-id');
 						setActWord(id);
 						lastWordSecondRound = false;
@@ -1226,6 +1233,7 @@ function nextStep(){
 				$("#nav-words-container p").eq(index).addClass("activ");
 				$("#nav-words-container p").eq(index).addClass("pulse");
 				setTimeout(function(){
+					if(index == 9) whereGo = 0;
 					setWordToMethod(1);
 				}, 100);
 				nbMethod = 1;
@@ -1436,7 +1444,13 @@ function nextStep(){
 }
 
 function nextPack(){
-	packControler();
+	blockClear = true;
+	$('.confirm-swipe table').hide();
+	setTimeout(function(){		
+		blockClear = false;
+		$('.confirm-swipe table').addClass('goRight');
+		packControler();
+	}, 500);
 }
 
 var fst_id = 0;
@@ -1670,7 +1684,7 @@ function packControler(){
 	$("#learn-container").show();
 	setTimeout(function(){				
 		$("#learn-container").removeClass('next-cat-left');
-	}, 2500);
+	}, 500);
 	for(var i = 0; i < 10 && !endThis; i++){
 		continueLearning = false;
 		if(toLearn[i] != -1){
@@ -1811,27 +1825,53 @@ function showStartCat(count, name){
 	$("#name-next-cat").text(name);
 	
 	var percent = Math.round(((count-1)/countCatsToLearn)*100);
-	$("#progess-btn-stan").addClass('p'+percent);
+	//$("#progess-btn-stan").addClass('p'+percent);
 	$("#progess-btn-per").text(percent+"%");
 	
 	setTimeout(function(){				
 		$("#start-next-cat").removeClass('next-cat-left');
+		setTimeout(function(){				
+			loadProgressBarToFull();
+		}, 500);
 	}, 500);
+}
+var ix = 1;
+function loadProgressBarToFull(){
+	ix = 1;
+	smoothLoadProgressBar();
+}
+
+function smoothLoadProgressBar() {          
+   setTimeout(function () {    
+      $("#progess-btn-stan").addClass('p'+ix);        
+      ix++;                   
+      if (ix < 101) {           
+         smoothLoadProgressBar();        
+      }                   
+   }, 5)
 }
 
 function nextCatBtn(){
 	$("#start-next-cat").addClass('next-cat-right');
+	$("#learn-container").addClass('next-cat-left');
 	setTimeout(function(){					  
 		$("#nav-circle-word").show();
 		$("#learn-container").show();
 		setTimeout(function(){				
 			$("#learn-container").removeClass('next-cat-left');
+			removeAllProgress();
 		}, 500);
 		$("#start-next-cat").hide();
 		$("#start-next-cat").removeClass('next-cat-right');
 		$("#start-next-cat").addClass('next-cat-left');
 		nextStep();
 	}, 500);
+}
+
+function removeAllProgress(){
+	for(var i = 1; i < 102; i++){
+		$("#progess-btn-stan").removeClass('p'+i); 
+	}
 }
 
 var waintingLearned = 0;
@@ -1890,8 +1930,14 @@ function setWaintingLearned(){
 }
 /*END APP*/
 function endLearn(){
-	$('section').hide();
-	$("#end-panel").show();
+	$("#learn-container").addClass('next-cat-right');
+	setTimeout(function(){
+		$("#learn-container").hide();
+		$("#end-panel").show();
+		setTimeout(function(){				
+			$("#end-panel").removeClass('next-cat-left');
+		}, 100);
+	}, 500);
 }
 /*END END APP*/
 /*TUTORIAL*/
@@ -1899,21 +1945,57 @@ var stepTut = 0;
 function startTut(){
 	stepTut = 0;
 	$("#tutorial").show();
+	setTimeout(function(){				
+		$("#tutorial").removeClass('next-cat-left');
+	}, 100);
 	$("#tut-lern-0").show();
 }
 function nextTutStep(){
 	stepTut++;
 	$(".tut-method").hide();
-	if(stepTut > 6) endTut();
+	if(stepTut > 18) endTut();
 	else{
 		$("#tut-lern-" + stepTut).show();
-		setTimeout(function(){					  
-				$('.tut-method').removeClass('goLeft');
-				$('.tut-method').removeClass('goRight');
+		setTimeout(function(){	
+			updateProgressTut(stepTut);		  
+			$('.tut-method').removeClass('goLeft');
+			$('.tut-method').removeClass('goRight');
+			$('.tut-method').removeClass('flipper-hide');
+			if(stepTut == 3){
+				$('#count-word-to-learn-tut').addClass('shown');
+				$('#count-word-to-learn-tut').addClass('pulse-btn');
+			}
+			if(stepTut == 5){
+				$('#count-word-to-learn-tut').removeClass('pulse-btn');
+				$('#count-word-to-learn-tut').removeClass('shown');
+				$('#noteInTut').addClass('pulse-btn');
+				$('#noteInTut').addClass('shown');
+			}
+			if(stepTut == 7){
+				$('#remind-tut').addClass('shown');
+				$('#noteInTut').removeClass('pulse-btn');
+			}
+			if(stepTut == 9){
+				$('#noteInTut').removeClass('shown');
+				$('#remind-tut').removeClass('shown');
+			}
+			if(stepTut == 11){
+				$('#menu-switch').addClass('pulse-btn');
+			}
+			if(stepTut == 13){
+				$('#menu-switch').removeClass('pulse-btn');
+			}
 		}, 300);
 	}
 }
-function endTut(){
+
+function updateProgressTut(step){
+	var percent = 100 - Math.round(((step)/(19))*100);
+	$("#progess-btn-stan-in-cycle-tut2").addClass('p'+percent);
+	removeProgressClassMin($("#progess-btn-stan-in-cycle-tut2"), percent);
+}
+function endTut(){ 
+	$("#startDay").addClass('next-cat-left');
 	stepTut = 0;
 	$("#tutorial").hide();
 	$(".tut-method").hide();
@@ -1948,16 +2030,48 @@ function backToSetNewCategory(){
 		$("#new-category-choice").show();	
 		setTimeout(function(){				
 			$("#new-category-choice").removeClass('next-cat-left');
+			$("#learn-container").addClass('next-cat-left');
+			$("#progess-btn-stan-in-cycle").addClass('p100');
+			setTimeout(function(){	loadProgressBarToFull2(); }, 200);
 		}, 50);
 	}, 500);
 }
 function startChoiceNewCategory(){
-	$("#suggest-new-category").text(suggestedCatName);
-	$('section').hide();
-	$("#new-category-choice").show();	
-	setTimeout(function(){				
-		$("#new-category-choice").removeClass('next-cat-left');
-	}, 50);
+	if(sugGetIsSetter){
+		$("#suggest-new-category").text(suggestedCatName);
+		$('section').hide();
+		$("#new-category-choice").show();	
+		setTimeout(function(){				
+			$("#new-category-choice").removeClass('next-cat-left');
+			$("#learn-container").addClass('next-cat-left');
+			$("#progess-btn-stan-in-cycle").addClass('p100');
+			setTimeout(function(){	loadProgressBarToFull2(); }, 200);
+		}, 50);
+	}else{
+		endLearn();
+	}
+}
+
+var ix2 = 1;
+function loadProgressBarToFull2(){
+	ix2 = 1;
+	smoothLoadProgressBar2();
+}
+
+function smoothLoadProgressBar2() {          
+   setTimeout(function () {    
+      $("#progess-btn-stan-in-cycle-ncat").addClass('p'+ix2);        
+      ix2++;                   
+      if (ix2 < 101) {           
+         smoothLoadProgressBar2();        
+      }                   
+   }, 5)
+}
+
+function removeAllProgress2(){
+	for(var i = 1; i < 102; i++){
+		$("#progess-btn-stan-in-cycle-ncat").removeClass('p'+i); 
+	}
 }
 
 function setSuggestedCat(par, cat){
@@ -1973,8 +2087,10 @@ function setSuggestedCat(par, cat){
     });
 }
 
+var userChoiceCat = false;
 function setThisAsSuggestedCat(par, cat){
 	var idLang = $("#myLang").val();
+	userChoiceCat = true;
 	$.get("date/"+ idLang + "/" + par + "/subcat.json", function(result) {
 		var scat = JSON.parse(result);
 		for(var x in scat){
@@ -2007,16 +2123,14 @@ function setSuggestedCatAsNew(){
 		var res = suggestedCatPath.split("/");
 		var parent = res[0];
 		var cat = res[1];
+		$("#learn-container").addClass('next-cat-left');
 		setTimeout(function(){
 			setNewCat(parent, cat);
 			$("#myCat").val(cat);
 			$("#myParentCat").val(parent);
-			$("#learn-container").show();
-			setTimeout(function(){				
-				$("#learn-container").removeClass('next-cat-left');
-			}, 2000);
-			$("#words-nav").show();
+			$("#learn-container").show();	
 			packControler();
+			$("#words-nav").show();
 		}, 300);
 	}, 500);
 }
@@ -2024,6 +2138,9 @@ function setSuggestedCatAsNew(){
 function showStartLessonPage(){
 	$('seciton').hide();
 	$("#startDay").show();
+	setTimeout(function(){				
+		$("#startDay").removeClass('next-cat-left');
+	}, 100);
 }
 
 function startLesson(){
@@ -2054,26 +2171,42 @@ function updateProgressBar(){
 	}, 50);
 }
 /*END TUTORIAL*/
-
+var sugGetIsSetter = false;
 function getCatWithPos(pos, off){
+	sugGetIsSetter = false;
 	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
 		var cats = JSON.parse(result);
+		var catSize = cats.length;
 		for(var x in cats){
 			var cat = cats[x];
 			var idP = cat.id;
 			$.get("date/"+ langJSON.lang + "/" + idP + "/subcat.json", function(result) {
 				var scats = JSON.parse(result);
+				var scatSize = scats.length;
 				for(var sc in scats){
 					var scat = scats[sc];
 					//alert(parseInt(scat.pos) + " - " +  (parseInt(pos)+1));
 					if(parseInt(scat.pos) == (parseInt(pos)+off)){
-						$("#sugCatPar").val(idP);
-						$("#sugCatSub").val(scat.id);
-						suggestedCatPath = idP + "/" + scat.id;
-						suggestedCatName = scat.name;
-						getWordToSuggestCat(idP + "/" + scat.id);
+						if(!userChoiceCat && (dayJSON.skiped.indexOf(idP + "/" + scat.id) >= 0 || learnedCat.indexOf(idP + "/" + scat.id) >= 0 || inProgressCat.indexOf(idP + "/" + scat.id) >= 0)){
+							/*alert("x: " + x+1);
+							alert("catSize: " + catSize);
+							alert("sc: " + sc);
+							alert("scatSize: " + scatSize);*/
+							if((parseInt(x)+1) == catSize && (parseInt(sc)+1) == scatSize){
+								isNotNewCat();
+							}
+							off++;
+						}else{
+							userChoiceCat = false;
+							$("#sugCatPar").val(idP);
+							$("#sugCatSub").val(scat.id);
+							suggestedCatPath = idP + "/" + scat.id;
+							suggestedCatName = scat.name;
+							getWordToSuggestCat(idP + "/" + scat.id);
+							sugGetIsSetter = true;
+						}
 					}else if(parseInt(scat.pos) < (parseInt(pos)+off)){
-						missingCat.push(idP + "/" + scat.id);
+						//missingCat.push(idP + "/" + scat.id);
 					}
 				}
 			});
@@ -2081,13 +2214,30 @@ function getCatWithPos(pos, off){
     });
 }
 
+function isNotNewCat(){
+	if(gameIsBegin){
+		$("#new-category-choice").addClass('next-cat-right');
+		setTimeout(function(){
+			$("#new-category-choice").hide();
+			$("#end-panel").show();
+			setTimeout(function(){				
+				$("#end-panel").removeClass('next-cat-left');
+			}, 100);
+		}, 500);
+	}	
+}
+
 function getNextSugCat(){
 	var p = $("#sugCatPar").val();
 	var c = $("#sugCatSub").val();
 	setSuggestedCat(p, c);
+	addCatToMissing(p + "/" + c);
 	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName);}, 100);
 }
 
+function addCatToMissing(catSgn){
+	dayJSON.skiped.push(catSgn);
+}
 function getThisCatAsSug(obj){
 	var p = $(obj).attr('data-parent');
 	var c = $(obj).attr('data-subcat');
