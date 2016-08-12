@@ -31,6 +31,8 @@
         <title>Fiszki</title>
     </head>
     <body>
+		<button id='btn_prepare'>prepareInterstitial</button>
+		<button id='btn_showfull'>showInterstitial</button>
 		<input type="file" id="readP">
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
@@ -545,6 +547,7 @@
 		<script type="text/javascript" src="js/list.min.js"></script>
 		<script type="text/javascript" src="js/fizzy.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/admob_simple.js"></script>
         <script type="text/javascript">
             app.initialize();   
         </script>
@@ -968,6 +971,17 @@
 					});
 				});
 			}
+		</script>
+		<script>
+			$('#btn_prepare').click(function(){
+			  AdMob.prepareInterstitial({
+				adId:admobid.interstitial,
+				autoShow: false,
+			  });
+			});
+			$('#btn_showfull').click(function(){
+			  AdMob.showInterstitial();
+			});
 		</script>
     </body>
 </html>
