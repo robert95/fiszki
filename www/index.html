@@ -31,8 +31,8 @@
         <title>Fiszki</title>
     </head>
     <body>
-		<button id='btn_prepare'>prepareInterstitial</button>
-		<button id='btn_showfull'>showInterstitial</button>
+		<button onclick="baner();">prepareInterstitial</button>
+		<button onclick="baner2();">showInterstitial</button>
 		<input type="file" id="readP">
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
@@ -971,17 +971,6 @@
 					});
 				});
 			}
-		</script>
-		<script>
-			$('#btn_prepare').click(function(){
-			  AdMob.prepareInterstitial({
-				adId:admobid.interstitial,
-				autoShow: false,
-			  });
-			});
-			$('#btn_showfull').click(function(){
-			  AdMob.showInterstitial();
-			});
 		</script>
     </body>
 </html>

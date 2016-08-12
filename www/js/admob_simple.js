@@ -1,19 +1,23 @@
-var admobid = {};
-
-// TODO: replace the following ad units with your own
-if( /(android)/i.test(navigator.userAgent) ) { 
-  admobid = { // for Android
-    banner: 'ca-app-pub-6869992474017983/9375997553',
-    interstitial: 'ca-app-pub-6869992474017983/1657046752'
-  };
-} else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-  admobid = { // for iOS
-    banner: 'ca-app-pub-6869992474017983/4806197152',
-    interstitial: 'ca-app-pub-6869992474017983/7563979554'
-  };
-} else {
-  admobid = { // for Windows Phone
-    banner: 'ca-app-pub-6869992474017983/8878394753',
-    interstitial: 'ca-app-pub-6869992474017983/1355127956'
-  };
+window.plugins.AdMob.setOptions( {
+  publisherId: 'ca-app-pub-5149183983154394/3906975069',
+  interstitialAdId: 'ca-app-pub-5149183983154394/6360913863',
+  bannerAtTop: false, // set to true, to put banner at top
+  overlap: false, // set to true, to allow banner overlap webview
+  offsetTopBar: false, // set to true to avoid ios7 status bar overlap
+  isTesting: false, // receiving test ad
+  autoShow: true // auto show interstitial ad when loaded
+});
+// display the banner at startup
+function baner(){
+	alert("baner");
+	window.plugins.AdMob.createBannerView();
+}
+function baner2(){
+	alert("baner2");
+	window.plugins.AdMob.createInterstitialView();
+	window.plugins.AdMob.showInterstitialAd(
+	  true, 
+	  function(){},
+	  function(e){alert(JSON.stringify(e));}
+	);
 }
