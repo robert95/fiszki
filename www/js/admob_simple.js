@@ -47,6 +47,8 @@ function baner2(){
 }
 
 function createSelectedBanner(){
+	alert("baner2");
+	alert(AdMob);
 	if(AdMob) AdMob.createBanner( admobid.banner );
 	if(AdMob) AdMob.showBanner( 8 );
 }
