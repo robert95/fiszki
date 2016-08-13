@@ -41,10 +41,9 @@
   <gap:plugin name="org.apache.cordova.network-information"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
-  <preference name="android-build-tool" value="gradle" /> 
-  <gap:plugin name="cordova-plugin-admob" source="npm" />
   <plugin name="com.gkcgautam.asset2sd" />
   <plugin name="cordova-plugin-filepath" />
+  <plugin name="cordova-plugin-admob" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
   <plugin src="https://github.com/apache/cordova-plugin-statusbar.git" />
   <plugin src="https://github.com/cranberrygame/cordova-plugin-navigationbar.git" />

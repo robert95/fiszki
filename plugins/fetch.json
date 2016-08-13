@@ -32,5 +32,14 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-admob": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/floatinghotpot/cordova-plugin-admob",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
