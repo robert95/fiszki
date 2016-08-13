@@ -14,10 +14,10 @@ function initAd(){
 			publisherId: 'ca-app-pub-5149183983154394/3906975069',
 			interstitialAdId: 'ca-app-pub-5149183983154394/6360913863',
 			adSize: window.plugins.AdMob.AD_SIZE.SMART_BANNER,	//use SMART_BANNER, BANNER, IAB_MRECT, IAB_BANNER, IAB_LEADERBOARD 
-			bannerAtTop: false, // set to true, to put banner at top 
+			bannerAtTop: true, // set to true, to put banner at top 
 			overlap: true, // banner will overlap webview  
 			offsetTopBar: false, // set to true to avoid ios7 status bar overlap 
-			isTesting: false, // receiving test ad 
+			isTesting: true, // receiving test ad 
 			autoShow: false // auto show interstitial ad when loaded 
 		});
 
