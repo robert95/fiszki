@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-admob",
-  "version": "3.2.1",
-  "description": "The FASTEST and EASIEST TO USE Cordova Admob plugin for Android, iOS and Windows phone. Pure open source without any traffic sharing. Allows preloading and automatic loading of interstitials and banners plus more. Works with Cordova, Phonegap, Intel XDK/Crosswalk, Ionic, Meteor and more.",
+  "name": "cordova-plugin-admob-simple",
+  "version": "3.0.14",
+  "description": "The FASTEST and EASIEST TO USE Cordova Admob plugin for Android, iOS and Windows phone. We do not send your apps details to our servers. Pure OpenSource Admob code. Allows preloading and automatic loading of interstitials and banners plus more. Works with Cordova, Phonegap, Intel XDK/Crosswalk, Ionic, Meteor and more.",
   "cordova": {
-    "id": "cordova-plugin-admob",
+    "id": "cordova-plugin-admob-simple",
     "platforms": [
       "android",
       "ios",
@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/floatinghotpot/cordova-plugin-admob.git"
+    "url": "https://github.com/sunnycupertino/cordova-plugin-admob-simple.git"
   },
   "bugs": {
-    "url": "https://github.com/floatinghotpot/cordova-plugin-admob/issues"
+    "url": "https://github.com/sunnycupertino/cordova-plugin-admob-simple/issues"
   },
   "keywords": [
     "cordova",
@@ -34,13 +34,11 @@
     "cordova-android",
     "cordova-ios",
     "cordova-wp8",
-    "cordova-amazon-fireos",
     "google",
     "ads",
     "eclipse",
     "android-studio",
     "simple",
-    "easy",
     "android",
     "ios",
     "windows",
@@ -54,18 +52,11 @@
     "advertising",
     "earn",
     "cordova-admob",
-    "admobpro",
-    "iad",
-    "flurry",
-    "mobfox",
-    "mopub",
-    "inmobi",
-    "chartboost",
-    "domob",
-    "rjfun"
+    "admobpro"
   ],
+  "tonicExampleFilename": "test.js",
   "author": {
-    "name": "Raymond Xie"
+    "name": "Cupertino"
   },
   "license": "MIT"
 }

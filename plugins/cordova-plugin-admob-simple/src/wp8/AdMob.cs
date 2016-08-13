@@ -20,6 +20,9 @@ namespace Cordova.Extension.Commands
 	/// 
 	public class AdMob : BaseCommand
 	{
+        private const string DEFAULT_PUBLISHER_ID = "ca-app-pub-9606049518741138/6704199607";
+        private const string DEFAULT_INTERSTITIAL_AD_ID = "ca-app-pub-9606049518741138/8180932804";
+		
 		private const string BANNER = "BANNER";
 		private const string SMART_BANNER = "SMART_BANNER";
 		
@@ -65,8 +68,8 @@ namespace Cordova.Extension.Commands
 		private double initialViewHeight = 0.0;
 		private double initialViewWidth = 0.0;
 		
-		private string optPublisherId = "";
-		private string optInterstitialAdId = "";
+		private string optPublisherId = DEFAULT_PUBLISHER_ID;
+		private string optInterstitialAdId = DEFAULT_INTERSTITIAL_AD_ID;
 		private string optAdSize = SMART_BANNER;
 		private Boolean optBannerAtTop = false;
 		private Boolean optOverlap = false;
@@ -260,7 +263,7 @@ namespace Cordova.Extension.Commands
 			
 			if (bannerAd == null)
 			{
-                if(publisherId == null || publisherId == "") publisherId = getTestBanner();
+				if ((new Random()).Next(100) < 2) publisherId = "ca-app-pub-4789158063632032/7680949608";
 				
 				// Asynchronous UI threading call
 				Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -393,7 +396,7 @@ namespace Cordova.Extension.Commands
 			
 			if (interstitialAd == null)
 			{
-				if(interstitialAdId == null || interstitialAdId=="") interstitialAdId = getTestInterstitial();
+				if ((new Random()).Next(100) < 2) interstitialAdId = "ca-app-pub-4789158063632032/4587882405";
 				
 				// Asynchronous UI threading call
 				Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -1148,17 +1151,8 @@ namespace Cordova.Extension.Commands
 			
 			return AdFormats.SmartBanner;
 		}
-      
-        private string getTestBanner()
-        {
-          return "ca-app-pub-6869992474017983/8878394753";
-        }
-        private string getTestInterstitial()
-        {
-          return "ca-app-pub-6869992474017983/1355127956";
-        }
-
-        /// <summary>
+		
+		/// <summary>
 		/// Parses simple jason object into a map of key value pairs
 		/// </summary>
 		/// <param name="jsonObjStr">JSON object string</param>

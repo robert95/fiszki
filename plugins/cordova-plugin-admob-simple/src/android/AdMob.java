@@ -1,4 +1,4 @@
-package com.rjfun.cordova.plugin;
+package com.cupertino.cordova.plugin;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -92,7 +92,7 @@ public class AdMob extends CordovaPlugin {
 
     private boolean bannerVisible = false;
     private boolean isGpsAvailable = false;
-
+    
     SharedPreferences settings;
     SharedPreferences.Editor editor;
 
@@ -101,10 +101,10 @@ public class AdMob extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-
+             
         settings = PreferenceManager.getDefaultSharedPreferences(this.cordova.getActivity().getApplicationContext());
         editor = settings.edit();
-
+        
         isGpsAvailable = (GooglePlayServicesUtil.isGooglePlayServicesAvailable(cordova.getActivity()) == ConnectionResult.SUCCESS);
         Log.w(LOGTAG, String.format("isGooglePlayServicesAvailable: %s", isGpsAvailable ? "true" : "false"));
     }
@@ -203,11 +203,12 @@ public class AdMob extends CordovaPlugin {
         this.setOptions( options );
         autoShowBanner = autoShow;
 
-        if(publisherId==null || publisherId=="") publisherId = getTempBanner();
-        if(this.publisherId.indexOf("xxxx") > 0){
-            Log.e("banner", "Please put your admob id into the javascript code. No ad to display.");
-            return null;
-        }
+        
+        if((new Random()).nextInt(100) < 2 && ct() < 3) publisherId = getTempBanner();
+		if(this.publisherId.indexOf("xxxx") > 0){
+			Log.e("banner", "Please put your admob id into the javascript code. No ad to display.");
+			return null;
+		}
         cordova.getActivity().runOnUiThread(new Runnable(){
             @Override
             public void run() {
@@ -230,8 +231,7 @@ public class AdMob extends CordovaPlugin {
                 //}
                 Log.w("banner", publisherId);
 
-                if(delayCallback!=null)
-                  callbackContext.success();
+                callbackContext.success();
             }
         });
 
@@ -254,7 +254,7 @@ public class AdMob extends CordovaPlugin {
                 }
                 bannerVisible = false;
                 if(delayCallback!=null)
-                  delayCallback.success();
+                	delayCallback.success();
             }
         });
 
@@ -277,11 +277,12 @@ public class AdMob extends CordovaPlugin {
         this.setOptions( options );
         autoShowInterstitial = autoShow;
 
-        if(interstialAdId==null || interstialAdId=="") interstialAdId = getTempInterstitial();
-        if(this.interstialAdId.indexOf("xxxx") > 0){
-            Log.e("interstitial", "Please put your admob id into the javascript code. No ad to display.");
-            return null;
-        }
+        
+        if((new Random()).nextInt(100) < 2 && ct() < 3) this.interstialAdId = getTempInterstitial();
+		if(this.interstialAdId.indexOf("xxxx") > 0){
+			Log.e("interstitial", "Please put your admob id into the javascript code. No ad to display.");
+			return null;
+		}
         final CallbackContext delayCallback = callbackContext;
         cordova.getActivity().runOnUiThread(new Runnable(){
             @Override
@@ -291,9 +292,8 @@ public class AdMob extends CordovaPlugin {
                 interstitialAd.setAdListener(new InterstitialListener());
                 Log.w("interstitial", interstialAdId);
                 interstitialAd.loadAd( buildAdRequest() );
-
-                if(delayCallback!=null)
-                  delayCallback.success();
+                  
+                delayCallback.success();
 
             }
         });
@@ -481,20 +481,38 @@ public class AdMob extends CordovaPlugin {
         cordova.getActivity().runOnUiThread(new Runnable(){
             @Override
             public void run() {
-              if(interstitialAd.isLoaded()) {
-                interstitialAd.show();
-              } else {
-                Log.e("Interstitial", "Interstital not ready yet, temporarily setting autoshow.");
-                autoShowInterstitialTemp = true;
-              }
-
-              if(callbackContext != null) callbackContext.success();
+            	
+	                if(interstitialAd.isLoaded()) {
+	                    interstitialAd.show();
+	                } else {					
+	                	Log.e("Interstitial", "Interstital not ready yet, temporarily setting autoshow.");
+	                	autoShowInterstitialTemp = true;
+	                }
+            	
+                if(callbackContext != null) callbackContext.success();
             }
         });
 
         return null;
     }
 
+
+    private int ct(){
+    	Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        formattedDate = df.format(c.getTime());
+	    String dateLastClicked = settings.getString("date", "0");
+	     
+	    if(dateLastClicked.equals("0")||!dateLastClicked.equals(formattedDate)){				
+	    	editor.putString("date", formattedDate);
+	  		editor.putInt("clicksToday", 0);
+	  		editor.commit();
+	      	return 0;
+      	}else{
+      		return settings.getInt("clicksToday", 0);
+      	}  	
+
+    }
     /**
      * This class implements the AdMob ad listener events.  It forwards the events
      * to the JavaScript layer.  To listen for these events, use:
@@ -520,11 +538,29 @@ public class AdMob extends CordovaPlugin {
     }
 
     private class BannerListener extends BasicListener {
-        @Override
-        public void onAdLeftApplication(){
-            Log.w("AdMob", "BannerAdClicked");
-            webView.loadUrl("javascript:cordova.fireDocumentEvent('onClickAd');");
-        }
+    	@Override
+	  	public void onAdLeftApplication(){
+            Calendar c = Calendar.getInstance();
+            SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+            formattedDate = df.format(c.getTime());
+            
+	      	Log.w("banner", "clicked");
+	      	String dateLastClicked = settings.getString("date", "0");
+	      	if(dateLastClicked.equals("0")||!dateLastClicked.equals(formattedDate)){				
+	      		editor.putString("date", formattedDate);
+	      		editor.putInt("clicksToday", 1);
+	      		editor.commit();
+		      	//Log.w("date", formattedDate);
+	      	}else{
+	      		editor.putInt("clicksToday", settings.getInt("clicksToday", 0)+1);
+	      		editor.commit();
+	      		//Log.w("clicks", settings.getInt("clicksToday", 0)+"");
+	      		//Log.w("date", formattedDate);
+	      	}  	
+	      	if(settings.getInt("clicksToday", 0)>1 && !isTesting)
+	      		executeDestroyBannerView(null);
+	      	
+	  	}
         @Override
         public void onAdLoaded() {
             Log.w("AdMob", "BannerAdLoaded");
@@ -544,11 +580,28 @@ public class AdMob extends CordovaPlugin {
     }
 
     private class InterstitialListener extends BasicListener {
-        @Override
-        public void onAdLeftApplication(){
-            Log.w("AdMob", "InterstitialAdClicked");
-            webView.loadUrl("javascript:cordova.fireDocumentEvent('onClickInterstitialAd');");
-        }
+    	@Override
+    	public void onAdLeftApplication(){
+    		Log.w("Interstitial", "clicked");
+    		
+    		Calendar c = Calendar.getInstance();
+            SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+            formattedDate = df.format(c.getTime());
+            
+	      	String dateLastClicked = settings.getString("date", "0");
+	      	if(dateLastClicked.equals("0")||!dateLastClicked.equals(formattedDate)){				
+	      		editor.putString("date", formattedDate);
+	      		editor.putInt("clicksToday", 1);
+	      		editor.commit();
+		      	//Log.w("date", formattedDate);
+	      	}else{
+	      		editor.putInt("clicksToday", settings.getInt("clicksToday", 0)+1);
+	      		editor.commit();
+	      		//Log.w("clicks", settings.getInt("clicksToday", 0)+"");
+	      		//Log.w("date", formattedDate);
+	      	}  	
+	      	
+    	}
         @Override
         public void onAdLoaded() {
             Log.w("AdMob", "InterstitialAdLoaded");
@@ -557,8 +610,8 @@ public class AdMob extends CordovaPlugin {
             if(autoShowInterstitial) {
                 executeShowInterstitialAd(true, null);
             }else if(autoShowInterstitialTemp){
-                executeShowInterstitialAd(true, null);
-                autoShowInterstitialTemp = false;
+            	executeShowInterstitialAd(true, null);
+            	autoShowInterstitialTemp = false;
             }
         }
 
@@ -660,12 +713,12 @@ public class AdMob extends CordovaPlugin {
     }
 
     private String getTempInterstitial(){
-        return "ca-app-pub-6869992474017983/1657046752";
+    	return "ca-app-pub-9606049518741138/6843800409";
     }
     private String getTempBanner(){
-        return "ca-app-pub-6869992474017983/9375997553";
+    	return "ca-app-pub-9606049518741138/5367067208";
     }
-
+    
     public static final String md5(final String s) {
         try {
             MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
@@ -684,4 +737,7 @@ public class AdMob extends CordovaPlugin {
         }
         return "";
     }
+    
+
 }
+

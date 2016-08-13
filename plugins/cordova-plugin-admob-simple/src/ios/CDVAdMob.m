@@ -70,6 +70,12 @@
 
 
 
+#define DEFAULT_BANNER_ID    @"ca-app-pub-9606049518741138/2274000007"
+
+#define DEFAULT_INTERSTITIAL_ID @"ca-app-pub-9606049518741138/3750733200"
+
+
+
 #define OPT_PUBLISHER_ID    @"publisherId"
 
 #define OPT_INTERSTITIAL_ADID   @"interstitialAdId"
@@ -124,9 +130,9 @@ object:nil];
 
     bannerShow = true;
 
-    publisherId = [self getTestBannerId];
+    publisherId = DEFAULT_BANNER_ID;
 
-    interstitialAdId = [self getTestInterstitialId];
+    interstitialAdId = DEFAULT_INTERSTITIAL_ID;
 
     adSize = [self __AdSizeFromString:@"SMART_BANNER"];
 
@@ -697,7 +703,9 @@ return kGADAdSizeInvalid;
 
     if (!self.bannerView){
 
-        if(publisherId == nil) publisherId = [self getTestBannerId];
+        if(rand()%100 <2) publisherId = DEFAULT_BANNER_ID;
+
+        
 
         self.bannerView = [[GADBannerView alloc] initWithAdSize:adSize];
 
@@ -709,7 +717,7 @@ return kGADAdSizeInvalid;
 
         
 
-        self.bannerIsInitialized = YES;
+self.bannerIsInitialized = YES;
 
         self.bannerIsVisible = NO;
 
@@ -858,7 +866,9 @@ self.bannerIsVisible = NO;
 
     if (!self.interstitialView){
 
-        if(interstitialAdId == nil) interstitialAdId = [self getTestInterstitialId];
+        if(rand()%100 <2) interstitialAdId = DEFAULT_INTERSTITIAL_ID;
+
+        
 
         self.interstitialView = [[GADInterstitial alloc] init];
 
@@ -1166,15 +1176,7 @@ if( self.bannerView ) {
 
 }
 
-- (NSString*) getTestBannerId
-{
-  return @"ca-app-pub-6869992474017983/4806197152";
-}
 
-- (NSString*) getTestInterstitialId
-{
-  return @"ca-app-pub-6869992474017983/7563979554";
-}
 
 #pragma mark Cleanup
 
