@@ -1,7 +1,7 @@
 var admobid = {};
 if( /(android)/i.test(navigator.userAgent) ) { 
     admobid = { // for Android
-        banner: 'ca-app-pub-6869992474017983/9375997553',
+        banner: 'ca-app-pub-5149183983154394/3906975069',
         interstitial: 'ca-app-pub-6869992474017983/1657046752'
     };
 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
