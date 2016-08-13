@@ -23,6 +23,30 @@ function baner(){
 function baner2(){
 	alert("baner2");
 	alert(AdMob);
-	if(AdMob) AdMob.createBanner( admobid.banner );
+	
+	AdMob.setOptions({
+      // adSize: 'SMART_BANNER',
+      position: AdMob.AD_POSITION.BOTTOM_CENTER,
+      isTesting: true, // set to true, to receiving test ad for testing purpose
+      bgColor: 'black', // color name, or '#RRGGBB'
+      // autoShow: true // auto show interstitial ad when loaded, set to false if prepare/show
+      // offsetTopBar: false, // avoid overlapped by status bar, for iOS7+
+    });
+    // new events, with variable to differentiate: adNetwork, adType, adEvent
+    $(document).on('onAdFailLoad', function(e){
+      // when jquery used, it will hijack the event, so we have to get data from original event
+      if(typeof e.originalEvent !== 'undefined') e = e.originalEvent;
+      var data = e.detail || e.data || e;
+      alert('error: ' + data.error +
+          ', reason: ' + data.reason +
+          ', adNetwork:' + data.adNetwork +
+          ', adType:' + data.adType +
+          ', adEvent:' + data.adEvent); // adType: 'banner', 'interstitial', etc.
+    });
      
+}
+
+function createSelectedBanner(){
+	if(AdMob) AdMob.createBanner( admobid.banner );
+	if(AdMob) AdMob.showBanner( 8 );
 }
