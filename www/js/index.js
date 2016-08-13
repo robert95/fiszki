@@ -1954,6 +1954,7 @@ function setWaintingLearned(){
 function endLearn(){
 	$("#learn-container").addClass('next-cat-right');
 	setTimeout(function(){
+		showAd();
 		$("#learn-container").hide();
 		$("#end-panel").show();
 		setTimeout(function(){				
