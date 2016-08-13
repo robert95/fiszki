@@ -39,6 +39,11 @@ var app = {
 		document.addEventListener("resume", hideBars, false);
 		var autoHideNavigationBar = true;
 		window.navigationbar.setUp(autoHideNavigationBar);  
+		
+		document.addEventListener('onAdLoaded',function(data){
+			if(data.adType == 'banner') alert("baner");
+			else if(data.adType == 'interstitial') alert("intes");
+		});
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

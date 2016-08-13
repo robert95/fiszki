@@ -30,5 +30,5 @@ function prepareAd(){
 	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 function showAd(){
-	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+	if(AdMob) AdMob.showInterstitial();
 }
