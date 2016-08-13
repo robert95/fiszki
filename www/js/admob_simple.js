@@ -1,4 +1,5 @@
 var admobid = {};
+var firstShownAd = true;
 if( /(android)/i.test(navigator.userAgent) ) { 
     admobid = { // for Android
         banner: 'ca-app-pub-5149183983154394/3906975069',
@@ -30,5 +31,6 @@ function prepareAd(){
 	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 function showAd(){
-	if(AdMob) AdMob.showInterstitial();
+	if(firstShownAd) firstShownAd = false;
+	else if(AdMob) AdMob.showInterstitial();
 }

@@ -42,8 +42,8 @@ var app = {
 		prepareAd();
 		
 		document.addEventListener('onAdLoaded',function(data){
-			if(data.adType == 'banner') alert("baner");
-			else if(data.adType == 'interstitial') alert("intes");
+			if(data.adType == 'banner') //alert("baner");
+			else if(data.adType == 'interstitial') //alert("intes");
 		});
 		
 		document.addEventListener('onAdDismiss',function(data){
@@ -1764,7 +1764,6 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 8:
-				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*4 - 2;
 				learnedWordsInCat = 0;
 				newCategoryisSet = true;
@@ -1791,6 +1790,7 @@ function packControler(){
 				setTimeout(function(){ endLearn();}, 100);
 			}, 200);
 		}else{
+			showAd();
 			startChoiceNewCategory();
 			//startSetNewCategory();
 		}
