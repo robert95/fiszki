@@ -41,7 +41,6 @@
   <gap:plugin name="org.apache.cordova.network-information"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
-  <plugin name="cordova-plugin-admob-simple" />
   <plugin name="com.gkcgautam.asset2sd" />
   <plugin name="cordova-plugin-filepath" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
