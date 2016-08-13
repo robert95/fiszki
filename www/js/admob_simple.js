@@ -25,3 +25,10 @@ function initApp() {
         });
     }
 }
+
+function prepareAd(){
+	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+}
+function showAd(){
+	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+}
