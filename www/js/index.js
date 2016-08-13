@@ -42,8 +42,8 @@ var app = {
 		prepareAd();
 		
 		document.addEventListener('onAdLoaded',function(data){
-			if(data.adType == 'banner') //alert("baner");
-			else if(data.adType == 'interstitial') //alert("intes");
+			/*if(data.adType == 'banner') alert("baner");
+			else if(data.adType == 'interstitial') alert("intes");*/
 		});
 		
 		document.addEventListener('onAdDismiss',function(data){
