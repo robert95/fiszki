@@ -39,10 +39,19 @@ var app = {
 		document.addEventListener("resume", hideBars, false);
 		var autoHideNavigationBar = true;
 		window.navigationbar.setUp(autoHideNavigationBar);  
+		prepareAd();
 		
 		document.addEventListener('onAdLoaded',function(data){
 			if(data.adType == 'banner') alert("baner");
 			else if(data.adType == 'interstitial') alert("intes");
+		});
+		
+		document.addEventListener('onAdDismiss',function(data){
+			prepareAd();
+		});
+		
+		document.addEventListener('onAdLeaveApp',function(data){
+			prepareAd();
 		});
     },
     // Update DOM on a Received Event
@@ -1703,6 +1712,7 @@ function packControler(){
 			toLearn[i] = -1;
 			switch(i){
 			case 0:
+				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*4 - 2;
 				learnedWordsInCat = 0;
 				prepareGlobalForCycle(1);
@@ -1714,6 +1724,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 2:
+				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*4 - 2;
 				learnedWordsInCat = 0;
 				prepareGlobalForCycle(2);
@@ -1725,6 +1736,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 4:
+				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*4 - 2;
 				learnedWordsInCat = 0;
 				prepareGlobalForCycle(2);
@@ -1736,6 +1748,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 6:
+				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2;
 				learnedWordsInCat = 0;
 				prepareGlobalForCycle(3);
@@ -1743,6 +1756,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 7:
+				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2;
 				learnedWordsInCat = 0;
 				prepareGlobalForCycle(3);
@@ -1750,6 +1764,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 8:
+				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*4 - 2;
 				learnedWordsInCat = 0;
 				newCategoryisSet = true;
