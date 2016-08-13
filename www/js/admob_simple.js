@@ -22,6 +22,7 @@ function baner(){
 }
 function baner2(){
 	alert("baner2");
+	alert(AdMob);
 	if(AdMob) AdMob.createBanner( admobid.banner );
      
 }
