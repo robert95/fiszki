@@ -194,7 +194,7 @@ function gotFileWriterN2(writer) {
 		console.log("write success");
 	};
 	
-	alert(JSON.stringify(datesJSON));
+	//alert(JSON.stringify(datesJSON));
 	writer.write(JSON.stringify(datesJSON));
 	writer.abort();
 }
@@ -249,7 +249,7 @@ function gotFileWriterN5(writer) {
 		console.log("write success");
 	};
 	
-	alert(JSON.stringify(datesJSON5));
+	//alert(JSON.stringify(datesJSON5));
 	writer.write(JSON.stringify(datesJSON5));
 	writer.abort();
 }
@@ -941,7 +941,7 @@ function gotFileWriterN(writer) {
 		console.log("write success");
 	};
 	
-	alert(JSON.stringify(noticeJSON));
+	//alert(JSON.stringify(noticeJSON));
 	writer.write(JSON.stringify(noticeJSON));
 	writer.abort();
 	// contents of file now 'some different text'
