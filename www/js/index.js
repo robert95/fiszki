@@ -39,7 +39,6 @@ var app = {
 		document.addEventListener("resume", hideBars, false);
 		var autoHideNavigationBar = true;
 		window.navigationbar.setUp(autoHideNavigationBar);  
-		prepareAd();
 		
 		document.addEventListener('onAdDismiss',function(data){
 			prepareAd();
@@ -320,6 +319,7 @@ function startApp(){
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
 			setTimeout(function(){
+				prepareAd();
 				gameIsBegin = true;
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
