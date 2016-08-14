@@ -1785,7 +1785,7 @@ function packControler(){
 				datesJSON = toLearnJSON;
 				srcSave = path() + "save.json";
 				saveFile();
-				setTimeout(function(){ endLearn();}, 500);
+				setTimeout(function(){ endLearn();}, 1000);
 			}, 500);
 		}else{
 			showAd();
