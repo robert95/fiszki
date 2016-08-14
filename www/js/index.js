@@ -462,6 +462,8 @@ function getToLearnHelper(){
 				toLearn[0] = pack.catid + "/" + pack.subid;
 				toLearn[1] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*2;
 				countWordsToLearn += wordsInOneCat*4-2;
 				setSuggestedCat(pack.catid, pack.subid);
@@ -471,6 +473,8 @@ function getToLearnHelper(){
 				toLearn[2] = pack.catid + "/" + pack.subid;
 				toLearn[3] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*4-2;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
@@ -479,6 +483,8 @@ function getToLearnHelper(){
 				toLearn[4] = pack.catid + "/" + pack.subid;
 				toLearn[5] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*4-2;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
@@ -486,12 +492,14 @@ function getToLearnHelper(){
 			case 27:
 				toLearn[6] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
 			case 60:
 				toLearn[7] = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
+				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*2;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -2069,7 +2077,13 @@ function startChoiceNewCategory(){
 			setTimeout(function(){	loadProgressBarToFull2(); }, 200);
 		}, 50);
 	}else{
-		endLearn();
+		saveDay();
+		setTimeout(function(){ 
+			datesJSON = toLearnJSON;
+			srcSave = path() + "save.json";
+			saveFile();
+			setTimeout(function(){ endLearn();}, 1000);
+		}, 500);
 	}
 }
 
