@@ -1201,3 +1201,6 @@ section{
 #noteInTut{
 	display: none;
 }
+#tutorial .learnMethod .text{
+	min-height: 250px !important;
+}
