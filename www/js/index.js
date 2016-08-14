@@ -41,11 +41,6 @@ var app = {
 		window.navigationbar.setUp(autoHideNavigationBar);  
 		prepareAd();
 		
-		document.addEventListener('onAdLoaded',function(data){
-			/*if(data.adType == 'banner') alert("baner");
-			else if(data.adType == 'interstitial') alert("intes");*/
-		});
-		
 		document.addEventListener('onAdDismiss',function(data){
 			prepareAd();
 		});
@@ -199,6 +194,7 @@ function gotFileWriterN2(writer) {
 		console.log("write success");
 	};
 	
+	alert(JSON.stringify(datesJSON));
 	writer.write(JSON.stringify(datesJSON));
 	writer.abort();
 }
@@ -253,6 +249,7 @@ function gotFileWriterN5(writer) {
 		console.log("write success");
 	};
 	
+	alert(JSON.stringify(datesJSON5));
 	writer.write(JSON.stringify(datesJSON5));
 	writer.abort();
 }
@@ -944,6 +941,7 @@ function gotFileWriterN(writer) {
 		console.log("write success");
 	};
 	
+	alert(JSON.stringify(noticeJSON));
 	writer.write(JSON.stringify(noticeJSON));
 	writer.abort();
 	// contents of file now 'some different text'
