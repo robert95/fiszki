@@ -467,7 +467,7 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-    readWriteFile();
+	readWriteFile();
 	getToLearnHelper();
 }
 function getToLearnHelper(){

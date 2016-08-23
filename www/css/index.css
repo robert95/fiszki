@@ -479,11 +479,11 @@ textarea:focus, textarea:hover, textarea:active{
 	transform-origin: 100% 40%; /* half of height */
 	-webkit-transition: 0.8s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: all 0.8s linear;
-	-moz-transition: all 0.8s linear;
-	-o-transition: all 0.8s linear;
-	-ms-transition: all 0.8s linear;
-	transition: all 0.8s linear;
+	-webkit-transition: all 0.8s ease-out;
+	-moz-transition: all 0.8s ease-out;
+	-o-transition: all 0.8s ease-out;
+	-ms-transition: all 0.8s ease-out;
+	transition: all 0.8s ease-out;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
    /* padding-bottom: 60%;/*150px;*/
