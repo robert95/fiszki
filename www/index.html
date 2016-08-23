@@ -30,7 +30,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
-    <body>
+    <body class="lang3">
 		<!--<button onclick="initApp();">prepare1</button>
 		<button onclick="prepareAd();">prepare2</button>
 		<button onclick="showAd();">prepare8</button>
@@ -144,7 +144,7 @@
 						<tr>
 							<!--<td></td>-->
 							<td><div id="nav-words-container"></div></td>
-							<!--<td><img src="img/ok.png" class="good-bad" ontouchstart="nextStep();"/></td>-->
+							<!--<td><img src="img/ok.png" class="good-bad" ontouchstart="nextStepWrap();"/></td>-->
 						</tr>
 					</table>
 				</div>		
@@ -235,7 +235,7 @@
 				<div id="wrap-ok-no">
 					<!--<img src="img/ok.png" class="good-bad" ontouchstart="isOk();"/>-->
 					<div id="progress-circle-in-cycle" >
-						<div id="progess-btn-stan-in-cycle" class="c100 p100" onclick="isOk();">
+						<div id="progess-btn-stan-in-cycle" class="c100 p100" onclick="isOkWrap();">
 							<span id="progess-btn-per-in-cycle"></span>
 							<div class="slice">
 								<div class="bar"></div>
@@ -248,7 +248,7 @@
 				<div class="note-skip-btn">
 					<div class="note-btn" onclick="showAllNote();">
 						<img src="img/remind.png" class="remind-img pulse-btn">
-						<p>Note</p>
+						<p id="notebtn">Note</p>
 					</div>
 					<div class="skip-btn">
 						<p class="bad-bad" onclick="isNo();" id="badBTN" >Repeat</p>
@@ -471,6 +471,22 @@
 				<div id="progress-circle">
 					<div id="progess-btn-stan" class="c100 p0" onclick="nextCatBtn();">
 						<span id="progess-btn-perr"></span>
+						<div class="slice">
+							<div class="bar"></div>
+							<div class="fill"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="end-cat" class="next-cat-left">
+			<h1><span class="l2">ENG_Gratulacje ukończyłeś powtórkę</span><span class="l3">Gratulacje ukończyłeś powtórkę</span> <span id="main-text-next-cat-end">1/5</span></h1>
+			<p id="invite-to-ads">Zapraszamy na krótką reklamę</p>
+			<p class="before-start-info"><span class="l2">*ENG_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a onclick="window.open('https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM');"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a onclick="window.open('https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM');" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
+			<div id="btn-next-cat-end">
+				<div id="progress-circle-end">
+					<div id="progess-btn-stan-end" class="c100 p0" onclick="nextPack();">
+						<span id="progess-btn-perr-end"></span>
 						<div class="slice">
 							<div class="bar"></div>
 							<div class="fill"></div>
@@ -724,14 +740,20 @@
 			}
 		</script>
 		<script>
+			function isOkWrap(){
+				var x = getAntyNaparzanka();
+				if(!x) isOk();
+			}
+			
 			function isOk(){
+				setAntyNaparzankaToTrue();
 				var where = whereGoNow();
 				if(where == 0){
 					$(".confirm-swipe").addClass('flipper-hide');
 					setTimeout(function(){
 							increaseLearned();
 							nextStep();
-					  }, 700);
+					  }, 1200); //700
 				}else if(where == -1){
 					goLeftTable();
 				}else if(where == 1){
@@ -746,7 +768,7 @@
 					setTimeout(function(){
 								  nextStepBlock();
 								  nextStep();
-							  }, 700);
+							  }, 1200); //700
 				}else if(getNoFlipIfWrong()){
 					goRightNoSimple();
 				}else if(where == -1){
@@ -772,12 +794,12 @@
 											nextStep();
 										}, 150);
 								}, 150);
-							}, 400);
+							}, 900); //400
 						}else{
 							setTimeout(function(){
 								increaseLearned();
 								nextStep();
-							  }, 450);
+							  }, 950);  //450
 						}
 					}else{
 						$(this).addClass("goRight");
@@ -791,7 +813,7 @@
 						setTimeout(function(){
 							increaseLearned();
 							nextStep();
-						 }, 450);
+						 }, 950); //450
 					}else{
 						$(this).addClass("goLeft");
 					}
@@ -804,7 +826,7 @@
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 450);
+						 }, 950); //450
 					}
 				});
 			}
@@ -815,7 +837,7 @@
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 450);
+						 }, 950); //450
 					}else{
 						$(this).addClass("goLeft");
 					}
@@ -828,7 +850,7 @@
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 450);
+						 }, 950); //450
 					}else{
 						$(this).addClass("goRight");
 					}
@@ -903,6 +925,9 @@
 				fileChooser.open(function(uri) {
 					loadProgress(uri);
 				});
+			});
+			$("#m3").click(function(){
+				$("#menu").removeClass('showmenu');
 			});
 			$("#m4").click(function(){
 				$("#statistic").show();

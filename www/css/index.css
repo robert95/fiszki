@@ -449,10 +449,12 @@ textarea:focus, textarea:hover, textarea:active{
     text-align: center;
 	display: none;
 	
-	transition: 0.8s;
+	/*transition: 0.8s;
 	transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: 0.8s;
+	/*-webkit-transition: 0.8s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
 }
 .tut-method{
 	position: relative;
@@ -473,15 +475,15 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 90%;
 	margin-left: 5%;
 	position: relative;
-	transition: 0.8s;
+	transition: 1.3s;
 	transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: 0.8s;
+	-webkit-transition: 1.3s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: all 0.8s ease;
-	-moz-transition: all 0.8s ease;
-	-o-transition: all 0.8s ease;
-	-ms-transition: all 0.8s ease;
-	transition: all 0.8s ease;
+	-webkit-transition: all 1.3s ease;
+	-moz-transition: all 1.3s ease;
+	-o-transition: all 1.3s ease;
+	-ms-transition: all 1.3s ease;
+	transition: all 1.3s ease;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
    /* padding-bottom: 60%;/*150px;*/
@@ -630,6 +632,7 @@ textarea:focus, textarea:hover, textarea:active{
 	height: 75%;
 	display:table;
 	width: 100%;
+	/*perspective: 1000px;*/
 }
 .learnMethod{
 	display: block;
@@ -679,17 +682,17 @@ textarea:focus, textarea:hover, textarea:active{
 	transform: translate3d(130%, 0, 0) !important;
 	-webkit-transform: translate3d(130%, 0, 0) !important;
 }
-#start-next-cat, #end-panel, #tutorial, #startDay{
+#start-next-cat, #end-panel, #tutorial, #startDay, #end-cat{
 	height: 100%;
 	position: relative;
 	overflow: hidden;
 }
-#btn-next-cat{
+#btn-next-cat, #btn-next-cat-end{
 	position: absolute;
 	width: 100%;
 	bottom: 0px;
 }
-#start-next-cat, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay{
+#start-next-cat, #end-cat, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay{
 	display: none;
 	position: relative;
 	transition: 1s;
@@ -723,11 +726,14 @@ textarea:focus, textarea:hover, textarea:active{
 	font-size: 30px;
 	margin: 50px;
 }
-#name-next-cat{
+#name-next-cat, #invite-to-ads{
 	text-align: center;
 	color: white;
 	font-size: 30px;
 	margin-top: 18%;
+}
+#invite-to-ads{
+    margin-top: 100px;
 }
 .before-start-info{
 	text-align: center;
@@ -735,6 +741,13 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 80%;
 	margin: 21% auto 16%;
 	font-size: 18px;
+}
+.before-start-info a, .before-start-info a:hover{
+	text-decoration: underline;
+	color: white;
+}
+#end-cat .before-start-info{
+	margin: 33% auto 16%;
 }
 #btn-next-cat{
 	text-align: center;
@@ -883,7 +896,7 @@ section{
 #progess-btn-stan-in-cycle, #progess-btn-stan-in-cycle-ncat{
 	z-index: 100;
 }
-#startDay h1, #start-next-cat h1, #new-category-choice h1{
+#startDay h1, #start-next-cat h1, #end-cat h1, #new-category-choice h1{
 	font-weight: 600;
     font-size: 28px;
 	margin-top: 0;
@@ -1021,6 +1034,14 @@ section{
 }
 #count-word-to-learn-tut{
     display: none;
+}
+.absolut-tut{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2222222;	
+	height: 100%;
+	width: 100%;
 }
 #statistic{
 	position: absolute;
