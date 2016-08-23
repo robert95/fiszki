@@ -753,7 +753,7 @@
 					setTimeout(function(){
 							increaseLearned();
 							nextStep();
-					  }, 1200); //700
+					  }, 300); //700
 				}else if(where == -1){
 					goLeftTable();
 				}else if(where == 1){
@@ -768,7 +768,7 @@
 					setTimeout(function(){
 								  nextStepBlock();
 								  nextStep();
-							  }, 1200); //700
+							  }, 300); //700
 				}else if(getNoFlipIfWrong()){
 					goRightNoSimple();
 				}else if(where == -1){
@@ -794,12 +794,12 @@
 											nextStep();
 										}, 150);
 								}, 150);
-							}, 900); //400
+							}, 100); //400
 						}else{
 							setTimeout(function(){
 								increaseLearned();
 								nextStep();
-							  }, 950);  //450
+							  }, 150);  //450
 						}
 					}else{
 						$(this).addClass("goRight");
@@ -813,7 +813,7 @@
 						setTimeout(function(){
 							increaseLearned();
 							nextStep();
-						 }, 950); //450
+						 }, 150); //450
 					}else{
 						$(this).addClass("goLeft");
 					}
@@ -826,7 +826,7 @@
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 950); //450
+						 }, 150); //450
 					}
 				});
 			}
@@ -837,7 +837,7 @@
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 950); //450
+						 }, 150); //450
 					}else{
 						$(this).addClass("goLeft");
 					}
@@ -850,7 +850,7 @@
 						setTimeout(function(){
 							nextStepBlock();
 							nextStep();
-						 }, 950); //450
+						 }, 150); //450
 					}else{
 						$(this).addClass("goRight");
 					}

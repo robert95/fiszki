@@ -538,8 +538,6 @@ function getToLearnHelper(){
 			uniqueallUsedCats = allUsedCats.filter(function(item, pos) {
 				return allUsedCats.indexOf(item) == pos;
 			})
-			alert(allCats.sort().toString());
-			alert(uniqueallUsedCats.sort().toString());
 			if(allCats.sort().toString() == uniqueallUsedCats.sort().toString()){
 				countWordsToLearn -= wordsInOneCat*2 + (wordsInOneCat*4-2);
 				countOfCycle -= 2;
