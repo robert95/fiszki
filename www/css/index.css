@@ -475,15 +475,15 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 90%;
 	margin-left: 5%;
 	position: relative;
-	transition: 1.3s;
+	transition: 0.8s;
 	transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: 1.3s;
+	-webkit-transition: 0.8s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: all 1.3s ease;
-	-moz-transition: all 1.3s ease;
-	-o-transition: all 1.3s ease;
-	-ms-transition: all 1.3s ease;
-	transition: all 1.3s ease;
+	-webkit-transition: all 0.8s ease-in;
+	-moz-transition: all 0.8s ease-in;
+	-o-transition: all 0.8s ease-in;
+	-ms-transition: all 0.8s ease-in;
+	transition: all 0.8s ease-in;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
    /* padding-bottom: 60%;/*150px;*/
