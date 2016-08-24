@@ -30,7 +30,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
-    <body>
+    <body >
 		<!--class="lang3"<button onclick="initApp();">prepare1</button>
 		<button onclick="prepareAd();">prepare2</button>
 		<button onclick="showAd();">prepare8</button>
@@ -504,6 +504,18 @@
 			<div id="start-day-ok-no-panel">
 				<div id="start-day-wrap-ok-no">
 					<img src="img/okNoP.png" class="good-bad" onclick="startLesson();"/>
+					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
+				</div>
+			</div>			
+		</section>
+		<section id="end-course" class="next-cat-left">
+			<h1><span class="l2">ENG_Gratulujemy<br>ukończenia kursu cz.1</span><span class="l3">Gratulujemy<br>ukończenia kursu cz.1</span></h1>
+			<p class="you-start-learned"><span class="l2">ENG_Spedziłeś z nami:</span><span class="l3">Spedziłeś z nami:</span> <span class="countKMLearned"></span> h <span class="countMinLearned"></span> min / 60h</p>
+			<p class="you-start-learned2"><span class="l2">ENG_Nauczyłeś się:</span><span class="l3">Nauczyłeś się:</span> <span class="allWords"></span>/3000 zdań</p>
+			<p class="you-start-learned3"><span class="l2">ENG_Aby pobrać cz.2 <br><a onclick="window.open('https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM');"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">Aby pobrać cz.2 kursu <br><a onclick="window.open('https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM');"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
+			<div id="start-day-ok-no-panel-end-course">
+				<div id="start-day-wrap-ok-no-end-course">
+					<img src="img/off.png" class="good-bad off-btn" onclick="navigator.app.exitApp();"/>
 					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
 				</div>
 			</div>			

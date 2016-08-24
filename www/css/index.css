@@ -324,7 +324,7 @@ section{
 	height: 100%;
 	overflow-x: hidden;
 }
-#wrap-ok-no, #tut-wrap-ok-no, #start-day-wrap-ok-no, #end-day-wrap-ok-no, #new-cat-wrap-ok-no{
+#wrap-ok-no, #tut-wrap-ok-no, #start-day-wrap-ok-no, #start-day-wrap-ok-no-end-course, #end-day-wrap-ok-no, #new-cat-wrap-ok-no{
 	position: relative;
 	text-align: center;
 }
@@ -475,15 +475,15 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 90%;
 	margin-left: 5%;
 	position: relative;
-	transition: 0.6s;
+	transition: 0.8s;
 	transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: 0.6s;
+	-webkit-transition: 0.8s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: all 0.6s linear;
-	-moz-transition: all 0.6s linear;
-	-o-transition: all 0.6s linear;
-	-ms-transition: all 0.6s linear;
-	transition: all 0.6s linear;
+	-webkit-transition: all 0.8s ease;
+	-moz-transition: all 0.8s ease;
+	-o-transition: all 0.8s ease;
+	-ms-transition: all 0.8s ease;
+	transition: all 0.8s ease;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
    /* padding-bottom: 60%;/*150px;*/
@@ -640,7 +640,7 @@ textarea:focus, textarea:hover, textarea:active{
 	position: relative;
 	top: 0%;/*-50px;*/
 }
-#ok-no-panel, #tut-ok-no-panel, #start-day-ok-no-panel, #end-day-ok-no-panel, #new-cat-ok-no-panel{
+#ok-no-panel, #tut-ok-no-panel, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel{
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -648,7 +648,7 @@ textarea:focus, textarea:hover, textarea:active{
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
 } 
-#tut-ok-no-panel, #start-day-ok-no-panel, #end-day-ok-no-panel, #new-cat-ok-no-panel{
+#tut-ok-no-panel, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel{
 	padding-bottom: 20px !important;    
 }
 #tut-ok-no-panel{
@@ -682,7 +682,7 @@ textarea:focus, textarea:hover, textarea:active{
 	transform: translate3d(130%, 0, 0) !important;
 	-webkit-transform: translate3d(130%, 0, 0) !important;
 }
-#start-next-cat, #end-panel, #tutorial, #startDay, #end-cat{
+#start-next-cat, #end-panel, #end-course, #tutorial, #startDay, #end-cat{
 	height: 100%;
 	position: relative;
 	overflow: hidden;
@@ -692,7 +692,7 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 100%;
 	bottom: 0px;
 }
-#start-next-cat, #end-cat, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay{
+#start-next-cat, #end-cat, #end-course, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay{
 	display: none;
 	position: relative;
 	transition: 1s;
@@ -914,6 +914,13 @@ section{
     margin-top: 0%;
     font-size: 21px;
 }
+#end-course .you-start-learned3{
+	margin-top: 130px;
+}
+#end-course a, #end-course a:hover{
+	color: white;
+	text-decoration: underline;
+}
 .goToReverse{
 	color: white;
 	text-align: center;
@@ -921,7 +928,7 @@ section{
 	font-weight: 600;
 	font-size: 28px;
 }
-#start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
+#start-day-wrap-ok-no-end-course img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
 	width: 135px;
 	margin-top: 22px;
 	z-index: 1;

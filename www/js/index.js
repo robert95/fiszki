@@ -35,7 +35,12 @@ var app = {
 	
     onDeviceReady: function() {
 		//getLangList();
-		startApp();
+		if(!checkConnection()){
+			alert("Połącz się z Internetem aby korzystać z aplikacji!");
+			navigator.app.exitApp();
+		}else{
+			startApp();
+		}
 		document.addEventListener("resume", hideBars, false);
 		var autoHideNavigationBar = true;
 		window.navigationbar.setUp(autoHideNavigationBar);  
@@ -47,6 +52,14 @@ var app = {
 		document.addEventListener('onAdLeaveApp',function(data){
 			prepareAd();
 		});
+		
+		AppRate.preferences = {
+		  displayAppName: 'SpeakUp',
+		  storeAppURL: {
+			android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
+		  },
+		  useLanguage: 'pl'
+		};
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -275,8 +288,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":23, "words": 10, "km": 10, "skiped": ["1/2", "1/3", "1/5", "1/9", "1/8", "1/6"]}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":4,"catid":1,"start":"21"},{"subid":7,"catid":1,"start":"1"},{"subid":4,"catid":1,"start":"3"}]');//
+var dayJSON = false;//JSON.parse('{"day":81, "words": 10, "km": 10, "skiped": ["1/2", "1/1", "1/3", "1/5", "1/9", "1/8", "1/6"]}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"22"},{"subid":7,"catid":1,"start":"1"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -295,6 +308,8 @@ var missingCat = [];
 var gameIsBegin = false;
 var allCats = [];
 var allUsedCats = [];
+var allEndedCats = [];
+var todayEndedCat = "";
 /* START APP*/
 function startApp(){
 	StatusBar.hide();
@@ -359,6 +374,7 @@ function getDay(){
 	for(var x in dayJSON.skiped){
 		var skip = dayJSON.skiped[x];
 		allUsedCats.push(skip);
+		allEndedCats.push(skip);
 	}
 	$("#end-nr-lesson").text(dayJSON.day);
 		for(var x in toLearnJSON){ //usunąc
@@ -366,7 +382,10 @@ function getDay(){
 			var day = dayJSON.day;
 			var dayNr = day - pack.start;
 			allUsedCats.push(pack.catid + "/" + pack.subid);
-			if(dayNr > 60) learnedCat.push(pack.catid + "/" + pack.subid);
+			if(dayNr > 60){
+				learnedCat.push(pack.catid + "/" + pack.subid);
+				allEndedCats.push(pack.catid + "/" + pack.subid);
+			}
 			if(dayNr < 60) inProgressCat.push(pack.catid + "/" + pack.subid);
 			switch(dayNr) {
 			case 1:
@@ -409,6 +428,7 @@ function getDay(){
 				break;
 			case 60:
 				toLearn[7] = pack.catid + "/" + pack.subid;
+				todayEndedCat = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
 				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*2;
@@ -448,6 +468,7 @@ function getDayHelper(){
 		for(var x in dayJSON.skiped){
 			var skip = dayJSON.skiped[x];
 			allUsedCats.push(skip);
+			allEndedCats.push(skip);
 		}
 	}
 }
@@ -481,7 +502,10 @@ function getToLearnHelper(){
 			var day = $("#nrDayFiled").text();
 			var dayNr = day - pack.start;
 			allUsedCats.push(pack.catid + "/" + pack.subid);
-			if(dayNr > 60) learnedCat.push(pack.catid + "/" + pack.subid);
+			if(dayNr > 60){
+				learnedCat.push(pack.catid + "/" + pack.subid);
+				allEndedCats.push(pack.catid + "/" + pack.subid);
+			}
 			if(dayNr < 60) inProgressCat.push(pack.catid + "/" + pack.subid);
 			switch(dayNr) {
 			case 1:
@@ -524,6 +548,7 @@ function getToLearnHelper(){
 				break;
 			case 60:
 				toLearn[7] = pack.catid + "/" + pack.subid;
+				todayEndedCat = pack.catid + "/" + pack.subid;
 				countCatsToLearn++;
 				countOfCycle++;
 				countWordsToLearn += wordsInOneCat*2;
@@ -1757,6 +1782,11 @@ function prepareGlobalForCycle(i){
 	$("#nav-words-container p").eq(0).addClass("pulse");
 }
 
+function addFunction(a, b) {
+	if(Number.isInteger(b)) return a + b;
+	else return a;
+}
+
 var continueLearning = false;
 var nameCat;
 var newCategoryisSet = false;
@@ -1768,11 +1798,12 @@ function packControler(){
 	$("#startDay").hide();
 	$("#words-nav").show();
 	$("#ok-no-panel").show();
-	//alert("1");
-	$("#learn-container").show();
-	setTimeout(function(){				
-		$("#learn-container").removeClass('next-cat-left');
-	}, 500);
+	if(toLearn.reduce(addFunction, 0) > -10){
+		$("#learn-container").show();
+		setTimeout(function(){				
+			$("#learn-container").removeClass('next-cat-left');
+		}, 500);
+	}	
 	for(var i = 0; i < 10 && !endThis; i++){
 		continueLearning = false;
 		if(toLearn[i] != -1){
@@ -1866,7 +1897,6 @@ function packControler(){
 		if(newCategoryisSet){
 			saveDay();
 			setTimeout(function(){ 
-			alert("ss");
 				datesJSON = toLearnJSON;
 				srcSave = path() + "save.json";
 				saveFile();
@@ -2038,14 +2068,35 @@ function setWaintingLearned(){
 /*END APP*/
 function endLearn(){
 	$("#learn-container").addClass('next-cat-right');
-	setTimeout(function(){
-		showAd();
-		$("#learn-container").hide();
-		$("#end-panel").show();
-		setTimeout(function(){				
-			$("#end-panel").removeClass('next-cat-left');
-		}, 100);
-	}, 500);
+	
+	if(todayEndedCat != "") allEndedCats.push(todayEndedCat);
+	uniqueallEndedCats = allEndedCats.filter(function(item, pos) {
+		return allEndedCats.indexOf(item) == pos;
+	});
+	
+	if(allCats.sort().toString() == uniqueallEndedCats.sort().toString()){
+		setTimeout(function(){
+			//showAd();
+			$(".countKMLearned").text( Math.floor( dayJSON.km*minCat / 60) + minCat);
+			$("#learn-container").hide();
+			$("#end-course").show();
+			setTimeout(function(){				
+				$("#end-course").removeClass('next-cat-left');
+				showRating();
+			}, 100);
+		}, 500);
+	}else{
+		setTimeout(function(){
+			//showAd();
+			$("#learn-container").hide();
+			$("#end-panel").show();
+			setTimeout(function(){				
+				$("#end-panel").removeClass('next-cat-left');
+				showRating();
+			}, 100);
+		}, 500);
+	}
+	
 }
 /*END END APP*/
 /*TUTORIAL*/
@@ -2158,7 +2209,6 @@ function startChoiceNewCategory(){
 	}else{
 		saveDay();
 		setTimeout(function(){ 
-			alert("ss");
 			datesJSON = toLearnJSON;
 			srcSave = path() + "save.json";
 			saveFile();
@@ -2364,12 +2414,33 @@ function getAllCatsInArray(){
 function isNotNewCat(){
 	if(gameIsBegin){
 		$("#new-category-choice").addClass('next-cat-right');
-		setTimeout(function(){
-			$("#new-category-choice").hide();
-			$("#end-panel").show();
-			setTimeout(function(){				
-				$("#end-panel").removeClass('next-cat-left');
-			}, 100);
+		saveDay();
+		setTimeout(function(){ 
+			datesJSON = toLearnJSON;
+			srcSave = path() + "save.json";
+			saveFile();
+			setTimeout(function(){ 
+				if(todayEndedCat != "") allEndedCats.push(todayEndedCat);
+				uniqueallEndedCats = allEndedCats.filter(function(item, pos) {
+					return allEndedCats.indexOf(item) == pos;
+				});
+				if(allCats.sort().toString() == uniqueallEndedCats.sort().toString()){
+					$("#new-category-choice").hide();
+					$("#end-course").show();
+					$(".countKMLearned").text( Math.floor( dayJSON.km*minCat / 60) + minCat);
+					setTimeout(function(){				
+						$("#end-course").removeClass('next-cat-left');
+						showRating();
+					}, 100);
+				}else{
+					$("#new-category-choice").hide();
+					$("#end-panel").show();
+					setTimeout(function(){				
+						$("#end-panel").removeClass('next-cat-left');
+						showRating();
+					}, 100);
+				}
+			}, 500);
 		}, 500);
 	}	
 }
@@ -2384,6 +2455,7 @@ function getNextSugCat(){
 
 function addCatToMissing(catSgn){
 	dayJSON.skiped.push(catSgn);
+	allEndedCats.push(catSgn);
 }
 function getThisCatAsSug(obj){
 	var p = $(obj).attr('data-parent');
@@ -2516,6 +2588,12 @@ function setinProgressCatList(idp, idc){
 	}
 }
 /* END statistic */
+function checkConnection() {
+	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
+}
+function showRating() {
+	AppRate.promptForRating();
+}
 
 /*function iinit() {
 	
