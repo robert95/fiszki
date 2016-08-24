@@ -31,8 +31,8 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
-    <body>
-		<!--<button onclick="initApp();">prepare1</button>
+    <body >
+		<!--class="lang3"<button onclick="initApp();">prepare1</button>
 		<button onclick="prepareAd();">prepare2</button>
 		<button onclick="showAd();">prepare8</button>
 		<button onclick="AdMob.hideBanner();">HideBanner</button>-->
@@ -483,7 +483,7 @@
 		<section id="end-cat" class="next-cat-left">
 			<h1><span class="l2">ENG_Gratulacje ukończyłeś powtórkę</span><span class="l3">Gratulacje ukończyłeś powtórkę</span> <span id="main-text-next-cat-end">1/5</span></h1>
 			<p id="invite-to-ads">Zapraszamy na krótką reklamę</p>
-			<p class="before-start-info"><span class="l2">*ENG_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a onclick="window.open('https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM');"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a onclick="window.open('https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM');" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
+			<p class="before-start-info"><span class="l2">*ENG_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a onclick="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a onclick="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
 			<div id="btn-next-cat-end">
 				<div id="progress-circle-end">
 					<div id="progess-btn-stan-end" class="c100 p0" onclick="nextPack();">
@@ -666,6 +666,7 @@
 				$("#choose-lang").hide();
 				startTut();
 				setTimeout(function(){
+					getAllCatsInArray();
 					getCatWithPos(0,1);
 				}, 300);
 			}

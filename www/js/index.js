@@ -288,8 +288,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day":81, "words": 10, "km": 10, "skiped": ["1/2", "1/1", "1/3", "1/5", "1/9", "1/8", "1/6"]}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"22"},{"subid":7,"catid":1,"start":"1"}]');//
+var dayJSON = false;//JSON.parse('{"day": 101, "words": 10, "km": 10, "skiped": ["1/2", "1/1", "1/7", "1/3", "1/5", "1/9", "1/8", "1/6"]}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":4,"catid":1,"start":"22"},{"subid":7,"catid":1,"start":"60"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -347,8 +347,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	readLang();
-	setTimeout(function() {getMyLangHelper();}, 100);
+	//readLang();
+	//setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -362,10 +362,10 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	readDayF();
-	getDayHelper();
+	//readDayF();
+	//getDayHelper();
 	
-	/*getAllCatsInArray();
+	getAllCatsInArray();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
@@ -450,7 +450,7 @@ function getDay(){
 			}else{
 				$("#countWordsToLearn").text(countWordsToLearn);	
 			}
-		}, 150);*/
+		}, 150);
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -474,8 +474,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	readWriteFile2();
-	getNoticeHelper();
+	//readWriteFile2();
+	//getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -488,8 +488,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-	readWriteFile();
-	getToLearnHelper();
+	//readWriteFile();
+	//getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
@@ -2074,10 +2074,11 @@ function endLearn(){
 		return allEndedCats.indexOf(item) == pos;
 	});
 	
-	if(allCats.sort().toString() == uniqueallEndedCats.sort().toString()){
+	if(allCats.sort().toString() == uniqueallEndedCats.sort().toString()  && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
 		setTimeout(function(){
 			//showAd();
-			$(".countKMLearned").text( Math.floor( dayJSON.km*minCat / 60) + minCat);
+			$(".countKMLearned").text( Math.floor( (dayJSON.km + 1)*minCat / 60) );
+			$(".countMinLearned").text( Math.floor( (dayJSON.km + 1)*minCat % 60) );
 			$("#learn-container").hide();
 			$("#end-course").show();
 			setTimeout(function(){				
@@ -2301,6 +2302,7 @@ function setSuggestedCatAsNew(){
 }
 
 function showStartLessonPage(){
+	gameIsBegin = true;
 	$('seciton').hide();
 	$("#startDay").show();
 	setTimeout(function(){				
@@ -2424,10 +2426,11 @@ function isNotNewCat(){
 				uniqueallEndedCats = allEndedCats.filter(function(item, pos) {
 					return allEndedCats.indexOf(item) == pos;
 				});
-				if(allCats.sort().toString() == uniqueallEndedCats.sort().toString()){
+				if(allCats.sort().toString() == uniqueallEndedCats.sort().toString() && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
 					$("#new-category-choice").hide();
 					$("#end-course").show();
-					$(".countKMLearned").text( Math.floor( dayJSON.km*minCat / 60) + minCat);
+					$(".countKMLearned").text( Math.floor( (dayJSON.km + 1)*minCat / 60) );
+					$(".countMinLearned").text( Math.floor( (dayJSON.km + 1)*minCat % 60) );
 					setTimeout(function(){				
 						$("#end-course").removeClass('next-cat-left');
 						showRating();
@@ -2446,6 +2449,7 @@ function isNotNewCat(){
 }
 
 function getNextSugCat(){
+	scdCycleInSearchSub = false;
 	var p = $("#sugCatPar").val();
 	var c = $("#sugCatSub").val();
 	setSuggestedCat(p, c);
@@ -2458,6 +2462,7 @@ function addCatToMissing(catSgn){
 	allEndedCats.push(catSgn);
 }
 function getThisCatAsSug(obj){
+	
 	var p = $(obj).attr('data-parent');
 	var c = $(obj).attr('data-subcat');
 	setThisAsSuggestedCat(p, c);
