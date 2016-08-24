@@ -347,8 +347,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	//readLang();
-	//setTimeout(function() {getMyLangHelper();}, 100);
+	readLang();
+	setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -362,10 +362,10 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	//readDayF();
-	//getDayHelper();
+	readDayF();
+	getDayHelper();
 	
-	getAllCatsInArray();
+	/*getAllCatsInArray();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
@@ -450,7 +450,7 @@ function getDay(){
 			}else{
 				$("#countWordsToLearn").text(countWordsToLearn);	
 			}
-		}, 150);
+		}, 150);*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -474,8 +474,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	//readWriteFile2();
-	//getNoticeHelper();
+	readWriteFile2();
+	getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -488,8 +488,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-	//readWriteFile();
-	//getToLearnHelper();
+	readWriteFile();
+	getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
