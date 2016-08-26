@@ -49,7 +49,7 @@
   <plugin src="https://github.com/cranberrygame/cordova-plugin-navigationbar.git" />
   <plugin src="https://github.com/mesmotronic/cordova-plugin-fullscreen.git" />
   <plugin src="https://github.com/pushandplay/cordova-plugin-apprate.git" />
-  <gap:plugin name="com.phonegap.plugin.viewport_scale" />
+  <plugin name="com.fridaydesigm.plugins.viewport_scale" spec="0.9.56" source="pgb" />
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
