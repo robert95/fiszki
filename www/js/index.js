@@ -43,7 +43,7 @@ var app = {
 		}
 		document.addEventListener("resume", hideBars, false);
 		var autoHideNavigationBar = true;
-		window.navigationbar.setUp(autoHideNavigationBar);  
+		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar);  
 		
 		document.addEventListener('onAdDismiss',function(data){
 			prepareAd();
@@ -75,9 +75,11 @@ var app = {
 };
 function hideBars() {
 	StatusBar.hide();	
-	window.navigationbar.setUp(false);
-	window.navigationbar.hide();
-	window.navigationbar.setUp(true);
+	if($( window ).width() < 600) {
+		window.navigationbar.setUp(false);
+		window.navigationbar.hide();
+		window.navigationbar.setUp(true);
+	}
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;

@@ -1438,4 +1438,7 @@ section{
 		z-index: 2;
 		padding-bottom: 0px !important;
 	}
+	#first-use-loading-page #progress-circle {
+		padding-top: 15px;
+	}
 }
