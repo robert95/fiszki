@@ -288,8 +288,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day": 5, "words": 10, "km": 10, "skiped": ["1/5", "1/9", "1/8", "1/6"]}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":4,"catid":1,"start":"4"},{"subid":7,"catid":1,"start":"3"}]');//
+var dayJSON = false;//JSON.parse('{"day": 3, "words": 10, "km": 10, "skiped": ["1/1", "1/2", "1/3", "1/5", "1/8", "1/6"]}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":4,"catid":1,"start":"2"},{"subid":7,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -1798,7 +1798,11 @@ function packControler(){
 	$("#startDay").hide();
 	$("#words-nav").show();
 	$("#ok-no-panel").show();
-	if(toLearn.reduce(function(a, b) { return a + b; }, 0) > -10 || !(Number.isInteger(toLearn.reduce(function(a, b) { return a + b; }, 0)))){
+	/*alert($( window ).width());
+	alert(toLearn.reduce(function(a, b) { return a + b; }, 0));
+	alert(toLearn.reduce(function(a, b) { return a + b; }, 0) > -10 );
+	alert(Number(toLearn.reduce(function(a, b) { return a + b; }, 0)) == 0);*/
+	if(toLearn.reduce(function(a, b) { return a + b; }, 0) != -10){
 		$("#learn-container").show();
 		setTimeout(function(){				
 			$("#learn-container").removeClass('next-cat-left');
