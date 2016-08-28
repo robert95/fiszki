@@ -574,6 +574,10 @@ textarea:focus, textarea:hover, textarea:active{
 	font-weight: 600;
 }
 .learnMethod .text{
+	display: table-cell;
+	vertical-align: middle;
+	height: 100px;
+	text-align: center;
 	min-height: 100px;
 	background: 0;
 	border: 0;
@@ -774,6 +778,7 @@ textarea:focus, textarea:hover, textarea:active{
 	height: 0.99em;
 	background: #3f8cb7;
 	background-clip: padding-box;
+	font-size: 120px;
 }
 .bar{
 	border: 0.08em solid #6dd0f7 !important;
@@ -945,9 +950,13 @@ section{
 	font-size: 28px;
 }
 #start-day-wrap-ok-no-end-course img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
-	width: 135px;
+	font-size: 120px;
+	width: 1.05em;
 	margin-top: 22px;
 	z-index: 1;
+}
+#first-use-loading-page .c100{
+	top: -1px;
 }
 #suggest-new-category{
 	margin-top: 0px !important;
@@ -1279,6 +1288,9 @@ section{
 	.learnMethod .text {
 		font-size: 40px !important;
 		min-height: 150px;
+		height: 150px;
+		text-align: center;
+		width: 100%;
 	}
 	.nbWordInCycle, .nbWordInCycle-tut {
 		font-size: 30px;
@@ -1300,7 +1312,7 @@ section{
 		font-size: 33px;
 	}
 	#cont-l-w-i-s-c {
-		font-size: 29px;
+		font-size: 26px;
 		margin-bottom: 47px;
 	}
 	#suggest-new-category {
@@ -1346,81 +1358,13 @@ section{
 		font-size: 34px;
 		margin-left: 15px;
 	}
-	#count-word-to-learn .c100{
-		width: 57px !important;
-		height: 57px !important;
-		background-color: rgba(0, 0, 0, 0) !important;
-		margin-top: 16px !important;
-		margin: 16px 6px 6px 0 !important;
-		border: 9px solid #3f8cb7 !important;
+	#count-word-to-learn-tut, #count-word-to-learn{
+		transform: scale(1.6);
+		-webkit-transform: scale(1.6);
+		margin-top: 26px;
+		margin-left: 36px;
 	}
-	#count-word-to-learn .c100 .slice{
-		width: 70px !important;
-		height: 70px !important;
-		clip: rect(0em, 67px, 67px, 66px) !important;
-		left: -5px;
-		top: -5px;
-	}
-	#count-word-to-learn .pie, #count-word-to-learn .c100 .bar, #count-word-to-learn .c100.p51 .fill,#count-word-to-learn .c100.p52 .fill,#count-word-to-learn .c100.p53 .fill,#count-word-to-learn .c100.p54 .fill,#count-word-to-learn .c100.p55 .fill,#count-word-to-learn .c100.p56 .fill,#count-word-to-learn .c100.p57 .fill,#count-word-to-learn .c100.p58 .fill,#count-word-to-learn .c100.p59 .fill,#count-word-to-learn .c100.p60 .fill,#count-word-to-learn .c100.p61 .fill,#count-word-to-learn .c100.p62 .fill,#count-word-to-learn .c100.p63 .fill,#count-word-to-learn .c100.p64 .fill,#count-word-to-learn .c100.p65 .fill,#count-word-to-learn .c100.p66 .fill,#count-word-to-learn .c100.p67 .fill,#count-word-to-learn .c100.p68 .fill,#count-word-to-learn .c100.p69 .fill,#count-word-to-learn .c100.p70 .fill,#count-word-to-learn .c100.p71 .fill,#count-word-to-learn .c100.p72 .fill,#count-word-to-learn .c100.p73 .fill,#count-word-to-learn .c100.p74 .fill,#count-word-to-learn .c100.p75 .fill,#count-word-to-learn .c100.p76 .fill,#count-word-to-learn .c100.p77 .fill,#count-word-to-learn .c100.p78 .fill,#count-word-to-learn .c100.p79 .fill,#count-word-to-learn .c100.p80 .fill,#count-word-to-learn .c100.p81 .fill,#count-word-to-learn .c100.p82 .fill,#count-word-to-learn .c100.p83 .fill,#count-word-to-learn .c100.p84 .fill,#count-word-to-learn .c100.p85 .fill,#count-word-to-learn .c100.p86 .fill,#count-word-to-learn .c100.p87 .fill,#count-word-to-learn .c100.p88 .fill,#count-word-to-learn .c100.p89 .fill,#count-word-to-learn .c100.p90 .fill,#count-word-to-learn .c100.p91 .fill,#count-word-to-learn .c100.p92 .fill,#count-word-to-learn .c100.p93 .fill,#count-word-to-learn .c100.p94 .fill,#count-word-to-learn .c100.p95 .fill,#count-word-to-learn .c100.p96 .fill,#count-word-to-learn .c100.p97 .fill,#count-word-to-learn .c100.p98 .fill,#count-word-to-learn .c100.p99 .fill,#count-word-to-learn .c100.p100 .fill{
-		width: 57px !important;
-		height: 57px !important;
-		clip: rect(0em, 35px, 67px, 0em) !important;
-		border: 5px solid #6dd0f7 !important;
-	}
-	#count-word-to-learn .bar {
-		border: 5px solid #6dd0f7 !important;
-	}
-	#count-word-to-learn .c100::after{
-		background: rgba(245, 245, 245, 0) !important;
-	}
-	#count-word-to-learn .rect-auto,#count-word-to-learn  .c100.p51 .slice,#count-word-to-learn  .c100.p52 .slice,#count-word-to-learn  .c100.p53 .slice,#count-word-to-learn  .c100.p54 .slice,#count-word-to-learn  .c100.p55 .slice,#count-word-to-learn  .c100.p56 .slice,#count-word-to-learn  .c100.p57 .slice,#count-word-to-learn  .c100.p58 .slice,#count-word-to-learn  .c100.p59 .slice,#count-word-to-learn  .c100.p60 .slice,#count-word-to-learn  .c100.p61 .slice,#count-word-to-learn  .c100.p62 .slice,#count-word-to-learn  .c100.p63 .slice,#count-word-to-learn  .c100.p64 .slice,#count-word-to-learn  .c100.p65 .slice,#count-word-to-learn  .c100.p66 .slice,#count-word-to-learn  .c100.p67 .slice,#count-word-to-learn  .c100.p68 .slice,#count-word-to-learn  .c100.p69 .slice,#count-word-to-learn  .c100.p70 .slice,#count-word-to-learn  .c100.p71 .slice,#count-word-to-learn  .c100.p72 .slice,#count-word-to-learn  .c100.p73 .slice,#count-word-to-learn  .c100.p74 .slice,#count-word-to-learn  .c100.p75 .slice,#count-word-to-learn  .c100.p76 .slice,#count-word-to-learn  .c100.p77 .slice,#count-word-to-learn  .c100.p78 .slice,#count-word-to-learn  .c100.p79 .slice,#count-word-to-learn  .c100.p80 .slice,#count-word-to-learn  .c100.p81 .slice,#count-word-to-learn  .c100.p82 .slice,#count-word-to-learn  .c100.p83 .slice,#count-word-to-learn  .c100.p84 .slice,#count-word-to-learn  .c100.p85 .slice,#count-word-to-learn  .c100.p86 .slice,#count-word-to-learn  .c100.p87 .slice,#count-word-to-learn  .c100.p88 .slice,#count-word-to-learn  .c100.p89 .slice,#count-word-to-learn  .c100.p90 .slice,#count-word-to-learn  .c100.p91 .slice,#count-word-to-learn  .c100.p92 .slice,#count-word-to-learn  .c100.p93 .slice,#count-word-to-learn  .c100.p94 .slice,#count-word-to-learn  .c100.p95 .slice,#count-word-to-learn  .c100.p96 .slice,#count-word-to-learn  .c100.p97 .slice,#count-word-to-learn  .c100.p98 .slice,#count-word-to-learn  .c100.p99 .slice,#count-word-to-learn  .c100.p100 .slice{
-		clip: rect(auto, auto, auto, auto) !important;
-	}
-	#progess-btn-per-in-cycle-2{
-		font-size: 25px;
-		color: white;
-		font-weight: 400;
-		line-height: 57px;
-		width: 57px;
-	}
-	#count-word-to-learn-tut .c100{
-		width: 57px !important;
-		height: 57px !important;
-		background-color: rgba(0, 0, 0, 0) !important;
-		margin-top: 16px !important;
-		margin: 16px 6px 6px 0px !important;
-		border: 9px solid #3f8cb7 !important;
-	}
-	#count-word-to-learn-tut .c100 .slice{
-		width: 70px !important;
-		height: 70px !important;
-		clip: rect(0em, 67px, 67px, 35px) !important;
-		left: -5px;
-		top: -5px;
-	}
-	#count-word-to-learn-tut .pie, #count-word-to-learn-tut .c100 .bar, #count-word-to-learn-tut .c100.p51 .fill,#count-word-to-learn-tut .c100.p52 .fill,#count-word-to-learn-tut .c100.p53 .fill,#count-word-to-learn-tut .c100.p54 .fill,#count-word-to-learn-tut .c100.p55 .fill,#count-word-to-learn-tut .c100.p56 .fill,#count-word-to-learn-tut .c100.p57 .fill,#count-word-to-learn-tut .c100.p58 .fill,#count-word-to-learn-tut .c100.p59 .fill,#count-word-to-learn-tut .c100.p60 .fill,#count-word-to-learn-tut .c100.p61 .fill,#count-word-to-learn-tut .c100.p62 .fill,#count-word-to-learn-tut .c100.p63 .fill,#count-word-to-learn-tut .c100.p64 .fill,#count-word-to-learn-tut .c100.p65 .fill,#count-word-to-learn-tut .c100.p66 .fill,#count-word-to-learn-tut .c100.p67 .fill,#count-word-to-learn-tut .c100.p68 .fill,#count-word-to-learn-tut .c100.p69 .fill,#count-word-to-learn-tut .c100.p70 .fill,#count-word-to-learn-tut .c100.p71 .fill,#count-word-to-learn-tut .c100.p72 .fill,#count-word-to-learn-tut .c100.p73 .fill,#count-word-to-learn-tut .c100.p74 .fill,#count-word-to-learn-tut .c100.p75 .fill,#count-word-to-learn-tut .c100.p76 .fill,#count-word-to-learn-tut .c100.p77 .fill,#count-word-to-learn-tut .c100.p78 .fill,#count-word-to-learn-tut .c100.p79 .fill,#count-word-to-learn-tut .c100.p80 .fill,#count-word-to-learn-tut .c100.p81 .fill,#count-word-to-learn-tut .c100.p82 .fill,#count-word-to-learn-tut .c100.p83 .fill,#count-word-to-learn-tut .c100.p84 .fill,#count-word-to-learn-tut .c100.p85 .fill,#count-word-to-learn-tut .c100.p86 .fill,#count-word-to-learn-tut .c100.p87 .fill,#count-word-to-learn-tut .c100.p88 .fill,#count-word-to-learn-tut .c100.p89 .fill,#count-word-to-learn-tut .c100.p90 .fill,#count-word-to-learn-tut .c100.p91 .fill,#count-word-to-learn-tut .c100.p92 .fill,#count-word-to-learn-tut .c100.p93 .fill,#count-word-to-learn-tut .c100.p94 .fill,#count-word-to-learn-tut .c100.p95 .fill,#count-word-to-learn-tut .c100.p96 .fill,#count-word-to-learn-tut .c100.p97 .fill,#count-word-to-learn-tut .c100.p98 .fill,#count-word-to-learn-tut .c100.p99 .fill,#count-word-to-learn-tut .c100.p100 .fill{
-		width: 57px !important;
-		height: 57px !important;
-		clip: rect(0em, 35px, 67px, 0em) !important;
-		border: 5px solid #6dd0f7 !important;
-	}
-	#count-word-to-learn-tut .bar {
-		border: 5px solid #6dd0f7 !important;
-	}
-	#count-word-to-learn-tut .c100::after{
-		background: rgba(245, 245, 245, 0) !important;
-	}
-	#count-word-to-learn-tut .rect-auto,#count-word-to-learn-tut  .c100.p51 .slice,#count-word-to-learn-tut  .c100.p52 .slice,#count-word-to-learn-tut  .c100.p53 .slice,#count-word-to-learn-tut  .c100.p54 .slice,#count-word-to-learn-tut  .c100.p55 .slice,#count-word-to-learn-tut  .c100.p56 .slice,#count-word-to-learn-tut  .c100.p57 .slice,#count-word-to-learn-tut  .c100.p58 .slice,#count-word-to-learn-tut  .c100.p59 .slice,#count-word-to-learn-tut  .c100.p60 .slice,#count-word-to-learn-tut  .c100.p61 .slice,#count-word-to-learn-tut  .c100.p62 .slice,#count-word-to-learn-tut  .c100.p63 .slice,#count-word-to-learn-tut  .c100.p64 .slice,#count-word-to-learn-tut  .c100.p65 .slice,#count-word-to-learn-tut  .c100.p66 .slice,#count-word-to-learn-tut  .c100.p67 .slice,#count-word-to-learn-tut  .c100.p68 .slice,#count-word-to-learn-tut  .c100.p69 .slice,#count-word-to-learn-tut  .c100.p70 .slice,#count-word-to-learn-tut  .c100.p71 .slice,#count-word-to-learn-tut  .c100.p72 .slice,#count-word-to-learn-tut  .c100.p73 .slice,#count-word-to-learn-tut  .c100.p74 .slice,#count-word-to-learn-tut  .c100.p75 .slice,#count-word-to-learn-tut  .c100.p76 .slice,#count-word-to-learn-tut  .c100.p77 .slice,#count-word-to-learn-tut  .c100.p78 .slice,#count-word-to-learn-tut  .c100.p79 .slice,#count-word-to-learn-tut  .c100.p80 .slice,#count-word-to-learn-tut  .c100.p81 .slice,#count-word-to-learn-tut  .c100.p82 .slice,#count-word-to-learn-tut  .c100.p83 .slice,#count-word-to-learn-tut  .c100.p84 .slice,#count-word-to-learn-tut  .c100.p85 .slice,#count-word-to-learn-tut  .c100.p86 .slice,#count-word-to-learn-tut  .c100.p87 .slice,#count-word-to-learn-tut  .c100.p88 .slice,#count-word-to-learn-tut  .c100.p89 .slice,#count-word-to-learn-tut  .c100.p90 .slice,#count-word-to-learn-tut  .c100.p91 .slice,#count-word-to-learn-tut  .c100.p92 .slice,#count-word-to-learn-tut  .c100.p93 .slice,#count-word-to-learn-tut  .c100.p94 .slice,#count-word-to-learn-tut  .c100.p95 .slice,#count-word-to-learn-tut  .c100.p96 .slice,#count-word-to-learn-tut  .c100.p97 .slice,#count-word-to-learn-tut  .c100.p98 .slice,#count-word-to-learn-tut  .c100.p99 .slice,#count-word-to-learn-tut  .c100.p100 .slice{
-		clip: rect(auto, auto, auto, auto) !important;
-	}
-	#progess-btn-per-in-cycle-2-tut{
-		font-size: 25px;
-		color: white;
-		font-weight: 400;
-		line-height: 57px;
-		width: 57px;
-	}
-	#progress-circle .c100, #wrap-ok-no .c100, #tut-wrap-ok-no .c100, #start-day-wrap-ok-no .c100, #start-day-wrap-ok-no-end-course .c100, #end-day-wrap-ok-no .c100, #new-cat-wrap-ok-no .c100{
+	#progress-circle-end .c100, #progress-circle .c100, #wrap-ok-no .c100, #tut-wrap-ok-no .c100, #start-day-wrap-ok-no .c100, #start-day-wrap-ok-no-end-course .c100, #end-day-wrap-ok-no .c100, #new-cat-wrap-ok-no .c100{
 		transform: scale(1.6);
 		-webkit-transform: scale(1.6);
 		margin: 35px auto;

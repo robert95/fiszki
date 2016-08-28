@@ -1800,7 +1800,9 @@ function packControler(){
 	$("#startDay").hide();
 	$("#words-nav").show();
 	$("#ok-no-panel").show();
-	/*alert($( window ).width());
+	/*alert($("#progress-circle .c100").width());
+	alert($("#start-day-wrap-ok-no .good-bad").width());
+	alert($( window ).width());
 	alert(toLearn.reduce(function(a, b) { return a + b; }, 0));
 	alert(toLearn.reduce(function(a, b) { return a + b; }, 0) > -10 );
 	alert(Number(toLearn.reduce(function(a, b) { return a + b; }, 0)) == 0);*/
