@@ -60,6 +60,10 @@ var app = {
 		  },
 		  useLanguage: 'pl'
 		};
+		
+		document.addEventListener("backbutton", function (e) {
+            e.preventDefault();
+        }, false );
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -1812,6 +1816,7 @@ function packControler(){
 			$("#learn-container").removeClass('next-cat-left');
 		}, 500);
 	}	
+	alert("ToLearn: " + toLearn.toString());
 	for(var i = 0; i < 10 && !endThis; i++){
 		continueLearning = false;
 		if(toLearn[i] != -1){
@@ -1902,6 +1907,7 @@ function packControler(){
 		}
 	}	
 	if(!continueLearning){
+		alert("newCat = " + newCategoryisSet);
 		if(newCategoryisSet){
 			saveDay();
 			setTimeout(function(){ 
@@ -1912,6 +1918,7 @@ function packControler(){
 			}, 500);
 		}else{
 			showAd();
+			alert("jestem w wyborze nowej kategorii");
 			startChoiceNewCategory();
 			//startSetNewCategory();
 		}
@@ -2097,6 +2104,7 @@ function endLearn(){
 	}else{
 		setTimeout(function(){
 			//showAd();
+			alert("jestem2");
 			$("#learn-container").hide();
 			$("#end-panel").show();
 			setTimeout(function(){				
@@ -2349,9 +2357,9 @@ function updateProgressBar(){
 var sugGetIsSetter = false;
 var scdCycleInSearchSub = false;
 function getCatWithPos(pos, off){
-	/*alert(allCats.sort().toString());
+	//alert(allCats.sort().toString());
 	alert(pos + " - " + off + " / " + allCats.length);
-	alert(scdCycleInSearchSub);*/
+	//alert(scdCycleInSearchSub);*/
 	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
 		var cats = JSON.parse(result);
 		var catSize = cats.length;
@@ -2378,6 +2386,7 @@ function getCatWithPos(pos, off){
 							}
 							off++;
 						}else{
+							alert(idP + " - " + scat.id);
 							userChoiceCat = false;
 							$("#sugCatPar").val(idP);
 							$("#sugCatSub").val(scat.id);
@@ -2388,6 +2397,7 @@ function getCatWithPos(pos, off){
 							return;	
 						}
 					}else if(pos == allCats.length && allCats.length > 0 && parseInt(scat.pos) == pos){
+						alert("czemu to jestem;");
 						if(scdCycleInSearchSub) {
 							isNotNewCat();
 							return;	
@@ -2444,6 +2454,7 @@ function isNotNewCat(){
 						showRating();
 					}, 100);
 				}else{
+					alert("jestem");
 					$("#new-category-choice").hide();
 					$("#end-panel").show();
 					setTimeout(function(){				

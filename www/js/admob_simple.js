@@ -18,9 +18,9 @@ if( /(android)/i.test(navigator.userAgent) ) {
 }
 
 function prepareAd(){
-	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+	//if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 function showAd(){
-	if(firstShownAd) firstShownAd = false;
-	else if(AdMob) AdMob.showInterstitial();
+	//if(firstShownAd) firstShownAd = false;
+	//else if(AdMob) AdMob.showInterstitial();
 }

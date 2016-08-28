@@ -574,9 +574,9 @@ textarea:focus, textarea:hover, textarea:active{
 	font-weight: 600;
 }
 .learnMethod .text{
-	display: table-cell;
+	/*display: table-cell;
 	vertical-align: middle;
-	height: 100px;
+	height: 100px;*/
 	text-align: center;
 	min-height: 100px;
 	background: 0;
@@ -1288,9 +1288,9 @@ section{
 	.learnMethod .text {
 		font-size: 40px !important;
 		min-height: 150px;
-		height: 150px;
+	/*height: 150px;*/
 		text-align: center;
-		width: 100%;
+		/*width: 100%;*/
 	}
 	.nbWordInCycle, .nbWordInCycle-tut {
 		font-size: 30px;
