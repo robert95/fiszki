@@ -1818,7 +1818,6 @@ function packControler(){
 			$("#learn-container").removeClass('next-cat-left');
 		}, 500);
 	}	
-	alert("ToLearn: " + toLearn.toString());
 	for(var i = 0; i < 10 && !endThis; i++){
 		continueLearning = false;
 		if(toLearn[i] != -1){
@@ -1909,7 +1908,6 @@ function packControler(){
 		}
 	}	
 	if(!continueLearning){
-		alert("newCat = " + newCategoryisSet);
 		if(newCategoryisSet){
 			saveDay();
 			setTimeout(function(){ 
@@ -1920,7 +1918,6 @@ function packControler(){
 			}, 500);
 		}else{
 			showAd();
-			alert("jestem w wyborze nowej kategorii");
 			startChoiceNewCategory();
 			//startSetNewCategory();
 		}
@@ -2106,7 +2103,6 @@ function endLearn(){
 	}else{
 		setTimeout(function(){
 			//showAd();
-			alert("jestem2");
 			$("#learn-container").hide();
 			$("#end-panel").show();
 			setTimeout(function(){				
@@ -2215,7 +2211,6 @@ function backToSetNewCategory(){
 	}, 500);
 }
 function startChoiceNewCategory(){
-	alert("sugGetIsSetter" + sugGetIsSetter);
 	if(sugGetIsSetter){
 		$("#suggest-new-category").text(suggestedCatName);
 		$('section').hide();
@@ -2361,7 +2356,7 @@ var sugGetIsSetter = false;
 var scdCycleInSearchSub = false;
 function getCatWithPos(pos, off){
 	//alert(allCats.sort().toString());
-	alert(pos + " - " + off + " / " + allCats.length + " / " + langJSON.lang);
+	//alert(pos + " - " + off + " / " + allCats.length + " / " + langJSON.lang);
 	//alert(scdCycleInSearchSub);*/
 	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
 		var cats = JSON.parse(result);
@@ -2376,7 +2371,6 @@ function getCatWithPos(pos, off){
 					var scat = scats[sc];
 					if(parseInt(scat.pos) == (parseInt(pos)+off)){
 						if(!userChoiceCat && (dayJSON.skiped.indexOf(idP + "/" + scat.id) >= 0 || learnedCat.indexOf(idP + "/" + scat.id) >= 0 || inProgressCat.indexOf(idP + "/" + scat.id) >= 0)){
-							alert("catSize: " + catSize + " - scatSize: " + scatSize + " - scdCycleInSearchSub: " + scdCycleInSearchSub);
 							if((parseInt(x)+1) == catSize && (parseInt(sc)+1) == scatSize){
 								if(scdCycleInSearchSub) {
 									isNotNewCat();
@@ -2390,7 +2384,6 @@ function getCatWithPos(pos, off){
 							}
 							off++;
 						}else{
-							alert(idP + " - " + scat.id);
 							userChoiceCat = false;
 							$("#sugCatPar").val(idP);
 							$("#sugCatSub").val(scat.id);
@@ -2401,7 +2394,6 @@ function getCatWithPos(pos, off){
 							return;	
 						}
 					}else if(pos == allCats.length && allCats.length > 0 && parseInt(scat.pos) == pos){
-						alert("czemu to jestem;");
 						if(scdCycleInSearchSub) {
 							isNotNewCat();
 							return;	
@@ -2458,7 +2450,6 @@ function isNotNewCat(){
 						showRating();
 					}, 100);
 				}else{
-					alert("jestem");
 					$("#new-category-choice").hide();
 					$("#end-panel").show();
 					setTimeout(function(){				
