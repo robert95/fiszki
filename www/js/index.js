@@ -337,10 +337,12 @@ function startApp(){
 			//getMyLang();
 			$("#myLang").val(lang);
 			$("body").addClass('lang'+lang);
-			getCatWithPos(0, 1);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
+			setTimeout(function(){
+				getCatWithPos(0, 1);
+			}, 500);
 			setTimeout(function(){
 				prepareAd();
 				gameIsBegin = true;
@@ -2213,6 +2215,7 @@ function backToSetNewCategory(){
 	}, 500);
 }
 function startChoiceNewCategory(){
+	alert("sugGetIsSetter" + sugGetIsSetter);
 	if(sugGetIsSetter){
 		$("#suggest-new-category").text(suggestedCatName);
 		$('section').hide();
@@ -2358,7 +2361,7 @@ var sugGetIsSetter = false;
 var scdCycleInSearchSub = false;
 function getCatWithPos(pos, off){
 	//alert(allCats.sort().toString());
-	alert(pos + " - " + off + " / " + allCats.length);
+	alert(pos + " - " + off + " / " + allCats.length + " / " + langJSON.lang);
 	//alert(scdCycleInSearchSub);*/
 	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
 		var cats = JSON.parse(result);
@@ -2373,6 +2376,7 @@ function getCatWithPos(pos, off){
 					var scat = scats[sc];
 					if(parseInt(scat.pos) == (parseInt(pos)+off)){
 						if(!userChoiceCat && (dayJSON.skiped.indexOf(idP + "/" + scat.id) >= 0 || learnedCat.indexOf(idP + "/" + scat.id) >= 0 || inProgressCat.indexOf(idP + "/" + scat.id) >= 0)){
+							alert("catSize: " + catSize + " - scatSize: " + scatSize + " - scdCycleInSearchSub: " + scdCycleInSearchSub);
 							if((parseInt(x)+1) == catSize && (parseInt(sc)+1) == scatSize){
 								if(scdCycleInSearchSub) {
 									isNotNewCat();
