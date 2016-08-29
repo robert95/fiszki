@@ -235,7 +235,7 @@
 				<div id="wrap-ok-no">
 					<!--<img src="img/ok.png" class="good-bad" ontouchstart="isOk();"/>-->
 					<div id="progress-circle-in-cycle" >
-						<div id="progess-btn-stan-in-cycle" class="c100 p100" onclick="isOkWrap();">
+						<div id="progess-btn-stan-in-cycle" class="c100 p100" ontouchstart="isOkWrap();">
 							<span id="progess-btn-per-in-cycle"></span>
 							<div class="slice">
 								<div class="bar"></div>
@@ -246,12 +246,12 @@
 					<!--<img src="img/no.png" class="bad-bad" id="badBTN" ontouchstart="isNo();"/>-->
 				</div>
 				<div class="note-skip-btn">
-					<div class="note-btn" onclick="showAllNote();">
+					<div class="note-btn" ontouchstart="showAllNote();">
 						<img src="img/remind.png" class="remind-img pulse-btn">
 						<p id="notebtn">Note</p>
 					</div>
 					<div class="skip-btn">
-						<p class="bad-bad" onclick="isNo();" id="badBTN" >Repeat</p>
+						<p class="bad-bad" ontouchstart="isNo();" id="badBTN" >Repeat</p>
 					</div>
 				</div>
 			</section>
@@ -442,7 +442,7 @@
 			<div id="tut-ok-no-panel">
 				<div id="tut-wrap-ok-no">
 					<div id="progress-circle-in-cycle-tut2" >
-						<div id="progess-btn-stan-in-cycle-tut2" class="c100 p100" onclick="isOkTut();">
+						<div id="progess-btn-stan-in-cycle-tut2" class="c100 p100" ontouchstart="isOkTut();">
 							<span id="progess-btn-per-in-cycle-tut2"></span>
 							<div class="slice">
 								<div class="bar"></div>
@@ -452,7 +452,7 @@
 					</div>
 				</div>
 				<div class="note-skip-btn">
-					<div class="note-btn" onclick="showAllNote();">
+					<div class="note-btn" ontouchstart="showAllNote();">
 						<img src="img/remind.png" class="remind-img pulse-btn" id="remind-tut">
 						<p id="noteInTut">Note</p>
 					</div>
@@ -469,7 +469,7 @@
 			<p class="before-start-info"><span class="l2">*ENG_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l3">Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span></p>
 			<div id="btn-next-cat">
 				<div id="progress-circle">
-					<div id="progess-btn-stan" class="c100 p0" onclick="nextCatBtn();">
+					<div id="progess-btn-stan" class="c100 p0" ontouchstart="nextCatBtn();">
 						<span id="progess-btn-perr"></span>
 						<div class="slice">
 							<div class="bar"></div>
@@ -482,10 +482,10 @@
 		<section id="end-cat" class="next-cat-left">
 			<h1><span class="l2">ENG_Gratulacje ukończyłeś powtórkę</span><span class="l3">Gratulacje ukończyłeś powtórkę</span> <span id="main-text-next-cat-end">1/5</span></h1>
 			<p id="invite-to-ads">Zapraszamy na krótką reklamę</p>
-			<p class="before-start-info"><span class="l2">*ENG_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a onclick="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a onclick="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
+			<p class="before-start-info"><span class="l2">*ENG_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
 			<div id="btn-next-cat-end">
 				<div id="progress-circle-end">
-					<div id="progess-btn-stan-end" class="c100 p0" onclick="nextPack();">
+					<div id="progess-btn-stan-end" class="c100 p0" ontouchstart="nextPack();">
 						<span id="progess-btn-perr-end"></span>
 						<div class="slice">
 							<div class="bar"></div>
@@ -503,7 +503,7 @@
 			<p class="goToReverse"><span class="l2">ENG_Przejdź do powtórek</span><span class="l3">Przejdź do powtórek</span></p>
 			<div id="start-day-ok-no-panel">
 				<div id="start-day-wrap-ok-no">
-					<img src="img/okNoP.png" class="good-bad" onclick="startLesson();"/>
+					<img src="img/okNoP.png" class="good-bad" ontouchstart="startLesson();"/>
 					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
 				</div>
 			</div>			
@@ -512,10 +512,10 @@
 			<h1><span class="l2">ENG_Gratulujemy<br>ukończenia kursu cz.1</span><span class="l3">Gratulujemy<br>ukończenia kursu cz.1</span></h1>
 			<p class="you-start-learned"><span class="l2">ENG_Spedziłeś z nami:</span><span class="l3">Spedziłeś z nami:</span> <span class="countKMLearned"></span> h <span class="countMinLearned"></span> min / 60h</p>
 			<p class="you-start-learned2"><span class="l2">ENG_Nauczyłeś się:</span><span class="l3">Nauczyłeś się:</span> <span class="allWords"></span>/3000 zdań</p>
-			<p class="you-start-learned3"><span class="l2">ENG_Aby pobrać cz.2 <br><a onclick="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">Aby pobrać cz.2 kursu <br><a onclick="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
+			<p class="you-start-learned3"><span class="l2">ENG_Aby pobrać cz.2 <br><a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">Aby pobrać cz.2 kursu <br><a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
 			<div id="start-day-ok-no-panel-end-course">
 				<div id="start-day-wrap-ok-no-end-course">
-					<img src="img/off.png" class="good-bad off-btn" onclick="navigator.app.exitApp();"/>
+					<img src="img/off.png" class="good-bad off-btn" ontouchstart="navigator.app.exitApp();"/>
 					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
 				</div>
 			</div>			
@@ -524,7 +524,7 @@
 			<h1><span class="l2">ENG_GRATULUJEMY!</span><span class="l3">GRATULUJEMY!</span><br><br><br><span class="l2">ENG_Ukończyłeś lekcję</span><span class="l3">Ukończyłeś lekcję</span> <span id="end-nr-lesson"></span></h1>
 			<div id="end-day-ok-no-panel">
 				<div id="end-day-wrap-ok-no">
-					<img src="img/off.png" class="good-bad off-btn" onclick="navigator.app.exitApp();"/>
+					<img src="img/off.png" class="good-bad off-btn" ontouchstart="navigator.app.exitApp();"/>
 					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
 				</div>
 			</div>		
@@ -542,7 +542,7 @@
 				<div id="new-cat-wrap-ok-no">
 					<!--<img src="img/okNoP.png" class="good-bad" onclick="setSuggestedCatAsNew();"/>-->
 					<div id="progress-circle-in-cycle-ncat" >
-						<div id="progess-btn-stan-in-cycle-ncat" class="c100 p0" onclick="setSuggestedCatAsNew();">
+						<div id="progess-btn-stan-in-cycle-ncat" class="c100 p0" ontouchstart="setSuggestedCatAsNew();">
 							<span id="progess-btn-per-in-cycle-ncat"></span>
 							<div class="slice">
 								<div class="bar"></div>
@@ -552,20 +552,20 @@
 					</div>
 				</div>	
 				<div class="note-skip-btn">
-					<div class="note-btn cat-btn-skip" onclick="getNextSugCat();">
+					<div class="note-btn cat-btn-skip" ontouchstart="getNextSugCat();">
 						<p>Skip</p>
 					</div>
-					<div class="skip-btn" onclick="startSetNewCategory();">
+					<div class="skip-btn" ontouchstart="startSetNewCategory();">
 						<p>Manual</p>
 					</div>
 				</div>	
 			</div>	
 		</section>
 		<section id="statistic" class="goLeft">
-			<img src="img/back2.png" onclick="hideStatistic();">
+			<img src="img/back2.png" ontouchstart="hideStatistic();">
 			<h3><span class="l2">ENG_Statystyki:</span><span class="l3">Statystyki:</span></h3>
 			<p class="you-start-learned"><span class="l2">ENG_Uczysz się z nami</span><span class="l3">Uczysz się z nami</span> <span class="allWords"></span>/3000 zdań</p>
-			<p class="you-start-learned3"><span class="l2">ENG_Przeszedłeś już z nami</span><span class="l3">Przeszedłeś już z nami</span> <span class="countKMLearned"></span> km</p>
+			<p class="you-start-learned3"><span class="l2">ENG_Spedziłeś z nami:</span><span class="l3">Spedziłeś z nami:</span> <span class="countKMLearned"></span> h <span class="countMinLearned"></span> min / 60h</p>
 			<h3><span class="l2">ENG_Kategorie w trakcie nauki:</span><span class="l3">Kategorie w trakcie nauki:</span></h3>
 			<div class="inProgressCatList"></div>
 		</section>

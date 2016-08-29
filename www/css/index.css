@@ -93,6 +93,7 @@ html{
 	-moz-user-select: -moz-none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
+	overflow-x: hidden;
 }
 body{ 
 	font-family: 'Ubuntu' !important;
@@ -101,6 +102,7 @@ body{
 	width: 100%;
 	margin: 0;
 	-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+	overflow-x: hidden;
 }
 .fullHEIGHT{
 	height: 100% !important;
@@ -307,6 +309,9 @@ h2{
 }
 section{
 	vertical-align: middle;
+}
+#learn-container, #learn-panel{
+	overflow: hidden;
 }
 #choose-your-l{
 	display: block;
@@ -1283,7 +1288,14 @@ section{
 	h3 {
 		font-size: 44px;
 		font-family: 'Ubuntu-Bold'; 
-		padding-top: 86px;
+		padding-top: 15%;
+		margin-bottom: 13%;
+	}
+	#startDay h1, #start-next-cat h1, #end-cat h1, #new-category-choice h1{
+		padding-top: 12%;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.learnMethod .text {
 		font-size: 40px !important;
@@ -1370,6 +1382,13 @@ section{
 		margin: 35px auto;
 		margin-bottom: 50px;
 	} 
+	#wrap-ok-no .c100{
+		transform: scale(1.6);
+		-webkit-transform: scale(1.6);
+		margin: 35px auto;
+		margin-bottom: 50px;
+		margin-right: 20% !important;
+	} 
 	#start-day-wrap-ok-no-end-course img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img {
 		transform: scale(1.6);
 		-webkit-transform: scale(1.6);
@@ -1384,5 +1403,8 @@ section{
 	}
 	#first-use-loading-page #progress-circle {
 		padding-top: 15px;
+	}
+	.confirm-swipe table{
+		/*top: 115px !important;*/
 	}
 }
