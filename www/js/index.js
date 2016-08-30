@@ -294,7 +294,7 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": ["1/1", "1/2", "1/3", "1/5", "1/8", "1/6"]}');//
+var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"]}');//
 var toLearnJSON = [];//JSON.parse('[{"subid":4,"catid":1,"start":"2"},{"subid":7,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
@@ -1037,8 +1037,11 @@ var act_text = "";
 
 function setWordToMethod(idM){
 	$(".learnMethod").hide();
-	if(idM == 6 || (idM == 1 && !thirdCycle)) $("#badBTN").show();
-	else $("#badBTN").hide();
+	$(".bad-bad").hide();
+	setTimeout(function(){
+		if(idM == 6 || (idM == 1 && !thirdCycle)) $(".bad-bad").show();
+		else $(".bad-bad").hide();
+	}, 800);
 	if(act_text != "") $("#notebtn").addClass('pulse-btn');
 	else $("#notebtn").removeClass('pulse-btn');
 	switch(idM) {
@@ -2189,13 +2192,15 @@ function startSetNewCategory(){
 			firstGenerationCat = false;
 			activateSearch();
 		}
-		$('section').hide();			
-		$("#choose-cat").show();
+		$("#new-category-choice").hide();			
+		setTimeout(function(){		
+			$("#choose-cat").show();
+		}, 50);
 		setTimeout(function(){		
 			$("#choose-cat").removeClass('next-cat-right');
-		}, 50);
+		}, 100);
 		$("#cats").show();
-	}, 500);
+	}, 700);
 }
 function backToSetNewCategory(){
 	$("#choose-cat").addClass('next-cat-right');

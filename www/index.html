@@ -176,6 +176,9 @@
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse" id="confirm-correct-1"></p></td></tr>
 					</table>
+					<div class="skip-btn only-tablet">
+						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
+					</div>
 				</section>
 				<section id="word-lern-2" class="learnMethod confirm-swipe">
 					<h3><span class="l2">ENG_Powtórz </span><span class="l3">Powtórz </span><span class="wordNB"></span></h3>
@@ -187,6 +190,9 @@
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse" id="confirm-correct-2"></p></td></tr>
 					</table>
+					<div class="skip-btn only-tablet">
+						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
+					</div>
 				</section>
 				<section id="word-lern-3" class="learnMethod confirm-swipe">
 					<h3><span class="l2">ENG_ZADAJ PYTANIE DO ZDANIA </span><span class="l3">ZADAJ PYTANIE DO ZDANIA </span><span class="wordNB"></span></h3>
@@ -197,6 +203,9 @@
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse"></p></td></tr>
 					</table>
+					<div class="skip-btn only-tablet">
+						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
+					</div>
 				</section>
 				<section id="word-lern-4" class="learnMethod confirm-swipe">
 					<h3><span class="l2">ENG_Powtórz </span><span class="l3">Powtórz </span><span class="wordNB"></span></h3>
@@ -208,6 +217,9 @@
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse" id="confirm-correct-4"></p></td></tr>
 					</table>
+					<div class="skip-btn only-tablet">
+						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
+					</div>
 				</section>
 				<section id="word-lern-5" class="learnMethod confirm-swipe flipper">
 					<h3><span class="l2">ENG_Powtórz poprzednie zdanie </span><span class="l3">Powtórz poprzednie zdanie </span><span class="wordNB"></span></h3>
@@ -218,6 +230,9 @@
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse"></p></td></tr>
 					</table>
+					<div class="skip-btn only-tablet">
+						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
+					</div>
 				</section>
 				<section id="word-lern-6" class="learnMethod confirm-swipe">
 					<h3><span class="l2">ENG_Sprawdź </span><span class="l3">Sprawdź </span><span class="wordNB"></span></h3>
@@ -229,6 +244,9 @@
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr ontouchend="tellMeNow(this);"><td colspan="3"><p class="text text-reverse" id="confirm-correct-6"></p></td></tr>
 					</table>
+					<div class="skip-btn only-tablet">
+						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
+					</div>
 				</section>
 			</div>
 			<section id="ok-no-panel">
@@ -250,7 +268,7 @@
 						<img src="img/remind.png" class="remind-img pulse-btn">
 						<p id="notebtn">Note</p>
 					</div>
-					<div class="skip-btn">
+					<div class="skip-btn only-mobile">
 						<p class="bad-bad" ontouchstart="isNo();" id="badBTN" >Repeat</p>
 					</div>
 				</div>
@@ -759,6 +777,7 @@
 			}
 			
 			function isOk(){
+				$(".bad-bad").hide();
 				setAntyNaparzankaToTrue();
 				var where = whereGoNow();
 				if(where == 0){
@@ -774,6 +793,7 @@
 				}
 			}
 			function isNo(){
+				$(".bad-bad").hide();
 				setWaintingLearned();
 				var where = whereGoNow();
 				if((where == 0 || getsecondCycle() || getfirstCycle()) && !getNoFlipIfWrong()){

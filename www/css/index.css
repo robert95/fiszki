@@ -188,9 +188,9 @@ body{
 	font-size: 20px;
 	cursor: pointer;
 	position: relative;  
-	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.82) 2%, rgba(255,255,255,0) 40%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 2%,rgba(255,255,255,0) 40%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 2%,rgba(255,255,255,0) 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.62) 2%, rgba(255,255,255,0) 40%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.62) 2%,rgba(255,255,255,0) 40%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.62) 2%,rgba(255,255,255,0) 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
     color: white !important;
 	border-bottom: 1px solid white;
@@ -200,9 +200,9 @@ body{
 }
 .text-reverse{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+98,ffffff+100&0+89,1+100 */
-	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 60%, rgba(255,255,255,0.82) 98%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 60%,rgba(255,255,255,0.82) 98%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(255,255,255,0) 60%,rgba(255,255,255,0.82) 98%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 60%, rgba(255,255,255,0.62) 98%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 60%,rgba(255,255,255,0.62) 98%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,0) 60%,rgba(255,255,255,0.62) 98%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	border-top: 1px solid white;
 	font-size: 30px !important;
@@ -460,24 +460,24 @@ textarea:focus, textarea:hover, textarea:active{
     text-align: center;
 	display: none;
 	
-	/*transition: 0.8s;
+	/*transition: 0.6s;
 	transform-origin: 100% 40%; /* half of height */
-	/*-webkit-transition: 0.8s;
+	/*-webkit-transition: 0.6s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 }
 .tut-method{
 	position: relative;
-	transition: 0.8s;
+	transition: 0.6s;
 	transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: 0.8s;
+	-webkit-transition: 0.6s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: all 0.8s ease;
-	-moz-transition: all 0.8s ease;
-	-o-transition: all 0.8s ease;
-	-ms-transition: all 0.8s ease;
-	transition: all 0.8s ease;
+	-webkit-transition: all 0.6s linear;
+	-moz-transition: all 0.6s linear;
+	-o-transition: all 0.6s linear;
+	-ms-transition: all 0.6s linear;
+	transition: all 0.6s linear;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
    left: 0;
@@ -486,15 +486,15 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 90%;
 	margin-left: 5%;
 	position: relative;
-	transition: 0.8s;
+	transition: 0.6s;
 	transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: 0.8s;
+	-webkit-transition: 0.6s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: all 0.8s ease;
-	-moz-transition: all 0.8s ease;
-	-o-transition: all 0.8s ease;
-	-ms-transition: all 0.8s ease;
-	transition: all 0.8s ease;
+	-webkit-transition: all 0.6s linear;
+	-moz-transition: all 0.6s linear;
+	-o-transition: all 0.6s linear;
+	-ms-transition: all 0.6s linear;
+	transition: all 0.6s linear;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
    /* padding-bottom: 60%;/*150px;*/
@@ -507,9 +507,9 @@ textarea:focus, textarea:hover, textarea:active{
    /* background: rgba(47, 72, 87, 0.5);
 	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2), 0 24px 80px 0 rgba(0, 0, 0, 0.19);*/
 	
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.82) 1%, rgba(255,255,255,0) 8%);
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 1%,rgba(255,255,255,0) 8%);
-	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.82) 1%,rgba(255,255,255,0) 8%);
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.62) 1%, rgba(255,255,255,0) 8%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.62) 1%,rgba(255,255,255,0) 8%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.62) 1%,rgba(255,255,255,0) 8%);
 	color: white !important;
 	border-bottom: 1px solid white;
 	border-radius: 25px;
@@ -676,7 +676,7 @@ textarea:focus, textarea:hover, textarea:active{
 	top: 5px;
 	right: 5px;
 }
-#badBTN{
+#badBTN, .bad-bad{
 	display: none;
 }
 .list-of-subcat{ /*DO USUNIĘCIA!!!!*/
@@ -711,26 +711,27 @@ textarea:focus, textarea:hover, textarea:active{
 #start-next-cat, #end-cat, #end-course, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay{
 	display: none;
 	position: relative;
-	transition: 1s;
-	transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: 1s;
-	-webkit-transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: transform 1s ease;
-	-moz-transition: transform 1s ease;
-	-o-transition: transform 1s ease;
-	-ms-transition: transform 1s ease;
-	transition: transform 1s ease;
+	transition: 0.6s;
+	/* transform-origin: 100% 40%; half of height */
+	-webkit-transition: 0.6s;
+	/*-webkit-transform-origin: 100% 40%; /* half of height */
+	-webkit-transition: transform 0.6s linear;
+	-moz-transition: transform 0.6s linear;
+	-o-transition: transform 0.6s linear;
+	-ms-transition: transform 0.6s linear;
+	transition: transform 0.6s linear;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
-	left: 0;
+	-webkit-perspective: 0px; 
+    perspective: 0px;
 }
 #new-category-choice{
 	height: 100%;
 	overflow: hidden;
 }
 .next-cat-left{
-   transform: translateX(130%) !important;
-   -webkit-transform: translateX(130%) !important;
+   transform: translateX(-130%) !important;
+   -webkit-transform: translateX(-130%) !important;
 }
 .next-cat-right{
     transform: translateX(-130%) !important;
@@ -891,7 +892,7 @@ section{
 	border-radius: 25px;
 	border-top: 1px solid white;*/
 }
-.note-skip-btn  .skip-btn-hover{
+.skip-btn-hover{
 	/*background: transparent url("../img/skip-btn-h.png") repeat scroll 0% 0% !important;
 	background-size: 100% 100% !important;
 	border-bottom: 1px solid black !important;
@@ -1002,10 +1003,10 @@ section{
 	position: fixed;
 	width: 100%;
 	transform-origin: 100% 40% 0px;
-	-webkit-transition: 0.8s;
+	-webkit-transition: 0.6s;
 	-webkit-transform-origin: 100% 40%;
-	-webkit-transition: all 0.8s ease;
-	transition: all 0.8s ease 0s;
+	-webkit-transition: all 0.6s linear;
+	transition: all 0.6s linear 0s;
 	transform: translate3d(0, -700px, 0);
 	-webkit-transform: translate3d(0, -700px, 0);
 	background: rgb(63, 140, 183) none repeat scroll 0% 0%;
@@ -1085,11 +1086,11 @@ section{
 	top: 0;
 	left: 0;
 	z-index: 2222222;	
-	-webkit-transition: transform 0.8s ease;
-	-moz-transition: transform 0.8s ease;
-	-o-transition: transform 0.8s ease;
-	-ms-transition: transform 0.8s ease;
-	transition: transform 0.8s ease;
+	-webkit-transition: transform 0.6s linear;
+	-moz-transition: transform 0.6s linear;
+	-o-transition: transform 0.6s linear;
+	-ms-transition: transform 0.6s linear;
+	transition: transform 0.6s linear;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	left: 0;
@@ -1117,7 +1118,7 @@ section{
 	background-color: rgba(0, 0, 0, 0) !important;
 	margin-top: 10px !important;
 	margin: 10px 4px 4px 0 !important;
-	border: 6px solid #3f8cb7 !important;
+	border: 3px solid #3f8cb7 !important;
 }
 #count-word-to-learn .c100 .slice{
 	width: 44px !important;
@@ -1262,7 +1263,24 @@ section{
 #tutorial .learnMethod .text{
 	min-height: 250px !important;
 }
+.only-tablet{
+	display: none !important;
+}
 @media (min-width : 500px) {
+	.only-mobile{
+		display: none !important;
+	}
+	.only-tablet {
+		display: inherit !important;
+		z-index: 100;
+		position: relative;
+	}
+	.only-tablet .bad-bad{
+		display: block;
+		text-align: right;
+		width: 90%;
+		z-index: 100;
+	}
 	#first-use-loading-page {
 		font-size: 44px;
 		font-family: 'Ubuntu-Bold'; 
@@ -1288,11 +1306,13 @@ section{
 	h3 {
 		font-size: 44px;
 		font-family: 'Ubuntu-Bold'; 
-		padding-top: 15%;
-		margin-bottom: 13%;
+		padding-top: 17%;
+		margin-bottom: 12%;
+		width: 90%;
+		margin-left: 10%;
 	}
 	#startDay h1, #start-next-cat h1, #end-cat h1, #new-category-choice h1{
-		padding-top: 12%;
+		padding-top: 14%;
 		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
@@ -1371,10 +1391,10 @@ section{
 		margin-left: 15px;
 	}
 	#count-word-to-learn-tut, #count-word-to-learn{
-		transform: scale(1.6);
-		-webkit-transform: scale(1.6);
-		margin-top: 26px;
-		margin-left: 36px;
+		transform: scale(4.2);
+		-webkit-transform: scale(4.2);
+		margin-top: 60px;
+		margin-left: 90px;
 	}
 	#progress-circle-end .c100, #progress-circle .c100, #wrap-ok-no .c100, #tut-wrap-ok-no .c100, #start-day-wrap-ok-no .c100, #start-day-wrap-ok-no-end-course .c100, #end-day-wrap-ok-no .c100, #new-cat-wrap-ok-no .c100{
 		transform: scale(1.6);
@@ -1387,7 +1407,7 @@ section{
 		-webkit-transform: scale(1.6);
 		margin: 35px auto;
 		margin-bottom: 50px;
-		margin-right: 20% !important;
+		margin-right: 60px !important;
 	} 
 	#start-day-wrap-ok-no-end-course img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img {
 		transform: scale(1.6);
