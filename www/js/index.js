@@ -368,7 +368,7 @@ function startApp(){
 				gameIsBegin = true;
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
-				showRating();
+				//showRating();
 			}, 1000);
 		}
 	}, 1500);
@@ -2216,10 +2216,10 @@ function startSetNewCategory(){
 		$("#new-category-choice").hide();			
 		setTimeout(function(){		
 			$("#choose-cat").show();
-		}, 50);
+		}, 75);
 		setTimeout(function(){		
 			$("#choose-cat").removeClass('next-cat-right');
-		}, 100);
+		}, 150);
 		$("#cats").show();
 	}, 700);
 }
