@@ -486,15 +486,15 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 90%;
 	margin-left: 5%;
 	position: relative;
-	transition: 0.6s;
+	transition: 0.5s;
 	transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: 0.6s;
+	-webkit-transition: 0.5s;
 	-webkit-transform-origin: 100% 40%; /* half of height */
-	-webkit-transition: all 0.6s linear;
-	-moz-transition: all 0.6s linear;
-	-o-transition: all 0.6s linear;
-	-ms-transition: all 0.6s linear;
-	transition: all 0.6s linear;
+	-webkit-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+	-ms-transition: all 0.5s linear;
+	transition: all 0.5s linear;
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
    /* padding-bottom: 60%;/*150px;*/
@@ -1066,9 +1066,11 @@ section{
     font-size: 22px;
     color: white;
     position: absolute;
-    margin-top: 0px;
-	margin-left: 10px;
+    margin-top: 9px;
+	margin-left: 22px;
 	text-align: center;
+	transform: scale(1.6);
+	-webkit-transform: scale(1.6);
 }
 #count-word-to-learn-tut{
     display: none;
@@ -1118,20 +1120,28 @@ section{
 	background-color: rgba(0, 0, 0, 0) !important;
 	margin-top: 10px !important;
 	margin: 10px 4px 4px 0 !important;
-	border: 3px solid #3f8cb7 !important;
+	/*border: 3px solid #3f8cb7 !important;*/
+	border: 2px solid #3f8cb7 !important;
 }
 #count-word-to-learn .c100 .slice{
-	width: 44px !important;
+	/*width: 44px !important;
 	height: 44px !important;
 	clip: rect(0em, 42px, 42px, 21px) !important;
 	left: -3px;
-    top: -3px;
+    top: -3px;*/
+	width: 41px !important;
+	height: 41px !important;
+	clip: rect(0em, 42px, 42px, 21px) !important;
+	left: -2px;
+    top: -2px;
 }
 #count-word-to-learn .pie, #count-word-to-learn .c100 .bar, #count-word-to-learn .c100.p51 .fill,#count-word-to-learn .c100.p52 .fill,#count-word-to-learn .c100.p53 .fill,#count-word-to-learn .c100.p54 .fill,#count-word-to-learn .c100.p55 .fill,#count-word-to-learn .c100.p56 .fill,#count-word-to-learn .c100.p57 .fill,#count-word-to-learn .c100.p58 .fill,#count-word-to-learn .c100.p59 .fill,#count-word-to-learn .c100.p60 .fill,#count-word-to-learn .c100.p61 .fill,#count-word-to-learn .c100.p62 .fill,#count-word-to-learn .c100.p63 .fill,#count-word-to-learn .c100.p64 .fill,#count-word-to-learn .c100.p65 .fill,#count-word-to-learn .c100.p66 .fill,#count-word-to-learn .c100.p67 .fill,#count-word-to-learn .c100.p68 .fill,#count-word-to-learn .c100.p69 .fill,#count-word-to-learn .c100.p70 .fill,#count-word-to-learn .c100.p71 .fill,#count-word-to-learn .c100.p72 .fill,#count-word-to-learn .c100.p73 .fill,#count-word-to-learn .c100.p74 .fill,#count-word-to-learn .c100.p75 .fill,#count-word-to-learn .c100.p76 .fill,#count-word-to-learn .c100.p77 .fill,#count-word-to-learn .c100.p78 .fill,#count-word-to-learn .c100.p79 .fill,#count-word-to-learn .c100.p80 .fill,#count-word-to-learn .c100.p81 .fill,#count-word-to-learn .c100.p82 .fill,#count-word-to-learn .c100.p83 .fill,#count-word-to-learn .c100.p84 .fill,#count-word-to-learn .c100.p85 .fill,#count-word-to-learn .c100.p86 .fill,#count-word-to-learn .c100.p87 .fill,#count-word-to-learn .c100.p88 .fill,#count-word-to-learn .c100.p89 .fill,#count-word-to-learn .c100.p90 .fill,#count-word-to-learn .c100.p91 .fill,#count-word-to-learn .c100.p92 .fill,#count-word-to-learn .c100.p93 .fill,#count-word-to-learn .c100.p94 .fill,#count-word-to-learn .c100.p95 .fill,#count-word-to-learn .c100.p96 .fill,#count-word-to-learn .c100.p97 .fill,#count-word-to-learn .c100.p98 .fill,#count-word-to-learn .c100.p99 .fill,#count-word-to-learn .c100.p100 .fill{
 	width: 36px !important;
 	height: 36px !important;
-	clip: rect(0em, 21px, 42px, 0em) !important;
-	border: 3px solid #6dd0f7 !important;
+	/*clip: rect(0em, 21px, 42px, 0em) !important;
+	border: 3px solid #6dd0f7 !important;*/
+	clip: rect(0em, 20px, 43px, 0em) !important;
+	border: 2px solid #6dd0f7 !important;
 }
 #count-word-to-learn .bar {
     border: 3px solid #6dd0f7 !important;
@@ -1266,17 +1276,32 @@ section{
 .only-tablet{
 	display: none !important;
 }
+#bigger-ok-filed{
+	display: none !important;
+}
 @media (min-width : 500px) {
+	#bigger-ok-filed{
+		height: 252px;
+		width: 200px;
+		position: absolute;
+		bottom: 0px;
+		margin-right: 20%;
+		right: 0px;
+		z-index: 101;
+		display: block !important;
+	}
 	.only-mobile{
-		display: none !important;
+	/*	display: none !important;*/
 	}
 	.only-tablet {
-		display: inherit !important;
+	/*	display: inherit !important;*/
+		display: none !important;
 		z-index: 100;
 		position: relative;
 	}
 	.only-tablet .bad-bad{
-		display: block;
+	/*	display: block;*/
+		display: none !important;
 		text-align: right;
 		width: 90%;
 		z-index: 100;
@@ -1391,31 +1416,30 @@ section{
 		margin-left: 15px;
 	}
 	#count-word-to-learn-tut, #count-word-to-learn{
-		transform: scale(4.2);
-		-webkit-transform: scale(4.2);
-		margin-top: 60px;
-		margin-left: 90px;
+		transform: scale(3.5);
+		-webkit-transform: scale(3.5);
+		margin-top: 54px;
+		margin-left: 80px;
 	}
 	#progress-circle-end .c100, #progress-circle .c100, #wrap-ok-no .c100, #tut-wrap-ok-no .c100, #start-day-wrap-ok-no .c100, #start-day-wrap-ok-no-end-course .c100, #end-day-wrap-ok-no .c100, #new-cat-wrap-ok-no .c100{
-		transform: scale(1.6);
-		-webkit-transform: scale(1.6);
+		transform: scale(1.8);
+		-webkit-transform: scale(1.8);
 		margin: 35px auto;
-		margin-bottom: 50px;
+		margin-bottom: 68px;
 	} 
 	#wrap-ok-no .c100{
-		transform: scale(1.6);
-		-webkit-transform: scale(1.6);
+		transform: scale(1.8);
+		-webkit-transform: scale(1.8);
 		margin: 35px auto;
-		margin-bottom: 50px;
-		margin-right: 60px !important;
+		margin-bottom: 68px;
 	} 
 	#start-day-wrap-ok-no-end-course img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img {
-		transform: scale(1.6);
-		-webkit-transform: scale(1.6);
+		transform: scale(1.8);
+		-webkit-transform: scale(1.8);
 		margin-top: 35px;
 	}
 	#tut-ok-no-panel, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel {
-		padding-bottom: 50px !important;
+		padding-bottom: 66px !important;
 	}
 	#new-cat-ok-no-panel {
 		z-index: 2;

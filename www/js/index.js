@@ -36,8 +36,12 @@ var app = {
     onDeviceReady: function() {
 		//getLangList();
 		if(!checkConnection()){
-			alert("Połącz się z Internetem aby korzystać z aplikacji!");
-			navigator.app.exitApp();
+			navigator.notification.confirm(
+				"Połącz się z Internetem aby korzystać z aplikacji lub pobierz wersję premium, która działą off-line:",
+				onNoInternetConfirm,
+				"Brak połączenia z Internetem!",
+				"Pobierz premium, Anuluj"
+			);
 		}else{
 			startApp();
 		}
@@ -53,12 +57,29 @@ var app = {
 			prepareAd();
 		});
 		
+	/*	document.addEventListener("pause", function() {
+			navigator.notification.confirm(
+				"Jeżeli zamkniesz teraz aplikacje Twój dzisiejszy postęp nie zostanie zapisany!",
+				onConfirm,
+				"Uwaga!",
+				"Anuluj, Wyjście"
+			);
+		});*/
+		
 		AppRate.preferences = {
 		  displayAppName: 'SpeakUp',
 		  storeAppURL: {
 			android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
 		  },
-		  useLanguage: 'pl'
+		  useLanguage: 'pl',
+		  callbacks: {
+			onButtonClicked: function(buttonIndex){
+				alert("onButtonClicked -> " + buttonIndex);
+				if(buttonIndex == 3){
+					setRatingToTrue();
+				}
+			}
+		  }
 		};
 		
 		document.addEventListener("backbutton", function (e) {
@@ -294,7 +315,7 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"]}');//
+var dayJSON = false;//JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false}');//
 var toLearnJSON = [];//JSON.parse('[{"subid":4,"catid":1,"start":"2"},{"subid":7,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
@@ -348,6 +369,7 @@ function startApp(){
 				gameIsBegin = true;
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
+				showRating();
 			}, 1000);
 		}
 	}, 1500);
@@ -1042,8 +1064,8 @@ function setWordToMethod(idM){
 		if(idM == 6 || (idM == 1 && !thirdCycle)) $(".bad-bad").show();
 		else $(".bad-bad").hide();
 	}, 800);
-	if(act_text != "") $("#notebtn").addClass('pulse-btn');
-	else $("#notebtn").removeClass('pulse-btn');
+	if(act_text != "") $(".remind-img").show();
+	else $(".remind-img").hide();
 	switch(idM) {
 		case 1:
 			$("#confirm-correct-1").html("");
@@ -2616,7 +2638,16 @@ function checkConnection() {
 	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
 }
 function showRating() {
-	AppRate.promptForRating();
+	var day = parseInt($("#nrDayFiled").text());
+	if(day%5 == 0 && day > 0 && dayJSON.rating == false){
+		AppRate.promptForRating();
+	}
+}
+function setRatingToTrue() {
+	dayJSON.rating = true;
+	datesJSON5 = dayJSON;
+	srcSave5 = path() + "day.json";
+	saveFile5();
 }
 
 /*function iinit() {

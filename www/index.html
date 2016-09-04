@@ -41,8 +41,9 @@
 			<ul>
 				<li id="m1"><span class="l2">ENG_ZAPISZ POSTĘP DO PLIKU</span><span class="l3">ZAPISZ POSTĘP DO PLIKU</span></li>
 				<li id="m2"><span class="l2">ENG_WCZYTAJ POSTĘP Z PLIKU</span><span class="l3">WCZYTAJ POSTĘP Z PLIKU</span></li>
-				<li id="m3"><span class="l2">ENG_TUTORIAL</span><span class="l3">TUTORIAL</span></li>
+				<!--<li id="m3"><span class="l2">ENG_TUTORIAL</span><span class="l3">TUTORIAL</span></li>-->
 				<li id="m4"><span class="l2">ENG_STATYSTYKI</span><span class="l3">STATYSTYKI</span></li>
+				<li id="m5"><span class="l2">ENG_WYJŚCIE</span><span class="l3">WYJŚCIE</span></li>
 				<li id="mE">^</li>
 			</ul>
 		</div>
@@ -250,6 +251,8 @@
 				</section>
 			</div>
 			<section id="ok-no-panel">
+				<div id="bigger-ok-filed" ontouchstart="isOkBiggerField();">
+				</div>
 				<div id="wrap-ok-no">
 					<!--<img src="img/ok.png" class="good-bad" ontouchstart="isOk();"/>-->
 					<div id="progress-circle-in-cycle" >
@@ -968,6 +971,26 @@
 					$("#statistic").removeClass('goLeft');
 				}, 300);
 			});
+			$("#m5").click(function(){
+				navigator.notification.confirm(
+					"Jeżeli zamkniesz teraz aplikacje Twój dzisiejszy postęp nie zostanie zapisany!",
+					onConfirm,
+					"Uwaga!",
+					"Anuluj, Wyjście"
+				);
+			});
+			function onConfirm(button) {
+				if(button == 2){
+					navigator.app.exitApp();
+				}
+			}
+			function onNoInternetConfirm(button) {
+				if(button == 2){
+					navigator.app.exitApp();
+				}else if(button == 1){
+					document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';
+				}
+			}
 		</script>
 		<script>
 			$( "#readP" ).change(function() {
@@ -1030,6 +1053,12 @@
 						}
 					});
 				});
+			}
+			
+			function isOkBiggerField(){
+				isOkWrap();
+				$("#progess-btn-stan-in-cycle").addClass('hoverBTN');
+				setTimeout(function(){$("#progess-btn-stan-in-cycle").removeClass('hoverBTN');}, 150);
 			}
 		</script>
     </body>
