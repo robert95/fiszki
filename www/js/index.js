@@ -74,8 +74,7 @@ var app = {
 		  useLanguage: 'pl',
 		  callbacks: {
 			onButtonClicked: function(buttonIndex){
-				alert("onButtonClicked -> " + buttonIndex);
-				if(buttonIndex == 3){
+				if(buttonIndex == 1){
 					setRatingToTrue();
 				}
 			}
