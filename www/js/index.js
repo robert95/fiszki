@@ -37,7 +37,7 @@ var app = {
 		//getLangList();
 		if(!checkConnection()){
 			navigator.notification.confirm(
-				"Połącz się z Internetem aby korzystać z aplikacji lub pobierz wersję premium, która działą off-line:",
+				"Połącz się z Internetem aby korzystać z aplikacji lub pobierz wersję premium, która działa off-line.",
 				onNoInternetConfirm,
 				"Brak połączenia z Internetem!",
 				"Wyjscie"
