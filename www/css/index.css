@@ -677,7 +677,7 @@ textarea:focus, textarea:hover, textarea:active{
 	right: 5px;
 }
 #badBTN, .bad-bad{
-	display: none;
+	/*display: none;*/
 }
 .list-of-subcat{ /*DO USUNIĘCIA!!!!*/
 	display: block;
@@ -774,7 +774,7 @@ textarea:focus, textarea:hover, textarea:active{
 }
 .c100{
 	float: none;
-	margin: 20px auto;
+	margin: 24px auto;
 	background-color: rgba(0, 0, 0, 0);
 	border: 4px solid #3f8cb7;    
 	z-index: 10;
@@ -1450,5 +1450,8 @@ section{
 	}
 	.confirm-swipe table{
 		/*top: 115px !important;*/
+	}
+	.remind-img {	
+		top: -57px;
 	}
 }

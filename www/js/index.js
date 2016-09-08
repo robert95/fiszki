@@ -40,7 +40,7 @@ var app = {
 				"Połącz się z Internetem aby korzystać z aplikacji lub pobierz wersję premium, która działą off-line:",
 				onNoInternetConfirm,
 				"Brak połączenia z Internetem!",
-				"Pobierz premium, Anuluj"
+				"Wyjscie"
 			);
 		}else{
 			startApp();
@@ -314,8 +314,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":4,"catid":1,"start":"2"},{"subid":7,"catid":1,"start":"3"}]');//
+var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":4,"catid":1,"start":"2"},{"subid":9,"catid":1,"start":"3"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -1058,10 +1058,10 @@ var act_text = "";
 
 function setWordToMethod(idM){
 	$(".learnMethod").hide();
-	$(".bad-bad").hide();
+	$(".bad-bad").removeClass('activ');
 	setTimeout(function(){
-		if(idM == 6 || (idM == 1 && !thirdCycle)) $(".bad-bad").show();
-		else $(".bad-bad").hide();
+		if(idM == 6 || (idM == 1 && !thirdCycle)) $(".bad-bad").addClass('activ');
+		else $(".bad-bad").removeClass('activ');
 	}, 800);
 	if(act_text != "") $(".remind-img").show();
 	else $(".remind-img").hide();
@@ -2112,11 +2112,12 @@ function endLearn(){
 		return allEndedCats.indexOf(item) == pos;
 	});
 	
+	$(".allWords").text(dayJSON.words); 
+	$(".countKMLearned").text( Math.floor( (dayJSON.km + 1)*minCat / 60) );
+	$(".countMinLearned").text( Math.floor( (dayJSON.km + 1)*minCat % 60) );
 	if(allCats.sort().toString() == uniqueallEndedCats.sort().toString()  && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
 		setTimeout(function(){
 			//showAd();
-			$(".countKMLearned").text( Math.floor( (dayJSON.km + 1)*minCat / 60) );
-			$(".countMinLearned").text( Math.floor( (dayJSON.km + 1)*minCat % 60) );
 			$("#learn-container").hide();
 			$("#end-course").show();
 			setTimeout(function(){				
@@ -2142,6 +2143,7 @@ function endLearn(){
 var stepTut = 0;
 function startTut(){
 	stepTut = 0;
+	$("#choose-lang").hide();
 	$("#tutorial").show();
 	setTimeout(function(){				
 		$("#tutorial").removeClass('next-cat-left');
@@ -2149,6 +2151,7 @@ function startTut(){
 	$("#tut-lern-0").show();
 }
 function nextTutStep(){
+	$("#choose-lang").hide();
 	stepTut++;
 	$(".tut-method").hide();
 	if(stepTut > 18) endTut();
