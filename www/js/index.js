@@ -51,10 +51,19 @@ var app = {
 		
 		document.addEventListener('onAdDismiss',function(data){
 			prepareAd();
+			loadProgressBarToFull();
+			loadProgressBarToFull2();
 		});
 		
 		document.addEventListener('onAdLeaveApp',function(data){
 			prepareAd();
+			loadProgressBarToFull();
+			loadProgressBarToFull2();
+		});
+		
+		document.addEventListener('onAdPresent',function(data){
+			removeAllProgress();
+			removeAllProgress2();
 		});
 		
 	/*	document.addEventListener("pause", function() {
@@ -314,8 +323,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
-var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":4,"catid":1,"start":"2"},{"subid":9,"catid":1,"start":"3"}]');//
+var dayJSON = false;//JSON.parse('{"day": 300, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":9,"catid":1,"start":"29"},{"subid":9,"catid":1,"start":"26"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -1575,7 +1584,7 @@ function nextPack(){
 	$('.confirm-swipe table').hide();
 	setTimeout(function(){		
 		blockClear = false;
-		$('.confirm-swipe table').addClass('goRight');
+		//$('.confirm-swipe table').addClass('goLeft');
 		if(isRepeatCycle){
 			$('section').hide();
 			$("#end-cat").show();	
@@ -1853,6 +1862,7 @@ function packControler(){
 			toLearn[i] = -1;
 			switch(i){
 			case 0:
+				clearDraggableField();
 				isRepeatCycle = false;
 				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*4 - 2;
@@ -1867,6 +1877,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 2:
+				clearDraggableField();
 				isRepeatCycle = false;
 				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*4 - 2;
@@ -1881,6 +1892,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 4:
+				clearDraggableField();
 				isRepeatCycle = false;
 				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*4 - 2;
@@ -1895,6 +1907,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 6:
+				clearDraggableField();
 				isRepeatCycle = true;
 				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2;
@@ -1904,6 +1917,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 7:
+				clearDraggableField();
 				isRepeatCycle = true;
 				showAd();
 				countWordsToLearnInThisCycle = wordsInOneCat*2;
@@ -1913,6 +1927,7 @@ function packControler(){
 				learnetCatToday++;
 				break;
 			case 8:
+				clearDraggableField();
 				isRepeatCycle = false;
 				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*4 - 2;
 				learnedWordsInCat = 0;
@@ -2113,8 +2128,8 @@ function endLearn(){
 	});
 	
 	$(".allWords").text(dayJSON.words); 
-	$(".countKMLearned").text( Math.floor( (dayJSON.km + 1)*minCat / 60) );
-	$(".countMinLearned").text( Math.floor( (dayJSON.km + 1)*minCat % 60) );
+	$(".countKMLearned").text( Math.floor( (dayJSON.km)*minCat / 60) );
+	$(".countMinLearned").text( Math.floor( (dayJSON.km)*minCat % 60) );
 	if(allCats.sort().toString() == uniqueallEndedCats.sort().toString()  && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
 		setTimeout(function(){
 			//showAd();
@@ -2472,8 +2487,8 @@ function isNotNewCat(){
 				if(allCats.sort().toString() == uniqueallEndedCats.sort().toString() && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
 					$("#new-category-choice").hide();
 					$("#end-course").show();
-					$(".countKMLearned").text( Math.floor( (dayJSON.km + 1)*minCat / 60) );
-					$(".countMinLearned").text( Math.floor( (dayJSON.km + 1)*minCat % 60) );
+					$(".countKMLearned").text( Math.floor( (dayJSON.km )*minCat / 60) );
+					$(".countMinLearned").text( Math.floor( (dayJSON.km )*minCat % 60) );
 					setTimeout(function(){				
 						$("#end-course").removeClass('next-cat-left');
 						showRating();
@@ -2497,7 +2512,7 @@ function getNextSugCat(){
 	var c = $("#sugCatSub").val();
 	setSuggestedCat(p, c);
 	addCatToMissing(p + "/" + c);
-	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName);}, 100);
+	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName);}, 200);
 }
 
 function addCatToMissing(catSgn){

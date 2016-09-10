@@ -1279,7 +1279,15 @@ section{
 #bigger-ok-filed{
 	display: none !important;
 }
+.invite-again{
+	font-size: 28px;
+	font-weight: bold;
+	margin-top: 50px;
+}
 @media (min-width : 500px) {
+	.invite-again{
+		font-size: 44px !important;
+	}
 	#bigger-ok-filed{
 		height: 252px;
 		width: 200px;
