@@ -61,12 +61,6 @@ var app = {
 		
 		document.addEventListener('onAdLeaveApp',function(data){
 			prepareAd();
-			removeAllProgress();
-			removeAllProgress2();
-			setTimeout(function(){		
-				loadProgressBarToFull();
-				loadProgressBarToFull2();
-			}, 100);
 		});
 		
 		document.addEventListener('onAdPresent',function(data){
