@@ -62,8 +62,10 @@ var app = {
 		});
 		
 		document.addEventListener('onAdPresent',function(data){
-			removeAllProgress();
-			removeAllProgress2();
+			setTimeout(function(){		
+				removeAllProgress();
+				removeAllProgress2();
+			}, 500);
 		});
 		
 	/*	document.addEventListener("pause", function() {
@@ -2555,6 +2557,7 @@ function gotFileEntryNProgress(fileEntry) {
 function gotFileWriterNProgress(writer) {
 	writer.onwrite = function(evt) {
 		console.log("write success");
+		alert("Twoje postępy zostały zapisane w pamięci telefony w pliku 'myProgress.fiszki'");
 	};
 	
 	writer.write(JSON.stringify(progressJSON));
