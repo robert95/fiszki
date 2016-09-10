@@ -56,7 +56,7 @@ var app = {
 			setTimeout(function(){	
 				loadProgressBarToFull();
 				loadProgressBarToFull2();
-			}, 50);
+			}, 100);
 		});
 		
 		document.addEventListener('onAdLeaveApp',function(data){
@@ -66,14 +66,14 @@ var app = {
 			setTimeout(function(){		
 				loadProgressBarToFull();
 				loadProgressBarToFull2();
-			}, 50);
+			}, 100);
 		});
 		
 		document.addEventListener('onAdPresent',function(data){
 			setTimeout(function(){		
 				removeAllProgress();
 				removeAllProgress2();
-			}, 500);
+			}, 50);
 		});
 		
 	/*	document.addEventListener("pause", function() {
