@@ -23,6 +23,10 @@
   <preference name="AndroidLaunchMode" value="singleInstance" />
   <preference name="DisallowOverscroll" value="true" />
   <preference name="KeepRunning" value="true" />
+  <gap:plugin name="org.apache.cordova.file"/>
+  <gap:plugin name="org.apache.cordova.file-transfer"/>
+  <gap:plugin name="org.apache.cordova.inappbrowser"/>
+  <gap:plugin name="org.apache.cordova.media"/>
   <plugin name="com.gkcgautam.asset2sd" />
   <plugin name="cordova-plugin-filepath" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
