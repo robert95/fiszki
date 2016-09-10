@@ -59,12 +59,14 @@ var app = {
 			prepareAd();
 			loadProgressBarToFull();
 			loadProgressBarToFull2();
+				alert("ŁADUJE");
 		});
 		
 		document.addEventListener('onAdPresent',function(data){
 			setTimeout(function(){		
 				removeAllProgress();
 				removeAllProgress2();
+				alert("USUWAM!");
 			}, 500);
 		});
 		
@@ -2557,7 +2559,6 @@ function gotFileEntryNProgress(fileEntry) {
 function gotFileWriterNProgress(writer) {
 	writer.onwrite = function(evt) {
 		console.log("write success");
-		alert("Twoje postępy zostały zapisane w pamięci telefony w pliku 'myProgress.fiszki'");
 	};
 	
 	writer.write(JSON.stringify(progressJSON));

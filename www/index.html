@@ -962,6 +962,9 @@
 			});
 			$("#m1").click(function(){
 				saveProgressInFile();
+				setTimeout(function(){
+					alert("Twoje postępy zostały zapisane w pamięci telefony w pliku 'myProgress.fiszki'");
+				}, 500);
 			});
 			$("#m2").click(function(){
 				fileChooser.open(function(uri) {
