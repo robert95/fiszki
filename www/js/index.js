@@ -62,7 +62,6 @@ var app = {
 		
 		document.addEventListener('onAdLeaveApp',function(data){
 			prepareAd();
-			alert("leave");
 		});
 		
 		document.addEventListener('onAdPresent',function(data){
