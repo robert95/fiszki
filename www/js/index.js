@@ -50,6 +50,7 @@ var app = {
 		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar);  
 		
 		document.addEventListener('onAdDismiss',function(data){
+			alert("dismisss");
 			prepareAd();	
 			removeAllProgress();
 			removeAllProgress2();
@@ -61,6 +62,7 @@ var app = {
 		
 		document.addEventListener('onAdLeaveApp',function(data){
 			prepareAd();
+			alert("leave");
 		});
 		
 		document.addEventListener('onAdPresent',function(data){
