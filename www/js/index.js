@@ -50,23 +50,29 @@ var app = {
 		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar);  
 		
 		document.addEventListener('onAdDismiss',function(data){
-			prepareAd();
-			loadProgressBarToFull();
-			loadProgressBarToFull2();
+			prepareAd();	
+			removeAllProgress();
+			removeAllProgress2();
+			setTimeout(function(){	
+				loadProgressBarToFull();
+				loadProgressBarToFull2();
+			}, 50);
 		});
 		
 		document.addEventListener('onAdLeaveApp',function(data){
 			prepareAd();
-			loadProgressBarToFull();
-			loadProgressBarToFull2();
-				alert("ŁADUJE");
+			removeAllProgress();
+			removeAllProgress2();
+			setTimeout(function(){		
+				loadProgressBarToFull();
+				loadProgressBarToFull2();
+			}, 50);
 		});
 		
 		document.addEventListener('onAdPresent',function(data){
 			setTimeout(function(){		
 				removeAllProgress();
 				removeAllProgress2();
-				alert("USUWAM!");
 			}, 500);
 		});
 		
