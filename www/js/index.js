@@ -35,7 +35,6 @@ var app = {
 	
     onDeviceReady: function() {
 		//getLangList();
-		setTextWidth();
 		if(!checkConnection()){
 			navigator.notification.confirm(
 				"Połącz się z Internetem aby korzystać z aplikacji lub pobierz wersję premium, która działa off-line.",
@@ -45,6 +44,7 @@ var app = {
 			);
 		}else{
 			startApp();
+			setTextWidth();
 		}
 		document.addEventListener("resume", hideBars, false);
 		var autoHideNavigationBar = true;
