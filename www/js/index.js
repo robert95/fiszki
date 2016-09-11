@@ -35,6 +35,7 @@ var app = {
 	
     onDeviceReady: function() {
 		//getLangList();
+		setTextWidth();
 		if(!checkConnection()){
 			navigator.notification.confirm(
 				"Połącz się z Internetem aby korzystać z aplikacji lub pobierz wersję premium, która działa off-line.",
@@ -50,7 +51,6 @@ var app = {
 		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar);  
 		
 		document.addEventListener('onAdDismiss',function(data){
-			alert("dismisss");
 			prepareAd();	
 			removeAllProgress();
 			removeAllProgress2();
@@ -98,6 +98,8 @@ var app = {
 		document.addEventListener("backbutton", function (e) {
             e.preventDefault();
         }, false );
+		
+		setTextWidth();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -2672,6 +2674,9 @@ function setRatingToTrue() {
 	saveFile5();
 }
 
+function setTextWidth(){
+	$(".text").css('min-width', $( window ).width()*0.85);
+}
 /*function iinit() {
 	
 	//This alias is a read-only pointer to the app itself

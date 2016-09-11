@@ -580,13 +580,16 @@ textarea:focus, textarea:hover, textarea:active{
 }
 .learnMethod .text{
 	/*display: table-cell;
-	vertical-align: middle;
-	height: 100px;*/
+	vertical-align: middle;*/
+	height: 100px;
+	max-height: 200px;
 	text-align: center;
 	min-height: 100px;
 	background: 0;
 	border: 0;
 	font-size: 25px !important;
+	display:table-cell;
+	vertical-align:middle;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -934,6 +937,9 @@ section{
     margin-top: 23%;
     font-size: 21px;
 }
+#end-panel .you-start-learned{
+    margin-top: 10%;
+}
 .you-start-learned2, .you-start-learned3{
     color: white;
     text-align: center;
@@ -1272,6 +1278,7 @@ section{
 }
 #tutorial .learnMethod .text{
 	min-height: 250px !important;
+	height: 250px !important;
 }
 .only-tablet{
 	display: none !important;
@@ -1284,7 +1291,32 @@ section{
 	font-weight: bold;
 	margin-top: 50px;
 }
+textarea::-webkit-input-placeholder {
+   text-align: center;
+}
+textarea:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+textarea::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+textarea:-ms-input-placeholder {  
+   text-align: center; 
+}
+textarea, textarea[placeholder]{
+    text-align: center;
+	text-indent: 0px;
+}
 @media (min-width : 500px) {
+	.remind-img {
+		left: 5px;
+		height: 78px;
+		width: auto;
+		top: 0px;
+	}
+	.note-skip-btn {
+		bottom: 25px;
+	}
 	.invite-again{
 		font-size: 44px !important;
 	}
@@ -1353,6 +1385,7 @@ section{
 	.learnMethod .text {
 		font-size: 40px !important;
 		min-height: 150px;
+		height: 135px !important;
 	/*height: 150px;*/
 		text-align: center;
 		/*width: 100%;*/
