@@ -314,6 +314,7 @@ function gotFileWriterN5(writer) {
 var wordsInOneCat = 10;
 var minCat = 5;
 var countOfCycle = 2;
+var countCatInFirstBigCat = 10;
 var firstCycle = false;
 var secondCycle = false;
 var thirdCycle = false;
@@ -322,7 +323,7 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":3}');//
+var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":5}');//
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -667,17 +668,17 @@ function getCatList(){
 function showCatList(c){
 	var cats = JSON.parse(c);
 	$("#cats").html("");
+	var tmp = '';
 	for(var x in cats){
 		subcats = false;
 		var cat = cats[x];
-		var tmp = '<div><h1 class="text supercat expand" ontouchstart="expand(this);">'+ cat.name + '</h1>';
-		getSubCatList(cat.id);
-		setTimeout(
-			function(){
-				tmp += subcats + '</div>';
-				$("#cats").append(tmp);
-			}, 50);
+		if(x == 0) tmp += '<div><h1 class="text superbigcat expand" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">P_Fiszki</span></h1><div>';
+		if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat expand" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">P_Gramatyka</span></h1><div>';
+		tmp += '<div><h1 class="text supercat expand" onclick="expand(this);">'+ cat.name + '</h1>';
+		var extraEnd = parseInt(x)+1 == parseInt(cats.length) ? '</div></div>' : "";
+		tmp += getSubCatList(cat.id) + '</div>' + extraEnd;
 	}
+	$("#cats").append(tmp);
 }
 function getSubCatName(cs){
 	var res = cs.split("/");
@@ -717,9 +718,18 @@ function getSubCatList(idCat){
 	getNotice();
 	var idLang = $("#myLang").val();
 	parent = idCat;
-	$.get("date/"+ idLang + "/" + idCat + "/subcat.json", function(result) {
-		showSubCatList(result);
+	/**/
+	var result = null;
+	$.ajax({
+        url: "date/"+ idLang + "/" + idCat + "/subcat.json",
+        type: 'get',
+        dataType: 'html',
+        async: false,
+        success: function(data) {
+            result = showSubCatList(data);
+        } 
     });
+	return result;
 }
 function showSubCatList(s){
 	var cats = JSON.parse(s);
@@ -742,6 +752,7 @@ function showSubCatList(s){
 	}
 	tmp += '</div>';
 	subcats = tmp;
+	return tmp;
 }
 /* END GET SUBCAT LIST */
 function setNewCat(c, s){
@@ -2406,6 +2417,7 @@ function updateProgressBar(){
 var sugGetIsSetter = false;
 var scdCycleInSearchSub = false;
 function getCatWithPos(pos, off){
+//	alert(pos + "/" + off);
 	//alert(allCats.sort().toString());
 	//alert(pos + " - " + off + " / " + allCats.length + " / " + langJSON.lang);
 	//alert(scdCycleInSearchSub);*/
@@ -2415,47 +2427,54 @@ function getCatWithPos(pos, off){
 		for(var x in cats){
 			var cat = cats[x];
 			var idP = cat.id;
-			$.get("date/"+ langJSON.lang + "/" + idP + "/subcat.json", function(result) {
-				var scats = JSON.parse(result);
-				var scatSize = scats.length;
-				for(var sc in scats){
-					var scat = scats[sc];
-					if(parseInt(scat.pos) == (parseInt(pos)+off)){
-						if(!userChoiceCat && (dayJSON.skiped.indexOf(idP + "/" + scat.id) >= 0 || learnedCat.indexOf(idP + "/" + scat.id) >= 0 || inProgressCat.indexOf(idP + "/" + scat.id) >= 0)){
-							if((parseInt(x)+1) == catSize && (parseInt(sc)+1) == scatSize){
-								if(scdCycleInSearchSub) {
-									isNotNewCat();
-									return;	
+			$.ajax({
+				url: "date/"+ langJSON.lang + "/" + idP + "/subcat.json",
+				type: 'get',
+				dataType: 'html',
+				async: false,
+				success: function(result) {
+					var scats = JSON.parse(result);
+					var scatSize = scats.length;
+					for(var sc in scats){
+						var scat = scats[sc];
+						//alert(idP + " - " + scat.id + " - " + parseInt(scat.pos) + " - " + (parseInt(pos)+off));
+						if(parseInt(scat.pos) == (parseInt(pos)+off)){
+							if(!userChoiceCat && (dayJSON.skiped.indexOf(idP + "/" + scat.id) >= 0 || learnedCat.indexOf(idP + "/" + scat.id) >= 0 || inProgressCat.indexOf(idP + "/" + scat.id) >= 0)){
+								if((parseInt(x)+1) == catSize && (parseInt(sc)+1) == scatSize){
+									if(scdCycleInSearchSub) {
+										isNotNewCat();
+										return;	
+									}
+									else{
+										scdCycleInSearchSub = true;
+										getCatWithPos(1, 0);
+										return;	
+									}
 								}
-								else{
-									scdCycleInSearchSub = true;
-									getCatWithPos(1, 0);
-									return;	
-								}
+								off++;
+							}else{
+								userChoiceCat = false;
+								$("#sugCatPar").val(idP);
+								$("#sugCatSub").val(scat.id);
+								suggestedCatPath = idP + "/" + scat.id;
+								suggestedCatName = scat.name;
+								getWordToSuggestCat(idP + "/" + scat.id);
+								sugGetIsSetter = true;
+								return;	
 							}
-							off++;
-						}else{
-							userChoiceCat = false;
-							$("#sugCatPar").val(idP);
-							$("#sugCatSub").val(scat.id);
-							suggestedCatPath = idP + "/" + scat.id;
-							suggestedCatName = scat.name;
-							getWordToSuggestCat(idP + "/" + scat.id);
-							sugGetIsSetter = true;
-							return;	
-						}
-					}else if(pos == allCats.length && allCats.length > 0 && parseInt(scat.pos) == pos){
-						if(scdCycleInSearchSub) {
-							isNotNewCat();
-							return;	
-						}
-						else{
-							scdCycleInSearchSub = true;
-							getCatWithPos(1, 0);
-							return;	
+						}else if(pos == allCats.length && allCats.length > 0 && parseInt(scat.pos) == pos){
+							if(scdCycleInSearchSub) {
+								isNotNewCat();
+								return;	
+							}
+							else{
+								scdCycleInSearchSub = true;
+								getCatWithPos(1, 0);
+								return;	
+							}
 						}
 					}
-				}
+				} 
 			});
 		}
     });
@@ -2519,7 +2538,7 @@ function getNextSugCat(){
 	var c = $("#sugCatSub").val();
 	setSuggestedCat(p, c);
 	addCatToMissing(p + "/" + c);
-	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName);}, 200);
+	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName);}, 350);
 }
 
 function addCatToMissing(catSgn){

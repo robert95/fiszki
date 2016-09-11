@@ -1,62 +1,14 @@
 [
-		{
-			"id": 1,
-			"name": "Does somebody feel unwell?",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Gold is much heavier than water.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "The Police caught him red handed.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "He's doesn't have a head for numbers.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Mary has already left.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Don't disturb me while I'm studying.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "How does this disease spread?",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "The island lies to the west of Japan.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "I was asked to show my passport at the border.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "It looks like he'll be coming here next month.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "H1.3.1",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "H1.3.2",
+		"notices": [
+		]
+	}
+]

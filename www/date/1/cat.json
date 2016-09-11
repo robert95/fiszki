@@ -1,6 +1,82 @@
 [
 	{
 		"id": 1,
-		"name": "Kategoria1"
+		"name": "A KAT 1"
+	},
+	{
+		"id": 2,
+		"name": "A KAT 2"
+	},
+	{
+		"id": 3,
+		"name": "A KAT 3"
+	},
+	{
+		"id": 4,
+		"name": "A KAT 4"
+	},
+	{
+		"id": 5,
+		"name": "A KAT 5"
+	},
+	{
+		"id": 6,
+		"name": "A KAT 6"
+	},
+	{
+		"id": 7,
+		"name": "A KAT 7"
+	},
+	{
+		"id": 8,
+		"name": "A KAT 8"
+	},
+	{
+		"id": 9,
+		"name": "A KAT 9"
+	},
+	{
+		"id": 10,
+		"name": "A KAT 10"
+	},
+	{
+		"id": 11,
+		"name": "A KAT 11"
+	},
+	{
+		"id": 12,
+		"name": "A KAT 12"
+	},
+	{
+		"id": 13,
+		"name": "A KAT 13"
+	},
+	{
+		"id": 14,
+		"name": "A KAT 14"
+	},
+	{
+		"id": 15,
+		"name": "A KAT 15"
+	},
+	{
+		"id": 16,
+		"name": "A KAT 16"
+	},
+	{
+		"id": 17,
+		"name": "A KAT 17"
+	},
+	{
+		"id": 18,
+		"name": "A KAT 18"
+	},
+	{
+		"id": 19,
+		"name": "A KAT 19"
+	},
+	{
+		"id": 20,
+		"name": "A KAT 20"
 	}
 ]

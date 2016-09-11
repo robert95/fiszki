@@ -1,62 +1,14 @@
 [
-		{
-			"id": 1,
-			"name": "Uten din hjelp ville jeg ha mislyktes.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Yoko unngikk å svare på spørsmålet mitt.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Premier deles ut ved slutten av konkurransen.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Jeg er slett ikke overbevist.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Alle kjedet seg over den lange talen hans.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Hun er misunnelig på min suksess.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Jeg har mistet interessen for golf.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Å spille fiolin krever mye øving.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Himmelen har blitt overskyet.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Han oppførte seg som en galning.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "A1.7.1",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "A1.7.2",
+		"notices": [
+		]
+	}
+]

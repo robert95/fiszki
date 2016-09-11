@@ -1,17 +1,27 @@
 [
 	{
 		"id": 1,
-		"name": "norweski",
-		"label": "Mówię po norwesku"
+		"name": "English",
+		"label": "I speak English"
 	},
 	{
 		"id": 2,
-		"name": "english",
-		"label": "I speak english"
+		"name": "Español",
+		"label": "Hablo español"
 	},
 	{
 		"id": 3,
-		"name": "polski",
+		"name": "Français",
+		"label": "Je parle français"
+	},
+	{
+		"id": 4,
+		"name": "Deutsch",
+		"label": "Ich spreche Deutsch"
+	},
+	{
+		"id": 5,
+		"name": "Polski",
 		"label": "Mówię po polsku"
 	}
 ]

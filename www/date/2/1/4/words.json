@@ -1,62 +1,14 @@
 [
-		{
-			"id": 1,
-			"name": "Nick owes me ten dollars.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "She spends a lot of money on clothes.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "I don't remember exactly.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Next week the electrician is coming to fix the wires.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "You ought not to go out.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Musisz to zrobić czy tego chcesz czy nie ",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "That mountain is covered in snow all year round.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Whose room is this?",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "You are responsible for what you have done.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Without your assistance I would have failed.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "H1.4.1",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "H1.4.2",
+		"notices": [
+		]
+	}
+]

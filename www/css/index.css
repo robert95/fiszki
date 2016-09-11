@@ -1264,13 +1264,19 @@ section{
 	width: 95%;
 	margin: auto auto;
 }
-.l2, .l3{
+.l2, .l3, .l4, .l5{
 	display: none;
 }
 .lang2 .l2{
 	display: inline !important;
 }
 .lang3 .l3{
+	display: inline !important;
+}
+.lang4 .l4{
+	display: inline !important;
+}
+.lang5 .l5{
 	display: inline !important;
 }
 #noteInTut{
@@ -1306,6 +1312,11 @@ textarea:-ms-input-placeholder {
 textarea, textarea[placeholder]{
     text-align: center;
 	text-indent: 0px;
+}
+.supercat{
+	width: 80%;
+	margin-left: 15%;
+	padding: 20px 0 !important;
 }
 @media (min-width : 500px) {
 	.remind-img {
