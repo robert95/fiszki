@@ -1068,7 +1068,7 @@ section{
 #words-nav {
     display: none !important;
 }
-#count-word-to-learn, #count-word-to-learn-tut{
+.count-word-to-learn, #count-word-to-learn-tut{
     font-size: 22px;
     color: white;
     position: absolute;
@@ -1077,6 +1077,8 @@ section{
 	text-align: center;
 	transform: scale(1.6);
 	-webkit-transform: scale(1.6);
+	bottom: 98px;
+	right: 12%;
 }
 #count-word-to-learn-tut{
     display: none;
@@ -1089,7 +1091,7 @@ section{
 	height: 100%;
 	width: 100%;
 }
-#statistic{
+#statistic, #list-of-word-in-cat{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1104,9 +1106,31 @@ section{
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background: url('../img/bg.png') 100% 100%;\
+	background: url('../img/bg.png') 100% 100%;
+	overflow: scroll;
+	max-height: 100%;
 }
-#statistic img{
+#statistic h3, #list-of-word-in-cat h3{
+	width: 90%;
+	margin: auto auto;
+}
+.catNameInListWord{
+	margin-top: 20px;
+	text-align: center;
+	color: white;
+	font-size: 25px;
+    width: 90%;
+	font-weight: bold;
+	font-weight: 600;
+	margin: 10px auto;
+}
+#list-of-word-in-cat{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2222223;
+}
+#statistic img, #list-of-word-in-cat img{
 	width: 20px;
 	position: absolute;
 	top: 10px;
@@ -1120,7 +1144,17 @@ section{
 	width: 80%;
 	margin: 0% auto;
 }
-#count-word-to-learn .c100{
+#list-of-word-in-cat table{    
+	width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+	font-size: 15px;
+}
+#list-of-word-in-cat table .bigWord{    
+	font-size: 21px;
+}
+.count-word-to-learn .c100{
 	width: 36px !important;
 	height: 36px !important;
 	background-color: rgba(0, 0, 0, 0) !important;
@@ -1129,7 +1163,7 @@ section{
 	/*border: 3px solid #3f8cb7 !important;*/
 	border: 2px solid #3f8cb7 !important;
 }
-#count-word-to-learn .c100 .slice{
+.count-word-to-learn .c100 .slice{
 	/*width: 44px !important;
 	height: 44px !important;
 	clip: rect(0em, 42px, 42px, 21px) !important;
@@ -1141,7 +1175,7 @@ section{
 	left: -2px;
     top: -2px;
 }
-#count-word-to-learn .pie, #count-word-to-learn .c100 .bar, #count-word-to-learn .c100.p51 .fill,#count-word-to-learn .c100.p52 .fill,#count-word-to-learn .c100.p53 .fill,#count-word-to-learn .c100.p54 .fill,#count-word-to-learn .c100.p55 .fill,#count-word-to-learn .c100.p56 .fill,#count-word-to-learn .c100.p57 .fill,#count-word-to-learn .c100.p58 .fill,#count-word-to-learn .c100.p59 .fill,#count-word-to-learn .c100.p60 .fill,#count-word-to-learn .c100.p61 .fill,#count-word-to-learn .c100.p62 .fill,#count-word-to-learn .c100.p63 .fill,#count-word-to-learn .c100.p64 .fill,#count-word-to-learn .c100.p65 .fill,#count-word-to-learn .c100.p66 .fill,#count-word-to-learn .c100.p67 .fill,#count-word-to-learn .c100.p68 .fill,#count-word-to-learn .c100.p69 .fill,#count-word-to-learn .c100.p70 .fill,#count-word-to-learn .c100.p71 .fill,#count-word-to-learn .c100.p72 .fill,#count-word-to-learn .c100.p73 .fill,#count-word-to-learn .c100.p74 .fill,#count-word-to-learn .c100.p75 .fill,#count-word-to-learn .c100.p76 .fill,#count-word-to-learn .c100.p77 .fill,#count-word-to-learn .c100.p78 .fill,#count-word-to-learn .c100.p79 .fill,#count-word-to-learn .c100.p80 .fill,#count-word-to-learn .c100.p81 .fill,#count-word-to-learn .c100.p82 .fill,#count-word-to-learn .c100.p83 .fill,#count-word-to-learn .c100.p84 .fill,#count-word-to-learn .c100.p85 .fill,#count-word-to-learn .c100.p86 .fill,#count-word-to-learn .c100.p87 .fill,#count-word-to-learn .c100.p88 .fill,#count-word-to-learn .c100.p89 .fill,#count-word-to-learn .c100.p90 .fill,#count-word-to-learn .c100.p91 .fill,#count-word-to-learn .c100.p92 .fill,#count-word-to-learn .c100.p93 .fill,#count-word-to-learn .c100.p94 .fill,#count-word-to-learn .c100.p95 .fill,#count-word-to-learn .c100.p96 .fill,#count-word-to-learn .c100.p97 .fill,#count-word-to-learn .c100.p98 .fill,#count-word-to-learn .c100.p99 .fill,#count-word-to-learn .c100.p100 .fill{
+.count-word-to-learn .pie, .count-word-to-learn .c100 .bar, .count-word-to-learn .c100.p51 .fill,.count-word-to-learn .c100.p52 .fill,.count-word-to-learn .c100.p53 .fill,.count-word-to-learn .c100.p54 .fill,.count-word-to-learn .c100.p55 .fill,.count-word-to-learn .c100.p56 .fill,.count-word-to-learn .c100.p57 .fill,.count-word-to-learn .c100.p58 .fill,.count-word-to-learn .c100.p59 .fill,.count-word-to-learn .c100.p60 .fill,.count-word-to-learn .c100.p61 .fill,.count-word-to-learn .c100.p62 .fill,.count-word-to-learn .c100.p63 .fill,.count-word-to-learn .c100.p64 .fill,.count-word-to-learn .c100.p65 .fill,.count-word-to-learn .c100.p66 .fill,.count-word-to-learn .c100.p67 .fill,.count-word-to-learn .c100.p68 .fill,.count-word-to-learn .c100.p69 .fill,.count-word-to-learn .c100.p70 .fill,.count-word-to-learn .c100.p71 .fill,.count-word-to-learn .c100.p72 .fill,.count-word-to-learn .c100.p73 .fill,.count-word-to-learn .c100.p74 .fill,.count-word-to-learn .c100.p75 .fill,.count-word-to-learn .c100.p76 .fill,.count-word-to-learn .c100.p77 .fill,.count-word-to-learn .c100.p78 .fill,.count-word-to-learn .c100.p79 .fill,.count-word-to-learn .c100.p80 .fill,.count-word-to-learn .c100.p81 .fill,.count-word-to-learn .c100.p82 .fill,.count-word-to-learn .c100.p83 .fill,.count-word-to-learn .c100.p84 .fill,.count-word-to-learn .c100.p85 .fill,.count-word-to-learn .c100.p86 .fill,.count-word-to-learn .c100.p87 .fill,.count-word-to-learn .c100.p88 .fill,.count-word-to-learn .c100.p89 .fill,.count-word-to-learn .c100.p90 .fill,.count-word-to-learn .c100.p91 .fill,.count-word-to-learn .c100.p92 .fill,.count-word-to-learn .c100.p93 .fill,.count-word-to-learn .c100.p94 .fill,.count-word-to-learn .c100.p95 .fill,.count-word-to-learn .c100.p96 .fill,.count-word-to-learn .c100.p97 .fill,.count-word-to-learn .c100.p98 .fill,.count-word-to-learn .c100.p99 .fill,.count-word-to-learn .c100.p100 .fill{
 	width: 36px !important;
 	height: 36px !important;
 	/*clip: rect(0em, 21px, 42px, 0em) !important;
@@ -1149,21 +1183,21 @@ section{
 	clip: rect(0em, 20px, 43px, 0em) !important;
 	border: 2px solid #6dd0f7 !important;
 }
-#count-word-to-learn .bar {
+.count-word-to-learn .bar {
     border: 3px solid #6dd0f7 !important;
 }
-#count-word-to-learn .c100::after{
+.count-word-to-learn .c100::after{
 	background: rgba(245, 245, 245, 0) !important;
 }
-#count-word-to-learn .rect-auto,#count-word-to-learn  .c100.p51 .slice,#count-word-to-learn  .c100.p52 .slice,#count-word-to-learn  .c100.p53 .slice,#count-word-to-learn  .c100.p54 .slice,#count-word-to-learn  .c100.p55 .slice,#count-word-to-learn  .c100.p56 .slice,#count-word-to-learn  .c100.p57 .slice,#count-word-to-learn  .c100.p58 .slice,#count-word-to-learn  .c100.p59 .slice,#count-word-to-learn  .c100.p60 .slice,#count-word-to-learn  .c100.p61 .slice,#count-word-to-learn  .c100.p62 .slice,#count-word-to-learn  .c100.p63 .slice,#count-word-to-learn  .c100.p64 .slice,#count-word-to-learn  .c100.p65 .slice,#count-word-to-learn  .c100.p66 .slice,#count-word-to-learn  .c100.p67 .slice,#count-word-to-learn  .c100.p68 .slice,#count-word-to-learn  .c100.p69 .slice,#count-word-to-learn  .c100.p70 .slice,#count-word-to-learn  .c100.p71 .slice,#count-word-to-learn  .c100.p72 .slice,#count-word-to-learn  .c100.p73 .slice,#count-word-to-learn  .c100.p74 .slice,#count-word-to-learn  .c100.p75 .slice,#count-word-to-learn  .c100.p76 .slice,#count-word-to-learn  .c100.p77 .slice,#count-word-to-learn  .c100.p78 .slice,#count-word-to-learn  .c100.p79 .slice,#count-word-to-learn  .c100.p80 .slice,#count-word-to-learn  .c100.p81 .slice,#count-word-to-learn  .c100.p82 .slice,#count-word-to-learn  .c100.p83 .slice,#count-word-to-learn  .c100.p84 .slice,#count-word-to-learn  .c100.p85 .slice,#count-word-to-learn  .c100.p86 .slice,#count-word-to-learn  .c100.p87 .slice,#count-word-to-learn  .c100.p88 .slice,#count-word-to-learn  .c100.p89 .slice,#count-word-to-learn  .c100.p90 .slice,#count-word-to-learn  .c100.p91 .slice,#count-word-to-learn  .c100.p92 .slice,#count-word-to-learn  .c100.p93 .slice,#count-word-to-learn  .c100.p94 .slice,#count-word-to-learn  .c100.p95 .slice,#count-word-to-learn  .c100.p96 .slice,#count-word-to-learn  .c100.p97 .slice,#count-word-to-learn  .c100.p98 .slice,#count-word-to-learn  .c100.p99 .slice,#count-word-to-learn  .c100.p100 .slice{
+.count-word-to-learn .rect-auto,.count-word-to-learn  .c100.p51 .slice,.count-word-to-learn  .c100.p52 .slice,.count-word-to-learn  .c100.p53 .slice,.count-word-to-learn  .c100.p54 .slice,.count-word-to-learn  .c100.p55 .slice,.count-word-to-learn  .c100.p56 .slice,.count-word-to-learn  .c100.p57 .slice,.count-word-to-learn  .c100.p58 .slice,.count-word-to-learn  .c100.p59 .slice,.count-word-to-learn  .c100.p60 .slice,.count-word-to-learn  .c100.p61 .slice,.count-word-to-learn  .c100.p62 .slice,.count-word-to-learn  .c100.p63 .slice,.count-word-to-learn  .c100.p64 .slice,.count-word-to-learn  .c100.p65 .slice,.count-word-to-learn  .c100.p66 .slice,.count-word-to-learn  .c100.p67 .slice,.count-word-to-learn  .c100.p68 .slice,.count-word-to-learn  .c100.p69 .slice,.count-word-to-learn  .c100.p70 .slice,.count-word-to-learn  .c100.p71 .slice,.count-word-to-learn  .c100.p72 .slice,.count-word-to-learn  .c100.p73 .slice,.count-word-to-learn  .c100.p74 .slice,.count-word-to-learn  .c100.p75 .slice,.count-word-to-learn  .c100.p76 .slice,.count-word-to-learn  .c100.p77 .slice,.count-word-to-learn  .c100.p78 .slice,.count-word-to-learn  .c100.p79 .slice,.count-word-to-learn  .c100.p80 .slice,.count-word-to-learn  .c100.p81 .slice,.count-word-to-learn  .c100.p82 .slice,.count-word-to-learn  .c100.p83 .slice,.count-word-to-learn  .c100.p84 .slice,.count-word-to-learn  .c100.p85 .slice,.count-word-to-learn  .c100.p86 .slice,.count-word-to-learn  .c100.p87 .slice,.count-word-to-learn  .c100.p88 .slice,.count-word-to-learn  .c100.p89 .slice,.count-word-to-learn  .c100.p90 .slice,.count-word-to-learn  .c100.p91 .slice,.count-word-to-learn  .c100.p92 .slice,.count-word-to-learn  .c100.p93 .slice,.count-word-to-learn  .c100.p94 .slice,.count-word-to-learn  .c100.p95 .slice,.count-word-to-learn  .c100.p96 .slice,.count-word-to-learn  .c100.p97 .slice,.count-word-to-learn  .c100.p98 .slice,.count-word-to-learn  .c100.p99 .slice,.count-word-to-learn  .c100.p100 .slice{
 	clip: rect(auto, auto, auto, auto) !important;
 }
-#progess-btn-per-in-cycle-2{
-	font-size: 16px;
-	color: white;
-	font-weight: 400;
-	line-height: 36px;
-	width: 36px;
+.progess-btn-per-in-cycle-2{
+	font-size: 16px !important;
+	color: white !important;
+	font-weight: 400 !important;
+	line-height: 36px !important;
+	width: 36px !important;
 }
 #count-word-to-learn-tut .c100{
 	width: 36px !important;
@@ -1463,11 +1497,11 @@ textarea, textarea[placeholder]{
 	#tutorial .learnMethod .text {
 		min-height: 400px !important;
 	}
-	#count-word-to-learn, #count-word-to-learn-tut{
+	.count-word-to-learn, #count-word-to-learn-tut{
 		font-size: 34px;
 		margin-left: 15px;
 	}
-	#count-word-to-learn-tut, #count-word-to-learn{
+	#count-word-to-learn-tut, .count-word-to-learn{
 		transform: scale(3.5);
 		-webkit-transform: scale(3.5);
 		margin-top: 54px;

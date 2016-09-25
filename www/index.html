@@ -117,9 +117,9 @@
 			<p class="startLearn text yes">ZACZNIJ NAUKĘ</p>
 		</section>
 		<section id="learn-container" class="next-cat-left">
-			<div id="count-word-to-learn">
-				<div id="progess-btn-stan-in-cycle-2" class="c100 p100">
-					<span id="progess-btn-per-in-cycle-2">21</span>
+			<div class="count-word-to-learn">
+				<div class="progess-btn-stan-in-cycle-2 c100 p100">
+					<span class="progess-btn-per-in-cycle-2">21</span>
 					<div class="slice">
 						<div class="bar"></div>
 						<div class="fill"></div>
@@ -518,6 +518,15 @@
 			</div>
 		</section>
 		<section id="startDay">
+			<div class="count-word-to-learn">
+				<div class="progess-btn-stan-in-cycle-2 c100 p100">
+					<span class="progess-btn-per-in-cycle-2">21</span>
+					<div class="slice">
+						<div class="bar"></div>
+						<div class="fill"></div>
+					</div>
+				</div>
+			</div>
 			<h1><span class="l2">E_Welcome to <br>lesson</span><span class="l3">F_Welcome to <br>lesson</span><span class="l4">N_Welcome to <br>lesson</span><span class="l5">P_Welcome to <br>lesson</span> <span id="nrDayFiled"></span>/200</h1>
 			<p class="you-start-learned"><span class="l2">E_Spedziłeś z nami:</span><span class="l3">F_Spedziłeś z nami:</span><span class="l4">N_Spedziłeś z nami:</span><span class="l5">P_Spedziłeś z nami:</span> <span class="countKMLearned"></span> h <span class="countMinLearned"></span> min / 60h</p>
 			<p class="you-start-learned2"><span class="l2">E_Uczysz się z nami:</span><span class="l3">F_Uczysz się z nami:</span><span class="l4">N_Uczysz się z nami:</span><span class="l5">P_Uczysz się z nami:</span> <span class="allWords"></span>/3000 zdań</p>
@@ -543,6 +552,15 @@
 			</div>			
 		</section>
 		<section id="end-panel" class="next-cat-left">
+			<div class="count-word-to-learn">
+				<div class="progess-btn-stan-in-cycle-2 c100 p0">
+					<span class="progess-btn-per-in-cycle-2">0</span>
+					<div class="slice">
+						<div class="bar"></div>
+						<div class="fill"></div>
+					</div>
+				</div>
+			</div>
 			<h1><span class="l2">E_GRATULUJEMY!</span><span class="l3">F_GRATULUJEMY!</span><span class="l4">N_GRATULUJEMY!</span><span class="l5">P_GRATULUJEMY!</span><br><br><br><span class="l2">E_Ukończyłeś lekcję</span><span class="l3">F_Ukończyłeś lekcję</span><span class="l4">N_Ukończyłeś lekcję</span><span class="l5">P_Ukończyłeś lekcję</span> <span id="end-nr-lesson"></span></h1>
 			<p class="you-start-learned"><span class="l2">E_Spedziłeś z nami:</span><span class="l3">F_Spedziłeś z nami:</span><span class="l4">N_Spedziłeś z nami:</span><span class="l5">P_Spedziłeś z nami:</span> <span class="countKMLearned"></span> h <span class="countMinLearned"></span> min / 60h</p>
 			<p class="you-start-learned2"><span class="l2">E_Uczysz się już z nami:</span><span class="l3">F_Uczysz się już z nami:</span><span class="l4">N_Uczysz się już z nami:</span><span class="l5">P_Uczysz się już z nami:</span> <span class="allWords"></span>/3000 zdań</p>
@@ -594,6 +612,38 @@
 			<p class="you-start-learned3"><span class="l2">E_Spedziłeś z nami:</span><span class="l3">F_Spedziłeś z nami:</span><span class="l4">N_Spedziłeś z nami:</span><span class="l5">P_Spedziłeś z nami:</span> <span class="countKMLearned"></span> h <span class="countMinLearned"></span> min / 60h</p>
 			<h3><span class="l2">E_Kategorie w trakcie nauki:</span><span class="l3">F_Kategorie w trakcie nauki:</span><span class="l4">N_Kategorie w trakcie nauki:</span><span class="l5">P_Kategorie w trakcie nauki:</span></h3>
 			<div class="inProgressCatList"></div>
+		</section>
+		<section id="list-of-word-in-cat" class="goLeft">
+			<img src="img/back2.png" ontouchstart="hideWordList();">
+			<h3>
+				<span class="l2">E_Lista fraz w kategorii:</span>
+				<span class="l3">F_Lista fraz w kategorii:</span>
+				<span class="l4">N_Lista fraz w kategorii:</span>
+				<span class="l5">P_Lista fraz w kategorii:</span>
+			</h3>
+			<p class="catNameInListWord"></p>
+			<table>
+				<tr><td class="w1 bigWord"></td></tr>
+				<tr><td class="t1"></td></tr>
+				<tr><td class="w2 bigWord"></td></tr>
+				<tr><td class="t2"></td></tr>
+				<tr><td class="w3 bigWord"></td></tr>
+				<tr><td class="t3"></td></tr>
+				<tr><td class="w4 bigWord"></td></tr>
+				<tr><td class="t4"></td></tr>
+				<tr><td class="w5 bigWord"></td></tr>
+				<tr><td class="t5"></td></tr>
+				<tr><td class="w6 bigWord"></td></tr>
+				<tr><td class="t6"></td></tr>
+				<tr><td class="w7 bigWord"></td></tr>
+				<tr><td class="t7"></td></tr>
+				<tr><td class="w8 bigWord"></td></tr>
+				<tr><td class="t8"></td></tr>
+				<tr><td class="w9 bigWord"></td></tr>
+				<tr><td class="t9"></td></tr>
+				<tr><td class="w10 bigWord"></td></tr>
+				<tr><td class="t10"></td></tr>
+			</table>
 		</section>
         <script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -1016,6 +1066,12 @@
 				$("#statistic").addClass('goLeft');
 				setTimeout(function(){
 					$("#statistic").hide();
+				}, 800);
+			}
+			function hideWordList(){
+				$("#list-of-word-in-cat").addClass('goLeft');
+				setTimeout(function(){
+					$("#list-of-word-in-cat").hide();
 				}, 800);
 			}
 		</script>
