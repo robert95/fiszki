@@ -2727,8 +2727,8 @@ function fillTableListWordInCatWithNote(idp, idc){
 		var tmp = idLang+"\\"+idp+"\\"+idc+"\\"+1+"\\"+i;
 		if(notice.word == tmp){
 			$(".n"+i).html("(" + notice.notice+")");
-			i++;
-		}			
+		}else $(".n"+i).html("");
+		i++;
 	}
 }
 /* END statistic */
