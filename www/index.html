@@ -39,13 +39,14 @@
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
 			<ul>
-				<li id="m1"><span class="l2">E_ZAPISZ POSTĘP DO PLIKU</span><span class="l3">F_ZAPISZ POSTĘP DO PLIKU</span><span class="l4">N_ZAPISZ POSTĘP DO PLIKU</span><span class="l5">P_ZAPISZ POSTĘP DO PLIKU</span></li>
-				<li id="m2"><span class="l2">E_WCZYTAJ POSTĘP Z PLIKU</span><span class="l3">F_WCZYTAJ POSTĘP Z PLIKU</span><span class="l4">N_WCZYTAJ POSTĘP Z PLIKU</span><span class="l5">P_WCZYTAJ POSTĘP Z PLIKU</span></li>
+				<li id="m1" class="text"><span class="l2">E_ZAPISZ POSTĘP DO PLIKU</span><span class="l3">F_ZAPISZ POSTĘP DO PLIKU</span><span class="l4">N_ZAPISZ POSTĘP DO PLIKU</span><span class="l5">P_ZAPISZ POSTĘP DO PLIKU</span></li>
+				<li id="m2" class="text"><span class="l2">E_WCZYTAJ POSTĘP Z PLIKU</span><span class="l3">F_WCZYTAJ POSTĘP Z PLIKU</span><span class="l4">N_WCZYTAJ POSTĘP Z PLIKU</span><span class="l5">P_WCZYTAJ POSTĘP Z PLIKU</span></li>
 				<!--<li id="m3"><span class="l2">E_TUTORIAL</span><span class="l3">TUTORIAL</span></li>-->
-				<li id="m4"><span class="l2">E_STATYSTYKI</span><span class="l3">F_STATYSTYKI</span><span class="l4">N_STATYSTYKI</span><span class="l5">P_STATYSTYKI</span></li>
-				<li id="m6"><span class="l2">E_KUP WERSJĘ PREMIUM</span><span class="l3">F_KUP WERSJĘ PREMIUM</span><span class="l4">N_KUP WERSJĘ PREMIUM</span><span class="l5">P_KUP WERSJĘ PREMIUM</span></li>
-				<li id="m5"><span class="l2">E_WYJŚCIE</span><span class="l3">F_WYJŚCIE</span><span class="l4">N_WYJŚCIE</span><span class="l5">P_WYJŚCIE</span></li>
-				<li id="mE">^</li>
+				<li id="m4" class="text"><span class="l2">E_STATYSTYKI</span><span class="l3">F_STATYSTYKI</span><span class="l4">N_STATYSTYKI</span><span class="l5">P_STATYSTYKI</span></li>
+				<li id="m6" class="text"><span class="l2">E_KUP WERSJĘ PREMIUM</span><span class="l3">F_KUP WERSJĘ PREMIUM</span><span class="l4">N_KUP WERSJĘ PREMIUM</span><span class="l5">P_KUP WERSJĘ PREMIUM</span></li>
+				<li id="m7" class="text"><span class="l2">E_SPEAKUP.COM</span><span class="l3">F_SPEAKUP.COM</span><span class="l4">N_SPEAKUP.COM</span><span class="l5">P_SPEAKUP.PL</span></li>
+				<li id="m5" class="text"><span class="l2">E_WYJŚCIE</span><span class="l3">F_WYJŚCIE</span><span class="l4">N_WYJŚCIE</span><span class="l5">P_WYJŚCIE</span></li>
+				<li id="mE" class="text">^</li>
 			</ul>
 		</div>
 		<img class="background" src="img/bg.png" />
@@ -625,24 +626,34 @@
 			<table>
 				<tr><td class="w1 bigWord"></td></tr>
 				<tr><td class="t1"></td></tr>
+				<tr><td class="n1 noteWord"></td></tr>
 				<tr><td class="w2 bigWord"></td></tr>
 				<tr><td class="t2"></td></tr>
+				<tr><td class="n2 noteWord"></td></tr>
 				<tr><td class="w3 bigWord"></td></tr>
 				<tr><td class="t3"></td></tr>
+				<tr><td class="n3 noteWord"></td></tr>
 				<tr><td class="w4 bigWord"></td></tr>
 				<tr><td class="t4"></td></tr>
+				<tr><td class="n4 noteWord"></td></tr>
 				<tr><td class="w5 bigWord"></td></tr>
 				<tr><td class="t5"></td></tr>
+				<tr><td class="n5 noteWord"></td></tr>
 				<tr><td class="w6 bigWord"></td></tr>
 				<tr><td class="t6"></td></tr>
+				<tr><td class="n6 noteWord"></td></tr>
 				<tr><td class="w7 bigWord"></td></tr>
 				<tr><td class="t7"></td></tr>
+				<tr><td class="n7 noteWord"></td></tr>
 				<tr><td class="w8 bigWord"></td></tr>
 				<tr><td class="t8"></td></tr>
+				<tr><td class="n8 noteWord"></td></tr>
 				<tr><td class="w9 bigWord"></td></tr>
 				<tr><td class="t9"></td></tr>
+				<tr><td class="n9 noteWord"></td></tr>
 				<tr><td class="w10 bigWord"></td></tr>
 				<tr><td class="t10"></td></tr>
+				<tr><td class="n10 noteWord"></td></tr>
 			</table>
 		</section>
         <script type="text/javascript" src="cordova.js"></script>
@@ -1040,6 +1051,9 @@
 			});
 			$("#m6").click(function(){
 				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
+			});
+			$("#m7").click(function(){
+				window.open('https://www.google.pl', '_system');
 			});
 			function onConfirm(button) {
 				if(button == 2){

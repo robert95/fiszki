@@ -332,7 +332,7 @@ var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false;
 var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":7,"catid":1,"start":"29"},{"subid":9,"catid":1,"start":"26"}]');//
+var toLearnJSON = [];//JSON.parse('[{"subid":2,"catid":1,"start":"29"},{"subid":9,"catid":1,"start":"26"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -678,9 +678,9 @@ function showCatList(c){
 	for(var x in cats){
 		subcats = false;
 		var cat = cats[x];
-		if(x == 0) tmp += '<div><h1 class="text superbigcat expand" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">P_Fiszki</span></h1><div>';
-		if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat expand" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">P_Gramatyka</span></h1><div>';
-		tmp += '<div><h1 class="text supercat expand" onclick="expand(this);">'+ cat.name + '</h1>';
+		if(x == 0) tmp += '<div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">P_Fiszki</span></h1><div>';
+		if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">P_Gramatyka</span></h1><div>';
+		tmp += '<div><h1 class="text supercat" onclick="expand(this);">'+ cat.name + '</h1>';
 		var extraEnd = parseInt(x)+1 == parseInt(cats.length) ? '</div></div>' : "";
 		tmp += getSubCatList(cat.id) + '</div>' + extraEnd;
 	}
@@ -2686,6 +2686,7 @@ function setinProgressCatList(idp, idc){
 function showMeWordInThisCat(idp, idc){
 	fillTableListWordInCatMain(idp, idc);
 	fillTableListWordInCat(idp, idc);
+	fillTableListWordInCatWithNote(idp, idc);
 	$("#list-of-word-in-cat").show();
 	setTimeout(function(){
 		$("#list-of-word-in-cat").removeClass('goLeft');
@@ -2716,6 +2717,18 @@ function fillTableListWordInCat(idp, idc){
 			i++;
 		}
     });
+}
+
+function fillTableListWordInCatWithNote(idp, idc){
+	var i = 1;
+	for(var x in noticeJSON){
+		var notice = noticeJSON[x];
+		var tmp = idLang+"\\"+idp+"\\"+idc+"\\"+1+"\\"+i;
+		if(notice.word == tmp){
+			$(".n"+i).html("(" + notice.notice+")");
+			i++;
+		}			
+	}
 }
 /* END statistic */
 function checkConnection() {
