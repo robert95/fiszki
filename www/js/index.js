@@ -323,7 +323,6 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-/*ZMIEN W LINIJCE 1397 na index == 9 zamiast index == 8 !!!!*/
 var langJSON = JSON.parse('{"lang":-1}');//JSON.parse('{"lang":5}');//
 var resLang = false;
 var res = false;
@@ -1394,7 +1393,7 @@ function nextStep(){
 				$("#nav-words-container p").eq(index).addClass("activ");
 				$("#nav-words-container p").eq(index).addClass("pulse");
 				setTimeout(function(){
-					if(index == 8) whereGo = 0;
+					if(index == 9) whereGo = 0;
 					setWordToMethod(1);
 				}, 100);
 				nbMethod = 1;
