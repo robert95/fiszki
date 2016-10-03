@@ -59,21 +59,6 @@
 		<input type="hidden" id="sugCatPar" value="-1">
 		<input type="hidden" id="sugCatSub" value="-1">
 		<img class="back" src="img/back.png" />
-		<!--<div class="nav-circle" id="nav-circle-main">
-			<p class="activ" data-target="choose-lang">
-				<img src="img/1.png" class="no-activ-img">
-				<img src="img/1.png" class="activ-img">
-			</p>
-			<p data-target="choose-cat">
-				<img src="img/2.png" class="no-activ-img">
-				<img src="img/2.png" class="activ-img">
-			</p>
-			<p data-target="list-of-word">
-				<img src="img/3.png" class="no-activ-img">
-				<img src="img/3.png" class="activ-img">
-			</p>
-			<p id="nrDay"></p>
-		</div>-->
 		<section id="first-use-loading-page">
 			<p id="welcome-text">Welcome</p>
 			<p id="loading-files-text">Loading...</p>
@@ -980,6 +965,7 @@
 			});
 			$("#m4").click(function(){
 				$("#statistic").show();
+				showInProgressCat();
 				setTimeout(function(){
 					$("#statistic").removeClass('goLeft');
 				}, 300);
