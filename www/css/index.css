@@ -1116,8 +1116,12 @@ section{
 	height: 100%;
 	width: 100%;
 	background: url('../img/bg.png') 100% 100%;
-	overflow: scroll;
+	overflow: hidden;
 	max-height: 100%;
+}
+#statistic .inProgressCatList, #list-of-word-in-cat .scroll-cont{
+	max-height: calc(100% - 185px);
+	overflow: scroll;
 }
 #statistic h3:first-of-type, #list-of-word-in-cat h3:first-of-type{
 	position: fixed;
