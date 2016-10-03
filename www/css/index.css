@@ -1013,12 +1013,13 @@ section{
 	-webkit-transform-origin: 100% 40%;
 	-webkit-transition: all 0.6s linear;
 	transition: all 0.6s linear 0s;
-	transform: translate3d(0, -700px, 0);
-	-webkit-transform: translate3d(0, -700px, 0);
+	transform: translate3d(0, -100%, 0);
+	-webkit-transform: translate3d(0, -100%, 0);
 	background: rgb(63, 140, 183) none repeat scroll 0% 0%;
 	z-index: 1001;
 	background: transparent url("../img/bg.png") repeat scroll 0% 0%;
 	background-size: 100% 100%;
+	height: 100%;
 }
 .showmenu{
 	transform: translate3d(0, 0, 0) !important;
@@ -1042,15 +1043,20 @@ section{
 	padding: 0px 0;
 	box-shadow: unset;
 	max-height: 52px;
-	background: #265067;
 	padding-top: 10px;
 	margin-top: 24px;
 	margin-bottom: 0px;
 	border-radius: 0;
+	position: absolute;
+	bottom: 25px;
+	background: url("../img/btn_menu.png");
+	background-size: 100% 100%;
 }
 #menu ul{
 	padding: 25px 0 0 0;
 	margin: 0;
+	height: 100%;
+	position: relative;
 }
 #menu-switch{
 	position: fixed;
@@ -1071,7 +1077,7 @@ section{
 .supercat + div{
 	display: none;
 }
-.count-word-to-learn, #count-word-to-learn-tut{
+.count-word-to-learn{ /*, #count-word-to-learn-tut{*/
     font-size: 22px;
     color: white;
     position: absolute;
@@ -1113,9 +1119,13 @@ section{
 	overflow: scroll;
 	max-height: 100%;
 }
-#statistic h3, #list-of-word-in-cat h3{
-	width: 90%;
+#statistic h3:first-of-type, #list-of-word-in-cat h3:first-of-type{
+	position: fixed;
+	width: 100%;
 	margin: auto auto;
+}
+#statistic .you-start-learned, #list-of-word-in-cat .catNameInListWord{
+	margin-top: 45% !important;
 }
 .catNameInListWord{
 	margin-top: 20px;
@@ -1134,10 +1144,11 @@ section{
 	z-index: 2222223;
 }
 #statistic img, #list-of-word-in-cat img{
-	width: 20px;
-	position: absolute;
+	width: 45px;
+	position: fixed;
 	top: 10px;
 	left: 10px;
+	z-index: 10;
 }
 #statistic .inProgressCatList{
 	color: white;
@@ -1199,10 +1210,10 @@ section{
 .count-word-to-learn .rect-auto,.count-word-to-learn  .c100.p51 .slice,.count-word-to-learn  .c100.p52 .slice,.count-word-to-learn  .c100.p53 .slice,.count-word-to-learn  .c100.p54 .slice,.count-word-to-learn  .c100.p55 .slice,.count-word-to-learn  .c100.p56 .slice,.count-word-to-learn  .c100.p57 .slice,.count-word-to-learn  .c100.p58 .slice,.count-word-to-learn  .c100.p59 .slice,.count-word-to-learn  .c100.p60 .slice,.count-word-to-learn  .c100.p61 .slice,.count-word-to-learn  .c100.p62 .slice,.count-word-to-learn  .c100.p63 .slice,.count-word-to-learn  .c100.p64 .slice,.count-word-to-learn  .c100.p65 .slice,.count-word-to-learn  .c100.p66 .slice,.count-word-to-learn  .c100.p67 .slice,.count-word-to-learn  .c100.p68 .slice,.count-word-to-learn  .c100.p69 .slice,.count-word-to-learn  .c100.p70 .slice,.count-word-to-learn  .c100.p71 .slice,.count-word-to-learn  .c100.p72 .slice,.count-word-to-learn  .c100.p73 .slice,.count-word-to-learn  .c100.p74 .slice,.count-word-to-learn  .c100.p75 .slice,.count-word-to-learn  .c100.p76 .slice,.count-word-to-learn  .c100.p77 .slice,.count-word-to-learn  .c100.p78 .slice,.count-word-to-learn  .c100.p79 .slice,.count-word-to-learn  .c100.p80 .slice,.count-word-to-learn  .c100.p81 .slice,.count-word-to-learn  .c100.p82 .slice,.count-word-to-learn  .c100.p83 .slice,.count-word-to-learn  .c100.p84 .slice,.count-word-to-learn  .c100.p85 .slice,.count-word-to-learn  .c100.p86 .slice,.count-word-to-learn  .c100.p87 .slice,.count-word-to-learn  .c100.p88 .slice,.count-word-to-learn  .c100.p89 .slice,.count-word-to-learn  .c100.p90 .slice,.count-word-to-learn  .c100.p91 .slice,.count-word-to-learn  .c100.p92 .slice,.count-word-to-learn  .c100.p93 .slice,.count-word-to-learn  .c100.p94 .slice,.count-word-to-learn  .c100.p95 .slice,.count-word-to-learn  .c100.p96 .slice,.count-word-to-learn  .c100.p97 .slice,.count-word-to-learn  .c100.p98 .slice,.count-word-to-learn  .c100.p99 .slice,.count-word-to-learn  .c100.p100 .slice{
 	/*clip: rect(auto, auto, auto, auto) !important;*/
 }
-.progess-btn-per-in-cycle-2{
+.progess-btn-per-in-cycle-2, #progess-btn-per-in-cycle-2-tut{
 	color: white !important;
 }
-#count-word-to-learn-tut .c100{
+/*#count-word-to-learn-tut .c100{
 	width: 36px !important;
 	height: 36px !important;
 	background-color: rgba(0, 0, 0, 0) !important;
@@ -1238,7 +1249,7 @@ section{
 	font-weight: 400;
 	line-height: 36px;
 	width: 36px;
-}
+}*/
 .middle-line{
 	border-top: 1px solid white;
 	position: relative;
@@ -1506,9 +1517,14 @@ textarea, textarea[placeholder]{
 	}
 	#count-word-to-learn-tut, .count-word-to-learn{
 		transform: scale(3.5);
-		-webkit-transform: scale(3.5);
-		margin-top: 54px;
-		margin-left: 80px;
+		-webkit-transform: scale(1);
+		margin-top: 53px;
+		margin-left: 88px;
+		bottom: 7%;
+		right: 18%;
+	}
+	#count-word-to-learn-tut{
+		bottom: 12% !important; 
 	}
 	#progress-circle-end .c100, #progress-circle .c100, #wrap-ok-no .c100, #tut-wrap-ok-no .c100, #start-day-wrap-ok-no .c100, #start-day-wrap-ok-no-end-course .c100, #end-day-wrap-ok-no .c100, #new-cat-wrap-ok-no .c100{
 		transform: scale(1.8);

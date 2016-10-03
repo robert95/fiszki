@@ -51,7 +51,7 @@ var app = {
 		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar);  
 		
 		document.addEventListener('onAdDismiss',function(data){
-			prepareAd();	
+			//prepareAd();	
 			removeAllProgress();
 			removeAllProgress2();
 			setTimeout(function(){	
@@ -61,7 +61,7 @@ var app = {
 		});
 		
 		document.addEventListener('onAdLeaveApp',function(data){
-			prepareAd();
+			//prepareAd();
 		});
 		
 		document.addEventListener('onAdPresent',function(data){
@@ -69,6 +69,7 @@ var app = {
 				removeAllProgress();
 				removeAllProgress2();
 			}, 50);
+			prepareAd();
 		});
 		
 	/*	document.addEventListener("pause", function() {
@@ -361,6 +362,7 @@ function startApp(){
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){	
 		var lang = langJSON.lang;
+		prepareAd();
 		//TAK
 		if(lang < 1){
 			$("#first-use-loading-page").hide();
@@ -381,7 +383,7 @@ function startApp(){
 				getCatWithPos(0, 1);
 			}, 500);
 			setTimeout(function(){
-				prepareAd();
+				//prepareAd();
 				gameIsBegin = true;
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
@@ -767,6 +769,7 @@ function setNewCat(c, s){
 	setTimeout(	function(){
 		srt = $("#nrDayFiled").text();
 		toLearnJSON.push({"subid": s,"catid": c,"start": srt});
+		inProgressCat.push(c + "/" + s);
 	}, 150);
 	
 	/*datesJSON = toLearnJSON;
@@ -2186,7 +2189,7 @@ function startTut(){
 	$("#tutorial").show();
 	setTimeout(function(){				
 		$("#tutorial").removeClass('next-cat-left');
-	}, 100);
+	}, 200);
 	$("#tut-lern-0").show();
 }
 function nextTutStep(){
