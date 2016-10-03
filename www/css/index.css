@@ -1119,7 +1119,11 @@ section{
 	overflow: hidden;
 	max-height: 100%;
 }
-#statistic .inProgressCatList, #list-of-word-in-cat .scroll-cont{
+#statistic .inProgressCatList{
+	max-height: 280px;
+	overflow: scroll;
+}
+#list-of-word-in-cat .scroll-cont{
 	max-height: calc(100% - 185px);
 	overflow: scroll;
 }
