@@ -10,5 +10,53 @@
 		"name": "N8.6.2",
 		"notices": [
 		]
+	},
+	{
+		"id": 3,
+		"name": "N8.6.3",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "N8.6.4",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "N8.6.5",
+		"notices": [
+		]
+	},
+	{
+		"id": 6,
+		"name": "N8.6.6",
+		"notices": [
+		]
+	},
+	{
+		"id": 7,
+		"name": "N8.6.7",
+		"notices": [
+		]
+	},
+	{
+		"id": 8,
+		"name": "N8.6.8",
+		"notices": [
+		]
+	},
+	{
+		"id": 9,
+		"name": "N8.6.9",
+		"notices": [
+		]
+	},
+	{
+		"id": 10,
+		"name": "N8.6.10",
+		"notices": [
+		]
 	}
 ]

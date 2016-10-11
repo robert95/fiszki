@@ -10,5 +10,53 @@
 		"name": "A14.9.2",
 		"notices": [
 		]
+	},
+	{
+		"id": 3,
+		"name": "A14.9.3",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "A14.9.4",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "A14.9.5",
+		"notices": [
+		]
+	},
+	{
+		"id": 6,
+		"name": "A14.9.6",
+		"notices": [
+		]
+	},
+	{
+		"id": 7,
+		"name": "A14.9.7",
+		"notices": [
+		]
+	},
+	{
+		"id": 8,
+		"name": "A14.9.8",
+		"notices": [
+		]
+	},
+	{
+		"id": 9,
+		"name": "A14.9.9",
+		"notices": [
+		]
+	},
+	{
+		"id": 10,
+		"name": "A14.9.10",
+		"notices": [
+		]
 	}
 ]
