@@ -2598,7 +2598,7 @@ function gotFSNProgress(fileSystem) {
 
 function gotFileEntryNProgress(fileEntry) {
 	fileEntry.createWriter(gotFileWriterNProgress, failN);
-	alert(fileEntry.toURL());
+	srcToShare = fileEntry.toURL());
 }
 
 function gotFileWriterNProgress(writer) {
@@ -2768,16 +2768,18 @@ function setRatingToTrue() {
 function setTextWidth(){
 	$(".text").css('min-width', $( window ).width()*0.85);
 }
+var srcToShare = "";
 function shareFile(){
 	var file = srcSaveProgress;
 /*	alert(file);
 	alert(rootURL);
 	alert(rootURL+file);
 	alert('file://' + file);*/
+	alert(srcToShare);
 	var optionsToShare = {
 		message: 'Zapisz postęp', // not supported on some apps (Facebook, Instagram)
 		subject: 'Mój postęp w SpeakUp', // fi. for email
-		files: ['file://' + file], // an array of filenames either locally or remotely
+		files: [srcToShare], // an array of filenames either locally or remotely
 		url: null,
 		chooserTitle: 'Zapisz postęp' // Android only, you can override the default share sheet title
 	}
