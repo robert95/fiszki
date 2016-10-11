@@ -2766,6 +2766,9 @@ function setTextWidth(){
 	$(".text").css('min-width', $( window ).width()*0.85);
 }
 function shareFile(){
+	alert(file);
+	alert(fileSystem.root.toURL());
+	alert(fileSystem.root.toURL()+file);
 	var file = srcSaveProgress;
 	var optionsToShare = {
 		message: 'Zapisz postęp', // not supported on some apps (Facebook, Instagram)
@@ -2776,14 +2779,16 @@ function shareFile(){
 	}
 
 	var onSuccessShare = function(result) {
+		alert(result.completed);
 		console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
 		console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
 	}
 
 	var onErrorShare = function(msg) {
+		alert(msg);
 		console.log("Sharing failed with message: " + msg);
 	}
 
-	window.plugins.socialsharing.shareWithOptions(optionsoptionsToShare, onSuccessShare, onErrorShare);
+	window.plugins.socialsharing.shareWithOptions(optionsToShare, onSuccessShare, onErrorShare);
 }
 		
