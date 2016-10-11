@@ -868,7 +868,7 @@ section{
 }
 .note-skip-btn{
 	position: absolute;
-	bottom: 0px;
+	bottom: 30px;
 	left: 0px;
 	color: white;
 	width: 100%;
@@ -1088,6 +1088,12 @@ section{
 	-webkit-transform: scale(0.45);
 	bottom: 33px;
 	right: 2%;
+}
+.count-word-to-learn-in-this-sesion{ 
+    left: 2%;
+	margin-right: 22px;
+	margin-left: 0;
+	right: auto;
 }
 #count-word-to-learn-tut{
     display: none;

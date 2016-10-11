@@ -39,7 +39,7 @@
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
 			<ul>
-				<li id="m1" class="text"><span class="l2">E_ZAPISZ POSTĘP DO PLIKU</span><span class="l3">F_ZAPISZ POSTĘP DO PLIKU</span><span class="l4">N_ZAPISZ POSTĘP DO PLIKU</span><span class="l5">P_ZAPISZ POSTĘP DO PLIKU</span></li>
+				<li id="m1" class="text"><span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">P_ZAPISZ POSTĘP</span></li>
 				<li id="m2" class="text"><span class="l2">E_WCZYTAJ POSTĘP Z PLIKU</span><span class="l3">F_WCZYTAJ POSTĘP Z PLIKU</span><span class="l4">N_WCZYTAJ POSTĘP Z PLIKU</span><span class="l5">P_WCZYTAJ POSTĘP Z PLIKU</span></li>
 				<!--<li id="m3"><span class="l2">E_TUTORIAL</span><span class="l3">TUTORIAL</span></li>-->
 				<li id="m4" class="text"><span class="l2">E_STATYSTYKI</span><span class="l3">F_STATYSTYKI</span><span class="l4">N_STATYSTYKI</span><span class="l5">P_STATYSTYKI</span></li>
@@ -105,7 +105,16 @@
 		<section id="learn-container" class="next-cat-left">
 			<div class="count-word-to-learn">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100">
-					<span class="progess-btn-per-in-cycle-2">21</span>
+					<span class="progess-btn-per-in-cycle-2 all-words-to-end">21</span>
+					<div class="slice">
+						<div class="bar"></div>
+						<div class="fill"></div>
+					</div>
+				</div>
+			</div>
+			<div class="count-word-to-learn count-word-to-learn-in-this-sesion">
+				<div class="progess-btn-stan-in-session c100 p100">
+					<span class="progess-btn-per-in-cycle-2 all-words-to-end-sesion">21</span>
 					<div class="slice">
 						<div class="bar"></div>
 						<div class="fill"></div>
@@ -449,7 +458,7 @@
 		<section id="startDay">
 			<div class="count-word-to-learn">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100">
-					<span class="progess-btn-per-in-cycle-2">21</span>
+					<span class="progess-btn-per-in-cycle-2 all-words-to-end">21</span>
 					<div class="slice">
 						<div class="bar"></div>
 						<div class="fill"></div>
@@ -483,7 +492,7 @@
 		<section id="end-panel" class="next-cat-left">
 			<div class="count-word-to-learn">
 				<div class="progess-btn-stan-in-cycle-2 c100 p0">
-					<span class="progess-btn-per-in-cycle-2">0</span>
+					<span class="progess-btn-per-in-cycle-2 all-words-to-end">0</span>
 					<div class="slice">
 						<div class="bar"></div>
 						<div class="fill"></div>
@@ -954,7 +963,8 @@
 			$("#m1").click(function(){
 				saveProgressInFile();
 				setTimeout(function(){
-					alert("Twoje postępy zostały zapisane w pamięci telefony w pliku 'myProgress.fiszki'");
+					shareFile();
+					//alert("Twoje postępy zostały zapisane w pamięci telefony w pliku 'myProgress.fiszki'");
 				}, 500);
 			});
 			$("#m2").click(function(){

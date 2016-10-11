@@ -37,6 +37,7 @@
   <plugin src="https://github.com/mesmotronic/cordova-plugin-fullscreen.git" />
   <plugin src="https://github.com/pushandplay/cordova-plugin-apprate.git" />
   <plugin src="https://github.com/apache/cordova-plugin-inappbrowser.git" />
+  <plugin src="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" />
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>

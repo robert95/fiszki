@@ -380,7 +380,7 @@ function startApp(){
 			getNotice(); //pobierz notice
 			getToLearn(); //pobierz toLearn
 			setTimeout(function(){
-				getCatWithPos(0, 1);
+				if(!suggestedCatName) getCatWithPos(0, 1);
 			}, 500);
 			setTimeout(function(){
 				//prepareAd();
@@ -417,7 +417,8 @@ function getDay(){
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(countWordsToLearn); //usunąć
-	$(".progess-btn-per-in-cycle-2").text(countWordsToLearn); //usunąć
+	$(".all-words-to-end").text(countWordsToLearn); //usunąć
+	$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
 	$(".countKMLearned").text( Math.floor( dayJSON.km*minCat / 60)); //usunąć
 	$(".countMinLearned").text( dayJSON.km*minCat % 60); //usunąć
 	for(var x in dayJSON.skiped){
@@ -496,10 +497,12 @@ function getDay(){
 				countWordsToLearn -= wordsInOneCat*2 + (wordsInOneCat*4-2);
 				countOfCycle -= 2;
 				$("#countWordsToLearn").text(countWordsToLearn);
-				$(".progess-btn-per-in-cycle-2").text(countWordsToLearn);
+				$(".all-words-to-end").text(countWordsToLearn);
+				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
 			}else{
 				$("#countWordsToLearn").text(countWordsToLearn);	
-				$(".progess-btn-per-in-cycle-2").text(countWordsToLearn);	
+				$(".all-words-to-end").text(countWordsToLearn);	
+				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
 			}
 		}, 150);*/
 }
@@ -514,7 +517,8 @@ function getDayHelper(){
 		$(".allWords").text(dayJSON.words);
 		$("#end-nr-lesson").text(dayJSON.day);
 		$("#countWordsToLearn").text(countWordsToLearn); 
-		$(".progess-btn-per-in-cycle-2").text(countWordsToLearn); 
+		$(".all-words-to-end").text(countWordsToLearn); 
+		$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
 		$(".countKMLearned").text( Math.floor( dayJSON.km*minCat / 60)); //usunąć
 		$(".countMinLearned").text( dayJSON.km*minCat % 60); //usunąć
 		for(var x in dayJSON.skiped){
@@ -619,10 +623,12 @@ function getToLearnHelper(){
 				countWordsToLearn -= wordsInOneCat*2 + (wordsInOneCat*4-2);
 				countOfCycle -= 2;
 				$("#countWordsToLearn").text(countWordsToLearn);
-				$(".progess-btn-per-in-cycle-2").text(countWordsToLearn);
+				$(".all-words-to-end").text(countWordsToLearn);
+				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
 			}else{
 				$("#countWordsToLearn").text(countWordsToLearn);	
-				$(".progess-btn-per-in-cycle-2").text(countWordsToLearn);	
+				$(".all-words-to-end").text(countWordsToLearn);	
+				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
 			}
 		}, 150);
 	}
@@ -2277,6 +2283,7 @@ function backToSetNewCategory(){
 			$("#new-category-choice").removeClass('next-cat-left');
 			$("#learn-container").addClass('next-cat-left');
 			$("#progess-btn-stan-in-cycle").addClass('p100');
+			$(".progess-btn-stan-in-session").addClass('p100');
 			setTimeout(function(){	loadProgressBarToFull2(); }, 200);
 		}, 50);
 	}, 500);
@@ -2289,6 +2296,7 @@ function startChoiceNewCategory(){
 		setTimeout(function(){				
 			$("#new-category-choice").removeClass('next-cat-left');
 			$("#learn-container").addClass('next-cat-left');
+			$(".progess-btn-stan-in-session").addClass('p100');
 			$("#progess-btn-stan-in-cycle").addClass('p100');
 			setTimeout(function(){	loadProgressBarToFull2(); }, 200);
 		}, 50);
@@ -2311,7 +2319,7 @@ function loadProgressBarToFull2(){
 
 function smoothLoadProgressBar2() {          
    setTimeout(function () {    
-      $("#progess-btn-stan-in-cycle-ncat").addClass('p'+ix2);        
+      $("#progess-btn-stan-in-cycle-ncat").addClass('p'+ix2);  
       ix2++;                   
       if (ix2 < 101) {           
          smoothLoadProgressBar2();        
@@ -2416,17 +2424,20 @@ function updateProgressBar(){
 		var percent = 100 - Math.round(((learnedWords)/(countWordsToLearn))*100);
 		var percent2 = 100 - Math.round(((learnedWordsInCat)/(countWordsToLearnInThisCycle))*100);
 		$("#progess-btn-stan-in-cycle").addClass('p'+percent2);
+		$(".progess-btn-stan-in-session").addClass('p'+percent2);
 		$(".progess-btn-stan-in-cycle-2").addClass('p'+percent);
 		removeProgressClassMin($("#progess-btn-stan-in-cycle"), percent2);
+		removeProgressClassMin($(".progess-btn-stan-in-session"), percent2);
 		removeProgressClassMin($(".progess-btn-stan-in-cycle-2"), percent);
-		$(".progess-btn-per-in-cycle-2").text(countWordsToLearn-learnedWords);
+		$(".all-words-to-end").text(countWordsToLearn-learnedWords);
+		$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle-learnedWordsInCat);
 	}, 50);
 }
 /*END TUTORIAL*/
 var sugGetIsSetter = false;
 var scdCycleInSearchSub = false;
 function getCatWithPos(pos, off){
-//	alert(pos + "/" + off);
+	//alert(pos + "/" + off);
 	//alert(allCats.sort().toString());
 	//alert(pos + " - " + off + " / " + allCats.length + " / " + langJSON.lang);
 	//alert(scdCycleInSearchSub);*/
@@ -2754,59 +2765,25 @@ function setRatingToTrue() {
 function setTextWidth(){
 	$(".text").css('min-width', $( window ).width()*0.85);
 }
-/*function iinit() {
-	
-	//This alias is a read-only pointer to the app itself
-	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www/index.html", gotFile, fail);
+function shareFile(){
+	var file = srcSaveProgress;
+	var optionsToShare = {
+		message: 'Zapisz postęp', // not supported on some apps (Facebook, Instagram)
+		subject: 'Mój postęp w SpeakUp', // fi. for email
+		files: [file, null], // an array of filenames either locally or remotely
+		url: null,
+		chooserTitle: 'Zapisz postęp' // Android only, you can override the default share sheet title
+	}
 
+	var onSuccessShare = function(result) {
+		console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+		console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+	}
+
+	var onErrorShare = function(msg) {
+		console.log("Sharing failed with message: " + msg);
+	}
+
+	window.plugins.socialsharing.shareWithOptions(optionsoptionsToShare, onSuccessShare, onErrorShare);
 }
-
-function fail(e) {
-	alert("dupa");
-}
-
-function gotFile(fileEntry) {
-
-	fileEntry.file(function(file) {
-		alert(file.localURL);
-		var s = "";
-		s += "<b>name:</b> " + file.name + "<br/>";
-		s += "<b>localURL:</b> " + file.localURL + "<br/>";
-		s += "<b>type:</b> " + file.type + "<br/>";
-		s += "<b>lastModifiedDate:</b> " + (new Date(file.lastModifiedDate)) + "<br/>";
-		s += "<b>size:</b> " + file.size + "<br/>";
 		
-		document.querySelector("#status").innerHTML = s;
-		console.dir(file);
-	});
-}*/
-/*END COPY FIRST PATCH*/
-//getCategoryList(idLant)
-//getSubCategoryList(idCat)
-//getWordList(idLang, idCar, idSubCat)
-//getSound(idLang, idCat, idSubCat, idWord)
-
-//struktura plików
-/*
- Aplikacja 	-> lang.json
-			-> 1 (foldery z id języka)
-			-> 2
-			-> 3
-				-> cat.json
-				-> 1 (foldery z id cat)
-				-> 2
-				-> 3
-					-> subcat.json
-					-> 1(foldery z id subCat)
-					-> 2
-					-> 3
-						-> sound (pliki z dźwiękami)
-							-> 1.m4p
-							-> 2.m4p
-							-> 3.m4p 
-						-> words.json
-							-> id : slowo : inne dane
-							-> id : slowo : inne dane
-							-> id : slowo : inne dane
-
-*/
