@@ -2768,10 +2768,10 @@ function setTextWidth(){
 	$(".text").css('min-width', $( window ).width()*0.85);
 }
 function shareFile(){
+	var file = srcSaveProgress;
 	alert(file);
 	alert(rootURL);
 	alert(rootURL+file);
-	var file = srcSaveProgress;
 	var optionsToShare = {
 		message: 'Zapisz postęp', // not supported on some apps (Facebook, Instagram)
 		subject: 'Mój postęp w SpeakUp', // fi. for email
