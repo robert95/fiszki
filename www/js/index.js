@@ -2693,14 +2693,15 @@ function setinProgressCatList(idp, idc){
 				var cat = scat[x];
 				if(cat.id == idc) {	
 					$(".catNameInListWord").text(cat.name);
-					$(".inProgressCatList").append('<p class="text" onclick="showMeWordInThisCat(' + idp + ', ' + idc + ')">' + cat.name + '</p>');
+					$(".inProgressCatList").append('<p class="text" onclick="showMeWordInThisCat(' + idp + ', ' + idc + ', ' + cat.name + ')">' + cat.name + '</p>');
 				}
 			}
 		});
 	}
 }
 
-function showMeWordInThisCat(idp, idc){
+function showMeWordInThisCat(idp, idc, name){
+	$(".catNameInListWord").text(name);
 	fillTableListWordInCatMain(idp, idc);
 	fillTableListWordInCat(idp, idc);
 	fillTableListWordInCatWithNote(idp, idc);
@@ -2770,12 +2771,6 @@ function setTextWidth(){
 }
 var srcToShare = "";
 function shareFile(){
-	var file = srcSaveProgress;
-/*	alert(file);
-	alert(rootURL);
-	alert(rootURL+file);
-	alert('file://' + file);*/
-	alert(srcToShare);
 	var optionsToShare = {
 		message: 'Zapisz postęp', // not supported on some apps (Facebook, Instagram)
 		subject: 'Mój postęp w SpeakUp', // fi. for email
@@ -2785,13 +2780,11 @@ function shareFile(){
 	}
 
 	var onSuccessShare = function(result) {
-		alert(result.completed);
 		console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
 		console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
 	}
 
 	var onErrorShare = function(msg) {
-		alert(msg);
 		console.log("Sharing failed with message: " + msg);
 	}
 
