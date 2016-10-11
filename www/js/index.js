@@ -354,6 +354,7 @@ var allCats = [];
 var allUsedCats = [];
 var allEndedCats = [];
 var todayEndedCat = "";
+var rootURL = "";
 /* START APP*/
 function startApp(){
 	StatusBar.hide();
@@ -1072,6 +1073,7 @@ function saveNotice(text){
 function gotFSN(fileSystem) {
 	var srcFileNotice = path() + "notice.json";
 	fileSystem.root.getFile(srcFileNotice, {create: false}, gotFileEntryN, failN);
+	rootURL = fileSystem.root.toURL();
 }
 
 function gotFileEntryN(fileEntry) {
@@ -2767,8 +2769,8 @@ function setTextWidth(){
 }
 function shareFile(){
 	alert(file);
-	alert(fileSystem.root.toURL());
-	alert(fileSystem.root.toURL()+file);
+	alert(rootURL);
+	alert(rootURL+file);
 	var file = srcSaveProgress;
 	var optionsToShare = {
 		message: 'Zapisz postęp', // not supported on some apps (Facebook, Instagram)
