@@ -159,6 +159,7 @@ function readLang() {
 }
 function onFSSuccessLangR(fileSystem) {
     fileSystem.root.getFile(srcLang, {create:false, exclusive:false}, gotFileEntryLangR, onFSErrorLangR);
+	rootURL = fileSystem.root.toURL();
 }
 function gotFileEntryLangR(fileEntry) {
     fileEntry.file(gotFileLangR, onFSErrorLangR);
@@ -1073,7 +1074,6 @@ function saveNotice(text){
 function gotFSN(fileSystem) {
 	var srcFileNotice = path() + "notice.json";
 	fileSystem.root.getFile(srcFileNotice, {create: false}, gotFileEntryN, failN);
-	rootURL = fileSystem.root.toURL();
 }
 
 function gotFileEntryN(fileEntry) {
@@ -2775,7 +2775,7 @@ function shareFile(){
 	var optionsToShare = {
 		message: 'Zapisz postęp', // not supported on some apps (Facebook, Instagram)
 		subject: 'Mój postęp w SpeakUp', // fi. for email
-		files: [file, null], // an array of filenames either locally or remotely
+		files: [rootURL+file, null], // an array of filenames either locally or remotely
 		url: null,
 		chooserTitle: 'Zapisz postęp' // Android only, you can override the default share sheet title
 	}
