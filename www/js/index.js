@@ -2598,7 +2598,7 @@ function gotFSNProgress(fileSystem) {
 
 function gotFileEntryNProgress(fileEntry) {
 	fileEntry.createWriter(gotFileWriterNProgress, failN);
-	srcToShare = fileEntry.toURL());
+	srcToShare = fileEntry.toURL();
 }
 
 function gotFileWriterNProgress(writer) {
