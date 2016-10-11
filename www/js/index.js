@@ -2693,7 +2693,7 @@ function setinProgressCatList(idp, idc){
 				var cat = scat[x];
 				if(cat.id == idc) {	
 					$(".catNameInListWord").text(cat.name);
-					$(".inProgressCatList").append('<p class="text" onclick="showMeWordInThisCat(' + idp + ', ' + idc + ', ' + cat.name + ')">' + cat.name + '</p>');
+					$(".inProgressCatList").append('<p class="text" onclick="showMeWordInThisCat(' + idp + ', ' + idc + ', \'' + cat.name + '\')">' + cat.name + '</p>');
 				}
 			}
 		});
