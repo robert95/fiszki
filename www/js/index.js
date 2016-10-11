@@ -2772,10 +2772,11 @@ function shareFile(){
 	alert(file);
 	alert(rootURL);
 	alert(rootURL+file);
+	alert(window.FilePath.resolveNativePath(rootURL+file));
 	var optionsToShare = {
 		message: 'Zapisz postęp', // not supported on some apps (Facebook, Instagram)
 		subject: 'Mój postęp w SpeakUp', // fi. for email
-		files: [rootURL+file, null], // an array of filenames either locally or remotely
+		files: [window.FilePath.resolveNativePath(rootURL+file), null], // an array of filenames either locally or remotely
 		url: null,
 		chooserTitle: 'Zapisz postęp' // Android only, you can override the default share sheet title
 	}
