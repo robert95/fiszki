@@ -2740,13 +2740,15 @@ function fillTableListWordInCat(idp, idc){
 function fillTableListWordInCatWithNote(idp, idc){
 	var idLang = $("#myLang").val();
 	var i = 1;
-	for(var x in noticeJSON){
-		var notice = noticeJSON[x];
-		var tmp = idLang+"\\"+idp+"\\"+idc+"\\"+1+"\\"+i;
-		if(notice.word == tmp){
-			$(".n"+i).html("(" + notice.notice+")");
-		}else $(".n"+i).html("");
-		i++;
+	for(i = 1; i < 11; i++){
+		$(".n"+i).html("");
+		for(var x in noticeJSON){
+			var notice = noticeJSON[x];
+			var tmp = idLang+"\\"+idp+"\\"+idc+"\\"+1+"\\"+i;
+			if(notice.word == tmp){
+				$(".n"+i).html("(" + notice.notice+")");
+			}
+		}
 	}
 }
 /* END statistic */

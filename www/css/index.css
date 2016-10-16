@@ -1090,10 +1090,11 @@ section{
 	right: 2%;
 }
 .count-word-to-learn-in-this-sesion{ 
-    left: 2%;
+	left: 13%;
 	margin-right: 22px;
 	margin-left: 0;
 	right: auto;
+	bottom: 55px;
 }
 #count-word-to-learn-tut{
     display: none;
@@ -1126,7 +1127,7 @@ section{
 	max-height: 100%;
 }
 #statistic .inProgressCatList{
-	max-height: 200px;
+	max-height: 180px;
 	overflow: scroll;
 }
 #list-of-word-in-cat .scroll-cont{
@@ -1379,6 +1380,14 @@ textarea, textarea[placeholder]{
 	width: 80%;
 	margin-left: 15%;
 	padding: 20px 0 !important;
+}
+.count-word-to-learn-in-this-sesion .c100{
+	border: 0 !important;
+	background: 0 !important;
+}
+.count-word-to-learn-in-this-sesion .c100::after{
+	border: 0 !important;
+	background: 0 !important;
 }
 @media (min-width : 500px) {
 	.remind-img {
