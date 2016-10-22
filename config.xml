@@ -15,13 +15,13 @@
   <preference name="ios-statusbarstyle" value="black-opaque"/>
   <preference name="detect-data-types" value="true"/>
   <preference name="exit-on-suspend" value="false"/>
-  <preference name="show-splash-screen-spinner" value="false"/>
+  <preference name="show-splash-screen-spinner" value="true"/>
   <preference name="auto-hide-splash-screen" value="true"/>
   <preference name="disable-cursor" value="false"/>
   <preference name="android-minSdkVersion" value="14"/>
   <preference name="android-installLocation" value="auto"/>
   <preference name="AndroidLaunchMode" value="singleInstance" />
-  <preference name="DisallowOverscroll" value="false" />
+  <preference name="DisallowOverscroll" value="true" />
   <preference name="KeepRunning" value="true" />
   <gap:plugin name="org.apache.cordova.file"/>
   <gap:plugin name="org.apache.cordova.file-transfer"/>
