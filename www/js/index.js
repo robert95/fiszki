@@ -52,7 +52,7 @@ var app = {
 		if($( window ).width() > 600) {
 			StatusBar.hide();	
 		}else{
-			AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionE);
+			AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 		}
 		
 		document.addEventListener('onAdDismiss',function(data){
@@ -120,13 +120,13 @@ var app = {
     }
 };
 function emptyFunctionS(){
-	
+	console.log("jestem");
 }
 function hideBars() {
 	if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
-		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionE);
+		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
 }
 /* OBSŁUGA ŚCIEŻKI */
