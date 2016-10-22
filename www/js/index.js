@@ -368,7 +368,8 @@ var todayEndedCat = "";
 var rootURL = "";
 /* START APP*/
 function startApp(){
-	StatusBar.hide();
+	hideBars();
+	//StatusBar.hide();
 	//sprawdź czy to pierwsze uruchomienia
 	$("#first-use-loading-page").show();
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
@@ -1242,7 +1243,8 @@ function setAntyNaparzankaToTrue(){
 
 function nextStep(){
 	antyNaparzanka = true;
-	StatusBar.hide();
+	hideBars();
+	//StatusBar.hide();
 	backToNormalStateNote();
 	updateProgressBar();
 	if(readyToSaveNotice){
