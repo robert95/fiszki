@@ -1,52 +1,42 @@
 [
 	{
 		"id": 1,
-		"name": "P-2-1",
-		"pos": "11"
+		"name": "ENG_Kasia 1",
+		"pos": "1"
 	},
 	{
 		"id": 2,
-		"name": "P-2-2",
-		"pos": "12"
+		"name": "ENG_Kasia 2",
+		"pos": "2"
 	},
 	{
 		"id": 3,
-		"name": "P-2-3",
-		"pos": "13"
+		"name": "ENG_Kasia 3",
+		"pos": "3"
 	},
 	{
 		"id": 4,
-		"name": "P-2-4",
-		"pos": "14"
+		"name": "ENG_Kasia 4",
+		"pos": "4"
 	},
 	{
 		"id": 5,
-		"name": "P-2-5",
-		"pos": "15"
+		"name": "ENG_Kasia 5",
+		"pos": "5"
 	},
 	{
 		"id": 6,
-		"name": "P-2-6",
-		"pos": "16"
+		"name": "ENG_różne 6",
+		"pos": "6"
 	},
 	{
 		"id": 7,
-		"name": "P-2-7",
-		"pos": "17"
+		"name": "ENG_różne 7",
+		"pos": "7"
 	},
 	{
 		"id": 8,
-		"name": "P-2-8",
-		"pos": "18"
-	},
-	{
-		"id": 9,
-		"name": "P-2-9",
-		"pos": "19"
-	},
-	{
-		"id": 10,
-		"name": "P-2-10",
-		"pos": "20"
+		"name": "ENG_różne 8",
+		"pos": "8"
 	}
 ]

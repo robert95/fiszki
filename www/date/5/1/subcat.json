@@ -1,52 +1,42 @@
 [
 	{
 		"id": 1,
-		"name": "P-1-1",
+		"name": "ENG_Kasia 1",
 		"pos": "1"
 	},
 	{
 		"id": 2,
-		"name": "P-1-2",
+		"name": "ENG_Kasia 2",
 		"pos": "2"
 	},
 	{
 		"id": 3,
-		"name": "P-1-3",
+		"name": "ENG_Kasia 3",
 		"pos": "3"
 	},
 	{
 		"id": 4,
-		"name": "P-1-4",
+		"name": "ENG_Kasia 4",
 		"pos": "4"
 	},
 	{
 		"id": 5,
-		"name": "P-1-5",
+		"name": "ENG_Kasia 5",
 		"pos": "5"
 	},
 	{
 		"id": 6,
-		"name": "P-1-6",
+		"name": "ENG_różne 6",
 		"pos": "6"
 	},
 	{
 		"id": 7,
-		"name": "P-1-7",
+		"name": "ENG_różne 7",
 		"pos": "7"
 	},
 	{
 		"id": 8,
-		"name": "P-1-8",
+		"name": "ENG_różne 8",
 		"pos": "8"
-	},
-	{
-		"id": 9,
-		"name": "P-1-9",
-		"pos": "9"
-	},
-	{
-		"id": 10,
-		"name": "P-1-10",
-		"pos": "10"
 	}
 ]

@@ -339,7 +339,7 @@ var srcFile = false;
 var res2 = false;
 var srcFile2 = false;
 var res3 = false;
-var srcFile3 = false;
+var srcFile3 = false; 
 var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false}');//
 var toLearnJSON = [];//JSON.parse('[{"subid":2,"catid":1,"start":"29"},{"subid":9,"catid":1,"start":"26"}]');//
 var noticeJSON = [];
@@ -696,8 +696,8 @@ function showCatList(c){
 	for(var x in cats){
 		subcats = false;
 		var cat = cats[x];
-		if(x == 0) tmp += '<div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">P_Fiszki</span></h1><div>';
-		if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">P_Gramatyka</span></h1><div>';
+		if(x == 0) tmp += '<div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Fiszki</span></h1><div>';
+		if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
 		tmp += '<div><h1 class="text supercat" onclick="expand(this);">'+ cat.name + '</h1>';
 		var extraEnd = parseInt(x)+1 == parseInt(cats.length) ? '</div></div>' : "";
 		tmp += getSubCatList(cat.id) + '</div>' + extraEnd;
@@ -1223,7 +1223,7 @@ var t_nowe = 0;
 var id_powt = -1;
 var s_bylo = 0;
 var t_bylo = 0;
-var step_pow = 0;
+var stepow = 0;
 var ile_s = 0;
 var ile_t = 0;
 var last_r_s = -1;
@@ -1464,7 +1464,7 @@ function nextStep(){
 						//powtórka
 						$("#nav-words-container p").removeClass("pulse");
 						//alert(snd_id + " " + s_nowe + " " + s_bylo + " " + ile_s + " " + thd_id + " " + t_nowe + " " + t_bylo + " " + ile_t);
-						if(step_pow == 0){
+						if(stepow == 0){
 							if(ile_s == 0) snd_id = -1;
 							if(ile_t == 0) thd_id = -1;
 							updateThirdNav();
@@ -1476,15 +1476,15 @@ function nextStep(){
 								id_powt = -1;
 							}
 						}
-						//alert(id_powt + " " + step_pow);
+						//alert(id_powt + " " + stepow);
 						if(id_powt > 0){
-							if(step_pow == 0){
+							if(stepow == 0){
 								repeatThrid(id_powt, 1);
-								step_pow = 1;
+								stepow = 1;
 								return;
 							}else{
 								repeatThrid(id_powt, 6);
-								step_pow = 0;
+								stepow = 0;
 								if(id_powt == snd_id){
 									ile_s--;
 									s_bylo = 1;
@@ -1569,7 +1569,7 @@ function nextStep(){
 				}
 			}
 			$("#nav-words-container p").removeClass("pulse");
-			if(step_pow == 0){
+			if(stepow == 0){
 				//alert("t1");
 				if(ile_s == 0) snd_id = -1;
 				if(ile_t == 0) thd_id = -1;
@@ -1583,13 +1583,13 @@ function nextStep(){
 				}
 			}
 			if(id_powt > 0){
-				if(step_pow == 0){
+				if(stepow == 0){
 					repeatThrid(id_powt, 1);
-					step_pow = 1;
+					stepow = 1;
 					return;
 				}else{
 					repeatThrid(id_powt, 6);
-					step_pow = 0;
+					stepow = 0;
 					if(id_powt == snd_id){
 						ile_s--;
 						s_bylo = 1;
@@ -1652,7 +1652,7 @@ function nextPack(){
 var fst_id = 0;
 var snd_id = 0;
 var thd_id = 0;
-var temp_id = 0;
+var temid = 0;
 var fin_id = 0;
 var repeatFstRound = true;
 //var repeatSecRound = false;
@@ -1843,7 +1843,7 @@ function prepareGlobalForCycle(i){
 			fst_id = 0;
 			snd_id = 0;
 			thd_id = 0;
-			temp_id = 0;
+			temid = 0;
 			fin_id = 0;
 			firstCycle = false;
 			secondCycle = false;
@@ -1855,7 +1855,7 @@ function prepareGlobalForCycle(i){
 			id_powt = -1;
 			s_bylo = 0;
 			t_bylo = 0;
-			step_pow = 0;
+			stepow = 0;
 			ile_s = 0;
 			ile_t = 0;
 			last_r_s = -1;

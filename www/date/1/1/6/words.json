@@ -1,14 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "A1.6.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "A1.6.2",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Hvorfor vil du ikke anerkjenne at du tar feil?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Anklager du meg?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Jeg har ingenting å legge til.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Vi trenger ikke annonsere.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Hva råder du meg til å gjøre?",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Jeg må si meg enig med deg.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Hun lot ham gå alene.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Det viser seg at han tar feil.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "De utnevnte henne til å gjøre oppgaven.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Jeg blir ofte fortalt at jeg er vanskelig å snakke med.",
+			"notices": [
+			]
+		}
+	]
