@@ -49,8 +49,8 @@ var app = {
 		document.addEventListener("resume", hideBars, false);
 		/*var autoHideNavigationBar = true;
 		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar); */
-		AndroidFullScreen.immersiveMode(successFunction, errorFunction);
-		AndroidFullScreen.leanMode(successFunction, errorFunction);		
+		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionE);
+		AndroidFullScreen.leanMode(emptyFunctionS, emptyFunctionE);	
 		
 		document.addEventListener('onAdDismiss',function(data){
 			//prepareAd();	
@@ -116,6 +116,12 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+function emptyFunctionS(){
+	alert("TAK");
+}
+function emptyFunctionE(){
+	alert("NIE");
+}
 function hideBars() {
 	/*StatusBar.hide();	
 	if($( window ).width() < 600) {
@@ -123,8 +129,8 @@ function hideBars() {
 		window.navigationbar.hide();
 		window.navigationbar.setUp(true);
 	}*/
-	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
-	AndroidFullScreen.leanMode(successFunction, errorFunction);
+	AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionE);
+	AndroidFullScreen.leanMode(emptyFunctionS, emptyFunctionE);
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
