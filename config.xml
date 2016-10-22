@@ -6,7 +6,7 @@
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="portrait"/>
   <preference name="target-device" value="universal"/>
-  <preference name="fullscreen" value="false"/>
+  <preference name="fullscreen" value="true"/>
   <preference name="webviewbounce" value="true"/>
   <preference name="prerendered-icon" value="true"/>
   <preference name="iosPersistentFileLocation" value="Compatibility" />
@@ -30,6 +30,7 @@
   <gap:plugin name="org.apache.cordova.network-information"/>
   <plugin name="com.gkcgautam.asset2sd" />
   <plugin name="cordova-plugin-filepath" />
+  <plugin name="cordova-plugin-fullscreen" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
   <plugin src="https://github.com/floatinghotpot/cordova-admob-pro.git" />
   <plugin src="https://github.com/apache/cordova-plugin-statusbar.git" />

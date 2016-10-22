@@ -868,7 +868,7 @@ section{
 }
 .note-skip-btn{
 	position: absolute;
-	bottom: 30px;
+	bottom: 0px;
 	left: 0px;
 	color: white;
 	width: 100%;
@@ -913,13 +913,15 @@ section{
 	padding-left: 15px;
 	text-align: left;
 	margin-top: 45px;
-	font-size: 22px;
+	font-size: 24px;
+	font-weight: bold;
 }
 .note-skip-btn  .skip-btn p{
 	padding-right: 15px;
     text-align: right;
 	margin-top: 45px;
-	font-size: 22px;
+	font-size: 24px;
+	font-weight: bold;
 }
 #progess-btn-stan-in-cycle, #progess-btn-stan-in-cycle-ncat{
 	z-index: 100;
@@ -1090,10 +1092,10 @@ section{
 	right: 2%;
 }
 .count-word-to-learn-in-this-sesion{ 
-	left: 13%;
-	margin-right: 22px;
-	margin-left: 0;
-	right: auto;
+	left: 50%;
+	margin-right: 0;
+	margin-left: -130px;
+	right: 50%;
 	bottom: 55px;
 }
 #count-word-to-learn-tut{

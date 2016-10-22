@@ -47,8 +47,10 @@ var app = {
 			setTextWidth();
 		}
 		document.addEventListener("resume", hideBars, false);
-		var autoHideNavigationBar = true;
-		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar);  
+		/*var autoHideNavigationBar = true;
+		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar); */
+		AndroidFullScreen.immersiveMode(successFunction, errorFunction);
+		AndroidFullScreen.leanMode(successFunction, errorFunction);		
 		
 		document.addEventListener('onAdDismiss',function(data){
 			//prepareAd();	
@@ -115,12 +117,14 @@ var app = {
     }
 };
 function hideBars() {
-	StatusBar.hide();	
+	/*StatusBar.hide();	
 	if($( window ).width() < 600) {
 		window.navigationbar.setUp(false);
 		window.navigationbar.hide();
 		window.navigationbar.setUp(true);
-	}
+	}*/
+	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
+	AndroidFullScreen.leanMode(successFunction, errorFunction);
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
