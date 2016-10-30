@@ -1018,7 +1018,8 @@ function tellMe(){
 	var idLang = $("#learnLang").val();
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
-	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".ogg";
+	//var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".ogg";
+	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
 	//alert(src);
 	setTimeout(function(){
 		if(my_media!=null){/*jak coś to do usunięcia*/
