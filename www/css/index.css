@@ -1094,10 +1094,11 @@ section{
 .count-word-to-learn-in-this-sesion{ 
 	left: 50%;
 	margin-right: 0;
-	margin-left: 0px;
+	margin-left: -75px;
 	right: 50%;
 	bottom: 36px;
 	z-index: 1;
+	pointer-events: none;
 }
 #count-word-to-learn-tut{
     display: none;

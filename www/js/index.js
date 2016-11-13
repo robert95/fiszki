@@ -724,8 +724,8 @@ function getWordToSuggestCat(cs){
 	var idp = res[0];
 	var idc = res[1];
 	var idLang = $("#myLang").val();
-	$("#list-word-in-sug-cat").text("");
 	$.get("date/"+ idLang + "/" + idp + "/" + idc + "/words.json", function(result) {
+		$("#list-word-in-sug-cat").text("");
 		var words = JSON.parse(result);
 		for(var x in words){
 			var w = words[x];
