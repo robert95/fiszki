@@ -23,11 +23,11 @@
   <preference name="AndroidLaunchMode" value="singleInstance" />
   <preference name="DisallowOverscroll" value="true" />
   <preference name="KeepRunning" value="true" />
-  <gap:plugin name="org.apache.cordova.file"/>
-  <gap:plugin name="org.apache.cordova.file-transfer"/>
-  <gap:plugin name="org.apache.cordova.inappbrowser"/>
-  <gap:plugin name="org.apache.cordova.media"/>
-  <gap:plugin name="org.apache.cordova.network-information"/>
+  <plugin name="cordova-plugin-file" source="npm"/>
+  <plugin name="cordova-plugin-file-transfer" source="npm"/>
+  <plugin name="cordova-plugin-inappbrowser" source="npm"/>
+  <plugin name="cordova-plugin-media" source="npm"/>
+  <plugin name="cordova-plugin-network-information" source="npm"/>
   <plugin name="com.gkcgautam.asset2sd" />
   <plugin name="cordova-plugin-filepath" />
   <plugin name="cordova-plugin-fullscreen" />
