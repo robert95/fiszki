@@ -41,11 +41,14 @@
 				<li id="m4" class="text"><span class="l2">E_STATYSTYKI</span><span class="l3">F_STATYSTYKI</span><span class="l4">N_STATYSTYKI</span><span class="l5">STATYSTYKI</span></li>
 				<li id="m6" class="text"><span class="l2">E_KUP WERSJĘ PREMIUM</span><span class="l3">F_KUP WERSJĘ PREMIUM</span><span class="l4">N_KUP WERSJĘ PREMIUM</span><span class="l5">KUP WERSJĘ PREMIUM</span></li>
 				<li id="m7" class="text"><span class="l2">E_SPEAKUP.COM</span><span class="l3">F_SPEAKUP.COM</span><span class="l4">N_SPEAKUP.COM</span><span class="l5">SPEAKUP.PL</span></li>
+				<li id="m8" class="text"><span class="l2">E_ZMIEŃ TŁO</span><span class="l3">F_ZMIEŃ TŁO</span><span class="l4">N_ZMIEŃ TŁO</span><span class="l5">ZMIEŃ TŁO</span></li>
 				<li id="m5" class="text"><span class="l2">E_WYJŚCIE</span><span class="l3">F_WYJŚCIE</span><span class="l4">N_WYJŚCIE</span><span class="l5">WYJŚCIE</span></li>
 				<li id="mE" class="text">^</li>
 			</ul>
 		</div>
-		<img class="background" src="img/bg.png" />
+		<img class="background theme1-bg" src="img/bg.png" />
+		<img class="background theme2-bg" src="img/bg2.jpg" />
+		<img class="background theme3-bg" src="img/bg3.png" /> 
 		<input type="hidden" id="myLang" value="0">
 		<input type="hidden" id="learnLang" value="1">
 		<input type="hidden" id="myCat" value="0">
@@ -101,7 +104,7 @@
 		<section id="learn-container" class="next-cat-left">
 			<div class="count-word-to-learn">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100">
-					<span class="progess-btn-per-in-cycle-2 all-words-to-end">21</span>
+					<span class="progess-btn-per-in-cycle-2 all-words-to-end">0</span>
 					<div class="slice">
 						<div class="bar"></div>
 						<div class="fill"></div>
@@ -110,7 +113,7 @@
 			</div>
 			<div class="count-word-to-learn count-word-to-learn-in-this-sesion">
 				<div class="progess-btn-stan-in-session c100">
-					<span class="progess-btn-per-in-cycle-2 all-words-to-end-sesion">21</span>
+					<span class="progess-btn-per-in-cycle-2 all-words-to-end-sesion">0</span>
 				</div>
 			</div>
 			<section id="words-nav">
@@ -521,10 +524,27 @@
 		<section id="statistic" class="goLeft">
 			<img src="img/back2.png" ontouchstart="hideStatistic();">
 			<h3><span class="l2">E_Statystyki:</span><span class="l3">F_Statystyki:</span><span class="l4">N_Statystyki:</span><span class="l5">Statystyki:</span></h3>
-			<p class="you-start-learned"><span class="l2">E_Uczysz się z nami</span><span class="l3">F_Uczysz się z nami</span><span class="l4">N_Uczysz się z nami</span><span class="l5">Uczysz się z nami</span> <span class="allWords"></span>/3000 zdań</p>
-			<p class="you-start-learned3"><span class="l2">E_Spedziłeś z nami:</span><span class="l3">F_Spedziłeś z nami:</span><span class="l4">N_Spedziłeś z nami:</span><span class="l5">Spedziłeś z nami:</span> <span class="countKMLearned"></span> h <span class="countMinLearned"></span> min / 60h</p>
-			<h3><span class="l2">E_Kategorie w trakcie nauki:</span><span class="l3">F_Kategorie w trakcie nauki:</span><span class="l4">N_Kategorie w trakcie nauki:</span><span class="l5">Kategorie w trakcie nauki:</span></h3>
-			<div class="inProgressCatList"></div>
+			<div class="scroll-container">
+				<p class="you-start-learned"><span class="l2">E_Uczysz się z nami</span><span class="l3">F_Uczysz się z nami</span><span class="l4">N_Uczysz się z nami</span><span class="l5">Uczysz się z nami</span> <span class="allWords"></span>/3000 zdań</p>
+				<p class="you-start-learned3"><span class="l2">E_Spedziłeś z nami:</span><span class="l3">F_Spedziłeś z nami:</span><span class="l4">N_Spedziłeś z nami:</span><span class="l5">Spedziłeś z nami:</span> <span class="countKMLearned"></span> h <span class="countMinLearned"></span> min / 60h</p>
+				<h3><span class="l2">E_Kategorie w trakcie nauki:</span><span class="l3">F_Kategorie w trakcie nauki:</span><span class="l4">N_Kategorie w trakcie nauki:</span><span class="l5">Kategorie w trakcie nauki:</span></h3>
+				<div class="inProgressCatList"></div>
+			</div>
+		</section>
+		<section id="options-box" class="goLeft">
+			<img src="img/back2.png" ontouchstart="hideOptionBox();">
+			<h3><span class="l2">E_Wybierz motyw:</span><span class="l3">F_Wybierz motyw:</span><span class="l4">N_Wybierz motyw:</span><span class="l5">Wybierz motyw:</span></h3>
+			<div class="themes-cont">
+				<div>
+					<img class="choiceThema theme-1-ch" src="img/bgT1.png">
+				</div>
+				<div>
+					<img class="choiceThema theme-2-ch" src="img/bgT2.png">
+				</div>
+				<div>
+					<img class="choiceThema theme-3-ch" src="img/bgT3.png">
+				</div>
+			</div>
 		</section>
 		<section id="list-of-word-in-cat" class="goLeft">
 			<img src="img/back2.png" ontouchstart="hideWordList();">
@@ -957,6 +977,12 @@
 					$("#statistic").removeClass('goLeft');
 				}, 300);
 			});
+			$("#m8").click(function(){
+				$("#options-box").show();
+				setTimeout(function(){
+					$("#options-box").removeClass('goLeft');
+				}, 300);
+			});
 			$("#m5").click(function(){
 				navigator.notification.confirm(
 					"Jeżeli zamkniesz teraz aplikacje Twój dzisiejszy postęp nie zostanie zapisany!",
@@ -996,6 +1022,13 @@
 				$("#statistic").addClass('goLeft');
 				setTimeout(function(){
 					$("#statistic").hide();
+				}, 800);
+			}
+			function hideOptionBox(){
+				saveTheme();
+				$("#options-box").addClass('goLeft');
+				setTimeout(function(){
+					$("#options-box").hide();
 				}, 800);
 			}
 			function hideWordList(){
@@ -1067,6 +1100,23 @@
 				$("#progess-btn-stan-in-cycle").addClass('hoverBTN');
 				setTimeout(function(){$("#progess-btn-stan-in-cycle").removeClass('hoverBTN');}, 150);
 			}
+		</script>
+		<script>
+			$(".theme-1-ch").click(function(){
+				$("body").removeClass("theme2");
+				$("body").removeClass("theme3");
+				$("body").addClass("theme1");
+			});
+			$(".theme-2-ch").click(function(){
+				$("body").removeClass("theme1");
+				$("body").removeClass("theme3");
+				$("body").addClass("theme2");
+			});
+			$(".theme-3-ch").click(function(){
+				$("body").removeClass("theme2");
+				$("body").removeClass("theme1");
+				$("body").addClass("theme3");
+			});
 		</script>
     </body>
 </html>

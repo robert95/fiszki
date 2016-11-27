@@ -340,8 +340,8 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
-var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":2,"catid":1,"start":"29"},{"subid":9,"catid":1,"start":"26"}]');//
+var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//
+var toLearnJSON = [];//JSON.parse('[{"subid":9,"catid":1,"start":"26"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -514,7 +514,8 @@ function getDay(){
 				$(".all-words-to-end").text(countWordsToLearn);	
 				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
 			}
-		}, 150);*/
+		}, 150);
+	$("body").addClass('theme'+dayJSON.theme*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -536,6 +537,7 @@ function getDayHelper(){
 			allUsedCats.push(skip);
 			allEndedCats.push(skip);
 		}
+		$("body").addClass('theme'+dayJSON.theme);
 	}
 }
 function getNotice(){
@@ -2773,6 +2775,21 @@ function showRating() {
 }
 function setRatingToTrue() {
 	dayJSON.rating = true;
+	datesJSON5 = dayJSON;
+	srcSave5 = path() + "day.json";
+	saveFile5();
+}
+
+function saveTheme() {
+	var themeNb = 1;
+	if($("body").hasClass('theme3')){
+		var themeNb = 3;
+	}else if($("body").hasClass('theme2')){
+		var themeNb = 2;
+	}else{
+		var themeNb = 1;
+	}
+	dayJSON.theme = themeNb;
 	datesJSON5 = dayJSON;
 	srcSave5 = path() + "day.json";
 	saveFile5();

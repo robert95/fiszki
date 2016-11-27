@@ -1023,6 +1023,12 @@ section{
 	background-size: 100% 100%;
 	height: 100%;
 }
+.theme2 #menu{
+	background: transparent url("../img/bg2.jpg") repeat scroll 0% 0% !important;
+}
+.theme3 #menu{
+	background: transparent url("../img/bg3.png") repeat scroll 0% 0% !important;
+}
 .showmenu{
 	transform: translate3d(0, 0, 0) !important;
 	-webkit-transform: translate3d(0, 0, 0) !important;
@@ -1034,8 +1040,11 @@ section{
 	font-weight: 400;
 	font-size: 20px;
 	width: 95%;
-	margin: 15px auto;
+	margin: 10px auto;
 	padding: 15px 0;
+}
+#menu li:first-of-type{
+	margin: 40px auto 0 auto;
 }
 #menu li:last-of-type{
 	font-size: 48px;
@@ -1088,15 +1097,15 @@ section{
 	text-align: center;
 	transform: scale(0.45);
 	-webkit-transform: scale(0.45);
-	bottom: 33px;
-	right: 2%;
+	bottom: 40px;
+	right: 3%;
 }
 .count-word-to-learn-in-this-sesion{ 
 	left: 50%;
 	margin-right: 0;
-	margin-left: -75px;
+	margin-left: -65px;
 	right: 50%;
-	bottom: 36px;
+	bottom: 30px;
 	z-index: 1;
 	pointer-events: none;
 }
@@ -1111,7 +1120,7 @@ section{
 	height: 100%;
 	width: 100%;
 }
-#statistic, #list-of-word-in-cat{
+#statistic, #list-of-word-in-cat, #options-box{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1130,15 +1139,25 @@ section{
 	overflow: hidden;
 	max-height: 100%;
 }
-#statistic .inProgressCatList{
-	max-height: 180px;
+.theme2 #statistic, .theme2 #list-of-word-in-cat, .theme2 #options-box{
+	background: url("../img/bg2.jpg") 100% 100% !important;
+}
+.theme3 #statistic, .theme3 #list-of-word-in-cat, .theme3 #options-box{
+	background: url("../img/bg3.png") 100% 100% !important;
+}
+#statistic .scroll-container{
+	margin-top: 30%;
+	max-height: 80%;
 	overflow: scroll;
+}
+#statistic .scroll-container h3:first-of-type{
+	position: relative !important;
 }
 #list-of-word-in-cat .scroll-cont{
 	max-height: calc(100% - 185px);
 	overflow: scroll;
 }
-#statistic h3:first-of-type, #list-of-word-in-cat h3:first-of-type{
+#statistic h3:first-of-type, #list-of-word-in-cat h3:first-of-type, #options-box h3:first-of-type{
 	position: fixed;
 	width: 100%;
 	margin: auto auto;
@@ -1162,12 +1181,31 @@ section{
 	left: 0;
 	z-index: 2222223;
 }
-#statistic img, #list-of-word-in-cat img{
+#statistic img, #list-of-word-in-cat img, #options-box > img{
 	width: 45px;
 	position: fixed;
 	top: 10px;
 	left: 10px;
 	z-index: 10;
+}
+.themes-cont div img{
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin: 20px auto;
+	border: 2px solid gold;
+}
+.theme1 .themes-cont div .theme-2-ch, .theme1 .themes-cont div .theme-3-ch{
+	border: 0 !important;
+}
+.theme2 .themes-cont div .theme-1-ch, .theme2 .themes-cont div .theme-3-ch{
+	border: 0 !important;
+}
+.theme3 .themes-cont div .theme-1-ch, .theme3 .themes-cont div .theme-2-ch{
+	border: 0 !important;
+}
+.themes-cont{
+	margin-top: 120px;
 }
 #statistic .inProgressCatList{
 	color: white;
@@ -1392,6 +1430,24 @@ textarea, textarea[placeholder]{
 .count-word-to-learn-in-this-sesion .c100::after{
 	border: 0 !important;
 	background: 0 !important;
+}
+.theme2-bg, .theme3-bg{
+	display: none;
+}
+.theme1 .theme2-bg, .theme3-bg{
+	display: none !important;
+}
+.theme2 .theme1-bg, .theme3-bg{
+	display: none !important;
+}
+.theme2 .theme2-bg{
+	display: block !important;
+}
+.theme3 .theme1-bg, .theme2-bg{
+	display: none !important;
+}
+.theme3 .theme3-bg{
+	display: block !important;
 }
 @media (min-width : 500px) {
 	.remind-img {

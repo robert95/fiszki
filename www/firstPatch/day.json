@@ -3,5 +3,6 @@
 	"words": 0,
 	"km": 0, 
 	"skiped": [],
-	"rating": false 
+	"rating": false,
+	"theme": 1
 }
