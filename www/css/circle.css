@@ -103,17 +103,17 @@
 .c100.p98 .fill,
 .c100.p99 .fill,
 .c100.p100 .fill {
-  position: absolute;
-  border: 0.08em solid #6dd0f7;
-  width: 0.84em;
-  height: 0.84em;
-  clip: rect(0em, 0.5em, 1em, 0em);
-  border-radius: 50%;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
+	position: absolute;
+	border: 5px solid #FFF;
+	width: 0.83em;
+	height: 0.83em;
+	clip: rect(0em, 0.5em, 1em, 0em);
+	border-radius: 50%;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
 }
 .pie-fill,
 .c100.p51 .bar:after,
@@ -1006,6 +1006,7 @@
 }
 .c100:hover {
   cursor: default;
+  border: 10px solid #fff9 !important;
 }
 .c100:hover > span {
   width: 3.33em;
@@ -1014,10 +1015,10 @@
   color: #307bbb;
 }
 .c100:hover:after {
-  top: 0.04em;
-  left: 0.04em;
-  width: 0.92em;
-  height: 0.92em;
+	top: -5px;
+	left: -5px;
+	width: 0.92em;
+	height: 0.92em;
 }
 .c100.dark {
   background-color: #777777;
