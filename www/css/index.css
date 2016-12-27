@@ -779,14 +779,14 @@ textarea:focus, textarea:hover, textarea:active{
 	float: none;
 	margin: 24px auto;
 	background-color: rgba(0, 0, 0, 0);
-	border: 10px solid #fff6;
 	z-index: 10;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
-	width: 0.99em;
-	height: 0.99em;
+	width: 120px;
+	height: 120px;
 	font-size: 120px;
 	box-sizing: border-box;
+	border: 10px solid rgba(255, 255, 255, 0.6);
 }
 .slice{
 	top: -5px !important;
@@ -798,8 +798,8 @@ textarea:focus, textarea:hover, textarea:active{
 .c100::after{
 	top: -5px;
 	left: -5px;
-    width: 0.92em;
-    height: 0.92em;
+    width: 112px;
+    height: 112px;
 	background: url("../img/ok.png");
 	background-size: 100% 100%;
 	-webkit-transition: 0s;
@@ -820,7 +820,7 @@ textarea:focus, textarea:hover, textarea:active{
 }
 .all-words-to-end{
 	width: 100% !important;
-	line-height: 2.9em !important;
+	line-height: 2.5em !important;
 }
 .loading-waiting{
 	-webkit-animation-duration: 1s;
@@ -972,7 +972,7 @@ section{
 }
 #start-day-wrap-ok-no-end-course img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
 	font-size: 120px;
-	width: 1.05em;
+	width: 120px;
 	margin-top: 22px;
 	z-index: 1;
 }
@@ -1188,12 +1188,31 @@ section{
 	left: 0;
 	z-index: 2222223;
 }
-#statistic img, #list-of-word-in-cat img, #options-box > img{
+.img-close-cont{
+	width: 55px !important;
+	height: 55px !important;
+	position: fixed !important;
+	top: 4px !important;
+	left: 4px !important;
+	z-index: 10 !important;
+	padding: 0 !important;
+	display: inline-block !important;
+
+	margin: 15px auto;
+	border-radius: 25px;
+	text-align: center;
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.62) 2%, rgba(255,255,255,0) 40%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.62) 2%,rgba(255,255,255,0) 40%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.62) 2%,rgba(255,255,255,0) 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    color: white !important;
+	border-bottom: 1px solid white;
+}
+.img-close-cont:hover{
+	border: 1px solid white;
+}
+.img-close-cont img{
 	width: 45px;
-	position: fixed;
-	top: 10px;
-	left: 10px;
-	z-index: 10;
 }
 .themes-cont div img{
 	width: 100px;

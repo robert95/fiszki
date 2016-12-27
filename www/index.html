@@ -522,7 +522,7 @@
 			</div>	
 		</section>
 		<section id="statistic" class="goLeft">
-			<img src="img/back2.png" ontouchstart="hideStatistic();">
+			<p class="img-close-cont" ontouchstart="hideStatistic();"><img src="img/back2.png"></p>
 			<h3><span class="l2">E_Statystyki:</span><span class="l3">F_Statystyki:</span><span class="l4">N_Statystyki:</span><span class="l5">Statystyki:</span></h3>
 			<div class="scroll-container">
 				<p class="you-start-learned"><span class="l2">E_Uczysz się z nami</span><span class="l3">F_Uczysz się z nami</span><span class="l4">N_Uczysz się z nami</span><span class="l5">Uczysz się z nami</span> <span class="allWords"></span>/3000 zdań</p>
@@ -532,7 +532,7 @@
 			</div>
 		</section>
 		<section id="options-box" class="goLeft">
-			<img src="img/back2.png" ontouchstart="hideOptionBox();">
+			<p class="img-close-cont" ontouchstart="hideOptionBox();"><img src="img/back2.png"></p>
 			<h3><span class="l2">E_Wybierz motyw:</span><span class="l3">F_Wybierz motyw:</span><span class="l4">N_Wybierz motyw:</span><span class="l5">Wybierz motyw:</span></h3>
 			<div class="themes-cont">
 				<div>
@@ -547,7 +547,7 @@
 			</div>
 		</section>
 		<section id="list-of-word-in-cat" class="goLeft">
-			<img src="img/back2.png" ontouchstart="hideWordList();">
+			<p class="img-close-cont" ontouchstart="hideWordList();"><img src="img/back2.png"></p>
 			<h3>
 				<span class="l2">E_Lista fraz w kategorii:</span>
 				<span class="l3">F_Lista fraz w kategorii:</span>
@@ -912,10 +912,10 @@
 		</script>
 		<script>
 			$('.c100').bind('touchstart', function(){
-				$(this).addClass('hoverBTN');
+				$(this).addClass('hover-progres-round');
 			}).bind('touchend', function(){
 				var obj = this;
-				setTimeout(function(){$(obj).removeClass('hoverBTN');}, 150);
+				setTimeout(function(){$(obj).removeClass('hover-progres-round');}, 150);
 			});
 			
 			$('.note-btn').bind('touchstart', function(){
@@ -1097,8 +1097,8 @@
 			
 			function isOkBiggerField(){
 				isOkWrap();
-				$("#progess-btn-stan-in-cycle").addClass('hoverBTN');
-				setTimeout(function(){$("#progess-btn-stan-in-cycle").removeClass('hoverBTN');}, 150);
+				$("#progess-btn-stan-in-cycle").addClass('hover-progres-round');
+				setTimeout(function(){$("#progess-btn-stan-in-cycle").removeClass('hover-progres-round');}, 150);
 			}
 		</script>
 		<script>

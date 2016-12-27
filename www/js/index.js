@@ -515,7 +515,7 @@ function getDay(){
 				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
 			}
 		}, 150);
-	$("body").addClass('theme'+dayJSON.theme*/
+	$("body").addClass('theme'+dayJSON.theme);*/
 }
 function getDayHelper(){
 	if(res3 == false){
