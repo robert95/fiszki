@@ -2825,7 +2825,7 @@ function shareFile(){
 	
 function volumeTest(){
 	//podgłośnienie
-	VolumeControl.getVolume(function(r){
+	/*VolumeControl.getVolume(function(r){
 		alert("Poziom głośności: " + r);
 		if(r < 20){
 			showVolumeInfo();
@@ -2835,14 +2835,14 @@ function volumeTest(){
 		alert("UDAŁO SIĘ!!!");
 	}, function(){
 		alert("SHIT NIE UDAŁO SIĘ!!!");
-	});
+	});*/
 }	
 function showVolumeInfo() {
-  /*window.plugins.toast.showWithOptions(
+  window.plugins.toast.showWithOptions(
     {
       message: "UWAGA! Zwiększ głośność aby móc słyszeć lektora",
       duration: "long", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
       position: "center"
     }
-  );*/
+  );
 }	
