@@ -2827,7 +2827,7 @@ function shareFile(){
 	
 function volumeTest(){
 	//podgłośnienie
-	/*VolumeControl.getVolume(function(r){
+	VolumeControl.getVolume(function(r){
 		alert("Poziom głośności: " + r);
 		if(r < 20){
 			showVolumeInfo();
@@ -2837,21 +2837,14 @@ function volumeTest(){
 		alert("UDAŁO SIĘ!!!");
 	}, function(){
 		alert("SHIT NIE UDAŁO SIĘ!!!");
-	});*/
+	});
 }	
 function showVolumeInfo() {
   window.plugins.toast.showWithOptions(
     {
-      message: "hey there",
-      duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
-      position: "bottom",
-      addPixelsY: -40  // added a negative value to move it up a bit (default 0)
-    },
-	function(){
-		console.log("jestem");
-	},
-	function(error) {
-		alert('toast error: ' + error);
-	}
+      message: "UWAGA! Musisz zwiększyć głośność aby słyszeć lektora",
+      duration: "long", 
+      position: "center"
+    }
   );
 }	
