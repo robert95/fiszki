@@ -40,7 +40,7 @@
   <plugin src="https://github.com/pushandplay/cordova-plugin-apprate.git" />
   <plugin src="https://github.com/apache/cordova-plugin-inappbrowser.git" />
   <plugin src="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" />
-  <plugin src="https://github.com/Whebcraft/fm.radiant.cordova.utils.volume.git" />
+  <plugin src="https://github.com/mgcrea/cordova-plugin-volume-control.git" />
   <plugin src="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" />
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>

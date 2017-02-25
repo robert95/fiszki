@@ -2827,14 +2827,18 @@ function shareFile(){
 	
 function volumeTest(){
 	//podgłośnienie
-	VolumeUtils.getVolume(function successCallback(value){
-		alert("Poziom głośności: " + r);
-		if(r < 20){
+	var VolumeControl = cordova.plugins.VolumeControl;
+
+	VolumeControl.getVolume(function(value){
+		alert("Poziom głośności: " + value);
+		if(value < 20){
 			showVolumeInfo();
 		}
-	}, function(error){
-		alert(error);
 	});
+	//VolumeControl.getCategory(console.log.bind(console));
+	//VolumeControl.toggleMute();
+	//VolumeControl.isMuted(console.log.bind(console));
+	//VolumeControl.setVolume(0.15);
 }	
 function showVolumeInfo() {
   window.plugins.toast.showWithOptions(
