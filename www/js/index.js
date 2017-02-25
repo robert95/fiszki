@@ -2827,16 +2827,13 @@ function shareFile(){
 	
 function volumeTest(){
 	//podgłośnienie
-	VolumeControl.getVolume(function(r){
+	VolumeUtils.getVolume(function successCallback(value){
 		alert("Poziom głośności: " + r);
 		if(r < 20){
 			showVolumeInfo();
 		}
-	}, function(){});
-	VolumeControl.setVolume(80, function(){
-		alert("UDAŁO SIĘ!!!");
-	}, function(){
-		alert("SHIT NIE UDAŁO SIĘ!!!");
+	}, function(error){
+		alert(error);
 	});
 }	
 function showVolumeInfo() {
