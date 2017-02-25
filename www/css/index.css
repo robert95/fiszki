@@ -786,7 +786,7 @@ textarea:focus, textarea:hover, textarea:active{
 	height: 120px;
 	font-size: 120px;
 	box-sizing: border-box;
-	border: 10px solid rgba(255, 255, 255, 0.6);
+	border: 10px solid rgba(255, 255, 255, 0.4);
 }
 .slice{
 	top: -5px !important;
@@ -1022,8 +1022,8 @@ section{
 	-webkit-transform-origin: 100% 40%;
 	-webkit-transition: all 0.6s linear;
 	transition: all 0.6s linear 0s;
-	transform: translate3d(0, -100%, 0);
-	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -130%, 0);
+	-webkit-transform: translate3d(0, -130%, 0);
 	background: rgb(63, 140, 183) none repeat scroll 0% 0%;
 	z-index: 1001;
 	background: transparent url("../img/bg.png") repeat scroll 0% 0%;
@@ -1168,6 +1168,7 @@ section{
 	position: fixed;
 	width: 100%;
 	margin: auto auto;
+	top: 15px;
 }
 #statistic .you-start-learned, #list-of-word-in-cat .catNameInListWord{
 	margin-top: 45% !important;
@@ -1207,6 +1208,7 @@ section{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
     color: white !important;
 	border-bottom: 1px solid white;
+	margin-top: 5px !important;
 }
 .img-close-cont:hover{
 	border: 1px solid white;
@@ -1475,6 +1477,46 @@ textarea, textarea[placeholder]{
 .theme3 .theme3-bg{
 	display: block !important;
 }
+.myCall-icon{
+	position: fixed;
+	bottom: 15px;
+	left: 5px;
+	text-align: left;
+	width: 20%;
+}
+.myCall-icon img{
+	width: 100%;
+}
+#myCall-big-ad{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 200000;
+	top: 0;
+	left: 0;
+}
+.close-parent-btn{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: black;
+	border: 10px solid #030303;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	text-align: center;
+	line-height: 0.9;
+	font-weight: bold;
+	color: white;
+	box-shadow: 0px 0px 8px 2px #c9c9c9;
+}
+#myCall-big-ad img{
+	width: 100%;
+    height: 100%;
+}
+#myCall-big-ad .mycalllink{
+    height: 100%;
+}
 @media (min-width : 500px) {
 	.remind-img {
 		left: 5px;
@@ -1667,5 +1709,64 @@ textarea, textarea[placeholder]{
 	}
 	.remind-img {	
 		top: -57px;
+	}
+}
+@media (max-width : 350px) {
+	#menu li:first-of-type {
+		margin: 0px auto 0 auto;
+	}
+	#menu li{
+		padding: 10px 0;
+	}
+	.count-word-to-learn{
+		right: 0;
+	}
+	.confirm-swipe table{
+		top: 30px;
+	}
+	.learnMethod .text{
+		font-size: 20px !important;
+	}
+	h3{
+		font-size: 22px !important;
+	}
+	h1{
+		font-size: 25px !important;
+	}
+	.note-skip-btn .note-btn p{
+		font-size: 20px !important;
+	}
+	#startDay h1, #start-next-cat h1, #end-cat h1, #new-category-choice h1{
+		font-size: 24px !important;
+	}
+	#invite-to-ads{
+		margin-top: 40px;
+	}
+	#name-next-cat, #invite-to-ads{
+		font-size: 20px !important;
+	}
+	#end-cat .before-start-info{
+		margin: 18% auto 16%;
+	}
+	.you-start-learned{
+		margin-top: 13%;
+		font-size: 17px;
+	}
+	.you-start-learned2, .you-start-learned3{
+		font-size: 17px;
+	}
+	.goToReverse{
+		margin-top: 15%;
+		font-size: 23px;
+	}
+	#end-course .you-start-learned3 {
+		margin-top: 60px;
+	}
+	.invite-again{
+		font-size: 20px;
+		margin-top: 28px;
+	}
+	#end-panel .you-start-learned{
+		margin-top: 5%;
 	}
 }

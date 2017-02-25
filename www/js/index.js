@@ -106,6 +106,9 @@ var app = {
         }, false );
 		
 		setTextWidth();
+		
+		//podgłośnienie
+		VolumeControl.setVolume(80, function(){}, function(){});
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -340,7 +343,7 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
-var dayJSON = false;//JSON.parse('{"day": 31, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//
+var dayJSON = false;//JSON.parse('{"day": 27, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//
 var toLearnJSON = [];//JSON.parse('[{"subid":9,"catid":1,"start":"26"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;

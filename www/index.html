@@ -69,6 +69,9 @@
 						<div class="fill"></div>
 					</div>
 				</div>
+			</div>		
+			<div class="myCall-icon mycalllink">
+				<img src="img/mycall_icon.png">
 			</div>
 		</section>
 		<section id="choose-lang">
@@ -103,7 +106,7 @@
 		</section>
 		<section id="learn-container" class="next-cat-left">
 			<div class="count-word-to-learn">
-				<div class="progess-btn-stan-in-cycle-2 c100 p100">
+				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end">0</span>
 					<div class="slice">
 						<div class="bar"></div>
@@ -435,7 +438,7 @@
 		</section>
 		<section id="startDay">
 			<div class="count-word-to-learn">
-				<div class="progess-btn-stan-in-cycle-2 c100 p100">
+				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end">21</span>
 					<div class="slice">
 						<div class="bar"></div>
@@ -450,10 +453,13 @@
 			<p class="goToReverse"><span class="l2">E_Przejdź do powtórek</span><span class="l3">F_Przejdź do powtórek</span><span class="l4">N_Przejdź do powtórek</span><span class="l5">Przejdź do powtórek</span></p>
 			<div id="start-day-ok-no-panel">
 				<div id="start-day-wrap-ok-no">
-					<img src="img/okNoP.png" class="good-bad" ontouchstart="startLesson();"/>
+					<img src="img/okNoEmptyP.png" class="good-bad" ontouchstart="startLesson();"/>
 					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
 				</div>
-			</div>			
+			</div>		
+			<div class="myCall-icon mycalllink">
+				<img src="img/mycall_icon.png">
+			</div>
 		</section>
 		<section id="end-course" class="next-cat-left">
 			<h1><span class="l2">E_Gratulujemy<br>ukończenia kursu cz.1</span><span class="l3">F_Gratulujemy<br>ukończenia kursu cz.1</span><span class="l4">N_Gratulujemy<br>ukończenia kursu cz.1</span><span class="l5">Gratulujemy<br>ukończenia kursu cz.1</span></h1>
@@ -588,6 +594,12 @@
 					<tr><td class="t10"></td></tr>
 					<tr><td class="n10 noteWord"></td></tr>
 				</table>
+			</div>
+		</section>
+		<section id="myCall-big-ad">
+			<div class="close-parent-btn">X</div>
+			<div class="mycalllink">
+				<img src="img/mycall-big.png">
 			</div>
 		</section>
         <script type="text/javascript" src="cordova.js"></script>
@@ -912,7 +924,7 @@
 		</script>
 		<script>
 			$('.c100').bind('touchstart', function(){
-				$(this).addClass('hover-progres-round');
+				if(!($(this).hasClass('notHover'))) $(this).addClass('hover-progres-round');
 			}).bind('touchend', function(){
 				var obj = this;
 				setTimeout(function(){$(obj).removeClass('hover-progres-round');}, 150);
@@ -996,6 +1008,9 @@
 			});
 			$("#m7").click(function(){
 				window.open('https://www.google.pl', '_system');
+			});
+			$(".mycalllink").click(function(){
+				window.open('https://www.mycall.no', '_system');
 			});
 			function onConfirm(button) {
 				if(button == 2){
@@ -1116,6 +1131,11 @@
 				$("body").removeClass("theme2");
 				$("body").removeClass("theme1");
 				$("body").addClass("theme3");
+			});
+		</script>
+		<script>
+			$(".close-parent-btn").click(function(){
+				$(this).parent().hide();
 			});
 		</script>
     </body>
