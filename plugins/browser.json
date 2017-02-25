@@ -1,0 +1,27 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.gkcgautam.asset2sd": {
+            "PACKAGE_NAME": "com.fiszki.norweg"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "com.fiszki.norweg"
+        },
+        "cordova-plugin-fullscreen": {
+            "PACKAGE_NAME": "com.fiszki.norweg"
+        },
+        "undefined": {
+            "PACKAGE_NAME": "com.fiszki.norweg"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.fiszki.norweg"
+        }
+    },
+    "dependent_plugins": {}
+}
