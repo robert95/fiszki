@@ -31,6 +31,7 @@
   <plugin name="com.gkcgautam.asset2sd" />
   <plugin name="cordova-plugin-filepath" />
   <plugin name="cordova-plugin-fullscreen" />
+  <plugin name="cordova-plugin-x-toast" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
   <plugin src="https://github.com/floatinghotpot/cordova-admob-pro.git" />
   <plugin src="https://github.com/apache/cordova-plugin-statusbar.git" />

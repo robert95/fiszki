@@ -1,5 +1,5 @@
 var admobid = {};
-var firstShownAd = true; //true ------ ZMIENIĆ PÓŹNIEJ!!!
+var firstShownAd = true; 
 var countAd = 0;
 if( /(android)/i.test(navigator.userAgent) ) { 
     admobid = { // for Android
@@ -22,11 +22,11 @@ function prepareAd(){
 	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 function showAd(){
-	if(countAd%2 == 0){
-		$("#myCall-big-ad").show();
-	}else{
-		if(firstShownAd) firstShownAd = false;
-		else{
+	if(firstShownAd) firstShownAd = false;
+	else{
+		if(countAd%2 == 0){
+			$("#myCall-big-ad").show();
+		}else{
 			if(AdMob) AdMob.showInterstitial();
 			countAd++;
 		}

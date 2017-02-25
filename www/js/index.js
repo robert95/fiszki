@@ -125,11 +125,11 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
-	if($( window ).width() > 600) {
+	/*if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
-	}
+	}*/
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -343,7 +343,7 @@ var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
 var dayJSON = false;//JSON.parse('{"day": 27, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":9,"catid":1,"start":"26"}]');//
+var toLearnJSON = [];//JSON.parse('[{"subid":9,"catid":1,"start":"21"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -373,6 +373,7 @@ function startApp(){
 	$("#first-use-loading-page").show();
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){	
+		showVolumeInfo();
 		var lang = langJSON.lang;
 		prepareAd();
 		//TAK
@@ -754,18 +755,18 @@ function getSubCatList(idCat){
         dataType: 'html',
         async: false,
         success: function(data) {
-            result = showSubCatList(data);
+            result = showSubCatList(data, idCat);
         } 
     });
 	return result;
 }
-function showSubCatList(s){
+function showSubCatList(s, parentId){
 	var cats = JSON.parse(s);
 	var tmp = '<div class="list-of-subcat">';
 	for(var x in cats){
 		var cat = cats[x];
 		var cl = "";
-		var catSgn = parent + "/" + cat.id;
+		var catSgn = parentId + "/" + cat.id;
 		if(dayJSON.skiped.indexOf(catSgn) >= 0){
 			cl = "missingCat";
 		}
@@ -775,8 +776,8 @@ function showSubCatList(s){
 		if(inProgressCat.indexOf(catSgn) >= 0){
 			cl = "inProgressCat";
 		}
-		tmp += '<p class="text setCat '+ cl +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parent + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">w trakcie nauki</span> <span class="missingCatInfo">kategoria pominięta</span> <span class="learnedCatInfo">nauka zakończona</span></p>';
-		if(firstGenerationCat) $(".list").append('<li><p class="cat-name" data-id="' + cat.id + '" data-par="' + parent + '">' + cat.name + '</p></li>');
+		tmp += '<p class="text setCat '+ cl +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parentId + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">w trakcie nauki</span> <span class="missingCatInfo">kategoria pominięta</span> <span class="learnedCatInfo">nauka zakończona</span></p>';
+		if(firstGenerationCat) $(".list").append('<li><p class="cat-name" data-id="' + cat.id + '" data-par="' + parentId + '">' + cat.name + '</p></li>');
 	}
 	tmp += '</div>';
 	subcats = tmp;
@@ -2573,6 +2574,7 @@ function getNextSugCat(){
 	scdCycleInSearchSub = false;
 	var p = $("#sugCatPar").val();
 	var c = $("#sugCatSub").val();
+	console.log("Pomiń kategorię: " + p + "/" + c);
 	setSuggestedCat(p, c);
 	addCatToMissing(p + "/" + c);
 	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName);}, 350);
@@ -2840,9 +2842,16 @@ function volumeTest(){
 function showVolumeInfo() {
   window.plugins.toast.showWithOptions(
     {
-      message: "UWAGA! Zwiększ głośność aby móc słyszeć lektora",
-      duration: "long", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
-      position: "center"
-    }
+      message: "hey there",
+      duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+      position: "bottom",
+      addPixelsY: -40  // added a negative value to move it up a bit (default 0)
+    },
+	function(){
+		console.log("jestem");
+	},
+	function(error) {
+		alert('toast error: ' + error);
+	}
   );
 }	
