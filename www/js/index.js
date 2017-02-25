@@ -1244,6 +1244,7 @@ function setAntyNaparzankaToTrue(){
 }
 
 function nextStep(){
+	showAd();
 	volumeTest();
 	antyNaparzanka = true;
 	hideBars();
