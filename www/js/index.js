@@ -2828,8 +2828,7 @@ function shareFile(){
 function volumeTest(){
 	//podgłośnienie
 	window.plugin.volume.getVolume(function(volume) {
-		alert("Poziom głośności: " + volume);
-		if(volume < 20){
+		if(volume < 0.20){
 			showVolumeInfo();
 		}
 	});
