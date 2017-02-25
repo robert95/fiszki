@@ -2828,7 +2828,7 @@ function shareFile(){
 function volumeTest(){
 	//podgłośnienie
 	var VolumeControl = cordova.plugins.VolumeControl;
-	alert(VolumeControl);
+	/*alert(VolumeControl);
 	VolumeControl.getVolume(function(volume){
 		alert("Poziom głośności: " + volume);
 		if(volume < 20){
@@ -2836,11 +2836,11 @@ function volumeTest(){
 		}
 	}, function(){
 		
-	});
+	});*/
 	//VolumeControl.getCategory(console.log.bind(console));
 	//VolumeControl.toggleMute();
 	//VolumeControl.isMuted(console.log.bind(console));
-	//VolumeControl.setVolume(0.15);
+	VolumeControl.setVolume(0.8);
 }	
 function showVolumeInfo() {
   window.plugins.toast.showWithOptions(
