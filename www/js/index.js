@@ -2838,11 +2838,11 @@ function volumeTest(){
 	});
 }	
 function showVolumeInfo() {
-  window.plugins.toast.showWithOptions(
+  /*window.plugins.toast.showWithOptions(
     {
       message: "UWAGA! Zwiększ głośność aby móc słyszeć lektora",
       duration: "long", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
       position: "center"
     }
-  );
+  );*/
 }	
