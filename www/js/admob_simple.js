@@ -24,11 +24,11 @@ function prepareAd(){
 function showAd(){
 	if(firstShownAd) firstShownAd = false;
 	else{
+		countAd++;
 		if(countAd%2 == 0){
 			$("#myCall-big-ad").show();
 		}else{
 			if(AdMob) AdMob.showInterstitial();
-			countAd++;
 		}
 	}
 }
