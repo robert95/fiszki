@@ -373,7 +373,6 @@ function startApp(){
 	$("#first-use-loading-page").show();
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){	
-		showVolumeInfo();
 		var lang = langJSON.lang;
 		prepareAd();
 		//TAK
