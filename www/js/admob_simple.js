@@ -22,6 +22,7 @@ function prepareAd(){
 	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 function showAd(){
+	alert(countAd);
 	if(countAd == 0){
 		countAd = 1;
 	}else{
