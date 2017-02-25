@@ -107,8 +107,7 @@ var app = {
 		
 		setTextWidth();
 		
-		//podgłośnienie
-		VolumeControl.setVolume(80, function(){}, function(){});
+		volumeTest();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -1245,6 +1244,7 @@ function setAntyNaparzankaToTrue(){
 }
 
 function nextStep(){
+	volumeTest();
 	antyNaparzanka = true;
 	hideBars();
 	//StatusBar.hide();
@@ -2822,4 +2822,27 @@ function shareFile(){
 
 	window.plugins.socialsharing.shareWithOptions(optionsToShare, onSuccessShare, onErrorShare);
 }
-		
+	
+function volumeTest(){
+	//podgłośnienie
+	VolumeControl.getVolume(function(r){
+		alert("Poziom głośności: " r);
+		if(r < 20){
+			showVolumeInfo();
+		}
+	}, function(){});
+	VolumeControl.setVolume(80, function(){
+		alert("UDAŁO SIĘ!!!");
+	}, function(){
+		alert("SHIT NIE UDAŁO SIĘ!!!");
+	});
+}	
+function showVolumeInfo() {
+  window.plugins.toast.showWithOptions(
+    {
+      message: "UWAGA! Zwiększ głośność aby móc słyszeć lektora",
+      duration: "long", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+      position: "center"
+    }
+  );
+}	

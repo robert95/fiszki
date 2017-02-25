@@ -1,5 +1,5 @@
 var admobid = {};
-var firstShownAd = true;
+var firstShownAd = false; //true ------ ZMIENIĆ PÓŹNIEJ!!!
 var countAd = 0;
 if( /(android)/i.test(navigator.userAgent) ) { 
     admobid = { // for Android
