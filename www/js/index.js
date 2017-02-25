@@ -402,7 +402,7 @@ function startApp(){
 				//showRating();
 			}, 1000);
 		}
-	}, 1500);
+	}, 2500);
 }
 /*END START APP*/
 function getMyLang(){
