@@ -108,6 +108,8 @@ var app = {
 		setTextWidth();
 		
 		volumeTest();
+		
+		smoothLoadProgressBarWelcome();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -125,11 +127,11 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
-	/*if($( window ).width() > 600) {
+	if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
-	}*/
+	}
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -343,7 +345,7 @@ var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
 var dayJSON = false;//JSON.parse('{"day": 27, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":9,"catid":1,"start":"21"}]');//
+var toLearnJSON = [];//JSON.parse('[{"subid":9,"catid":1,"start":"26"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -370,6 +372,7 @@ function startApp(){
 	hideBars();
 	//StatusBar.hide();
 	//sprawdź czy to pierwsze uruchomienia
+	smoothLoadProgressBarWelcome();
 	$("#first-use-loading-page").show();
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){	

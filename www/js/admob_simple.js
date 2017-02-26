@@ -19,7 +19,7 @@ if( /(android)/i.test(navigator.userAgent) ) {
 }
 
 function prepareAd(){
-	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+	//if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 function showAd(){
 	if(countAd == 0){
@@ -29,7 +29,7 @@ function showAd(){
 		if(countAd%2 == 0){
 			$("#myCall-big-ad").show();
 		}else{
-			if(AdMob) AdMob.showInterstitial();
+		//	if(AdMob) AdMob.showInterstitial();
 		}
 	}
 }

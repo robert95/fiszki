@@ -753,7 +753,7 @@ textarea:focus, textarea:hover, textarea:active{
 	margin-top: 18%;
 }
 #invite-to-ads{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .before-start-info{
 	text-align: center;
@@ -768,6 +768,7 @@ textarea:focus, textarea:hover, textarea:active{
 }
 #end-cat .before-start-info{
 	margin: 33% auto 16%;
+	margin-top: -25px;
 }
 #btn-next-cat{
 	text-align: center;
@@ -789,11 +790,11 @@ textarea:focus, textarea:hover, textarea:active{
 	border: 10px solid rgba(255, 255, 255, 0.4);
 }
 .slice{
-	top: -5px !important;
-    left: -5px !important;
+	top: -2px !important;
+    left: -2px !important;
 }
 .bar{
-	border: 5px solid #FFF !important;
+	border: 2px solid #FFF !important;
 }
 .c100::after{
 	top: -5px;
@@ -1486,6 +1487,12 @@ textarea, textarea[placeholder]{
 }
 .myCall-icon img{
 	width: 100%;
+}
+.myCall-icon-before-ad{
+	text-align: center;
+}
+.myCall-icon-before-ad img{
+	width: 30%;
 }
 #myCall-big-ad{
 	display: none;

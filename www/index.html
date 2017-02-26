@@ -62,9 +62,9 @@
 			<p id="welcome-text">Welcome</p>
 			<p id="loading-files-text">Loading...</p>
 			<div id="progress-circle">
-				<div class="c100 p15">
+				<div id="progress-welcome" class="c100 p1">
 					<span></span>
-					<div class="slice loading-waiting">
+					<div class="slice">
 						<div class="bar"></div>
 						<div class="fill"></div>
 					</div>
@@ -423,6 +423,9 @@
 		<section id="end-cat" class="next-cat-left">
 			<h1><span class="l2">E_Gratulacje ukończyłeś powtórkę</span><span class="l3">F_Gratulacje ukończyłeś powtórkę</span><span class="l4">N_Gratulacje ukończyłeś powtórkę</span><span class="l5">Gratulacje ukończyłeś powtórkę</span> <span id="main-text-next-cat-end">1/5</span></h1>
 			<p id="invite-to-ads"><span class="l2">E_Zapraszamy na krótką reklamę</span><span class="l3">F_Zapraszamy na krótką reklamę</span><span class="l4">N_Zapraszamy na krótką reklamę</span><span class="l5">Zapraszamy na krótką reklamę</span></p>
+			<div class="myCall-icon-before-ad mycalllink">
+				<img class="mycalllink" src="img/mycall_icon.png">
+			</div>
 			<p class="before-start-info"><span class="l2">*E_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*F_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l4">*N_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l5">*Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
 			<div id="btn-next-cat-end">
 				<div id="progress-circle-end">
@@ -1138,6 +1141,26 @@
 			$(".close-parent-btn").click(function(){
 				$(this).parent().hide();
 			});
+		</script>
+		<script>
+		var ixW = 1;
+		function smoothLoadProgressBarWelcome() {   
+			setTimeout(function () {    
+				$("#progress-welcome").addClass('p'+ixW);        
+				ixW++;                   
+				if (ixW < 101) {           
+					smoothLoadProgressBarWelcome();        
+				}else{
+					ixW = 1;
+					for(var i = 1; i < 101; i++){
+						$("#progress-welcome").removeClass('p'+i);  
+						if(i == 100){
+							smoothLoadProgressBarWelcome();  
+						}
+					}
+				}                 
+			}, 30)
+		}
 		</script>
     </body>
 </html>
