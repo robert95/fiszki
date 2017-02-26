@@ -27,10 +27,8 @@ function showAd(){
 	}else{
 		countAd++;
 		if(countAd%2 == 0){
-			alert("TU: " + countAd);
 			$("#myCall-big-ad").show();
 		}else{
-			alert("TAM: " + countAd);
 			if(AdMob) AdMob.showInterstitial();
 		}
 	}
