@@ -2439,16 +2439,16 @@ function removeProgressClassMin(obj, min){
 
 function updateProgressBar(){
 	removeAllProgressClass($("#progess-btn-stan-in-cycle"));
-	removeAllProgressClass($(".progess-btn-stan-in-cycle-2"));
+	//removeAllProgressClass($(".progess-btn-stan-in-cycle-2"));
 	setTimeout(function(){				
 		var percent = 100 - Math.round(((learnedWords)/(countWordsToLearn))*100);
 		var percent2 = 100 - Math.round(((learnedWordsInCat)/(countWordsToLearnInThisCycle))*100);
 		$("#progess-btn-stan-in-cycle").addClass('p'+percent2);
 		$(".progess-btn-stan-in-session").addClass('p'+percent2);
-		$(".progess-btn-stan-in-cycle-2").addClass('p'+percent);
+		//$(".progess-btn-stan-in-cycle-2").addClass('p'+percent);
 		removeProgressClassMin($("#progess-btn-stan-in-cycle"), percent2);
 		removeProgressClassMin($(".progess-btn-stan-in-session"), percent2);
-		removeProgressClassMin($(".progess-btn-stan-in-cycle-2"), percent);
+		//removeProgressClassMin($(".progess-btn-stan-in-cycle-2"), percent);
 		$(".all-words-to-end").text(countWordsToLearn-learnedWords);
 		$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle-learnedWordsInCat);
 	}, 50);
