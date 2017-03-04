@@ -1525,6 +1525,24 @@ textarea, textarea[placeholder]{
 #myCall-big-ad .mycalllink{
     height: 100%;
 }
+#learn-panel table tr td .empty-text{
+    font-size: 19px !important;
+}
+#learn-panel table tr td .empty-text span{
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+    font-size: 15px !important;
+}
+#learn-panel table tr td{
+	position: relative;
+}
+.spiker-icon{
+	width: 75px !important;
+	position: absolute !important;
+	top: -35px !important;
+	left: 14px !important;
+}
 @media (min-width : 500px) {
 	.remind-img {
 		left: 5px;
@@ -1776,5 +1794,17 @@ textarea, textarea[placeholder]{
 	}
 	#end-panel .you-start-learned{
 		margin-top: 5%;
+	}
+	#learn-panel table tr td .empty-text{
+		font-size: 14px !important;
+	}
+	#learn-panel table tr td .empty-text span{
+		font-size: 11px !important;
+	}
+	.spiker-icon {
+		width: 68px !important;
+		position: absolute !important;
+		top: -31px !important;
+		left: 14px !important;
 	}
 }

@@ -345,7 +345,7 @@ var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
 var dayJSON = false;//JSON.parse('{"day": 27, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":9,"catid":1,"start":"26"}]');//
+var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"22"}]');//
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -1027,7 +1027,7 @@ function tellMe(){
 	var idSubCat = $("#myCat").val();
 	//var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".ogg";
 	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
-	//alert(src);
+	console.log(src);
 	setTimeout(function(){
 		if(my_media!=null){/*jak coś to do usunięcia*/
 				my_media.stop();
@@ -1127,7 +1127,9 @@ function setWordToMethod(idM){
 	else $(".remind-img").hide();
 	switch(idM) {
 		case 1:
-			$("#confirm-correct-1").html("");
+			$(".show-hidden-word").show(); //zmiana
+			$("#confirm-correct-1").hide(); //zmiana
+			$("#confirm-correct-1").html(act_word); //zmiana
 			$("#confirm-trans-1").html(act_trans);
 			$("#confirm-text-1").val(act_text);	
 			break;
@@ -1142,8 +1144,10 @@ function setWordToMethod(idM){
 			break;
 		case 4:
 			tellMe();
-			$("#confirm-correct-4").html(act_word);
-			$("#confirm-trans-4").html("");
+			$("#confirm-correct-4").html(act_word);		
+			$(".show-hidden-word").show(); //zmiana
+			$("#confirm-trans-4").hide(); //zmiana
+			$("#confirm-trans-4").html(act_trans); //zmiana
 			$("#confirm-text-4").val(act_text);			
 			break;
 		case 5:
@@ -1152,7 +1156,9 @@ function setWordToMethod(idM){
 			break;
 		case 6:
 			$("#confirm-correct-6").html(act_word);
-			$("#confirm-trans-6").html("");
+			$(".show-hidden-word").show(); //zmiana
+			$("#confirm-trans-6").hide(); //zmiana
+			$("#confirm-trans-6").html(act_trans); //zmiana
 			$("#confirm-text-6").val(act_text);			
 			break;
 		default:
@@ -2439,16 +2445,16 @@ function removeProgressClassMin(obj, min){
 
 function updateProgressBar(){
 	removeAllProgressClass($("#progess-btn-stan-in-cycle"));
-	//removeAllProgressClass($(".progess-btn-stan-in-cycle-2"));
+	removeAllProgressClass($(".progess-btn-stan-in-cycle-2"));
 	setTimeout(function(){				
 		var percent = 100 - Math.round(((learnedWords)/(countWordsToLearn))*100);
 		var percent2 = 100 - Math.round(((learnedWordsInCat)/(countWordsToLearnInThisCycle))*100);
 		$("#progess-btn-stan-in-cycle").addClass('p'+percent2);
 		$(".progess-btn-stan-in-session").addClass('p'+percent2);
-		//$(".progess-btn-stan-in-cycle-2").addClass('p'+percent);
+		$(".progess-btn-stan-in-cycle-2").addClass('p'+percent);
 		removeProgressClassMin($("#progess-btn-stan-in-cycle"), percent2);
 		removeProgressClassMin($(".progess-btn-stan-in-session"), percent2);
-		//removeProgressClassMin($(".progess-btn-stan-in-cycle-2"), percent);
+		removeProgressClassMin($(".progess-btn-stan-in-cycle-2"), percent);
 		$(".all-words-to-end").text(countWordsToLearn-learnedWords);
 		$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle-learnedWordsInCat);
 	}, 50);
