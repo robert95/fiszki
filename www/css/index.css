@@ -1108,6 +1108,9 @@ section{
 	bottom: 40px;
 	right: 3%;
 }
+#mini-counter-wrap{
+	bottom: 0px !important; 
+}
 .count-word-to-learn-in-this-sesion{ 
 	left: 50%;
 	margin-right: 0;
@@ -1542,6 +1545,7 @@ textarea, textarea[placeholder]{
 	position: absolute !important;
 	top: -35px !important;
 	left: 14px !important;
+	z-index: 1000000000 !important;
 }
 @media (min-width : 500px) {
 	.remind-img {
