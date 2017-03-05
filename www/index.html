@@ -40,7 +40,8 @@
 				<!--<li id="m3"><span class="l2">E_TUTORIAL</span><span class="l3">TUTORIAL</span></li>-->
 				<li id="m4" class="text"><span class="l2">E_STATYSTYKI</span><span class="l3">F_STATYSTYKI</span><span class="l4">N_STATYSTYKI</span><span class="l5">STATYSTYKI</span></li>
 				<li id="m6" class="text"><span class="l2">E_KUP WERSJĘ PREMIUM</span><span class="l3">F_KUP WERSJĘ PREMIUM</span><span class="l4">N_KUP WERSJĘ PREMIUM</span><span class="l5">KUP WERSJĘ PREMIUM</span></li>
-				<li id="m7" class="text"><span class="l2">E_SPEAKUP.COM</span><span class="l3">F_SPEAKUP.COM</span><span class="l4">N_SPEAKUP.COM</span><span class="l5">SPEAKUP.PL</span></li>
+				<!--<li id="m7" class="text"><span class="l2">E_SPEAKUP.COM</span><span class="l3">F_SPEAKUP.COM</span><span class="l4">N_SPEAKUP.COM</span><span class="l5">SPEAKUP.PL</span></li>-->
+				<li id="m7" class="text"><span class="l2">MYCALL.NO</span><span class="l3">MYCALL.NO</span><span class="l4">MYCALL.NO</span><span class="l5">MYCALL.NO</span></li>
 				<li id="m8" class="text"><span class="l2">E_ZMIEŃ TŁO</span><span class="l3">F_ZMIEŃ TŁO</span><span class="l4">N_ZMIEŃ TŁO</span><span class="l5">ZMIEŃ TŁO</span></li>
 				<li id="m5" class="text"><span class="l2">E_WYJŚCIE</span><span class="l3">F_WYJŚCIE</span><span class="l4">N_WYJŚCIE</span><span class="l5">WYJŚCIE</span></li>
 				<li id="mE" class="text">^</li>
@@ -81,6 +82,7 @@
 			</div>
 		</section>
 		<section id="choose-cat" class="next-cat-right">
+			<p class="img-close-cont" ontouchstart="closeManualSettingCat();"><img src="img/back2.png"></p>
 			<h1><span class="l2">E_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span><span class="l3">F_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span><span class="l4">N_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span><span class="l5">Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span></h1>
 			<div id="cat-list">
 				<input type="text" class="fuzzy-search" placeholder="Search..."/>
@@ -144,26 +146,26 @@
 			</section>
 			<div id="learn-panel">
 				<section id="word-lern-1" class="learnMethod confirm-swipe">
-					<h3><span class="l2">E_Przetłumacz </span><span class="l3">F_Przetłumacz </span><span class="l4">N_Przetłumacz </span><span class="l5">Przetłumacz </span><span class="worddNB"></span></h3>
+					<h3><span class="l2">E_Przetłumacz </span><span class="l3">F_Przetłumacz </span><span class="l4">N_Przetłumacz </span><span class="l5">Translate (aloud)</span><span class="worddNB"></span></h3>
 					<table>
 						<!--<tr><td><img src="img/up.png"></td></tr>-->
 						<tr id="l-e-1" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-1"><td colspan="3"><p class="text" id="confirm-trans-1"></p></td></tr>
-						<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(1);" class="left-btn">My note</button><button ontouchstart="showTrans(1);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><img src="img/spiker.png" class="spiker-icon"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence* <span>*Use it only if necessary</span></p><p class="text text-reverse" id="confirm-correct-1"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text text-reverse" id="confirm-correct-1"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
 					</div>
 				</section>
 				<section id="word-lern-2" class="learnMethod confirm-swipe">
-					<h3><span class="l2">E_Powtórz </span><span class="l3">F_Powtórz </span><span class="l4">N_Powtórz </span><span class="l5">Powtórz </span><span class="wordNB"></span></h3>
+					<h3><span class="l2">E_Powtórz </span><span class="l3">F_Powtórz </span><span class="l4">N_Powtórz </span><span class="l5">Repeat (aloud)</span><span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-2" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-2"><td colspan="3"><p class="text" id="confirm-trans-2"></p></td></tr>
-						<tr id="l-n-2" class="hidden"><td colspan="3"><textarea id="confirm-text-2" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-n-2" class="hidden"><td colspan="3"><textarea id="confirm-text-2" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(2);" class="left-btn">My note</button><button ontouchstart="showTrans(2);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><img src="img/spiker.png" class="spiker-icon"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr><td colspan="3"><p class="text text-reverse" id="confirm-correct-2"></p></td></tr>
@@ -176,7 +178,7 @@
 					<h3><span class="l2">E_ZADAJ PYTANIE DO ZDANIA </span><span class="l3">F_ZADAJ PYTANIE DO ZDANIA </span><span class="l4">N_ZADAJ PYTANIE DO ZDANIA </span><span class="l5">ZADAJ PYTANIE DO ZDANIA </span><span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-3"><td colspan="3"><input type="text" class="text" id="question-3"/></td></tr>
-						<tr id="l-n-3" class="hidden"><td colspan="3"><textarea id="confirm-text-3" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-n-3" class="hidden"><td colspan="3"><textarea id="confirm-text-3" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(3);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><img src="img/spiker.png" class="spiker-icon"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr><td colspan="3"><p class="text text-reverse"></p></td></tr>
@@ -186,11 +188,11 @@
 					</div>
 				</section>
 				<section id="word-lern-4" class="learnMethod confirm-swipe">
-					<h3><span class="l2">E_Powtórz </span><span class="l3">F_Powtórz </span><span class="l4">N_Powtórz </span><span class="l5">Powtórz </span><span class="wordNB"></span></h3>
+					<h3><span class="l2">E_Powtórz </span><span class="l3">F_Powtórz </span><span class="l4">N_Powtórz </span><span class="l5">Repeat (aloud)</span><span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-4" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
-						<tr id="l-t-4"><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence* <span>*Use it only if necessary</span></p><p class="text" id="confirm-trans-4"></p></td></tr>
-						<tr id="l-n-4" class="hidden"><td colspan="3"><textarea id="confirm-text-4" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-t-4"><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text" id="confirm-trans-4"></p></td></tr>
+						<tr id="l-n-4" class="hidden"><td colspan="3"><textarea id="confirm-text-4" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(4);" class="left-btn">My note</button><button ontouchstart="showTrans(4);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><img src="img/spiker.png" class="spiker-icon"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr><td colspan="3"><p class="text text-reverse" id="confirm-correct-4"></p></td></tr>
@@ -203,7 +205,7 @@
 					<h3><span class="l2">E_Powtórz poprzednie zdanie </span><span class="l3">F_Powtórz poprzednie zdanie </span><span class="l4">N_Powtórz poprzednie zdanie </span><span class="l5">Powtórz poprzednie zdanie </span><span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-5"><td colspan="3"><input type="text" class="text" id="question-5"/></td></tr>
-						<tr id="l-n-5" class="hidden"><td colspan="3"><textarea id="confirm-text-5" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-n-5" class="hidden"><td colspan="3"><textarea id="confirm-text-5" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(5);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><img src="img/spiker.png" class="spiker-icon"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr><td colspan="3"><p class="text text-reverse"></p></td></tr>
@@ -216,8 +218,8 @@
 					<h3><span class="l2">E_Sprawdź </span><span class="l3">F_Sprawdź </span><span class="l4">N_Sprawdź </span><span class="l5">Sprawdź </span><span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-6" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
-						<tr id="l-t-6"><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence* <span>*Use it only if necessary</span></p><p class="text" id="confirm-trans-6"></p></td></tr>
-						<tr id="l-n-6" class="hidden"><td colspan="3"><textarea id="confirm-text-6" class="text noteTEXT" placeholder="Twoja notatka"></textarea></td></tr>
+						<tr id="l-t-6"><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text" id="confirm-trans-6"></p></td></tr>
+						<tr id="l-n-6" class="hidden"><td colspan="3"><textarea id="confirm-text-6" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(6);" class="left-btn">My note</button><button ontouchstart="showTrans(6);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><img src="img/spiker.png" class="spiker-icon"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
 						<tr><td colspan="3"><p class="text text-reverse" id="confirm-correct-6"></p></td></tr>
@@ -245,8 +247,8 @@
 				</div>
 				<div class="note-skip-btn">
 					<div class="note-btn" ontouchstart="showAllNote();">
-						<img src="img/remind.png" class="remind-img pulse-btn">
-						<p id="notebtn">Note</p>
+						<img src="img/5_remind.png" class="remind-img pulse-btn">
+						<p id="notebtn">Linkword</p>
 					</div>
 					<div class="skip-btn only-mobile">
 						<p class="bad-bad" ontouchstart="isNo();" id="badBTN" >Repeat</p>
@@ -257,7 +259,7 @@
 		<section id="tutorial" class="next-cat-left">
 			<div id="count-word-to-learn-tut" class="count-word-to-learn">
 				<div id="progess-btn-stan-in-cycle-2-tut" class="c100 p100">
-					<span id="progess-btn-per-in-cycle-2-tut">178</span>
+					<span id="progess-btn-per-in-cycle-2-tut" class="mini-counter-count">178</span>
 					<div class="slice">
 						<div class="bar"></div>
 						<div class="fill"></div>
@@ -394,8 +396,8 @@
 				</div>
 				<div class="note-skip-btn">
 					<div class="note-btn" ontouchstart="showAllNote();">
-						<img src="img/remind.png" class="remind-img pulse-btn" id="remind-tut">
-						<p id="noteInTut">Note</p>
+						<img src="img/5_remind.png" class="remind-img pulse-btn" id="remind-tut">
+						<p id="noteInTut">Linkword</p>
 					</div>
 					<div class="skip-btn">
 						<!--<p class="bad-bad" onclick="isNo();" id="badBTN" >Repeat</p>-->
@@ -404,10 +406,19 @@
 			</div>
 		</section>
 		<section id="start-next-cat" class="next-cat-left">
-			<h1><span class="l2">E_Następna powtórka</span><span class="l3">F_Następna powtórka</span><span class="l4">N_Następna powtórka</span><span class="l5">Następna powtórka</span></h1>
+			<h1><span class="l2">E_Następna powtórka</span><span class="l3">F_Następna powtórka</span><span class="l4">N_Następna powtórka</span><span class="l5">Next repetition</span></h1>
 			<p id="main-text-next-cat">1/5</p>
 			<p id="name-next-cat"></p>
-			<p class="before-start-info"><span class="l2">*E_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l3">F_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l4">N_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l5">Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span></p>
+			<p class="before-start-info"><span class="l2">*E_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l3">F_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l4">N_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l5">The number of remaining tasks</span></p>
+			<div class="count-word-to-learn" id="next-repeat-mini-counter-wrap">
+				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
+					<span class="progess-btn-per-in-cycle-2 all-words-to-end-sesion-in-repeat">0</span>
+					<div class="slice">
+						<div class="bar"></div>
+						<div class="fill"></div>
+					</div>
+				</div>
+			</div>
 			<div id="btn-next-cat">
 				<div id="progress-circle">
 					<div id="progess-btn-stan" class="c100 p0" ontouchstart="nextCatBtn();">
@@ -600,7 +611,9 @@
 			</div>
 		</section>
 		<div id="myCall-big-ad">
-			<div class="close-parent-btn">X</div>
+			<div class="close-mycall-ad-wrap">
+				<div class="close-parent-btn">X</div>
+			</div>
 			<div class="mycalllink">
 				<img src="img/mycall-big.png">
 			</div>
@@ -1003,18 +1016,24 @@
 				}, 300);
 			});
 			$("#m5").click(function(){
-				navigator.notification.confirm(
+				/*navigator.notification.confirm(
 					"Jeżeli zamkniesz teraz aplikacje Twój dzisiejszy postęp nie zostanie zapisany!",
 					onConfirm,
 					"Uwaga!",
 					"Anuluj, Wyjście"
+				);*/
+				navigator.notification.confirm(
+					"If you turn off the app before the completion of lesson your progress will not be saved!",
+					onConfirm,
+					"Warning!",
+					"cancel, exit"
 				);
 			});
 			$("#m6").click(function(){
 				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
 			});
 			$("#m7").click(function(){
-				window.open('https://www.google.pl', '_system');
+				window.open('https://mycall.no', '_system');
 			});
 			$(".mycalllink").click(function(){
 				window.open('https://www.mycall.no', '_system');
@@ -1142,6 +1161,9 @@
 		</script>
 		<script>
 			$(".close-parent-btn").click(function(){
+				$(this).parent().parent().hide();
+			});
+			$(".close-mycall-ad-wrap").click(function(){
 				$(this).parent().hide();
 			});
 		</script>
@@ -1162,7 +1184,7 @@
 						}
 					}
 				}                 
-			}, 30)
+			}, 15)
 		}
 		</script>
 		<script>

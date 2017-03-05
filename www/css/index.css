@@ -46,6 +46,16 @@
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+@-webkit-keyframes pulse-mini {
+    0% { -webkit-transform: scale(0.45); }
+    50% { -webkit-transform: scale(0.5); }
+    100% { -webkit-transform: scale(0.45); }
+}
+@keyframes pulse-mini {
+    0% { transform: scale(0.45); }
+    50% { transform: scale(0.5); }
+    100% { transform: scale(0.45); }
+}
 @-ms-keyframes spin { 
 	from { 
 		-ms-transform: rotate(0deg); 
@@ -81,6 +91,16 @@
     animation-fill-mode: both;
 	-webkit-animation-name: pulse;
     animation-name: pulse;
+    animation-iteration-count: infinite; 
+	-webkit-animation-iteration-count: infinite; 
+}
+.pulse-btn-mini{
+	-webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+	-webkit-animation-name: pulse-mini;
+    animation-name: pulse-mini;
     animation-iteration-count: infinite; 
 	-webkit-animation-iteration-count: infinite; 
 }
@@ -242,6 +262,9 @@ body{
 #langs div h1, #choose-cat div h1, #list-of-word h2{
 	color: black;
 	padding: 30px 0;
+}
+#choose-cat h1{    
+	padding-top: 63px;
 }
 #choose-cat, #list-of-word{
 	display: none;
@@ -920,15 +943,15 @@ section{
 .note-skip-btn  .note-btn p{
 	padding-left: 15px;
 	text-align: left;
-	margin-top: 45px;
-	font-size: 24px;
+	margin-top: 48px;
+	font-size: 21px;
 	font-weight: bold;
 }
 .note-skip-btn  .skip-btn p{
 	padding-right: 15px;
     text-align: right;
-	margin-top: 45px;
-	font-size: 24px;
+	margin-top: 48px;
+	font-size: 21px;
 	font-weight: bold;
 }
 #progess-btn-stan-in-cycle, #progess-btn-stan-in-cycle-ncat{
@@ -1109,7 +1132,8 @@ section{
 	right: 3%;
 }
 #mini-counter-wrap{
-	bottom: 0px !important; 
+	/*bottom: 110px !important; */
+	z-index: 100000;
 }
 .count-word-to-learn-in-this-sesion{ 
 	left: 50%;
@@ -1345,7 +1369,7 @@ section{
 }
 .nbWordInCycle, .nbWordInCycle-tut{
 	text-align: center;
-	font-size: 19px;
+	font-size: 17px;
 	position: absolute;
 	text-align: center;
 	top: -12px;
@@ -1483,7 +1507,7 @@ textarea, textarea[placeholder]{
 }
 .myCall-icon{
 	position: fixed;
-	bottom: 15px;
+	top: 5px;
 	left: 5px;
 	text-align: left;
 	width: 20%;
@@ -1505,6 +1529,13 @@ textarea, textarea[placeholder]{
 	z-index: 200000;
 	top: 0;
 	left: 0;
+}
+.close-mycall-ad-wrap{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 90px;
+	height: 90px;
 }
 .close-parent-btn{
 	position: absolute;
@@ -1541,11 +1572,26 @@ textarea, textarea[placeholder]{
 	position: relative;
 }
 .spiker-icon{
-	width: 75px !important;
+	width: 78px !important;
 	position: absolute !important;
-	top: -35px !important;
-	left: 14px !important;
+	top: -26px !important;
+	left: 17px !important;
 	z-index: 1000000000 !important;
+	height: 50px !important;
+}
+#next-repeat-mini-counter-wrap{
+	position: relative;
+	top: -70px;
+	left: 0;
+	margin: 0;
+}
+#next-repeat-mini-counter-wrap .all-words-to-end-sesion-in-repeat{
+	line-height: 2.5em;
+	width: 100%;
+}
+.mini-counter-count{
+	width: 100% !important;
+    line-height: 2.5em !important;
 }
 @media (min-width : 500px) {
 	.remind-img {
@@ -1763,8 +1809,9 @@ textarea, textarea[placeholder]{
 	h1{
 		font-size: 25px !important;
 	}
-	.note-skip-btn .note-btn p{
-		font-size: 20px !important;
+	.note-skip-btn .note-btn p, .note-skip-btn .skip-btn p{
+		font-size: 18px !important;
+		margin-top: 52px !important
 	}
 	#startDay h1, #start-next-cat h1, #end-cat h1, #new-category-choice h1{
 		font-size: 24px !important;
@@ -1806,9 +1853,10 @@ textarea, textarea[placeholder]{
 		font-size: 11px !important;
 	}
 	.spiker-icon {
-		width: 68px !important;
+		width: 70px !important;
 		position: absolute !important;
-		top: -31px !important;
-		left: 14px !important;
+		top: -27px !important;
+		left: 15px !important;
+		height: 55px !important;
 	}
 }

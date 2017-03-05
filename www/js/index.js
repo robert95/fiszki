@@ -36,11 +36,18 @@ var app = {
     onDeviceReady: function() {
 		//getLangList();
 		if(!checkConnection()){
-			navigator.notification.confirm(
+			/*navigator.notification.confirm(
 				"Połącz się z Internetem aby korzystać z aplikacji lub pobierz wersję premium, która działa off-line.",
 				onNoInternetConfirm,
 				"Brak połączenia z Internetem!",
 				"Wyjscie"
+			);*/
+			
+			navigator.notification.confirm(
+				"Connect to the Internet to use the application. You can also download the premium version that works offline",
+				onNoInternetConfirm,
+				"No Internet connection!",
+				"exit"
 			);
 		}else{
 			startApp();
@@ -344,8 +351,10 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
-var dayJSON = false;//JSON.parse('{"day": 27, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//
-var toLearnJSON = [];//JSON.parse('[{"subid":5,"catid":1,"start":"22"}]');//
+var dayJSON = false;
+//var dayJSON = JSON.parse('{"day": 27, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
+//var toLearnJSON = JSON.parse('[{"subid":5,"catid":1,"start":"26"}]');
+var toLearnJSON = [];
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -2070,6 +2079,7 @@ function showStartCat(count, name){
 	$("#learn-container").hide();
 	$("#main-text-next-cat").text(count + "/" + countCatsToLearn);
 	$("#main-text-next-cat-end").text(count + "/" + countCatsToLearn);
+	$(".all-words-to-end-sesion-in-repeat").text(countWordsToLearnInThisCycle);
 	$("#name-next-cat").text(name);
 	
 	var percent = Math.round(((count-1)/countCatsToLearn)*100);
@@ -2238,10 +2248,10 @@ function nextTutStep(){
 			$('.tut-method').removeClass('flipper-hide');
 			if(stepTut == 3){
 				$('#count-word-to-learn-tut').addClass('shown');
-				$('#count-word-to-learn-tut').addClass('pulse-btn');
+				$('#count-word-to-learn-tut').addClass('pulse-btn-mini');
 			}
 			if(stepTut == 5){
-				$('#count-word-to-learn-tut').removeClass('pulse-btn');
+				$('#count-word-to-learn-tut').removeClass('pulse-btn-mini');
 				$('#count-word-to-learn-tut').removeClass('shown');
 				$('#noteInTut').addClass('pulse-btn');
 				$('#noteInTut').addClass('shown');
@@ -2298,6 +2308,14 @@ function startSetNewCategory(){
 			$("#choose-cat").removeClass('next-cat-right');
 		}, 150);
 		$("#cats").show();
+	}, 700);
+}
+function closeManualSettingCat(){
+	$("#new-category-choice").show();	
+	$("#choose-cat").addClass('next-cat-right');
+	setTimeout(function(){		
+		$("#new-category-choice").removeClass('next-cat-left');
+		$("#choose-cat").hide();
 	}, 700);
 }
 function backToSetNewCategory(){
@@ -2842,11 +2860,22 @@ function volumeTest(){
 	});
 }	
 function showVolumeInfo() {
-  window.plugins.toast.showWithOptions(
+  /*window.plugins.toast.showWithOptions(
     {
       message: "UWAGA! Musisz zwiększyć głośność aby słyszeć lektora",
       duration: "long", 
       position: "center"
     }
-  );
+  );*/
+  
+	navigator.notification.confirm(
+		"Turn up the volume to hear the sound",
+		okNoSound,
+		"Warning!",
+		"OK"
+	);
 }	
+
+function okNoSound(){
+	return true;
+}
