@@ -1065,7 +1065,7 @@ function tellMe(){
 		
 		my_media = new Media(src,
             // success callback
-             function () { this.release(); },
+             function () { /*this.release();*/ },
             // error callback
              function (err) { console.log("M: " + err.message + " - " + err.code); }
 		);
