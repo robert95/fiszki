@@ -785,6 +785,11 @@ textarea:focus, textarea:hover, textarea:active{
 	margin: 21% auto 16%;
 	font-size: 18px;
 }
+#start-next-cat .before-start-info{
+	font-weight: 600;
+	font-size: 28px;
+	margin-top: 40%;
+}
 .before-start-info a, .before-start-info a:hover{
 	text-decoration: underline;
 	color: white;
@@ -847,14 +852,20 @@ textarea:focus, textarea:hover, textarea:active{
 	line-height: 2.5em !important;
 }
 .loading-waiting{
-	-webkit-animation-duration: 1s;
-    animation-duration: 1s;
+	-webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
 	-webkit-animation-name: spin;
     animation-name: spin;
     animation-iteration-count: infinite; 
 	-webkit-animation-iteration-count: infinite; 
 	-webkit-animation-timing-function: linear;
 	animation-timing-function: linear;
+}
+#progress-welcome .bar{
+	clip: rect(0em, 7px, 120px, 0em);
+}
+#progress-welcome .slice{
+	clip: rect(0em, 120px, 120px, -18px);
 }
 #first-use-loading-page{
 	text-align: center;
@@ -967,8 +978,8 @@ section{
 .you-start-learned{
     color: white;
     text-align: center;
-    margin-top: 23%;
-    font-size: 21px;
+    margin-top: 30%;
+    font-size: 19px;
 }
 #end-panel .you-start-learned{
     margin-top: 10%;
@@ -977,7 +988,7 @@ section{
     color: white;
     text-align: center;
     margin-top: 0%;
-    font-size: 21px;
+    font-size: 19px;
 }
 #end-course .you-start-learned3{
 	margin-top: 130px;
@@ -1017,6 +1028,10 @@ section{
 #new-cat-ok-no-panel{
 	z-index: 2;
 	padding-bottom: 0px !important;
+}
+#new-cat-ok-no-panel .note-skip-btn p{
+	margin-top: 30px !important;
+	font-size: 20px !important;
 }
 #new-cat-ok-no-panel img{
 	z-index: 3;
@@ -1456,7 +1471,7 @@ section{
 .invite-again{
 	font-size: 28px;
 	font-weight: bold;
-	margin-top: 50px;
+	margin-top: 30px;
 }
 textarea::-webkit-input-placeholder {
    text-align: center;
@@ -1572,18 +1587,18 @@ textarea, textarea[placeholder]{
 	position: relative;
 }
 .spiker-icon{
-	width: 78px !important;
+	width: 40px !important;
 	position: absolute !important;
-	top: -26px !important;
-	left: 17px !important;
+	bottom: 5px !important;
+	left: 5px !important;
 	z-index: 1000000000 !important;
-	height: 50px !important;
+	padding: 30px 30px 0 0;
 }
 #next-repeat-mini-counter-wrap{
-	position: relative;
+	/*position: relative;
 	top: -70px;
 	left: 0;
-	margin: 0;
+	margin: 0;*/
 }
 #next-repeat-mini-counter-wrap .all-words-to-end-sesion-in-repeat{
 	line-height: 2.5em;
@@ -1827,10 +1842,10 @@ textarea, textarea[placeholder]{
 	}
 	.you-start-learned{
 		margin-top: 13%;
-		font-size: 17px;
+		font-size: 16px;
 	}
 	.you-start-learned2, .you-start-learned3{
-		font-size: 17px;
+		font-size: 16px;
 	}
 	.goToReverse{
 		margin-top: 15%;
@@ -1841,7 +1856,7 @@ textarea, textarea[placeholder]{
 	}
 	.invite-again{
 		font-size: 20px;
-		margin-top: 28px;
+		margin-top: 20px;
 	}
 	#end-panel .you-start-learned{
 		margin-top: 5%;
@@ -1858,5 +1873,9 @@ textarea, textarea[placeholder]{
 		top: -27px !important;
 		left: 15px !important;
 		height: 55px !important;
+	}
+	#new-cat-ok-no-panel .note-skip-btn p{
+		margin-top: 30px !important;
+		font-size: 20px !important;
 	}
 }
