@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Dette dårlige været vil nok påvirke avlingene.",
+			"name": "What time do you open tomorrow?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Han oppdaget en ny stjerne.",
+			"name": "What time do you close today?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Vi er veldig glade for å ha henne her.",
+			"name": "Can I help you?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Jeg lo godt av spøken hennes.",
+			"name": "Co you sell stamps?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Hvem lot døren stå åpen?",
+			"name": "I'm looking for the shampoo",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Mamma, jeg vil du skal kjøpe meg et granateple!",
+			"name": "How much does this cost?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Jeg var redd jeg skulle komme for sent.",
+			"name": "How much is that lamp in the window?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Ikke forveksle begjær med kjærlighet.",
+			"name": "That's cheap",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Han nektet for det øyeblikkelig.",
+			"name": "That's expensive",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Jeg sverget at jeg aldri igjen skulle snakke med henne.",
+			"name": "I'll take this",
 			"notices": [
 			]
 		}

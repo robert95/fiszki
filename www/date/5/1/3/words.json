@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Does somebody feel unwell?",
+			"name": "Jeg vil bestille en flytur til Athen.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Gold is much heavier than water.",
+			"name": "Flyet har blitt innstilt",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "The Police caught him red handed.",
+			"name": "Vi beklager forsinkelsen",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "He's doesn't have a head for numbers.",
+			"name": "Kan jeg se passet og ombordstigningskortet ditt, takk?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Mary has already left.",
+			"name": "Når lander vi?",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Don't disturb me while I'm studying.",
+			"name": "En billett til Madrid.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "How does this disease spread?",
+			"name": "Jeg ønsker en vindusplass, ikke-røyker, takk.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "The island lies to the west of Japan.",
+			"name": "Hvilket spor går toget fra?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "I was asked to show my passport at the border.",
+			"name": "Må jeg bytte tog?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "It looks like he'll be coming here next month.",
+			"name": "Når ankommer toget i Wien?",
 			"notices": [
 			]
 		}

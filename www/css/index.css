@@ -724,7 +724,7 @@ textarea:focus, textarea:hover, textarea:active{
 	transform: translate3d(130%, 0, 0) !important;
 	-webkit-transform: translate3d(130%, 0, 0) !important;
 }
-#start-next-cat, #end-panel, #end-course, #tutorial, #startDay, #end-cat{
+#start-next-cat, #end-panel, #end-course, #tutorial, #startDay, #end-cat, #page-after-tutorial{
 	height: 100%;
 	position: relative;
 	overflow: hidden;
@@ -734,7 +734,7 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 100%;
 	bottom: 0px;
 }
-#start-next-cat, #end-cat, #end-course, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay{
+#page-after-tutorial, #start-next-cat, #end-cat, #end-course, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay{
 	display: none;
 	position: relative;
 	transition: 0.6s;
@@ -980,6 +980,7 @@ section{
     text-align: center;
     margin-top: 30%;
     font-size: 19px;
+	margin-bottom: 10px;
 }
 #end-panel .you-start-learned{
     margin-top: 10%;
@@ -989,6 +990,7 @@ section{
     text-align: center;
     margin-top: 0%;
     font-size: 19px;
+	margin-bottom: 10px;
 }
 #end-course .you-start-learned3{
 	margin-top: 130px;
@@ -1031,7 +1033,16 @@ section{
 }
 #new-cat-ok-no-panel .note-skip-btn p{
 	margin-top: 30px !important;
-	font-size: 20px !important;
+	font-size: 19px !important;
+	text-align: center;
+}
+#new-cat-ok-no-panel .note-btn p{
+	padding-left: 0 !important;
+    margin-left: -57px !important;
+}
+#new-cat-ok-no-panel .skip-btn p{
+	padding-right: 0 !important;
+	margin-right: -28px !important;
 }
 #new-cat-ok-no-panel img{
 	z-index: 3;
@@ -1459,6 +1470,13 @@ section{
 	display: none;
 }
 #tutorial .learnMethod .text{
+	display: table-cell !important;
+	height: auto;
+}
+#tutorial .learnMethod td{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 	min-height: 250px !important;
 	height: 250px !important;
 }
@@ -1472,6 +1490,7 @@ section{
 	font-size: 28px;
 	font-weight: bold;
 	margin-top: 30px;
+	margin-bottom: 5px;
 }
 textarea::-webkit-input-placeholder {
    text-align: center;
@@ -1589,8 +1608,8 @@ textarea, textarea[placeholder]{
 .spiker-icon{
 	width: 40px !important;
 	position: absolute !important;
-	bottom: 5px !important;
-	left: 5px !important;
+	bottom: 40px !important;
+	right: 2px !important;
 	z-index: 1000000000 !important;
 	padding: 30px 30px 0 0;
 }
@@ -1607,6 +1626,16 @@ textarea, textarea[placeholder]{
 .mini-counter-count{
 	width: 100% !important;
     line-height: 2.5em !important;
+}
+#end-tut-title{
+	margin: 0px 0px;
+	text-align: center;
+	font-size: 28px;
+	color: white;
+	font-weight: bold;
+	font-weight: 600;
+	margin-top: 55%;
+	margin-bottom: 43%;
 }
 @media (min-width : 500px) {
 	.remind-img {
@@ -1868,14 +1897,19 @@ textarea, textarea[placeholder]{
 		font-size: 11px !important;
 	}
 	.spiker-icon {
-		width: 70px !important;
+		width: 33px !important;
 		position: absolute !important;
-		top: -27px !important;
-		left: 15px !important;
-		height: 55px !important;
+		height: auto !important;
+		bottom: 38px !important;
+		right: -2px !important;
 	}
 	#new-cat-ok-no-panel .note-skip-btn p{
-		margin-top: 30px !important;
-		font-size: 20px !important;
+		margin-top: 35px !important;
+		font-size: 16px !important;
+	}
+	#end-tut-title{
+		font-size: 25px;
+		margin-top: 49%;	
+		margin-bottom: 27%;
 	}
 }

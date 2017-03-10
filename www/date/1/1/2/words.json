@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Ikke gå inn der, det er en blindvei.",
+			"name": "Do you speak English?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Det føles som om jeg har våknet fra et mareritt.",
+			"name": "I don't speak English",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "De satt i sofaen i stua vår.",
+			"name": "Please speak more slowly",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Jeg bor i en by, men foreldrene mine bor på landet.",
+			"name": "Could you please repeat that?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "En setning har vanligvis et subjekt og et verb.",
+			"name": "I understand",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Oversett denne setningen til engelsk.",
+			"name": "I don't understand",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Hver synes best om sine barn.",
+			"name": "I can understand them well.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Den saken bekymrer meg ikke i det hele tatt.",
+			"name": "But speaking and writing is difficult.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Jeg vet ikke om jeg får tid.",
+			"name": "I still make many mistakes.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Når jeg ser dette bildet, minnes jeg alltid min far.",
+			"name": "Where did you learn Spanish?",
 			"notices": [
 			]
 		}

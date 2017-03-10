@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Uten din hjelp ville jeg ha mislyktes.",
+			"name": "Hello! John speaking.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Yoko unngikk å svare på spørsmålet mitt.",
+			"name": "Could I speak to Bill, please?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Premier deles ut ved slutten av konkurransen.",
+			"name": "Could I ask who's calling?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Jeg er slett ikke overbevist.",
+			"name": "It's Maria here.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Alle kjedet seg over den lange talen hans.",
+			"name": "Hold the line, please",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Hun er misunnelig på min suksess.",
+			"name": "I'm sorry, he's not available at the moment",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Jeg har mistet interessen for golf.",
+			"name": "Would you like to leave a message?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Å spille fiolin krever mye øving.",
+			"name": "Could you ask him to call me?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Himmelen har blitt overskyet.",
+			"name": "What's your number?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Han oppførte seg som en galning.",
+			"name": "I'll call back later",
 			"notices": [
 			]
 		}

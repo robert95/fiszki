@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "This bad weather will certainly have an effect on the crops.",
+			"name": "Når åpner du i morgen",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "He discovered a new star.",
+			"name": "Når stenger du i dag?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "We are very pleased to have her here.",
+			"name": "Kan jeg hjelpe deg?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "I had a good laugh at her joke.",
+			"name": "Selger du frimerker?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Who left the door open?",
+			"name": "Jeg ser etter sjampo",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Mommy, I want you to buy me a pomegranate!",
+			"name": "Hvor mye koster denne?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "I was afraid I might be late in coming.",
+			"name": "Hvor mye er den lampe i vinduet?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Don't confuse desire with love.",
+			"name": "Det er billig",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "He instantly denied it.",
+			"name": "Det er dyrt",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "I vowed that I would never speak to her again.",
+			"name": "Jeg tar denne/dette",
 			"notices": [
 			]
 		}

@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Without your assistance I would have failed.",
+			"name": "Hallo!dette er John.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Yoko avoided answering my question.",
+			"name": "Kan jeg få snakke med Bill, takk?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Prizes will be awarded at the end of the contest",
+			"name": "Kan jeg spørre hvem som ringer?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "I'm not convinced at all.",
+			"name": "Det er Maria her.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "His long speech bored everyone.",
+			"name": "Hold linjen, takk",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "She is envious of my success",
+			"name": "Jeg beklager, han er ikke tilgjengelig for øyeblikket",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "I've lost interest in golf.",
+			"name": "Ønsker du å legge igjen en beskjed?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Playing the violin requires much practice.",
+			"name": "Kan du be ham om å ringe meg?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "The sky has become overcast.",
+			"name": "Hva er ditt nummer?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "He behaved like a madman.",
+			"name": "Jeg ringer tilbake senere",
 			"notices": [
 			]
 		}

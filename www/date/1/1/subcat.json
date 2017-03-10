@@ -1,34 +1,42 @@
 [
 	{
 		"id": 1,
-		"name": "Kasia 1"
+		"name": "Grunnleggende uttrykk"
 	},
 	{
 		"id": 2,
-		"name": "Kasia 2"
+		"name": "Å gjøre seg selv forstått"
 	},
 	{
 		"id": 3,
-		"name": "Kasia 3"
+		"name": "På flyplassen/togstasjonen"
 	},
 	{
 		"id": 4,
-		"name": "Kasia 4"
+		"name": "Konjunksjoner"
 	},
 	{
 		"id": 5,
-		"name": "Kasia 5"
+		"name": "Når du handler"
 	},
 	{
 		"id": 6,
-		"name": "różne 6"
+		"name": "Possessiver"
 	},
 	{
 		"id": 7,
-		"name": "różne 7"
+		"name": "Å ringe og motta anrop"
 	},
 	{
 		"id": 8,
-		"name": "różne 8"
+		"name": "Nødsituasjoner"
+	},
+	{
+		"id": 9,
+		"name": "Snakke om ting du liker/ ikke liker"
+	},
+	{
+		"id": 10,
+		"name": "Å spørre om og vise veien"
 	}
 ]

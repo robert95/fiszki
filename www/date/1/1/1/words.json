@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Han solgte bilen sin uten å nøle.",
+			"name": "hi/bye",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Det nærmeste jeg har er størrelse 38.",
+			"name": "good morning",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "",
+			"name": "good bye",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "En fugl i hånden er bedre enn ti på taket.",
+			"name": "hello/see you!",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Det ser ut til at vi har gått oss bort.",
+			"name": "sorry/it's OK ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Du hadde ikke trengt å komme så tidlig",
+			"name": "yes/no",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Ikke gå så fort. Jeg greier ikke å holde følge med deg.",
+			"name": "please/thanks",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Jeg er ikke vant til å stå opp så tidlig.",
+			"name": "thank you very much",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Ulykken skapte kaos i trafikken.",
+			"name": "you're welcome",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Han hadde lært seg engelsk før han dro til England.",
+			"name": "don't mention it",
 			"notices": [
 			]
 		}

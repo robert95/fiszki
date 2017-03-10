@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Don't go in there, it's a dead-end street.",
+			"name": "snakker du engelsk?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "I feel as if I've woken up from a nightmare.",
+			"name": "jeg snakker ikke engelsk",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "They were sitting on the sofa in our living room.",
+			"name": "vennligst snakk saktere",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "I live in a town, but my parents live in the country.",
+			"name": "kan du vennligst repetere det?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "A sentence normally has a subject and a verb.",
+			"name": "Jeg forstår",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Translate this sentence into English.",
+			"name": "Jeg forstår ikke",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "The crow thinks her own birds fairest.",
+			"name": "Jeg kan godt forstå dem.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "That doesn't worry me at all.",
+			"name": "Men å snakke og skrive er vanskelig.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "I don't know if I'll have time.",
+			"name": "Jeg gjør mange feil.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Every time I see this picture, I remember my father.",
+			"name": "Hvor har du lært spansk?",
 			"notices": [
 			]
 		}

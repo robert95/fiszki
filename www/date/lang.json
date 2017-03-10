@@ -8,5 +8,25 @@
 		"id": 5,
 		"name": "English",
 		"label": "I speak English"
+	},
+	{
+		"id": 5,
+		"name": "English",
+		"label": "Mówię po polsku"
+	},
+	{
+		"id": 5,
+		"name": "English",
+		"label": "Ich spreche Deutsch"
+	},
+	{
+		"id": 5,
+		"name": "English",
+		"label": "Yo hablo español"
+	},
+	{
+		"id": 5,
+		"name": "English",
+		"label": "Je parle français"
 	}
 ]

@@ -35,7 +35,7 @@ var app = {
 	
     onDeviceReady: function() {
 		var src = '/android_asset/www/date/1.m4a';
-		my_media = new Media(src, function () { this.release(); }, function (err) { console.log("M: " + err.message + " - " + err.code); });
+		//my_media = new Media(src, function () { this.release(); }, function (err) { console.log("M: " + err.message + " - " + err.code); });
 		
 		//getLangList();
 		if(!checkConnection()){
@@ -101,7 +101,7 @@ var app = {
 		  storeAppURL: {
 			android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
 		  },
-		  useLanguage: 'pl',
+		  useLanguage: 'en',
 		  callbacks: {
 			onButtonClicked: function(buttonIndex){
 				if(buttonIndex == 1){
@@ -356,15 +356,16 @@ var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
 var dayJSON = false;
-//var dayJSON = JSON.parse('{"day": 29, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
-//var toLearnJSON = JSON.parse('[{"subid":5,"catid":1,"start":"1"}]');
+//var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
+//var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
 var toLearnJSON = [];
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
 var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ];
 var countWord = 0;
-var countCatsToLearn = 0;
+var countCatsToLearn = 0; //without repeatitions
+var countCatsToLearnToday = 1; //with repeatitions
 var countWordsToLearn = wordsInOneCat*2 + (wordsInOneCat*3-2)//wordsInOneCat*2; //2 cykle w nowej kategorii po 10 słów
 var learnedWords = 0;
 var learnedWordsInCat = 0;
@@ -438,10 +439,10 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	readDayF();
-	getDayHelper();
-	/*
-	getAllCatsInArray();
+	//readDayF();
+	//getDayHelper();
+	
+	/*getAllCatsInArray();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(dayJSON.day-1); //usunąć
@@ -533,11 +534,15 @@ function getDay(){
 				$(".equivalentLessons").text(dayJSON.day-1); //usunąć
 				$(".all-words-to-end").text(countWordsToLearn);
 				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
+				countCatsToLearnToday = countCatsToLearn-1;
+				$(".allTimeToday").text(countCatsToLearnToday * minCat);
 			}else{
 				$("#countWordsToLearn").text(dayJSON.day-1);	
 				$(".equivalentLessons").text(dayJSON.day-1); //usunąć
 				$(".all-words-to-end").text(countWordsToLearn);	
 				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
+				countCatsToLearnToday += countCatsToLearn;
+				$(".allTimeToday").text(countCatsToLearnToday * minCat);
 			}
 		}, 150);
 	$("body").addClass('theme'+dayJSON.theme);*/
@@ -668,11 +673,15 @@ function getToLearnHelper(){
 				$(".equivalentLessons").text(dayJSON.day-1); //usunąć
 				$(".all-words-to-end").text(countWordsToLearn);
 				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
+				countCatsToLearnToday = countCatsToLearn-1;
+				$(".allTimeToday").text(countCatsToLearnToday * minCat);
 			}else{
 				$("#countWordsToLearn").text(dayJSON.day-1);	
 				$(".equivalentLessons").text(dayJSON.day-1); //usunąć
 				$(".all-words-to-end").text(countWordsToLearn);	
 				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
+				countCatsToLearnToday += countCatsToLearn;
+				$(".allTimeToday").text(countCatsToLearnToday * minCat);
 			}
 		}, 150);
 	}
@@ -686,7 +695,7 @@ function setCountWord(){
 }
 function saveDay(){
 	dayJSON.day = dayJSON.day + 1;  //zmienić na 1
-	dayJSON.km = dayJSON.km + countOfCycle;  
+	dayJSON.km = dayJSON.km + (countOfCycle/2);  
 	datesJSON5 = dayJSON;
 	srcSave5 = path() + "day.json";
 	saveFile5();
@@ -730,7 +739,7 @@ function showCatList(c){
 	for(var x in cats){
 		subcats = false;
 		var cat = cats[x];
-		if(x == 0) tmp += '<div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Fiszki</span></h1><div>';
+		if(x == 0) tmp += '<div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Phrases</span></h1><div>';
 		if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
 		tmp += '<div><h1 class="text supercat" onclick="expand(this);">'+ cat.name + '</h1>';
 		var extraEnd = parseInt(x)+1 == parseInt(cats.length) ? '</div></div>' : "";
@@ -805,7 +814,7 @@ function showSubCatList(s, parentId){
 		if(inProgressCat.indexOf(catSgn) >= 0){
 			cl = "inProgressCat";
 		}
-		tmp += '<p class="text setCat '+ cl +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parentId + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">in progress lesson</span> <span class="missingCatInfo">missing lesson</span> <span class="learnedCatInfo">learned lesson</span></p>';
+		tmp += '<p class="text setCat '+ cl +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parentId + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
 		if(firstGenerationCat) $(".list").append('<li><p class="cat-name" data-id="' + cat.id + '" data-par="' + parentId + '">' + cat.name + '</p></li>');
 	}
 	tmp += '</div>';
@@ -1684,6 +1693,8 @@ function nextPack(){
 		blockClear = false;
 		//$('.confirm-swipe table').addClass('goLeft');
 		if(isRepeatCycle){
+			$(".timeLernedToday").text((learnetCatToday-1) * minCat);
+			$(".allTimeToday").text(countCatsToLearnToday * minCat);
 			$('section').hide();
 			$("#end-cat").show();	
 			setTimeout(function(){				
@@ -2269,7 +2280,7 @@ function nextTutStep(){
 	$("#choose-lang").hide();
 	stepTut++;
 	$(".tut-method").hide();
-	if(stepTut > 18) endTut();
+	if(stepTut > 4) endTutWrap();
 	else{
 		$("#tut-lern-" + stepTut).show();
 		setTimeout(function(){	
@@ -2281,7 +2292,7 @@ function nextTutStep(){
 				$('#count-word-to-learn-tut').addClass('shown');
 				$('#count-word-to-learn-tut').addClass('pulse-btn-mini');
 			}
-			if(stepTut == 5){
+			if(stepTut == 4){
 				$('#count-word-to-learn-tut').removeClass('pulse-btn-mini');
 				$('#count-word-to-learn-tut').removeClass('shown');
 				$('#noteInTut').addClass('pulse-btn');
@@ -2306,22 +2317,34 @@ function nextTutStep(){
 }
 
 function updateProgressTut(step){
-	var percent = 100 - Math.round(((step)/(19))*100);
+	var percent = 100 - Math.round(((step)/(5))*100);
 	$("#progess-btn-stan-in-cycle-tut2").addClass('p'+percent);
 	removeProgressClassMin($("#progess-btn-stan-in-cycle-tut2"), percent);
+}
+function endTutWrap(){ 
+	$("#tutorial").hide();
+	$(".tut-method").hide();
+	$("#page-after-tutorial").show();
+	setTimeout(function(){				
+		$("#page-after-tutorial").removeClass('next-cat-left');
+	}, 100);
 }
 function endTut(){ 
 	$("#startDay").addClass('next-cat-left');
 	stepTut = 0;
 	$("#tutorial").hide();
 	$(".tut-method").hide();
-	if(startLearn){
-		//zacznij naukę
-		showStartLessonPage();
-		startLearn = false;
-	}else{
-		//powrót do głównego
-	}
+	$("#page-after-tutorial").addClass('next-cat-left');
+	setTimeout(function(){				
+		$("#page-after-tutorial").hide();
+		if(startLearn){
+			//zacznij naukę
+			showStartLessonPage();
+			startLearn = false;
+		}else{
+			//powrót do głównego
+		}
+	}, 1000);
 }
 function startSetNewCategory(){
 	getCatList();
