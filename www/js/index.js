@@ -35,7 +35,7 @@ var app = {
 	
     onDeviceReady: function() {
 		var src = '/android_asset/www/date/1.m4a';
-		//my_media = new Media(src, function () { this.release(); }, function (err) { console.log("M: " + err.message + " - " + err.code); });
+		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
 		
 		//getLangList();
 		if(!checkConnection()){
