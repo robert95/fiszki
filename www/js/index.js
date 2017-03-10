@@ -439,8 +439,8 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	//readDayF();
-	//getDayHelper();
+	readDayF();
+	getDayHelper();
 	
 	/*getAllCatsInArray();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
