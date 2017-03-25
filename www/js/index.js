@@ -67,11 +67,11 @@ var app = {
 		}
 		
 		document.addEventListener('onAdDismiss',function(data){
+			alert("jestem");
 			//prepareAd();	
-			removeAllProgress();
+			/*removeAllProgress();
 			removeAllProgress2();
 			coutnOfAdsInOrder--;
-			alert("jestem");
 			if(coutnOfAdsInOrder == 0){
 				setTimeout(function(){	
 					loadProgressBarToFull();
@@ -80,7 +80,7 @@ var app = {
 				}, 100);
 			}else{
 				showAd();
-			}
+			}*/
 		});
 		
 		document.addEventListener('onAdLeaveApp',function(data){
@@ -94,6 +94,10 @@ var app = {
 				removeAllProgress2();
 			}, 50);
 			prepareAd();
+		});		
+		
+		document.addEventListener('onAdLoaded',function(data){
+			alert("POBRAŁEM");
 		});
 		
 	/*	document.addEventListener("pause", function() {

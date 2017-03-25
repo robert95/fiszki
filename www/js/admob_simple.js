@@ -19,6 +19,7 @@ if( /(android)/i.test(navigator.userAgent) ) {
 }
 
 function prepareAd(){
+	alert("przygotowuje");
 	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 function showAd(){
