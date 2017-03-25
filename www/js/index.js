@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var coutnOfAdsInOrder = 4;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -69,10 +70,17 @@ var app = {
 			//prepareAd();	
 			removeAllProgress();
 			removeAllProgress2();
-			setTimeout(function(){	
-				loadProgressBarToFull();
-				loadProgressBarToFull2();
-			}, 100);
+			coutnOfAdsInOrder--;
+			
+			if(coutnOfAdsInOrder == 0){
+				setTimeout(function(){	
+					loadProgressBarToFull();
+					loadProgressBarToFull2();
+					coutnOfAdsInOrder = 4;
+				}, 100);
+			}else{
+				showAd();
+			}
 		});
 		
 		document.addEventListener('onAdLeaveApp',function(data){
@@ -441,8 +449,9 @@ function getDay(){
 	srcFile3 = path() + "day.json";
 	readDayF();
 	getDayHelper();
-	
-	/*getAllCatsInArray();
+	/*
+	getAllCatsInArray();
+	getAllCatsToShowAllCats();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
 	$(".allWords").text(dayJSON.words); //usunąć
 	$("#countWordsToLearn").text(dayJSON.day-1); //usunąć
@@ -510,14 +519,6 @@ function getDay(){
 				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
-			/*case 60:
-				toLearn[7] = pack.catid + "/" + pack.subid;
-				todayEndedCat = pack.catid + "/" + pack.subid;
-				countCatsToLearn++;
-				countOfCycle++;
-				countWordsToLearn += wordsInOneCat;
-				inProgressCat.push(pack.catid + "/" + pack.subid);
-				break;*//*
 			default:
 				break;
 			} 
@@ -545,7 +546,8 @@ function getDay(){
 				$(".allTimeToday").text(countCatsToLearnToday * minCat);
 			}
 		}, 150);
-	$("body").addClass('theme'+dayJSON.theme);*/
+	$("body").addClass('theme'+dayJSON.theme);
+	*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -595,6 +597,7 @@ function getToLearnHelper(){
         setTimeout(getToLearnHelper, 100);
 	}else{
 		getAllCatsInArray();
+		getAllCatsToShowAllCats();
 		toLearnJSON = JSON.parse(res);
 		for(var x in toLearnJSON){
 			var pack = toLearnJSON[x];
@@ -769,11 +772,15 @@ function getWordToSuggestCat(cs){
 	var idLang = $("#myLang").val();
 	$.get("date/"+ idLang + "/" + idp + "/" + idc + "/words.json", function(result) {
 		$("#list-word-in-sug-cat").text("");
-		var words = JSON.parse(result);
-		for(var x in words){
-			var w = words[x];
-			$("#list-word-in-sug-cat").append(w.name + "<br>");
-		}
+		$.get("date/1/" + idp + "/" + idc + "/words.json", function(transResult) {
+			var words = JSON.parse(result);
+			var trans = JSON.parse(transResult);
+			for(var x in words){
+				var w = words[x];
+				var t = trans[x];
+				$("#list-word-in-sug-cat").append('<p><i>'+ (parseInt(x)+1) +'.</i> ' + t.name + '<span>' + w.name + '</span></p>');
+			}
+		});
     });
 }
 /* END GET CAT LIST */
@@ -815,7 +822,7 @@ function showSubCatList(s, parentId){
 			cl = "inProgressCat";
 		}
 		tmp += '<p class="text setCat '+ cl +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parentId + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
-		if(firstGenerationCat) $(".list").append('<li><p class="cat-name" data-id="' + cat.id + '" data-par="' + parentId + '">' + cat.name + '</p></li>');
+		if(firstGenerationCat) $("#cat-list .list").append('<li><p class="cat-name" data-id="' + cat.id + '" data-par="' + parentId + '">' + cat.name + '</p></li>');
 	}
 	tmp += '</div>';
 	subcats = tmp;
@@ -1063,6 +1070,38 @@ function tellMe(){
 	var idSubCat = $("#myCat").val();
 	//var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".ogg";
 	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
+	console.log(src);
+	setTimeout(function(){
+		if(my_media!=null){/*jak coś to do usunięcia*/
+				my_media.stop();
+				my_media.stopRecord();
+				my_media.release();
+				my_media=null;
+		}
+		
+		my_media = new Media(src,
+            // success callback
+             function () { /*this.release();*/ },
+            // error callback
+             function (err) { console.log("M: " + err.message + " - " + err.code); }
+		);
+			   // Play audio
+		my_media.play();
+	}, 100);
+	
+	//var audio = new Audio(src);
+	//audio.play();
+}
+function tellMeWord(sygn, id){
+	if(my_media!=null){
+            my_media.stop();
+            my_media.stopRecord();
+			my_media.release();
+            my_media=null;
+	}
+	var idLang = $("#learnLang").val();
+	//var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".ogg";
+	var src = '/android_asset/www/date/' + idLang + "/" + sygn + "/sound/" + id + ".m4a";
 	console.log(src);
 	setTimeout(function(){
 		if(my_media!=null){/*jak coś to do usunięcia*/
@@ -2364,6 +2403,15 @@ function startSetNewCategory(){
 		$("#cats").show();
 	}, 700);
 }
+var firstGenerationCatAllCats = true;
+function runList(){
+	setTimeout(function(){	
+		if(firstGenerationCatAllCats){
+			firstGenerationCatAllCats = false;
+			activateSearchAllCats();
+		}
+	}, 700);
+}
 function closeManualSettingCat(){
 	$("#new-category-choice").show();	
 	$("#choose-cat").addClass('next-cat-right');
@@ -2912,6 +2960,7 @@ function volumeTest(){
 			showVolumeInfo();
 		}
 	});
+
 }	
 function showVolumeInfo() {
  /* window.plugins.toast.showWithOptions(
@@ -2932,4 +2981,54 @@ function showVolumeInfo() {
 
 function okNoSound(){
 	return true;
+}
+
+function getAllCatsToShowAllCats(){
+	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
+		var tmp = '';
+		var cats = JSON.parse(result);
+		for(var x in cats){
+			subcats = false;
+			var cat = cats[x];
+			if(x == 0) tmp += '<div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Phrases</span></h1><div>';
+			if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
+			tmp += '<div><h1 class="text supercat-all-material" onclick="expand(this);">'+ cat.name + '</h1>';
+			var extraEnd = parseInt(x)+1 == parseInt(cats.length) ? '</div></div>' : "";
+			
+			$.ajax({
+				url: "date/"+ langJSON.lang + "/" + cat.id + "/subcat.json",
+				type: 'get',
+				dataType: 'html',
+				async: false,
+				success: function(data) {
+					var subcats = JSON.parse(data);
+					tmp += '<div class="list-of-subcat-all-material">';
+					for(var y in subcats){
+						var subcat = subcats[y];
+						var catSgn = cat.id + "/" + subcat.id;
+						tmp += '<p class="text catsInAllMaterial" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\' )" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '</p>';
+						$("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
+					}
+					tmp += '</div>' + '</div>' + extraEnd
+				} 
+			});
+		}
+		
+		$("#show-all-cats-cats").append(tmp);
+    });
+}
+
+function getWordForCatShowList(sygn){
+	$.get("date/"+ langJSON.lang + "/" + sygn + "/words.json", function(result) {
+		$("#show-all-cats-cats-wordlist").text("");
+		$.get("date/1/" + sygn + "/words.json", function(transResult) {
+			var words = JSON.parse(result);
+			var trans = JSON.parse(transResult);
+			for(var x in words){
+				var w = words[x];
+				var t = trans[x];
+				$("#show-all-cats-cats-wordlist").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span></p>');
+			}
+		});
+    });
 }

@@ -974,6 +974,9 @@ section{
     font-size: 28px;
 	margin-top: 0;
 	padding-top: 34px;
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
 }
 .you-start-learned{
     color: white;
@@ -1139,10 +1142,10 @@ section{
 #words-nav {
     display: none !important;
 }
-.superbigcat + div{
+.superbigcat + div, .superbigcat-all-material + div{
 	display: none;
 }
-.supercat + div{
+.supercat + div, .supercat-all-material + div{
 	display: none;
 }
 .count-word-to-learn{ /*, #count-word-to-learn-tut{*/
@@ -1181,7 +1184,7 @@ section{
 	height: 100%;
 	width: 100%;
 }
-#statistic, #list-of-word-in-cat, #options-box{
+#statistic, #list-of-word-in-cat, #options-box, #show-all-cats, #show-all-cats-word-list{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1200,10 +1203,13 @@ section{
 	overflow: hidden;
 	max-height: 100%;
 }
-.theme2 #statistic, .theme2 #list-of-word-in-cat, .theme2 #options-box{
+#show-all-cats-word-list{
+	z-index: 2222224;
+}
+.theme2 #statistic, .theme2 #list-of-word-in-cat, .theme2 #options-box, .theme2 #show-all-cats, .theme2 #show-all-cats-word-list{
 	background: url("../img/bg2.jpg") 100% 100% !important;
 }
-.theme3 #statistic, .theme3 #list-of-word-in-cat, .theme3 #options-box{
+.theme3 #statistic, .theme3 #list-of-word-in-cat, .theme3 #options-box, .theme3 #show-all-cats, .theme3 #show-all-cats-word-list{
 	background: url("../img/bg3.png") 100% 100% !important;
 }
 #statistic .scroll-container{
@@ -1218,7 +1224,7 @@ section{
 	max-height: calc(100% - 185px);
 	overflow: scroll;
 }
-#statistic h3:first-of-type, #list-of-word-in-cat h3:first-of-type, #options-box h3:first-of-type{
+#statistic h3:first-of-type, #list-of-word-in-cat h3:first-of-type, #options-box h3:first-of-type, #show-all-cats h3:first-of-type, #show-all-cats-word-list h3:first-of-type{
 	position: fixed;
 	width: 100%;
 	margin: auto auto;
@@ -1450,6 +1456,33 @@ section{
 	display: block;
 	width: 95%;
 	margin: auto auto;
+	text-align: left;
+	height: 230px;
+	overflow: auto;
+}
+#list-word-in-sug-cat p{
+	font-size: 21px;
+	margin: auto 20px;
+}
+#list-word-in-sug-cat p i{
+	font-style: normal;
+	width: 19px;
+	display: inline-block;
+}
+#list-word-in-sug-cat p span{
+	display: block;
+	padding-left: 24px;
+	font-size: 15px;
+	border-bottom: 1px solid white;
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+}
+#list-word-in-sug-cat p:last-of-type i{
+	width: 30px;
+}
+#list-word-in-sug-cat p:last-of-type span{
+	padding-left: 35px;
+	border-bottom: 0px;
 }
 .l2, .l3, .l4, .l5{
 	display: none;
@@ -1508,10 +1541,10 @@ textarea, textarea[placeholder]{
     text-align: center;
 	text-indent: 0px;
 }
-.supercat{
-	width: 80%;
-	margin-left: 15%;
-	padding: 20px 0 !important;
+.supercat, .supercat-all-material{
+	width: 83%;
+	margin-left: 11%;
+	padding: 15px 0 !important;
 }
 .count-word-to-learn-in-this-sesion .c100{
 	border: 0 !important;
@@ -1636,6 +1669,58 @@ textarea, textarea[placeholder]{
 	font-weight: 600;
 	margin-top: 55%;
 	margin-bottom: 43%;
+}
+#show-all-cats-cats{
+	display: block;
+	height: calc(100% - 150px);
+	overflow: scroll;
+	margin-top: 20px;
+}
+#show-all-cats-cats > div > h1{
+	padding: 20px 0 !important;
+}
+#show-all-cats-cats .list-of-subcat-all-material{
+	width: 85%;
+	margin-left: 13%;;
+}
+#show-all-cats-cats-wordlist{
+	display: block;
+	height: calc(100% - 150px);
+	overflow: scroll;
+	margin-top: 20px;
+}
+#show-all-cats-cats-wordlist .text{
+	padding-right: 54px;
+	width: 70%;
+	font-weight: 600;
+	text-align: left;
+	padding-left: 15px;
+	position: relative;
+}
+#show-all-cats-cats-wordlist .text:after{
+	display: block;
+	content: "";
+	width: 30px;
+	height: 30px;
+	background: transparent url('../img/spiker.png') no-repeat;
+	position: absolute;
+	background-size: 100%;
+	top: 50%;
+	right: 12px;
+	margin-top: -15px;
+}
+#show-all-cats-cats-wordlist .text span{
+	display: block;
+	font-size: 13px;
+	border-top: 1px solid white;
+	width: 100%;
+	padding-top: 4px;
+	margin-top: 4px;
+	font-weight: 200;
+}
+#show-all-cats-word-list .cat-name-word-list{
+	width: 90%;
+	margin: 45px auto 0;
 }
 @media (min-width : 500px) {
 	.remind-img {

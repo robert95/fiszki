@@ -35,7 +35,8 @@
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
 			<ul>
-				<li id="m1" class="text"><span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">Save progress to a file</span></li>
+				<li id="m9" class="text"><span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">Show all lessons</span></li>
+				<!--<li id="m1" class="text"><span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">Save progress to a file</span></li>-->
 				<li id="m2" class="text"><span class="l2">E_WCZYTAJ POSTĘP Z PLIKU</span><span class="l3">F_WCZYTAJ POSTĘP Z PLIKU</span><span class="l4">N_WCZYTAJ POSTĘP Z PLIKU</span><span class="l5">Load progress from a file</span></li>
 				<!--<li id="m3"><span class="l2">E_TUTORIAL</span><span class="l3">TUTORIAL</span></li>-->
 				<li id="m4" class="text"><span class="l2">E_STATYSTYKI</span><span class="l3">F_STATYSTYKI</span><span class="l4">N_STATYSTYKI</span><span class="l5">Your Progress</span></li>
@@ -641,6 +642,23 @@
 				<img src="img/mycall-big.png">
 			</div>
 		</div>
+		<section id="show-all-cats" class="goLeft">
+			<p class="img-close-cont" ontouchstart="hideAllCats();"><img src="img/back2.png"></p>
+			<h1><span class="l2">E_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span><span class="l3">F_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span><span class="l4">N_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span><span class="l5">Choose lesson:</span></h1>
+			<div id="show-all-cats-cat-list">
+				<input type="text" class="fuzzy-search" placeholder="Search..."/>
+				<ul class="list">
+				</ul>
+			</div>
+			<section id="show-all-cats-cats">
+			</section>
+		</section>
+		<section id="show-all-cats-word-list" class="goLeft">
+			<p class="img-close-cont" ontouchstart="hideAllCatsWordList();"><img src="img/back2.png"></p>
+			<h1 class="cat-name-word-list"></h1>
+			<div id="show-all-cats-cats-wordlist">
+			</div>
+		</section>
         <script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -1006,6 +1024,7 @@
 		<script>
 			$("#menu-switch").click(function(){
 				$("#menu").addClass('showmenu');
+				console.log($("#list-word-in-sug-cat").html());
 			});
 			$("#mE").click(function(){
 				$("#menu").removeClass('showmenu');
@@ -1036,6 +1055,14 @@
 				$("#options-box").show();
 				setTimeout(function(){
 					$("#options-box").removeClass('goLeft');
+				}, 300);
+			});
+			$("#m9").click(function(){
+				$("#show-all-cats").show();
+				$("#show-all-cats-cats").show();
+				runList();
+				setTimeout(function(){
+					$("#show-all-cats").removeClass('goLeft');
 				}, 300);
 			});
 			$("#m5").click(function(){
@@ -1099,6 +1126,18 @@
 				$("#list-of-word-in-cat").addClass('goLeft');
 				setTimeout(function(){
 					$("#list-of-word-in-cat").hide();
+				}, 800);
+			}
+			function hideAllCats(){
+				$("#show-all-cats").addClass('goLeft');
+				setTimeout(function(){
+					$("#show-all-cats").hide();
+				}, 800);
+			}
+			function hideAllCatsWordList(){
+				$("#show-all-cats-word-list").addClass('goLeft');
+				setTimeout(function(){
+					$("#show-all-cats-word-list").hide();
 				}, 800);
 			}
 		</script>
@@ -1218,6 +1257,72 @@
 			$(".spiker-icon").click(function(){
 				tellMe();
 			});
+		</script>
+		<script>
+			var monkeyListAllCats;
+			function activateSearchAllCats(){
+				monkeyListAllCats = new List('show-all-cats-cat-list', { 
+					valueNames: ['cat-name-all-material'], 
+					plugins: [ ListFuzzySearch() ] 
+				});
+				
+				monkeyListAllCats.on('searchComplete',updateCatListAllCats);
+			}
+			
+			function updateCatListAllCats(){
+				$( ".catsInAllMaterial" ).hide();
+				$( ".cat-name-all-material" ).each(function( index ) {
+					var p = $(this).data('par');
+					var c = $(this).data('id');
+					if(p > 0 && c > 0){
+						$( ".catsInAllMaterial" ).each(function( index ) {
+							var pp = $(this).data('parent');
+							var cc = $(this).data('subcat');
+							if(pp == p && cc == c){
+								$(this).show();
+							}
+						});
+					}
+				});
+				setTimeout(function(){
+					updateSuperCatAllCats();
+				}, 400)
+			}
+			
+			function updateSuperCatAllCats(){
+				$(".supercat-all-material").each(function( index ) {
+					$(this).next("div").show();
+					$(this).hide();
+					$(this).next('.list-of-subcat-all-material').children('.catsInAllMaterial').each(function( index ) {
+						if($(this).is(":visible") == true){
+							$(this).parent(".list-of-subcat-all-material").prev('.supercat-all-material').show();
+						}
+					});
+				});
+				setTimeout(function(){
+					updateSuperBigCatAllCats();
+				}, 400)
+			}
+			
+			function updateSuperBigCatAllCats(){
+				$(".superbigcat-all-material").each(function( index ) {
+					$(this).next("div").show();
+					$(this).hide();
+					if($(this).next('div').children('div').children('.supercat-all-material').is(":visible") == true){
+						$(this).show();
+					}
+				});
+			}
+			
+			function setCatToViewWords(sygn, name){
+				$(".cat-name-word-list").text(name);
+				getWordForCatShowList(sygn);
+				
+				$("#show-all-cats-word-list").show();
+				setTimeout(function(){
+					$("#show-all-cats-word-list").removeClass('goLeft');
+				}, 300);
+			}
 		</script>
     </body>
 </html>
