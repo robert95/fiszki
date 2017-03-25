@@ -71,7 +71,7 @@ var app = {
 			removeAllProgress();
 			removeAllProgress2();
 			coutnOfAdsInOrder--;
-			
+			alert("jestem");
 			if(coutnOfAdsInOrder == 0){
 				setTimeout(function(){	
 					loadProgressBarToFull();
@@ -84,6 +84,7 @@ var app = {
 		});
 		
 		document.addEventListener('onAdLeaveApp',function(data){
+			alert("jestem2");
 			//prepareAd();
 		});
 		
