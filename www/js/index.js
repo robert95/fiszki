@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var coutnOfAdsInOrder = 4;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -67,24 +66,16 @@ var app = {
 		}
 		
 		document.addEventListener('onAdDismiss',function(data){
-			alert("jestem");
 			//prepareAd();	
-			/*removeAllProgress();
+			removeAllProgress();
 			removeAllProgress2();
-			coutnOfAdsInOrder--;
-			if(coutnOfAdsInOrder == 0){
-				setTimeout(function(){	
-					loadProgressBarToFull();
-					loadProgressBarToFull2();
-					coutnOfAdsInOrder = 4;
-				}, 100);
-			}else{
-				showAd();
-			}*/
+			setTimeout(function(){	
+				loadProgressBarToFull();
+				loadProgressBarToFull2();
+			}, 100);
 		});
 		
 		document.addEventListener('onAdLeaveApp',function(data){
-			alert("jestem2");
 			//prepareAd();
 		});
 		
@@ -94,10 +85,6 @@ var app = {
 				removeAllProgress2();
 			}, 50);
 			prepareAd();
-		});		
-		
-		document.addEventListener('onAdLoaded',function(data){
-			alert("POBRAŁEM");
 		});
 		
 	/*	document.addEventListener("pause", function() {

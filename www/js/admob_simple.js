@@ -19,18 +19,17 @@ if( /(android)/i.test(navigator.userAgent) ) {
 }
 
 function prepareAd(){
-	alert("przygotowuje");
 	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 function showAd(){
-	/*if(countAd == 0){
+	if(countAd == 0){
 		countAd = 1;
 	}else{
 		countAd++;
 		if(countAd%2 == 0){
 			$("#myCall-big-ad").show();
-		}else{*/
+		}else{
 			if(AdMob) AdMob.showInterstitial();
-	/*	}
-	}*/
+		}
+	}
 }
