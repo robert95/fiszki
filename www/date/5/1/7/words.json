@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Hallo!dette er John.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Kan jeg få snakke med Bill, takk?",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Kan jeg spørre hvem som ringer?",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Det er Maria her.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Hold linjen, takk",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Jeg beklager, han er ikke tilgjengelig for øyeblikket",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Ønsker du å legge igjen en beskjed?",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Kan du be ham om å ringe meg?",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Hva er ditt nummer?",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Jeg ringer tilbake senere",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "7.1T",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "7.2T",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "7.3T",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "7.4T",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "7.5T",
+		"notices": [
+		]
+	}
+]

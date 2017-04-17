@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Hjelp! er du OK?",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Det har vært en ulykke.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Ring en ambulanse!",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Lommeboken min har blitt stjålet.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Ring politiet!",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Det brenner!",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "jeg har mistet vesken min ",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "jeg kan ikke finne  nøklene mine",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Vennligst la meg være alene!",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Gå vekk!",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "8.1T",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "8.2T",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "8.3T",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "8.4T",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "8.5T",
+		"notices": [
+		]
+	}
+]

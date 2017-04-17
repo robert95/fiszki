@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "Jeg finner ikke nøkkelen min.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Har du funnet billetten din?",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Vet du hvor nøkkelen hans er?",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Pengene hennes er borte.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Bestefaren vår er syk.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Hvor er pappaen deres?",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Men der er jo foreldrene deres!",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Han har glemt brillene sine.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Klokka hans er ødelagt.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Fru Smith.Hvor er mannen din? ",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "6.1T",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "6.2T",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "6.3T",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "6.4T",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "6.5T",
+		"notices": [
+		]
+	}
+]

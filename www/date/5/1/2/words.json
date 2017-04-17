@@ -1,62 +1,32 @@
 [
-		{
-			"id": 1,
-			"name": "snakker du engelsk?",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "jeg snakker ikke engelsk",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "vennligst snakk saktere",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "kan du vennligst repetere det?",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Jeg forstår",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Jeg forstår ikke",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Jeg kan godt forstå dem.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Men å snakke og skrive er vanskelig.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "Jeg gjør mange feil.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "Hvor har du lært spansk?",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "2.1T",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "2.2T",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "2.3T",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "2.4T",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "2.5T",
+		"notices": [
+		]
+	}
+]
