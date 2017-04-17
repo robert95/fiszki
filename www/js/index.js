@@ -3135,7 +3135,7 @@ function startRecognize(){
 
 function compareRecognizedText(text){
 	var correctText = $(".learnMethod:visible .text-trans-word").text();
-	if(text.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');){
+	if(text.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')){
 		$(".learnMethod table").addClass('goodRec');
 	}else{
 		$(".learnMethod table").addClass('badRec');
