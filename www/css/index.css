@@ -1862,6 +1862,24 @@ textarea, textarea[placeholder]{
 	margin-top: 4px;
 	font-weight: 200;
 }
+.mic-container{
+	position: absolute;
+	bottom: 94px;
+	left: 11%;
+	width: 51px;
+	z-index: 20000000;
+}
+.mic-container img{
+	width: 100%;
+}
+.badRec .middle-line{
+	border-top-color: red !important;
+	/*color: #a20000 !important;*/
+}
+.goodRec .middle-line{
+	border-top-color: #84ff84 !important;
+	/*color: #84ff84 !important;*/
+}
 @media (min-width : 500px) {
 	.remind-img {
 		left: 5px;

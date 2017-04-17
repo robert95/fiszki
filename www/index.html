@@ -115,6 +115,9 @@
 			<p class="startLearn text yes">ZACZNIJ NAUKĘ</p>
 		</section>
 		<section id="learn-container" class="next-cat-left">
+			<div class="mic-container" ontouchstart="startVoiceToText();">
+				<img src="img/mic.png">
+			</div>
 			<div class="count-word-to-learn" id="mini-counter-wrap">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end">0</span>
@@ -160,9 +163,10 @@
 						<tr id="l-e-1" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-1"><td colspan="3"><p class="text" id="confirm-trans-1"></p></td></tr>
 						<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
+						<tr id="l-rg-1" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(1);" class="left-btn">My note</button><button ontouchstart="showTrans(1);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text text-reverse" id="confirm-correct-1"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text text-reverse text-trans-word" id="confirm-correct-1"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -174,9 +178,10 @@
 						<tr id="l-e-2" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-2"><td colspan="3"><p class="text" id="confirm-trans-2"></p></td></tr>
 						<tr id="l-n-2" class="hidden"><td colspan="3"><textarea id="confirm-text-2" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
+						<tr id="l-rg-2" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(2);" class="left-btn">My note</button><button ontouchstart="showTrans(2);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse" id="confirm-correct-2"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word" id="confirm-correct-2"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -187,9 +192,10 @@
 					<table>
 						<tr id="l-e-3"><td colspan="3"><input type="text" class="text" id="question-3"/></td></tr>
 						<tr id="l-n-3" class="hidden"><td colspan="3"><textarea id="confirm-text-3" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
+						<tr id="l-rg-3" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(3);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -201,9 +207,10 @@
 						<tr id="l-e-4" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-4"><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text" id="confirm-trans-4"></p></td></tr>
 						<tr id="l-n-4" class="hidden"><td colspan="3"><textarea id="confirm-text-4" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
+						<tr id="l-rg-4" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(4);" class="left-btn">My note</button><button ontouchstart="showTrans(4);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse" id="confirm-correct-4"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word" id="confirm-correct-4"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -214,9 +221,10 @@
 					<table>
 						<tr id="l-e-5"><td colspan="3"><input type="text" class="text" id="question-5"/></td></tr>
 						<tr id="l-n-5" class="hidden"><td colspan="3"><textarea id="confirm-text-5" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
+						<tr id="l-rg-5" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(5);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -228,9 +236,10 @@
 						<tr id="l-e-6" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-6"><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text" id="confirm-trans-6"></p></td></tr>
 						<tr id="l-n-6" class="hidden"><td colspan="3"><textarea id="confirm-text-6" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
+						<tr id="l-rg-6" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(6);" class="left-btn">My note</button><button ontouchstart="showTrans(6);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse" id="confirm-correct-6"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word" id="confirm-correct-6"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -1085,40 +1094,15 @@
 				}, 300);
 			});
 			$("#m9").click(function(){
-				var options = {
-				  language: "pl-PL",
-				  matches: 5,
-				  prompt: true,      // Android only
-				  showPopup: true
-				};
-
-				window.plugins.speechRecognition.startListening(
-				  function(matches){
-					alert(matches[0]);
-				  },
-				  function(){
-				  
-				  },
-				  options
-				);
-				//$("#show-all-cats").show();
-				//$("#show-all-cats-cats").show();
-				//runList();
-				//setTimeout(function(){
-				//	$("#show-all-cats").removeClass('goLeft');
-				//}, 300);
+				$("#show-all-cats").show();
+				$("#show-all-cats-cats").show();
+				runList();
+				setTimeout(function(){
+					$("#show-all-cats").removeClass('goLeft');
+				}, 300);
 			});
 			$("#m10").click(function(){
-				recognition = new SpeechRecognition();
-				recognition.onresult = function(event) {
-					alert("TUtaj: ");
-					console.log(event);
-					if (event.results.length > 0) {
-						var te = event.results[0][0].transcript;
-						alert(te);
-					}
-				}
-				//$("#submenu-wrapper").toggle();
+				$("#submenu-wrapper").toggle();
 			});
 			$("#m5").click(function(){
 				/*navigator.notification.confirm(
@@ -1135,12 +1119,10 @@
 				);
 			});
 			$("#m6").click(function(){
-				recognition.stop();
-//				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
+				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
 			});
 			$("#m7").click(function(){
-				recognition.start();
-				/*window.open('https://mycall.no', '_system');*/
+				window.open('https://mycall.no', '_system');
 			});
 			$(".mycalllink").click(function(){
 				window.open('https://www.mycall.no', '_system');

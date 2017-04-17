@@ -1329,6 +1329,11 @@ function nextStep(){
 	hideBars();
 	//StatusBar.hide();
 	backToNormalStateNote();
+	$(".recTextWrap").hide();
+	$(".recText").text('');
+	$(".learnMethod table").removeClass('badRec');
+	$(".learnMethod table").removeClass('goodRec');
+	
 	updateProgressBar();
 	if(readyToSaveNotice){
 		saveNotice($("#confirm-text-"+nbMethod).val());
@@ -3064,4 +3069,74 @@ function getWordForCatShowList(sygn){
 			}
 		});
     });
+}
+
+function startVoiceToText(){
+	if(!checkConnection()){
+		navigator.notification.confirm(
+			"Connect to the Internet to use this function.",
+			onNoInternetConfirm,
+			"No Internet connection!",
+			"exit"
+		);
+	}else{
+		startRecognize();
+	}
+}
+
+function startRecognize(){
+
+	var langText = "nb-NO"
+	var options = {
+		language: langText,
+		matches: 2,
+		showPopup: true
+	};
+
+	window.plugins.speechRecognition.startListening(
+		function(matches){
+			var text = matches[0];
+			$(".recText").text(text);
+	
+			$("#l-n-1").hide();
+			$("#l-n-2").hide();
+			$("#l-n-3").hide();
+			$("#l-n-4").hide();
+			$("#l-n-5").hide();
+			$("#l-n-6").hide();
+			
+			$("#l-e-1").hide();
+			$("#l-e-2").hide();
+			$("#l-e-3").hide();
+			$("#l-e-4").hide();
+			$("#l-e-5").hide();
+			$("#l-e-6").hide();
+			
+			$("#l-t-1").hide();
+			$("#l-t-2").hide();
+			$("#l-t-3").hide();
+			$("#l-t-4").hide();
+			$("#l-t-5").hide();
+			$("#l-t-6").hide();
+			
+			$(".recTextWrap").show();
+			$(".show-hidden-word").next("p").show();
+			$(".show-hidden-word").hide();
+			
+			compareRecognizedText(text);
+		},
+		function(){
+
+		},
+		options
+	);
+}
+
+function compareRecognizedText(text){
+	var correctText = $(".learnMethod:visible .text-trans-word").text();
+	if(text == correctText){
+		$(".learnMethod table").addClass('goodRec');
+	}else{
+		$(".learnMethod table").addClass('badRec');
+	}
 }
