@@ -418,7 +418,7 @@ function startApp(){
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 				//showRating();
-			}, 4000);
+			}, 2000);
 		}
 	}, 2500);
 }
@@ -3096,35 +3096,37 @@ function startRecognize(){
 
 	window.plugins.speechRecognition.startListening(
 		function(matches){
-			var text = matches[0];
-			$(".recText").text(text);
-	
-			$("#l-n-1").hide();
-			$("#l-n-2").hide();
-			$("#l-n-3").hide();
-			$("#l-n-4").hide();
-			$("#l-n-5").hide();
-			$("#l-n-6").hide();
-			
-			$("#l-e-1").hide();
-			$("#l-e-2").hide();
-			$("#l-e-3").hide();
-			$("#l-e-4").hide();
-			$("#l-e-5").hide();
-			$("#l-e-6").hide();
-			
-			$("#l-t-1").hide();
-			$("#l-t-2").hide();
-			$("#l-t-3").hide();
-			$("#l-t-4").hide();
-			$("#l-t-5").hide();
-			$("#l-t-6").hide();
-			
-			$(".recTextWrap").show();
-			$(".show-hidden-word").next("p").show();
-			$(".show-hidden-word").hide();
-			
-			compareRecognizedText(text);
+			if(matches[0] != ''){
+				var text = matches[0];
+				$(".recText").text(text);
+		
+				$("#l-n-1").hide();
+				$("#l-n-2").hide();
+				$("#l-n-3").hide();
+				$("#l-n-4").hide();
+				$("#l-n-5").hide();
+				$("#l-n-6").hide();
+				
+				$("#l-e-1").hide();
+				$("#l-e-2").hide();
+				$("#l-e-3").hide();
+				$("#l-e-4").hide();
+				$("#l-e-5").hide();
+				$("#l-e-6").hide();
+				
+				$("#l-t-1").hide();
+				$("#l-t-2").hide();
+				$("#l-t-3").hide();
+				$("#l-t-4").hide();
+				$("#l-t-5").hide();
+				$("#l-t-6").hide();
+				
+				$(".recTextWrap").show();
+				$(".show-hidden-word").next("p").show();
+				$(".show-hidden-word").hide();
+				
+				compareRecognizedText(text);
+			}
 		},
 		function(){
 
@@ -3135,7 +3137,7 @@ function startRecognize(){
 
 function compareRecognizedText(text){
 	var correctText = $(".learnMethod:visible .text-trans-word").text();
-	if(text.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')){
+	if(text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')){
 		$(".learnMethod table").addClass('goodRec');
 	}else{
 		$(".learnMethod table").addClass('badRec');
