@@ -30,14 +30,21 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Fiszki</title>
     </head>
-    <body> 
+    <body class="lang5"> 
 		<input type="file" id="readP">
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
 			<ul>
 				<li id="m9" class="text"><span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">Show all lessons</span></li>
-				<!--<li id="m1" class="text"><span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">Save progress to a file</span></li>-->
-				<li id="m2" class="text"><span class="l2">E_WCZYTAJ POSTĘP Z PLIKU</span><span class="l3">F_WCZYTAJ POSTĘP Z PLIKU</span><span class="l4">N_WCZYTAJ POSTĘP Z PLIKU</span><span class="l5">Load progress from a file</span></li>
+				<li id="m10" class="text">
+					<span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">Load/Save your progres</span>
+				</li>
+				<li id="submenu-wrapper">
+					<ul id="submenu">
+						<li id="m1" class="text"><span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">Save progress to a file</span></li>
+						<li id="m2" class="text"><span class="l2">E_WCZYTAJ POSTĘP Z PLIKU</span><span class="l3">F_WCZYTAJ POSTĘP Z PLIKU</span><span class="l4">N_WCZYTAJ POSTĘP Z PLIKU</span><span class="l5">Load progress from a file</span></li>
+					</ul>
+				</li>
 				<!--<li id="m3"><span class="l2">E_TUTORIAL</span><span class="l3">TUTORIAL</span></li>-->
 				<li id="m4" class="text"><span class="l2">E_STATYSTYKI</span><span class="l3">F_STATYSTYKI</span><span class="l4">N_STATYSTYKI</span><span class="l5">Your Progress</span></li>
 				<li id="m6" class="text"><span class="l2">E_KUP WERSJĘ PREMIUM</span><span class="l3">F_KUP WERSJĘ PREMIUM</span><span class="l4">N_KUP WERSJĘ PREMIUM</span><span class="l5">Upgrade to SpeakApp premium</span></li>
@@ -45,8 +52,8 @@
 				<li id="m7" class="text"><span class="l2">MYCALL.NO</span><span class="l3">MYCALL.NO</span><span class="l4">MYCALL.NO</span><span class="l5">Mycall.no</span></li>
 				<li id="m8" class="text"><span class="l2">E_ZMIEŃ TŁO</span><span class="l3">F_ZMIEŃ TŁO</span><span class="l4">N_ZMIEŃ TŁO</span><span class="l5">Change your theme</span></li>
 				<li id="m5" class="text"><span class="l2">E_WYJŚCIE</span><span class="l3">F_WYJŚCIE</span><span class="l4">N_WYJŚCIE</span><span class="l5">Exit</span></li>
-				<li id="mE" class="text">^</li>
 			</ul>
+			<p id="mE" class="text">^</p>
 		</div>
 		<img class="background theme1-bg" src="img/bg.png" />
 		<img class="background theme2-bg" src="img/bg2.jpg" />
@@ -119,7 +126,7 @@
 			</div>
 			<div class="count-word-to-learn count-word-to-learn-in-this-sesion">
 				<div class="progess-btn-stan-in-session c100">
-					<span class="progess-btn-per-in-cycle-2 all-words-to-end-sesion">0</span>
+					<span class="progess-btn-per-in-cycle-2 all-words-to-end-sesion"></span>
 				</div>
 			</div>
 			<section id="words-nav">
@@ -147,7 +154,7 @@
 			</section>
 			<div id="learn-panel">
 				<section id="word-lern-1" class="learnMethod confirm-swipe">
-					<h3><span class="l2">E_Przetłumacz </span><span class="l3">F_Przetłumacz </span><span class="l4">N_Przetłumacz </span><span class="l5">Translate (aloud)</span><span class="worddNB"></span></h3>
+					<h3><span class="l2">E_Przetłumacz </span><span class="l3">F_Przetłumacz </span><span class="l4">N_Przetłumacz </span><span class="l5">Translate</span><span class="worddNB"></span></h3>
 					<table>
 						<!--<tr><td><img src="img/up.png"></td></tr>-->
 						<tr id="l-e-1" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
@@ -162,7 +169,7 @@
 					</div>
 				</section>
 				<section id="word-lern-2" class="learnMethod confirm-swipe">
-					<h3><span class="l2">E_Powtórz </span><span class="l3">F_Powtórz </span><span class="l4">N_Powtórz </span><span class="l5">Repeat (aloud)</span><span class="wordNB"></span></h3>
+					<h3><span class="l2">E_Powtórz </span><span class="l3">F_Powtórz </span><span class="l4">N_Powtórz </span><span class="l5">Repeat</span><span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-2" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-2"><td colspan="3"><p class="text" id="confirm-trans-2"></p></td></tr>
@@ -189,7 +196,7 @@
 					</div>
 				</section>
 				<section id="word-lern-4" class="learnMethod confirm-swipe">
-					<h3><span class="l2">E_Powtórz </span><span class="l3">F_Powtórz </span><span class="l4">N_Powtórz </span><span class="l5">Repeat (aloud)</span><span class="wordNB"></span></h3>
+					<h3><span class="l2">E_Powtórz </span><span class="l3">F_Powtórz </span><span class="l4">N_Powtórz </span><span class="l5">Repeat</span><span class="wordNB"></span></h3>
 					<table>
 						<tr id="l-e-4" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-4"><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text" id="confirm-trans-4"></p></td></tr>
@@ -421,8 +428,9 @@
 			<h1><span class="l2">E_Następna powtórka</span><span class="l3">F_Następna powtórka</span><span class="l4">N_Następna powtórka</span><span class="l5">Next repetition</span></h1>
 			<p id="main-text-next-cat">1/5</p>
 			<p id="name-next-cat"></p>
-			<p class="before-start-info"><span class="l2">*E_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l3">F_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l4">N_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l5">Remaining tasks</span></p>
+			<!--<p class="before-start-info"><span class="l2">*E_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l3">F_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l4">N_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l5">Remaining tasks</span></p>-->
 			<div class="count-word-to-learn" id="next-repeat-mini-counter-wrap">
+				<img src="img/5remTasks.png" class="remTasks">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end-sesion-in-repeat">0</span>
 					<div class="slice">
@@ -465,6 +473,7 @@
 		</section>
 		<section id="startDay">
 			<div class="count-word-to-learn">
+				<img src="img/5remTasks.png" class="remTasks">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end">21</span>
 					<div class="slice">
@@ -474,10 +483,17 @@
 				</div>
 			</div>
 			<h1><span class="l2">E_Welcome to <br>lesson</span><span class="l3">F_Welcome to <br>lesson</span><span class="l4">N_Welcome to <br>lesson</span><span class="l5">Welcome to <br>lesson</span> <span id="nrDayFiled"></span>/200</h1>
-			<p class="you-start-learned"><span class="l2">E_Zaplanowana liczba zadań:</span><span class="l3">F_Zaplanowana liczba zadań:</span><span class="l4">N_Zaplanowana liczba zadań:</span><span class="l5">The time required to complete lesson<br></span> <span class="allTimeToday">5</span>min</p>
+			<p class="first-page-main-text">
+				<span class="l2">E_Zaplanowana liczba zadań:</span>
+				<span class="l3">F_Zaplanowana liczba zadań:</span>
+				<span class="l4">N_Zaplanowana liczba zadań:</span>
+				<span class="l5">Approximate time required to complete the lesson:<br></span> 
+				<span class="timeToEndTodayWrap"><span class="allTimeToday">5</span> min<span>
+			</p>
+			<!--<p class="you-start-learned"><span class="l2">E_Zaplanowana liczba zadań:</span><span class="l3">F_Zaplanowana liczba zadań:</span><span class="l4">N_Zaplanowana liczba zadań:</span><span class="l5">The time required to complete lesson<br></span> <span class="allTimeToday">5</span>min</p>
 			<p class="you-start-learned3"><span class="l2">E_Spedziłeś z nami:</span><span class="l3">F_Spedziłeś z nami:</span><span class="l4">N_Spedziłeś z nami:</span><span class="l5">Time spent talking: </span> <span class="countKMLearned"></span>h <span class="countMinLearned"></span>min/80h</p>
-			<p class="you-start-learned2"><span class="l2">E_Uczysz się z nami:</span><span class="l3">F_Uczysz się z nami:</span><span class="l4">N_Uczysz się z nami:</span><span class="l5">Learned phrases:</span> <span class="allWords"></span>/2000</p>
-			<p class="goToReverse"><span class="l2">E_Przejdź do powtórek</span><span class="l3">F_Przejdź do powtórek</span><span class="l4">N_Przejdź do powtórek</span><span class="l5">Remaining tasks</span></p>
+			<p class="you-start-learned2"><span class="l2">E_Uczysz się z nami:</span><span class="l3">F_Uczysz się z nami:</span><span class="l4">N_Uczysz się z nami:</span><span class="l5">Learned phrases:</span> <span class="allWords"></span>/2000</p>-->
+			<!--<p class="goToReverse"><span class="l2">E_Przejdź do powtórek</span><span class="l3">F_Przejdź do powtórek</span><span class="l4">N_Przejdź do powtórek</span><span class="l5">Remaining tasks</span></p>-->
 			<div id="start-day-ok-no-panel">
 				<div id="start-day-wrap-ok-no">
 					<img src="img/okNoEmptyP.png" class="good-bad" ontouchstart="startLesson();"/>
@@ -510,12 +526,46 @@
 					</div>
 				</div>
 			</div>
-			<h1><span class="l2">E_GRATULUJEMY!</span><span class="l3">F_GRATULUJEMY!</span><span class="l4">N_GRATULUJEMY!</span><span class="l5">Congratulations!</span><br><br><span class="l2">E_Ukończyłeś lekcję</span><span class="l3">F_Ukończyłeś lekcję</span><span class="l4">N_Ukończyłeś lekcję</span><span class="l5">You have finished lesson</span> <span id="end-nr-lesson"></span></h1>
+			<h1><span class="l2">E_GRATULUJEMY!</span><span class="l3">F_GRATULUJEMY!</span><span class="l4">N_GRATULUJEMY!</span><span class="l5">Lesson <span id="end-nr-lesson"></span>/200</span><br><span class="l2">E_Ukończyłeś lekcję</span><span class="l3">F_Ukończyłeś lekcję</span><span class="l4">N_Ukończyłeś lekcję</span><span class="l5">completed</span></h1>
+			<div class="end-panel-info-box">
+				<h1>
+					<span class="l2">E_GRATULUJEMY!</span>
+					<span class="l3">F_GRATULUJEMY!</span>
+					<span class="l4">N_GRATULUJEMY!</span>
+					<span class="l5">Study time</span>
+				</h1>
+				<div>
+					<p class="text">
+						This lesson <i><span class="allTimeToday">5</span>min</i>
+						<span>
+						In total <i><span class="countKMLearned"></span>h <span class="countMinLearned"></span>min/80h</i>
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class="end-panel-info-box">
+				<h1>
+					<span class="l2">E_GRATULUJEMY!</span>
+					<span class="l3">F_GRATULUJEMY!</span>
+					<span class="l4">N_GRATULUJEMY!</span>
+					<span class="l5">Learned phrases</span>
+				</h1>
+				<div>
+					<p class="text">
+						This lesson <i><span class="countOfNewWordsToday">0</span></i>
+						<span>
+						In total <i><span class="allWords"></span>/2000</i>
+						</span>
+					</p>
+				</div>
+			</div>
+			<!--
 			<p class="you-start-learned"><span class="l2">E_Spedziłeś z nami:</span><span class="l3">F_Spedziłeś z nami:</span><span class="l4">N_Spedziłeś z nami:</span><span class="l5">Time spent talking today for</span> <span class="allTimeToday">5</span>min</p>
 			<p class="you-start-learned2"><span class="l2">E_Spedziłeś z nami:</span><span class="l3">F_Spedziłeś z nami:</span><span class="l4">N_Spedziłeś z nami:</span><span class="l5">Time spent talking in total</span><br><span class="countKMLearned"></span>h <span class="countMinLearned"></span>min/80h</p>
 			<p class="you-start-learned2"><span class="l2">E_Uczysz się już z nami:</span><span class="l3">F_Uczysz się już z nami:</span><span class="l4">N_Uczysz się już z nami:</span><span class="l5">Learned phrases:</span> <span class="allWords"></span>/2000</p>
 			<p class="you-start-learned2 invite-again"><span class="l2">E_Zapraszamy ponownie*</span><span class="l3">F_Zapraszamy ponownie*</span><span class="l4">N_Zapraszamy ponownie*</span><span class="l5">See you soon*</span></p>
 			<p class="you-start-learned2 extra-info"><span class="l2">E_*Rekomendowany odstęp pomiędzy lekcjami to min. 30min</span><span class="l3">*F_Rekomendowany odstęp pomiędzy lekcjami to min. 30min</span><span class="l4">*N_Rekomendowany odstęp pomiędzy lekcjami to min. 30min</span><span class="l5">*Recommended break between lessons 24hours (min.30 minutes)</span></p>
+			-->
 			<div id="end-day-ok-no-panel">
 				<div id="end-day-wrap-ok-no">
 					<img src="img/off.png" class="good-bad off-btn" ontouchstart="navigator.app.exitApp();"/>
@@ -555,23 +605,30 @@
 					</div>
 				</div>	
 				<div class="note-skip-btn">
-					<div class="note-btn cat-btn-skip" ontouchstart="getNextSugCat();">
-						<p>Skip<br>this lesson</p>
+					<div class="note-btn cat-btn-skip" ontouchstart="startSetNewCategory();">
+						<p>Browse</p>
 					</div>
-					<div class="skip-btn" ontouchstart="startSetNewCategory();">
-						<p>Choose<br>another lesson</p>
+					<div class="skip-btn" ontouchstart="getNextSugCat();">
+						<p>Next ></p>
 					</div>
 				</div>	
 			</div>	
 		</section>
 		<section id="statistic" class="goLeft">
 			<p class="img-close-cont" ontouchstart="hideStatistic();"><img src="img/back2.png"></p>
-			<h3><span class="l2">E_Statystyki:</span><span class="l3">F_Statystyki:</span><span class="l4">N_Statystyki:</span><span class="l5">Your Progress:</span></h3>
+			<h3><span class="l2">E_Statystyki:</span><span class="l3">F_Statystyki:</span><span class="l4">N_Statystyki:</span><span class="l5">Your Progress</span></h3>
+			<h3 class="statistic-learned-lessons-text">
+				<span class="l2">E_Kategorie w trakcie nauki:</span>
+				<span class="l3">F_Kategorie w trakcie nauki:</span>
+				<span class="l4">N_Kategorie w trakcie nauki:</span>
+				<span class="l5">Learned lessons:</span>
+			</h3>
 			<div class="scroll-container">
+				<!--
 				<p class="you-start-learned"><span class="l2">E_Spedziłeś z nami:</span><span class="l3">F_Spedziłeś z nami:</span><span class="l4">N_Spedziłeś z nami:</span><span class="l5">Time spent talking:</span> <span class="countKMLearned"></span>h <span class="countMinLearned"></span>min/80h</p>
 				<p class="you-start-learned2"><span class="l2">E_Zaplanowana liczba zadań:</span><span class="l3">F_Zaplanowana liczba zadań:</span><span class="l4">N_Zaplanowana liczba zadań:</span><span class="l5">Equivalent in school lessons:</span> <span class="equivalentLessons"></span></p>
 				<p class="you-start-learned3"><span class="l2">E_Uczysz się z nami</span><span class="l3">F_Uczysz się z nami</span><span class="l4">N_Uczysz się z nami</span><span class="l5">Learned phrases:</span> <span class="allWords"></span>/2000</p>
-				<h3><span class="l2">E_Kategorie w trakcie nauki:</span><span class="l3">F_Kategorie w trakcie nauki:</span><span class="l4">N_Kategorie w trakcie nauki:</span><span class="l5">Lessons:</span></h3>
+				-->
 				<div class="inProgressCatList"></div>
 			</div>
 		</section>
@@ -592,46 +649,16 @@
 		</section>
 		<section id="list-of-word-in-cat" class="goLeft">
 			<p class="img-close-cont" ontouchstart="hideWordList();"><img src="img/back2.png"></p>
+			<!--
 			<h3>
 				<span class="l2">E_Lista fraz w kategorii:</span>
 				<span class="l3">F_Lista fraz w kategorii:</span>
 				<span class="l4">N_Lista fraz w kategorii:</span>
 				<span class="l5">Phrases in this lesson:</span>
 			</h3>
+			-->
 			<p class="catNameInListWord"></p>
-			<div class="scroll-cont">
-				<table>
-					<tr><td class="w1 bigWord"></td></tr>
-					<tr><td class="t1"></td></tr>
-					<tr><td class="n1 noteWord"></td></tr>
-					<tr><td class="w2 bigWord"></td></tr>
-					<tr><td class="t2"></td></tr>
-					<tr><td class="n2 noteWord"></td></tr>
-					<tr><td class="w3 bigWord"></td></tr>
-					<tr><td class="t3"></td></tr>
-					<tr><td class="n3 noteWord"></td></tr>
-					<tr><td class="w4 bigWord"></td></tr>
-					<tr><td class="t4"></td></tr>
-					<tr><td class="n4 noteWord"></td></tr>
-					<tr><td class="w5 bigWord"></td></tr>
-					<tr><td class="t5"></td></tr>
-					<tr><td class="n5 noteWord"></td></tr>
-					<tr><td class="w6 bigWord"></td></tr>
-					<tr><td class="t6"></td></tr>
-					<tr><td class="n6 noteWord"></td></tr>
-					<tr><td class="w7 bigWord"></td></tr>
-					<tr><td class="t7"></td></tr>
-					<tr><td class="n7 noteWord"></td></tr>
-					<tr><td class="w8 bigWord"></td></tr>
-					<tr><td class="t8"></td></tr>
-					<tr><td class="n8 noteWord"></td></tr>
-					<tr><td class="w9 bigWord"></td></tr>
-					<tr><td class="t9"></td></tr>
-					<tr><td class="n9 noteWord"></td></tr>
-					<tr><td class="w10 bigWord"></td></tr>
-					<tr><td class="t10"></td></tr>
-					<tr><td class="n10 noteWord"></td></tr>
-				</table>
+			<div id="listWordOfCatInInPorgress" class="scroll-cont">
 			</div>
 		</section>
 		<div id="myCall-big-ad">
@@ -1058,12 +1085,38 @@
 				}, 300);
 			});
 			$("#m9").click(function(){
-				$("#show-all-cats").show();
-				$("#show-all-cats-cats").show();
-				runList();
-				setTimeout(function(){
-					$("#show-all-cats").removeClass('goLeft');
-				}, 300);
+				var options = {
+				  language: "pl-PL",
+				  matches: 5,
+				  prompt: true,      // Android only
+				  showPopup: true
+				};
+
+				window.plugins.speechRecognition.startListening(
+				  function(){
+					
+				  },
+				  function(){
+				  
+				  },
+				  options
+				);
+				//$("#show-all-cats").show();
+				//$("#show-all-cats-cats").show();
+				//runList();
+				//setTimeout(function(){
+				//	$("#show-all-cats").removeClass('goLeft');
+				//}, 300);
+			});
+			$("#m10").click(function(){
+				recognition = new SpeechRecognition();
+				recognition.onresult = function(event) {
+					if (event.results.length > 0) {
+						var te = event.results[0][0].transcript;
+						alert(te);
+					}
+				}
+				//$("#submenu-wrapper").toggle();
 			});
 			$("#m5").click(function(){
 				/*navigator.notification.confirm(
@@ -1083,7 +1136,8 @@
 				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
 			});
 			$("#m7").click(function(){
-				window.open('https://mycall.no', '_system');
+			recognition.start();
+				/*window.open('https://mycall.no', '_system');*/
 			});
 			$(".mycalllink").click(function(){
 				window.open('https://www.mycall.no', '_system');

@@ -904,6 +904,7 @@ section{
 #cont-l-w-i-s-c{
 	text-align: center;
 	margin-bottom: 30px;
+	width: 100%;
 }
 #cont-l-w-i-s-c h4{
 	margin-bottom: 5px;
@@ -978,6 +979,12 @@ section{
 	margin-right: auto;
 	margin-left: auto;
 }
+#new-category-choice h1{
+	font-size: 21px !important;
+}
+#new-category-choice h1:first-of-type{
+	margin-bottom: 5px;
+}
 .you-start-learned{
     color: white;
     text-align: center;
@@ -1035,17 +1042,20 @@ section{
 	padding-bottom: 0px !important;
 }
 #new-cat-ok-no-panel .note-skip-btn p{
-	margin-top: 30px !important;
+	margin-top: 56px !important;
 	font-size: 19px !important;
 	text-align: center;
 }
 #new-cat-ok-no-panel .note-btn p{
 	padding-left: 0 !important;
-    margin-left: -57px !important;
+	text-align: left;
+	margin-left: 10px !important;
+	margin-top: 56px !important;
 }
 #new-cat-ok-no-panel .skip-btn p{
 	padding-right: 0 !important;
-	margin-right: -28px !important;
+	margin-right: 10px !important;
+	text-align: right;
 }
 #new-cat-ok-no-panel img{
 	z-index: 3;
@@ -1103,10 +1113,14 @@ section{
 	margin: 10px auto;
 	padding: 15px 0;
 }
-#menu li:first-of-type{
-	margin: 40px auto 0 auto;
+#menu > ul {
+	height: calc(100% - 100px) !important;
+	overflow: auto;
 }
-#menu li:last-of-type{
+#menu > ul > li:first-of-type{
+	margin: 7px auto 0 auto;
+}
+#menu #mE{
 	font-size: 48px;
 	/*border: 0;*/
 	width: 100%;
@@ -1119,7 +1133,7 @@ section{
 	margin-bottom: 0px;
 	border-radius: 15px;
 	position: absolute;
-	bottom: 25px;
+	bottom: 2px;
 	/*background: url("../img/btn_menu.png");
 	background-size: 100% 100%;*/
 }
@@ -1128,6 +1142,19 @@ section{
 	margin: 0;
 	height: 100%;
 	position: relative;
+}
+#menu #submenu-wrapper {
+	display: none; 
+	list-style: none;
+}
+#menu #submenu {
+	padding-top: 0;
+	margin-top: -15px;
+}
+#menu #submenu  li{
+    font-size: 18px;
+	width: 85% !important; 
+	margin-left: 10% !important ;
 }
 #menu-switch{
 	position: fixed;
@@ -1213,15 +1240,15 @@ section{
 	background: url("../img/bg3.png") 100% 100% !important;
 }
 #statistic .scroll-container{
-	margin-top: 30%;
-	max-height: 80%;
+	margin-top: 4%;
+	height: 71%;
 	overflow: scroll;
 }
 #statistic .scroll-container h3:first-of-type{
 	position: relative !important;
 }
 #list-of-word-in-cat .scroll-cont{
-	max-height: calc(100% - 185px);
+	max-height: calc(100% - 160px);
 	overflow: scroll;
 }
 #statistic h3:first-of-type, #list-of-word-in-cat h3:first-of-type, #options-box h3:first-of-type, #show-all-cats h3:first-of-type, #show-all-cats-word-list h3:first-of-type{
@@ -1231,7 +1258,7 @@ section{
 	top: 15px;
 }
 #statistic .you-start-learned, #list-of-word-in-cat .catNameInListWord{
-	margin-top: 45% !important;
+	margin-top: 17% !important;
 }
 .catNameInListWord{
 	margin-top: 20px;
@@ -1300,7 +1327,7 @@ section{
 	text-align: center;
 	margin-top: 0%;
 	font-size: 21px;
-	width: 80%;
+	width: 100%;
 	margin: 0% auto;
 }
 #list-of-word-in-cat table{    
@@ -1424,6 +1451,11 @@ section{
     font-size: 13px;
     font-style: italic;
 }
+.catsInAllMaterial span{    
+	display: none;
+    font-size: 13px;
+    font-style: italic;
+}
 .learnedCat .learnedCatInfo{
 	display: block !important;
 }
@@ -1452,6 +1484,7 @@ section{
 	outline: 0px;
 	outline: none;
 }
+/*
 #list-word-in-sug-cat{
 	display: block;
 	width: 95%;
@@ -1483,7 +1516,7 @@ section{
 #list-word-in-sug-cat p:last-of-type span{
 	padding-left: 35px;
 	border-bottom: 0px;
-}
+}*/
 .l2, .l3, .l4, .l5{
 	display: none;
 }
@@ -1721,6 +1754,113 @@ textarea, textarea[placeholder]{
 #show-all-cats-word-list .cat-name-word-list{
 	width: 90%;
 	margin: 45px auto 0;
+}
+#list-word-in-sug-cat{
+	display: block;
+	height: 320px;
+	overflow: scroll;
+	margin-top: 20px;
+}
+#list-word-in-sug-cat .text{
+	padding-right: 15px;
+	width: 85%;
+	font-weight: 600;
+	text-align: left;
+	padding-left: 15px;
+	position: relative;
+}
+#list-word-in-sug-cat .text span{
+	display: block;
+	font-size: 13px;
+	border-top: 1px solid white;
+	width: 100%;
+	padding-top: 4px;
+	margin-top: 4px;
+	font-weight: 200;
+}
+.first-page-main-text{
+	font-weight: 600;
+	font-size: 28px;
+	text-align: center;
+	width: 90%;
+	margin: 75px auto 0 auto;
+	color: white;
+}
+.timeToEndTodayWrap{
+	margin-top: 18px;
+	display: inline-block;
+	border: 1px solid white;
+	padding: 10px 21px;
+	border-radius: 8px;
+}
+.remTasks{
+	position: absolute;
+    top: -100px;
+    left: -305px;
+    width: 424px;
+}
+
+.end-panel-info-box .text{
+	padding-right: 15px;
+	width: 85%;
+	font-weight: 600;
+	text-align: left;
+	padding-left: 15px;
+	position: relative;
+}
+.end-panel-info-box .text > span{
+	display: block;
+	font-size: 13px;
+	border-top: 1px solid white;
+	width: 100%;
+	padding-top: 4px;
+	margin-top: 4px;
+	font-weight: 200;
+}
+.end-panel-info-box .text i{
+	float: right;
+	font-style: normal;
+}
+.end-panel-info-box > h1{
+	padding-top: 10px !important;
+}
+.statistic-learned-lessons-text{
+	margin-top: 50px;
+}
+#listWordOfCatInInPorgress{
+	display: block;
+	height: calc(100% - 150px);
+	overflow: scroll;
+	margin-top: 20px;
+}
+#listWordOfCatInInPorgress .text{
+	padding-right: 54px;
+	width: 70%;
+	font-weight: 600;
+	text-align: left;
+	padding-left: 15px;
+	position: relative;
+}
+#listWordOfCatInInPorgress .text:after{
+	display: block;
+	content: "";
+	width: 30px;
+	height: 30px;
+	background: transparent url('../img/spiker.png') no-repeat;
+	position: absolute;
+	background-size: 100%;
+	top: 50%;
+	right: 12px;
+	margin-top: -15px;
+}
+#listWordOfCatInInPorgress .text span{
+	display: block;
+	font-size: 13px;
+	border-top: 1px solid white;
+	width: 100%;
+	padding-top: 4px;
+	margin-top: 4px;
+	font-weight: 200;
 }
 @media (min-width : 500px) {
 	.remind-img {
@@ -1989,7 +2129,7 @@ textarea, textarea[placeholder]{
 		right: -2px !important;
 	}
 	#new-cat-ok-no-panel .note-skip-btn p{
-		margin-top: 35px !important;
+		margin-top: 56px !important;
 		font-size: 16px !important;
 	}
 	#end-tut-title{

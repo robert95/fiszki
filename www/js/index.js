@@ -120,6 +120,7 @@ var app = {
 		volumeTest();
 		
 		//smoothLoadProgressBarWelcome();
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -137,11 +138,11 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
-	if($( window ).width() > 600) {
+	/*if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
-	}
+	}*/
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -346,8 +347,8 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-//var langJSON = JSON.parse('{"lang":5}');
-var langJSON = JSON.parse('{"lang":-1}');
+var langJSON = JSON.parse('{"lang":5}');
+//var langJSON = JSON.parse('{"lang":-1}');
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -355,10 +356,10 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
-var dayJSON = false;
-//var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
-//var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
-var toLearnJSON = [];
+//var dayJSON = false;
+var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
+//var toLearnJSON = [];
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -417,15 +418,15 @@ function startApp(){
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 				//showRating();
-			}, 1000);
+			}, 2000);
 		}
 	}, 2500);
 }
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	readLang();
-	setTimeout(function() {getMyLangHelper();}, 100);
+	//readLang();
+	//setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -439,9 +440,9 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	readDayF();
-	getDayHelper();
-	/*
+	//readDayF();
+	//getDayHelper();
+	
 	getAllCatsInArray();
 	getAllCatsToShowAllCats();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
@@ -529,6 +530,7 @@ function getDay(){
 				$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
 				countCatsToLearnToday = countCatsToLearn-1;
 				$(".allTimeToday").text(countCatsToLearnToday * minCat);
+				$(".countOfNewWordsToday").text('0');
 			}else{
 				$("#countWordsToLearn").text(dayJSON.day-1);	
 				$(".equivalentLessons").text(dayJSON.day-1); //usunąć
@@ -539,7 +541,7 @@ function getDay(){
 			}
 		}, 150);
 	$("body").addClass('theme'+dayJSON.theme);
-	*/
+	
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -567,8 +569,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	readWriteFile2();
-	getNoticeHelper();
+	//readWriteFile2();
+	//getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -581,8 +583,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-	readWriteFile();
-	getToLearnHelper();
+	//readWriteFile();
+	//getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
@@ -767,10 +769,12 @@ function getWordToSuggestCat(cs){
 		$.get("date/1/" + idp + "/" + idc + "/words.json", function(transResult) {
 			var words = JSON.parse(result);
 			var trans = JSON.parse(transResult);
+			var i = 0;
 			for(var x in words){
+				i++;
 				var w = words[x];
 				var t = trans[x];
-				$("#list-word-in-sug-cat").append('<p><i>'+ (parseInt(x)+1) +'.</i> ' + t.name + '<span>' + w.name + '</span></p>');
+				$("#list-word-in-sug-cat").append('<p class="text">' + i + '. '+ t.name + '<span>' + w.name + '</span></p>');
 			}
 		});
     });
@@ -1320,7 +1324,7 @@ function setAntyNaparzankaToTrue(){
 }
 
 function nextStep(){
-	volumeTest();
+	//volumeTest();
 	antyNaparzanka = true;
 	hideBars();
 	//StatusBar.hide();
@@ -2521,6 +2525,7 @@ function setSuggestedCatAsNew(){
 		var parent = res[0];
 		var cat = res[1];
 		$("#learn-container").addClass('next-cat-left');
+		$(".countOfNewWordsToday").text(wordsInOneCat);
 		setTimeout(function(){
 			setNewCat(parent, cat);
 			$("#myCat").val(cat);
@@ -2568,7 +2573,11 @@ function updateProgressBar(){
 		removeProgressClassMin($(".progess-btn-stan-in-session"), percent2);
 		removeProgressClassMin($(".progess-btn-stan-in-cycle-2"), percent);
 		$(".all-words-to-end").text(countWordsToLearn-learnedWords);
-		$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle-learnedWordsInCat);
+		if((countWordsToLearn-learnedWords) != (countWordsToLearnInThisCycle-learnedWordsInCat)){
+			$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle-learnedWordsInCat);
+		}else{
+			$(".all-words-to-end-sesion").text('');
+		} 
 	}, 50);
 }
 /*END TUTORIAL*/
@@ -2840,8 +2849,8 @@ function setinProgressCatList(idp, idc){
 function showMeWordInThisCat(idp, idc, name){
 	$(".catNameInListWord").text(name);
 	fillTableListWordInCatMain(idp, idc);
-	fillTableListWordInCat(idp, idc);
-	fillTableListWordInCatWithNote(idp, idc);
+	//fillTableListWordInCat(idp, idc);
+	//fillTableListWordInCatWithNote(idp, idc);
 	$("#list-of-word-in-cat").show();
 	setTimeout(function(){
 		$("#list-of-word-in-cat").removeClass('goLeft');
@@ -2849,15 +2858,37 @@ function showMeWordInThisCat(idp, idc, name){
 }
 
 function fillTableListWordInCatMain(idp, idc){
-	var idLang = 1;
+	var sygn = idp + "/" + idc;
 	var i = 1;
-	$.get("date/"+ idLang + "/" + idp + "/" + idc + "/words.json", function(result) {
-		var words = JSON.parse(result);
-		for(var x in words){
-			var w = words[x];
-			$(".w"+i).html(w.name);
-			i++;
-		}
+	
+	$.get("date/"+ langJSON.lang + "/" + sygn + "/words.json", function(result) {
+		$("#listWordOfCatInInPorgress").text("");
+		$.get("date/1/" + sygn + "/words.json", function(transResult) {
+			var words = JSON.parse(result);
+			var trans = JSON.parse(transResult);
+			for(var x in words){
+				var w = words[x];
+				var t = trans[x];
+				var linkwordwrap = "";
+				var hasLinkword = false;
+				for(var z in noticeJSON){
+					var notice = noticeJSON[z];
+					var tmp = langJSON.lang+"\\"+idp+"\\"+idc+"\\"+1+"\\"+(parseInt(x)+1);
+					if(notice.word == tmp){
+						linkwordwrap = "<br><strong>Linkword:</strong> " + notice.notice;
+						$("#listWordOfCatInInPorgress").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + i + '. ' + t.name + '<span>' + w.name + linkwordwrap +'</span></p>');
+						hasLinkword = true;
+					}
+					if(!hasLinkword && z == (noticeJSON.length - 1)){
+						$("#listWordOfCatInInPorgress").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + i + '. ' + t.name + '<span>' + w.name +'</span></p>');
+					}
+				}
+				if(noticeJSON.length == 0){
+					$("#listWordOfCatInInPorgress").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + i + '. ' + t.name + '<span>' + w.name +'</span></p>');
+				}
+				i++;
+			}
+		});
     });
 }
 
@@ -2947,11 +2978,11 @@ function shareFile(){
 	
 function volumeTest(){
 	//podgłośnienie
-	window.plugin.volume.getVolume(function(volume) {
+	/*window.plugin.volume.getVolume(function(volume) {
 		if(volume < 0.20){
 			showVolumeInfo();
 		}
-	});
+	});*/
 
 }	
 function showVolumeInfo() {
@@ -2998,7 +3029,17 @@ function getAllCatsToShowAllCats(){
 					for(var y in subcats){
 						var subcat = subcats[y];
 						var catSgn = cat.id + "/" + subcat.id;
-						tmp += '<p class="text catsInAllMaterial" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\' )" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '</p>';
+						var cl = "";
+						if(dayJSON.skiped.indexOf(catSgn) >= 0){
+							cl = "missingCat";
+						}
+						if(learnedCat.indexOf(catSgn) >= 0){
+							cl = "learnedCat";
+						}
+						if(inProgressCat.indexOf(catSgn) >= 0){
+							cl = "inProgressCat";
+						}
+						tmp += '<p class="text catsInAllMaterial '+ cl +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\' )" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
 						$("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
 					}
 					tmp += '</div>' + '</div>' + extraEnd
