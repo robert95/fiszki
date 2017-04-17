@@ -418,7 +418,7 @@ function startApp(){
 				$("#first-use-loading-page").hide();				
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 				//showRating();
-			}, 2000);
+			}, 4000);
 		}
 	}, 2500);
 }
@@ -1819,6 +1819,7 @@ function showAllNote(){
 	showNote(4);
 	showNote(5);
 	showNote(6);
+	$(".recText").hide();
 }
 function showNote(x){
 	var target = "#l-n-" + x;
@@ -3134,7 +3135,7 @@ function startRecognize(){
 
 function compareRecognizedText(text){
 	var correctText = $(".learnMethod:visible .text-trans-word").text();
-	if(text.toLowerCase() == correctText.toLowerCase()){
+	if(text.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');){
 		$(".learnMethod table").addClass('goodRec');
 	}else{
 		$(".learnMethod table").addClass('badRec');
