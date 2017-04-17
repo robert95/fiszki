@@ -1111,7 +1111,7 @@
 			$("#m10").click(function(){
 				recognition = new SpeechRecognition();
 				recognition.onresult = function(event) {
-					console.log("TUtaj: ");
+					alert("TUtaj: ");
 					console.log(event);
 					if (event.results.length > 0) {
 						var te = event.results[0][0].transcript;
@@ -1135,7 +1135,8 @@
 				);
 			});
 			$("#m6").click(function(){
-				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
+				recognition.stop();
+//				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
 			});
 			$("#m7").click(function(){
 				recognition.start();
