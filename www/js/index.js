@@ -138,11 +138,11 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
-	/*if($( window ).width() > 600) {
+	if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
-	}*/
+	}
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -347,8 +347,8 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-var langJSON = JSON.parse('{"lang":5}');
-//var langJSON = JSON.parse('{"lang":-1}');
+//var langJSON = JSON.parse('{"lang":5}');
+var langJSON = JSON.parse('{"lang":-1}');
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -356,10 +356,10 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
-//var dayJSON = false;
-var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
-//var toLearnJSON = [];
+var dayJSON = false;
+//var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
+//var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
+var toLearnJSON = [];
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -425,8 +425,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	//readLang();
-	//setTimeout(function() {getMyLangHelper();}, 100);
+	readLang();
+	setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -440,9 +440,9 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	//readDayF();
-	//getDayHelper();
-	
+	readDayF();
+	getDayHelper();
+	/*
 	getAllCatsInArray();
 	getAllCatsToShowAllCats();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
@@ -541,7 +541,7 @@ function getDay(){
 			}
 		}, 150);
 	$("body").addClass('theme'+dayJSON.theme);
-	
+	*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -569,8 +569,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	//readWriteFile2();
-	//getNoticeHelper();
+	readWriteFile2();
+	getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -583,8 +583,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-	//readWriteFile();
-	//getToLearnHelper();
+	readWriteFile();
+	getToLearnHelper();
 }
 function getToLearnHelper(){
 	if(!res){
@@ -2983,11 +2983,11 @@ function shareFile(){
 	
 function volumeTest(){
 	//podgłośnienie
-	/*window.plugin.volume.getVolume(function(volume) {
+	window.plugin.volume.getVolume(function(volume) {
 		if(volume < 0.20){
 			showVolumeInfo();
 		}
-	});*/
+	});
 
 }	
 function showVolumeInfo() {
@@ -3086,7 +3086,7 @@ function startVoiceToText(){
 
 function startRecognize(){
 
-	var langText = "nb-NO"
+	var langText = "en-US"
 	var options = {
 		language: langText,
 		matches: 2,
@@ -3134,7 +3134,7 @@ function startRecognize(){
 
 function compareRecognizedText(text){
 	var correctText = $(".learnMethod:visible .text-trans-word").text();
-	if(text == correctText){
+	if(text.toLowerCase() == correctText.toLowerCase()){
 		$(".learnMethod table").addClass('goodRec');
 	}else{
 		$(".learnMethod table").addClass('badRec');
