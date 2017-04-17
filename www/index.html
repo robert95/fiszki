@@ -1093,8 +1093,8 @@
 				};
 
 				window.plugins.speechRecognition.startListening(
-				  function(){
-					
+				  function(matches){
+					alert(matches[0]);
 				  },
 				  function(){
 				  
@@ -1111,6 +1111,8 @@
 			$("#m10").click(function(){
 				recognition = new SpeechRecognition();
 				recognition.onresult = function(event) {
+					console.log("TUtaj: ");
+					console.log(event);
 					if (event.results.length > 0) {
 						var te = event.results[0][0].transcript;
 						alert(te);
@@ -1136,7 +1138,7 @@
 				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
 			});
 			$("#m7").click(function(){
-			recognition.start();
+				recognition.start();
 				/*window.open('https://mycall.no', '_system');*/
 			});
 			$(".mycalllink").click(function(){
