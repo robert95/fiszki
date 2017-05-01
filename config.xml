@@ -32,6 +32,8 @@
   <plugin name="cordova-plugin-filepath" />
   <plugin name="cordova-plugin-fullscreen" />
   <plugin name="cordova-plugin-x-toast" />
+  <plugin src="https://github.com/macdonst/SpeechRecognitionPlugin.git" />
+  <plugin src="https://github.com/pbakondy/cordova-plugin-speechrecognition.git" />
   <plugin src="https://github.com/poiuytrez/SpeechRecognizer.git" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
   <plugin src="https://github.com/floatinghotpot/cordova-admob-pro.git" />
