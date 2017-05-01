@@ -3087,6 +3087,16 @@ function startVoiceToText(){
 
 function startRecognize(){
 
+	var maxMatches = 2;
+	var promptString = "Speak now";	// optional
+	var language = "en-US";						// optional
+	window.plugins.speechrecognizer.startRecognize(function(result){
+		alert(result);
+	}, function(errorMessage){
+		console.log("Error message: " + errorMessage);
+	}, maxMatches, promptString, language);
+	
+/*
 	var langText = "en-US"
 	var options = {
 		language: langText,
@@ -3132,7 +3142,8 @@ function startRecognize(){
 
 		},
 		options
-	);
+	);*/
+	
 }
 
 function compareRecognizedText(text){
