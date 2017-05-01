@@ -17,8 +17,6 @@
  * under the License.
  */
  
-var recognition;
- 
 var app = {
     // Application Constructor
     initialize: function() {
@@ -37,15 +35,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
-		recognition = new SpeechRecognition();
-		
-		recognition.onresult = function(event) {
-			if (event.results.length > 0) {
-				alert(event.results[0][0].transcript);
-			}else{
-				alert("brak wyników");
-			}
-		}
 		
 		var src = '/android_asset/www/date/1.m4a';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
@@ -3099,8 +3088,6 @@ function startVoiceToText(){
 }
 
 function startRecognize(){
-
-recognition.start();
 /*
 	var maxMatches = 2;
 	var promptString = "Speak now";	// optional
