@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "9.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "9.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "9.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "9.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "9.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Hva liker du å gjøre på i fritiden?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Jeg liker å se på TV.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Jeg liker ikke puber.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Jeg liker virkelig å danse.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Jeg kan ikke fordra fotball.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Jeg elsker kino.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Jeg hater å handle.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Jeg er interessert i fotografi.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Jeg er ikke interessert i fotball.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Jeg liker å reise.",
+			"notices": [
+			]
+		}
+	]

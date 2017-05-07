@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "4.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "4.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "4.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "4.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "4.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Vent til han kommer tilbake.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Lukk vinduet før du går ut.",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Etter at han hadde dratt til Amerika ble han rik.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Siden de har barn går de sjelden ut.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Hun telefonerer mens hun kjører bil.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Vi tar en drosje hvis det regner.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Jeg slutter å jobbe når jeg blir seksti.",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Jeg skal jobbe så lenge jeg er frisk.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Han sitter på puben i stedet for å gå hjem.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Han sovnet, selv om TVen sto på.",
+			"notices": [
+			]
+		}
+	]

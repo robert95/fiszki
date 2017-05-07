@@ -1,32 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "1.1T",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "1.2T",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "1.3T",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "1.4T",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "1.5T",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "hei/ha det",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "god morgen",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "ha det bra ",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "hallo/vi sees!",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "beklager/det går bra",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "ja/nei",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "vær så snill/takk",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "tusen takk",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "vær så god",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "bare hyggelig",
+			"notices": [
+			]
+		}
+	]

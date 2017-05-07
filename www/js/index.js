@@ -442,7 +442,7 @@ function getDay(){
 	srcFile3 = path() + "day.json";
 	readDayF();
 	getDayHelper();
-	/*
+/*	
 	getAllCatsInArray();
 	getAllCatsToShowAllCats();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
@@ -1331,8 +1331,9 @@ function nextStep(){
 	backToNormalStateNote();
 	$(".recTextWrap").hide();
 	$(".recText").text('');
-	$(".learnMethod table").removeClass('badRec');
-	$(".learnMethod table").removeClass('goodRec');
+	$(".learnMethod").removeClass('badRec');
+	$(".learnMethod").removeClass('goodRec');
+	$(".cloud-again").hide();
 	
 	updateProgressBar();
 	if(readyToSaveNotice){
@@ -2984,11 +2985,11 @@ function shareFile(){
 	
 function volumeTest(){
 	//podgłośnienie
-	window.plugin.volume.getVolume(function(volume) {
+	/*window.plugin.volume.getVolume(function(volume) {
 		if(volume < 0.20){
 			showVolumeInfo();
 		}
-	});
+	});*/
 
 }	
 function showVolumeInfo() {
@@ -3073,6 +3074,48 @@ function getWordForCatShowList(sygn){
 }
 
 function startVoiceToText(){
+/*
+				$(".recText").text("To powiedziałem");
+				$("#l-n-1").hide();
+				$("#l-n-2").hide();
+				$("#l-n-3").hide();
+				$("#l-n-4").hide();
+				$("#l-n-5").hide();
+				$("#l-n-6").hide();
+				
+				$("#l-e-1").hide();
+				$("#l-e-2").hide();
+				$("#l-e-3").hide();
+				$("#l-e-4").hide();
+				$("#l-e-5").hide();
+				$("#l-e-6").hide();
+				
+				$("#l-t-1").hide();
+				$("#l-t-2").hide();
+				$("#l-t-3").hide();
+				$("#l-t-4").hide();
+				$("#l-t-5").hide();
+				$("#l-t-6").hide();
+				
+				$(".recTextWrap").show();				
+				$(".recText").show();
+
+				$(".show-hidden-word").next("p").show();
+				$(".show-hidden-word").hide();
+				
+				if(((Math.random() * 10) + 1 )> 5){
+					$(".learnMethod").addClass('goodRec');
+					$(".learnMethod").removeClass('badRec');
+					$(".cloud-again").hide();
+				}else{
+					$(".learnMethod").removeClass('goodRec');
+					$(".learnMethod").addClass('badRec');
+					$(".cloud-again").show();
+					$(".remind-img").hide();
+				}
+					
+				*/	
+	
 	if(!checkConnection()){
 		navigator.notification.confirm(
 			"Connect to the Internet to use this function.",
@@ -3138,8 +3181,13 @@ function startRecognize(){
 function compareRecognizedText(text){
 	var correctText = $(".learnMethod:visible .text-trans-word").text();
 	if(text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')){
-		$(".learnMethod table").addClass('goodRec');
+		$(".learnMethod").addClass('goodRec');
+		$(".learnMethod").removeClass('badRec');
+		$(".cloud-again").hide();
 	}else{
-		$(".learnMethod table").addClass('badRec');
+		$(".learnMethod").removeClass('goodRec');
+		$(".learnMethod").addClass('badRec');
+		$(".cloud-again").show();
+		$(".remind-img").hide();
 	}
 }
