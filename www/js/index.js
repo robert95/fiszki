@@ -357,8 +357,8 @@ var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
 var dayJSON = false;
-//var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
-//var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
+var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
 var toLearnJSON = [];
 var noticeJSON = [];
 var isFirstCycle = true;
@@ -3074,7 +3074,8 @@ function getWordForCatShowList(sygn){
 }
 
 function startVoiceToText(){
-/*
+	
+	/*
 				$(".recText").text("To powiedziałem");
 				$("#l-n-1").hide();
 				$("#l-n-2").hide();
@@ -3113,8 +3114,8 @@ function startVoiceToText(){
 					$(".cloud-again").show();
 					$(".remind-img").hide();
 				}
+	*/				
 					
-				*/	
 	
 	if(!checkConnection()){
 		navigator.notification.confirm(
@@ -3126,6 +3127,7 @@ function startVoiceToText(){
 	}else{
 		startRecognize();
 	}
+	
 }
 
 function startRecognize(){
@@ -3164,7 +3166,9 @@ function startRecognize(){
 				$("#l-t-5").hide();
 				$("#l-t-6").hide();
 				
-				$(".recTextWrap").show();
+				$(".recTextWrap").show();				
+				$(".recText").show();
+				
 				$(".show-hidden-word").next("p").show();
 				$(".show-hidden-word").hide();
 				
