@@ -3136,13 +3136,14 @@ function startVoiceToText(){
 }
 
 function startRecognize(){
-	$(".support-word-in-speach").show();
+	//$(".support-word-in-speach").show();
 	
 	var langText = "en-US"
 	var options = {
 		language: langText,
 		matches: 2,
-		showPopup: false
+		prompt: "ta dam ta dam ta dam ta dam ta dam",
+		showPopup: true
 	};
 
 	window.plugins.speechRecognition.startListening(
