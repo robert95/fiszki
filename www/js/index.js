@@ -3142,7 +3142,7 @@ function startRecognize(){
 	var options = {
 		language: langText,
 		matches: 2,
-		prompt: "ta dam ta dam ta dam ta dam ta dam",
+		prompt: act_word,
 		showPopup: true
 	};
 
