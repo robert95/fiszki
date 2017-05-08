@@ -3142,7 +3142,7 @@ function startRecognize(){
 	var options = {
 		language: langText,
 		matches: 2,
-		showPopup: true
+		showPopup: false
 	};
 
 	window.plugins.speechRecognition.startListening(
