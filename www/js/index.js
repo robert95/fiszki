@@ -357,8 +357,8 @@ var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
 var dayJSON = false;
-var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
+//var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
+//var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
 var toLearnJSON = [];
 var noticeJSON = [];
 var isFirstCycle = true;
@@ -442,7 +442,7 @@ function getDay(){
 	srcFile3 = path() + "day.json";
 	readDayF();
 	getDayHelper();
-/*	
+/*
 	getAllCatsInArray();
 	getAllCatsToShowAllCats();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
@@ -773,8 +773,8 @@ function getWordToSuggestCat(cs){
 			for(var x in words){
 				i++;
 				var w = words[x];
-				var t = trans[x];
-				$("#list-word-in-sug-cat").append('<p class="text">' + i + '. '+ t.name + '<span>' + w.name + '</span></p>');
+				var t = trans[x]; 
+				$("#list-word-in-sug-cat").append('<p class="text" onclick="tellMeWord(\'' + res + '\',' + w.id + ')">' + i + '. '+ t.name + '<span>' + w.name + '</span></p>');
 			}
 		});
     });
@@ -1235,6 +1235,7 @@ function setWordToMethod(idM){
 		default:
 			console.log("error");
 	}
+	$(".support-word-in-speach p").text(act_word);
 	$("#word-lern-" + idM).show();
 	
 	$(".nbWordInCycle").text(($("#nav-words-container p.pulse").index() + 1) + "/10");
@@ -1334,6 +1335,8 @@ function nextStep(){
 	$(".learnMethod").removeClass('badRec');
 	$(".learnMethod").removeClass('goodRec');
 	$(".cloud-again").hide();
+	$(".cloud-next-task").hide();
+	$(".support-word-in-speach").hide();
 	
 	updateProgressBar();
 	if(readyToSaveNotice){
@@ -3108,14 +3111,16 @@ function startVoiceToText(){
 					$(".learnMethod").addClass('goodRec');
 					$(".learnMethod").removeClass('badRec');
 					$(".cloud-again").hide();
+					$(".cloud-next-task").hide();
 				}else{
 					$(".learnMethod").removeClass('goodRec');
 					$(".learnMethod").addClass('badRec');
 					$(".cloud-again").show();
+					$(".cloud-next-task").show();
 					$(".remind-img").hide();
 				}
+				
 	*/				
-					
 	
 	if(!checkConnection()){
 		navigator.notification.confirm(
@@ -3131,7 +3136,8 @@ function startVoiceToText(){
 }
 
 function startRecognize(){
-
+	$(".support-word-in-speach").show();
+	
 	var langText = "en-US"
 	var options = {
 		language: langText,
@@ -3173,10 +3179,11 @@ function startRecognize(){
 				$(".show-hidden-word").hide();
 				
 				compareRecognizedText(text);
+				$(".support-word-in-speach").hide();
 			}
 		},
 		function(){
-
+			$(".support-word-in-speach").hide();
 		},
 		options
 	);
@@ -3188,10 +3195,13 @@ function compareRecognizedText(text){
 		$(".learnMethod").addClass('goodRec');
 		$(".learnMethod").removeClass('badRec');
 		$(".cloud-again").hide();
+		$(".cloud-next-task").hide();
+		setTimeout(function(){ isOkWrap(); }, 500);
 	}else{
 		$(".learnMethod").removeClass('goodRec');
 		$(".learnMethod").addClass('badRec');
 		$(".cloud-again").show();
+		$(".cloud-next-task").show();
 		$(".remind-img").hide();
 	}
 }

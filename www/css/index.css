@@ -1118,7 +1118,7 @@ section{
 	overflow: auto;
 }
 #menu > ul > li:first-of-type{
-	margin: 7px auto 0 auto;
+	margin: 37px auto 0 auto;
 }
 #menu #mE{
 	font-size: 48px;
@@ -1895,6 +1895,21 @@ h3{
 	width: 174%;
 	z-index: 20000001;
 	display: none;
+}
+.cloud-next-task{
+	width: 29%;
+	position: relative;
+	top: 21px;
+}
+.support-word-in-speach{
+	display: none;
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	top: 90px;
+}
+.support-word-in-speach p{
+	font-size: 25px !important;
 }
 @media (min-width : 500px) {
 	.remind-img {
