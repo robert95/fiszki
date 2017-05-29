@@ -347,8 +347,16 @@ var srcSave5 = false;
 var srcLang = false;
 var datesJSON = false;
 var datesJSON5 = false;
-//var langJSON = JSON.parse('{"lang":5}');
+
 var langJSON = JSON.parse('{"lang":-1}');
+var dayJSON = false;
+var toLearnJSON = [];
+
+/*
+var langJSON = JSON.parse('{"lang":5}');
+var dayJSON = JSON.parse('{"day": 200, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"26"}]');
+*/
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -356,10 +364,6 @@ var res2 = false;
 var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
-var dayJSON = false;
-//var dayJSON = JSON.parse('{"day": 30, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
-//var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"27"}]');
-var toLearnJSON = [];
 var noticeJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
@@ -540,8 +544,7 @@ function getDay(){
 				$(".allTimeToday").text(countCatsToLearnToday * minCat);
 			}
 		}, 150);
-	$("body").addClass('theme'+dayJSON.theme);
-	*/
+	$("body").addClass('theme'+dayJSON.theme);*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -1361,7 +1364,7 @@ function nextStep(){
 	}, 300);
 	if(firstCycle){
 		if(!isPreparetoFirst){
-			whereGo = 0;
+			whereGo = -1;
 			setActWord(($("#nav-words-container p").eq(0)).data('word-id'));
 			$("#nav-words-container p").eq(0).addClass("activ");
 			$("#nav-words-container p").eq(0).addClass("pulse");
@@ -1378,13 +1381,16 @@ function nextStep(){
 				tellMe();
 				return;
 			}
+			/*
 			if(nbMethod == 2){
 				whereGo = -1;
 				nbMethod = 1;
 				setWordToMethod(1);
-			}else if(nbMethod == 1){
-				whereGo = 0;
-				nbMethod = 2;
+			}else 
+			*/
+			if(nbMethod == 1 || nbMethod == 2){
+				whereGo = -1;
+				nbMethod = 1;
 				var length = $("#nav-words-container p").length;
 				var index = $("#nav-words-container p.activ").index() + 1;
 				//learnedWords++;
@@ -1431,6 +1437,7 @@ function nextStep(){
 			theSameMethod = false;
 			noFlipIfWrong = false;
 			if(nbMethod == 4 && nbStep == 0){
+				//alert("tu1");
 				//saveNotice($("#confirm-text-4").val());
 				whereGo = 1;
 				var length = $("#nav-words-container p").length;
@@ -1474,6 +1481,7 @@ function nextStep(){
 					nbStep = 1;
 				}
 			}else if(nbMethod == 4 && nbStep != 0){
+				//alert("tu2");
 				whereGo = 0;
 				//saveNotice($("#confirm-text-4").val());
 				var index = $("#nav-words-container p.activ").index() - 1;
@@ -1494,12 +1502,43 @@ function nextStep(){
 				whereGo = -1;
 				theSameMethod = true;
 			}else if(nbMethod == 1 && nbStep == 1){
+				//alert("tu3");
 				whereGo = -1;
 				nbMethod = 6;
 				setWordToMethod(6);
 				nbStep = 2;
 				noFlipIfWrong = true;
 			}else if(nbMethod == 6){
+				//alert("tu4");
+				var index = $("#nav-words-container p.activ").index() + 1;
+				var length = $("#nav-words-container p").length;
+				if(index < length-1){
+					$("#nav-words-container p").removeClass("activ");
+					$("#nav-words-container p").eq(index).addClass("activ");
+					whereGo = -1;
+					nbMethod = 4;
+					nbStep = 0;
+					nextStep();
+					return;
+				}else{
+					//alert("jtest");
+					whereGo = 0;
+					var index = $("#nav-words-container p.activ").index() + 1;
+					var id = ($("#nav-words-container p").eq(index)).data('word-id');
+					setActWord(id);
+					$("#nav-words-container p").removeClass("activ");
+					$("#nav-words-container p").removeClass("pulse");
+					$("#nav-words-container p").eq(index).addClass("activ");
+					$("#nav-words-container p").eq(index).addClass("pulse");
+					setTimeout(function(){
+						setWordToMethod(1);
+					}, 100);
+					nbStep = 0;
+					nbMethod = 4;
+					whereGo = -1;
+					theSameMethod = true;
+				}
+				/*
 				whereGo = -1;
 			//	learnedWords++;
 			//	alert(learnedWords);
@@ -1520,7 +1559,10 @@ function nextStep(){
 					setWordToMethod(1);
 				}, 100);
 				nbMethod = 1;
+				
+				*/
 			}else if(nbMethod == 1 && nbStep == 2){
+				alert("tu5");
 				whereGo = -1;
 				nbMethod = 4;
 				nbStep = 0;
@@ -2156,7 +2198,7 @@ function setNoFlipIfWrong(val){
 	noFlipIfWrong = val;
 }
 function isRoundTwoAndTheSameMethod(){
-	return ((round == 3 && theSameMethod) || round == 4);
+	return ((round == 3 && theSameMethod) || round == 4 || round == 1);
 }
 
 function showStartCat(count, name){
@@ -3077,8 +3119,7 @@ function getWordForCatShowList(sygn){
 }
 
 function startVoiceToText(){
-	
-	/*
+			/*
 				$(".recText").text("To powiedziałem");
 				$("#l-n-1").hide();
 				$("#l-n-2").hide();
@@ -3112,6 +3153,7 @@ function startVoiceToText(){
 					$(".learnMethod").removeClass('badRec');
 					$(".cloud-again").hide();
 					$(".cloud-next-task").hide();
+					setTimeout(function(){ isOkWrap(); }, 500);
 				}else{
 					$(".learnMethod").removeClass('goodRec');
 					$(".learnMethod").addClass('badRec');
@@ -3120,7 +3162,7 @@ function startVoiceToText(){
 					$(".remind-img").hide();
 				}
 				
-	*/				
+			*/		
 	
 	if(!checkConnection()){
 		navigator.notification.confirm(
@@ -3142,7 +3184,7 @@ function startRecognize(){
 	var options = {
 		language: langText,
 		matches: 2,
-		prompt: act_word,
+		prompt: (nbMethod == 6 ? act_trans : act_word),
 		showPopup: true
 	};
 

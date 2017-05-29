@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Vent til han kommer tilbake.",
+			"name": "Poczekaj aż on przyjdzie",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Lukk vinduet før du går ut.",
+			"name": "Zamknij okno zanim wyjdziesz.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Etter at han hadde dratt til Amerika ble han rik.",
+			"name": "Po tym jak wyjechał do Ameryki, stał się bogaty",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Siden de har barn går de sjelden ut.",
+			"name": "Odkąd oni mają dzieci, rzadko wychodzą.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Hun telefonerer mens hun kjører bil.",
+			"name": "Ona dzwoni podczas prowadzenia samochodu. ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Vi tar en drosje hvis det regner.",
+			"name": "Wezmę taksówkę jeśli będzie padać.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Jeg slutter å jobbe når jeg blir seksti.",
+			"name": "Zakończę pracę jak tylko skończę 60 lat. ",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Jeg skal jobbe så lenge jeg er frisk.",
+			"name": "Będę pracował jak długo jestem zdrowy. ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Han sitter på puben i stedet for å gå hjem.",
+			"name": "On jest w barze zamiast iść do domu.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Han sovnet, selv om TVen sto på.",
+			"name": "On zasnął pomimo tego że telewizor był włączony.",
 			"notices": [
 			]
 		}

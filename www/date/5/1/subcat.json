@@ -1,52 +1,52 @@
 [
 	{
 		"id": 1,
-		"name": "Grunnleggende uttrykk",
+		"name": "Podstawowe wyrażenia",
 		"pos": "1"
 	},
 	{
 		"id": 2,
-		"name": "Å gjøre seg selv forstått",
+		"name": "Zrozumienie",
 		"pos": "2"
 	},
 	{
 		"id": 3,
-		"name": "På flyplassen/togstasjonen",
+		"name": "Na lotnisku/ na stacji kolejowej",
 		"pos": "3"
 	},
 	{
 		"id": 4,
-		"name": "Konjunksjoner",
+		"name": "Spójniki",
 		"pos": "4"
 	},
 	{
 		"id": 5,
-		"name": "Når du handler",
+		"name": "Zakupy",
 		"pos": "5"
 	},
 	{
 		"id": 6,
-		"name": "Possessiver",
+		"name": "Zaimki dzierżawcze",
 		"pos": "6"
 	},
 	{
 		"id": 7,
-		"name": "Å ringe og motta anrop",
+		"name": "Rozmowa telefoniczna",
 		"pos": "7"
 	},
 	{
 		"id": 8,
-		"name": "Nødsituasjoner",
+		"name": "Nagłe wypadki",
 		"pos": "8"
 	},
 	{
 		"id": 9,
-		"name": "Snakke om ting du liker/ ikke liker",
+		"name": "Rzeczy które lubisz i których nie lubisz",
 		"pos": "9"
 	},
 	{
 		"id": 10,
-		"name": "Å spørre om og vise veien",
+		"name": "Pytanie o drogę",
 		"pos": "10"
 	}
 ]

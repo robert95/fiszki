@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Hjelp! er du OK?",
+			"name": "Pomocy! Czy wszstko w porządku?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Det har vært en ulykke.",
+			"name": "Zdażył się wypadek! ",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Ring en ambulanse!",
+			"name": "Zadzwońcie po pogotowie!",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Lommeboken min har blitt stjålet.",
+			"name": "Mój portfel został skradziony.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Ring politiet!",
+			"name": "Zadzwońcie po policję! ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Det brenner!",
+			"name": "Pali się! ",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "jeg har mistet vesken min ",
+			"name": "Zgubiłam torebkę! ",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "jeg kan ikke finne  nøklene mine",
+			"name": "Nie mogę znaleźć moich kluczy.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Vennligst la meg være alene!",
+			"name": "Proszę zostaw mnie w spokoju!",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Gå vekk!",
+			"name": "Odejdź! ",
 			"notices": [
 			]
 		}

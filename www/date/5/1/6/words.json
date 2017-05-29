@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Jeg finner ikke nøkkelen min.",
+			"name": "Nie mogę znaleźć mojego klucza.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Har du funnet billetten din?",
+			"name": "Czy znalazłeś swój bilet?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Vet du hvor nøkkelen hans er?",
+			"name": "Czy wiesz gdzie jest jego klucze?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Pengene hennes er borte.",
+			"name": "Jej pieniądze zniknęły.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Bestefaren vår er syk.",
+			"name": "Nasz dziadek jest chory.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Hvor er pappaen deres?",
+			"name": "Dzieci,gdzie jest Wasz dziadek.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Men der er jo foreldrene deres!",
+			"name": "O! Tam idą ich rodzice!",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Han har glemt brillene sine.",
+			"name": "On zapomniał swoich okularów.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Klokka hans er ødelagt.",
+			"name": "Jego zegar nie działa.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Fru Smith.Hvor er mannen din? ",
+			"name": "Gdzie jest Pani mąż Mrs Smith?",
 			"notices": [
 			]
 		}

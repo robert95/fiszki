@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Når åpner du i morgen",
+			"name": "O której jutro otwieracie?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Når stenger du i dag?",
+			"name": "O której dzisiaj zamykacie?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Kan jeg hjelpe deg?",
+			"name": "Czy mogę Ci pomóc.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Selger du frimerker?",
+			"name": "Czy sprzedajecie znaczki?",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Jeg ser etter sjampo",
+			"name": "Szukam szamponu.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Hvor mye koster denne?",
+			"name": "Ile to kosztuje?",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Hvor mye er den lampe i vinduet?",
+			"name": "Ile kosztuje ta lampa przy oknie?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Det er billig",
+			"name": "To jest tanie.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Det er dyrt",
+			"name": "To jest drogie.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Jeg tar denne/dette",
+			"name": "Wezmę to.",
 			"notices": [
 			]
 		}

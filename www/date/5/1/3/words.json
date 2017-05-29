@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Jeg vil bestille en flytur til Athen.",
+			"name": "Chciałem zamówić lot do Aten",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Flyet har blitt innstilt",
+			"name": "Lot został odwołany",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Vi beklager forsinkelsen",
+			"name": "Chcieliśmy przeprosić za opóźnienie",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Kan jeg se passet og ombordstigningskortet ditt, takk?",
+			"name": "Czy mogę prosić o Pański paszport i kartę pokładową",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Når lander vi?",
+			"name": "Kiedy będziemy lądować ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "En billett til Madrid.",
+			"name": "Poproszę bilet do Madrytu.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Jeg ønsker en vindusplass, ikke-røyker, takk.",
+			"name": "Poproszę miejsce przy oknie dla nie palących.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Hvilket spor går toget fra?",
+			"name": "Z którego peronu odjeżdża pociąg?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Må jeg bytte tog?",
+			"name": "Czy muszę zmieniać pociągi?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Når ankommer toget i Wien?",
+			"name": "Kiedy pociąg przyjedzie do Wiednia?",
 			"notices": [
 			]
 		}

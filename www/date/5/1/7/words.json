@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Hallo!dette er John.",
+			"name": "Halo! Z tej strony John.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Kan jeg få snakke med Bill, takk?",
+			"name": "Czy mogę rozmawiać z Billem?",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Kan jeg spørre hvem som ringer?",
+			"name": "Czy mogę zapytać kto dzwoni?",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Det er Maria her.",
+			"name": "Z tej strony Maria.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Hold linjen, takk",
+			"name": "Proszę poczekać.",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Jeg beklager, han er ikke tilgjengelig for øyeblikket",
+			"name": "Przykro, On jest zajęty w tym momencie.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Ønsker du å legge igjen en beskjed?",
+			"name": "Czy chciałby Pan zostawić wiadomość?",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Kan du be ham om å ringe meg?",
+			"name": "Czy możesz go poprosić żeby do mnie zadzwonił?",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Hva er ditt nummer?",
+			"name": "Jaki ma Pani numer?",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Jeg ringer tilbake senere",
+			"name": "Zadzwonię do Pani później",
 			"notices": [
 			]
 		}

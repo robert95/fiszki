@@ -1,61 +1,67 @@
 [
 		{
 			"id": 1,
-			"name": "Unnskyld meg, vet du hvor postkontoret er?",
+			"name": "Przepraszam, czy wiesz gdzie jest poczta?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "beklager, men jeg er ikke her fra",
+			"name": "Przepraszam, nie jestem z tąd.",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Du går i feil retning",
+			"name": "Idziesz w złym kierunku.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Gå ned der",
+			"name": "Idź tędy.",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Ta første til venstre",
+			"name": "Skręć w pierwszą w prawo",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Ta til høyre i krysset",
+			"name": "Skęć  w prawo na skrzyżowaniu.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "du vil passere et supermarked på venstre side",
+			"name": "Miniesz supermarket po lewej.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Fortsett i ytterligere en kilometer",
+			"name": "Kontynuuj przez kilometr.  ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Det er denne veien",
+			"name": "To w tą stronę.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "det vil være rett foran deg",
+			"name": "To będzie tuż przed Tobą. ",
+			"notices": [
+			]
+		},
+		{
+			"id": 11,
+			"name": "",
 			"notices": [
 			]
 		}

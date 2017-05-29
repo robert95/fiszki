@@ -118,11 +118,11 @@
 			<div class="support-word-in-speach">
 				<p class="text">Ta dam ta dam ta dam ta dam ta dam</p>
 			</div>
-			<div class="mic-container" ontouchstart="startVoiceToText();">
+			<div class="mic-container" ontouchstart="isOkWrap();">
 				<div>
-					<img src="img/5_try_again.png" class="cloud cloud-again pulse-btn">
+					<img src="img/5_next_task.png" class="cloud cloud-again">
 				</div>
-				<img src="img/mic.png">
+				<img src="img/next_new.png">
 			</div>
 			<div class="count-word-to-learn" id="mini-counter-wrap">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
@@ -133,11 +133,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="count-word-to-learn count-word-to-learn-in-this-sesion">
+			<!-- <div class="count-word-to-learn count-word-to-learn-in-this-sesion">
 				<div class="progess-btn-stan-in-session c100">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end-sesion"></span>
 				</div>
-			</div>
+			</div>-->
 			<section id="words-nav">
 				<div id="nav-words-container-thd">
 					<p id="nav-th-1">
@@ -306,8 +306,8 @@
 				<div id="wrap-ok-no">
 					<!--<img src="img/ok.png" class="good-bad" ontouchstart="isOk();"/>-->
 					<div id="progress-circle-in-cycle" >
-						<img src="img/5_next_task.png" class="cloud cloud-next-task">
-						<div id="progess-btn-stan-in-cycle" class="c100 p100" ontouchstart="isOkWrap();">
+						<img src="img/5_try_again.png" class="cloud cloud-next-task">
+						<div id="progess-btn-stan-in-cycle" class="c100 main-btn-in-learn p100" ontouchstart="startVoiceToText();">
 							<span id="progess-btn-per-in-cycle"></span>
 							<div class="slice">
 								<div class="bar"></div>
@@ -320,11 +320,10 @@
 				<div class="note-skip-btn">
 					<div class="note-btn" ontouchstart="showAllNote();">
 						<img src="img/5_remind.png" class="remind-img pulse-btn">
-						<p id="notebtn">Linkword</p>
+						<p id="notebtn"><span class="text">Linkword</span></p>
 					</div>
 					<div class="skip-btn only-mobile">
-						<img src="img/spiker.png" class="spiker-icon">
-						<p class="bad-bad" ontouchstart="isNo();" id="badBTN" >Repeat</p>
+						<p class="bad-bad" ontouchstart="isNo();" id="badBTN" ><span class="text">Repeat</span></p>
 					</div>
 				</div>
 			</section>
@@ -537,7 +536,7 @@
 		</section>
 		<section id="startDay">
 			<div class="count-word-to-learn">
-				<img src="img/5remTasks.png" class="remTasks pulse-btn">
+				<!--<img src="img/5remTasks.png" class="remTasks pulse-btn">-->
 				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end">21</span>
 					<div class="slice">
@@ -638,7 +637,7 @@
 			</div>		
 		</section>
 		<section id="new-category-choice" class="next-cat-left">
-			<div class="count-word-to-learn">
+			<!--<div class="count-word-to-learn">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end">48</span>
 					<div class="slice">
@@ -646,11 +645,11 @@
 						<div class="fill"></div>
 					</div>
 				</div>
-			</div>
-			<h1><span class="l2">E_Wybierz nowy<br>materiał</span><span class="l3">F_Wybierz nowy<br>materiał</span><span class="l4">N_Wybierz nowy<br>materiał</span><span class="l5">New lesson</span></h1>
+			</div>-->
+			<h1><span class="l2">E_Wybierz nowy<br>materiał</span><span class="l3">F_Wybierz nowy<br>materiał</span><span class="l4">N_Wybierz nowy<br>materiał</span><span class="l5">Choose your new lesson</span></h1>
 			<h1 id="suggest-new-category">Zaimki</h1>
 			<div id="cont-l-w-i-s-c">
-				<p><span class="l2">E_Lista słów w tej kategorii:</span><span class="l3">F_Lista słów w tej kategorii:</span><span class="l4">N_Lista słów w tej kategorii:</span><span class="l5">Phrases in this lesson:</span></p>
+				<!--<p><span class="l2">E_Lista słów w tej kategorii:</span><span class="l3">F_Lista słów w tej kategorii:</span><span class="l4">N_Lista słów w tej kategorii:</span><span class="l5">Phrases in this lesson:</span></p>-->
 				<div id="list-word-in-sug-cat">
 				</div>
 			</div>
@@ -660,7 +659,7 @@
 					<!--<img src="img/okNoP.png" class="good-bad" onclick="setSuggestedCatAsNew();"/>-->
 					<div id="progress-circle-in-cycle-ncat" >
 						<div id="progess-btn-stan-in-cycle-ncat" class="c100 p0" ontouchstart="setSuggestedCatAsNew();">
-							<span id="progess-btn-per-in-cycle-ncat"></span>
+							<span id="progess-btn-per-in-cycle-ncat">START<br>LEARNING</span>
 							<div class="slice">
 								<div class="bar"></div>
 								<div class="fill"></div>
@@ -670,10 +669,10 @@
 				</div>	
 				<div class="note-skip-btn">
 					<div class="note-btn cat-btn-skip" ontouchstart="startSetNewCategory();">
-						<p>Browse</p>
+						<p><span class="text"><img src="img/browse_icon.png">Browse</span></p>
 					</div>
 					<div class="skip-btn" ontouchstart="getNextSugCat();">
-						<p>Next ></p>
+						<p><span class="text">Next<img src="img/next_icon.png"></span></p>
 					</div>
 				</div>	
 			</div>	
@@ -1293,7 +1292,7 @@
 			}
 			
 			function isOkBiggerField(){
-				isOkWrap();
+				startVoiceToText();
 				$("#progess-btn-stan-in-cycle").addClass('hover-progres-round');
 				setTimeout(function(){$("#progess-btn-stan-in-cycle").removeClass('hover-progres-round');}, 150);
 			}

@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "Hva liker du å gjøre på i fritiden?",
+			"name": "Co lubisz robić w wolnym czasie.",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "Jeg liker å se på TV.",
+			"name": "Lubię oglądać telewizję. ",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "Jeg liker ikke puber.",
+			"name": "Nie lubię barów.",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "Jeg liker virkelig å danse.",
+			"name": "Bardzo lubię tańczyć!",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Jeg kan ikke fordra fotball.",
+			"name": "Nie znoszę futbolu. ",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Jeg elsker kino.",
+			"name": "Kocham kino.",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Jeg hater å handle.",
+			"name": "Nie cierpię zakupów.",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Jeg er interessert i fotografi.",
+			"name": "Jestem zainteresowany fotografią.",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Jeg er ikke interessert i fotball.",
+			"name": "Nie interesuję się futbolem.",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Jeg liker å reise.",
+			"name": "Lubię podróżować.",
 			"notices": [
 			]
 		}

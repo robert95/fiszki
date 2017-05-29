@@ -836,6 +836,14 @@ textarea:focus, textarea:hover, textarea:active{
 	-o-transition: 0s;
 	-ms-transition: 0s;
 }
+.c100.main-btn-in-learn::after{
+	background: url("../img/ok_mic.png");
+	background-size: 100% 100%;
+}
+#progess-btn-stan-in-cycle-ncat.c100::after{
+	background: url("../img/okEmpty.png");
+	background-size: 100% 100%;
+}
 .hoverBTN::after{
 	background: url("../img/okH.png") !important;
 	background-size: cover !important;
@@ -959,12 +967,42 @@ section{
 	font-size: 21px;
 	font-weight: bold;
 }
+.note-skip-btn  .note-btn p span.text{
+    margin-top: -29px;
+    margin-left: -10px;
+    padding: 6px 15px;
+    width: auto;
+}
+#new-category-choice .note-skip-btn  .note-btn p span.text{
+    margin-top: 5px;
+}
+.note-skip-btn  .note-btn p span.text img{
+	display: inline;
+	height: 14px;
+	width: auto !important;
+	margin-right: 3px;
+}
 .note-skip-btn  .skip-btn p{
 	padding-right: 15px;
     text-align: right;
 	margin-top: 48px;
 	font-size: 21px;
 	font-weight: bold;
+}
+.note-skip-btn  .skip-btn p span.text{
+	margin-top: -29px;
+	margin-right: -10px;
+	padding: 6px 25px;
+	width: auto;
+}
+#new-category-choice .note-skip-btn  .skip-btn p span.text{
+	padding: 6px 29px;
+}
+.note-skip-btn  .skip-btn p span.text img{
+	display: inline;
+	height: 14px;
+	width: auto !important;
+	margin-left: 5px;
 }
 #progess-btn-stan-in-cycle, #progess-btn-stan-in-cycle-ncat{
 	z-index: 100;
@@ -979,7 +1017,7 @@ section{
 	margin-right: auto;
 	margin-left: auto;
 }
-#new-category-choice h1{
+#new-category-choice #suggest-new-category{
 	font-size: 21px !important;
 }
 #new-category-choice h1:first-of-type{
@@ -1042,19 +1080,19 @@ section{
 	padding-bottom: 0px !important;
 }
 #new-cat-ok-no-panel .note-skip-btn p{
-	margin-top: 56px !important;
+	margin-top: 34px !important;
 	font-size: 19px !important;
 	text-align: center;
 }
 #new-cat-ok-no-panel .note-btn p{
 	padding-left: 0 !important;
 	text-align: left;
-	margin-left: 10px !important;
-	margin-top: 56px !important;
+	margin-left: 15px !important;
+	margin-top: 34px !important;
 }
 #new-cat-ok-no-panel .skip-btn p{
 	padding-right: 0 !important;
-	margin-right: 10px !important;
+	margin-right: 15px !important;
 	text-align: right;
 }
 #new-cat-ok-no-panel img{
@@ -1185,7 +1223,8 @@ section{
 	transform: scale(0.45);
 	-webkit-transform: scale(0.45);
 	bottom: 40px;
-	right: 3%;
+	/*right: 3%;*/
+	left: -6%;
 }
 #mini-counter-wrap{
 	/*bottom: 110px !important; */
@@ -1611,12 +1650,14 @@ textarea, textarea[placeholder]{
 	left: 5px;
 	text-align: left;
 	width: 20%;
+	display: none;
 }
 .myCall-icon img{
 	width: 100%;
 }
 .myCall-icon-before-ad{
 	text-align: center;
+	display: none;
 }
 .myCall-icon-before-ad img{
 	width: 30%;
@@ -1757,7 +1798,7 @@ textarea, textarea[placeholder]{
 }
 #list-word-in-sug-cat{
 	display: block;
-	height: 320px;
+	height: 300px;
 	overflow: scroll;
 	margin-top: 20px;
 }
@@ -1865,7 +1906,8 @@ textarea, textarea[placeholder]{
 .mic-container{
 	position: absolute;
 	bottom: 94px;
-	left: 11%;
+	/*left: 11%;*/
+	right: 10%;
 	width: 51px;
 	z-index: 20000000;
 }
@@ -1891,7 +1933,7 @@ h3{
 .cloud-again{
 	position: absolute;
 	bottom: -41px;
-	left: -41%;
+	left: -35%;
 	width: 174%;
 	z-index: 20000001;
 	display: none;
@@ -1910,6 +1952,15 @@ h3{
 }
 .support-word-in-speach p{
 	font-size: 25px !important;
+}
+#progess-btn-per-in-cycle-ncat{
+	color: white;
+    width: 100px;
+    display: block;
+    word-wrap: normal;
+    font-size: 15px;
+    line-height: 1.5;
+    padding-top: 25px;
 }
 @media (min-width : 500px) {
 	.remind-img {

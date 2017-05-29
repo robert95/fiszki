@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "snakker du engelsk?",
+			"name": "Czy mówisz po angielsku?",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "jeg snakker ikke engelsk",
+			"name": "Nie mówię po angielsku",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "vennligst snakk saktere",
+			"name": "Proszę mów trochę wolniej",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "kan du vennligst repetere det?",
+			"name": "Czy możesz to powtórzyć ",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "Jeg forstår",
+			"name": "Rozumiem",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "Jeg forstår ikke",
+			"name": "Nie rozumiem",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "Jeg kan godt forstå dem.",
+			"name": "Potrafię ich dobrze zrozumieć ",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "Men å snakke og skrive er vanskelig.",
+			"name": "Ale mówienie i pisanie jest trudne",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "Jeg gjør mange feil.",
+			"name": "Nadal robię wiele błędów",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "Hvor har du lært spansk?",
+			"name": "Gdzie nauczyłeś się Hiszpańskiego",
 			"notices": [
 			]
 		}

@@ -1,61 +1,61 @@
 [
 		{
 			"id": 1,
-			"name": "hei/ha det",
+			"name": "hi/bye",
 			"notices": [
 			]
 		},
 		{
 			"id": 2,
-			"name": "god morgen",
+			"name": "dzień dobry",
 			"notices": [
 			]
 		},
 		{
 			"id": 3,
-			"name": "ha det bra ",
+			"name": "do widzenia",
 			"notices": [
 			]
 		},
 		{
 			"id": 4,
-			"name": "hallo/vi sees!",
+			"name": "Cześć/ Do zobaczenia ",
 			"notices": [
 			]
 		},
 		{
 			"id": 5,
-			"name": "beklager/det går bra",
+			"name": "Przepraszam/ Nic się nie stało",
 			"notices": [
 			]
 		},
 		{
 			"id": 6,
-			"name": "ja/nei",
+			"name": "Tak / Nie",
 			"notices": [
 			]
 		},
 		{
 			"id": 7,
-			"name": "vær så snill/takk",
+			"name": "Proszę/ Dziękuję",
 			"notices": [
 			]
 		},
 		{
 			"id": 8,
-			"name": "tusen takk",
+			"name": "Dziękuję bardzo ",
 			"notices": [
 			]
 		},
 		{
 			"id": 9,
-			"name": "vær så god",
+			"name": "Nie ma za co",
 			"notices": [
 			]
 		},
 		{
 			"id": 10,
-			"name": "bare hyggelig",
+			"name": "nie ma o czym mówić",
 			"notices": [
 			]
 		}
