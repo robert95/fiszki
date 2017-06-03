@@ -1349,7 +1349,6 @@ function setAntyNaparzankaToTrue(){
 }
 
 function nextStep(){
-	alert(nbMethod);
 	//volumeTest();
 	antyNaparzanka = true;
 	hideBars();
@@ -3201,6 +3200,7 @@ function startVoiceToText(){
 }
 
 function startRecognize(){
+	alert(nbMethod);
 	//$(".support-word-in-speach").show();
 	
 	var langText = "en-US"
