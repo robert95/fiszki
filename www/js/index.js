@@ -283,7 +283,8 @@ function gotFileEntryN2(fileEntry) {
 }
 
 function gotFileWriterN2(writer) {
-	writer.onwrite = function(evt) {
+	writer.onwriteend = function(evt) {
+		alert("jestem");
 		renameFile(srcSaveTmp,'',srcSave, renameSuccessSaveEnd);
 	};
 	
@@ -293,7 +294,7 @@ function gotFileWriterN2(writer) {
 }
 
 function renameSuccessSaveEnd(){
-	//alert("koniec");
+	alert("koniec");
 }
 
 function failN(error) {
