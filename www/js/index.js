@@ -283,9 +283,15 @@ function gotFileEntryN2(fileEntry) {
 }
 
 function gotFileWriterN2(writer) {
+	/*
 	writer.onwriteend = function(evt) {
 		alert("jestem");
 		renameFile(srcSaveTmp,'',srcSave, renameSuccessSaveEnd);
+	};
+	*/
+	writer.onwriteend = function (e) {
+		// for real-world usage, you might consider passing a success callback
+		alert('Write of file completed.');
 	};
 	
 	//alert(JSON.stringify(datesJSON));
