@@ -275,7 +275,7 @@ function saveFileOld(){
 }
 
 function gotFSN2(fileSystem) {
-	fileSystem.root.getFile(srcSaveTmp, {create: false}, gotFileEntryN2, failN);
+	fileSystem.root.getFile(srcSaveTmp, {create: true}, gotFileEntryN2, failN);
 }
 
 function gotFileEntryN2(fileEntry) {
@@ -3269,7 +3269,7 @@ function compareRecognizedText(text){
 		$(".cloud-next-task").show();
 		$(".remind-img").hide();
 		countOfWrongRecognized++;
-		if(countOfWrongRecognized == 2){
+		if(countOfWrongRecognized == 3){
 			countOfWrongRecognized = 0;
 			showRecognizedAlert();
 		}
