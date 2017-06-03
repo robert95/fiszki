@@ -690,7 +690,7 @@ textarea:focus, textarea:hover, textarea:active{
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
 } 
-#tut-ok-no-panel, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel{
+#tut-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel{
 	padding-bottom: 20px !important;    
 }
 #tut-ok-no-panel{
@@ -767,13 +767,16 @@ textarea:focus, textarea:hover, textarea:active{
 	text-align: right;
 	color: white;
 	font-size: 30px;
-	margin: 50px;
+	margin: 50px 0;
 }
 #name-next-cat, #invite-to-ads{
 	text-align: center;
 	color: white;
 	font-size: 30px;
 	margin-top: 18%;
+}
+#name-next-cat{
+	min-height: 75px;
 }
 #invite-to-ads{
     margin-top: 50px;
@@ -795,8 +798,8 @@ textarea:focus, textarea:hover, textarea:active{
 	color: white;
 }
 #end-cat .before-start-info{
-	margin: 33% auto 16%;
-	margin-top: -25px;
+	margin: 18% auto 16%;
+	font-size: 16px;
 }
 #btn-next-cat{
 	text-align: center;
@@ -840,7 +843,7 @@ textarea:focus, textarea:hover, textarea:active{
 	background: url("../img/ok_mic.png");
 	background-size: 100% 100%;
 }
-#progess-btn-stan-in-cycle-ncat.c100::after{
+#progess-btn-stan-in-cycle-ncat.c100::after, #progess-btn-stan-in-cycle-welcome.c100::after{
 	background: url("../img/okEmpty.png");
 	background-size: 100% 100%;
 }
@@ -1004,7 +1007,7 @@ section{
 	width: auto !important;
 	margin-left: 5px;
 }
-#progess-btn-stan-in-cycle, #progess-btn-stan-in-cycle-ncat{
+#progess-btn-stan-in-cycle, #progess-btn-stan-in-cycle-ncat, #progess-btn-stan-in-cycle-welcome {
 	z-index: 100;
 }
 #startDay h1, #start-next-cat h1, #end-cat h1, #new-category-choice h1{
@@ -1071,6 +1074,7 @@ section{
 }
 #cont-l-w-i-s-c{
 	color: white;
+	position: relative;
 }
 #cont-l-w-i-s-c  > p{
 	margin: 5px 0px 10px 0px;
@@ -1156,7 +1160,7 @@ section{
 	overflow: auto;
 }
 #menu > ul > li:first-of-type{
-	margin: 37px auto 0 auto;
+	margin: 45px auto 0 auto;
 }
 #menu #mE{
 	font-size: 48px;
@@ -1799,6 +1803,7 @@ textarea, textarea[placeholder]{
 #list-word-in-sug-cat{
 	display: block;
 	height: 300px;
+	height: calc(100vh - 280px);
 	overflow: scroll;
 	margin-top: 20px;
 }
@@ -1819,28 +1824,47 @@ textarea, textarea[placeholder]{
 	margin-top: 4px;
 	font-weight: 200;
 }
-.first-page-main-text{
-	font-weight: 600;
-	font-size: 28px;
+.first-page-main-text, .main-text-repetition, .main-text-end-panel-1, .main-text-end-panel-2{
+	font-weight: 400;
+	font-size: 22px;
 	text-align: center;
-	width: 90%;
-	margin: 75px auto 0 auto;
 	color: white;
-}
-.timeToEndTodayWrap{
-	margin-top: 18px;
-	display: inline-block;
+	margin: 27% 44px 0;
 	border: 1px solid white;
 	padding: 10px 21px;
-	border-radius: 8px;
+	border-radius: 12px;
+}
+.main-text-repetition{
+	margin-top: -10px;
+}
+.main-text-end-repetition{
+    padding: 21px;
+    margin-top: 32%;
+}
+.main-text-end-panel-1{
+	margin: 15% 44px 0;
+}
+.main-text-end-panel-2{
+	margin: 10% 44px 0;
+}
+.timeToEndTodayWrap{    
+	margin-top: 8px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 30px;
 }
 .remTasks{
 	position: absolute;
-    top: -120px;
-	left: -319px;
-    width: 424px;
+	top: -96px;
+	left: 18px;
+	width: 344px;
 }
-
+.cloud-seen-you-soon{
+	position: absolute;
+	top: -53px;
+	left: 46%;
+	width: 43% !important;
+}
 .end-panel-info-box .text{
 	padding-right: 15px;
 	width: 85%;
@@ -1943,6 +1967,12 @@ h3{
 	position: relative;
 	top: 25px;
 }
+.cloud-browse{
+	position: absolute;
+	left: -49px;
+	top: -48px;
+	width: 207%;
+}
 .support-word-in-speach{
 	display: none;
 	position: absolute;
@@ -1953,7 +1983,7 @@ h3{
 .support-word-in-speach p{
 	font-size: 25px !important;
 }
-#progess-btn-per-in-cycle-ncat{
+#progess-btn-per-in-cycle-ncat, #progess-btn-per-in-cycle-welcome{
 	color: white;
     width: 100px;
     display: block;
@@ -1961,6 +1991,12 @@ h3{
     font-size: 15px;
     line-height: 1.5;
     padding-top: 25px;
+}
+.phrases-cloud{
+	position: absolute;
+	width: 30%;
+	left: 3%;
+	bottom: -67px;
 }
 @media (min-width : 500px) {
 	.remind-img {
@@ -2015,7 +2051,7 @@ h3{
 	}
 	#main-text-next-cat {
 		font-size: 46px;
-		margin: 75px;
+		margin: 75px 0;
 	}
 	.before-start-info {
 		font-size: 28px;

@@ -34,6 +34,7 @@
 		<input type="file" id="readP">
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
+			<p class="img-close-cont" ontouchstart="hideMenu();"><img src="img/back2.png"></p>
 			<ul>
 				<li id="m9" class="text"><span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">Show all lessons</span></li>
 				<li id="m10" class="text">
@@ -119,9 +120,9 @@
 				<p class="text">Ta dam ta dam ta dam ta dam ta dam</p>
 			</div>
 			<div class="mic-container" ontouchstart="isOkWrap();">
-				<div>
+				<!--<div>
 					<img src="img/5_next_task.png" class="cloud cloud-again">
-				</div>
+				</div>-->
 				<img src="img/next_new.png">
 			</div>
 			<div class="count-word-to-learn" id="mini-counter-wrap">
@@ -488,10 +489,21 @@
 			</div>	
 		</section>
 		<section id="start-next-cat" class="next-cat-left">
-			<h1><span class="l2">E_Następna powtórka</span><span class="l3">F_Następna powtórka</span><span class="l4">N_Następna powtórka</span><span class="l5">Next repetition</span></h1>
-			<p id="main-text-next-cat">1/5</p>
+			<h1>
+				<span class="l2">E_Następna powtórka</span>
+				<span class="l3">F_Następna powtórka</span>
+				<span class="l4">N_Następna powtórka</span>
+				<span class="l5">Repetition</span>
+				<span id="main-text-next-cat">1/5</span>
+			</h1>
 			<p id="name-next-cat"></p>
-			<!--<p class="before-start-info"><span class="l2">*E_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l3">F_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l4">N_Przed rozpoczęciem nauki upewnij się że znasz reguły gramatyczne tej kategorii.</span><span class="l5">Remaining tasks</span></p>-->
+			<p class="main-text-repetition">
+				<span class="l2">E_Zaplanowana liczba zadań:</span>
+				<span class="l3">F_Zaplanowana liczba zadań:</span>
+				<span class="l4">N_Zaplanowana liczba zadań:</span>
+				<span class="l5">Approximate time required to complete this part:<br></span> 
+				<span class="timeToEndTodayWrap"><span>5</span> min<span>
+			</p>
 			<div class="count-word-to-learn" id="next-repeat-mini-counter-wrap">
 				<img src="img/5remTasks.png" class="remTasks pulse-btn">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
@@ -515,13 +527,32 @@
 			</div>
 		</section>
 		<section id="end-cat" class="next-cat-left">
-			<h1><span class="l2">E_Gratulacje ukończyłeś powtórkę</span><span class="l3">F_Gratulacje ukończyłeś powtórkę</span><span class="l4">N_Gratulacje ukończyłeś powtórkę</span><span class="l5">Congratulations<br>Repetition completed!</span> <span id="main-text-next-cat-end">1/5</span></h1>
-			<p id="invite-to-ads"><span class="l2">E_Zapraszamy na krótką reklamę</span><span class="l3">F_Zapraszamy na krótką reklamę</span><span class="l4">N_Zapraszamy na krótką reklamę</span><span class="l5">Time spent talking today: <span class="timeLernedToday"></span>/<span class="allTimeToday">5</span>min</span></p>
+			<h1>
+				<span class="l2">E_Gratulacje ukończyłeś powtórkę</span>
+				<span class="l3">F_Gratulacje ukończyłeś powtórkę</span>
+				<span class="l4">N_Gratulacje ukończyłeś powtórkę</span>
+				<span class="l5">Repetition
+					<span id="main-text-next-cat-end">1/5</span><br>
+					completed
+				</span>
+			</h1>
+			<p class="main-text-repetition main-text-end-repetition">
+				<span class="l2">E_Zaplanowana liczba zadań:</span>
+				<span class="l3">F_Zaplanowana liczba zadań:</span>
+				<span class="l4">N_Zaplanowana liczba zadań:</span>
+				<span class="l5">Enjoy a little moment of relax watching advertisment<br></span> 
+			</p>
+			<p class="before-start-info" ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';">
+				<span class="l2">E_Zapraszamy na krótką reklamę</span>
+				<span class="l3">F_Zapraszamy na krótką reklamę</span>
+				<span class="l4">N_Zapraszamy na krótką reklamę</span>
+				<span class="l5">Don't want to see ads?<br>Get a premium version <a href="market://details?id=com.gameloft.android.ANMP.GloftA8HM"><u>here.</u></a></span>
+			</p>
 			<div class="myCall-icon-before-ad mycalllink">
 				<img class="mycalllink" src="img/mycall_icon.png">
 			</div>
-			<!--<p class="before-start-info"><span class="l2"> <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*F_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l4">*N_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l5">*Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>-->
-			<p class="before-start-info"><span class="l2"> <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*F_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l4">*N_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l5">Enjoy a little moment of relax<br>watching ads.</span></p>
+			<!--<p class="before-start-info"><span class="l2"> <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*F_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l4">*N_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l5">*Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span></p>
+			<p class="before-start-info"><span class="l2"> <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l3">*F_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';" href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l4">*N_Aby wyłączyć reklamy oraz otrzymać 100 dodatkowych kategorii <a ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';"  href="market://details?id=com.gameloft.android.ANMP.GloftA8HM">kliknij tutaj</a></span><span class="l5">Enjoy a little moment of relax<br>watching ads.</span></p>-->
 			<div id="btn-next-cat-end">
 				<div id="progress-circle-end">
 					<div id="progess-btn-stan-end" class="c100 p0" ontouchstart="nextPack();">
@@ -544,6 +575,12 @@
 						<div class="fill"></div>
 					</div>
 				</div>
+			</div>			
+			<div class="mic-container" ontouchstart="showAllCats();">
+				<div>
+					<img src="img/5_browse_cloud.png" class="cloud cloud-browse">
+				</div>
+				<img src="img/browse_btn.png">
 			</div>
 			<h1><span class="l2">E_Welcome to <br>lesson</span><span class="l3">F_Welcome to <br>lesson</span><span class="l4">N_Welcome to <br>lesson</span><span class="l5">Welcome to <br>lesson</span> <span id="nrDayFiled"></span>/200</h1>
 			<p class="first-page-main-text">
@@ -558,9 +595,21 @@
 			<p class="you-start-learned2"><span class="l2">E_Uczysz się z nami:</span><span class="l3">F_Uczysz się z nami:</span><span class="l4">N_Uczysz się z nami:</span><span class="l5">Learned phrases:</span> <span class="allWords"></span>/2000</p>-->
 			<!--<p class="goToReverse"><span class="l2">E_Przejdź do powtórek</span><span class="l3">F_Przejdź do powtórek</span><span class="l4">N_Przejdź do powtórek</span><span class="l5">Remaining tasks</span></p>-->
 			<div id="start-day-ok-no-panel">
+				<!--
 				<div id="start-day-wrap-ok-no">
 					<img src="img/okNoEmptyP.png" class="good-bad" ontouchstart="startLesson();"/>
-					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
+				</div>
+				-->
+				<div>
+					<div>
+						<div id="progess-btn-stan-in-cycle-welcome" class="c100 p0" onclick="startLesson();">
+							<span id="progess-btn-per-in-cycle-welcome">START<br>LEARNING</span>
+							<div class="slice">
+								<div class="bar"></div>
+								<div class="fill"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>		
 			<div class="myCall-icon mycalllink">
@@ -580,6 +629,7 @@
 			</div>			
 		</section>
 		<section id="end-panel" class="next-cat-left">
+			<!--
 			<div class="count-word-to-learn">
 				<div class="progess-btn-stan-in-cycle-2 c100 p0">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end">0</span>
@@ -589,7 +639,40 @@
 					</div>
 				</div>
 			</div>
-			<h1><span class="l2">E_GRATULUJEMY!</span><span class="l3">F_GRATULUJEMY!</span><span class="l4">N_GRATULUJEMY!</span><span class="l5">Lesson <span id="end-nr-lesson"></span>/200</span><br><span class="l2">E_Ukończyłeś lekcję</span><span class="l3">F_Ukończyłeś lekcję</span><span class="l4">N_Ukończyłeś lekcję</span><span class="l5">completed</span></h1>
+			-->
+			<h1>
+				<span class="l2">E_GRATULUJEMY!</span>
+				<span class="l3">F_GRATULUJEMY!</span>
+				<span class="l4">N_GRATULUJEMY!</span>
+				<span class="l5">
+					Lesson 
+					<span id="end-nr-lesson"></span>/200
+				</span>
+				<br>
+				<span class="l2">E_Ukończyłeś lekcję</span>
+				<span class="l3">F_Ukończyłeś lekcję</span>
+				<span class="l4">N_Ukończyłeś lekcję</span>
+				<span class="l5">completed</span>
+			</h1>
+			<p class="main-text-end-panel-1">
+				<span class="l2">E_Zaplanowana liczba zadań:</span>
+				<span class="l3">F_Zaplanowana liczba zadań:</span>
+				<span class="l4">N_Zaplanowana liczba zadań:</span>
+				<span class="l5">Speaking in total<br></span> 
+				<span class="timeToEndTodayWrap">
+					<span class="countKMLearned"></span>h <span class="countMinLearned"></span>min/80h
+				</span>
+			</p>
+			<p class="main-text-end-panel-2">
+				<span class="l2">E_Zaplanowana liczba zadań:</span>
+				<span class="l3">F_Zaplanowana liczba zadań:</span>
+				<span class="l4">N_Zaplanowana liczba zadań:</span>
+				<span class="l5">Learned phrases<br></span> 
+				<span class="timeToEndTodayWrap">
+					<span class="timeToEndTodayWrap allWords"></span>/2000
+				</span> 
+			</p>
+			<!--
 			<div class="end-panel-info-box">
 				<h1>
 					<span class="l2">E_GRATULUJEMY!</span>
@@ -631,6 +714,7 @@
 			-->
 			<div id="end-day-ok-no-panel">
 				<div id="end-day-wrap-ok-no">
+					<img src="img/5_seen_you_soon.png" class="cloud-seen-you-soon">
 					<img src="img/off.png" class="good-bad off-btn" ontouchstart="navigator.app.exitApp();"/>
 					<!--<img src="img/no.png" class="bad-bad" id="tut-badBTN" ontouchstart="isNoTut();"/>-->
 				</div>
@@ -646,12 +730,18 @@
 					</div>
 				</div>
 			</div>-->
-			<h1><span class="l2">E_Wybierz nowy<br>materiał</span><span class="l3">F_Wybierz nowy<br>materiał</span><span class="l4">N_Wybierz nowy<br>materiał</span><span class="l5">Choose your new lesson</span></h1>
+			<h1>
+				<span class="l2">E_Wybierz nowy<br>materiał</span>
+				<span class="l3">F_Wybierz nowy<br>materiał</span>
+				<span class="l4">N_Wybierz nowy<br>materiał</span>
+				<span class="l5">New lesson</span>
+			</h1>
 			<h1 id="suggest-new-category">Zaimki</h1>
 			<div id="cont-l-w-i-s-c">
 				<!--<p><span class="l2">E_Lista słów w tej kategorii:</span><span class="l3">F_Lista słów w tej kategorii:</span><span class="l4">N_Lista słów w tej kategorii:</span><span class="l5">Phrases in this lesson:</span></p>-->
 				<div id="list-word-in-sug-cat">
 				</div>
+				<img src="img/phrases.png" class="phrases-cloud">
 			</div>
 		<!--<button class="text" onclick="startSetNewCategory();">Wybór ręczny</button>-->
 			<div id="new-cat-ok-no-panel">
@@ -672,7 +762,7 @@
 						<p><span class="text"><img src="img/browse_icon.png">Browse</span></p>
 					</div>
 					<div class="skip-btn" ontouchstart="getNextSugCat();">
-						<p><span class="text">Next<img src="img/next_icon.png"></span></p>
+						<p><span class="text">Skip<img src="img/next_icon.png"></span></p>
 					</div>
 				</div>	
 			</div>	
@@ -1117,8 +1207,11 @@
 				console.log($("#list-word-in-sug-cat").html());
 			});
 			$("#mE").click(function(){
-				$("#menu").removeClass('showmenu');
+				hideMenu();
 			});
+			function hideMenu(){
+				$("#menu").removeClass('showmenu');
+			}
 			$("#m1").click(function(){
 				saveProgressInFile();
 				setTimeout(function(){
@@ -1414,6 +1507,16 @@
 				$("#show-all-cats-word-list").show();
 				setTimeout(function(){
 					$("#show-all-cats-word-list").removeClass('goLeft');
+				}, 300);
+			}
+		</script>
+		<script>
+			function showAllCats(){
+				$("#show-all-cats").show();
+				$("#show-all-cats-cats").show();
+				runList();
+				setTimeout(function(){
+					$("#show-all-cats").removeClass('goLeft');
 				}, 300);
 			}
 		</script>

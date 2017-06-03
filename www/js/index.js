@@ -255,12 +255,27 @@ function readAsText2(file) {
 /* END READ FILE */
 
 /* SAVE FILE */
+
+var srcSaveTmp = false;
+var srcSaveOld = false;
+
 function saveFile(){
+	srcSaveTmp = path() + "save_tmp.json";
+	srcSaveOld = path() + "save_old.json";
+	//renameFile(srcSave,'',srcSaveOld, renameSuccessSave);
+	saveFileOld();
+}
+
+function renameSuccessSave(){
+	saveFileOld();
+}
+
+function saveFileOld(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN2, failN);
 }
 
 function gotFSN2(fileSystem) {
-	fileSystem.root.getFile(srcSave, {create: false}, gotFileEntryN2, failN);
+	fileSystem.root.getFile(srcSaveTmp, {create: false}, gotFileEntryN2, failN);
 }
 
 function gotFileEntryN2(fileEntry) {
@@ -269,12 +284,16 @@ function gotFileEntryN2(fileEntry) {
 
 function gotFileWriterN2(writer) {
 	writer.onwrite = function(evt) {
-		console.log("write success");
+		renameFile(srcSaveTmp,'',srcSave, renameSuccessSaveEnd);
 	};
 	
 	//alert(JSON.stringify(datesJSON));
 	writer.write(JSON.stringify(datesJSON));
 	writer.abort();
+}
+
+function renameSuccessSaveEnd(){
+	//alert("koniec");
 }
 
 function failN(error) {
@@ -354,8 +373,8 @@ var toLearnJSON = [];
 
 /*
 var langJSON = JSON.parse('{"lang":5}');
-var dayJSON = JSON.parse('{"day": 200, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"},{"subid":3,"catid":1,"start":"26"}]');
+var dayJSON = JSON.parse('{"day": 2, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
 */
 var resLang = false;
 var res = false;
@@ -371,7 +390,7 @@ var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ];
 var countWord = 0;
 var countCatsToLearn = 0; //without repeatitions
 var countCatsToLearnToday = 1; //with repeatitions
-var countWordsToLearn = wordsInOneCat*2 + (wordsInOneCat*3-2)//wordsInOneCat*2; //2 cykle w nowej kategorii po 10 słów
+var countWordsToLearn = wordsInOneCat + (wordsInOneCat*2)//wordsInOneCat*2; //2 cykle w nowej kategorii po 10 słów
 var learnedWords = 0;
 var learnedWordsInCat = 0;
 var countWordsToLearnInThisCycle = 0;
@@ -480,8 +499,8 @@ function getDay(){
 				countCatsToLearn++;
 				countOfCycle++;
 				countOfCycle++;
+				countWordsToLearn += wordsInOneCat;
 				countWordsToLearn += wordsInOneCat*2;
-				countWordsToLearn += wordsInOneCat*3-2;
 				setSuggestedCat(pack.catid, pack.subid);
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -491,7 +510,7 @@ function getDay(){
 				countCatsToLearn++;
 				countOfCycle++;
 				countOfCycle++;
-				countWordsToLearn += wordsInOneCat*3-2;
+				countWordsToLearn += wordsInOneCat*2;
 				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -501,7 +520,7 @@ function getDay(){
 				countCatsToLearn++;
 				countOfCycle++;
 				countOfCycle++;
-				countWordsToLearn += wordsInOneCat*3-2;
+				countWordsToLearn += wordsInOneCat*2;
 				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -512,7 +531,7 @@ function getDay(){
 				countCatsToLearn++;
 				countOfCycle++;
 				countOfCycle++;
-				countWordsToLearn += wordsInOneCat*3-2;
+				countWordsToLearn += wordsInOneCat*2;
 				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -526,7 +545,7 @@ function getDay(){
 				return allUsedCats.indexOf(item) == pos;
 			})
 			if(allCats.sort().toString() == uniqueallUsedCats.sort().toString()){
-				countWordsToLearn -= wordsInOneCat*2 + (wordsInOneCat*3-2);
+				countWordsToLearn -= wordsInOneCat + (wordsInOneCat*2);
 				countOfCycle -= 2;
 				$("#countWordsToLearn").text(dayJSON.day-1);
 				$(".equivalentLessons").text(dayJSON.day-1); //usunąć
@@ -544,7 +563,8 @@ function getDay(){
 				$(".allTimeToday").text(countCatsToLearnToday * minCat);
 			}
 		}, 150);
-	$("body").addClass('theme'+dayJSON.theme);*/
+	$("body").addClass('theme'+dayJSON.theme);
+	*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -613,8 +633,8 @@ function getToLearnHelper(){
 				countCatsToLearn++;
 				countOfCycle++;
 				countOfCycle++;
+				countWordsToLearn += wordsInOneCat;
 				countWordsToLearn += wordsInOneCat*2;
-				countWordsToLearn += wordsInOneCat*3-2;
 				setSuggestedCat(pack.catid, pack.subid);
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -624,7 +644,7 @@ function getToLearnHelper(){
 				countCatsToLearn++;
 				countOfCycle++;
 				countOfCycle++;
-				countWordsToLearn += wordsInOneCat*3-2;
+				countWordsToLearn += wordsInOneCat*2;
 				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -634,7 +654,7 @@ function getToLearnHelper(){
 				countCatsToLearn++;
 				countOfCycle++;
 				countOfCycle++;
-				countWordsToLearn += wordsInOneCat*3-2;
+				countWordsToLearn += wordsInOneCat*2;
 				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -645,7 +665,7 @@ function getToLearnHelper(){
 				countCatsToLearn++;
 				countOfCycle++;
 				countOfCycle++;
-				countWordsToLearn += wordsInOneCat*3-2;
+				countWordsToLearn += wordsInOneCat*2;
 				countWordsToLearn += wordsInOneCat;
 				inProgressCat.push(pack.catid + "/" + pack.subid);
 				break;
@@ -667,7 +687,7 @@ function getToLearnHelper(){
 				return allUsedCats.indexOf(item) == pos;
 			})
 			if(allCats.sort().toString() == uniqueallUsedCats.sort().toString()){
-				countWordsToLearn -= wordsInOneCat*2 + (wordsInOneCat*3-2);
+				countWordsToLearn -= wordsInOneCat + (wordsInOneCat*2);
 				countOfCycle -= 2;
 				$("#countWordsToLearn").text(dayJSON.day-1);
 				$(".equivalentLessons").text(dayJSON.day-1); //usunąć
@@ -2061,7 +2081,7 @@ function packControler(){
 				clearDraggableField();
 				isRepeatCycle = false;
 				showAd();
-				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*3 - 2;
+				countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
 				learnedWordsInCat = 0;
 				prepareGlobalForCycle(1);
 				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
@@ -2076,7 +2096,7 @@ function packControler(){
 				clearDraggableField();
 				isRepeatCycle = false;
 				showAd();
-				countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*3 - 2;
+				countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
 				learnedWordsInCat = 0;
 				prepareGlobalForCycle(2);
 				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
@@ -2091,7 +2111,7 @@ function packControler(){
 				clearDraggableField();
 				isRepeatCycle = false;
 				showAd();
-				countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*3 - 2;
+				countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
 				learnedWordsInCat = 0;
 				prepareGlobalForCycle(2);
 				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
@@ -2106,7 +2126,7 @@ function packControler(){
 				clearDraggableField();
 				isRepeatCycle = false;
 				showAd();
-				countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*3 - 2;
+				countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
 				learnedWordsInCat = 0;
 				prepareGlobalForCycle(2);
 				setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
@@ -2126,7 +2146,7 @@ function packControler(){
 			case 8:
 				clearDraggableField();
 				isRepeatCycle = false;
-				countWordsToLearnInThisCycle = wordsInOneCat*2 + wordsInOneCat*3 - 2;
+				countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
 				learnedWordsInCat = 0;
 				newCategoryisSet = true;
 				prepareGlobalForCycle(1);
@@ -3118,8 +3138,9 @@ function getWordForCatShowList(sygn){
     });
 }
 
+var countOfWrongRecognized = 0;
 function startVoiceToText(){
-			/*
+	/*
 				$(".recText").text("To powiedziałem");
 				$("#l-n-1").hide();
 				$("#l-n-2").hide();
@@ -3162,7 +3183,7 @@ function startVoiceToText(){
 					$(".remind-img").hide();
 				}
 				
-			*/		
+				*/	
 	
 	if(!checkConnection()){
 		navigator.notification.confirm(
@@ -3235,6 +3256,7 @@ function startRecognize(){
 function compareRecognizedText(text){
 	var correctText = $(".learnMethod:visible .text-trans-word").text();
 	if(text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')){
+		countOfWrongRecognized = 0;
 		$(".learnMethod").addClass('goodRec');
 		$(".learnMethod").removeClass('badRec');
 		$(".cloud-again").hide();
@@ -3246,5 +3268,58 @@ function compareRecognizedText(text){
 		$(".cloud-again").show();
 		$(".cloud-next-task").show();
 		$(".remind-img").hide();
+		countOfWrongRecognized++;
+		if(countOfWrongRecognized == 2){
+			countOfWrongRecognized = 0;
+			showRecognizedAlert();
+		}
 	}
+}
+
+function showRecognizedAlert(){
+	navigator.notification.confirm(
+		"It might happen that correct pronunciation can not be recognized. In such cases, you have to skip the task.",
+		showRecognizedAlertCallback,
+		"Speech recognition is not 100% accurate",
+		"Try again,Skip the task"
+	);
+}
+
+function showRecognizedAlertCallback(buttonIndex){
+	if(buttonIndex == 1){
+		startVoiceToText();
+	}
+	if(buttonIndex == 2){
+		isOkWrap();
+	}
+}
+
+//the function
+function renameFile(currentName, currentDir, newName, successFunction) {
+
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+
+        fileSystem.root.getFile(currentDir + currentName, null, function (fileEntry) {
+            fileSystem.root.getDirectory(currentDir, {create: true}, function (dirEntry) {
+                parentEntry = new DirectoryEntry(currentName, currentDir + currentName);
+
+                fileEntry.moveTo(dirEntry, newName, function () {
+
+                    successFunction();
+
+                }, renameFail);
+            }, renameFail);
+        }, renameFail);
+
+    }, renameFail);
+}
+
+//and the sample success function
+function renameSuccess() {
+    alert('renamed!');
+}
+
+//and the sample fail function
+function renameFail() {
+    alert('failed');
 }
