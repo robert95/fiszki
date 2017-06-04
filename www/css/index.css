@@ -1802,7 +1802,7 @@ textarea, textarea[placeholder]{
 }
 #list-word-in-sug-cat{
 	display: block;
-	height: 300px;
+	height: 360px;
 	height: calc(100vh - 280px);
 	overflow: scroll;
 	margin-top: 20px;

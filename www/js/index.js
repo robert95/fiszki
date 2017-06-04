@@ -258,6 +258,8 @@ function readAsText2(file) {
 
 var srcSaveTmp = false;
 var srcSaveOld = false;
+var srcSaveDayTmp = false;
+var endTodayLesson = false;
 
 function saveFile(){
 	srcSaveTmp = path() + "save_tmp.json";
@@ -294,7 +296,8 @@ function gotFileWriterN2(writer) {
 }
 
 function renameSuccessSaveEnd(){
-	//alert("koniec");
+	//zapisz dzień
+	saveFile5();
 }
 
 function failN(error) {
@@ -329,13 +332,19 @@ function gotFileWriterLang(writer) {
 }
 /* END SAVE FILE */
 
-/* SAVE FILE2 */
+/* SAVE FILE2 - DAY*/
 function saveFile5(){
+	srcSave5 = path() + "day.json";
+	srcSaveDayTmp = path() + "day_tmp.json";
+	saveFileDay();
+}
+
+function saveFileDay(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN5, failN);
 }
 
 function gotFSN5(fileSystem) {
-	fileSystem.root.getFile(srcSave5, {create: false}, gotFileEntryN5, failN);
+	fileSystem.root.getFile(srcSaveDayTmp, {create: false}, gotFileEntryN5, failN);
 }
 
 function gotFileEntryN5(fileEntry) {
@@ -343,13 +352,20 @@ function gotFileEntryN5(fileEntry) {
 }
 
 function gotFileWriterN5(writer) {
-	writer.onwrite = function(evt) {
-		console.log("write success");
+	writer.onwriteend = function (e) {
+		renameFile(srcSaveDayTmp,'',srcSave5, renameSuccessSaveEnd);
 	};
 	
 	//alert(JSON.stringify(datesJSON5));
 	writer.write(JSON.stringify(datesJSON5));
 	writer.abort();
+}
+
+function renameSuccessSaveEnd(){
+	if(endTodayLesson){
+		alert("zapisałem wszystko!");
+		endLearn();
+	}
 }
 
 /* END SAVE FILE */
@@ -718,8 +734,11 @@ function saveDay(){
 	dayJSON.day = dayJSON.day + 1;  //zmienić na 1
 	dayJSON.km = dayJSON.km + (countOfCycle/2);  
 	datesJSON5 = dayJSON;
-	srcSave5 = path() + "day.json";
-	saveFile5();
+	
+	datesJSON = toLearnJSON;
+	srcSave = path() + "save.json";
+	saveFile();
+	//setTimeout(function(){ endLearn();}, 1000);
 }
 function getLangList(){
 	getDay();
@@ -1349,6 +1368,7 @@ function setAntyNaparzankaToTrue(){
 }
 
 function nextStep(){
+	countOfWrongRecognized = 0;
 	//volumeTest();
 	antyNaparzanka = true;
 	hideBars();
@@ -2166,13 +2186,8 @@ function packControler(){
 	}	
 	if(!continueLearning){
 		if(newCategoryisSet){
+			endTodayLesson = true;
 			saveDay();
-			setTimeout(function(){ 
-				datesJSON = toLearnJSON;
-				srcSave = path() + "save.json";
-				saveFile();
-				setTimeout(function(){ endLearn();}, 1000);
-			}, 500);
 		}else{
 			showAd();
 			startChoiceNewCategory();
@@ -2516,13 +2531,8 @@ function startChoiceNewCategory(){
 			setTimeout(function(){	loadProgressBarToFull2(); }, 200);
 		}, 50);
 	}else{
+		endTodayLesson = true;
 		saveDay();
-		setTimeout(function(){ 
-			datesJSON = toLearnJSON;
-			srcSave = path() + "save.json";
-			saveFile();
-			setTimeout(function(){ endLearn();}, 1000);
-		}, 500);
 	}
 }
 
@@ -2740,34 +2750,30 @@ function getAllCatsInArray(){
 function isNotNewCat(){
 	if(gameIsBegin){
 		$("#new-category-choice").addClass('next-cat-right');
+		endTodayLesson = true;
 		saveDay();
 		setTimeout(function(){ 
-			datesJSON = toLearnJSON;
-			srcSave = path() + "save.json";
-			saveFile();
-			setTimeout(function(){ 
-				if(todayEndedCat != "") allEndedCats.push(todayEndedCat);
-				uniqueallEndedCats = allEndedCats.filter(function(item, pos) {
-					return allEndedCats.indexOf(item) == pos;
-				});
-				if(allCats.sort().toString() == uniqueallEndedCats.sort().toString() && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
-					$("#new-category-choice").hide();
-					$("#end-course").show();
-					$(".countKMLearned").text( Math.floor( (dayJSON.km )*minCat / 60) );
-					$(".countMinLearned").text( Math.floor( (dayJSON.km )*minCat % 60) );
-					setTimeout(function(){				
-						$("#end-course").removeClass('next-cat-left');
-						showRating();
-					}, 100);
-				}else{
-					$("#new-category-choice").hide();
-					$("#end-panel").show();
-					setTimeout(function(){				
-						$("#end-panel").removeClass('next-cat-left');
-						showRating();
-					}, 100);
-				}
-			}, 500);
+			if(todayEndedCat != "") allEndedCats.push(todayEndedCat);
+			uniqueallEndedCats = allEndedCats.filter(function(item, pos) {
+				return allEndedCats.indexOf(item) == pos;
+			});
+			if(allCats.sort().toString() == uniqueallEndedCats.sort().toString() && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
+				$("#new-category-choice").hide();
+				$("#end-course").show();
+				$(".countKMLearned").text( Math.floor( (dayJSON.km )*minCat / 60) );
+				$(".countMinLearned").text( Math.floor( (dayJSON.km )*minCat % 60) );
+				setTimeout(function(){				
+					$("#end-course").removeClass('next-cat-left');
+					showRating();
+				}, 100);
+			}else{
+				$("#new-category-choice").hide();
+				$("#end-panel").show();
+				setTimeout(function(){				
+					$("#end-panel").removeClass('next-cat-left');
+					showRating();
+				}, 100);
+			}
 		}, 500);
 	}	
 }
@@ -2853,6 +2859,7 @@ function loadProgress(uri){
 						saveLang(); //save lang
 						window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN); //save notice
 						/*save day*/
+							endTodayLesson = false;
 							datesJSON5 = dayJSON;
 							srcSave5 = path() + "day.json";
 							saveFile5();
@@ -3003,6 +3010,7 @@ function showRating() {
 	}
 }
 function setRatingToTrue() {
+	endTodayLesson = false;
 	dayJSON.rating = true;
 	datesJSON5 = dayJSON;
 	srcSave5 = path() + "day.json";
@@ -3010,6 +3018,7 @@ function setRatingToTrue() {
 }
 
 function saveTheme() {
+	endTodayLesson = false;
 	var themeNb = 1;
 	if($("body").hasClass('theme3')){
 		var themeNb = 3;
@@ -3270,7 +3279,7 @@ function compareRecognizedText(text){
 		$(".cloud-next-task").show();
 		$(".remind-img").hide();
 		countOfWrongRecognized++;
-		if(countOfWrongRecognized == 3){
+		if(countOfWrongRecognized == 2){
 			countOfWrongRecognized = 0;
 			showRecognizedAlert();
 		}
