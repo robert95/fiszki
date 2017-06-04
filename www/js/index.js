@@ -633,7 +633,6 @@ function getToLearnHelper(){
 		getAllCatsInArray();
 		getAllCatsToShowAllCats();
 		toLearnJSON = JSON.parse(res);
-		alert(res);
 		for(var x in toLearnJSON){
 			var pack = toLearnJSON[x];
 			var day = $("#nrDayFiled").text();
