@@ -294,7 +294,7 @@ function gotFileWriterN2(writer) {
 }
 
 function renameSuccessSaveEnd(){
-	alert("koniec");
+	//alert("koniec");
 }
 
 function failN(error) {
@@ -3200,15 +3200,13 @@ function startVoiceToText(){
 }
 
 function startRecognize(){
-	alert(nbMethod);
-	alert(nbStep);
 	//$(".support-word-in-speach").show();
 	
 	var langText = "en-US"
 	var options = {
 		language: langText,
 		matches: 2,
-		prompt: (nbMethod == 6 ? act_trans : act_word),
+		prompt: ((nbMethod == 6 || (nbMethod == 4 && nbStep == 0))? act_trans : act_word,
 		showPopup: true
 	};
 

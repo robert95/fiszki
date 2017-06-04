@@ -542,11 +542,11 @@
 				<span class="l4">N_Zaplanowana liczba zadań:</span>
 				<span class="l5">Enjoy a little moment of relax watching advertisment<br></span> 
 			</p>
-			<p class="before-start-info" ontouchstart="document.location.href='market://details?id=com.gameloft.android.ANMP.GloftA8HM';">
+			<p class="before-start-info">
 				<span class="l2">E_Zapraszamy na krótką reklamę</span>
 				<span class="l3">F_Zapraszamy na krótką reklamę</span>
 				<span class="l4">N_Zapraszamy na krótką reklamę</span>
-				<span class="l5">Don't want to see ads?<br>Get a premium version <a href="market://details?id=com.gameloft.android.ANMP.GloftA8HM"><u>here.</u></a></span>
+				<span class="l5">Don't want to see ads?<br>Get a premium version <a ontouchstart="goToPremiumVersion();"><u>here.</u></a></span>
 			</p>
 			<div class="myCall-icon-before-ad mycalllink">
 				<img class="mycalllink" src="img/mycall_icon.png">
@@ -1266,7 +1266,7 @@
 				);
 			});
 			$("#m6").click(function(){
-				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
+				goToPremiumVersion();
 			});
 			$("#m7").click(function(){
 				window.open('https://mycall.no', '_system');
@@ -1281,6 +1281,9 @@
 			}
 			function onNoInternetConfirm(button) {
 				navigator.app.exitApp();
+			}
+			function goToPremiumVersion(){
+				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
 			}
 		</script>
 		<script>
