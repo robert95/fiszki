@@ -344,7 +344,7 @@ function saveFileDay(){
 }
 
 function gotFSN5(fileSystem) {
-	fileSystem.root.getFile(srcSaveDayTmp, {create: false}, gotFileEntryN5, failN);
+	fileSystem.root.getFile(srcSaveDayTmp, {create: true}, gotFileEntryN5, failN);
 }
 
 function gotFileEntryN5(fileEntry) {
