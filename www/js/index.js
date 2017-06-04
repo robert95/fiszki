@@ -353,7 +353,7 @@ function gotFileEntryN5(fileEntry) {
 
 function gotFileWriterN5(writer) {
 	writer.onwriteend = function (e) {
-		renameFile(srcSaveDayTmp,'',srcSave5, renameSuccessSaveEnd);
+		renameFile(srcSaveDayTmp,'',srcSave5, renameSuccessSaveDayEnd);
 	};
 	
 	//alert(JSON.stringify(datesJSON5));
@@ -361,7 +361,7 @@ function gotFileWriterN5(writer) {
 	writer.abort();
 }
 
-function renameSuccessSaveEnd(){
+function renameSuccessSaveDayEnd(){
 	if(endTodayLesson){
 		alert("zapisałem wszystko!");
 		endLearn();
