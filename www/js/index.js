@@ -3206,7 +3206,7 @@ function startRecognize(){
 	var options = {
 		language: langText,
 		matches: 2,
-		prompt: ((nbMethod == 6 || (nbMethod == 4 && nbStep == 0))? act_trans : act_word,
+		prompt: ((nbMethod == 6 || (nbMethod == 4 && nbStep == 0))? act_trans : act_word),
 		showPopup: true
 	};
 
