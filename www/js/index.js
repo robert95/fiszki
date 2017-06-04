@@ -3201,6 +3201,7 @@ function startVoiceToText(){
 
 function startRecognize(){
 	alert(nbMethod);
+	alert(nbStep);
 	//$(".support-word-in-speach").show();
 	
 	var langText = "en-US"
