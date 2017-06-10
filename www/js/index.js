@@ -639,9 +639,11 @@ function afterReadToLearn(tolearnfromFile){
 	alert(tolearnfromFile);
 	for(var x in toLearnJSON){
 		var pack = toLearnJSON[x];
-		alert(pack);
 		var day = $("#nrDayFiled").text();
+		//var day = dayJSON.day;
 		var dayNr = day - pack.start;
+		alert(pack.catid + "/" + pack.subid);
+		alert(day - pack.start);
 		allUsedCats.push(pack.catid + "/" + pack.subid);
 		if(dayNr >= 27){
 			learnedCat.push(pack.catid + "/" + pack.subid);
