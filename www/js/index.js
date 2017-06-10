@@ -593,6 +593,9 @@ function getDayHelper(){
         setTimeout(getDayHelper, 100);
 		return;
 	}else{
+		getAllCatsInArray();
+		getAllCatsToShowAllCats();
+		
 		dayJSON = JSON.parse(res3);
 		res3 = false;
 		$("#nrDayFiled").text(dayJSON.day);
@@ -632,8 +635,6 @@ function getToLearn(){
 	//getToLearnHelper();
 }
 function afterReadToLearn(tolearn){
-	getAllCatsInArray();
-	getAllCatsToShowAllCats();
 	toLearnJSON = JSON.parse(tolearn);
 	alert(tolearn);
 	for(var x in toLearnJSON){
@@ -3200,7 +3201,7 @@ function okNoSound(){
 }
 
 function getAllCatsToShowAllCats(){
-	alert("langJSON.lang");
+	alert(langJSON.lang);
 	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
 		alert(result);
 		var tmp = '';
@@ -3219,6 +3220,7 @@ function getAllCatsToShowAllCats(){
 				dataType: 'html',
 				async: false,
 				success: function(data) {
+					alert(data);
 					var subcats = JSON.parse(data);
 					tmp += '<div class="list-of-subcat-all-material">';
 					for(var y in subcats){
