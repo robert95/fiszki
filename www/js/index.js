@@ -635,6 +635,7 @@ function afterReadToLearn(tolearn){
 	getAllCatsInArray();
 	getAllCatsToShowAllCats();
 	toLearnJSON = JSON.parse(tolearn);
+	alert(tolearn);
 	for(var x in toLearnJSON){
 		var pack = toLearnJSON[x];
 		var day = $("#nrDayFiled").text();
