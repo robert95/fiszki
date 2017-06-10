@@ -219,8 +219,11 @@ function gotFile(file) {
 }
 function readAsText(file) {
   var reader = new FileReader();
-  reader.onloadend = function(evt) {
-		res = evt.target.result;
+  reader.onloadend = function(e) {
+		res = e.target.result;
+		alert("odczytałem");
+		alert(e.target.result);
+		afterRead(e.target.result);
   };
   reader.readAsText(file);    
 }
@@ -301,7 +304,7 @@ function renameSuccessSaveEnd(){
 }
 
 function failN(error) {
-	alert("error : "+error.code);
+	//alert("error : "+error.code);
 }
 /* END SAVE FILE */
 
@@ -363,7 +366,7 @@ function gotFileWriterN5(writer) {
 
 function renameSuccessSaveDayEnd(){
 	if(endTodayLesson){
-		alert("zapisałem wszystko!");
+		//alert("zapisałem wszystko!");
 		endLearn();
 	}
 }
@@ -624,7 +627,11 @@ function getNoticeHelper(){
 function getToLearn(){
 	srcFile = path() + "save.json";
 	readWriteFile();
-	getToLearnHelper();
+	//getToLearnHelper();
+}
+function afterRead(red){
+	alert("W afterRead: ");
+	alert(red);
 }
 function getToLearnHelper(){
 	if(!res){
@@ -1603,7 +1610,7 @@ function nextStep(){
 				
 				*/
 			}else if(nbMethod == 1 && nbStep == 2){
-				alert("tu5");
+				//alert("tu5");
 				whereGo = -1;
 				nbMethod = 4;
 				nbStep = 0;
@@ -3326,10 +3333,10 @@ function renameFile(currentName, currentDir, newName, successFunction) {
 
 //and the sample success function
 function renameSuccess() {
-    alert('renamed!');
+    //alert('renamed!');
 }
 
 //and the sample fail function
 function renameFail() {
-    alert('failed');
+   // alert('failed');
 }
