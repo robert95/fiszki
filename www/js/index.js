@@ -641,8 +641,7 @@ function afterReadToLearn(tolearnfromFile){
 	alert(tolearnfromFile);
 	for(var x in toLearnJSON){
 		var pack = toLearnJSON[x];
-		var day = $("#nrDayFiled").text();
-		//var day = dayJSON.day;
+		var day = dayJSON.day;
 		var dayNr = day - pack.start;
 		alert(pack.catid + "/" + pack.subid);
 		alert(day - pack.start);
