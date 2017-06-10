@@ -639,6 +639,7 @@ function afterReadToLearn(tolearnfromFile){
 	alert(tolearnfromFile);
 	for(var x in toLearnJSON){
 		var pack = toLearnJSON[x];
+		alert(pack);
 		var day = $("#nrDayFiled").text();
 		var dayNr = day - pack.start;
 		allUsedCats.push(pack.catid + "/" + pack.subid);
@@ -703,6 +704,10 @@ function afterReadToLearn(tolearnfromFile){
 		} 
 		
 		if(x == ( toLearnJSON.length -1 )){
+			alert("odczytalem wszystko");
+			for(var x in toLearn){
+				alert(toLearn[x]);
+			}
 			setTimeout(showInProgressCat, 200);
 			setTimeout(function(){
 				uniqueallUsedCats = allUsedCats.filter(function(item, pos) {
