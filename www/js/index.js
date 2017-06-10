@@ -634,9 +634,9 @@ function getToLearn(){
 	readWriteFile();
 	//getToLearnHelper();
 }
-function afterReadToLearn(tolearn){
-	toLearnJSON = JSON.parse(tolearn);
-	alert(tolearn);
+function afterReadToLearn(tolearnfromFile){
+	toLearnJSON = JSON.parse(tolearnfromFile);
+	alert(tolearnfromFile);
 	for(var x in toLearnJSON){
 		var pack = toLearnJSON[x];
 		var day = $("#nrDayFiled").text();
@@ -701,38 +701,41 @@ function afterReadToLearn(tolearn){
 		default:
 			break;
 		} 
-	}
-	setTimeout(showInProgressCat, 200);
-	setTimeout(function(){
-		uniqueallUsedCats = allUsedCats.filter(function(item, pos) {
-			return allUsedCats.indexOf(item) == pos;
-		})
-		if(allCats.sort().toString() == uniqueallUsedCats.sort().toString()){
-			countWordsToLearn -= wordsInOneCat + (wordsInOneCat*2);
-			countOfCycle -= 2;
-			$("#countWordsToLearn").text(dayJSON.day-1);
-			$(".equivalentLessons").text(dayJSON.day-1); //usunąć
-			$(".all-words-to-end").text(countWordsToLearn);
-			$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
-			countCatsToLearnToday = countCatsToLearn-1;
-			$(".allTimeToday").text(countCatsToLearnToday * minCat);
-		}else{
-			$("#countWordsToLearn").text(dayJSON.day-1);	
-			$(".equivalentLessons").text(dayJSON.day-1); //usunąć
-			$(".all-words-to-end").text(countWordsToLearn);	
-			$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
-			countCatsToLearnToday += countCatsToLearn;
-			$(".allTimeToday").text(countCatsToLearnToday * minCat);
+		
+		if(x == ( toLearnJSON.length -1 )){
+			setTimeout(showInProgressCat, 200);
+			setTimeout(function(){
+				uniqueallUsedCats = allUsedCats.filter(function(item, pos) {
+					return allUsedCats.indexOf(item) == pos;
+				})
+				if(allCats.sort().toString() == uniqueallUsedCats.sort().toString()){
+					countWordsToLearn -= wordsInOneCat + (wordsInOneCat*2);
+					countOfCycle -= 2;
+					$("#countWordsToLearn").text(dayJSON.day-1);
+					$(".equivalentLessons").text(dayJSON.day-1); //usunąć
+					$(".all-words-to-end").text(countWordsToLearn);
+					$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
+					countCatsToLearnToday = countCatsToLearn-1;
+					$(".allTimeToday").text(countCatsToLearnToday * minCat);
+				}else{
+					$("#countWordsToLearn").text(dayJSON.day-1);	
+					$(".equivalentLessons").text(dayJSON.day-1); //usunąć
+					$(".all-words-to-end").text(countWordsToLearn);	
+					$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
+					countCatsToLearnToday += countCatsToLearn;
+					$(".allTimeToday").text(countCatsToLearnToday * minCat);
+				}
+			}, 250);
+			
+			setTimeout(function(){
+				//prepareAd();
+				gameIsBegin = true;
+				$("#first-use-loading-page").hide();				
+				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
+				//showRating();
+			}, 500);
 		}
-	}, 250);
-	
-	setTimeout(function(){
-		//prepareAd();
-		gameIsBegin = true;
-		$("#first-use-loading-page").hide();				
-		showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
-		//showRating();
-	}, 500);
+	}
 }
 function getToLearnHelper(){
 	/*if(!res){
@@ -3201,9 +3204,7 @@ function okNoSound(){
 }
 
 function getAllCatsToShowAllCats(){
-	alert(langJSON.lang);
 	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
-		alert(result);
 		var tmp = '';
 		var cats = JSON.parse(result);
 		for(var x in cats){
@@ -3220,7 +3221,6 @@ function getAllCatsToShowAllCats(){
 				dataType: 'html',
 				async: false,
 				success: function(data) {
-					alert(data);
 					var subcats = JSON.parse(data);
 					tmp += '<div class="list-of-subcat-all-material">';
 					for(var y in subcats){
@@ -3238,17 +3238,8 @@ function getAllCatsToShowAllCats(){
 						}
 						tmp += '<p class="text catsInAllMaterial '+ cl +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\' )" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
 						$("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
-						
-						if(x == (cats.length - 1) && y == (subcats.length - 1)){
-							alert("Skończyłem: getAllCatsToShowAllCats" );
-						}
 					}
 					tmp += '</div>' + '</div>' + extraEnd
-				},
-				error: function (xhr, ajaxOptions, thrownError) {
-					alert("Błąd przy: " + ("date/"+ langJSON.lang + "/" + cat.id + "/subcat.json"));
-					alert(xhr.status);
-					alert(thrownError);
 				}
 			});
 		}
