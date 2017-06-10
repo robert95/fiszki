@@ -632,7 +632,7 @@ function getToLearn(){
 	//getToLearnHelper();
 }
 function afterReadToLearn(tolearn){
-	getAllCatsInArray();
+	//getAllCatsInArray();
 	getAllCatsToShowAllCats();
 	toLearnJSON = JSON.parse(tolearn);
 	alert(tolearn);
