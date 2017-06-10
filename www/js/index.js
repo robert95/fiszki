@@ -168,8 +168,8 @@ function gotFile3(file) {
 }
 function readAsText3(file) {
   var reader = new FileReader();
-  reader.onloadend = function(evt) {
-		res3 = evt.target.result;
+  reader.onloadend = function(e) {
+		res3 = e.target.result;
   };
   reader.readAsText(file);    
 }
@@ -448,7 +448,7 @@ function startApp(){
 			$("body").addClass('lang'+lang);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
-			getToLearn(); //pobierz toLearn
+			//getToLearn(); //pobierz toLearn
 			setTimeout(function(){
 				if(!suggestedCatName) getCatWithPos(0, 1);
 			}, 500);
@@ -613,6 +613,8 @@ function getDayHelper(){
 			allEndedCats.push(skip);
 		}
 		$("body").addClass('theme'+dayJSON.theme);
+		
+		getToLearn();
 	}
 }
 function getNotice(){
@@ -3246,7 +3248,7 @@ function getAllCatsToShowAllCats(){
 						tmp += '<p class="text catsInAllMaterial '+ cl +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\' )" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
 						$("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
 					}
-					tmp += '</div>' + '</div>' + extraEnd
+					tmp += '</div>' + '</div>' + extraEnd;
 				}
 			});
 		}
