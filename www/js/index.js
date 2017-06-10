@@ -632,7 +632,7 @@ function getToLearn(){
 	//getToLearnHelper();
 }
 function afterReadToLearn(tolearn){
-	//getAllCatsInArray();
+	getAllCatsInArray();
 	getAllCatsToShowAllCats();
 	toLearnJSON = JSON.parse(tolearn);
 	alert(tolearn);
@@ -2853,7 +2853,6 @@ function getAllCatsInArray(){
 					var scat = scats[sc];
 					allCats.push(idP + "/" + scat.id);
 				}
-				alert("Skończyłem: getAllCatsInArray" );
 			});
 		}
     });
@@ -3201,7 +3200,9 @@ function okNoSound(){
 }
 
 function getAllCatsToShowAllCats(){
+	alert("langJSON.lang");
 	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
+		alert(result);
 		var tmp = '';
 		var cats = JSON.parse(result);
 		for(var x in cats){
@@ -3241,7 +3242,12 @@ function getAllCatsToShowAllCats(){
 						}
 					}
 					tmp += '</div>' + '</div>' + extraEnd
-				} 
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+					alert("Błąd przy: " + ("date/"+ langJSON.lang + "/" + cat.id + "/subcat.json"));
+					alert(xhr.status);
+					alert(thrownError);
+				}
 			});
 		}
 		
