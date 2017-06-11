@@ -138,11 +138,13 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
+	
 	if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
+	
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -389,10 +391,11 @@ var dayJSON = false;
 var toLearnJSON = [];
 
 /*
-var langJSON = JSON.parse('{"lang":5}');
-var dayJSON = JSON.parse('{"day": 2, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
+var langJSON = JSON.parse('{"lang":-1}');
+var dayJSON = JSON.parse('{"day": 4, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
 var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
 */
+
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -454,7 +457,7 @@ function startApp(){
 			}, 500);
 			
 			/*
-			
+			//ZAKOMENTOWAĆ!!!
 			setTimeout(function(){
 				//prepareAd();
 				gameIsBegin = true;
@@ -462,8 +465,8 @@ function startApp(){
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 				//showRating();
 			}, 2000);
-			
 			*/
+			
 		}
 	}, 2500);
 }
@@ -634,17 +637,14 @@ function getNoticeHelper(){
 function getToLearn(){
 	srcFile = path() + "save.json";
 	readWriteFile();
-	//getToLearnHelper();
+	////getToLearnHelper();
 }
 function afterReadToLearn(tolearnfromFile){
 	toLearnJSON = JSON.parse(tolearnfromFile);
-	alert(tolearnfromFile);
 	for(var x in toLearnJSON){
 		var pack = toLearnJSON[x];
 		var day = dayJSON.day;
 		var dayNr = day - pack.start;
-		alert(pack.catid + "/" + pack.subid);
-		alert(day - pack.start);
 		allUsedCats.push(pack.catid + "/" + pack.subid);
 		if(dayNr >= 27){
 			learnedCat.push(pack.catid + "/" + pack.subid);
@@ -707,10 +707,6 @@ function afterReadToLearn(tolearnfromFile){
 		} 
 		
 		if(x == ( toLearnJSON.length -1 )){
-			alert("odczytalem wszystko");
-			for(var x in toLearn){
-				alert(toLearn[x]);
-			}
 			setTimeout(showInProgressCat, 200);
 			setTimeout(function(){
 				uniqueallUsedCats = allUsedCats.filter(function(item, pos) {
@@ -858,11 +854,33 @@ function saveDay(){
 	dayJSON.km = dayJSON.km + (countOfCycle/2);  
 	datesJSON5 = dayJSON;
 	
-	datesJSON = toLearnJSON;
-	srcSave = path() + "save.json";
-	saveFile();
-	//setTimeout(function(){ endLearn();}, 1000);
+	$("#learn-container").addClass('next-cat-right');
+	setTimeout(function(){
+		$("#learn-container").hide();
+		$("#saving-progress-today").show();
+		setTimeout(function(){				
+			$("#saving-progress-today").removeClass('next-cat-left');
+			
+			datesJSON = toLearnJSON;
+			srcSave = path() + "save.json";
+			saveFile();
+
+		}, 100);
+	}, 500);
 }
+
+function aaa(){
+		
+	$("#learn-container").addClass('next-cat-right');
+	setTimeout(function(){
+		$("#learn-container").hide();
+		$("#saving-progress-today").show();
+		setTimeout(function(){				
+			$("#saving-progress-today").removeClass('next-cat-left');
+		}, 100);
+	}, 500);
+}
+
 function getLangList(){
 	getDay();
 	$.get("date/lang.json", function(result) {
@@ -902,11 +920,11 @@ function showCatList(c){
 	for(var x in cats){
 		subcats = false;
 		var cat = cats[x];
-		if(x == 0) tmp += '<div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Phrases</span></h1><div>';
-		if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
+		//if(x == 0) tmp += '<div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Phrases</span></h1><div>';
+		//if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
 		tmp += '<div><h1 class="text supercat" onclick="expand(this);">'+ cat.name + '</h1>';
 		var extraEnd = parseInt(x)+1 == parseInt(cats.length) ? '</div></div>' : "";
-		tmp += getSubCatList(cat.id) + '</div>' + extraEnd;
+		tmp += getSubCatList(cat.id) + '</div>';
 	}
 	$("#cats").append(tmp);
 }
@@ -2478,6 +2496,7 @@ function setWaintingLearned(){
 /*END APP*/
 function endLearn(){
 	$("#learn-container").addClass('next-cat-right');
+	$("#saving-progress-today").addClass('next-cat-right');
 	
 	if(todayEndedCat != "") allEndedCats.push(todayEndedCat);
 	uniqueallEndedCats = allEndedCats.filter(function(item, pos) {
@@ -2491,6 +2510,7 @@ function endLearn(){
 		setTimeout(function(){
 			//showAd();
 			$("#learn-container").hide();
+			$("#saving-progress-today").hide();
 			$("#end-course").show();
 			setTimeout(function(){				
 				$("#end-course").removeClass('next-cat-left');
@@ -2501,6 +2521,7 @@ function endLearn(){
 		setTimeout(function(){
 			//showAd();
 			$("#learn-container").hide();
+			$("#saving-progress-today").hide();
 			$("#end-panel").show();
 			setTimeout(function(){				
 				$("#end-panel").removeClass('next-cat-left');
@@ -2526,7 +2547,7 @@ function nextTutStep(){
 	$("#choose-lang").hide();
 	stepTut++;
 	$(".tut-method").hide();
-	if(stepTut > 4) endTutWrap();
+	if(stepTut > 11) endTutWrap();
 	else{
 		$("#tut-lern-" + stepTut).show();
 		setTimeout(function(){	
@@ -2534,10 +2555,14 @@ function nextTutStep(){
 			$('.tut-method').removeClass('goLeft');
 			$('.tut-method').removeClass('goRight');
 			$('.tut-method').removeClass('flipper-hide');
-			if(stepTut == 3){
-				$('#count-word-to-learn-tut').addClass('shown');
-				$('#count-word-to-learn-tut').addClass('pulse-btn-mini');
+			
+			if(stepTut == 2){
+				$("#tutorial .btns-tut-cat").show();
 			}
+			if(stepTut == 5){
+				$("#tutorial .btns-tut-cat").hide();
+			}
+			/*
 			if(stepTut == 4){
 				$('#count-word-to-learn-tut').removeClass('pulse-btn-mini');
 				$('#count-word-to-learn-tut').removeClass('shown');
@@ -2558,12 +2583,13 @@ function nextTutStep(){
 			if(stepTut == 13){
 				$('#menu-switch').removeClass('pulse-btn');
 			}
+			*/
 		}, 300);
 	}
 }
 
 function updateProgressTut(step){
-	var percent = 100 - Math.round(((step)/(5))*100);
+	var percent = 100 - Math.round(((step)/(12))*100);
 	$("#progess-btn-stan-in-cycle-tut2").addClass('p'+percent);
 	removeProgressClassMin($("#progess-btn-stan-in-cycle-tut2"), percent);
 }
@@ -3218,8 +3244,8 @@ function getAllCatsToShowAllCats(){
 		for(var x in cats){
 			subcats = false;
 			var cat = cats[x];
-			if(x == 0) tmp += '<div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Phrases</span></h1><div>';
-			if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
+			//if(x == 0) tmp += '<div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Phrases</span></h1><div>';
+			//if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
 			tmp += '<div><h1 class="text supercat-all-material" onclick="expand(this);">'+ cat.name + '</h1>';
 			var extraEnd = parseInt(x)+1 == parseInt(cats.length) ? '</div></div>' : "";
 			
@@ -3247,7 +3273,8 @@ function getAllCatsToShowAllCats(){
 						tmp += '<p class="text catsInAllMaterial '+ cl +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\' )" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
 						$("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
 					}
-					tmp += '</div>' + '</div>' + extraEnd;
+					//tmp += '</div>' + '</div>' + extraEnd;
+					tmp += '</div>' + '</div>';
 				}
 			});
 		}
@@ -3315,8 +3342,8 @@ function startVoiceToText(){
 					$(".cloud-next-task").show();
 					$(".remind-img").hide();
 				}
+		*/		
 				
-				*/	
 	
 	if(!checkConnection()){
 		navigator.notification.confirm(

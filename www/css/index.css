@@ -310,8 +310,8 @@ body{
 	display: none;
 }
 .list-of-lang, .list-of-subcat{    
-	width: 70%;
-    margin-left: 25%;
+	width: 92%;
+	margin-left: 8%;
 	display: none;
 }
 h1{
@@ -724,7 +724,7 @@ textarea:focus, textarea:hover, textarea:active{
 	transform: translate3d(130%, 0, 0) !important;
 	-webkit-transform: translate3d(130%, 0, 0) !important;
 }
-#start-next-cat, #end-panel, #end-course, #tutorial, #startDay, #end-cat, #page-after-tutorial{
+#start-next-cat, #end-panel, #end-course, #tutorial, #startDay, #end-cat, #page-after-tutorial, #saving-progress-today{
 	height: 100%;
 	position: relative;
 	overflow: hidden;
@@ -734,7 +734,7 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 100%;
 	bottom: 0px;
 }
-#page-after-tutorial, #start-next-cat, #end-cat, #end-course, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay{
+#page-after-tutorial, #start-next-cat, #end-cat, #end-course, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay, #saving-progress-today{
 	display: none;
 	position: relative;
 	transition: 0.6s;
@@ -878,6 +878,12 @@ textarea:focus, textarea:hover, textarea:active{
 #progress-welcome .slice{
 	clip: rect(0em, 120px, 120px, -18px);
 }
+#progress-welcome-saving-progress .bar{
+	clip: rect(0em, 7px, 120px, 0em);
+}
+#progress-welcome-saving-progress .slice{
+	clip: rect(0em, 120px, 120px, -18px);
+}
 #first-use-loading-page{
 	text-align: center;
 	font-size: 28px;
@@ -888,6 +894,16 @@ textarea:focus, textarea:hover, textarea:active{
 #first-use-loading-page p:first-of-type{
 	margin: 0px 0px;
 	padding: 100px 0px;
+}
+#saving-progress-today{
+	text-align: center;
+	font-size: 28px;
+	color: white;
+	font-weight: bold;
+	font-weight: 600;
+}
+#saving-progress-today p{
+	margin-top: 74%;
 }
 section{
 	display: none;
@@ -1067,6 +1083,9 @@ section{
 #first-use-loading-page .c100{
 	top: -1px;
 }
+#saving-progress-today .c100{
+	top: -1px;
+}
 #suggest-new-category{
 	margin-top: 0px !important;
 	margin-bottom: 15px !important;
@@ -1117,6 +1136,15 @@ section{
 	overflow: hidden;
 }
 #first-use-loading-page #progress-circle .c100{
+	top: 0px;
+}
+#saving-progress-today #progress-circle-saving-progress{
+	position: absolute;
+	bottom: 0;
+	width: 100%;    
+	overflow: hidden;
+}
+#saving-progress-today #progress-circle-saving-progress .c100{
 	top: 0px;
 }
 #menu{
@@ -1579,15 +1607,34 @@ section{
 	display: none;
 }
 #tutorial .learnMethod .text{
+	/*
 	display: table-cell !important;
 	height: auto;
+	*/
 }
 #tutorial .learnMethod td{
-    display: flex !important;
+   /*
+	display: flex !important;
     justify-content: center !important;
     align-items: center !important;
 	min-height: 250px !important;
 	height: 250px !important;
+	*/
+}
+#tutorial .note-skip-btn{
+   display: none;
+}
+#tutorial .learnMethod tr:first-of-type td p{    
+	min-height: 170px;
+}
+#tutorial .learnMethod tr:first-of-type td p.only-text{    
+	min-height: 225px !important;
+}
+#tutorial .learnMethod tr:last-of-type td p{
+    font-size: 16px !important;
+    min-height: 0 !important;
+    height: auto;
+	display: block;
 }
 .only-tablet{
 	display: none !important;
@@ -1618,8 +1665,8 @@ textarea, textarea[placeholder]{
 	text-indent: 0px;
 }
 .supercat, .supercat-all-material{
-	width: 83%;
-	margin-left: 11%;
+	width: 90%;
+	margin-left: 5%;
 	padding: 15px 0 !important;
 }
 .count-word-to-learn-in-this-sesion .c100{
@@ -1758,8 +1805,8 @@ textarea, textarea[placeholder]{
 	padding: 20px 0 !important;
 }
 #show-all-cats-cats .list-of-subcat-all-material{
-	width: 85%;
-	margin-left: 13%;;
+	width: 92%;
+	margin-left: 8%;
 }
 #show-all-cats-cats-wordlist{
 	display: block;
@@ -2158,7 +2205,7 @@ h3{
 	#count-word-to-learn-tut{
 		bottom: 12% !important; 
 	}
-	#progress-circle-end .c100, #progress-circle .c100, #wrap-ok-no .c100, #tut-wrap-ok-no .c100, #start-day-wrap-ok-no .c100, #start-day-wrap-ok-no-end-course .c100, #end-day-wrap-ok-no .c100, #new-cat-wrap-ok-no .c100{
+	#progress-circle-end .c100, #progress-circle-saving-progress .c100, #progress-circle .c100, #wrap-ok-no .c100, #tut-wrap-ok-no .c100, #start-day-wrap-ok-no .c100, #start-day-wrap-ok-no-end-course .c100, #end-day-wrap-ok-no .c100, #new-cat-wrap-ok-no .c100{
 		transform: scale(1.8);
 		-webkit-transform: scale(1.8);
 		margin: 35px auto;
