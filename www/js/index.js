@@ -1272,10 +1272,12 @@ function tellMe(){
 	//audio.play();
 }
 function stopTelling(){
-	my_media.stop();
-	my_media.stopRecord();
-	my_media.release();
-	my_media=null;
+	if(my_media!=null){
+            my_media.stop();
+            my_media.stopRecord();
+			my_media.release();
+            my_media=null;
+	}
 }
 
 function tellMeWord(sygn, id){
