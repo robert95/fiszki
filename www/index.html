@@ -34,7 +34,7 @@
 		<input type="file" id="readP">
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
-			<p class="img-close-cont" ontouchstart="hideMenu();"><img src="img/back2.png"></p>
+			<p class="img-close-cont" onclick="hideMenu();"><img src="img/back2.png"></p>
 			<ul>
 				<li id="m9" class="text"><span class="l2">E_ZAPISZ POSTĘP</span><span class="l3">F_ZAPISZ POSTĘP</span><span class="l4">N_ZAPISZ POSTĘP</span><span class="l5">Show all lessons</span></li>
 				<li id="m10" class="text">
@@ -79,7 +79,7 @@
 						<div class="fill"></div>
 					</div>
 				</div>
-			</div>		
+			</div>
 			<div class="myCall-icon mycalllink">
 				<img src="img/mycall_icon.png">
 			</div>
@@ -170,8 +170,10 @@
 						<span class="l4">N_Przetłumacz</span>
 						<span class="l5">Translate</span>
 						<span class="worddNB"></span>
-						<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
-						<img src="img/5_you_said.png" class="cloud cloud-you-said">
+						<!--<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
+						<img src="img/5_you_said.png" class="cloud cloud-you-said">-->
+						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
+						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
 					<table>
 						<!--<tr><td><img src="img/up.png"></td></tr>-->
@@ -181,7 +183,7 @@
 						<tr id="l-rg-1" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(1);" class="left-btn">My note</button><button ontouchstart="showTrans(1);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text text-reverse text-trans-word" id="confirm-correct-1"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text text-reverse text-trans-word" id="confirm-correct-1" onclick="tellMe();"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -194,8 +196,10 @@
 						<span class="l4">N_Powtórz </span>
 						<span class="l5">Repeat</span>
 						<span class="wordNB"></span>
-						<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
-						<img src="img/5_you_said.png" class="cloud cloud-you-said">
+						<!--<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
+						<img src="img/5_you_said.png" class="cloud cloud-you-said">-->
+						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
+						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
 					<table>
 						<tr id="l-e-2" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
@@ -204,7 +208,7 @@
 						<tr id="l-rg-2" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(2);" class="left-btn">My note</button><button ontouchstart="showTrans(2);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse text-trans-word" id="confirm-correct-2"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word" id="confirm-correct-2" onclick="tellMe();"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -217,8 +221,10 @@
 						<span class="l4">N_ZADAJ PYTANIE DO ZDANIA </span>
 						<span class="l5">ZADAJ PYTANIE DO ZDANIA </span>
 						<span class="wordNB"></span>
-						<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
-						<img src="img/5_you_said.png" class="cloud cloud-you-said">
+						<!--<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
+						<img src="img/5_you_said.png" class="cloud cloud-you-said">-->
+						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
+						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
 					<table>
 						<tr id="l-e-3"><td colspan="3"><input type="text" class="text" id="question-3"/></td></tr>
@@ -226,7 +232,7 @@
 						<tr id="l-rg-3" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(3);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse text-trans-word"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word" onclick="tellMe();"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -239,8 +245,10 @@
 						<span class="l4">N_Powtórz </span>
 						<span class="l5">Repeat</span>
 						<span class="wordNB"></span>
-						<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
-						<img src="img/5_you_said.png" class="cloud cloud-you-said">
+						<!--<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
+						<img src="img/5_you_said.png" class="cloud cloud-you-said">-->
+						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
+						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
 					<table>
 						<tr id="l-e-4" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
@@ -249,7 +257,7 @@
 						<tr id="l-rg-4" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(4);" class="left-btn">My note</button><button ontouchstart="showTrans(4);" class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse text-trans-word" id="confirm-correct-4"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word" id="confirm-correct-4" onclick="tellMe();"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -262,8 +270,10 @@
 						<span class="l4">N_Powtórz poprzednie zdanie </span>
 						<span class="l5">Powtórz poprzednie zdanie </span>
 						<span class="wordNB"></span>
-						<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
-						<img src="img/5_you_said.png" class="cloud cloud-you-said">
+						<!--<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
+						<img src="img/5_you_said.png" class="cloud cloud-you-said">-->
+						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
+						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
 					<table>
 						<tr id="l-e-5"><td colspan="3"><input type="text" class="text" id="question-5"/></td></tr>
@@ -271,7 +281,7 @@
 						<tr id="l-rg-5" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<!--<tr><td class="btn-container"><button ontouchstart="showNote(5);" class="left-btn">My note</button><button class="right-btn">Translate</button></tr></td>-->
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse text-trans-word"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word" onclick="tellMe();"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >Repeat</p>
@@ -284,8 +294,10 @@
 						<span class="l4">N_Sprawdź </span>
 						<span class="l5">Sprawdź </span>
 						<span class="wordNB"></span>
-						<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
-						<img src="img/5_you_said.png" class="cloud cloud-you-said">
+						<!--<img src="img/5_perfect.png" class="cloud cloud-perfect pulse-btn">
+						<img src="img/5_you_said.png" class="cloud cloud-you-said">-->
+						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
+						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
 					<table>
 						<tr id="l-e-6" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
@@ -980,7 +992,7 @@
 				<!--<p><span class="l2">E_Lista słów w tej kategorii:</span><span class="l3">F_Lista słów w tej kategorii:</span><span class="l4">N_Lista słów w tej kategorii:</span><span class="l5">Phrases in this lesson:</span></p>-->
 				<div id="list-word-in-sug-cat">
 				</div>
-				<img src="img/phrases.png" class="phrases-cloud">
+				<img src="img/5_phrases_in_this_lesson.png" class="phrases-cloud">
 			</div>
 		<!--<button class="text" onclick="startSetNewCategory();">Wybór ręczny</button>-->
 			<div id="new-cat-ok-no-panel">
@@ -998,10 +1010,10 @@
 				</div>	
 				<div class="note-skip-btn">
 					<div class="note-btn cat-btn-skip" ontouchstart="startSetNewCategory();">
-						<p><span class="text"><img src="img/browse_icon.png">Browse</span></p>
+						<p><span class="text"><!--<img src="img/browse_icon.png">-->SEARCH LESSON</span></p>
 					</div>
 					<div class="skip-btn" ontouchstart="getNextSugCat();">
-						<p><span class="text">Skip<img src="img/next_icon.png"></span></p>
+						<p><span class="text">SKIP THIS LESSON<!--<img src="img/next_icon.png">--></span></p>
 					</div>
 				</div>	
 			</div>	

@@ -391,11 +391,10 @@ var dayJSON = false;
 var toLearnJSON = [];
 
 /*
-var langJSON = JSON.parse('{"lang":-1}');
-var dayJSON = JSON.parse('{"day": 4, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 2}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
+var langJSON = JSON.parse('{"lang":5}');
+var dayJSON = JSON.parse('{"day": 11, "words": 10, "km": 10, "skiped": [ "1/5", "1/8", "1/6"], "rating": false, "theme": 1}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"}]');
 */
-
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -456,7 +455,7 @@ function startApp(){
 				if(!suggestedCatName) getCatWithPos(0, 1);
 			}, 500);
 			
-			/*
+			
 			//ZAKOMENTOWAĆ!!!
 			setTimeout(function(){
 				//prepareAd();
@@ -465,7 +464,7 @@ function startApp(){
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 				//showRating();
 			}, 2000);
-			*/
+			
 			
 		}
 	}, 2500);
@@ -637,7 +636,7 @@ function getNoticeHelper(){
 function getToLearn(){
 	srcFile = path() + "save.json";
 	readWriteFile();
-	////getToLearnHelper();
+	//getToLearnHelper();
 }
 function afterReadToLearn(tolearnfromFile){
 	toLearnJSON = JSON.parse(tolearnfromFile);
@@ -860,11 +859,11 @@ function saveDay(){
 		$("#saving-progress-today").show();
 		setTimeout(function(){				
 			$("#saving-progress-today").removeClass('next-cat-left');
-			
-			datesJSON = toLearnJSON;
-			srcSave = path() + "save.json";
-			saveFile();
-
+			setTimeout(function(){
+				datesJSON = toLearnJSON;
+				srcSave = path() + "save.json";
+				saveFile();
+			}, 500);
 		}, 100);
 	}, 500);
 }
@@ -958,7 +957,7 @@ function getWordToSuggestCat(cs){
 				i++;
 				var w = words[x];
 				var t = trans[x]; 
-				$("#list-word-in-sug-cat").append('<p class="text" onclick="tellMeWord(\'' + res + '\',' + w.id + ')">' + i + '. '+ t.name + '<span>' + w.name + '</span></p>');
+				$("#list-word-in-sug-cat").append('<p class="text" onclick="tellMeWord(\'' + cs + '\',' + w.id + ')">' + i + '. '+ t.name + '<span>' + w.name + '</span></p>');
 			}
 		});
     });
@@ -1272,6 +1271,13 @@ function tellMe(){
 	//var audio = new Audio(src);
 	//audio.play();
 }
+function stopTelling(){
+	my_media.stop();
+	my_media.stopRecord();
+	my_media.release();
+	my_media=null;
+}
+
 function tellMeWord(sygn, id){
 	if(my_media!=null){
             my_media.stop();
@@ -2805,6 +2811,7 @@ function updateProgressBar(){
 		removeProgressClassMin($(".progess-btn-stan-in-session"), percent2);
 		removeProgressClassMin($(".progess-btn-stan-in-cycle-2"), percent);
 		$(".all-words-to-end").text(countWordsToLearn-learnedWords);
+		$("#learn-container .all-words-to-end").text(parseInt((countWordsToLearn-learnedWords)/countWordsToLearn * 100) + "%");
 		if((countWordsToLearn-learnedWords) != (countWordsToLearnInThisCycle-learnedWordsInCat)){
 			$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle-learnedWordsInCat);
 		}else{
@@ -3300,7 +3307,7 @@ function getWordForCatShowList(sygn){
 
 var countOfWrongRecognized = 0;
 function startVoiceToText(){
-	/*
+	/*			
 				$(".recText").text("To powiedziałem");
 				$("#l-n-1").hide();
 				$("#l-n-2").hide();
@@ -3329,7 +3336,7 @@ function startVoiceToText(){
 				$(".show-hidden-word").next("p").show();
 				$(".show-hidden-word").hide();
 				
-				if(((Math.random() * 10) + 1 )> 5){
+				if(((Math.random() * 10) + 1 )> -5){
 					$(".learnMethod").addClass('goodRec');
 					$(".learnMethod").removeClass('badRec');
 					$(".cloud-again").hide();
@@ -3342,8 +3349,8 @@ function startVoiceToText(){
 					$(".cloud-next-task").show();
 					$(".remind-img").hide();
 				}
-		*/		
 				
+	*/			
 	
 	if(!checkConnection()){
 		navigator.notification.confirm(
@@ -3360,12 +3367,13 @@ function startVoiceToText(){
 
 function startRecognize(){
 	//$(".support-word-in-speach").show();
+	stopTelling();
 	
 	var langText = "en-US"
 	var options = {
 		language: langText,
 		matches: 2,
-		prompt: ((nbMethod == 6 || (nbMethod == 4 && nbStep == 0))? act_trans : act_word),
+		prompt: ((nbMethod == 6 || nbMethod == 5 || (nbMethod == 4 && nbStep == 0 && $("#nav-words-container p.activ").index() == 9)) ? act_trans : act_word),
 		showPopup: true
 	};
 
@@ -3429,6 +3437,9 @@ function compareRecognizedText(text){
 		$(".cloud-next-task").show();
 		$(".remind-img").hide();
 		countOfWrongRecognized++;
+		if(countOfWrongRecognized == 1){
+			tellMe();
+		}
 		if(countOfWrongRecognized == 2){
 			countOfWrongRecognized = 0;
 			showRecognizedAlert();

@@ -213,10 +213,26 @@ body{
 	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.62) 2%,rgba(255,255,255,0) 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
     color: white !important;
+	border: 1px solid white;
+    border-width: 0px;
 	border-bottom: 1px solid white;
 }
-.text:hover{
-	border: 1px solid white;
+.text:active{
+	animation: borderAnime 0.3s 1;
+    -webkit-animation: borderAnime 0.3s 1;
+}
+@keyframes borderAnime{
+    0%      {border-width: 0px;}
+    25%     {border-width: 1px;}
+    75%     {border-width: 1px;}
+    100%    {border-width: 0px;}
+}
+
+@-webkit-keyframes borderAnime{
+    0%      {border-width: 0px;}
+    25%     {border-width: 1px;}
+    75%     {border-width: 1px;}
+    100%    {border-width: 0px;}
 }
 .text-reverse{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+98,ffffff+100&0+89,1+100 */
@@ -854,7 +870,7 @@ textarea:focus, textarea:hover, textarea:active{
 .c100 > span {
     width: 3.33em;
     line-height: 3.33em;
-    font-size: 0.3em;
+    font-size: 0.28em;
     color: #000;
 	font-weight: bold;
 }
@@ -954,8 +970,8 @@ section{
 	/*background: transparent url("../img/note-btn-h.png") repeat scroll 0% 0% / cover !important;
 	position: relativ;
 	border-bottom: 1px solid black !important;
-	border-top: 1px solid black !important;*/
-	text-decoration: underline;
+	border-top: 1px solid black !important;
+	text-decoration: underline;*/
 }
 .note-skip-btn  .note-btn{
 	/*background: transparent url("../img/note-btn.png") repeat scroll 0% 0%;
@@ -969,8 +985,8 @@ section{
 	/*background: transparent url("../img/skip-btn-h.png") repeat scroll 0% 0% !important;
 	background-size: 100% 100% !important;
 	border-bottom: 1px solid black !important;
-	border-top: 1px solid black !important;*/
-	text-decoration: underline;
+	border-top: 1px solid black !important;
+	text-decoration: underline;*/
 }
 .note-skip-btn  .skip-btn{
 	/*background: transparent url("../img/skip-btn.png") repeat scroll 0% 0%;
@@ -993,7 +1009,9 @@ section{
     width: auto;
 }
 #new-category-choice .note-skip-btn  .note-btn p span.text{
-    margin-top: 5px;
+    margin-top: 10px;
+	font-size: 10px;
+	top: 10px;
 }
 .note-skip-btn  .note-btn p span.text img{
 	display: inline;
@@ -1015,7 +1033,9 @@ section{
 	width: auto;
 }
 #new-category-choice .note-skip-btn  .skip-btn p span.text{
-	padding: 6px 29px;
+	padding: 6px 8px;
+    font-size: 11px;
+	top: 10px;
 }
 .note-skip-btn  .skip-btn p span.text img{
 	display: inline;
@@ -1037,7 +1057,9 @@ section{
 	margin-left: auto;
 }
 #new-category-choice #suggest-new-category{
-	font-size: 21px !important;
+	font-size: 18px !important;
+	margin-bottom: 0px !important;
+	height: 40px;
 }
 #new-category-choice h1:first-of-type{
 	margin-bottom: 5px;
@@ -1850,17 +1872,30 @@ textarea, textarea[placeholder]{
 #list-word-in-sug-cat{
 	display: block;
 	height: 360px;
-	height: calc(100vh - 280px);
+	height: calc(100vh - 320px);
 	overflow: scroll;
-	margin-top: 20px;
+	margin-top: 50px;
 }
 #list-word-in-sug-cat .text{
-	padding-right: 15px;
-	width: 85%;
+	padding-right: 54px;
+	width: 70%;
 	font-weight: 600;
 	text-align: left;
 	padding-left: 15px;
 	position: relative;
+	font-size: 17px !important;
+}
+#list-word-in-sug-cat .text:after{
+	display: block;
+	content: "";
+	width: 30px;
+	height: 30px;
+	background: transparent url('../img/spiker.png') no-repeat;
+	position: absolute;
+	background-size: 100%;
+	top: 50%;
+	right: 12px;
+	margin-top: -15px;
 }
 #list-word-in-sug-cat .text span{
 	display: block;
@@ -1991,12 +2026,33 @@ h3{
 .cloud-perfect, .cloud-you-said{
 	display: none;
 	position: absolute;
-	width: 29%;
-	left: 9%;
-	bottom: -58px;
+	width: 16%;
+	left: 8%;
+	bottom: -65px;
 }
 .badRec .cloud-you-said{
 	display: block;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+	margin-right: 20px;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding-right: 20px;
+}
+::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
+ 
+.badRec .recText{
+	color: #ff3636 !important;
+	font-weight: bold;
 }
 .goodRec .cloud-perfect{
 	display: block;
@@ -2041,9 +2097,9 @@ h3{
 }
 .phrases-cloud{
 	position: absolute;
-	width: 30%;
+	width: 41%;
 	left: 3%;
-	bottom: -60px;
+	top: -42px;
 }
 @media (min-width : 500px) {
 	.remind-img {
