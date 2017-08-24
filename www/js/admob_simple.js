@@ -19,10 +19,10 @@ if( /(android)/i.test(navigator.userAgent) ) {
 }
 
 function prepareAd(){
-	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+	//if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 function showAd(){
-	if(countAd == 0){
+	/*if(countAd == 0){
 		countAd = 1;
 	}else{
 		countAd++;
@@ -31,5 +31,5 @@ function showAd(){
 		}else{
 			if(AdMob) AdMob.showInterstitial();
 		}
-	}
+	}*/
 }

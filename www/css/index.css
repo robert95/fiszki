@@ -217,9 +217,19 @@ body{
     border-width: 0px;
 	border-bottom: 1px solid white;
 }
-.text:active{
-	animation: borderAnime 0.3s 1;
-    -webkit-animation: borderAnime 0.3s 1;
+
+.bordered{
+	border-width: 1px !important;
+}
+
+.ttext:active{
+	animation-name: borderAnime;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+	
+	-webkit-animation-name: borderAnime;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: 1;
 }
 @keyframes borderAnime{
     0%      {border-width: 0px;}
@@ -793,6 +803,7 @@ textarea:focus, textarea:hover, textarea:active{
 }
 #name-next-cat{
 	min-height: 75px;
+	margin-top: 7%;
 }
 #invite-to-ads{
     margin-top: 50px;
@@ -1009,6 +1020,9 @@ section{
     width: auto;
 }
 #new-category-choice .note-skip-btn  .note-btn p span.text{
+	padding: 13px 15px !important;
+}
+#new-category-choice .note-skip-btn  .note-btn p span.text{
     margin-top: 10px;
 	font-size: 10px;
 	top: 10px;
@@ -1032,8 +1046,17 @@ section{
 	padding: 6px 25px;
 	width: auto;
 }
+#learn-container .note-skip-btn  .skip-btn p span.text{
+	padding: 6px 14px 6px 17px;
+}
+#learn-container .note-skip-btn  .skip-btn p span.text img{
+	margin-left: -3px;
+    height: 19px;
+    position: relative;
+    top: 3px;
+}
 #new-category-choice .note-skip-btn  .skip-btn p span.text{
-	padding: 6px 8px;
+	padding: 13px 8px;
     font-size: 11px;
 	top: 10px;
 }
@@ -1370,8 +1393,8 @@ section{
 	z-index: 2222223;
 }
 .img-close-cont{
-	width: 55px !important;
-	height: 55px !important;
+	width: 50px !important;
+	height: 50px !important;
 	position: fixed !important;
 	top: 4px !important;
 	left: 4px !important;
@@ -1394,7 +1417,7 @@ section{
 	border: 1px solid white;
 }
 .img-close-cont img{
-	width: 45px;
+	width: 40px;
 }
 .themes-cont div img{
 	width: 100px;
@@ -1837,7 +1860,7 @@ textarea, textarea[placeholder]{
 	margin-top: 20px;
 }
 #show-all-cats-cats-wordlist .text{
-	padding-right: 54px;
+	padding-right: 45px;
 	width: 70%;
 	font-weight: 600;
 	text-align: left;
@@ -1847,14 +1870,23 @@ textarea, textarea[placeholder]{
 #show-all-cats-cats-wordlist .text:after{
 	display: block;
 	content: "";
-	width: 30px;
-	height: 30px;
-	background: transparent url('../img/spiker.png') no-repeat;
+	width: 25px;
+	height: 25px;
+	background: transparent url('../img/spiker_white.png') no-repeat;
 	position: absolute;
 	background-size: 100%;
-	top: 50%;
+	top: 40%;
 	right: 12px;
-	margin-top: -15px;
+	margin-top: -22px;
+}
+#show-all-cats-cats-wordlist .text img{
+	display: block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 80%;
+	right: 12px;
+	margin-top: -18px;
 }
 #show-all-cats-cats-wordlist .text span{
 	display: block;
@@ -1872,7 +1904,7 @@ textarea, textarea[placeholder]{
 #list-word-in-sug-cat{
 	display: block;
 	height: 360px;
-	height: calc(100vh - 320px);
+	height: calc(100vh - 350px);
 	overflow: scroll;
 	margin-top: 50px;
 }
@@ -1911,10 +1943,14 @@ textarea, textarea[placeholder]{
 	font-size: 22px;
 	text-align: center;
 	color: white;
-	margin: 27% 44px 0;
+	margin: 27% 24px 0;
 	border: 1px solid white;
-	padding: 10px 21px;
+	padding: 33px 21px;
 	border-radius: 12px;
+	-webkit-box-shadow: 0px 3px 12px 1px rgba(0,0,0,0.35);
+	-moz-box-shadow: 0px 3px 12px 1px rgba(0,0,0,0.35);
+	box-shadow: 0px 3px 12px 1px rgba(0,0,0,0.35);
+	text-shadow: 0px 4px 5px rgba(0,0,0,0.35);
 }
 .main-text-repetition{
 	margin-top: -10px;
@@ -2030,6 +2066,13 @@ h3{
 	left: 8%;
 	bottom: -65px;
 }
+.cloud-perfect-all-words, .cloud-you-said-all-words{
+	display: none;
+	position: absolute;
+	width: 16%;
+	left: 8%;
+	top: 115px;
+}
 .badRec .cloud-you-said{
 	display: block;
 }
@@ -2100,6 +2143,14 @@ h3{
 	width: 41%;
 	left: 3%;
 	top: -42px;
+}
+#return_in_learn{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    padding: 12px 12px;
+	z-index: 10;
 }
 @media (min-width : 500px) {
 	.remind-img {

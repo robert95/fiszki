@@ -123,7 +123,7 @@
 				<!--<div>
 					<img src="img/5_next_task.png" class="cloud cloud-again">
 				</div>-->
-				<img src="img/next_new.png">
+				<img src="img/next_new.png" data-onhover="img/next_new_hover.png" data-offhover="img/next_new.png" ontouchstart="hoverONIMG(this);">
 			</div>
 			<div class="count-word-to-learn" id="mini-counter-wrap">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
@@ -163,6 +163,7 @@
 				</div>		
 			</section>
 			<div id="learn-panel">
+				<img id="return_in_learn" src="img/back2.png" onclick="returnInLearn();">
 				<section id="word-lern-1" class="learnMethod confirm-swipe">
 					<h3>
 						<span class="l2">E_Przetłumacz</span>
@@ -336,7 +337,12 @@
 						<p id="notebtn"><span class="text">Linkword</span></p>
 					</div>
 					<div class="skip-btn only-mobile">
-						<p class="bad-bad" ontouchstart="isNo();" id="badBTN" ><span class="text">Repeat</span></p>
+						<p class="bad-bad" ontouchstart="isNo();" id="badBTN" >
+							<span class="text">
+								Repeat
+								<img src="img/repeat.png" class="repeat_icon">
+							</span>
+						</p>
 					</div>
 				</div>
 			</section>
@@ -742,7 +748,7 @@
 			</p>
 			<div class="count-word-to-learn" id="next-repeat-mini-counter-wrap">
 				<img src="img/5remTasks.png" class="remTasks pulse-btn">
-				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
+				<div class="progess-btn-stan-in-cycle-3 c100 p100 notHover">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end-sesion-in-repeat">0</span>
 					<div class="slice">
 						<div class="bar"></div>
@@ -760,6 +766,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="mic-container" ontouchstart="skipRepetition();">
+				<img src="img/next_new.png" data-onhover="img/next_new_hover.png" data-offhover="img/next_new.png" ontouchstart="hoverONIMG(this);">
 			</div>
 		</section>
 		<section id="end-cat" class="next-cat-left">
@@ -802,8 +811,9 @@
 			</div>
 		</section>
 		<section id="startDay">
+<!--
 			<div class="count-word-to-learn">
-				<!--<img src="img/5remTasks.png" class="remTasks pulse-btn">-->
+				<img src="img/5remTasks.png" class="remTasks pulse-btn">
 				<div class="progess-btn-stan-in-cycle-2 c100 p100 notHover">
 					<span class="progess-btn-per-in-cycle-2 all-words-to-end">21</span>
 					<div class="slice">
@@ -811,12 +821,15 @@
 						<div class="fill"></div>
 					</div>
 				</div>
-			</div>			
+			</div>		
+-->			
 			<div class="mic-container" ontouchstart="showAllCats();">
+				<!--
 				<div>
 					<img src="img/5_browse_cloud.png" class="cloud cloud-browse">
 				</div>
-				<img src="img/browse_btn.png">
+				-->
+				<img src="img/browse_btn.png" data-onhover="img/browse_btn_hover.png" data-offhover="img/browse_btn.png" ontouchstart="hoverONIMG(this);">
 			</div>
 			<h1><span class="l2">E_Welcome to <br>lesson</span><span class="l3">F_Welcome to <br>lesson</span><span class="l4">N_Welcome to <br>lesson</span><span class="l5">Welcome to <br>lesson</span> <span id="nrDayFiled"></span>/200</h1>
 			<p class="first-page-main-text">
@@ -1075,7 +1088,12 @@
 		</div>
 		<section id="show-all-cats" class="goLeft">
 			<p class="img-close-cont" ontouchstart="hideAllCats();"><img src="img/back2.png"></p>
-			<h1><span class="l2">E_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span><span class="l3">F_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span><span class="l4">N_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span><span class="l5">Choose lesson:</span></h1>
+			<h1>
+				<span class="l2">E_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span>
+				<span class="l3">F_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span>
+				<span class="l4">N_Wybierz kategorie której chcesz się dzisiaj zacząć uczyć:</span>
+				<span class="l5">Choose lesson:</span>
+			</h1>
 			<div id="show-all-cats-cat-list">
 				<input type="text" class="fuzzy-search" placeholder="Search..."/>
 				<ul class="list">
@@ -1087,6 +1105,8 @@
 		<section id="show-all-cats-word-list" class="goLeft">
 			<p class="img-close-cont" ontouchstart="hideAllCatsWordList();"><img src="img/back2.png"></p>
 			<h1 class="cat-name-word-list"></h1>
+			<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect-all-words">
+			<img src="img/5_bad_emot_red.PNG" class="cloud cloud-you-said-all-words">
 			<div id="show-all-cats-cats-wordlist">
 			</div>
 		</section>
@@ -1578,6 +1598,8 @@
 				}, 800);
 			}
 			function hideAllCatsWordList(){
+				$(".cloud-perfect-all-words").hide();
+				$(".cloud-you-said-all-words").hide();
 				$("#show-all-cats-word-list").addClass('goLeft');
 				setTimeout(function(){
 					$("#show-all-cats-word-list").hide();
@@ -1776,6 +1798,28 @@
 					$("#show-all-cats").removeClass('goLeft');
 				}, 300);
 			}
+		</script>
+		<script>
+			function hoverONIMG(obj){
+				var img = $(obj).data('onhover');
+				$(obj).attr('src', img);
+				setTimeout(function(){
+					hoverOFFIMG(obj);
+				}, 250);
+			}
+			function hoverOFFIMG(obj){
+				var img = $(obj).data('offhover');
+				$(obj).attr('src', img);
+			}
+		</script>
+		<script>
+			$(document).on('touchstart', '.text', function(){
+				var $obj = $(this);
+				$obj.addClass('bordered');
+				setTimeout(function(){
+					$obj.removeClass('bordered');
+				}, 250);
+			});
 		</script>
     </body>
 </html>
