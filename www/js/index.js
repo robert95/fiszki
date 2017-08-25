@@ -407,6 +407,7 @@ var srcFile2 = false;
 var res3 = false;
 var srcFile3 = false; 
 var noticeJSON = [];
+var likedJSON = [];
 var isFirstCycle = true;
 var startLearn = false;
 var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ];
@@ -455,6 +456,7 @@ function startApp(){
 			$("body").addClass('lang'+lang);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
+			readLikedWords(); //pobierz liked words
 			//getToLearn(); //pobierz toLearn
 			setTimeout(function(){
 				if(!suggestedCatName) getCatWithPos(0, 1);
@@ -1473,6 +1475,7 @@ function setActWord(id){
 	setWordById(id);
 	setNoteById(id);
 	setTransById(id);
+	setActuLikedIcon();
 }
 
 var round = 1;
@@ -3002,12 +3005,13 @@ function getThisCatAsSug(obj){
 var progressJSON = [];
 var srcSaveProgress = "myProgress.fiszki";
 function saveProgressInFile(){
-	var progress = '{"langJSON": "", "dayJSON": "", "toLearnJSON": "", "noticeJSON": ""}';
+	var progress = '{"langJSON": "", "dayJSON": "", "toLearnJSON": "", "noticeJSON": "", "likedJSON": ""}';
 	progressJSON = JSON.parse(progress);
 	progressJSON.langJSON = langJSON;
 	progressJSON.dayJSON = dayJSON;
 	progressJSON.toLearnJSON = toLearnJSON;
 	progressJSON.noticeJSON = noticeJSON;
+	progressJSON.likedJSON = likedJSON;
 	saveFileProgress();
 }
 
@@ -3053,6 +3057,7 @@ function loadProgress(uri){
 						dayJSON = res.dayJSON;
 						toLearnJSON = res.toLearnJSON;
 						noticeJSON = res.noticeJSON;
+						likedJSON = res.likedJSON;
 
 						saveLang(); //save lang
 						window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN); //save notice
@@ -3639,3 +3644,104 @@ function compareRecognizedTextInAllWords(text, correctText){
 		$(".cloud-you-said-all-words").show();
 	}
 }
+
+/* LIKED WORDS */
+function changeLiked(word_sygn){
+	if(isLikedWord(getPathToActuWord())){
+		removeFromlikedJSON(word_sygn);
+		saveLikedWords();
+	}else{
+		addToLikedJSON(word_sygn)
+		saveLikedWords();
+	}
+}
+
+function removeFromlikedJSON(word_sygn){
+	for(var i in likedJSON){
+		if(likedJSON[i] == word_sygn){
+			likedJSON.splice(i,1);
+			break;
+		}
+	}
+}
+
+function addToLikedJSON(word_sygn){
+	likedJSON.push(word_sygn);
+}
+
+function setActuLikedIcon(){
+	if(isLikedWord(getPathToActuWord())){
+		$(".star-liked").attr('src', 'img/star_check.png');
+	}else{
+		$(".star-liked").attr('src', 'img/star.png');
+	}
+}
+
+function isLikedWord(word_sygn){
+	if(likedJSON.length == 0){
+		return false;
+	}
+	for(var x in likedJSON){
+		var word = likedJSON[x];
+		if(word == word_sygn){
+			return true;
+		}
+		if(x == likedJSON.length -1){
+			return false;
+		}
+	}
+}
+
+function getPathToActuWord(){
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var id = $('#idWord').val();
+	return (idParentCat+"\\"+idSubCat+"\\"+id);
+}
+
+//reading
+function readLikedWords() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLiked, onFSError);
+}
+function onFSSuccessLiked(fileSystem) {
+    fileSystem.root.getFile((path() + "liked.json"), {create:false, exclusive:false}, gotFileEntryLiked, onFSError);
+}
+function gotFileEntryLiked(fileEntry) {
+    fileEntry.file(gotFileLiked, onFSError);
+}
+function gotFileLiked(file) {
+    readAsTextLiked(file);
+}
+function readAsTextLiked(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(e) {
+		afterReadLikedWords(e.target.result);
+  };
+  reader.readAsText(file);    
+}
+function afterReadLikedWords(res){
+	likedJSON = res;
+}
+
+//saving
+function saveLikedWords(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSLiked, failN);
+}
+function gotFSLiked(fileSystem) {
+	fileSystem.root.getFile((path() + "liked.json"), {create: true}, gotFileEntryLiked, failN);
+}
+function gotFileEntryLiked(fileEntry) {
+	fileEntry.createWriter(gotFileWriterLiked, failN);
+}
+function gotFileWriterLiked(writer) {
+	writer.onwriteend = function (e) {
+		afterSaveLikedWords();
+	};
+
+	writer.write(JSON.stringify(likedJSON));
+	writer.abort();
+}
+function afterSaveLikedWords(){
+	//coś po zapisaniu liked
+}
+/* END LIKED WORDS */

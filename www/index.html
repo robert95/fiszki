@@ -176,6 +176,7 @@
 						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
 						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
+					<img src="img/star.png" class="star-liked">
 					<table>
 						<!--<tr><td><img src="img/up.png"></td></tr>-->
 						<tr id="l-e-1" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
@@ -202,6 +203,7 @@
 						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
 						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
+					<img src="img/star.png" class="star-liked">
 					<table>
 						<tr id="l-e-2" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-2"><td colspan="3"><p class="text" id="confirm-trans-2"></p></td></tr>
@@ -227,6 +229,7 @@
 						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
 						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
+					<img src="img/star.png" class="star-liked">
 					<table>
 						<tr id="l-e-3"><td colspan="3"><input type="text" class="text" id="question-3"/></td></tr>
 						<tr id="l-n-3" class="hidden"><td colspan="3"><textarea id="confirm-text-3" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
@@ -251,6 +254,7 @@
 						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
 						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
+					<img src="img/star.png" class="star-liked">
 					<table>
 						<tr id="l-e-4" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-4"><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text" id="confirm-trans-4"></p></td></tr>
@@ -276,6 +280,7 @@
 						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
 						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
+					<img src="img/star.png" class="star-liked">
 					<table>
 						<tr id="l-e-5"><td colspan="3"><input type="text" class="text" id="question-5"/></td></tr>
 						<tr id="l-n-5" class="hidden"><td colspan="3"><textarea id="confirm-text-5" class="text noteTEXT" placeholder="Click here to write your Linkword"></textarea></td></tr>
@@ -300,6 +305,7 @@
 						<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect">
 						<img src="img/5_bad_emot.PNG" class="cloud cloud-you-said">
 					</h3>
+					<img src="img/star.png" class="star-liked">
 					<table>
 						<tr id="l-e-6" class="hidden"><td colspan="3"><p class="text"></p></td></tr>
 						<tr id="l-t-6"><td colspan="3"><p class="text text-reverse empty-text show-hidden-word">Click here to show sentence</p><p class="text" id="confirm-trans-6"></p></td></tr>
@@ -1819,6 +1825,12 @@
 				setTimeout(function(){
 					$obj.removeClass('bordered');
 				}, 250);
+			});
+		</script>
+		<script>
+			$(document).on('touchstart', '.star-liked', function(){
+				changeLiked(getPathToActuWord());
+				setActuLikedIcon();
 			});
 		</script>
     </body>

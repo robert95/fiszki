@@ -2152,6 +2152,15 @@ h3{
     padding: 12px 12px;
 	z-index: 10;
 }
+.star-liked{
+	display: block;
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	right: 27px;
+	top: 170px;
+	z-index: 100;
+}
 @media (min-width : 500px) {
 	.remind-img {
 		left: 5px;
