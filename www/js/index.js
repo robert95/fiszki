@@ -3744,9 +3744,9 @@ function saveLikedWords(){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSLiked, failN);
 }
 function gotFSLiked(fileSystem) {
-	fileSystem.root.getFile((path() + "liked.json"), {create: true}, gotFileEntryLiked, failN);
+	fileSystem.root.getFile((path() + "liked.json"), {create: true}, gotFileEntryLikedW, failN);
 }
-function gotFileEntryLiked(fileEntry) {
+function gotFileEntryLikedW(fileEntry) {
 	fileEntry.createWriter(gotFileWriterLiked, failN);
 }
 function gotFileWriterLiked(writer) {
