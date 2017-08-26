@@ -3736,7 +3736,7 @@ function readAsTextLiked(file) {
   reader.readAsText(file);    
 }
 function afterReadLikedWords(res){
-	likedJSON = res;
+	likedJSON = JSON.parse(res); //PARSOWANIE JSON!!!
 }
 
 //saving
