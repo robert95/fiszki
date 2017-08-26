@@ -138,13 +138,13 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
-	/*
+
 	if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
-	*/
+	
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -292,7 +292,6 @@ function gotFileWriterN2(writer) {
 		renameFile(srcSaveTmp,'',srcSave, renameSuccessSaveEnd);
 	};
 	
-	//alert(JSON.stringify(datesJSON));
 	writer.write(JSON.stringify(datesJSON));
 	writer.abort();
 }
@@ -387,18 +386,19 @@ var datesJSON = false;
 var datesJSON5 = false;
 var dayJSONwordsCopy = 0;
 var learnedWordsCopy = 0;
-/*
+
 var langJSON = JSON.parse('{"lang":-1}');
 var dayJSON = false;
 var toLearnJSON = [];
-*/
 
+/*
 var langJSON = JSON.parse('{"lang":5}');
 var dayJSON = JSON.parse('{"day": 11, "words": 10, "km": 10, "skiped": [ "1/7", "1/9", "1/10"], "rating": false, "theme": 1}');//false;//
-var dayJSONwordsCopy = dayJSON.words;
 var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"}, {"subid":3,"catid":1,"start":"10"}]');
-var	toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
+*/
 
+var dayJSONwordsCopy = dayJSON.words;
+var	toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
 var resLang = false;
 var res = false;
 var srcFile = false;
@@ -479,8 +479,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	//readLang();
-	//setTimeout(function() {getMyLangHelper();}, 100);
+	readLang();
+	setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -494,9 +494,9 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	//readDayF();
-	//getDayHelper();
-
+	readDayF();
+	getDayHelper();
+/*
 	getAllCatsInArray();
 	getAllCatsToShowAllCats();
 	$("#nrDayFiled").text(dayJSON.day); //usunąć
@@ -595,7 +595,7 @@ function getDay(){
 			}
 		}, 150);
 	$("body").addClass('theme'+dayJSON.theme);
-	
+	*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -629,8 +629,8 @@ function getDayHelper(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	//readWriteFile2();
-	//getNoticeHelper();
+	readWriteFile2();
+	getNoticeHelper();
 }
 function getNoticeHelper(){
 	if(res2 == false){
@@ -643,8 +643,8 @@ function getNoticeHelper(){
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-	//readWriteFile();
-	////getToLearnHelper();
+	readWriteFile();
+	//getToLearnHelper();
 }
 function afterReadToLearn(tolearnfromFile){
 	toLearnJSON = JSON.parse(tolearnfromFile);
@@ -2248,12 +2248,7 @@ function packControler(){
 	$("#startDay").hide();
 	$("#words-nav").show();
 	$("#ok-no-panel").show();
-	/*alert($("#progress-circle .c100").width());
-	alert($("#start-day-wrap-ok-no .good-bad").width());
-	alert($( window ).width());
-	alert(toLearn.reduce(function(a, b) { return a + b; }, 0));
-	alert(toLearn.reduce(function(a, b) { return a + b; }, 0) > -10 );
-	alert(Number(toLearn.reduce(function(a, b) { return a + b; }, 0)) == 0);*/
+
 	if(toLearn.reduce(function(a, b) { return a + b; }, 0) != -10){
 		/*$("#learn-container").show();*/
 		setTimeout(function(){				
@@ -3354,7 +3349,7 @@ function getWordForCatShowList(sygn){
 
 var countOfWrongRecognized = 0;
 function startVoiceToText(){
-				
+	/*			
 				$(".recText").text("To powiedziałem");
 				$("#l-n-1").hide();
 				$("#l-n-2").hide();
@@ -3397,8 +3392,9 @@ function startVoiceToText(){
 					$(".remind-img").hide();
 				}
 				
-				
-	/*
+	*/	
+			
+	
 	if(!checkConnection()){
 		navigator.notification.confirm(
 			"Connect to the Internet to use this function.",
@@ -3409,7 +3405,6 @@ function startVoiceToText(){
 	}else{
 		startRecognize();
 	}
-	*/
 }
 
 function startRecognize(){
@@ -3563,15 +3558,14 @@ function skipRepetition(){
 }
 
 function showEndNewMaterialsInfo(){
-	alert("aaaa");
-	/*
+	
 	navigator.notification.confirm(
 		"Koniec nowych materiałów, od teraz już tylko powtórki",
 		showEndNewMaterialsInfoCallback,
 		"Koniec nowych materiałów",
 		"OK"
 	);
-	*/
+	
 }
 
 function showEndNewMaterialsInfoCallback(buttonIndex){
@@ -3596,6 +3590,11 @@ function returnInLearn(){
 	nextPack();
 }
 
+function hideSpeachClouds(){
+	$(".cloud-perfect-all-words").hide();
+	$(".cloud-you-said-all-words").hide();
+}
+
 function checkMeWord(word_text){
 	stopTelling();
 	
@@ -3609,7 +3608,7 @@ function checkMeWord(word_text){
 	}
 	*/
 	
-	//startRecognizeInAllWords(word_text);
+	startRecognizeInAllWords(word_text);
 }
 
 function startRecognizeInAllWords(correct_text){
@@ -3672,9 +3671,26 @@ function addToLikedJSON(word_sygn){
 function setActuLikedIcon(){
 	if(isLikedWord(getPathToActuWord())){
 		$(".star-liked").attr('src', 'img/star_check.png');
+		window.plugins.toast.showWithOptions(
+			{
+				message: "Fraza dodana do ulubionych",
+				duration: "long", 
+				position: "bottom"
+			}
+		);
 	}else{
 		$(".star-liked").attr('src', 'img/star.png');
+		window.plugins.toast.showWithOptions(
+			{
+				message: "Fraza usunięta do ulubionych",
+				duration: "long", 
+				position: "bottom"
+			}
+		);
 	}
+	setTimeout(function(){
+		$(".star-liked").show();
+	}, 1000);
 }
 
 function isLikedWord(word_sygn){
@@ -3743,5 +3759,24 @@ function gotFileWriterLiked(writer) {
 }
 function afterSaveLikedWords(){
 	//coś po zapisaniu liked
+}
+
+function showSavedWords(){
+	$("#savedWordsContainer").text("");
+	for(var x in likedJSON){
+		var word = likedJSON[x].split("\\");
+		showSavedWord(word);
+	}
+}
+function showSavedWord(word){
+	$.get("date/"+ langJSON.lang + "/" + word[0] + "/" + word[1] + "/words.json", function(result) {
+		$.get("date/1/" + word[0] + "/" + word[1] + "/words.json", function(transResult) {
+			var words = JSON.parse(result);
+			var trans = JSON.parse(transResult);
+			var w = words[word[2]-1];
+			var t = trans[word[2]-1];
+			$("#savedWordsContainer").append('<p class="text" onclick="tellMeWord(\'' + word[0] + "/" + word[1] + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\')"></p>');
+		});
+	});
 }
 /* END LIKED WORDS */

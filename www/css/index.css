@@ -1327,7 +1327,7 @@ section{
 	height: 100%;
 	width: 100%;
 }
-#statistic, #list-of-word-in-cat, #options-box, #show-all-cats, #show-all-cats-word-list{
+#statistic, #list-of-word-in-cat, #options-box, #show-all-cats, #show-all-cats-word-list, #savedWords{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1349,15 +1349,20 @@ section{
 #show-all-cats-word-list{
 	z-index: 2222224;
 }
-.theme2 #statistic, .theme2 #list-of-word-in-cat, .theme2 #options-box, .theme2 #show-all-cats, .theme2 #show-all-cats-word-list{
+.theme2 #statistic, .theme2 #list-of-word-in-cat, .theme2 #options-box, .theme2 #show-all-cats, .theme2 #show-all-cats-word-list, .theme2 #savedWords{
 	background: url("../img/bg2.jpg") 100% 100% !important;
 }
-.theme3 #statistic, .theme3 #list-of-word-in-cat, .theme3 #options-box, .theme3 #show-all-cats, .theme3 #show-all-cats-word-list{
+.theme3 #statistic, .theme3 #list-of-word-in-cat, .theme3 #options-box, .theme3 #show-all-cats, .theme3 #show-all-cats-word-list, .theme3 #savedWords{
 	background: url("../img/bg3.png") 100% 100% !important;
 }
 #statistic .scroll-container{
 	margin-top: 4%;
 	height: 71%;
+	overflow: scroll;
+}
+#savedWords .scroll-container{
+	margin-top: 115px;
+	height: calc(100% - 5px);
 	overflow: scroll;
 }
 #statistic .scroll-container h3:first-of-type{
@@ -1367,7 +1372,7 @@ section{
 	max-height: calc(100% - 160px);
 	overflow: scroll;
 }
-#statistic h3:first-of-type, #list-of-word-in-cat h3:first-of-type, #options-box h3:first-of-type, #show-all-cats h3:first-of-type, #show-all-cats-word-list h3:first-of-type{
+#statistic h3:first-of-type, #savedWords h3:first-of-type, #list-of-word-in-cat h3:first-of-type, #options-box h3:first-of-type, #show-all-cats h3:first-of-type, #show-all-cats-word-list h3:first-of-type{
 	position: fixed;
 	width: 100%;
 	margin: auto auto;
@@ -1853,13 +1858,13 @@ textarea, textarea[placeholder]{
 	width: 92%;
 	margin-left: 8%;
 }
-#show-all-cats-cats-wordlist{
+#show-all-cats-cats-wordlist, #savedWordsContainer{
 	display: block;
 	height: calc(100% - 150px);
 	overflow: scroll;
 	margin-top: 20px;
 }
-#show-all-cats-cats-wordlist .text{
+#show-all-cats-cats-wordlist .text, #savedWordsContainer .text{
 	padding-right: 45px;
 	width: 70%;
 	font-weight: 600;
@@ -1867,7 +1872,7 @@ textarea, textarea[placeholder]{
 	padding-left: 15px;
 	position: relative;
 }
-#show-all-cats-cats-wordlist .text:after{
+#show-all-cats-cats-wordlist .text:after, #savedWordsContainer .text:after{
 	display: block;
 	content: "";
 	width: 25px;
@@ -1879,7 +1884,7 @@ textarea, textarea[placeholder]{
 	right: 12px;
 	margin-top: -22px;
 }
-#show-all-cats-cats-wordlist .text img{
+#show-all-cats-cats-wordlist .text img, #savedWordsContainer .text img{
 	display: block;
 	width: 25px;
 	height: 25px;
@@ -1888,7 +1893,7 @@ textarea, textarea[placeholder]{
 	right: 12px;
 	margin-top: -18px;
 }
-#show-all-cats-cats-wordlist .text span{
+#show-all-cats-cats-wordlist .text span, #savedWordsContainer .text span{
 	display: block;
 	font-size: 13px;
 	border-top: 1px solid white;
@@ -2073,6 +2078,10 @@ h3{
 	left: 8%;
 	top: 115px;
 }
+#savedWords .cloud-perfect-all-words, #savedWords .cloud-you-said-all-words{
+	top: 75px;
+	left: 5%;
+}
 .badRec .cloud-you-said{
 	display: block;
 }
@@ -2154,8 +2163,8 @@ h3{
 }
 .star-liked{
 	display: block;
-	width: 22px;
-	height: 22px;
+	width: 20px;
+	height: 20px;
 	position: absolute;
 	right: 27px;
 	top: 170px;

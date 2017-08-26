@@ -48,6 +48,7 @@
 				</li>
 				<!--<li id="m3"><span class="l2">E_TUTORIAL</span><span class="l3">TUTORIAL</span></li>-->
 				<li id="m4" class="text"><span class="l2">E_STATYSTYKI</span><span class="l3">F_STATYSTYKI</span><span class="l4">N_STATYSTYKI</span><span class="l5">Your Progress</span></li>
+				<li id="m11" class="text"><span class="l2">E_STATYSTYKI</span><span class="l3">F_STATYSTYKI</span><span class="l4">N_STATYSTYKI</span><span class="l5">Saved words</span></li>
 				<li id="m6" class="text"><span class="l2">E_KUP WERSJĘ PREMIUM</span><span class="l3">F_KUP WERSJĘ PREMIUM</span><span class="l4">N_KUP WERSJĘ PREMIUM</span><span class="l5">Upgrade to SpeakApp premium</span></li>
 				<!--<li id="m7" class="text"><span class="l2">E_SPEAKUP.COM</span><span class="l3">F_SPEAKUP.COM</span><span class="l4">N_SPEAKUP.COM</span><span class="l5">SPEAKUP.PL</span></li>-->
 				<li id="m7" class="text"><span class="l2">MYCALL.NO</span><span class="l3">MYCALL.NO</span><span class="l4">MYCALL.NO</span><span class="l5">Mycall.no</span></li>
@@ -1055,6 +1056,20 @@
 				<div class="inProgressCatList"></div>
 			</div>
 		</section>
+		<section id="savedWords" class="goLeft">
+			<p class="img-close-cont" ontouchstart="hideSavedWords();"><img src="img/back2.png"></p>
+			<h3>
+				<span class="l2">E_Statystyki:</span>
+				<span class="l3">F_Statystyki:</span>
+				<span class="l4">N_Statystyki:</span>
+				<span class="l5">Saved words:</span>
+			</h3>
+			<img src="img/5_perfect_emot.PNG" class="cloud cloud-perfect-all-words">
+			<img src="img/5_bad_emot_red.PNG" class="cloud cloud-you-said-all-words">
+			<div class="scroll-container">
+				<div id="savedWordsContainer"></div>
+			</div>
+		</section>
 		<section id="options-box" class="goLeft">
 			<p class="img-close-cont" ontouchstart="hideOptionBox();"><img src="img/back2.png"></p>
 			<h3><span class="l2">E_Wybierz motyw:</span><span class="l3">F_Wybierz motyw:</span><span class="l4">N_Wybierz motyw:</span><span class="l5">Change your theme:</span></h3>
@@ -1307,6 +1322,7 @@
 			}
 			
 			function isOk(){
+				$(".star-liked").hide();
 				//$(".bad-bad").hide();
 				setAntyNaparzankaToTrue();
 				var where = whereGoNow();
@@ -1481,7 +1497,6 @@
 		<script>
 			$("#menu-switch").click(function(){
 				$("#menu").addClass('showmenu');
-				console.log($("#list-word-in-sug-cat").html());
 			});
 			$("#mE").click(function(){
 				hideMenu();
@@ -1493,7 +1508,6 @@
 				saveProgressInFile();
 				setTimeout(function(){
 					shareFile();
-					//alert("Twoje postępy zostały zapisane w pamięci telefony w pliku 'myProgress.fiszki'");
 				}, 500);
 			});
 			$("#m2").click(function(){
@@ -1520,6 +1534,7 @@
 			$("#m9").click(function(){
 				$("#show-all-cats").show();
 				$("#show-all-cats-cats").show();
+				hideSpeachClouds();
 				runList();
 				setTimeout(function(){
 					$("#show-all-cats").removeClass('goLeft');
@@ -1547,6 +1562,14 @@
 			});
 			$("#m7").click(function(){
 				window.open('https://mycall.no', '_system');
+			});
+			$("#m11").click(function(){
+				$("#savedWords").show();
+				showSavedWords();
+				hideSpeachClouds();
+				setTimeout(function(){
+					$("#savedWords").removeClass('goLeft');
+				}, 300);
 			});
 			$(".mycalllink").click(function(){
 				window.open('https://www.mycall.no', '_system');
@@ -1582,6 +1605,12 @@
 				$("#statistic").addClass('goLeft');
 				setTimeout(function(){
 					$("#statistic").hide();
+				}, 800);
+			}
+			function hideSavedWords(){
+				$("#savedWords").addClass('goLeft');
+				setTimeout(function(){
+					$("#savedWords").hide();
 				}, 800);
 			}
 			function hideOptionBox(){
