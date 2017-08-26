@@ -3656,6 +3656,13 @@ function changeLiked(word_sygn){
 }
 
 function removeFromlikedJSON(word_sygn){
+	window.plugins.toast.showWithOptions(
+		{
+			message: "Fraza usunięta z ulubionych",
+			duration: "short", 
+			position: "bottom"
+		}
+	);
 	for(var i in likedJSON){
 		if(likedJSON[i] == word_sygn){
 			likedJSON.splice(i,1);
@@ -3665,28 +3672,21 @@ function removeFromlikedJSON(word_sygn){
 }
 
 function addToLikedJSON(word_sygn){
+	window.plugins.toast.showWithOptions(
+		{
+			message: "Fraza dodana do ulubionych",
+			duration: "short", 
+			position: "bottom"
+		}
+	);
 	likedJSON.push(word_sygn);
 }
 
 function setActuLikedIcon(){
 	if(isLikedWord(getPathToActuWord())){
 		$(".star-liked").attr('src', 'img/star_check.png');
-		window.plugins.toast.showWithOptions(
-			{
-				message: "Fraza dodana do ulubionych",
-				duration: "long", 
-				position: "bottom"
-			}
-		);
 	}else{
 		$(".star-liked").attr('src', 'img/star.png');
-		window.plugins.toast.showWithOptions(
-			{
-				message: "Fraza usunięta do ulubionych",
-				duration: "long", 
-				position: "bottom"
-			}
-		);
 	}
 	setTimeout(function(){
 		$(".star-liked").show();
