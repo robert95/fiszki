@@ -359,7 +359,7 @@ h2{
 section{
 	vertical-align: middle;
 }
-#learn-container, #learn-panel{
+#learn-container, #learn-panel, #new-tutorial{
 	overflow: hidden;
 }
 #choose-your-l{
@@ -378,12 +378,12 @@ section{
 	margin-top: 13px;
 	font-size: 20px;
 }
-#learn-container{
+#learn-container, #new-tutorial{
 	display: none;
 	height: 100%;
 	overflow-x: hidden;
 }
-#wrap-ok-no, #tut-wrap-ok-no, #start-day-wrap-ok-no, #start-day-wrap-ok-no-end-course, #end-day-wrap-ok-no, #new-cat-wrap-ok-no{
+#wrap-ok-no, #wrap-ok-no-TUT, #tut-wrap-ok-no, #start-day-wrap-ok-no, #start-day-wrap-ok-no-end-course, #end-day-wrap-ok-no, #new-cat-wrap-ok-no{
 	position: relative;
 	text-align: center;
 }
@@ -708,7 +708,7 @@ textarea:focus, textarea:hover, textarea:active{
 	position: relative;
 	top: 0%;/*-50px;*/
 }
-#ok-no-panel, #tut-ok-no-panel, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel{
+#ok-no-panel, #ok-no-panel-TUT, #tut-ok-no-panel, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel{
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -760,7 +760,7 @@ textarea:focus, textarea:hover, textarea:active{
 	width: 100%;
 	bottom: 0px;
 }
-#page-after-tutorial, #start-next-cat, #end-cat, #end-course, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay, #saving-progress-today{
+#page-after-tutorial, #start-next-cat, #end-cat, #end-course, #new-category-choice, #learn-container, #choose-cat, #end-panel, #tutorial, #startDay, #saving-progress-today, #new-tutorial{
 	display: none;
 	position: relative;
 	transition: 0.6s;
@@ -788,6 +788,10 @@ textarea:focus, textarea:hover, textarea:active{
 .next-cat-right{
     transform: translateX(-130%) !important;
     -webkit-transform: translateX(-130%) !important;
+}
+.next-cat-right-right{
+    transform: translateX(130%) !important;
+    -webkit-transform: translateX(130%) !important;
 }
 #main-text-next-cat{
 	text-align: right;
@@ -887,7 +891,7 @@ textarea:focus, textarea:hover, textarea:active{
 }
 .all-words-to-end{
 	width: 100% !important;
-	line-height: 2.5em !important;
+	line-height: 2.6em !important;
 }
 .loading-waiting{
 	-webkit-animation-duration: 1.5s;
@@ -1016,7 +1020,7 @@ section{
 .note-skip-btn  .note-btn p span.text{
     margin-top: -29px;
     margin-left: -10px;
-    padding: 6px 15px;
+	padding: 6px 39px;
     width: auto;
 }
 #new-category-choice .note-skip-btn  .note-btn p span.text{
@@ -1046,10 +1050,10 @@ section{
 	padding: 6px 25px;
 	width: auto;
 }
-#learn-container .note-skip-btn  .skip-btn p span.text{
+#learn-container .note-skip-btn  .skip-btn p span.text, #new-tutorial .note-skip-btn  .skip-btn p span.text{
 	padding: 6px 14px 6px 17px;
 }
-#learn-container .note-skip-btn  .skip-btn p span.text img{
+#learn-container .note-skip-btn  .skip-btn p span.text img, #new-tutorial .note-skip-btn  .skip-btn p span.text img{
 	margin-left: -3px;
     height: 19px;
     position: relative;
@@ -1873,7 +1877,7 @@ textarea, textarea[placeholder]{
 	position: relative;
 }
 #show-all-cats-cats-wordlist .text:after, #savedWordsContainer .text:after{
-	display: block;
+	/*display: block;
 	content: "";
 	width: 25px;
 	height: 25px;
@@ -1882,16 +1886,16 @@ textarea, textarea[placeholder]{
 	background-size: 100%;
 	top: 40%;
 	right: 12px;
-	margin-top: -22px;
+	margin-top: -22px;*/
 }
 #show-all-cats-cats-wordlist .text img, #savedWordsContainer .text img{
 	display: block;
-	width: 25px;
-	height: 25px;
+	width: 40px;
+	height: 40px;
 	position: absolute;
-	top: 80%;
-	right: 12px;
-	margin-top: -18px;
+	top: 50%;
+	right: 3px;
+	margin-top: -22px;
 }
 #show-all-cats-cats-wordlist .text span, #savedWordsContainer .text span{
 	display: block;
@@ -1949,13 +1953,13 @@ textarea, textarea[placeholder]{
 	text-align: center;
 	color: white;
 	margin: 27% 24px 0;
-	border: 1px solid white;
+	border: 2px solid white;
 	padding: 33px 21px;
-	border-radius: 12px;
+	border-radius: 40px;
 	-webkit-box-shadow: 0px 3px 12px 1px rgba(0,0,0,0.35);
 	-moz-box-shadow: 0px 3px 12px 1px rgba(0,0,0,0.35);
 	box-shadow: 0px 3px 12px 1px rgba(0,0,0,0.35);
-	text-shadow: 0px 4px 5px rgba(0,0,0,0.35);
+	text-shadow: 0px 3px 12px 1px rgba(0,0,0,0.35);
 }
 .main-text-repetition{
 	margin-top: -10px;
@@ -2143,8 +2147,8 @@ h3{
     width: 100px;
     display: block;
     word-wrap: normal;
-    font-size: 15px;
-    line-height: 1.5;
+	font-size: 16px;
+	line-height: 1.3;
     padding-top: 25px;
 }
 .phrases-cloud{
@@ -2153,7 +2157,7 @@ h3{
 	left: 3%;
 	top: -42px;
 }
-#return_in_learn{
+#return_in_learn, #return_in_learn-TUT{
 	position: absolute;
     top: 0;
     left: 0;
@@ -2163,12 +2167,166 @@ h3{
 }
 .star-liked{
 	display: block;
-	width: 20px;
-	height: 20px;
+	width: 23px;
+	height: 22px;
 	position: absolute;
-	right: 27px;
-	top: 170px;
+	right: 11px;
+	top: 8px;
 	z-index: 100;
+}
+.good-telling-word{
+	color: #31ee31 !important;
+}
+.bad-telling-word{
+	color: red !important;
+}
+.good-telling-word span, .bad-telling-word span{
+	color: white !important;
+}
+.phrase_browser_cloud{
+	position: absolute;
+    right: 10%;
+    bottom: 155px;
+	width: 92px;
+}
+#ok-no-panel-TUT, #perfect-cloud-TUT{
+	display: block !important;
+}
+#new-tutorial-dark-background{
+	width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+	background: rgba(0,0,0,0.75);
+    left: 0;
+    z-index: 1000000000;
+}
+.star-liked-TUT{
+	right: 8% !important;
+	top: 44% !important;
+}
+#menu-switch, #return_in_learn-TUT, #perfect-cloud-TUT, .star-liked-TUT, #word-lern-2-TUT table, #new-tutorial .mic-container, #new-tutorial .cloud-next-task, #notebtn-TUT, #badBTN-TUT, #progess-btn-stan-in-cycle-TUT, #new-tutorial-repeat-text span, #mini-counter-wrap-TUT{
+	opacity: 0.5;
+}
+.half-opacity{
+	opacity: 0.5 !important;
+}
+.full-opacity{
+	opacity: 1 !important;
+}
+.tutorial-body-darkness{
+	background: black;
+}
+.background-tutorial-darkness{
+	opacity: 0.8;
+}
+.popup-TUT{
+    position: absolute;
+    background: white;
+    width: 86%;
+    margin-left: 7%;
+    margin-top: 56%;
+    text-align: center;
+    box-shadow: 0px 4px 15px 4px rgba(0,0,0,0.35);
+	z-index: 20000000000;
+	
+	transition: 0.6s;
+	-webkit-transition: 0.6s;
+	-webkit-transition: transform 0.6s linear;
+	-moz-transition: transform 0.6s linear;
+	-o-transition: transform 0.6s linear;
+	-ms-transition: transform 0.6s linear;
+	transition: transform 0.6s linear;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-perspective: 0px; 
+    perspective: 0px;
+}
+.popup-TUT .title-TUT{
+	font-weight: bold;
+    font-size: 17px !important;
+    border-bottom: 2px solid #42a4ff;
+    padding-bottom: 16px;
+}
+.popup-TUT .text-TUT{
+    max-width: 90%;
+    margin: auto auto;
+    min-height: 95px;
+}
+.btns-TUT{
+    font-weight: 600;
+}
+.btns-TUT div:first-of-type{
+	width: 45%;
+    display: inline-block;
+    text-align: left;
+}
+.btns-TUT div:last-of-type{
+	width: 45%;
+    display: inline-block;
+    text-align: right;
+}
+.title-TUT span{
+	font-size: 19px !important;
+}
+.btns-TUT span{
+	font-size: 14px !important;
+}
+.btns-TUT p{
+	margin-bottom: 8px;
+}
+.cursor-TUT{
+	position: absolute;
+	width: 25px;
+	display: none;
+}
+.cursor-TUT-2{
+	display: inline !important;
+	-ms-transform: rotate(50deg);
+	-webkit-transform: rotate(50deg);
+	transform: rotate(50deg);
+	top: 87px;
+	left: 31%;
+}
+.cursor-TUT-3{
+	display: inline !important;
+	-ms-transform: rotate(155deg);
+	-webkit-transform: rotate(155deg);
+	transform: rotate(155deg);
+	bottom: 127px;
+	left: 31%;
+}
+.cursor-TUT-4{
+	display: inline !important;
+	-ms-transform: rotate(155deg);
+	-webkit-transform: rotate(155deg);
+	transform: rotate(155deg);
+	bottom: 143px;
+	right: 23%;
+}
+.cursor-TUT-5{
+	display: inline !important;
+	-ms-transform: rotate(155deg);
+	-webkit-transform: rotate(155deg);
+	transform: rotate(155deg);
+	bottom: 50px;
+	left: 9%;
+}
+.cursor-TUT-6{
+	display: inline !important;
+	-ms-transform: rotate(155deg);
+	-webkit-transform: rotate(155deg);
+	transform: rotate(155deg);
+	top: 145px;
+	right: 14%;
+}
+.cursor-TUT-7{
+	display: inline !important;
+	-ms-transform: rotate(50deg);
+	-webkit-transform: rotate(50deg);
+	transform: rotate(50deg);
+	top: 48px;
+	right: 5%;
 }
 @media (min-width : 500px) {
 	.remind-img {

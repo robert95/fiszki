@@ -144,7 +144,7 @@ function hideBars() {
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
-	
+
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -387,6 +387,7 @@ var datesJSON5 = false;
 var dayJSONwordsCopy = 0;
 var learnedWordsCopy = 0;
 
+
 var langJSON = JSON.parse('{"lang":-1}');
 var dayJSON = false;
 var toLearnJSON = [];
@@ -394,7 +395,7 @@ var toLearnJSON = [];
 /*
 var langJSON = JSON.parse('{"lang":5}');
 var dayJSON = JSON.parse('{"day": 11, "words": 10, "km": 10, "skiped": [ "1/7", "1/9", "1/10"], "rating": false, "theme": 1}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"}, {"subid":3,"catid":1,"start":"10"}]');
+var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"}, {"subid":3,"catid":1,"start":"4"}]');
 */
 
 var dayJSONwordsCopy = dayJSON.words;
@@ -525,15 +526,17 @@ function getDay(){
 			if(dayNr < 27) inProgressCat.push(pack.catid + "/" + pack.subid);
 			switch(dayNr) {
 			case 1:
-				toLearn[0] = pack.catid + "/" + pack.subid;
-				toLearn[1] = pack.catid + "/" + pack.subid;
-				countCatsToLearn++;
-				countOfCycle++;
-				countOfCycle++;
-				countWordsToLearn += wordsInOneCat;
-				countWordsToLearn += wordsInOneCat*2;
-				setSuggestedCat(pack.catid, pack.subid);
-				inProgressCat.push(pack.catid + "/" + pack.subid);
+			
+			//	toLearn[0] = pack.catid + "/" + pack.subid;
+			//	toLearn[1] = pack.catid + "/" + pack.subid;
+			//	countCatsToLearn++;
+			//	countOfCycle++;
+			//	countOfCycle++;
+			//	countWordsToLearn += wordsInOneCat;
+			//	countWordsToLearn += wordsInOneCat*2;
+			//	setSuggestedCat(pack.catid, pack.subid);
+			//	inProgressCat.push(pack.catid + "/" + pack.subid);
+			
 				break;
 			case 4:
 				toLearn[2] = pack.catid + "/" + pack.subid;
@@ -665,6 +668,7 @@ function afterReadToLearn(tolearnfromFile){
 		}
 		switch(dayNr) {
 		case 1:
+		/*
 			toLearn[0] = pack.catid + "/" + pack.subid;
 			toLearn[1] = pack.catid + "/" + pack.subid;
 			countCatsToLearn++;
@@ -675,6 +679,7 @@ function afterReadToLearn(tolearnfromFile){
 			setSuggestedCat(pack.catid, pack.subid);
 			inProgressCat.push(pack.catid + "/" + pack.subid);
 			break;
+		*/
 		case 4:
 			toLearn[2] = pack.catid + "/" + pack.subid;
 			toLearn[3] = pack.catid + "/" + pack.subid;
@@ -2574,59 +2579,76 @@ function endLearn(){
 }
 /*END END APP*/
 /*TUTORIAL*/
-var stepTut = 0;
+var stepTut = 1;
 function startTut(){
-	stepTut = 0;
+	$("body").addClass('tutorial-body-darkness');
+	$(".background").addClass('background-tutorial-darkness');
+	stepTut = 1;
 	$("#choose-lang").hide();
-	$("#tutorial").show();
+	$(".cursor-TUT").hide();
+	$("#menu-switch").addClass('half-opacity');
+	$("#new-tutorial").show();
 	setTimeout(function(){				
-		$("#tutorial").removeClass('next-cat-left');
+		$("#new-tutorial").removeClass('next-cat-left');
 	}, 200);
-	$("#tut-lern-0").show();
 }
 function nextTutStep(){
-	$("#choose-lang").hide();
+	$("#popup-TUT-"+stepTut).addClass('next-cat-left');
 	stepTut++;
-	$(".tut-method").hide();
-	if(stepTut > 11) endTutWrap();
-	else{
-		$("#tut-lern-" + stepTut).show();
-		setTimeout(function(){	
-			updateProgressTut(stepTut);		  
-			$('.tut-method').removeClass('goLeft');
-			$('.tut-method').removeClass('goRight');
-			$('.tut-method').removeClass('flipper-hide');
-			
-			if(stepTut == 2){
-				$("#tutorial .btns-tut-cat").show();
-			}
-			if(stepTut == 5){
-				$("#tutorial .btns-tut-cat").hide();
-			}
-			/*
-			if(stepTut == 4){
-				$('#count-word-to-learn-tut').removeClass('pulse-btn-mini');
-				$('#count-word-to-learn-tut').removeClass('shown');
-				$('#noteInTut').addClass('pulse-btn');
-				$('#noteInTut').addClass('shown');
-			}
-			if(stepTut == 7){
-				$('#remind-tut').addClass('shown');
-				$('#noteInTut').removeClass('pulse-btn');
-			}
-			if(stepTut == 9){
-				$('#noteInTut').removeClass('shown');
-				$('#remind-tut').removeClass('shown');
-			}
-			if(stepTut == 11){
-				$('#menu-switch').addClass('pulse-btn');
-			}
-			if(stepTut == 13){
-				$('#menu-switch').removeClass('pulse-btn');
-			}
-			*/
-		}, 300);
-	}
+	removeFullOpacity();
+	removeAllCursors();
+	setTimeout(function(){
+		$("#popup-TUT-"+parseInt(stepTut-1)).hide();
+		$("#popup-TUT-"+parseInt(stepTut-1)).addClass('next-cat-right-right');
+		$("#popup-TUT-"+stepTut).show();
+		$("#popup-TUT-"+stepTut).removeClass('next-cat-right-right');
+		$(".cursor-TUT").addClass('cursor-TUT-' + stepTut);
+		
+		switch(stepTut){
+			case 2:
+				$("#new-tutorial-repeat-text span").addClass('full-opacity');
+				break;
+			case 3:
+				$("#progess-btn-stan-in-cycle-TUT").addClass('full-opacity');
+				break;
+			case 4:
+				$("#new-tutorial .mic-container").addClass('full-opacity');
+				break;
+			case 5:
+				$("#notebtn-TUT").addClass('full-opacity');
+				break;
+			case 6:
+				$(".star-liked-TUT").addClass('full-opacity');
+				break;
+			case 7:
+				$("#menu-switch").addClass('full-opacity');
+				break;	
+			case 9:
+				endTutWrap();
+				break;		
+		}		
+	}, 800);
+}
+
+function removeFullOpacity(){
+	$("#new-tutorial-repeat-text span").removeClass('full-opacity');
+	$("#progess-btn-stan-in-cycle-TUT").removeClass('full-opacity');
+	$("#new-tutorial .mic-container").removeClass('full-opacity');
+	$("#notebtn-TUT").removeClass('full-opacity');
+	$(".star-liked-TUT").removeClass('full-opacity');
+	$("#menu-switch").removeClass('full-opacity');
+}
+
+function removeAllCursors(){
+	$(".cursor-TUT").removeClass('cursor-TUT-1');
+	$(".cursor-TUT").removeClass('cursor-TUT-2');
+	$(".cursor-TUT").removeClass('cursor-TUT-3');
+	$(".cursor-TUT").removeClass('cursor-TUT-4');
+	$(".cursor-TUT").removeClass('cursor-TUT-5');
+	$(".cursor-TUT").removeClass('cursor-TUT-6');
+	$(".cursor-TUT").removeClass('cursor-TUT-7');
+	$(".cursor-TUT").removeClass('cursor-TUT-8');
+	$(".cursor-TUT").removeClass('cursor-TUT-9');
 }
 
 function updateProgressTut(step){
@@ -2635,12 +2657,20 @@ function updateProgressTut(step){
 	removeProgressClassMin($("#progess-btn-stan-in-cycle-tut2"), percent);
 }
 function endTutWrap(){ 
-	$("#tutorial").hide();
-	$(".tut-method").hide();
-	$("#page-after-tutorial").show();
-	setTimeout(function(){				
-		$("#page-after-tutorial").removeClass('next-cat-left');
-	}, 100);
+	$("#menu-switch").removeClass('half-opacity');
+	$("body").removeClass('tutorial-body-darkness');
+	$(".background").removeClass('background-tutorial-darkness');
+	$("#new-tutorial").addClass('next-cat-right');
+	$(".popup-TUT").hide();
+	$(".popup-TUT").addClass('next-cat-right-right');
+	setTimeout(function(){		
+		setTimeout(function(){	
+			$("#page-after-tutorial").removeClass('next-cat-left');
+		}, 300);
+		$("#new-tutorial").hide();
+		$(".popup-TUT").show();	
+		$("#page-after-tutorial").show();
+	}, 600);
 }
 function endTut(){ 
 	$("#startDay").addClass('next-cat-left');
@@ -3341,7 +3371,7 @@ function getWordForCatShowList(sygn){
 			for(var x in words){
 				var w = words[x];
 				var t = trans[x];
-				$("#show-all-cats-cats-wordlist").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\')"></p>');
+				$("#show-all-cats-cats-wordlist").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\', this); return false;"></p>');
 			}
 		});
     });
@@ -3392,8 +3422,8 @@ function startVoiceToText(){
 					$(".remind-img").hide();
 				}
 				
-	*/	
-			
+		
+	*/		
 	
 	if(!checkConnection()){
 		navigator.notification.confirm(
@@ -3405,6 +3435,7 @@ function startVoiceToText(){
 	}else{
 		startRecognize();
 	}
+	
 }
 
 function startRecognize(){
@@ -3595,20 +3626,25 @@ function hideSpeachClouds(){
 	$(".cloud-you-said-all-words").hide();
 }
 
-function checkMeWord(word_text){
+var checkingWordWrapper;
+function checkMeWord(word_text, obj){
+	checkingWordWrapper = $(obj);
 	stopTelling();
+	$("#savedWordsContainer p").removeClass('good-telling-word');
+	$("#savedWordsContainer p").removeClass('bad-telling-word');
+	$("#show-all-cats-cats-wordlist p").removeClass('good-telling-word');
+	$("#show-all-cats-cats-wordlist p").removeClass('bad-telling-word');
 	
 	/*
 	if(((Math.random() * 10) + 1 ) > 5){
-		$(".cloud-perfect-all-words").show();
-		$(".cloud-you-said-all-words").hide();
+		checkingWordWrapper.closest('.text').addClass('good-telling-word');
 	}else{
-		$(".cloud-perfect-all-words").hide();
-		$(".cloud-you-said-all-words").show();
+		checkingWordWrapper.closest('.text').addClass('bad-telling-word');
 	}
 	*/
 	
 	startRecognizeInAllWords(word_text);
+	
 }
 
 function startRecognizeInAllWords(correct_text){
@@ -3636,17 +3672,15 @@ function startRecognizeInAllWords(correct_text){
 
 function compareRecognizedTextInAllWords(text, correctText){
 	if(text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')){
-		$(".cloud-perfect-all-words").show();
-		$(".cloud-you-said-all-words").hide();
+		checkingWordWrapper.closest('.text').addClass('good-telling-word');
 	}else{
-		$(".cloud-perfect-all-words").hide();
-		$(".cloud-you-said-all-words").show();
+		checkingWordWrapper.closest('.text').addClass('bad-telling-word');
 	}
 }
 
 /* LIKED WORDS */
 function changeLiked(word_sygn){
-	if(isLikedWord(getPathToActuWord())){
+	if(isLikedWord(word_sygn)){
 		removeFromlikedJSON(word_sygn);
 		saveLikedWords();
 	}else{
@@ -3688,9 +3722,11 @@ function setActuLikedIcon(){
 	}else{
 		$(".star-liked").attr('src', 'img/star.png');
 	}
+	/*
 	setTimeout(function(){
 		$(".star-liked").show();
 	}, 1000);
+	*/
 }
 
 function isLikedWord(word_sygn){
@@ -3775,7 +3811,7 @@ function showSavedWord(word){
 			var trans = JSON.parse(transResult);
 			var w = words[word[2]-1];
 			var t = trans[word[2]-1];
-			$("#savedWordsContainer").append('<p class="text" onclick="tellMeWord(\'' + word[0] + "/" + word[1] + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\')"></p>');
+			$("#savedWordsContainer").append('<p class="text" onclick="tellMeWord(\'' + word[0] + "/" + word[1] + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\', this); return false;"></p>');
 		});
 	});
 }
