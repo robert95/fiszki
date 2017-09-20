@@ -2,51 +2,61 @@
 	{
 		"id": 1,
 		"name": "Podstawowe wyrażenia",
-		"pos": "1"
+		"pos": "1",
+		"audio": true
 	},
 	{
 		"id": 2,
 		"name": "Zrozumienie",
-		"pos": "2"
+		"pos": "2",
+		"audio": false
 	},
 	{
 		"id": 3,
 		"name": "Na lotnisku/ na stacji kolejowej",
-		"pos": "3"
+		"pos": "3",
+		"audio": false
 	},
 	{
 		"id": 4,
 		"name": "Spójniki",
-		"pos": "4"
+		"pos": "4",
+		"audio": true
 	},
 	{
 		"id": 5,
 		"name": "Zakupy",
-		"pos": "5"
+		"pos": "5",
+		"audio": true
 	},
 	{
 		"id": 6,
 		"name": "Zaimki dzierżawcze",
-		"pos": "6"
+		"pos": "6",
+		"audio": false
 	},
 	{
 		"id": 7,
 		"name": "Rozmowa telefoniczna",
-		"pos": "7"
+		"pos": "7",
+		"audio": true
 	},
 	{
 		"id": 8,
 		"name": "Nagłe wypadki",
-		"pos": "8"
+		"pos": "8",
+		"audio": false
 	},
 	{
 		"id": 9,
 		"name": "Rzeczy które lubisz i których nie lubisz",
-		"pos": "9"
+		"pos": "9",
+		"audio": false
 	},
 	{
 		"id": 10,
 		"name": "Pytanie o drogę",
-		"pos": "10"
+		"pos": "10",
+		"audio": true
 	}
 ]
