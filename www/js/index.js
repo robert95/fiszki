@@ -394,8 +394,8 @@ var toLearnJSON = [];
 
 /*
 var langJSON = JSON.parse('{"lang":5}');
-var dayJSON = JSON.parse('{"day": 2, "words": 10, "km": 10, "skiped": [], "rating": false, "theme": 1}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
+var dayJSON = JSON.parse('{"day": 11, "words": 10, "km": 10, "skiped": ["1/1", "1/6", "1/7", "1/8", "1/9", "1/10"], "rating": false, "theme": 1}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":4,"catid":1,"start":"9"}, {"subid":3,"catid":1,"start":"1"}]');
 */
 
 var dayJSONwordsCopy = dayJSON.words;
@@ -434,9 +434,6 @@ var rootURL = "";
 /* START APP*/
 function startApp(){
 	hideBars();
-	//StatusBar.hide();
-	//sprawdź czy to pierwsze uruchomienia
-	//smoothLoadProgressBarWelcome();
 	$("#first-use-loading-page").show();
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){	
@@ -452,25 +449,11 @@ function startApp(){
 		}
 		else{
 		//NIE
-			//getMyLang();
 			$("#myLang").val(lang);
 			$("body").addClass('lang'+lang);
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			readLikedWords(); //pobierz liked words
-			//getToLearn(); //pobierz toLearn
-			
-			/*
-			//ZAKOMENTOWAĆ!!!
-			setTimeout(function(){
-				//prepareAd();
-				gameIsBegin = true;
-				$("#first-use-loading-page").hide();				
-				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
-				//showRating();
-			}, 2000);
-			*/
-			
 		}
 	}, 2500);
 }
@@ -514,8 +497,8 @@ function getDay(){
 	$("#end-nr-lesson").text(dayJSON.day);
 	
 	afterReadToLearn(JSON.stringify(toLearnJSON));
-	
 	*/
+	
 	
 	/*
 		for(var x in toLearnJSON){ //usunąc
@@ -680,11 +663,10 @@ function afterReadToLearn(tolearnfromFile){
 			countOfCycle++;
 			countWordsToLearn += wordsInOneCat;
 			countWordsToLearn += wordsInOneCat*2;
-			setSuggestedCat(pack.catid, pack.subid);
 			inProgressCat.push(pack.catid + "/" + pack.subid);
 		*/
 			break;
-		case 4:
+		case 2:
 			toLearn[2] = pack.catid + "/" + pack.subid;
 			toLearn[3] = pack.catid + "/" + pack.subid;
 			countCatsToLearn++;
@@ -692,6 +674,7 @@ function afterReadToLearn(tolearnfromFile){
 			countOfCycle++;
 			countWordsToLearn += wordsInOneCat*2;
 			countWordsToLearn += wordsInOneCat;
+			setSuggestedCat(pack.catid, pack.subid);
 			inProgressCat.push(pack.catid + "/" + pack.subid);
 			break;
 		case 10:
@@ -734,7 +717,7 @@ function afterReadToLearn(tolearnfromFile){
 					$(".equivalentLessons").text(dayJSON.day-1); //usunąć
 					$(".all-words-to-end").text(countWordsToLearn);
 					$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
-					countCatsToLearnToday = countCatsToLearn-1;
+					countCatsToLearnToday += countCatsToLearn-1;
 					$(".allTimeToday").text(countCatsToLearnToday * minCat);
 				}else{
 					$("#countWordsToLearn").text(dayJSON.day-1);	
@@ -1990,7 +1973,7 @@ function nextStep(){
 function nextPack(){
 	blockClear = true;
 	$('.confirm-swipe table').hide();
-	$(".left-time").text((learnetCatToday-1)* minCat);
+	$(".left-time").text((countCatsToLearnToday - (learnetCatToday-1))* minCat);
 	
 	var percent = Math.round((learnetCatToday-1)/(countCatsToLearnToday)*100);
 	$("#progess-btn-stan-end").addClass('p'+percent);
@@ -3395,7 +3378,7 @@ function getWordForCatShowList(sygn){
 
 var countOfWrongRecognized = 0;
 function startVoiceToText(){
-	/*			
+		/*
 				$(".recText").text("To powiedziałem");
 				$("#l-n-1").hide();
 				$("#l-n-2").hide();
@@ -3438,8 +3421,8 @@ function startVoiceToText(){
 					$(".remind-img").hide();
 				}
 				
-	*/	
-		
+	
+		*/
 
 	if(!checkConnection()){
 		navigator.notification.confirm(
@@ -3451,7 +3434,7 @@ function startVoiceToText(){
 	}else{
 		startRecognize();
 	}
-	
+
 }
 
 function startRecognize(){
@@ -3599,6 +3582,7 @@ function skipRepetition(){
 	$("#learn-container").hide();
 	learnedWords += 30;
 	setTimeout(function(){
+		$("#start-next-cat").hide();
 		updateProgressBar();
 		packControler();
 	}, 500);
@@ -3650,8 +3634,8 @@ function checkMeWord(word_text, obj){
 	$("#savedWordsContainer p").removeClass('bad-telling-word');
 	$("#show-all-cats-cats-wordlist p").removeClass('good-telling-word');
 	$("#show-all-cats-cats-wordlist p").removeClass('bad-telling-word');
-	
 	/*
+	
 			if(((Math.random() * 10) + 1 ) > 5){
 				checkingWordWrapper.closest('.text').addClass('good-telling-word');
 			}else{
