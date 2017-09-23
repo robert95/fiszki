@@ -394,8 +394,8 @@ var toLearnJSON = [];
 
 /*
 var langJSON = JSON.parse('{"lang":5}');
-var dayJSON = JSON.parse('{"day": 11, "words": 10, "km": 10, "skiped": [ "1/7", "1/9", "1/10"], "rating": false, "theme": 1}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":2,"catid":1,"start":"1"}, {"subid":3,"catid":1,"start":"7"}]');
+var dayJSON = JSON.parse('{"day": 2, "words": 10, "km": 10, "skiped": [], "rating": false, "theme": 1}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
 */
 
 var dayJSONwordsCopy = dayJSON.words;
@@ -459,11 +459,8 @@ function startApp(){
 			getNotice(); //pobierz notice
 			readLikedWords(); //pobierz liked words
 			//getToLearn(); //pobierz toLearn
-			setTimeout(function(){
-				if(!suggestedCatName) getCatWithPos(0, 1);
-			}, 500);
 			
-			
+			/*
 			//ZAKOMENTOWAĆ!!!
 			setTimeout(function(){
 				//prepareAd();
@@ -472,7 +469,7 @@ function startApp(){
 				showStartLessonPage(); //uruchom ekran informacyjny do rozpoczęcia nauki	
 				//showRating();
 			}, 2000);
-			
+			*/
 			
 		}
 	}, 2500);
@@ -515,6 +512,12 @@ function getDay(){
 		allEndedCats.push(skip);
 	}
 	$("#end-nr-lesson").text(dayJSON.day);
+	
+	afterReadToLearn(JSON.stringify(toLearnJSON));
+	
+	*/
+	
+	/*
 		for(var x in toLearnJSON){ //usunąc
 			var pack = toLearnJSON[x];
 			var day = dayJSON.day;
@@ -712,19 +715,13 @@ function afterReadToLearn(tolearnfromFile){
 			countWordsToLearn += wordsInOneCat;
 			inProgressCat.push(pack.catid + "/" + pack.subid);
 			break;
-		/*case 60:
-			toLearn[7] = pack.catid + "/" + pack.subid;
-			todayEndedCat = pack.catid + "/" + pack.subid;
-			countCatsToLearn++;
-			countOfCycle++;
-			countWordsToLearn += wordsInOneCat;
-			inProgressCat.push(pack.catid + "/" + pack.subid);
-			break;*/
 		default:
 			break;
 		} 
 		
 		if(x == ( toLearnJSON.length -1 )){
+			if(!suggestedCatName) getCatWithPos(0, 1);
+			
 			setTimeout(showInProgressCat, 200);
 			setTimeout(function(){
 				uniqueallUsedCats = allUsedCats.filter(function(item, pos) {
@@ -3441,9 +3438,9 @@ function startVoiceToText(){
 					$(".remind-img").hide();
 				}
 				
+	*/	
 		
-	*/		
-	
+
 	if(!checkConnection()){
 		navigator.notification.confirm(
 			"Connect to the Internet to use this function.",
@@ -3741,11 +3738,6 @@ function setActuLikedIcon(){
 	}else{
 		$(".star-liked").attr('src', 'img/star.png');
 	}
-	/*
-	setTimeout(function(){
-		$(".star-liked").show();
-	}, 1000);
-	*/
 }
 
 function isLikedWord(word_sygn){
