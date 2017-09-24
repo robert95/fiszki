@@ -2388,6 +2388,13 @@ h3{
 	left: 12px;
 	margin-top: -15px;
 }
+#start-day-wrap-ok-no{
+	padding-bottom: 20px !important;
+}
+#startDay span#repetition-only-info{
+	display: none;
+	font-size: 20px !important;
+}
 @media (min-width : 500px) {
 	.remind-img {
 		left: 5px;

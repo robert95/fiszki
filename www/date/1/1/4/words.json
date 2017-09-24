@@ -1,62 +1,14 @@
 [
-		{
-			"id": 1,
-			"name": "Wait until he comes back.",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Close the window before you go out.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "After he went to America, he became rich.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Since they have had children, they rarely go out.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "She calls while she drives.",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "We’ll take a taxi if it rains.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "I will stop working as soon as I am 60.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "I’ll work as long as I am healthy.",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "He is at the bar instead of going home.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "He fell asleep although the TV was on.",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "A1.4.1",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "A1.4.2",
+		"notices": [
+		]
+	}
+]
