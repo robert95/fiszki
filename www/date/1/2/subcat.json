@@ -21,7 +21,7 @@
 		"id": 4,
 		"name": "A-2-4",
 		"pos": "14",
-		"audio": true
+		"audio": false
 	},
 	{
 		"id": 5,
@@ -39,13 +39,13 @@
 		"id": 7,
 		"name": "A-2-7",
 		"pos": "17",
-		"audio": true
+		"audio": false
 	},
 	{
 		"id": 8,
 		"name": "A-2-8",
 		"pos": "18",
-		"audio": true
+		"audio": false
 	},
 	{
 		"id": 9,

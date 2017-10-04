@@ -18,14 +18,23 @@ if( /(android)/i.test(navigator.userAgent) ) {
     };
 }
 
+var waitForAd = false;
+function getWaitForAd(){
+	return waitForAd;
+}
+function setWaitForAd( value ){
+	waitForAd = value;
+}
+
 function prepareAd(){
 	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
+
 function showAd(){
-	
 	if(countAd == 0){
 		countAd = 1;
 	}else{
+		waitForAd = true;
 		countAd++;
 		if(countAd%2 == 0){
 			$("#myCall-big-ad").show();
@@ -33,5 +42,4 @@ function showAd(){
 			if(AdMob) AdMob.showInterstitial();
 		}
 	}
-	
 }

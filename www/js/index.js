@@ -45,7 +45,7 @@ var app = {
 				"Brak połączenia z Internetem!",
 				"Wyjscie"
 			);*/
-			
+		
 			navigator.notification.confirm(
 				"Connect to the Internet to use the application. You can also download the premium version that works offline",
 				onNoInternetConfirm,
@@ -73,10 +73,12 @@ var app = {
 				loadProgressBarToFull();
 				loadProgressBarToFull2();
 			}, 100);
+			actionAfterCloseAd();
 		});
 		
 		document.addEventListener('onAdLeaveApp',function(data){
 			//prepareAd();
+			actionAfterCloseAd();
 		});
 		
 		document.addEventListener('onAdPresent',function(data){
@@ -374,7 +376,7 @@ function renameSuccessSaveDayEnd(){
 /* END SAVE FILE */
 
 /*POTRZEBNE ZMIENNE*/
-var wordsInOneCat = 2;
+var wordsInOneCat = 10;
 var minCat = 7;
 var countOfCycle = 2;
 var countCatInFirstBigCat = 10;
@@ -396,7 +398,7 @@ var toLearnJSON = [];
 
 /*
 var langJSON = JSON.parse('{"lang":5}');
-var dayJSON = JSON.parse('{"day": 3, "words": 10, "km": 10, "skiped": ["1/2"], "rating": false, "theme": 1}');//false;//
+var dayJSON = JSON.parse('{"day": 20, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
 var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
 */
 
@@ -433,6 +435,7 @@ var allEndedCats = [];
 var todayEndedCat = "";
 var rootURL = "";
 var lessonsJumpToFuture = 0;
+var hasNewCatsToday = false;
 
 /* START APP*/
 function startApp(){
@@ -482,29 +485,10 @@ function getDay(){
 	getDayHelper();	
 	
 	/*
-	getAllCatsInArray();
-	getAllCatsToShowAllCats();
-	
-	afterGetDay();
-	*/
-	
-	/*
-	$("#nrDayFiled").text(dayJSON.day); //usunąć
-	$(".allWords").text(dayJSON.words); //usunąć
-	$("#countWordsToLearn").text(dayJSON.day-1); //usunąć
-	$(".equivalentLessons").text(dayJSON.day-1); //usunąć
-	$(".all-words-to-end").text(countWordsToLearn); //usunąć
-	$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
-	$(".countKMLearned").text( Math.floor( dayJSON.km*minCat / 60)); //usunąć
-	$(".countMinLearned").text( dayJSON.km*minCat % 60); //usunąć
-	for(var x in dayJSON.skiped){
-		var skip = dayJSON.skiped[x];
-		allUsedCats.push(skip);
-		allEndedCats.push(skip);
-	}
-	$("#end-nr-lesson").text(dayJSON.day);
-	
-	afterReadToLearn(JSON.stringify(toLearnJSON));
+			getAllCatsInArray();
+			getAllCatsToShowAllCats();
+			
+			afterGetDay();
 	*/
 }
 function getDayHelper(){
@@ -521,8 +505,11 @@ function getDayHelper(){
 	}
 }
 function afterGetDay(){
+	countWordsToLearn = wordsInOneCat + (wordsInOneCat*2);
+	countOfCycle = 2;
 	countCatsToLearn = 0;
 	countCatsToLearnToday = 1;
+	inProgressCat = [];
 	$("#nrDayFiled").text(dayJSON.day);
 	$(".allWords").text(dayJSON.words);
 	$("#end-nr-lesson").text(dayJSON.day);
@@ -828,7 +815,7 @@ function aaa(){
 }
 
 function getLangList(){
-	getDay();
+	//getDay();
 	$.get("date/lang.json", function(result) {
 		showLangList(result);
 		//startTmp();
@@ -1291,16 +1278,23 @@ function saveNotice(text){
 	
 	var tmp = idLang+"\\"+idParentCat+"\\"+idSubCat+"\\"+idLernLang+"\\"+id;
 	var add = false;
-	for(var x in noticeJSON){
-		var notice = noticeJSON[x];
-		if(notice.word == tmp){
-			notice.notice = text;
-			add = true;
+	
+	if(noticeJSON.length == 0){
+		noticeJSON.push({"word": tmp, "notice": text});
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
+	}else{
+		for(var x in noticeJSON){
+			var notice = noticeJSON[x];
+			if(notice.word == tmp){
+				notice.notice = text;
+				add = true;
+			}
+			if(z == (noticeJSON.length - 1)){
+				if(!add) noticeJSON.push({"word": tmp, "notice": text});
+				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
+			}
 		}
 	}
-	if(!add) noticeJSON.push({"word": tmp, "notice": text});
-	
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
 }
 
 function gotFSN(fileSystem) {
@@ -1383,24 +1377,7 @@ function setWordToMethod(idM){
 	$(".support-word-in-speach p").text(act_word);
 	$("#word-lern-" + idM).show();
 	
-	$(".nbWordInCycle").text(($("#nav-words-container p.pulse").index() + 1) + "/10");
-	if($("#nav-words-container p.pulse").index() < 0){
-		$(".nbWordInCycle").text("");
-		$("#nav-words-container-thd p").each(function(){
-			if($(this).hasClass('activ')){
-				var id = $(this).attr('data-word-id');
-				$(".nbWordInCycle").text(id + "/10");
-			}
-		});
-		setTimeout(function(){
-			$("#nav-words-container-thd p").each(function(){
-				if($(this).hasClass('activ')){
-					var id = $(this).attr('data-word-id');
-					$(".nbWordInCycle").text(id + "/10");
-				}
-			});
-		}, 300);
-	}
+	$(".nbWordInCycle").text((learnedWordsInCat+1) + "/" + countWordsToLearnInThisCycle);
 }
 
 function setActWord(id){
@@ -2486,7 +2463,8 @@ function endLearn(){
 	$(".allWords").text(dayJSON.words); 
 	$(".countKMLearned").text( Math.floor( (dayJSON.km)*minCat / 60) );
 	$(".countMinLearned").text( Math.floor( (dayJSON.km)*minCat % 60) );
-	if(allCats.sort().toString() == uniqueallEndedCats.sort().toString()  && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
+
+	if(allCats.sort().toString() == uniqueallEndedCats.sort().toString() && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
 		setTimeout(function(){
 			//showAd();
 			$("#learn-container").hide();
@@ -2503,8 +2481,6 @@ function endLearn(){
 			var uniqueallUsedCats = allStartedCats.filter(function(item, pos) {
 				return allStartedCats.indexOf(item) == pos;
 			});
-			console.log(allCats.sort().toString());
-			console.log(uniqueallUsedCats.sort().toString());
 			if(allCats.sort().toString() == uniqueallUsedCats.sort().toString()){
 				showEndNewMaterialsInfo();
 			}
@@ -2523,17 +2499,38 @@ function endLearn(){
 /*END END APP*/
 /*TUTORIAL*/
 var stepTut = 1;
+var visiblesSectionsBeforeStart;
 function startTut(){
-	$("body").addClass('tutorial-body-darkness');
-	$(".background").addClass('background-tutorial-darkness');
-	stepTut = 1;
-	$("#choose-lang").hide();
-	$(".cursor-TUT").hide();
-	$("#menu-switch").addClass('half-opacity');
-	$("#new-tutorial").show();
+	visiblesSectionsBeforeStart = $('body > section:visible:not(.next-cat-left):not(.next-cat-right):not(#new-tutorial):not(#ok-no-panel-TUT):not(#word-lern-2-TUT)');
+	
+		var acc = []
+		visiblesSectionsBeforeStart.each(function(index, value) {
+			acc.push($(this).attr('id'));
+		});
+		console.log(JSON.stringify(acc));
+
+	visiblesSectionsBeforeStart.addClass('next-cat-left');
 	setTimeout(function(){				
-		$("#new-tutorial").removeClass('next-cat-left');
-	}, 200);
+		visiblesSectionsBeforeStart.hide();
+		$("#new-tutorial").show();
+		$("#ok-no-panel-TUT, #word-lern-2-TUT, #popup-TUT-1").show();
+		$(".popup-TUT").removeClass('next-cat-left');
+		$(".popup-TUT").removeClass('next-cat-right');
+		$(".popup-TUT:not(#popup-TUT-1)").addClass('next-cat-right-right');
+		$("#popup-TUT-1").removeClass('next-cat-right-right');
+		
+		setTimeout(function(){		
+			$("body").addClass('tutorial-body-darkness');
+			$(".background").addClass('background-tutorial-darkness');
+			stepTut = 1;
+			$("#choose-lang").hide();
+			$(".cursor-TUT").hide();
+			$("#menu-switch").addClass('half-opacity');
+			
+			$("#new-tutorial").removeClass('next-cat-left');
+			$("#new-tutorial").removeClass('next-cat-right');
+		}, 200);
+	}, 500);
 }
 function nextTutStep(){
 	$("#popup-TUT-"+stepTut).addClass('next-cat-left');
@@ -2606,13 +2603,29 @@ function endTutWrap(){
 	$("#new-tutorial").addClass('next-cat-right');
 	$(".popup-TUT").hide();
 	$(".popup-TUT").addClass('next-cat-right-right');
-	setTimeout(function(){		
-		setTimeout(function(){	
-			$("#page-after-tutorial").removeClass('next-cat-left');
-		}, 300);
+	stepTut = 0;
+	visiblesSectionsBeforeStart.addClass('next-cat-left');
+	setTimeout(function(){	
+		visiblesSectionsBeforeStart.show();
+		setTimeout(function(){			
+			if(startLearn){
+				//zacznij naukę
+				showStartLessonPage();
+				startLearn = false;
+			}else{
+				//powrót do głównego
+						var acc = []
+						visiblesSectionsBeforeStart.each(function(index, value) {
+							acc.push($(this).attr('id'));
+						});
+						console.log(JSON.stringify(acc));
+						
+				visiblesSectionsBeforeStart.removeClass('next-cat-left');
+			}
+		}, 400);
 		$("#new-tutorial").hide();
 		$(".popup-TUT").show();	
-		$("#page-after-tutorial").show();
+		$("#startDay").addClass('next-cat-left');
 	}, 600);
 }
 function endTut(){ 
@@ -2683,9 +2696,11 @@ function backToSetNewCategory(){
 }
 function startChoiceNewCategory(){
 	if(sugGetIsSetter){
-		$("#suggest-new-category").text(suggestedCatName);
+		$("#suggest-new-category-text").text(suggestedCatName);
+		showMuteIcon();
 		$('section').hide();
 		$("#new-category-choice").show();
+		hasNewCatsToday = true;
 		setTimeout(function(){				
 			if($("#new-category-choice").hasClass('next-cat-right')){
 				$("#new-category-choice").removeClass('next-cat-right');
@@ -2797,7 +2812,15 @@ function showStartLessonPage(){
 		$("#startDay").removeClass('next-cat-left');
 		setTimeout(function(){	
 			if(lessonsJumpToFuture > 0){
-				alert("Przeskoczyliśmy " + lessonsJumpToFuture + " lekcję, bo wcześniej nie było nic do nauki");
+				var text = "Przeskoczyliśmy " + lessonsJumpToFuture + " lekcję, bo wcześniej nie było nic do nauki";
+				
+				window.plugins.toast.showWithOptions(
+					{
+						message: text,
+						duration: "long", 
+						position: "bottom"
+					}
+				);
 			}
 		}, 500);
 	}, 100);
@@ -2973,7 +2996,20 @@ function getNextSugCat(){
 	var c = $("#sugCatSub").val();
 	setSuggestedCat(p, c);
 	addCatToMissing(p + "/" + c);
-	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName); setPopupAboutNoAudioLesson();}, 350);
+	setTimeout(function(){
+		$("#suggest-new-category-text").text(suggestedCatName); 
+		setPopupAboutNoAudioLesson();
+		showMuteIcon();
+	}, 350);
+	
+	var text = 'Lesson has been skipped';
+	window.plugins.toast.showWithOptions(
+		{
+			message: text,
+			duration: "short", 
+			position: "bottom"
+		}
+	);
 }
 
 function addCatToMissing(catSgn){
@@ -2986,7 +3022,11 @@ function getThisCatAsSug(obj){
 	var p = $(obj).attr('data-parent');
 	var c = $(obj).attr('data-subcat');
 	setThisAsSuggestedCat(p, c);
-	setTimeout(function(){$("#suggest-new-category").text(suggestedCatName); backToSetNewCategory();}, 100);
+	setTimeout(function(){
+		$("#suggest-new-category-text").text(suggestedCatName);
+		showMuteIcon();
+		backToSetNewCategory();
+	}, 100);
 }
 
 /* SAVE PROGRESS */
@@ -3313,7 +3353,8 @@ function getAllCatsToShowAllCats(){
 							cl = "inProgressCat";
 						}
 						cl2 = (subcat.audio == true) ? '': 'no-audio'; 
-						tmp += '<p class="text catsInAllMaterial '+ cl + ' ' + cl2 +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\' )" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
+						hasAudio = (subcat.audio == true) ? 1: 0; 
+						tmp += '<p class="text catsInAllMaterial '+ cl + ' ' + cl2 +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\', ' + hasAudio + ')" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
 						$("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
 					}
 					//tmp += '</div>' + '</div>' + extraEnd;
@@ -3343,7 +3384,7 @@ function getWordForCatShowList(sygn){
 
 var countOfWrongRecognized = 0;
 function startVoiceToText(){
-	/*		
+		/*	
 				$(".recText").text("To powiedziałem");
 				$("#l-n-1").hide();
 				$("#l-n-2").hide();
@@ -3385,7 +3426,7 @@ function startVoiceToText(){
 					$(".cloud-next-task").show();
 					$(".remind-img").hide();
 				}
-	*/			
+		*/	
 	
 		
 
@@ -3478,8 +3519,14 @@ function compareRecognizedText(text){
 			tellMe();
 		}
 		if(countOfWrongRecognized == 2){
-			countOfWrongRecognized = 0;
 			showRecognizedAlert();
+		}
+		if(countOfWrongRecognized == 3){
+			showRecognizedAlert2();
+		}
+		if(countOfWrongRecognized == 4){
+			countOfWrongRecognized = 0;
+			showRecognizedAlert3();
 		}
 	}
 }
@@ -3489,6 +3536,24 @@ function showRecognizedAlert(){
 		"It might happen that correct pronunciation can not be recognized. In such cases, you have to skip the task.",
 		showRecognizedAlertCallback,
 		"Speech recognition is not 100% accurate",
+		"Try again,Skip the task"
+	);
+}
+
+function showRecognizedAlert2(){
+	navigator.notification.confirm(
+		"22222222222It might happen that correct pronunciation can not be recognized. In such cases, you have to skip the task.",
+		showRecognizedAlertCallback,
+		"222Speech recognition is not 100% accurate",
+		"Try again,Skip the task"
+	);
+}
+
+function showRecognizedAlert3(){
+	navigator.notification.confirm(
+		"333333333333It might happen that correct pronunciation can not be recognized. In such cases, you have to skip the task.",
+		showRecognizedAlertCallback,
+		"333Speech recognition is not 100% accurate",
 		"Try again,Skip the task"
 	);
 }
@@ -3554,14 +3619,14 @@ function skipRepetition(){
 }
 
 function showEndNewMaterialsInfo(){
-	
-	navigator.notification.confirm(
-		"Koniec nowych materiałów, od teraz już tylko powtórki",
-		showEndNewMaterialsInfoCallback,
-		"Koniec nowych materiałów",
-		"OK"
-	);
-	
+	if(hasNewCatsToday){
+		navigator.notification.confirm(
+			"Koniec nowych materiałów, od teraz już tylko powtórki",
+			showEndNewMaterialsInfoCallback,
+			"Koniec nowych materiałów",
+			"OK"
+		);
+	}
 }
 
 function showEndNewMaterialsInfoCallback(buttonIndex){
@@ -3777,15 +3842,30 @@ function showSavedWord(word){
 	});
 }
 /* END LIKED WORDS */
+runNotifiAfterAd = false;
 function setPopupAboutNoAudioLesson(){
+	runNotifiAfterAd = false;
 	if(suggestedCatHasAudio == false){
-		navigator.notification.confirm(
-			"This lesson is without audio recordings. Free vesion comes with only 90 audio lessons. If you would like to get audio to all 180 lessons upgrade to SpeakApp Pro.",
-			setPopupAboutNoAudioLessonBTNCallBack,
-			"Lesson without audio recordings!",
-			"Learn anyway,Upgrade,Skip lesson"
-		);
+		if(getWaitForAd() == false){
+			navigator.notification.confirm(
+				"This lesson is without audio recordings. Free vesion comes with only 90 audio lessons. If you would like to get audio to all 180 lessons upgrade to SpeakApp Pro.",
+				setPopupAboutNoAudioLessonBTNCallBack,
+				"Lesson without audio recordings!",
+				"Learn anyway,Upgrade,Skip lesson"
+			);
+		}else{
+			runNotifiAfterAd = true;
+		}
 	}
+}
+
+function setPopupAboutNoAudioLessonInPhraseBrowser(){
+	navigator.notification.confirm(
+		"This lesson is without audio recordings. Free vesion comes with only 90 audio lessons. If you would like to get audio to all 180 lessons upgrade to SpeakApp Pro.",
+		setPopupAboutNoAudioLessonBTNCallBack,
+		"Lesson without audio recordings!",
+		"Learn anyway,Upgrade"
+	);
 }
 
 function setPopupAboutNoAudioLessonBTNCallBack(buttonIndex){
@@ -3797,5 +3877,39 @@ function setPopupAboutNoAudioLessonBTNCallBack(buttonIndex){
 	}
 	if(buttonIndex == 3){
 		getNextSugCat();
+	}
+}
+
+function actionAfterCloseAd(){
+	setWaitForAd(false);
+	if(runNotifiAfterAd){
+		setPopupAboutNoAudioLesson();
+	}
+	runNotifiAfterAd = false;
+}
+
+function showMuteIcon(){
+	if(suggestedCatHasAudio == false){
+		$("#suggest-new-category").addClass('no-audio-name');
+	}else{
+		$("#suggest-new-category").removeClass('no-audio-name');
+	}
+}
+
+function showConfirmBackAlert(){
+	navigator.notification.confirm(
+		"Przy wyjściu postęp nauki tej częsci nie zostanie zapisany.",
+		showConfirmBackAlertCallBack,
+		"Czy jesteś pewien?",
+		"Cofnij,Anuluj"
+	);
+}
+
+function showConfirmBackAlertCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		returnInLearn();
+	}
+	if(buttonIndex == 2){
+		return true;
 	}
 }
