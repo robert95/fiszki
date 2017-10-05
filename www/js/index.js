@@ -250,11 +250,11 @@ function gotFile2(file) {
     readAsText2(file);
 }
 function readAsText2(file) {
-  var reader = new FileReader();
-  reader.onloadend = function(evt) {
-		res2 = evt.target.result;
-  };
-  reader.readAsText(file);    
+	var reader = new FileReader();
+	reader.onloadend = function(e) {
+		afterNoticeRead(e.target.result);
+	};
+	reader.readAsText(file);    
 }
 /* END READ FILE */
 
@@ -531,16 +531,9 @@ function afterGetDay(){
 function getNotice(){
 	srcFile2 = path() + "notice.json";
 	readWriteFile2();
-	getNoticeHelper();
 }
-function getNoticeHelper(){
-	if(res2 == false){
-        setTimeout(getNoticeHelper, 100);
-		return;
-	}else{
-		noticeJSON = JSON.parse(res2);
-		res2 = false;
-	}
+function afterNoticeRead(resNotice){
+	noticeJSON = JSON.parse(resNotice);
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
@@ -1290,6 +1283,7 @@ function saveNotice(text){
 				add = true;
 			}
 			if(x == (noticeJSON.length - 1)){
+				if(!add) noticeJSON.push({"word": tmp, "notice": text});
 				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
 			}
 		}
