@@ -1289,8 +1289,7 @@ function saveNotice(text){
 				notice.notice = text;
 				add = true;
 			}
-			if(z == (noticeJSON.length - 1)){
-				if(!add) noticeJSON.push({"word": tmp, "notice": text});
+			if(x == (noticeJSON.length - 1)){
 				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
 			}
 		}
