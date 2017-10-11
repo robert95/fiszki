@@ -1314,7 +1314,9 @@ function copyFirstPathPremium(){
 function copyFileFromDemo(srcPath, nameFile){
 	alert("Kopiuje: " + srcPath + " - " + nameFile);
 	window.FilePath.resolveNativePath((srcPath + nameFile), function(localFileUri) {
+		alert("1");
         window.resolveLocalFileSystemURL(localFileUri, function(oFile) {
+			alert("2");
 			oFile.copyTo(premiumPath(), nameFile,
 				function(){
 					alert('copying was successful')
@@ -1326,7 +1328,10 @@ function copyFileFromDemo(srcPath, nameFile){
 		}, function(err){
 			alert("Plik jest nieprawidłowy!" + (srcPath + nameFile));
 		});
-    });
+	}, function(err){
+		alert("coś nie tak!" + (srcPath + nameFile));
+		alert(err);
+	});
 }
 /*END TELL ME*/
 
