@@ -1313,11 +1313,10 @@ function copyFirstPathPremium(){
 
 function copyFileFromDemo(srcPath, nameFile){
 	alert("Kopiuje: " + srcPath + " - " + nameFile);
-	window.FilePath.resolveNativePath((srcPath + nameFile), function(localFileUri) {
-		alert("1");
-        window.resolveLocalFileSystemURL(localFileUri, function(oFile) {
-			alert("2");
-			oFile.copyTo(premiumPath(), nameFile,
+	
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+		fileSystem.root.getFile((srcPath + nameFile), {create: false}, function(fileEntry){
+			fileEntry.copyTo(premiumPath(), nameFile,
 				function(){
 					alert('copying was successful')
 				},
