@@ -161,7 +161,7 @@ function demoPath(){
 	if(isPremium){
 		var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
 		demoPathsrc = (res.toString()).replace(/,/g,'/');
-		demoPathsrc = demoPathsrc.substring(0, demoPathsrc.length - 4) + "/";
+		demoPathsrc = demoPathsrc.substring(0, demoPathsrc.length - 10) + "/files/";
 		return demoPathsrc;
 	}else{
 		demoPathsrc = path();
@@ -177,7 +177,7 @@ function premiumPath(){
 	}else{
 		var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
 		premiumPathsrc = (res.toString()).replace(/,/g,'/');
-		premiumPathsrc = premiumPathsrc + "Pro/";
+		premiumPathsrc = premiumPathsrc.substring(0, premiumPathsrc.length - 7) + "Pro/files/";
 		return premiumPathsrc;
 	}
 }
