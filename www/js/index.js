@@ -158,20 +158,13 @@ function path(){
 }
 var demoPathsrc;
 function demoPath(){
-	alert("jestem");
 	if(isPremium){
-		alert("jestem2");
 		var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
-		alert("jestem3");
 		demoPathsrc = (res.toString()).replace(/,/g,'/');
-		alert("jestem4");
-		demoPathsrc = demoPathsrc.substring(0, str.length - 4) + "/";
-		alert("jestem5");
+		demoPathsrc = demoPathsrc.substring(0, demoPathsrc.length - 4) + "/";
 		return demoPathsrc;
 	}else{
-		alert("jestem6");
 		demoPathsrc = path();
-		alert("jestem7");
 		return demoPathsrc;
 	}
 }
@@ -1300,7 +1293,6 @@ function copyFirstPath(){
 	);
 } 
 function copyFirstPathPremium(){
-	alert("1");
 	var demoPathsrc = demoPath();
 	alert(demoPath());
 	alert(premiumPath());
