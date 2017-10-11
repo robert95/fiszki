@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var isPremium = false;
+var isPremium = true;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -156,29 +156,29 @@ function path(){
 	mainPath = (res.toString()).replace(/,/g,'/');
 	return (res.toString()).replace(/,/g,'/');
 }
-var demoPath;
+var demoPathsrc;
 function demoPath(){
 	if(isPremium){
 		var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
-		demoPath = (res.toString()).replace(/,/g,'/');
-		demoPath = demoPath.substring(0, str.length - 4) + "/";
-		return demoPath;
+		demoPathsrc = (res.toString()).replace(/,/g,'/');
+		demoPathsrc = demoPathsrc.substring(0, str.length - 4) + "/";
+		return demoPathsrc;
 	}else{
-		demoPath = path();
-		return demoPath;
+		demoPathsrc = path();
+		return demoPathsrc;
 	}
 }
 
-var premiumPath;
+var premiumPathsrc;
 function premiumPath(){
 	if(isPremium){
-		premiumPath = path();
-		return premiumPath;
+		premiumPathsrc = path();
+		return premiumPathsrc;
 	}else{
 		var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
-		premiumPath = (res.toString()).replace(/,/g,'/');
-		premiumPath = premiumPath + "Pro/";
-		return premiumPath;
+		premiumPathsrc = (res.toString()).replace(/,/g,'/');
+		premiumPathsrc = premiumPathsrc + "Pro/";
+		return premiumPathsrc;
 	}
 }
 /* END OBSŁUGA ŚCIEŻKI */
@@ -1293,7 +1293,7 @@ function copyFirstPath(){
 	);
 } 
 function copyFirstPathPremium(){
-	var demoPath = demoPath();
+	var demoPathsrc = demoPath();
 	alert(demoPath());
 	alert(premiumPath());
 	alert(path());
@@ -1304,18 +1304,18 @@ function copyFirstPathPremium(){
 	//notice.json
 	//liked.json
 	//save.json
-	copyFileFromDemo(demoPath, 'lang.json');
-	copyFileFromDemo(demoPath, 'day.json');
-	copyFileFromDemo(demoPath, 'notice.json');
-	copyFileFromDemo(demoPath, 'liked.json');
-	copyFileFromDemo(demoPath, 'save.json');
+	copyFileFromDemo(demoPathsrc, 'lang.json');
+	copyFileFromDemo(demoPathsrc, 'day.json');
+	copyFileFromDemo(demoPathsrc, 'notice.json');
+	copyFileFromDemo(demoPathsrc, 'liked.json');
+	copyFileFromDemo(demoPathsrc, 'save.json');
 }
 
 function copyFileFromDemo(srcPath, nameFile){
 	alert("Kopiuje: " + srcPath + " - " + nameFile);
 	window.FilePath.resolveNativePath((srcPath + nameFile), function(localFileUri) {
         window.resolveLocalFileSystemURL(localFileUri, function(oFile) {
-			oFile.copyTo(srcPath, nameFile,
+			oFile.copyTo(premiumPath(), nameFile,
 				function(){
 					alert('copying was successful')
 				},
