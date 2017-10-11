@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var isPremium = false;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -154,6 +155,31 @@ function path(){
 	var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
 	mainPath = (res.toString()).replace(/,/g,'/');
 	return (res.toString()).replace(/,/g,'/');
+}
+var demoPath;
+function demoPath(){
+	if(isPremium){
+		var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
+		demoPath = (res.toString()).replace(/,/g,'/');
+		demoPath = demoPath.substring(0, str.length - 4) + "/";
+		return demoPath;
+	}else{
+		demoPath = path();
+		return demoPath;
+	}
+}
+
+var premiumPath;
+function premiumPath(){
+	if(isPremium){
+		premiumPath = path();
+		return premiumPath;
+	}else{
+		var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
+		premiumPath = (res.toString()).replace(/,/g,'/');
+		premiumPath = premiumPath + "Pro/";
+		return premiumPath;
+	}
 }
 /* END OBSŁUGA ŚCIEŻKI */
 
@@ -322,7 +348,7 @@ function saveLang(){
 }
 
 function gotFSNLang(fileSystem) {
-	fileSystem.root.getFile(srcLang, {create: false}, gotFileEntryLang, failN);
+	fileSystem.root.getFile(srcLang, {create: true}, gotFileEntryLang, failN);
 }
 
 function gotFileEntryLang(fileEntry) {
@@ -398,7 +424,7 @@ var toLearnJSON = [];
 
 /*
 var langJSON = JSON.parse('{"lang":5}');
-var dayJSON = JSON.parse('{"day": 20, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
+var dayJSON = JSON.parse('{"day": 2, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
 var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
 */
 
@@ -439,29 +465,38 @@ var hasNewCatsToday = false;
 
 /* START APP*/
 function startApp(){
-	hideBars();
-	$("#first-use-loading-page").show();
-	getMyLang(); //sprawdzamy czy jest ustawiony mój język
+	
+	copyFirstPathPremium();
+	
+	
 	setTimeout(function(){	
-		var lang = langJSON.lang;
-		prepareAd();
-		//TAK
-		if(lang < 1){
-			$("#first-use-loading-page").hide();
-			startLearn = true; //po tutorialu zacznie naukę
-			getLangList(); //wybierz swój język
-			$("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
-			copyFirstPath(); //utwórz potrzebne pliki
-		}
-		else{
-		//NIE
-			$("#myLang").val(lang);
-			$("body").addClass('lang'+lang);
-			getDay(); //pobierz numer dnia
-			getNotice(); //pobierz notice
-			readLikedWords(); //pobierz liked words
-		}
-	}, 2500);
+
+		hideBars();
+		$("#first-use-loading-page").show();
+		getMyLang(); //sprawdzamy czy jest ustawiony mój język
+		setTimeout(function(){	
+			var lang = langJSON.lang;
+			prepareAd();
+			//TAK
+			if(lang < 1){
+				$("#first-use-loading-page").hide();
+				startLearn = true; //po tutorialu zacznie naukę
+				getLangList(); //wybierz swój język
+				$("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
+			//	copyFirstPath(); //utwórz potrzebne pliki
+			}
+			else{
+			//NIE
+				$("#myLang").val(lang);
+				$("body").addClass('lang'+lang);
+				getDay(); //pobierz numer dnia
+				getNotice(); //pobierz notice
+				readLikedWords(); //pobierz liked words
+			}
+		}, 2500);
+		
+		
+	}, 10000);
 }
 /*END START APP*/
 function getMyLang(){
@@ -1196,7 +1231,7 @@ function tellMe(){
             // success callback
              function () { /*this.release();*/ },
             // error callback
-             function (err) { console.log("M: " + err.message + " - " + err.code); }
+             function (err) { /*console.log("M: " + err.message + " - " + err.code);*/ }
 		);
 			   // Play audio
 		my_media.play();
@@ -1236,7 +1271,7 @@ function tellMeWord(sygn, id){
             // success callback
              function () { /*this.release();*/ },
             // error callback
-             function (err) { console.log("M: " + err.message + " - " + err.code); }
+             function (err) { /*console.log("M: " + err.message + " - " + err.code);*/ }
 		);
 			   // Play audio
 		my_media.play();
@@ -1257,6 +1292,42 @@ function copyFirstPath(){
 		function() { alert('fail'); }
 	);
 } 
+function copyFirstPathPremium(){
+	var demoPath = demoPath();
+	alert(demoPath());
+	alert(premiumPath());
+	alert(path());
+	//sprawdz czy są tam jakięs pliki
+	//jak są to skopiuj
+	//lang.json
+	//day.json
+	//notice.json
+	//liked.json
+	//save.json
+	copyFileFromDemo(demoPath, 'lang.json');
+	copyFileFromDemo(demoPath, 'day.json');
+	copyFileFromDemo(demoPath, 'notice.json');
+	copyFileFromDemo(demoPath, 'liked.json');
+	copyFileFromDemo(demoPath, 'save.json');
+}
+
+function copyFileFromDemo(srcPath, nameFile){
+	alert("Kopiuje: " + srcPath + " - " + nameFile);
+	window.FilePath.resolveNativePath((srcPath + nameFile), function(localFileUri) {
+        window.resolveLocalFileSystemURL(localFileUri, function(oFile) {
+			oFile.copyTo(srcPath, nameFile,
+				function(){
+					alert('copying was successful')
+				},
+				function(){
+					alert('unsuccessful copying')
+				}
+			);
+		}, function(err){
+			alert("Plik jest nieprawidłowy!" + (srcPath + nameFile));
+		});
+    });
+}
 /*END TELL ME*/
 
 /*START SAVE NOTATION*/
@@ -1456,11 +1527,13 @@ function nextStep(){
 	$(".support-word-in-speach").hide();
 	
 	updateProgressBar();
+	/*
 	if(readyToSaveNotice){
 		saveNotice($("#confirm-text-"+nbMethod).val());
 	}else{
 		readyToSaveNotice = true;
 	}
+	*/
 	if(round == 3){
 		if(canNextStep == 2){
 		noPlus = 1;
@@ -3419,8 +3492,8 @@ function startVoiceToText(){
 					$(".cloud-next-task").show();
 					$(".remind-img").hide();
 				}
-		*/	
-	
+			
+		*/
 		
 
 	if(!checkConnection()){

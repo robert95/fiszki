@@ -1269,15 +1269,15 @@ section{
 	height: 100%;
 	position: relative;
 }
-#menu #submenu-wrapper {
+#menu #submenu-wrapper, #menu #submenu-wrapper-2{
 	display: none; 
 	list-style: none;
 }
-#menu #submenu {
+#menu #submenu, #menu #submenu-2{
 	padding-top: 0;
 	margin-top: -15px;
 }
-#menu #submenu  li{
+#menu #submenu  li, #menu #submenu-2 li{
     font-size: 18px;
 	width: 85% !important; 
 	margin-left: 10% !important ;
