@@ -1312,14 +1312,11 @@ function copyFirstPathPremium(){
 }
 
 function copyFileFromDemo(srcPath, nameFile){
-	alert("Kopiuje: " + srcPath + " - " + nameFile);
-	
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
-		alert("Jestem: " + srcPath + nameFile);
 		fileSystem.root.getFile((srcPath + nameFile), {create: false}, function(fileEntry){
-			alert("Jestem2: " + srcPath + nameFile);
 			var parent = premiumPath().substring(0, parent.length-1);
 			var parentName = parent.substring(parent.lastIndexOf('/')+1);
+			alert(parent + " : " + parentName);
 			fileEntry.copyTo((new DirectoryEntry(parentName, parent)), nameFile,
 				function(){
 					alert('copying was successful')
