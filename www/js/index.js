@@ -1315,6 +1315,7 @@ function copyFileFromDemo(srcPath, nameFile){
 	alert("Kopiuje: " + srcPath + " - " + nameFile);
 	
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+		alert("Jestem: " + srcPath + nameFile);
 		fileSystem.root.getFile((srcPath + nameFile), {create: false}, function(fileEntry){
 			fileEntry.copyTo(premiumPath(), nameFile,
 				function(){
