@@ -2684,7 +2684,8 @@ function endTutWrap(){
 		setTimeout(function(){			
 			if(startLearn){
 				//zacznij naukę
-				showStartLessonPage();
+				getDay();
+				//showStartLessonPage();
 				startLearn = false;
 			}else{
 				//powrót do głównego
