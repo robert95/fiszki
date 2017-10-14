@@ -1312,16 +1312,18 @@ function copyFirstPathPremium(){
 function copyFileFromDemo(srcPath, nameFile){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 		fileSystem.root.getFile((srcPath + nameFile), {create: false}, function(fileEntry){
-			var parent = premiumPath().substring(0, premiumPath().length-1);
-			var parentName = parent.substring(parent.lastIndexOf('/')+1);
-			fileEntry.copyTo((new DirectoryEntry(parentName, parent)), nameFile,
-				function(){
-					alert('copying was successful')
-				},
-				function(err){
-					alert('unsuccessful copying: ' + err.toString());
-				}
-			);
+			fileSystem.root.getDirectory(premiumPath(), {create: true}, function (dirEntry) {
+				fileEntry.copyTo(dirEntry, nameFile,
+					function(){
+						alert('copying was successful')
+					},
+					function(err){
+						alert('unsuccessful copying: ' + err.toString());
+					}
+				);
+			}, function(err){
+				alert("Coś nie tak z katalogie" + err.toString());
+			});
 		}, function(err){
 			alert("Plik jest nieprawidłowy!" + (srcPath + nameFile));
 		});
