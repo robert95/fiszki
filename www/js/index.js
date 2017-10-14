@@ -1319,8 +1319,7 @@ function copyFileFromDemo(srcPath, nameFile){
 					alert('copying was successful')
 				},
 				function(err){
-					alert('unsuccessful copying');
-					alert(err.code);
+					alert('unsuccessful copying: ' + err.toString());
 				}
 			);
 		}, function(err){
