@@ -1294,9 +1294,7 @@ function copyFirstPath(){
 } 
 function copyFirstPathPremium(){
 	var demoPathsrc = demoPath();
-	alert(demoPath());
-	alert(premiumPath());
-	alert(path());
+
 	//sprawdz czy są tam jakięs pliki
 	//jak są to skopiuj
 	//lang.json
@@ -1316,13 +1314,13 @@ function copyFileFromDemo(srcPath, nameFile){
 		fileSystem.root.getFile((srcPath + nameFile), {create: false}, function(fileEntry){
 			var parent = premiumPath().substring(0, premiumPath().length-1);
 			var parentName = parent.substring(parent.lastIndexOf('/')+1);
-			alert(parent + " : " + parentName);
 			fileEntry.copyTo((new DirectoryEntry(parentName, parent)), nameFile,
 				function(){
 					alert('copying was successful')
 				},
-				function(){
-					alert('unsuccessful copying')
+				function(err){
+					alert('unsuccessful copying');
+					alert(err);
 				}
 			);
 		}, function(err){
