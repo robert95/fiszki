@@ -9,7 +9,7 @@
 		"id": 2,
 		"name": "Zrozumienie",
 		"pos": "2",
-		"audio": true
+		"audio": false
 	},
 	{
 		"id": 3,
@@ -33,13 +33,13 @@
 		"id": 6,
 		"name": "Zaimki dzierżawcze",
 		"pos": "6",
-		"audio": true
+		"audio": false
 	},
 	{
 		"id": 7,
 		"name": "Rozmowa telefoniczna",
 		"pos": "7",
-		"audio": true
+		"audio": false
 	},
 	{
 		"id": 8,

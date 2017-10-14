@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var isPremium = true;
+var isPremium = false;
 var app = {
     // Application Constructor
     initialize: function() {
