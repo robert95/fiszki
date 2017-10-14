@@ -1320,6 +1320,12 @@ function copyFileFromDemo(srcPath, nameFile, lastfile){
 			});
 		}, function(err){
 			//Tutaj wiemy, że tam nie ma takiego pliku, nie ma zaintalowanej wersji demo
+			if(nameFile == 'lang.json'){
+				$("#first-use-loading-page").hide();
+				startLearn = true; //po tutorialu zacznie naukę
+				getLangList(); //wybierz swój język
+				$("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
+			}
 			//alert("Plik jest nieprawidłowy!" + (srcPath + nameFile));
 		});
 	}, function(err){
