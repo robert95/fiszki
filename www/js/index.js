@@ -465,38 +465,31 @@ var hasNewCatsToday = false;
 
 /* START APP*/
 function startApp(){
-	
-	copyFirstPathPremium();
-	
-	
+	hideBars();
+	$("#first-use-loading-page").show();
+	getMyLang(); //sprawdzamy czy jest ustawiony mój język
 	setTimeout(function(){	
-
-		hideBars();
-		$("#first-use-loading-page").show();
-		getMyLang(); //sprawdzamy czy jest ustawiony mój język
-		setTimeout(function(){	
-			var lang = langJSON.lang;
-			prepareAd();
-			//TAK
-			if(lang < 1){
+		var lang = langJSON.lang;
+		prepareAd();
+		//TAK
+		if(lang < 1){
+			if(!isPremium){
 				$("#first-use-loading-page").hide();
 				startLearn = true; //po tutorialu zacznie naukę
 				getLangList(); //wybierz swój język
 				$("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
-			//	copyFirstPath(); //utwórz potrzebne pliki
 			}
-			else{
-			//NIE
-				$("#myLang").val(lang);
-				$("body").addClass('lang'+lang);
-				getDay(); //pobierz numer dnia
-				getNotice(); //pobierz notice
-				readLikedWords(); //pobierz liked words
-			}
-		}, 2500);
-		
-		
-	}, 10000);
+			copyFirstPath();
+		}
+		else{
+		//NIE
+			$("#myLang").val(lang);
+			$("body").addClass('lang'+lang);
+			getDay(); //pobierz numer dnia
+			getNotice(); //pobierz notice
+			readLikedWords(); //pobierz liked words
+		}
+	}, 2500);
 }
 /*END START APP*/
 function getMyLang(){
@@ -1288,48 +1281,49 @@ function copyFirstPath(){
 			asset_directory: "www/firstPatch",
 			destination_directory: mainPath
 		},
-		function() { }, 
+		function() { 
+			if(isPremium){
+				copyFirstPathPremium();
+			}
+		}, 
 		function() { alert('fail'); }
 	);
 } 
 function copyFirstPathPremium(){
 	var demoPathsrc = demoPath();
-
-	//sprawdz czy są tam jakięs pliki
-	//jak są to skopiuj
-	//lang.json
-	//day.json
-	//notice.json
-	//liked.json
-	//save.json
-	copyFileFromDemo(demoPathsrc, 'lang.json');
-	copyFileFromDemo(demoPathsrc, 'day.json');
-	copyFileFromDemo(demoPathsrc, 'notice.json');
-	copyFileFromDemo(demoPathsrc, 'liked.json');
-	copyFileFromDemo(demoPathsrc, 'save.json');
+	copyFileFromDemo(demoPathsrc, 'lang.json', false);
+	copyFileFromDemo(demoPathsrc, 'day.json', false);
+	copyFileFromDemo(demoPathsrc, 'notice.json', false);
+	copyFileFromDemo(demoPathsrc, 'liked.json', false);
+	copyFileFromDemo(demoPathsrc, 'save.json', true);
 }
 
-function copyFileFromDemo(srcPath, nameFile){
+function copyFileFromDemo(srcPath, nameFile, lastfile){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 		fileSystem.root.getFile((srcPath + nameFile), {create: false}, function(fileEntry){
 			fileSystem.root.getDirectory(premiumPath(), {create: true}, function (dirEntry) {
 				fileEntry.copyTo(dirEntry, nameFile,
 					function(){
-						alert('copying was successful')
+						if(lastfile){
+							setTimeout(function(){ 
+								location.reload(); 
+							}, 100);
+						}
+						//alert('copying was successful')
 					},
 					function(err){
-						alert('unsuccessful copying: ' + err.toString());
+						console.log("Error: " + err.toString());
 					}
 				);
 			}, function(err){
-				alert("Coś nie tak z katalogie" + err.toString());
+				console.log("Error: " + err.toString());
 			});
 		}, function(err){
-			alert("Plik jest nieprawidłowy!" + (srcPath + nameFile));
+			//Tutaj wiemy, że tam nie ma takiego pliku, nie ma zaintalowanej wersji demo
+			//alert("Plik jest nieprawidłowy!" + (srcPath + nameFile));
 		});
 	}, function(err){
-		alert("coś nie tak!" + (srcPath + nameFile));
-		alert(err);
+		console.log("Error: " + err.toString());
 	});
 }
 /*END TELL ME*/
