@@ -1314,7 +1314,7 @@ function copyFirstPathPremium(){
 function copyFileFromDemo(srcPath, nameFile){
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 		fileSystem.root.getFile((srcPath + nameFile), {create: false}, function(fileEntry){
-			var parent = premiumPath().substring(0, parent.length-1);
+			var parent = premiumPath().substring(0, premiumPath().length-1);
 			var parentName = parent.substring(parent.lastIndexOf('/')+1);
 			alert(parent + " : " + parentName);
 			fileEntry.copyTo((new DirectoryEntry(parentName, parent)), nameFile,
