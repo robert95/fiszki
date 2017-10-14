@@ -575,6 +575,7 @@ function afterReadToLearn(tolearnfromFile){
 	toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
 	
 	if(toLearnJSON.length == 0){
+		getCatWithPos(0, 1);
 		startLessonAfterSetUpEverything();
 	}
 	for(var x in toLearnJSON){
