@@ -574,6 +574,9 @@ function afterReadToLearn(tolearnfromFile){
 	toLearnJSON = JSON.parse(tolearnfromFile);
 	toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
 	
+	if(toLearnJSON.length == 0){
+		startLessonAfterSetUpEverything();
+	}
 	for(var x in toLearnJSON){
 		var pack = toLearnJSON[x];
 		var day = dayJSON.day;

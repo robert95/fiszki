@@ -27,11 +27,10 @@ function setWaitForAd( value ){
 }
 
 function prepareAd(){
-	//if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 }
 
 function showAd(){
-	/*
 	if(countAd == 0){
 		countAd = 1;
 	}else{
@@ -43,5 +42,4 @@ function showAd(){
 			if(AdMob) AdMob.showInterstitial();
 		}
 	}
-	*/
 }
