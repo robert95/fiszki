@@ -1,62 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "P1.7.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "P1.7.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "P1.7.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "P1.7.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "P1.7.5",
-		"notices": [
-		]
-	},
-	{
-		"id": 6,
-		"name": "P1.7.6",
-		"notices": [
-		]
-	},
-	{
-		"id": 7,
-		"name": "P1.7.7",
-		"notices": [
-		]
-	},
-	{
-		"id": 8,
-		"name": "P1.7.8",
-		"notices": [
-		]
-	},
-	{
-		"id": 9,
-		"name": "P1.7.9",
-		"notices": [
-		]
-	},
-	{
-		"id": 10,
-		"name": "P1.7.10",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "Halo! Z tej strony John.",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "Czy mogę rozmawiać z Billem?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Czy mogę zapytać kto dzwoni?",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Z tej strony Maria.",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Proszę poczekać.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Przykro, On jest zajęty w tym momencie.",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Czy chciałby Pan zostawić wiadomość?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Czy możesz go poprosić żeby do mnie zadzwonił?",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Jaki ma Pani numer?",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Zadzwonię do Pani później",
+			"notices": [
+			]
+		}
+	]

@@ -1,62 +1,42 @@
 [
 	{
 		"id": 1,
-		"name": "A-1-1",
-		"pos": "1",
-		"audio": true
+		"name": "Grunnleggende uttrykk"
 	},
 	{
 		"id": 2,
-		"name": "A-1-2",
-		"pos": "2",
-		"audio": true
+		"name": "Å gjøre seg selv forstått"
 	},
 	{
 		"id": 3,
-		"name": "A-1-3",
-		"pos": "3",
-		"audio": true
+		"name": "På flyplassen/togstasjonen"
 	},
 	{
 		"id": 4,
-		"name": "A-1-4",
-		"pos": "4",
-		"audio": true
+		"name": "Konjunksjoner"
 	},
 	{
 		"id": 5,
-		"name": "A-1-5",
-		"pos": "5",
-		"audio": true
+		"name": "Når du handler"
 	},
 	{
 		"id": 6,
-		"name": "A-1-6",
-		"pos": "6",
-		"audio": true
+		"name": "Possessiver"
 	},
 	{
 		"id": 7,
-		"name": "A-1-7",
-		"pos": "7",
-		"audio": true
+		"name": "Å ringe og motta anrop"
 	},
 	{
 		"id": 8,
-		"name": "A-1-8",
-		"pos": "8",
-		"audio": true
+		"name": "Nødsituasjoner"
 	},
 	{
 		"id": 9,
-		"name": "A-1-9",
-		"pos": "9",
-		"audio": true
+		"name": "Snakke om ting du liker/ ikke liker"
 	},
 	{
 		"id": 10,
-		"name": "A-1-10",
-		"pos": "10",
-		"audio": true
+		"name": "Å spørre om og vise veien"
 	}
 ]

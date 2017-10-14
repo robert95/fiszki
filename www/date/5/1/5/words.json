@@ -1,62 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "P1.5.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "P1.5.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "P1.5.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "P1.5.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "P1.5.5",
-		"notices": [
-		]
-	},
-	{
-		"id": 6,
-		"name": "P1.5.6",
-		"notices": [
-		]
-	},
-	{
-		"id": 7,
-		"name": "P1.5.7",
-		"notices": [
-		]
-	},
-	{
-		"id": 8,
-		"name": "P1.5.8",
-		"notices": [
-		]
-	},
-	{
-		"id": 9,
-		"name": "P1.5.9",
-		"notices": [
-		]
-	},
-	{
-		"id": 10,
-		"name": "P1.5.10",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "O której jutro otwieracie?",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "O której dzisiaj zamykacie?",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "Czy mogę Ci pomóc.",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Czy sprzedajecie znaczki?",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Szukam szamponu.",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Ile to kosztuje?",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Ile kosztuje ta lampa przy oknie?",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "To jest tanie.",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "To jest drogie.",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "Wezmę to.",
+			"notices": [
+			]
+		}
+	]
