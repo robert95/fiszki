@@ -1,68 +1,62 @@
 [
-		{
-			"id": 1,
-			"name": "Przepraszam, czy wiesz gdzie jest poczta?",
-			"notices": [
-			]
-		},
-		{
-			"id": 2,
-			"name": "Przepraszam, nie jestem z tąd.",
-			"notices": [
-			]
-		},
-		{
-			"id": 3,
-			"name": "Idziesz w złym kierunku.",
-			"notices": [
-			]
-		},
-		{
-			"id": 4,
-			"name": "Idź tędy.",
-			"notices": [
-			]
-		},
-		{
-			"id": 5,
-			"name": "Skręć w pierwszą w prawo",
-			"notices": [
-			]
-		},
-		{
-			"id": 6,
-			"name": "Skęć  w prawo na skrzyżowaniu.",
-			"notices": [
-			]
-		},
-		{
-			"id": 7,
-			"name": "Miniesz supermarket po lewej.",
-			"notices": [
-			]
-		},
-		{
-			"id": 8,
-			"name": "Kontynuuj przez kilometr.  ",
-			"notices": [
-			]
-		},
-		{
-			"id": 9,
-			"name": "To w tą stronę.",
-			"notices": [
-			]
-		},
-		{
-			"id": 10,
-			"name": "To będzie tuż przed Tobą. ",
-			"notices": [
-			]
-		},
-		{
-			"id": 11,
-			"name": "",
-			"notices": [
-			]
-		}
-	]
+	{
+		"id": 1,
+		"name": "P1.10.1",
+		"notices": [
+		]
+	},
+	{
+		"id": 2,
+		"name": "P1.10.2",
+		"notices": [
+		]
+	},
+	{
+		"id": 3,
+		"name": "P1.10.3",
+		"notices": [
+		]
+	},
+	{
+		"id": 4,
+		"name": "P1.10.4",
+		"notices": [
+		]
+	},
+	{
+		"id": 5,
+		"name": "P1.10.5",
+		"notices": [
+		]
+	},
+	{
+		"id": 6,
+		"name": "P1.10.6",
+		"notices": [
+		]
+	},
+	{
+		"id": 7,
+		"name": "P1.10.7",
+		"notices": [
+		]
+	},
+	{
+		"id": 8,
+		"name": "P1.10.8",
+		"notices": [
+		]
+	},
+	{
+		"id": 9,
+		"name": "P1.10.9",
+		"notices": [
+		]
+	},
+	{
+		"id": 10,
+		"name": "P1.10.10",
+		"notices": [
+		]
+	}
+]
