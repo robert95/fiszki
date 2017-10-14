@@ -1318,7 +1318,9 @@ function copyFileFromDemo(srcPath, nameFile){
 		alert("Jestem: " + srcPath + nameFile);
 		fileSystem.root.getFile((srcPath + nameFile), {create: false}, function(fileEntry){
 			alert("Jestem2: " + srcPath + nameFile);
-			fileEntry.copyTo(premiumPath(), nameFile,
+			var parent = premiumPath().substring(0, parent.length-1);
+			var parentName = parent.substring(parent.lastIndexOf('/')+1);
+			fileEntry.copyTo((new DirectoryEntry(parentName, parent)), nameFile,
 				function(){
 					alert('copying was successful')
 				},
