@@ -1320,7 +1320,7 @@ function copyFileFromDemo(srcPath, nameFile){
 				},
 				function(err){
 					alert('unsuccessful copying');
-					alert(err);
+					alert(err.code);
 				}
 			);
 		}, function(err){
