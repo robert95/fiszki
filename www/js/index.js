@@ -840,7 +840,7 @@ function aaa(){
 }
 
 function getLangList(){
-	getDay();
+		//getDay();
 	$.get("date/lang.json", function(result) {
 		showLangList(result);
 		//startTmp();
