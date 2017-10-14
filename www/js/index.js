@@ -2692,7 +2692,6 @@ function endTutWrap(){
 						visiblesSectionsBeforeStart.each(function(index, value) {
 							acc.push($(this).attr('id'));
 						});
-						console.log(JSON.stringify(acc));
 						
 				visiblesSectionsBeforeStart.removeClass('next-cat-left');
 			}
