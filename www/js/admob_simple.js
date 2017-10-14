@@ -1,6 +1,7 @@
 var admobid = {};
 var firstShownAd = true; 
 var countAd = 0;
+var isPremium = true;
 if( /(android)/i.test(navigator.userAgent) ) { 
     admobid = { // for Android
         banner: 'ca-app-pub-5149183983154394/3906975069',
@@ -27,19 +28,23 @@ function setWaitForAd( value ){
 }
 
 function prepareAd(){
-	if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+	if(!isPremium){
+		if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+	}
 }
 
 function showAd(){
-	if(countAd == 0){
-		countAd = 1;
-	}else{
-		waitForAd = true;
-		countAd++;
-		if(countAd%2 == 0){
-			$("#myCall-big-ad").show();
+	if(!isPremium){
+		if(countAd == 0){
+			countAd = 1;
 		}else{
-			if(AdMob) AdMob.showInterstitial();
+			waitForAd = true;
+			countAd++;
+			if(countAd%2 == 0){
+				$("#myCall-big-ad").show();
+			}else{
+				if(AdMob) AdMob.showInterstitial();
+			}
 		}
 	}
 }
