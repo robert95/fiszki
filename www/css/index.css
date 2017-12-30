@@ -1665,8 +1665,11 @@ section{
 	padding-left: 35px;
 	border-bottom: 0px;
 }*/
-.l2, .l3, .l4, .l5{
+.l1, .l2, .l3, .l4, .l5{
 	display: none;
+}
+.lang1 .l1{
+	display: inline !important;
 }
 .lang2 .l2{
 	display: inline !important;
@@ -2245,7 +2248,7 @@ h3{
 	background: black;
 }
 .background-tutorial-darkness{
-	opacity: 0.6;
+	opacity: 0.4;
 }
 .popup-TUT{
     position: absolute;

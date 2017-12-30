@@ -16,6 +16,67 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ 
+var trans = [];
+trans['not_connected_text'] = ['Make sure that your Wi-Fi or cellular mobile data is turned on and then try again.', 'Upewnij się, że Wifi lub  dane komórkowe są włączone, a następnie spróbuj ponownie.', 'Asegúrate que el WiFi o datos móviles están activados e inténtalo otra vez.', 'Vergewissere dich, dass dein WLAN oder Mobilfunknetz eingeschaltet ist und versuche es dann nochmal.', 'Assurez-vous que le Wi-Fi ou les données mobiles sont activées et essayez de nouveau.'];
+trans['not_connected_title'] = ['No internet connection', 'Nie można połączyć się z internetem', 'No hay conexión a internet', 'Keine Internetverbindung', 'Pas de connexion Internet'];
+trans['not_connected_exit'] = ['OK', 'OK', 'OK', 'OK', 'OK'];
+trans['during_learning'] = ['Lesson in progress', 'W trakcie nauki', 'Lección en progreso', 'Lektion im Gange', 'Leçon en cours'];
+trans['lesson_skipped'] = ['Skipped', 'Pominięta', 'Omitida', 'Übersprungen', 'Passée'];
+trans['learned_lesson'] = ['Completed', 'Ukończona', 'Finalizada', 'Abgeschlossen', 'Terminée'];
+trans['recognize_error_title'] = ["Didn't catch that", 'Nie zrozumieliśmy', 'No lo entendemos', 'Das habe ich nicht verstanden', "Nous n'avons pas compris"];
+trans['recognize_error_try_again'] = ['Try again', 'Spróbuj ponownie', 'Inténtalo de nuevo', 'Versuche es nochmal', 'Essayez de nouveau'];
+trans['recognize_error_skip'] = ['Skip the task', 'Pomiń zadanie', 'Omitir tarea', 'Aufgabe überspringen', "Passez l'exercice"];
+trans['recognize_error_first_text'] = ['Try to speak more clearly and loudly.', 'Staraj się mówić głośno i wyraźnie.', 'Trata de hablar más alto y claro.', 'Versuche, deutlicher und lauter zu sprechen.', 'Essayez de parler plus clairement et plus fort.'];
+trans['recognize_error_second_text'] = ["Please try to say the phrase in exactly the same way as you heard it. This applies to vocabulary and contractions.", 'Postaraj się wymówić wyrażenie w taki sam sposób w jaki je usłyszałeś (dotyczy to zarówno słownictwa jak i skrótów).', 'Trata de decir la frase exactamente de la misma forma que la has oído (haz lo mismo tanto con el vocabulario como con las contracciones).', 'Bitte wiederhole den Satz genauso, wie du ihn gehört hast. Das gilt auch für Vokabeln und Kontraktionen.', "Essayez de dire la phrase dans le même ordre que vous l'avez entendu (cela s'applique au vocabulaire et aux contractions)."];
+trans['recognize_error_third_text'] = ["Remember sometimes speech recognition is not accurate.", 'Pamiętaj że czasami rozpoznawanie mowy jest niedokładne.', 'Recuerda que a veces el reconocimiento de voz no es preciso.', 'Denke daran, das die Spracherkennung manchmal nicht exakt ist.', "Souvenez- vous que parfois, le système de reconnaissance vocal n'est pas précis. Essayez à nouveau ou passez la tâche."];
+trans['end_new_materials_title'] = ["Congratulations!", "Gratulacje!", "¡Enhorabuena!", "Herzlichen Glückwunsch!", "Félicitations!"];
+trans['end_new_materials_text'] = ["You went through all the content. Now repeat the lessons to become a Pro.", "BRAK TŁUMACZENIA", "Ya has completado todo el contenido. Ahora, repite las lecciones para convertirte en un profesional.", "Du hast den gesamten Inhalt erarbeitet. Wiederhole jetzt die Lektionen, um ein Profi zu werden.", "Vous avez parcouru tout le contenu. Maintenant, répétez les leçons pour devenir un pro."];
+trans['end_new_materials_ok'] = ["OK", "OK", "OK", "OK", "OK"];
+trans['liked_words_added'] = ["Phrase has been added to Favourites.", "Fraza została dodana do ulubionych.", "Frase añadida a Favoritos.", "Der Satz wurde zu deinen Favoriten hinzugefügt.", "La phrase a été ajoutée à vos favoris."];
+trans['liked_words_remove'] = ["BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+trans['no_audio_lesson_title'] = ["Audio not available.", "Nagrania audio niedostępne.", "Audio no disponible.", "Audio nicht verfügbar.", "L'audio n'est pas disponible."];
+trans['no_audio_lesson_text'] = ["This free version comes with 90 audio lessons. If you would like to get audio to all 180 lessons, upgrade to xxx Pro.", "Darmowa wersja aplikacji zawiera 90 lekcji audio. Jeśli chciałbyś otrzymać nagrania do wszystkich 180 lekcji kup xxx Pro.", "La versión gratuita de la aplicación contiene 90 lecciones de audio. Si deseas recibir las grabaciones de todas las 180 lecciones, compra xxx Pro.", "Diese kostenlose Version umfasst 90 Audiolektionen. Wenn du die Audios für alle 180 Lektionen haben möchtest, kauf dir xxx Pro.", "Cette version gratuite contient 90 leçons audios. Si vous voulez recevoir les audios pour l'ensemble des 180 leçons, achetez xxx Pro."];
+trans['no_audio_lesson_learn_anyway'] = ["Learn anyway", "Ucz się bez nagrań", "Aprender sin grabaciones", "Trotzdem lernen", "Apprenez sans audio"];
+trans['no_audio_lesson_upgrade'] = ["Upgrade", "Kup xxx Pro", "Compra xxx Pro", "xxx Pro kaufen", "Achetez xxx Pro"];
+trans['no_audio_lesson_skip'] = ["Skip lesson", "Pomiń lekcję", "Omitir lección", "Lektion überspringen", "Passez la leçon"];
+trans['confirm_back_in_learn_title'] = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro?", "Bist du sicher?", "Etes-vous sûr?"];
+trans['confirm_back_in_learn_text'] = ["Your progress won't be saved.", "Twój postęp nie zostanie zapisany.", "Tu progreso no será guardado.", "Deine Fortschritte werden nicht gespeichert.", "Votre progrès ne sera pas sauvegardé."];
+trans['confirm_back_in_learn_back'] = ["Go back", "Wróć", "Volver", "Zurück", "Revenir en arrière"];
+trans['confirm_back_in_learn_cancel'] = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+trans['confirm_learn_missing_cat_title'] = ["Are you sure?", "Czy jesteś pewien?", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+trans['confirm_learn_missing_cat_text'] = ["Do you want to learn previously skipped lesson?", "Lekcja została ostatnio pominięta.", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+trans['confirm_learn_missing_cat_yes'] = ["Learn anyway", "Ucz się", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+trans['confirm_learn_missing_cat_cancel'] = ["Cancel", "Anuluj", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+trans['confirm_learn_inprogress_cat_title'] = ["Are you sure?", "Czy jesteś pewien?", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+trans['confirm_learn_inprogress_cat_text'] = ["You are learning this lesson already.", "Uczysz się już tej lekcji.", "OK", "OK", "OK"];
+trans['confirm_learn_inprogress_cat_yes'] = ["Learn anyway", "Ucz się", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+trans['confirm_learn_inprogress_cat_cancel'] = ["Cancel", "Anuluj", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+trans['confirm_skip_lesson_title'] = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro?", "Bist du sicher?", "Etes-vous sûr?"];
+trans['confirm_skip_lesson_text'] = ["Repetition is crucial for your long-term memory.", "Powtarzanie jest kluczowe w procesie zapamiętywania.", "La repetición tiene una importancia fundamental para la memorización a largo plazo.", "Wiederholungen sind für das Langzeitgedächtnis sehr wichtig.", "Répéter est essentiel pour la mémoire à long terme."];
+trans['confirm_skip_lesson_skip'] = ["Skip", "Pomiń", "Omitir", "Überspringen", "Passez"];
+trans['confirm_skip_lesson_cancel'] = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+trans['confirm_exit_title'] = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro?", "Bist du sicher?", "Etes-vous sûr?"];
+trans['confirm_exit_text'] = ["Please complete the lesson before exiting. Otherwise, your progress won't be saved.", "Ukończ lekcję przed zamknięciem aplikacji.W przeciwnym wypadku postęp nie zostanie zapisany.", "Por favor, completa la lección antes de salir. De lo contrario, tu progreso no será guardado.", "Beende die Lektion, bevor du die Anwendung schließt. Sonst werden deine Fortschritte nicht gespeichert.", "Terminez la leçon avant de fermer l'application. Autrement votre progrès ne sera pas sauvegardé."];
+trans['confirm_exit_cancel'] = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+trans['confirm_exit_exit'] = ["Exit", "Wyjście", "Salir", "Beenden", "Quitter"];
+trans['placeholder_fuzzy_search'] = ["Search for lesson…", "Szukaj lekcji…", "Buscar lección….", "Lektion … suchen", "Chercher la leçon..."];
+trans['placeholder_hint_text'] = ["Click here to write your hint", "PL_Click here to write your hint", "ESP_Click here to write your hint", "DE_Click here to write your hint", "FR_Click here to write your hint"];
+
+//trans['a'] = ["OK", "OK", "OK", "OK", "OK"];
+
+
+/*translacje*/
+function getTrans(key){
+	var lang = langJSON.lang;
+	if(lang > 0){
+		return trans[key][parseInt(lang-1)];
+	}else{
+		return trans[key][0];
+	}
+}
+
+
 var isPremium = false;
 var app = {
     // Application Constructor
@@ -38,20 +99,12 @@ var app = {
 		var src = '/android_asset/www/date/1.m4a';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
 		
-		//getLangList();
-		if(!checkConnection()){
-			/*navigator.notification.confirm(
-				"Połącz się z Internetem aby korzystać z aplikacji lub pobierz wersję premium, która działa off-line.",
-				onNoInternetConfirm,
-				"Brak połączenia z Internetem!",
-				"Wyjscie"
-			);*/
-		
+		if(!checkConnection()){		
 			navigator.notification.confirm(
-				"Connect to the Internet to use the application. You can also download the premium version that works offline",
+				getTrans('not_connected_text'),
 				onNoInternetConfirm,
-				"No Internet connection!",
-				"exit"
+				getTrans('not_connected_title'),
+				getTrans('not_connected_exit')
 			);
 		}else{
 			startApp();
@@ -123,6 +176,8 @@ var app = {
 		volumeTest();
 		
 		//smoothLoadProgressBarWelcome();
+		
+		
 
     },
     // Update DOM on a Received Event
@@ -423,8 +478,8 @@ var dayJSON = false;
 var toLearnJSON = [];
 
 /*
-var langJSON = JSON.parse('{"lang":5}');
-var dayJSON = JSON.parse('{"day": 2, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
+var langJSON = JSON.parse('{"lang":2}');
+var dayJSON = JSON.parse('{"day": 3, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
 var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
 */
 
@@ -480,6 +535,7 @@ function startApp(){
 				$("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
 			}
 			copyFirstPath();
+			updatePlaceholders();
 		}
 		else{
 		//NIE
@@ -960,7 +1016,7 @@ function showSubCatList(s, parentId){
 			cl = "inProgressCat";
 		}
 		cl2 = (cat.audio == true) ? '': 'no-audio'; 
-		tmp += '<p class="text setCat '+ cl + ' ' + cl2 +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parentId + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
+		tmp += '<p class="text setCat '+ cl + ' ' + cl2 +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parentId + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">' + getTrans('during_learning') + '</span> <span class="missingCatInfo">' + getTrans('lesson_skipped') + '</span> <span class="learnedCatInfo">' + getTrans('learned_lesson') + '</span></p>';
 		if(firstGenerationCat) $("#cat-list .list").append('<li><p class="cat-name" data-id="' + cat.id + '" data-par="' + parentId + '">' + cat.name + '</p></li>');
 	}
 	tmp += '</div>';
@@ -3065,17 +3121,23 @@ function isNotNewCat(){
 }
 
 function getNextSugCat(){
-	scdCycleInSearchSub = false;
-	var p = $("#sugCatPar").val();
-	var c = $("#sugCatSub").val();
-	setSuggestedCat(p, c);
-	addCatToMissing(p + "/" + c);
-	setTimeout(function(){
-		$("#suggest-new-category-text").text(suggestedCatName); 
-		setPopupAboutNoAudioLesson();
-		showMuteIcon();
-	}, 350);
-	
+	$("#new-category-choice").addClass('next-cat-left');
+	setTimeout(function(){	
+		scdCycleInSearchSub = false;
+		var p = $("#sugCatPar").val();
+		var c = $("#sugCatSub").val();
+		setSuggestedCat(p, c);
+		addCatToMissing(p + "/" + c);
+		setTimeout(function(){	
+			$("#suggest-new-category-text").text(suggestedCatName); 	
+			$("#new-category-choice").removeClass('next-cat-left');
+			setTimeout(function(){
+				setPopupAboutNoAudioLesson();
+				showMuteIcon();
+			}, 500);
+		}, 200);
+	}, 700);
+
 	var text = 'Lesson has been skipped';
 	window.plugins.toast.showWithOptions(
 		{
@@ -3092,15 +3154,25 @@ function addCatToMissing(catSgn){
 	allUsedCats.push(catSgn);
 }
 
-function getThisCatAsSug(obj){	
-	var p = $(obj).attr('data-parent');
-	var c = $(obj).attr('data-subcat');
-	setThisAsSuggestedCat(p, c);
-	setTimeout(function(){
-		$("#suggest-new-category-text").text(suggestedCatName);
-		showMuteIcon();
-		backToSetNewCategory();
-	}, 100);
+var agreeToCheckTheUsedCatAsSug = false;
+function getThisCatAsSug(obj){
+	if($(obj).hasClass('missingCat') && !agreeToCheckTheUsedCatAsSug){
+		//pokaż powiadomienie, że zeskipowałeś tą kategorię ale i tak chcesz się jej uczyć
+		showConfirmLearnMissingCat(obj);
+	}else if(($(obj).hasClass('inProgressCat') || ($(obj).hasClass('learnedCat'))) && !agreeToCheckTheUsedCatAsSug){
+		//pokaż powiadomienie, że już się jej uczysz i czy chcesz zacząć od nowa
+		showConfirmLearnInProgressCat(obj);
+	}else{
+		agreeToCheckTheUsedCatAsSug = false;
+		var p = $(obj).attr('data-parent');
+		var c = $(obj).attr('data-subcat');
+		setThisAsSuggestedCat(p, c);
+		setTimeout(function(){
+			$("#suggest-new-category-text").text(suggestedCatName);
+			showMuteIcon();
+			backToSetNewCategory();
+		}, 100);
+	}
 }
 
 /* SAVE PROGRESS */
@@ -3344,11 +3416,11 @@ function setTextWidth(){
 var srcToShare = "";
 function shareFile(){
 	var optionsToShare = {
-		message: 'Zapisz postęp', // not supported on some apps (Facebook, Instagram)
-		subject: 'Mój postęp w SpeakUp', // fi. for email
+		message: 'Save progress', // not supported on some apps (Facebook, Instagram)
+		subject: 'My progress', // fi. for email
 		files: [srcToShare], // an array of filenames either locally or remotely
 		url: null,
-		chooserTitle: 'Zapisz postęp' // Android only, you can override the default share sheet title
+		chooserTitle: 'Save progress' // Android only, you can override the default share sheet title
 	}
 
 	var onSuccessShare = function(result) {
@@ -3428,7 +3500,7 @@ function getAllCatsToShowAllCats(){
 						}
 						cl2 = (subcat.audio == true) ? '': 'no-audio'; 
 						hasAudio = (subcat.audio == true) ? 1: 0; 
-						tmp += '<p class="text catsInAllMaterial '+ cl + ' ' + cl2 +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\', ' + hasAudio + ')" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">during learning</span> <span class="missingCatInfo">lesson skipped</span> <span class="learnedCatInfo">learned lesson</span></p>';
+						tmp += '<p class="text catsInAllMaterial '+ cl + ' ' + cl2 +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\', ' + hasAudio + ')" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">' + getTrans('during_learning') + '</span> <span class="missingCatInfo">' + getTrans('lesson_skipped') + '</span> <span class="learnedCatInfo">' + getTrans('learned_lesson') + '</span></p>';
 						$("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
 					}
 					//tmp += '</div>' + '</div>' + extraEnd;
@@ -3458,7 +3530,7 @@ function getWordForCatShowList(sygn){
 
 var countOfWrongRecognized = 0;
 function startVoiceToText(){
-		/*	
+			/*
 				$(".recText").text("To powiedziałem");
 				$("#l-n-1").hide();
 				$("#l-n-2").hide();
@@ -3487,7 +3559,7 @@ function startVoiceToText(){
 				$(".show-hidden-word").next("p").show();
 				$(".show-hidden-word").hide();
 				
-				if(((Math.random() * 10) + 1 )> -5){
+				if(((Math.random() * 10) + 1 )> 5){
 					$(".learnMethod").addClass('goodRec');
 					$(".learnMethod").removeClass('badRec');
 					$(".cloud-again").hide();
@@ -3500,16 +3572,16 @@ function startVoiceToText(){
 					$(".cloud-next-task").show();
 					$(".remind-img").hide();
 				}
-			
-		*/
+			*/
+		
 		
 
 	if(!checkConnection()){
 		navigator.notification.confirm(
-			"Connect to the Internet to use this function.",
+			getTrans('not_connected_text'),
 			onNoInternetConfirm,
-			"No Internet connection!",
-			"exit"
+			getTrans('not_connected_title'),
+			getTrans('not_connected_exit')
 		);
 	}else{
 		startRecognize();
@@ -3607,28 +3679,28 @@ function compareRecognizedText(text){
 
 function showRecognizedAlert(){
 	navigator.notification.confirm(
-		"It might happen that correct pronunciation can not be recognized. In such cases, you have to skip the task.",
+		getTrans('recognize_error_first_text'),
 		showRecognizedAlertCallback,
-		"Speech recognition is not 100% accurate",
-		"Try again,Skip the task"
+		getTrans('recognize_error_title'),
+		getTrans('recognize_error_try_again') + "," + getTrans('recognize_error_skip')
 	);
 }
 
 function showRecognizedAlert2(){
 	navigator.notification.confirm(
-		"22222222222It might happen that correct pronunciation can not be recognized. In such cases, you have to skip the task.",
+		getTrans('recognize_error_second_text'),
 		showRecognizedAlertCallback,
-		"222Speech recognition is not 100% accurate",
-		"Try again,Skip the task"
+		getTrans('recognize_error_title'),
+		getTrans('recognize_error_try_again') + "," + getTrans('recognize_error_skip')
 	);
 }
 
 function showRecognizedAlert3(){
 	navigator.notification.confirm(
-		"333333333333It might happen that correct pronunciation can not be recognized. In such cases, you have to skip the task.",
+		getTrans('recognize_error_third_text'),
 		showRecognizedAlertCallback,
-		"333Speech recognition is not 100% accurate",
-		"Try again,Skip the task"
+		getTrans('recognize_error_title'),
+		getTrans('recognize_error_try_again') + "," + getTrans('recognize_error_skip')
 	);
 }
 
@@ -3695,10 +3767,10 @@ function skipRepetition(){
 function showEndNewMaterialsInfo(){
 	if(hasNewCatsToday){
 		navigator.notification.confirm(
-			"Koniec nowych materiałów, od teraz już tylko powtórki",
+			getTrans('end_new_materials_text'),
 			showEndNewMaterialsInfoCallback,
-			"Koniec nowych materiałów",
-			"OK"
+			getTrans('end_new_materials_title'),
+			getTrans('end_new_materials_ok'),
 		);
 	}
 }
@@ -3797,7 +3869,7 @@ function changeLiked(word_sygn){
 function removeFromlikedJSON(word_sygn){
 	window.plugins.toast.showWithOptions(
 		{
-			message: "Fraza usunięta z ulubionych",
+			message: getTrans('liked_words_remove'),
 			duration: "short", 
 			position: "bottom"
 		}
@@ -3813,7 +3885,7 @@ function removeFromlikedJSON(word_sygn){
 function addToLikedJSON(word_sygn){
 	window.plugins.toast.showWithOptions(
 		{
-			message: "Fraza dodana do ulubionych",
+			message: getTrans('liked_words_added'),
 			duration: "short", 
 			position: "bottom"
 		}
@@ -3922,10 +3994,10 @@ function setPopupAboutNoAudioLesson(){
 	if(suggestedCatHasAudio == false){
 		if(getWaitForAd() == false){
 			navigator.notification.confirm(
-				"This lesson is without audio recordings. Free vesion comes with only 90 audio lessons. If you would like to get audio to all 180 lessons upgrade to SpeakApp Pro.",
+				getTrans('no_audio_lesson_text'),
 				setPopupAboutNoAudioLessonBTNCallBack,
-				"Lesson without audio recordings!",
-				"Learn anyway,Upgrade,Skip lesson"
+				getTrans('no_audio_lesson_title'),
+				getTrans('no_audio_lesson_learn_anyway') + "," + getTrans('no_audio_lesson_upgrade') + "," + getTrans('no_audio_lesson_skip')
 			);
 		}else{
 			runNotifiAfterAd = true;
@@ -3935,10 +4007,10 @@ function setPopupAboutNoAudioLesson(){
 
 function setPopupAboutNoAudioLessonInPhraseBrowser(){
 	navigator.notification.confirm(
-		"This lesson is without audio recordings. Free vesion comes with only 90 audio lessons. If you would like to get audio to all 180 lessons upgrade to SpeakApp Pro.",
+		getTrans('no_audio_lesson_text'),
 		setPopupAboutNoAudioLessonBTNCallBack,
-		"Lesson without audio recordings!",
-		"Learn anyway,Upgrade"
+		getTrans('no_audio_lesson_title'),
+		getTrans('no_audio_lesson_learn_anyway') + "," + getTrans('no_audio_lesson_upgrade')
 	);
 }
 
@@ -3950,7 +4022,7 @@ function setPopupAboutNoAudioLessonBTNCallBack(buttonIndex){
 		goToPremiumVersion();
 	}
 	if(buttonIndex == 3){
-		getNextSugCat();
+		showConfirmSkipLesson();
 	}
 }
 
@@ -3972,10 +4044,10 @@ function showMuteIcon(){
 
 function showConfirmBackAlert(){
 	navigator.notification.confirm(
-		"Przy wyjściu postęp nauki tej częsci nie zostanie zapisany.",
+		getTrans('confirm_back_in_learn_text'),
 		showConfirmBackAlertCallBack,
-		"Czy jesteś pewien?",
-		"Cofnij,Anuluj"
+		getTrans('confirm_back_in_learn_title'),
+		getTrans('confirm_back_in_learn_back') + "," + getTrans('confirm_back_in_learn_cancel')
 	);
 }
 
@@ -3987,3 +4059,85 @@ function showConfirmBackAlertCallBack(buttonIndex){
 		return true;
 	}
 }
+
+/* CONFIRM LEARN THE SAME CATEGORY */
+var theSameSugCatObjTMP;
+function showConfirmLearnMissingCat(obj){
+	theSameSugCatObjTMP = obj;
+	navigator.notification.confirm(
+		getTrans('confirm_learn_missing_cat_text'),
+		showConfirmLearnMissingCatCallBack,
+		getTrans('confirm_learn_missing_cat_title'),
+		getTrans('confirm_learn_missing_cat_yes') + "," + getTrans('confirm_learn_missing_cat_cancel')
+	);
+}
+function showConfirmLearnMissingCatCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		agreeToCheckTheUsedCatAsSug = true;
+		getThisCatAsSug(theSameSugCatObjTMP);
+	}
+	if(buttonIndex == 2){
+		theSameSugCatObjTMP = false;
+		return true;
+	}
+}
+function showConfirmLearnInProgressCat(obj){
+	theSameSugCatObjTMP = obj;
+	navigator.notification.confirm(
+		getTrans('confirm_learn_inprogress_cat_text'),
+		showConfirmLearnInProgressCatCallBack,
+		getTrans('confirm_learn_inprogress_cat_title'),
+		getTrans('confirm_learn_inprogress_cat_yes') + "," + getTrans('confirm_learn_inprogress_cat_cancel')
+	);
+}
+function showConfirmLearnInProgressCatCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		agreeToCheckTheUsedCatAsSug = true;
+		getThisCatAsSug(theSameSugCatObjTMP);
+	}
+	if(buttonIndex == 2){
+		theSameSugCatObjTMP = false;
+		return true;
+	}
+}
+
+/* SKIP LESSON CONFIRM */
+function showConfirmSkipLesson(){
+	navigator.notification.confirm(
+		getTrans('confirm_skip_lesson_text'),
+		showConfirmSkipLessonCallBack,
+		getTrans('confirm_skip_lesson_title'),
+		getTrans('confirm_skip_lesson_skip') + "," + getTrans('confirm_skip_lesson_cancel')
+	);
+}
+function showConfirmSkipLessonCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		getNextSugCat();
+	}
+	if(buttonIndex == 2){
+		return true;
+	}
+}
+
+/* exit app */
+function showExitAppConfirm(){
+	navigator.notification.confirm(
+		getTrans('confirm_exit_text'),
+		showExitAppConfirmCallBack,
+		getTrans('confirm_exit_title'),
+		getTrans('confirm_exit_cancel') + "," + getTrans('confirm_exit_exit')
+	);
+}
+
+function showExitAppConfirmCallBack(button) {
+	if(button == 2){
+		navigator.app.exitApp();
+	}
+}
+
+function updatePlaceholders(){
+	$(".fuzzy-search").attr("placeholder", getTrans('placeholder_fuzzy_search'));
+	$(".noteTEXT").attr("placeholder", getTrans('placeholder_hint_text'));
+	console.log('bbb');
+}
+				
