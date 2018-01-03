@@ -16,7 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- 
+
+ /*
 var trans = [];
 trans['not_connected_text'] = ['Make sure that your Wi-Fi or cellular mobile data is turned on and then try again.', 'Upewnij się, że Wifi lub  dane komórkowe są włączone, a następnie spróbuj ponownie.', 'Asegúrate que el WiFi o datos móviles están activados e inténtalo otra vez.', 'Vergewissere dich, dass dein WLAN oder Mobilfunknetz eingeschaltet ist und versuche es dann nochmal.', 'Assurez-vous que le Wi-Fi ou les données mobiles sont activées et essayez de nouveau.'];
 trans['not_connected_title'] = ['No internet connection', 'Nie można połączyć się z internetem', 'No hay conexión a internet', 'Keine Internetverbindung', 'Pas de connexion Internet'];
@@ -64,16 +65,19 @@ trans['placeholder_fuzzy_search'] = ["Search for lesson…", "Szukaj lekcji…",
 trans['placeholder_hint_text'] = ["Click here to write your hint", "PL_Click here to write your hint", "ESP_Click here to write your hint", "DE_Click here to write your hint", "FR_Click here to write your hint"];
 
 //trans['a'] = ["OK", "OK", "OK", "OK", "OK"];
-
+*/
 
 /*translacje*/
 function getTrans(key){
+	return key;
+	/*
 	var lang = langJSON.lang;
 	if(lang > 0){
 		return trans[key][parseInt(lang-1)];
 	}else{
 		return trans[key][0];
 	}
+	*/
 }
 
 
@@ -96,6 +100,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
+		alert('1');
 		var src = '/android_asset/www/date/1.m4a';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
 		
@@ -107,6 +112,7 @@ var app = {
 				getTrans('not_connected_exit')
 			);
 		}else{
+			alert('2');
 			startApp();
 			setTextWidth();
 		}
@@ -527,15 +533,12 @@ function startApp(){
 		var lang = langJSON.lang;
 		prepareAd();
 		//TAK
-		alert(lang);
 		if(lang < 1){
 			if(!isPremium){
-				alert('2');
 				$("#first-use-loading-page").hide();
 				startLearn = true; //po tutorialu zacznie naukę
 				getLangList(); //wybierz swój język
 				$("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
-				alert('3');
 			}
 			copyFirstPath();
 			updatePlaceholders();
