@@ -100,11 +100,13 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
-		alert('1');
+		alert('1a');
 		var src = '/android_asset/www/date/1.m4a';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
 		
-		if(!checkConnection()){		
+			alert('4a');
+		if(!checkConnection()){	
+			alert('3a');	
 			navigator.notification.confirm(
 				getTrans('not_connected_text'),
 				onNoInternetConfirm,
@@ -112,7 +114,7 @@ var app = {
 				getTrans('not_connected_exit')
 			);
 		}else{
-			alert('2');
+			alert('2a');
 			startApp();
 			setTextWidth();
 		}
