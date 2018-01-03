@@ -527,12 +527,15 @@ function startApp(){
 		var lang = langJSON.lang;
 		prepareAd();
 		//TAK
+		alert(lang);
 		if(lang < 1){
 			if(!isPremium){
+				alert('2');
 				$("#first-use-loading-page").hide();
 				startLearn = true; //po tutorialu zacznie naukę
 				getLangList(); //wybierz swój język
 				$("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
+				alert('3');
 			}
 			copyFirstPath();
 			updatePlaceholders();
