@@ -23,10 +23,10 @@
   <preference name="AndroidLaunchMode" value="singleInstance" />
   <preference name="DisallowOverscroll" value="true" />
   <preference name="KeepRunning" value="true" />
-  <plugin name="cordova-plugin-file" source="npm"/>
+  <plugin name="cordova-plugin-file" source="npm" spec="4.3.3"/>
   <plugin name="cordova-plugin-file-transfer" spec="~1.6.1" source="npm"/>
   <plugin name="cordova-plugin-inappbrowser" source="npm"/>
-  <plugin name="cordova-plugin-media" source="npm"/>
+  <plugin name="cordova-plugin-media" source="npm" spec="3.0.1" />
   <plugin name="cordova-plugin-network-information" source="npm"/>
   <plugin name="com.gkcgautam.asset2sd" />
   <plugin name="cordova-plugin-filepath" />
