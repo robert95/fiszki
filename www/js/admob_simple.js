@@ -29,7 +29,7 @@ function setWaitForAd( value ){
 
 function prepareAd(){
 	if(!isPremium){
-		if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );*/
+		if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 	}
 }
 
