@@ -2957,10 +2957,1168 @@ function updateProgressBar(){
 	}, 50);
 }
 /*END TUTORIAL*/
+var sugGetIsSetter = false;
+var scdCycleInSearchSub = false;
+var suggestedCatHasAudio = true;
+function getCatWithPos(pos, off){
+	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
+		var cats = JSON.parse(result);
+		var catSize = cats.length;
+		for(var x in cats){
+			var cat = cats[x];
+			var idP = cat.id;
+			$.ajax({
+				url: "date/"+ langJSON.lang + "/" + idP + "/subcat.json",
+				type: 'get',
+				dataType: 'html',
+				async: false,
+				success: function(result) {
+					var scats = JSON.parse(result);
+					var scatSize = scats.length;
+					for(var sc in scats){
+						var scat = scats[sc];
+						if(parseInt(scat.pos) == (parseInt(pos)+off)){
+							if(!userChoiceCat && (dayJSON.skiped.indexOf(idP + "/" + scat.id) >= 0 || learnedCat.indexOf(idP + "/" + scat.id) >= 0 || inProgressCat.indexOf(idP + "/" + scat.id) >= 0)){
+								if((parseInt(x)+1) == catSize && (parseInt(sc)+1) == scatSize){
+									if(scdCycleInSearchSub) {
+										isNotNewCat();
+										return;	
+									}
+									else{
+										scdCycleInSearchSub = true;
+										getCatWithPos(1, 0);
+										return;	
+									}
+								}
+								off++;
+							}else{
+								userChoiceCat = false;
+								$("#sugCatPar").val(idP);
+								$("#sugCatSub").val(scat.id);
+								suggestedCatHasAudio = scat.audio;
+								suggestedCatPath = idP + "/" + scat.id;
+								suggestedCatName = scat.name;
+								getWordToSuggestCat(idP + "/" + scat.id);
+								sugGetIsSetter = true;
+								return;	
+							}
+						}else if(pos == allCats.length && allCats.length > 0 && parseInt(scat.pos) == pos){
+							if(scdCycleInSearchSub) {
+								isNotNewCat();
+								return;	
+							}else{
+								scdCycleInSearchSub = true;
+								getCatWithPos(1, 0);
+								return;	
+							}
+						}
+					}
+				} 
+			});
+		}
+    });
+}
+
+function getAllCatsInArray(){
+	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
+		var cats = JSON.parse(result);
+		for(var x in cats){
+			var cat = cats[x];
+			var idP = cat.id;			
+			$.ajax({
+				url: "date/"+ langJSON.lang + "/" + idP + "/subcat.json",
+				type: 'get',
+				dataType: 'html',
+				async: false,
+				success: function(result) {
+					var scats = JSON.parse(result);
+					for(var sc in scats){
+						var scat = scats[sc];
+						allCats.push(idP + "/" + scat.id);
+					}
+				}
+			});
+		}
+    });
+}
+
+function isNotNewCat(){
+	if(gameIsBegin){
+		suggestedCatHasAudio = -1;
+		$("#new-category-choice").addClass('next-cat-right');
+		endTodayLesson = true;
+		saveDay();
+		setTimeout(function(){ 
+			$("#new-category-choice").hide();
+			/*
+			if(todayEndedCat != "") allEndedCats.push(todayEndedCat);
+			uniqueallEndedCats = allEndedCats.filter(function(item, pos) {
+				return allEndedCats.indexOf(item) == pos;
+			});
+			if(allCats.sort().toString() == uniqueallEndedCats.sort().toString() && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
+				$("#new-category-choice").hide();
+				$("#end-course").show();
+				$(".countKMLearned").text( Math.floor( (dayJSON.km )*minCat / 60) );
+				$(".countMinLearned").text( Math.floor( (dayJSON.km )*minCat % 60) );
+				setTimeout(function(){				
+					$("#end-course").removeClass('next-cat-left');
+					showRating();
+				}, 100);
+			}else{
+
+				showEndNewMaterialsInfo();
+				
+				$("#new-category-choice").hide();
+				$("#end-panel").show();
+				setTimeout(function(){				
+					$("#end-panel").removeClass('next-cat-left');
+					showRating();
+				}, 100);
+			}
+			*/
+		}, 500);
+	}	
+}
+
+function getNextSugCat(){
+	$("#new-category-choice").addClass('next-cat-left');
+	setTimeout(function(){	
+		scdCycleInSearchSub = false;
+		var p = $("#sugCatPar").val();
+		var c = $("#sugCatSub").val();
+		setSuggestedCat(p, c);
+		addCatToMissing(p + "/" + c);
+		setTimeout(function(){	
+			$("#suggest-new-category-text").text(suggestedCatName); 	
+			$("#new-category-choice").removeClass('next-cat-left');
+			setTimeout(function(){
+				setPopupAboutNoAudioLesson();
+				showMuteIcon();
+			}, 500);
+		}, 200);
+	}, 700);
+
+	var text = 'Lesson has been skipped';
+	window.plugins.toast.showWithOptions(
+		{
+			message: text,
+			duration: "short", 
+			position: "bottom"
+		}
+	);
+}
+
+function addCatToMissing(catSgn){
+	dayJSON.skiped.push(catSgn);
+	allEndedCats.push(catSgn);
+	allUsedCats.push(catSgn);
+}
+
+var agreeToCheckTheUsedCatAsSug = false;
+function getThisCatAsSug(obj){
+	if($(obj).hasClass('missingCat') && !agreeToCheckTheUsedCatAsSug){
+		//pokaż powiadomienie, że zeskipowałeś tą kategorię ale i tak chcesz się jej uczyć
+		showConfirmLearnMissingCat(obj);
+	}else if(($(obj).hasClass('inProgressCat') || ($(obj).hasClass('learnedCat'))) && !agreeToCheckTheUsedCatAsSug){
+		//pokaż powiadomienie, że już się jej uczysz i czy chcesz zacząć od nowa
+		showConfirmLearnInProgressCat(obj);
+	}else{
+		agreeToCheckTheUsedCatAsSug = false;
+		var p = $(obj).attr('data-parent');
+		var c = $(obj).attr('data-subcat');
+		setThisAsSuggestedCat(p, c);
+		setTimeout(function(){
+			$("#suggest-new-category-text").text(suggestedCatName);
+			showMuteIcon();
+			backToSetNewCategory();
+		}, 100);
+	}
+}
+
+/* SAVE PROGRESS */
+var progressJSON = [];
+var srcSaveProgress = "myProgress.fiszki";
+function saveProgressInFile(){
+	var progress = '{"langJSON": "", "dayJSON": "", "toLearnJSON": "", "noticeJSON": "", "likedJSON": ""}';
+	progressJSON = JSON.parse(progress);
+	progressJSON.langJSON = langJSON;
+	progressJSON.dayJSON = dayJSON;
+	progressJSON.toLearnJSON = toLearnJSON;
+	progressJSON.noticeJSON = noticeJSON;
+	progressJSON.likedJSON = likedJSON;
+	saveFileProgress();
+}
+
+function saveFileProgress(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSNProgress, failN);
+}
+
+function gotFSNProgress(fileSystem) {
+	fileSystem.root.getFile(srcSaveProgress, {create: true}, gotFileEntryNProgress, failN);
+}
+
+function gotFileEntryNProgress(fileEntry) {
+	fileEntry.createWriter(gotFileWriterNProgress, failN);
+	srcToShare = fileEntry.toURL();
+}
+
+function gotFileWriterNProgress(writer) {
+	writer.onwrite = function(evt) {
+		console.log("write success");
+	};
+	
+	writer.write(JSON.stringify(progressJSON));
+	writer.abort();
+}
+
+function failN(error) {
+	//alert("error : "+error.code);
+}
+/* END SAVE FILE */
+
+/* READ PROGRESS */
+var srcLoadProgress = "";
+function loadProgress(uri){
+	srcLoadProgress = uri;
+	window.FilePath.resolveNativePath(srcLoadProgress, function(localFileUri) {
+        window.resolveLocalFileSystemURL(localFileUri, function(oFile) {
+			oFile.file(function(readyFile) {
+				var reader= new FileReader();
+				reader.onloadend= function(evt) {
+					if(IsJsonString(evt.target.result)){
+						var res = JSON.parse(evt.target.result);
+						langJSON = res.langJSON;
+						dayJSON = res.dayJSON;
+						toLearnJSON = res.toLearnJSON;
+						noticeJSON = res.noticeJSON;
+						likedJSON = res.likedJSON;
+
+						saveLang(); //save lang
+						window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN); //save notice
+						/*save day*/
+							endTodayLesson = false;
+							datesJSON5 = dayJSON;
+							srcSave5 = path() + "day.json";
+							saveFile5();
+						/*end day*/
+						/*save tolearn*/
+						setTimeout(function(){ 
+							datesJSON = toLearnJSON;
+							srcSave = path() + "save.json";
+							saveFile();
+						}, 200);
+						/*end tolearn*/
+						/*komunikat i restart*/
+						setTimeout(function(){ 
+							alert("Plik pomyślnie wczytano! Aplikacja automatycznie uruchomi się ponownie");
+							setTimeout(function(){ 
+								location.reload(); 
+							}, 500);
+						}, 500);
+					}else{
+						alert("Plik jest nieprawidłowy!");
+					}
+				};
+				reader.readAsText(readyFile); 
+			});
+		}, function(err){
+			//alert('### ERR: filesystem.directoryUp() - ' + (JSON.stringify(err)));
+			alert("Plik jest nieprawidłowy!");
+		});
+    });
+}
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+/* END READ FILE */
+/* START statistic */
+var isInList = [];
+function showInProgressCat(){
+	for(var p in inProgressCat){
+		var res = inProgressCat[p].split("/");
+		var idp = res[0];
+		var idc = res[1];
+		setinProgressCatList(idp, idc);
+	}
+}
+function setinProgressCatList(idp, idc){
+	if(!(isInList.indexOf(idp+"/"+idc) >= 0)){
+		isInList.push(idp+"/"+idc);
+		var idLang = $("#myLang").val();
+		$.get("date/"+ idLang + "/" + idp + "/subcat.json", function(result) {
+			var scat = JSON.parse(result);
+			for(var x in scat){
+				var cat = scat[x];
+				if(cat.id == idc) {	
+					$(".catNameInListWord").text(cat.name);
+					$(".inProgressCatList").append('<p class="text" onclick="showMeWordInThisCat(' + idp + ', ' + idc + ', \'' + cat.name + '\')">' + cat.name + '</p>');
+				}
+			}
+		});
+	}
+}
+
+function showMeWordInThisCat(idp, idc, name){
+	$(".catNameInListWord").text(name);
+	fillTableListWordInCatMain(idp, idc);
+	//fillTableListWordInCat(idp, idc);
+	//fillTableListWordInCatWithNote(idp, idc);
+	$("#list-of-word-in-cat").show();
+	setTimeout(function(){
+		$("#list-of-word-in-cat").removeClass('goLeft');
+	}, 300);
+}
+
+function fillTableListWordInCatMain(idp, idc){
+	var sygn = idp + "/" + idc;
+	var i = 1;
+	
+	$.get("date/"+ langJSON.lang + "/" + sygn + "/words.json", function(result) {
+		$("#listWordOfCatInInPorgress").text("");
+		$.get("date/1/" + sygn + "/words.json", function(transResult) {
+			var words = JSON.parse(result);
+			var trans = JSON.parse(transResult);
+			for(var x in words){
+				var w = words[x];
+				var t = trans[x];
+				var linkwordwrap = "";
+				var hasLinkword = false;
+				for(var z in noticeJSON){
+					var notice = noticeJSON[z];
+					var tmp = langJSON.lang+"\\"+idp+"\\"+idc+"\\"+1+"\\"+(parseInt(x)+1);
+					if(notice.word == tmp){
+						linkwordwrap = "<br><strong>Linkword:</strong> " + notice.notice;
+						$("#listWordOfCatInInPorgress").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + i + '. ' + t.name + '<span>' + w.name + linkwordwrap +'</span></p>');
+						hasLinkword = true;
+					}
+					if(!hasLinkword && z == (noticeJSON.length - 1)){
+						$("#listWordOfCatInInPorgress").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + i + '. ' + t.name + '<span>' + w.name +'</span></p>');
+					}
+				}
+				if(noticeJSON.length == 0){
+					$("#listWordOfCatInInPorgress").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + i + '. ' + t.name + '<span>' + w.name +'</span></p>');
+				}
+				i++;
+			}
+		});
+    });
+}
+
+function fillTableListWordInCat(idp, idc){
+	var idLang = $("#myLang").val();
+	var i = 1;
+	$.get("date/"+ idLang + "/" + idp + "/" + idc + "/words.json", function(result) {
+		var words = JSON.parse(result);
+		for(var x in words){
+			var w = words[x];
+			$(".t"+i).html(w.name);
+			i++;
+		}
+    });
+}
+
+function fillTableListWordInCatWithNote(idp, idc){
+	var idLang = $("#myLang").val();
+	var i = 1;
+	for(i = 1; i < 11; i++){
+		$(".n"+i).html("");
+		for(var x in noticeJSON){
+			var notice = noticeJSON[x];
+			var tmp = idLang+"\\"+idp+"\\"+idc+"\\"+1+"\\"+i;
+			if(notice.word == tmp){
+				$(".n"+i).html("(" + notice.notice+")");
+			}
+		}
+	}
+}
+/* END statistic */
+function checkConnection() {
+	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
+}
+function showRating() {
+	AppRate.preferences = {
+	  displayAppName: 'XXX',
+	  storeAppURL: {
+		android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
+	  },
+	  useLanguage: getTrans(t_lang_rank),
+	  callbacks: {
+		onButtonClicked: function(buttonIndex){
+			if(buttonIndex == 1){
+				setRatingToTrue();
+			}
+		}
+	  }
+	};
+	
+	var day = parseInt($("#nrDayFiled").text());
+	if(day%5 == 0 && day > 0 && dayJSON.rating == false){
+		AppRate.promptForRating();
+	}
+}
+function setRatingToTrue() {
+	endTodayLesson = false;
+	dayJSON.rating = true;
+	datesJSON5 = dayJSON;
+	srcSave5 = path() + "day.json";
+	saveFile5();
+}
+
+function saveTheme() {
+	endTodayLesson = false;
+	var themeNb = 1;
+	if($("body").hasClass('theme3')){
+		var themeNb = 3;
+	}else if($("body").hasClass('theme2')){
+		var themeNb = 2;
+	}else{
+		var themeNb = 1;
+	}
+	dayJSON.theme = themeNb;
+	datesJSON5 = dayJSON;
+	srcSave5 = path() + "day.json";
+	saveFile5();
+}
+
+function setTextWidth(){
+	$(".text").css('min-width', $( window ).width()*0.85);
+}
+var srcToShare = "";
+function shareFile(){
+	var optionsToShare = {
+		message: 'Save progress', // not supported on some apps (Facebook, Instagram)
+		subject: 'My progress', // fi. for email
+		files: [srcToShare], // an array of filenames either locally or remotely
+		url: null,
+		chooserTitle: 'Save progress' // Android only, you can override the default share sheet title
+	}
+
+	var onSuccessShare = function(result) {
+		console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+		console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+	}
+
+	var onErrorShare = function(msg) {
+		console.log("Sharing failed with message: " + msg);
+	}
+
+	window.plugins.socialsharing.shareWithOptions(optionsToShare, onSuccessShare, onErrorShare);
+}
+	
+function volumeTest(){
+	//podgłośnienie
+	/*window.plugin.volume.getVolume(function(volume) {
+		if(volume < 0.20){
+			showVolumeInfo();
+		}
+	});*/
+
+}	
+function showVolumeInfo() {
+ /* window.plugins.toast.showWithOptions(
+    {
+      message: "UWAGA! Musisz zwiększyć głośność aby słyszeć lektora",
+      duration: "long", 
+      position: "center"
+    }
+  );*/
+  
+	navigator.notification.confirm(
+		"Turn up the volume to hear the sound",
+		okNoSound,
+		"Warning!",
+		"OK"
+	);
+}	
+
+function okNoSound(){
+	return true;
+}
+
+function getAllCatsToShowAllCats(){
+	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
+		var tmp = '';
+		var cats = JSON.parse(result);
+		for(var x in cats){
+			subcats = false;
+			var cat = cats[x];
+			//if(x == 0) tmp += '<div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Phrases</span></h1><div>';
+			//if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
+			tmp += '<div><h1 class="text supercat-all-material" onclick="expand(this);">'+ cat.name + '</h1>';
+			var extraEnd = parseInt(x)+1 == parseInt(cats.length) ? '</div></div>' : "";
+			
+			$.ajax({
+				url: "date/"+ langJSON.lang + "/" + cat.id + "/subcat.json",
+				type: 'get',
+				dataType: 'html',
+				async: false,
+				success: function(data) {
+					var subcats = JSON.parse(data);
+					tmp += '<div class="list-of-subcat-all-material">';
+					for(var y in subcats){
+						var subcat = subcats[y];
+						var catSgn = cat.id + "/" + subcat.id;
+						var cl = "";
+						if(dayJSON.skiped.indexOf(catSgn) >= 0){
+							cl = "missingCat";
+						}
+						if(learnedCat.indexOf(catSgn) >= 0){
+							cl = "learnedCat";
+						}
+						if(inProgressCat.indexOf(catSgn) >= 0){
+							cl = "inProgressCat";
+						}
+						cl2 = (subcat.audio == true) ? '': 'no-audio'; 
+						hasAudio = (subcat.audio == true) ? 1: 0; 
+						tmp += '<p class="text catsInAllMaterial '+ cl + ' ' + cl2 +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\', ' + hasAudio + ')" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">' + getTrans(t_during_learning) + '</span> <span class="missingCatInfo">' + getTrans(t_lesson_skipped) + '</span> <span class="learnedCatInfo">' + getTrans(t_learned_lesson) + '</span></p>';
+						$("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
+					}
+					//tmp += '</div>' + '</div>' + extraEnd;
+					tmp += '</div>' + '</div>';
+				}
+			});
+		}
+		
+		$("#show-all-cats-cats").append(tmp);
+    });
+}
+
+function getWordForCatShowList(sygn){
+	$.get("date/"+ langJSON.lang + "/" + sygn + "/words.json", function(result) {
+		$("#show-all-cats-cats-wordlist").text("");
+		$.get("date/1/" + sygn + "/words.json", function(transResult) {
+			var words = JSON.parse(result);
+			var trans = JSON.parse(transResult);
+			for(var x in words){
+				var w = words[x];
+				var t = trans[x];
+				$("#show-all-cats-cats-wordlist").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\', this); return false;"></p>');
+			}
+		});
+    });
+}
+
+var countOfWrongRecognized = 0;
+function startVoiceToText(){
+			/*
+				$(".recText").text("To powiedziałem");
+				$("#l-n-1").hide();
+				$("#l-n-2").hide();
+				$("#l-n-3").hide();
+				$("#l-n-4").hide();
+				$("#l-n-5").hide();
+				$("#l-n-6").hide();
+				
+				$("#l-e-1").hide();
+				$("#l-e-2").hide();
+				$("#l-e-3").hide();
+				$("#l-e-4").hide();
+				$("#l-e-5").hide();
+				$("#l-e-6").hide();
+				
+				$("#l-t-1").hide();
+				$("#l-t-2").hide();
+				$("#l-t-3").hide();
+				$("#l-t-4").hide();
+				$("#l-t-5").hide();
+				$("#l-t-6").hide();
+				
+				$(".recTextWrap").show();				
+				$(".recText").show();
+
+				$(".show-hidden-word").next("p").show();
+				$(".show-hidden-word").hide();
+				
+				if(((Math.random() * 10) + 1 )> 5){
+					$(".learnMethod").addClass('goodRec');
+					$(".learnMethod").removeClass('badRec');
+					$(".cloud-again").hide();
+					$(".cloud-next-task").hide();
+					setTimeout(function(){ isOkWrap(); }, 500);
+				}else{
+					$(".learnMethod").removeClass('goodRec');
+					$(".learnMethod").addClass('badRec');
+					$(".cloud-again").show();
+					$(".cloud-next-task").show();
+					$(".remind-img").hide();
+				}
+			*/
+		
+		
+
+	if(!checkConnection()){
+		navigator.notification.confirm(
+			getTrans(t_not_connected_text),
+			onNoInternetConfirm,
+			getTrans(t_not_connected_title),
+			getTrans(t_not_connected_exit)
+		);
+	}else{
+		startRecognize();
+	}
+
+}
+
+function startRecognize(){
+	//$(".support-word-in-speach").show();
+	stopTelling();
+	
+	var langText = "en-US"
+	var options = {
+		language: langText,
+		matches: 2,
+		prompt: ((nbMethod == 6 || nbMethod == 5 || (nbMethod == 4 && nbStep == 0 && $("#nav-words-container p.activ").index() == 9)) ? act_trans : act_word),
+		showPopup: true
+	};
+
+	window.plugins.speechRecognition.startListening(
+		function(matches){
+			if(matches[0] != ''){
+				var text = matches[0];
+				$(".recText").text(text);
+		
+				$("#l-n-1").hide();
+				$("#l-n-2").hide();
+				$("#l-n-3").hide();
+				$("#l-n-4").hide();
+				$("#l-n-5").hide();
+				$("#l-n-6").hide();
+				
+				$("#l-e-1").hide();
+				$("#l-e-2").hide();
+				$("#l-e-3").hide();
+				$("#l-e-4").hide();
+				$("#l-e-5").hide();
+				$("#l-e-6").hide();
+				
+				$("#l-t-1").hide();
+				$("#l-t-2").hide();
+				$("#l-t-3").hide();
+				$("#l-t-4").hide();
+				$("#l-t-5").hide();
+				$("#l-t-6").hide();
+				
+				$(".recTextWrap").show();				
+				$(".recText").show();
+				
+				$(".show-hidden-word").next("p").show();
+				$(".show-hidden-word").hide();
+				
+				compareRecognizedText(text);
+				$(".support-word-in-speach").hide();
+			}
+		},
+		function(){
+			$(".support-word-in-speach").hide();
+		},
+		options
+	);
+}
+
+function compareRecognizedText(text){
+	var correctText = $(".learnMethod:visible .text-trans-word").text();
+	if(text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')){
+		countOfWrongRecognized = 0;
+		$(".learnMethod").addClass('goodRec');
+		$(".learnMethod").removeClass('badRec');
+		$(".cloud-again").hide();
+		$(".cloud-next-task").hide();
+		setTimeout(function(){ isOkWrap(); }, 500);
+	}else{
+		$(".learnMethod").removeClass('goodRec');
+		$(".learnMethod").addClass('badRec');
+		$(".cloud-again").show();
+		$(".cloud-next-task").show();
+		$(".remind-img").hide();
+		countOfWrongRecognized++;
+		if(countOfWrongRecognized == 1){
+			tellMe();
+		}
+		if(countOfWrongRecognized == 2){
+			showRecognizedAlert();
+		}
+		if(countOfWrongRecognized == 3){
+			showRecognizedAlert2();
+		}
+		if(countOfWrongRecognized == 4){
+			countOfWrongRecognized = 0;
+			showRecognizedAlert3();
+		}
+	}
+}
+
+function showRecognizedAlert(){
+	navigator.notification.confirm(
+		getTrans(t_recognize_error_first_text),
+		showRecognizedAlertCallback,
+		getTrans(t_recognize_error_title),
+		getTrans(t_recognize_error_try_again) + "," + getTrans(t_recognize_error_skip)
+	);
+}
+
+function showRecognizedAlert2(){
+	navigator.notification.confirm(
+		getTrans(t_recognize_error_second_text),
+		showRecognizedAlertCallback,
+		getTrans(t_recognize_error_title),
+		getTrans(t_recognize_error_try_again) + "," + getTrans(t_recognize_error_skip)
+	);
+}
+
+function showRecognizedAlert3(){
+	navigator.notification.confirm(
+		getTrans(t_recognize_error_third_text),
+		showRecognizedAlertCallback,
+		getTrans(t_recognize_error_title),
+		getTrans(t_recognize_error_try_again) + "," + getTrans(t_recognize_error_skip)
+	);
+}
+
+function showRecognizedAlertCallback(buttonIndex){
+	if(buttonIndex == 1){
+		startVoiceToText();
+	}
+	if(buttonIndex == 2){
+		isOkWrap();
+	}
+}
+
+//the function
+function renameFile(currentName, currentDir, newName, successFunction) {
+
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+
+        fileSystem.root.getFile(currentDir + currentName, null, function (fileEntry) {
+            fileSystem.root.getDirectory(currentDir, {create: true}, function (dirEntry) {
+                parentEntry = new DirectoryEntry(currentName, currentDir + currentName);
+
+                fileEntry.moveTo(dirEntry, newName, function () {
+
+                    successFunction();
+
+                }, renameFail);
+            }, renameFail);
+        }, renameFail);
+
+    }, renameFail);
+}
+
+//and the sample success function
+function renameSuccess() {
+    //alert('renamed!');
+}
+
+//and the sample fail function
+function renameFail() {
+   // alert('failed');
+}
+
+function skipRepetition(){
+	$("#start-next-cat").addClass('next-cat-left');
+	$("#learn-container").hide();
+	isRepeatCycle = false;
+	learnetCatToday++;
+	var endThis = false;
+	for(var i = 0; i < 10 && !endThis; i++){
+		if(toLearn[i] != -1){
+			endThis = true;
+			toLearn[i] = -1;
+		}
+	}
+	$("#learn-container").hide();
+	learnedWords += 30;
+	setTimeout(function(){
+		$("#start-next-cat").hide();
+		updateProgressBar();
+		packControler();
+	}, 500);
+}
+
+function showEndNewMaterialsInfo(){
+	if(hasNewCatsToday){
+		navigator.notification.confirm(
+			getTrans(t_end_new_materials_text),
+			showEndNewMaterialsInfoCallback,
+			getTrans(t_end_new_materials_title),
+			getTrans(t_end_new_materials_ok),
+		);
+	}
+}
+
+function showEndNewMaterialsInfoCallback(buttonIndex){
+	return 1;
+}
+
+function returnInLearn(){
+	$("#learn-container").addClass('next-cat-left');
+	setTimeout(function(){
+		$("#learn-container").hide();					
+	}, 500);
+	
+	isRepeatCycle = false;
+	newCategoryisSet = false;
+	toLearn = copyOfLearnArray.slice();
+	inProgressCat = inProgressCatcopyForBackBTN.slice();
+	toLearnJSON = JSON.parse(JSON.stringify(toLearnJSONcopyForBackBTN));
+	dayJSON.words = dayJSONwordsCopy;
+	learnedWords = learnedWordsCopy;
+	learnetCatToday = learnetCatTodayCopytBTN;
+	updateProgressBar();
+	nextPack();
+}
+
+function hideSpeachClouds(){
+	$(".cloud-perfect-all-words").hide();
+	$(".cloud-you-said-all-words").hide();
+}
+
+var checkingWordWrapper;
+function checkMeWord(word_text, obj){
+	checkingWordWrapper = $(obj);
+	stopTelling();
+	$("#savedWordsContainer p").removeClass('good-telling-word');
+	$("#savedWordsContainer p").removeClass('bad-telling-word');
+	$("#show-all-cats-cats-wordlist p").removeClass('good-telling-word');
+	$("#show-all-cats-cats-wordlist p").removeClass('bad-telling-word');
+	
+	/*
+			if(((Math.random() * 10) + 1 ) > 5){
+				checkingWordWrapper.closest('.text').addClass('good-telling-word');
+			}else{
+				checkingWordWrapper.closest('.text').addClass('bad-telling-word');
+			}
+	*/
+	
+	
+	startRecognizeInAllWords(word_text);
+	
+}
+
+function startRecognizeInAllWords(correct_text){
+	var langText = "en-US"
+	var options = {
+		language: langText,
+		matches: 2,
+		prompt: correct_text,
+		showPopup: true
+	};
+
+	window.plugins.speechRecognition.startListening(
+		function(matches){
+			if(matches[0] != ''){
+				var text = matches[0];
+				compareRecognizedTextInAllWords(text, correct_text);
+			}
+		},
+		function(){
+			
+		},
+		options
+	);
+}
+
+function compareRecognizedTextInAllWords(text, correctText){
+	if(text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')){
+		checkingWordWrapper.closest('.text').addClass('good-telling-word');
+	}else{
+		checkingWordWrapper.closest('.text').addClass('bad-telling-word');
+	}
+}
+
+/* LIKED WORDS */
+function changeLiked(word_sygn){
+	if(isLikedWord(word_sygn)){
+		removeFromlikedJSON(word_sygn);
+		saveLikedWords();
+	}else{
+		addToLikedJSON(word_sygn)
+		saveLikedWords();
+	}
+}
+
+function removeFromlikedJSON(word_sygn){
+	window.plugins.toast.showWithOptions(
+		{
+			message: getTrans(t_liked_words_remove),
+			duration: "short", 
+			position: "bottom"
+		}
+	);
+	for(var i in likedJSON){
+		if(likedJSON[i] == word_sygn){
+			likedJSON.splice(i,1);
+			break;
+		}
+	}
+}
+
+function addToLikedJSON(word_sygn){
+	window.plugins.toast.showWithOptions(
+		{
+			message: getTrans(t_liked_words_added),
+			duration: "short", 
+			position: "bottom"
+		}
+	);
+	likedJSON.push(word_sygn);
+}
+
+function setActuLikedIcon(){
+	if(isLikedWord(getPathToActuWord())){
+		$(".star-liked").attr('src', 'img/star_check.png');
+	}else{
+		$(".star-liked").attr('src', 'img/star.png');
+	}
+}
+
+function isLikedWord(word_sygn){
+	if(likedJSON.length == 0){
+		return false;
+	}
+	for(var x in likedJSON){
+		var word = likedJSON[x];
+		if(word == word_sygn){
+			return true;
+		}
+		if(x == likedJSON.length -1){
+			return false;
+		}
+	}
+}
+
+function getPathToActuWord(){
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var id = $('#idWord').val();
+	return (idParentCat+"\\"+idSubCat+"\\"+id);
+}
+
+//reading
+function readLikedWords() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLiked, onFSError);
+}
+function onFSSuccessLiked(fileSystem) {
+    fileSystem.root.getFile((path() + "liked.json"), {create:false, exclusive:false}, gotFileEntryLiked, onFSError);
+}
+function gotFileEntryLiked(fileEntry) {
+    fileEntry.file(gotFileLiked, onFSError);
+}
+function gotFileLiked(file) {
+    readAsTextLiked(file);
+}
+function readAsTextLiked(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(e) {
+		afterReadLikedWords(e.target.result);
+  };
+  reader.readAsText(file);    
+}
+function afterReadLikedWords(res){
+	likedJSON = JSON.parse(res); //PARSOWANIE JSON!!!
+}
+
+//saving
+function saveLikedWords(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSLiked, failN);
+}
+function gotFSLiked(fileSystem) {
+	fileSystem.root.getFile((path() + "liked.json"), {create: true}, gotFileEntryLikedW, failN);
+}
+function gotFileEntryLikedW(fileEntry) {
+	fileEntry.createWriter(gotFileWriterLiked, failN);
+}
+function gotFileWriterLiked(writer) {
+	writer.onwriteend = function (e) {
+		afterSaveLikedWords();
+	};
+
+	writer.write(JSON.stringify(likedJSON));
+	writer.abort();
+}
+function afterSaveLikedWords(){
+	//coś po zapisaniu liked
+}
+
+function showSavedWords(){
+	$("#savedWordsContainer").text("");
+	for(var x in likedJSON){
+		var word = likedJSON[x].split("\\");
+		showSavedWord(word);
+	}
+}
+function showSavedWord(word){
+	$.get("date/"+ langJSON.lang + "/" + word[0] + "/" + word[1] + "/words.json", function(result) {
+		$.get("date/1/" + word[0] + "/" + word[1] + "/words.json", function(transResult) {
+			var words = JSON.parse(result);
+			var trans = JSON.parse(transResult);
+			var w = words[word[2]-1];
+			var t = trans[word[2]-1];
+			$("#savedWordsContainer").append('<p class="text" onclick="tellMeWord(\'' + word[0] + "/" + word[1] + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\', this); return false;"></p>');
+		});
+	});
+}
+/* END LIKED WORDS */
+runNotifiAfterAd = false;
+function setPopupAboutNoAudioLesson(){
+	runNotifiAfterAd = false;
+	if(suggestedCatHasAudio == false){
+		if(getWaitForAd() == false){
+			navigator.notification.confirm(
+				getTrans(t_no_audio_lesson_text),
+				setPopupAboutNoAudioLessonBTNCallBack,
+				getTrans(t_no_audio_lesson_title),
+				getTrans(t_no_audio_lesson_learn_anyway) + "," + getTrans(t_no_audio_lesson_upgrade) + "," + getTrans(t_no_audio_lesson_skip)
+			);
+		}else{
+			runNotifiAfterAd = true;
+		}
+	}
+}
+
+function setPopupAboutNoAudioLessonInPhraseBrowser(){
+	navigator.notification.confirm(
+		getTrans(t_no_audio_lesson_text),
+		setPopupAboutNoAudioLessonBTNCallBack,
+		getTrans(t_no_audio_lesson_title),
+		getTrans(t_no_audio_lesson_learn_anyway) + "," + getTrans(t_no_audio_lesson_upgrade)
+	);
+}
+
+function setPopupAboutNoAudioLessonBTNCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		return true;
+	}
+	if(buttonIndex == 2){
+		goToPremiumVersion();
+	}
+	if(buttonIndex == 3){
+		showConfirmSkipLesson();
+	}
+}
+
+function actionAfterCloseAd(){
+	setWaitForAd(false);
+	if(runNotifiAfterAd){
+		setPopupAboutNoAudioLesson();
+	}
+	runNotifiAfterAd = false;
+}
+
+function showMuteIcon(){
+	if(suggestedCatHasAudio == false){
+		$("#suggest-new-category").addClass('no-audio-name');
+	}else{
+		$("#suggest-new-category").removeClass('no-audio-name');
+	}
+}
+
+function showConfirmBackAlert(){
+	navigator.notification.confirm(
+		getTrans(t_confirm_back_in_learn_text),
+		showConfirmBackAlertCallBack,
+		getTrans(t_confirm_back_in_learn_title),
+		getTrans(t_confirm_back_in_learn_back) + "," + getTrans(t_confirm_back_in_learn_cancel)
+	);
+}
+
+function showConfirmBackAlertCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		returnInLearn();
+	}
+	if(buttonIndex == 2){
+		return true;
+	}
+}
+
+/* CONFIRM LEARN THE SAME CATEGORY */
+var theSameSugCatObjTMP;
+function showConfirmLearnMissingCat(obj){
+	theSameSugCatObjTMP = obj;
+	navigator.notification.confirm(
+		getTrans(t_confirm_learn_missing_cat_text),
+		showConfirmLearnMissingCatCallBack,
+		getTrans(t_confirm_learn_missing_cat_title),
+		getTrans(t_confirm_learn_missing_cat_yes) + "," + getTrans(t_confirm_learn_missing_cat_cancel)
+	);
+}
+function showConfirmLearnMissingCatCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		agreeToCheckTheUsedCatAsSug = true;
+		getThisCatAsSug(theSameSugCatObjTMP);
+	}
+	if(buttonIndex == 2){
+		theSameSugCatObjTMP = false;
+		return true;
+	}
+}
+function showConfirmLearnInProgressCat(obj){
+	theSameSugCatObjTMP = obj;
+	navigator.notification.confirm(
+		getTrans(t_confirm_learn_inprogress_cat_text),
+		showConfirmLearnInProgressCatCallBack,
+		getTrans(t_confirm_learn_inprogress_cat_title),
+		getTrans(t_confirm_learn_inprogress_cat_yes) + "," + getTrans(t_confirm_learn_inprogress_cat_cancel)
+	);
+}
+function showConfirmLearnInProgressCatCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		agreeToCheckTheUsedCatAsSug = true;
+		getThisCatAsSug(theSameSugCatObjTMP);
+	}
+	if(buttonIndex == 2){
+		theSameSugCatObjTMP = false;
+		return true;
+	}
+}
+
+/* SKIP LESSON CONFIRM */
+function showConfirmSkipLesson(){
+	navigator.notification.confirm(
+		getTrans(t_confirm_skip_lesson_text),
+		showConfirmSkipLessonCallBack,
+		getTrans(t_confirm_skip_lesson_title),
+		getTrans(t_confirm_skip_lesson_skip) + "," + getTrans(t_confirm_skip_lesson_cancel)
+	);
+}
+
+function showConfirmSkipLessonCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		getNextSugCat();
+	}
+	if(buttonIndex == 2){
+		return true;
+	}
+}
+
+/* exit app */
+function showExitAppConfirm(){
+	navigator.notification.confirm(
+		getTrans(t_confirm_exit_text),
+		showExitAppConfirmCallBack,
+		getTrans(t_confirm_exit_title),
+		getTrans(t_confirm_exit_cancel) + "," + getTrans(t_confirm_exit_exit)
+	);
+}
+
+function showExitAppConfirmCallBack(button) {
+	if(button == 2){
+		navigator.app.exitApp();
+	}
+}
+
+function updatePlaceholders(){
+	$(".fuzzy-search").attr("placeholder", getTrans(t_placeholder_fuzzy_search));
+	$(".noteTEXT").attr("placeholder", getTrans(t_placeholder_hint_text));
+	console.log('bbb');
+}
 
 
-
-
+/*
 function setTextWidth(){
 	alert("2");
 }
@@ -2973,4 +4131,4 @@ function checkConnection() {
 	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
 }
 
-
+*/
