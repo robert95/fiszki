@@ -17,8 +17,6 @@
  * under the License.
  */
 
-alert('jestem');
-
 t_not_connected_text = ['Make sure that your Wi-Fi or cellular mobile data is turned on and then try again.', 'Upewnij się, że Wifi lub  dane komórkowe są włączone, a następnie spróbuj ponownie.', 'Asegúrate que el WiFi o datos móviles están activados e inténtalo otra vez.', 'Vergewissere dich, dass dein WLAN oder Mobilfunknetz eingeschaltet ist und versuche es dann nochmal.', 'Assurez-vous que le Wi-Fi ou les données mobiles sont activées et essayez de nouveau.'];
 t_not_connected_title = ['No internet connection', 'Nie można połączyć się z internetem', 'No hay conexión a internet', 'Keine Internetverbindung', 'Pas de connexion Internet'];
 t_not_connected_exit = ['OK', 'OK', 'OK', 'OK', 'OK'];
@@ -65,8 +63,6 @@ t_placeholder_fuzzy_search = ["Search for lesson…", "Szukaj lekcji…", "Busca
 t_placeholder_hint_text = ["Click here to write your hint", "PL_Click here to write your hint", "ESP_Click here to write your hint", "DE_Click here to write your hint", "FR_Click here to write your hint"];
 t_lang_rank = ["en", "pl", "es", "de", "fr"];
 
-alert('jestem2');
-
 //trans["a"] = ["OK", "OK", "OK", "OK", "OK"];
 
 /*translacje*/
@@ -97,10 +93,15 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
+alert("1");
+		
 		var src = '/android_asset/www/date/1.m4a';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
-		
+
+alert("2");
+
 		if(!checkConnection()){	
+alert("3")
 			navigator.notification.confirm(
 				getTrans(t_not_connected_text),
 				onNoInternetConfirm,
@@ -108,6 +109,7 @@ var app = {
 				getTrans(t_not_connected_exit)
 			);
 		}else{
+alert("4")
 			startApp();
 			setTextWidth();
 		}
