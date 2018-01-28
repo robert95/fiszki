@@ -95,7 +95,7 @@ var app = {
 		
 		document.addEventListener("resume", hideBars, false);
 
-/*		
+		
 		if($( window ).width() > 600) {
 			StatusBar.hide();	
 		}else{
@@ -125,27 +125,14 @@ var app = {
 			}, 50);
 			prepareAd();
 		});
-*/
-		
-	/*	document.addEventListener("pause", function() {
-			navigator.notification.confirm(
-				"Jeżeli zamkniesz teraz aplikacje Twój dzisiejszy postęp nie zostanie zapisany!",
-				onConfirm,
-				"Uwaga!",
-				"Anuluj, Wyjście"
-			);
-		});*/
-/*		
+	
 		document.addEventListener("backbutton", function (e) {
             e.preventDefault();
         }, false );
 		
 		setTextWidth();
 		
-		volumeTest();
-		
-		//smoothLoadProgressBarWelcome();
-*/		
+		volumeTest();		
 
     },
     // Update DOM on a Received Event
@@ -171,6 +158,10 @@ function setTextWidth(){
 
 function hideBars(){
 	alert("3");
+}
+
+function volumeTest(){
+	alert("4");
 }
 
 function checkConnection() {
