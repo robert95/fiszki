@@ -80,7 +80,7 @@ var app = {
 		var src = '/android_asset/www/date/1.m4a';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
 
-/*		
+		
 		if(!checkConnection()){	
 			navigator.notification.confirm(
 				getTrans(t_not_connected_text),
@@ -92,8 +92,8 @@ var app = {
 			startApp();
 			setTextWidth();
 		}
+		
 		document.addEventListener("resume", hideBars, false);
-*/
 
 /*		
 		if($( window ).width() > 600) {
@@ -160,3 +160,19 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function startApp(){
+	alert("1");
+}
+
+function setTextWidth(){
+	alert("2");
+}
+
+function hideBars(){
+	alert("3");
+}
+
+function checkConnection() {
+	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
+}
