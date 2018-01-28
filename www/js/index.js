@@ -188,6 +188,8 @@ function hideBars() {
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
 */
+
+	alert("jestem4");
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -505,9 +507,12 @@ var hasNewCatsToday = false;
 
 /* START APP*/
 function startApp(){
+	alert("jestem");
 	hideBars();
 	$("#first-use-loading-page").show();
+	alert("jestem2");
 	getMyLang(); //sprawdzamy czy jest ustawiony mój język
+	alert("jestem3");
 	setTimeout(function(){	
 		var lang = langJSON.lang;
 		prepareAd();
