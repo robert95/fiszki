@@ -78,6 +78,7 @@ var isPremium = false;
 var app = {
     // Application Constructor
     initialize: function() {
+		alert("1");
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -85,6 +86,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
+		alert("2");
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
@@ -93,6 +95,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
+		alert("3");
 		var src = '/android_asset/www/date/1.m4a';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
 		
