@@ -1008,6 +1008,1076 @@ function showtoLearn(){
 	for(var i = 0; i < 10; i++) ;
 		//(i + ")" + toLearn[i]);
 }
+/* GET WORD LIST */
+var idWord = false;
+var nameWord = false;
+function getWordList(){
+	var idLang = $("#myLang").val();
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var idLernLang = $("#learnLang").val();
+	var words = false;
+	var trans = false;
+	$.get("date/"+ idLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function(result) {
+		words = result;
+		$.get("date/"+ idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function(trans) {
+			showWordList(words, trans);
+		});
+    });
+}
+var words, trans;
+function showWordList(w, t){
+	words = JSON.parse(w);
+	trans = JSON.parse(t);
+    isFirstCycle = false;
+	if(isFirstCycle){
+		$("#words").html("");
+		var tmp = "";
+		for(var x in words){
+			nameWord = false;
+			var word = words[x];
+			var tran = trans[x];
+			tmp += '<div class="word" data-id="' + word.id + '" data-check="1" onclick="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
+		}
+		//alert("jesten");
+		$("#words").html(tmp);
+		isFirstCycle = false;
+	}else{
+		getNavWordList();
+	}	
+}
+/* END GET WORD LIST */
+
+/* GET NAV WORD LIST */
+function getNavWordList(){
+	$("#nav-words-container").text("");
+	var i = 0;
+	var firstId = -1;
+	if(isFirstCycle){
+		$(".word").each(function(index){
+			if($(this).attr('data-check') != 0){
+				i++;
+				var id = $(this).data('id');
+				if(i == 1){
+					firstId = id;
+					setActWord(id);
+				}
+				//$("#nav-words-container").append('<p ontouchstart="setWordToLearn(' + id + ', this)" data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+				//$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+				$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/' + i + '.png" class="no-activ-img"><img src="img/' + i + '.png" class="activ-img"></p>');
+			}
+		});
+		isFirstCycle = false;
+		setTimeout(function(){
+			setNavWordPosition(0);
+			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").removeClass("pulse");
+			$("#nav-words-container p").eq(0).addClass("activ");
+			$("#nav-words-container p").eq(0).addClass("pulse");
+		}, 50);
+	}else{
+		for(var x in words){
+			var word = words[x];
+			var id = word.id;
+			i++;
+			if(i == 1){
+				firstId = id;
+				setActWord(id);
+			}
+			//$("#nav-words-container").append('<p ontouchstart="setWordToLearn(' + id + ', this)" data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+			//$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+			$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/' + i + '.png" class="no-activ-img"><img src="img/' + i + '.png" class="activ-img"></p>');
+		}
+		setTimeout(function(){
+		//	alert($("#nav-words-container").text(""));
+			setNavWordPosition(0);
+			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").removeClass("pulse");
+			$("#nav-words-container p").eq(0).addClass("activ");
+			$("#nav-words-container p").eq(0).addClass("pulse");
+		}, 50);
+	}	
+}
+
+function setNavWordPosition(i, k){
+	var k = k || 3;
+	var j;
+	if(k == 3){
+		if(i==0) j=3;
+		else{ 
+			j=i+2; 
+			i--;
+		}
+	}else if(k == 1){
+		j=i+1;
+	}else if(k == 2){
+		j=i+1;
+		i--;
+	}
+	
+	$('#nav-words-container p').hide().slice(i, j).show();
+}
+
+/*SET WORD TO LEARN*/
+function setWordToLearn(id, obj){
+	$("#nav-words-container p").removeClass("activ");
+	$(obj).addClass("activ");
+	$("#word-lern-1").fadeOut().fadeIn();
+	var curWord = setWordById(id); 
+	var curTrans = setTransById(id);
+	var curMyNote = "moja notatka";
+	setNoteById(id);
+	$("#my-text").attr("data-id", id);
+	$("#idWord").val(id);
+	$("#word-lern-1").attr("data-id", id);
+	$("#word-lern-1").attr("data-word", curWord);
+	$("#word-lern-1").attr("data-trans", curTrans);
+	$("#my-trans").val("");
+	$("#my-trans").focus();
+
+	var index = $("#nav-words-container p.activ").index();
+	setNavWordPosition(index);
+	setTimeout(tellMe, 100);
+}
+
+function nextWord(){
+	$('.confirm-swipe').hide();	  
+	$("#my-trans").focus();
+	//saveNotice();
+	var length = $("#nav-words-container p").length;
+	var index = $("#nav-words-container p.activ").index() + 1;
+	if(length <= index) alert("Wszystkiego już się nauczyłeś:)");
+	else{
+		var id = ($("#nav-words-container p").eq(index)).data('word-id');
+		setWordToLearn(id, $("#nav-words-container p").eq(index));	
+		setNavWordPosition(index);
+	}
+}
+
+function setWordById(id){
+	$("#idWord").val(id);
+	for(var x in trans){
+		var word = trans[x];
+		if(word.id == id) {
+			act_word = word.name;		
+		}
+	}
+}
+
+function setNoteById(id){
+	act_text = "";
+	var idLang = $("#myLang").val();
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var idLernLang = $("#learnLang").val();
+	var tmp = idLang+"\\"+idParentCat+"\\"+idSubCat+"\\"+idLernLang+"\\"+id;
+	
+	for(var x in noticeJSON){
+		var notice = noticeJSON[x];
+		if(notice.word == tmp){
+			act_text = notice.notice;
+			return;
+		}			
+	}
+}
+
+function setTransById(id){
+	for(var x in words){
+		var word = words[x];
+		if(word.id == id) {
+			act_trans = word.name;				
+		}
+	}
+}
+
+function checkMySelf(){
+	$("#word-lern-1").hide();
+	$("#confirm-my").text($("#my-trans").val());
+	$(".confirm-swipe").show();
+	$(".confirm-swipe table").show();
+	$(".confirm-swipe table").css({	top: "0px"});
+	$('.confirm-swipe table').removeClass('good');
+	$('.confirm-swipe table').removeClass('bad');
+}
+
+var blockClear = false;
+function clearDraggableField(){
+	if(!blockClear){
+		$(".confirm-swipe table").show();
+		setTimeout(function(){
+			$(".confirm-swipe").removeClass('flipper-hide');
+			$('.confirm-swipe table').removeClass('good');
+			$('.confirm-swipe table').removeClass('bad');
+			$('.confirm-swipe table').removeClass('good-right');
+			$('.confirm-swipe table').removeClass('bad-right');
+			$('.confirm-swipe table').removeClass('goLeft');
+			$('.confirm-swipe table').removeClass('goRight');
+			setTimeout(function(){antyNaparzanka = false;}, 500);
+		}, 50);
+	}
+}
+/*END SET WORD TO LEARN*/
+/*PLAY SOUND*/
+var my_media;
+function tellMe(){
+	if(my_media!=null){
+            my_media.stop();
+            my_media.stopRecord();
+			my_media.release();
+            my_media=null;
+	}
+	var id = $("#idWord").val();
+	var idLang = $("#learnLang").val();
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	//var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".ogg";
+	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
+	setTimeout(function(){
+		if(my_media!=null){/*jak coś to do usunięcia*/
+				my_media.stop();
+				my_media.stopRecord();
+				my_media.release();
+				my_media=null;
+		}
+		
+		my_media = new Media(src,
+            // success callback
+             function () { /*this.release();*/ },
+            // error callback
+             function (err) { /*console.log("M: " + err.message + " - " + err.code);*/ }
+		);
+			   // Play audio
+		my_media.play();
+	}, 100);
+	
+	//var audio = new Audio(src);
+	//audio.play();
+}
+function stopTelling(){
+	if(my_media!=null){
+            my_media.stop();
+            my_media.stopRecord();
+			my_media.release();
+            my_media=null;
+	}
+}
+
+function tellMeWord(sygn, id){
+	if(my_media!=null){
+            my_media.stop();
+            my_media.stopRecord();
+			my_media.release();
+            my_media=null;
+	}
+	var idLang = $("#learnLang").val();
+	//var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".ogg";
+	var src = '/android_asset/www/date/' + idLang + "/" + sygn + "/sound/" + id + ".m4a";
+	setTimeout(function(){
+		if(my_media!=null){/*jak coś to do usunięcia*/
+				my_media.stop();
+				my_media.stopRecord();
+				my_media.release();
+				my_media=null;
+		}
+		
+		my_media = new Media(src,
+            // success callback
+             function () { /*this.release();*/ },
+            // error callback
+             function (err) { /*console.log("M: " + err.message + " - " + err.code);*/ }
+		);
+			   // Play audio
+		my_media.play();
+	}, 100);
+	
+	//var audio = new Audio(src);
+	//audio.play();
+}
+/*END PLAY SOUND*/
+
+/*COPY FIRST PATCH*/
+function copyFirstPath(){
+	asset2sd.copyDir({
+			asset_directory: "www/firstPatch",
+			destination_directory: mainPath
+		},
+		function() { 
+			if(isPremium){
+				copyFirstPathPremium();
+			}
+		}, 
+		function() { alert('fail'); }
+	);
+} 
+function copyFirstPathPremium(){
+	var demoPathsrc = demoPath();
+	copyFileFromDemo(demoPathsrc, 'lang.json', false);
+	copyFileFromDemo(demoPathsrc, 'day.json', false);
+	copyFileFromDemo(demoPathsrc, 'notice.json', false);
+	copyFileFromDemo(demoPathsrc, 'liked.json', false);
+	copyFileFromDemo(demoPathsrc, 'save.json', true);
+}
+
+function copyFileFromDemo(srcPath, nameFile, lastfile){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+		fileSystem.root.getFile((srcPath + nameFile), {create: false}, function(fileEntry){
+			fileSystem.root.getDirectory(premiumPath(), {create: true}, function (dirEntry) {
+				fileEntry.copyTo(dirEntry, nameFile,
+					function(){
+						if(lastfile){
+							setTimeout(function(){ 
+								location.reload(); 
+							}, 100);
+						}
+						//alert('copying was successful')
+					},
+					function(err){
+						console.log("Error: " + err.toString());
+					}
+				);
+			}, function(err){
+				console.log("Error: " + err.toString());
+			});
+		}, function(err){
+			//Tutaj wiemy, że tam nie ma takiego pliku, nie ma zaintalowanej wersji demo
+			if(nameFile == 'lang.json'){
+				$("#first-use-loading-page").hide();
+				startLearn = true; //po tutorialu zacznie naukę
+				getLangList(); //wybierz swój język
+				$("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
+			}
+			//alert("Plik jest nieprawidłowy!" + (srcPath + nameFile));
+		});
+	}, function(err){
+		console.log("Error: " + err.toString());
+	});
+}
+/*END TELL ME*/
+
+/*START SAVE NOTATION*/
+function saveNotice(text){
+	if(text == "") return;
+	act_text = text;
+	var idLang = $("#myLang").val();
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var idLernLang = $("#learnLang").val();
+	var id = $('#idWord').val();
+	
+	var tmp = idLang+"\\"+idParentCat+"\\"+idSubCat+"\\"+idLernLang+"\\"+id;
+	var add = false;
+	
+	if(noticeJSON.length == 0){
+		noticeJSON.push({"word": tmp, "notice": text});
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
+	}else{
+		for(var x in noticeJSON){
+			var notice = noticeJSON[x];
+			if(notice.word == tmp){
+				notice.notice = text;
+				add = true;
+			}
+			if(x == (noticeJSON.length - 1)){
+				if(!add) noticeJSON.push({"word": tmp, "notice": text});
+				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
+			}
+		}
+	}
+}
+
+function gotFSN(fileSystem) {
+	var srcFileNotice = path() + "notice.json";
+	fileSystem.root.getFile(srcFileNotice, {create: false}, gotFileEntryN, failN);
+}
+
+function gotFileEntryN(fileEntry) {
+	fileEntry.createWriter(gotFileWriterN, failN);
+}
+
+function gotFileWriterN(writer) {
+	writer.onwrite = function(evt) {
+		console.log("write success");
+	};
+	
+	//alert(JSON.stringify(noticeJSON));
+	writer.write(JSON.stringify(noticeJSON));
+	writer.abort();
+	// contents of file now 'some different text'
+}
+
+function failN(error) {
+	console.log("error : "+error.code);
+}
+/*END SAVE NATATION*/
+/*START ALGORYTHM MANAGAMENT*/
+var act_word = "";
+var act_trans = "";
+var act_text = "";
+
+function setWordToMethod(idM){
+	$(".learnMethod").hide();
+	$(".bad-bad").removeClass('activ');
+	setTimeout(function(){
+		if(idM == 6 || (idM == 1 && !thirdCycle)) $(".bad-bad").addClass('activ');
+		else $(".bad-bad").removeClass('activ');
+	}, 800);
+	if(act_text != "") $(".remind-img").show();
+	else $(".remind-img").hide();
+	switch(idM) {
+		case 1:
+			$(".show-hidden-word").show(); //zmiana
+			$("#confirm-correct-1").hide(); //zmiana
+			$("#confirm-correct-1").html(act_word); //zmiana
+			$("#confirm-trans-1").html(act_trans);
+			$("#confirm-text-1").val(act_text);	
+			break;
+		case 2:
+			$("#confirm-correct-2").html(act_word);
+			$("#confirm-trans-2").html(act_trans);
+			$("#confirm-text-2").val(act_text);			
+			break;
+		case 3:
+			$("#confirm-text-3").val(act_text);		
+			$("#question-3").val("");
+			break;
+		case 4:
+			tellMe();
+			$("#confirm-correct-4").html(act_word);		
+			$(".show-hidden-word").show(); //zmiana
+			$("#confirm-trans-4").hide(); //zmiana
+			$("#confirm-trans-4").html(act_trans); //zmiana
+			$("#confirm-text-4").val(act_text);			
+			break;
+		case 5:
+			$("#confirm-text-5").val(act_text);	
+			$("#question-5").val("");
+			break;
+		case 6:
+			$("#confirm-correct-6").html(act_word);
+			$(".show-hidden-word").show(); //zmiana
+			$("#confirm-trans-6").hide(); //zmiana
+			$("#confirm-trans-6").html(act_trans); //zmiana
+			$("#confirm-text-6").val(act_text);			
+			break;
+		default:
+			console.log("error");
+	}
+	$(".support-word-in-speach p").text(act_word);
+	$("#word-lern-" + idM).show();
+	
+	$(".nbWordInCycle").text((learnedWordsInCat+1) + "/" + countWordsToLearnInThisCycle);
+}
+
+function setActWord(id){
+	$('#idWord').val(id);
+	setWordById(id);
+	setNoteById(id);
+	setTransById(id);
+	setActuLikedIcon();
+}
+
+var round = 1;
+var nbMethod = 2;
+var nbStep = 0;
+var canNextStep = 1;
+var noLerntStep = 0;
+var ileSnd = 0;
+var ileThd = 0;
+
+function nextStepBlock(){
+	canNextStep = 0;
+}
+
+function noLearnt(){
+	canNextStep = 0;
+	setTimeout(function(){
+		clearDraggableField();
+	}, 100);
+	noLerntStep = 1;
+	if(noLerntStep == 0){
+		whereGo = 0;
+		setWordToMethod(3);
+		noLerntStep = 1;
+	}else{
+		theSameMethod = true;
+		whereGo = -1;
+		setWordToMethod(4);
+		noLerntStep = 0;
+		canNextStep = 2;
+	}
+}
+var noPlus = 0;
+var prepareToThird = 1;
+var isPreparetoFirst = false;
+var readyToSaveNotice = false;
+var whereGo = 0;
+var noFlipIfWrong = false;
+var lastWordSecondRound = true;
+var repeatSec = 1;
+var repeatThd = 1;
+var s_nowe = 0;
+var t_nowe = 0;
+var id_powt = -1;
+var s_bylo = 0;
+var t_bylo = 0;
+var stepow = 0;
+var ile_s = 0;
+var ile_t = 0;
+var last_r_s = -1;
+var theSameMethod = false;
+var antyNaparzanka = false;
+
+function getAntyNaparzanka(){
+	return antyNaparzanka;
+}
+
+function setAntyNaparzankaToTrue(){
+	antyNaparzanka = true;
+}
+
+function nextStep(){
+	countOfWrongRecognized = 0;
+	//volumeTest();
+	antyNaparzanka = true;
+	hideBars();
+	//StatusBar.hide();
+	backToNormalStateNote();
+	$(".recTextWrap").hide();
+	$(".recText").text('');
+	$(".learnMethod").removeClass('badRec');
+	$(".learnMethod").removeClass('goodRec');
+	$(".cloud-again").hide();
+	$(".cloud-next-task").hide();
+	$(".support-word-in-speach").hide();
+	
+	updateProgressBar();
+	/*
+	if(readyToSaveNotice){
+		saveNotice($("#confirm-text-"+nbMethod).val());
+	}else{
+		readyToSaveNotice = true;
+	}
+	*/
+	if(round == 3){
+		if(canNextStep == 2){
+		noPlus = 1;
+		canNextStep = 1;
+		nbMethod = 4;
+		nbStep = 0;
+		}
+		if(canNextStep == 0){
+			noLearnt();
+			return;
+		}
+	}	
+	setTimeout(function(){
+		clearDraggableField();
+	}, 300);
+	if(firstCycle){
+		if(!isPreparetoFirst){
+			whereGo = -1;
+			setActWord(($("#nav-words-container p").eq(0)).data('word-id'));
+			$("#nav-words-container p").eq(0).addClass("activ");
+			$("#nav-words-container p").eq(0).addClass("pulse");
+			setWordToMethod(2)
+			setNavWordPosition(0);
+			isPreparetoFirst = true;
+			tellMe();
+		}else{
+			if(!canNextStep){
+				whereGo = 0;
+				nbMethod = 2;
+				setWordToMethod(2);
+				canNextStep = true;
+				tellMe();
+				return;
+			}
+			/*
+			if(nbMethod == 2){
+				whereGo = -1;
+				nbMethod = 1;
+				setWordToMethod(1);
+			}else 
+			*/
+			if(nbMethod == 1 || nbMethod == 2){
+				whereGo = -1;
+				nbMethod = 1;
+				var length = $("#nav-words-container p").length;
+				var index = $("#nav-words-container p.activ").index() + 1;
+				//learnedWords++;
+				//alert(learnedWords);
+				if(length <= index){
+					round = 2;
+					firstCycle = false;
+					nextStep();
+					return;
+				}else{
+					var id = ($("#nav-words-container p").eq(index)).data('word-id');
+					setActWord(id);
+					setNavWordPosition(index);
+					$("#nav-words-container p").removeClass("activ");
+					$("#nav-words-container p").removeClass("pulse");	
+					$("#nav-words-container p").eq(index).addClass("pulse");
+					$("#nav-words-container p").eq(index).addClass("activ");
+					setTimeout(function(){
+						setWordToMethod(2);
+						tellMe();
+					}, 50);
+				}
+			}
+		}		
+	}else if(secondCycle){
+		if(round == 2){
+			lastWordSecondRound = true;
+			whereGo = -1;
+			var id = ($("#nav-words-container p").eq(0)).data('word-id');
+			setActWord(id);
+			setNavWordPosition(1);
+			$("#nav-words-container p").removeClass("activ");
+			$("#nav-words-container p").removeClass("pulse");
+			$("#nav-words-container p").eq(0).addClass("activ");
+			$("#nav-words-container p").eq(0).addClass("pulse");
+			setTimeout(function(){
+				setWordToMethod(4);
+				tellMe();
+			}, 100);
+			theSameMethod = true;
+			round = 3;
+			nbMethod = 4;
+		}else if(round == 3){
+			theSameMethod = false;
+			noFlipIfWrong = false;
+			if(nbMethod == 4 && nbStep == 0){
+				//alert("tu1");
+				//saveNotice($("#confirm-text-4").val());
+				whereGo = 1;
+				var length = $("#nav-words-container p").length;
+				if(true) var index = $("#nav-words-container p.activ").index() + 1;
+				else{
+					var index = $("#nav-words-container p.activ").index();
+					noPlus = 0;
+				}
+				if(length <= index){
+					/*if(lastWordSecondRound){
+						index--;
+						setWordToMethod(6);
+						whereGo = -1;
+						var id = ($("#nav-words-container p").eq(index)).data('word-id');
+						setActWord(id);
+						lastWordSecondRound = false;
+					}else{*/
+						$("#nav-words-container p").removeClass("activ");
+						$("#nav-words-container p").removeClass("pulse");
+						$("#nav-words-container p").eq(0).addClass("activ");
+						$("#nav-words-container p").eq(0).addClass("pulse");
+						round = 4;
+						//nextStep();
+						secondCycle = false;
+						nextStep();
+						return;
+					//}
+				}else{
+					var id = ($("#nav-words-container p").eq(index)).data('word-id');
+					setActWord(id);
+					setNavWordPosition(index);
+					$("#nav-words-container p").removeClass("activ");
+					$("#nav-words-container p").removeClass("pulse");
+					$("#nav-words-container p").eq(index).addClass("activ");
+					$("#nav-words-container p").eq(index).addClass("pulse");
+					setTimeout(function(){
+						setWordToMethod(4);
+						tellMe();
+					}, 100);
+					nbMethod = 4;
+					nbStep = 1;
+				}
+			}else if(nbMethod == 4 && nbStep != 0){
+				//alert("tu2");
+				whereGo = 0;
+				//saveNotice($("#confirm-text-4").val());
+				var index = $("#nav-words-container p.activ").index() - 1;
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setActWord(id);
+				//setNavWordPosition(index);
+				$("#nav-words-container p").removeClass("activ");
+				$("#nav-words-container p").removeClass("pulse");
+				$("#nav-words-container p").eq(index).addClass("activ");
+				$("#nav-words-container p").eq(index).addClass("pulse");
+				setTimeout(function(){
+					setWordToMethod(1);
+				}, 100);
+				//nbMethod = 1;
+				//nbStep = 1;
+				nbStep = 2;
+				nbMethod = 6;
+				whereGo = -1;
+				theSameMethod = true;
+			}else if(nbMethod == 1 && nbStep == 1){
+				//alert("tu3");
+				whereGo = -1;
+				nbMethod = 6;
+				setWordToMethod(6);
+				nbStep = 2;
+				noFlipIfWrong = true;
+			}else if(nbMethod == 6){
+				//alert("tu4");
+				var index = $("#nav-words-container p.activ").index() + 1;
+				var length = $("#nav-words-container p").length;
+				if(index < length-1){
+					$("#nav-words-container p").removeClass("activ");
+					$("#nav-words-container p").eq(index).addClass("activ");
+					whereGo = -1;
+					nbMethod = 4;
+					nbStep = 0;
+					nextStep();
+					return;
+				}else{
+					//alert("jtest");
+					whereGo = 0;
+					var index = $("#nav-words-container p.activ").index() + 1;
+					var id = ($("#nav-words-container p").eq(index)).data('word-id');
+					setActWord(id);
+					$("#nav-words-container p").removeClass("activ");
+					$("#nav-words-container p").removeClass("pulse");
+					$("#nav-words-container p").eq(index).addClass("activ");
+					$("#nav-words-container p").eq(index).addClass("pulse");
+					setTimeout(function(){
+						setWordToMethod(1);
+					}, 100);
+					nbStep = 0;
+					nbMethod = 4;
+					whereGo = -1;
+					theSameMethod = true;
+				}
+				/*
+				whereGo = -1;
+			//	learnedWords++;
+			//	alert(learnedWords);
+				var index = $("#nav-words-container p.activ").index() + 1;
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setActWord(id);
+				setNavWordPosition(index);
+				$("#nav-words-container p").removeClass("activ");
+				$("#nav-words-container p").removeClass("pulse");
+				$("#nav-words-container p").eq(index).addClass("activ");
+				$("#nav-words-container p").eq(index).addClass("pulse");
+				setTimeout(function(){
+					if(index == 9){
+						//whereGo = 0;
+						whereGo = -1;
+						theSameMethod = true;
+					}
+					setWordToMethod(1);
+				}, 100);
+				nbMethod = 1;
+				
+				*/
+			}else if(nbMethod == 1 && nbStep == 2){
+				//alert("tu5");
+				whereGo = -1;
+				nbMethod = 4;
+				nbStep = 0;
+				nextStep();
+				return;
+			}		
+		}
+	}else if(thirdCycle){
+		if(round == 4){
+			//if(canNextStep == 0){
+				/*canNextStep = 1; 
+				if(id_powt > 0){
+					if(id_powt == snd_id){
+						ile_s = 2;
+					}else if(id_powt == thd_id){
+						ile_t = 2;
+					}
+				}else{	*/				
+					var index = $("#nav-words-container p.activ").index();
+					var id = ($("#nav-words-container p").eq(index)).data('word-id');
+					/*if(snd_id > 0){
+						thd_id = id;
+						t_nowe = 1;
+						ile_t = 2;
+					}else{
+						snd_id = id;
+						s_nowe = 1;
+						ile_s = 2;					
+					}
+				}*/
+			//}
+			//updateThirdNav();
+			if(nbStep == 0){
+				if(prepareToThird != 1){
+					var length = $("#nav-words-container p").length;
+					var index = $("#nav-words-container p.activ").index() + 1;
+					if(length <= index){
+						round = 5;
+						nextStep();	
+						return;
+					} //zmiana
+					$("#nav-words-container p").removeClass("activ");  //zmiana
+					$("#nav-words-container p").removeClass("pulse");  //zmiana
+					$("#nav-words-container p").eq(index).addClass("activ");  //zmiana
+					$("#nav-words-container p").eq(index).addClass("pulse");  //zmiana
+					//}else{
+						//powtórka
+						//$("#nav-words-container p").removeClass("pulse");
+						//alert(snd_id + " " + s_nowe + " " + s_bylo + " " + ile_s + " " + thd_id + " " + t_nowe + " " + t_bylo + " " + ile_t);
+						/*if(stepow == 0){
+							if(ile_s == 0) snd_id = -1;
+							if(ile_t == 0) thd_id = -1;
+							updateThirdNav();
+							if(s_nowe == 0 && s_bylo == 0 && snd_id > 0){
+								id_powt = snd_id;
+							}else if(t_nowe == 0 && t_bylo == 0 && thd_id > 0){
+								id_powt = thd_id;
+							}else{
+								id_powt = -1;
+							}
+						}*/
+						//alert(id_powt + " " + stepow);
+						/*if(id_powt > 0){
+							if(stepow == 0){
+								repeatThrid(id_powt, 1);
+								stepow = 1;
+								return;
+							}else{
+								repeatThrid(id_powt, 6);
+								stepow = 0;
+								if(id_powt == snd_id){
+									ile_s--;
+									s_bylo = 1;
+								}
+								if(id_powt == thd_id){
+									ile_t--;
+									t_bylo = 1;
+								}
+								last_r_s = id_powt;
+								return;
+							}
+						}*/
+						//end-powtórka
+						//warunke przejścia dalej
+							/*if(snd_id > 0 && thd_id > 0){
+								s_bylo = 0;
+								t_bylo = 0;
+								s_nowe = 0;
+								t_nowe = 0;
+								nextStep();
+								return;
+							}*/
+						//
+				/*		id_powt = -1;
+						t_nowe = 0;
+						s_nowe = 0;
+						repeatSec = 1;
+						repeatThd = 1;
+						wasSndTime = 0;
+						wasThdTime = 0;
+						s_bylo = 0;
+						t_bylo = 0;
+						$("#nav-words-container-thd p").removeClass('pulse');
+						$("#nav-words-container-thd p").removeClass("activ");
+						var id = ($("#nav-words-container p").eq(index)).data('word-id');
+						setActWord(id);
+						setNavWordPosition(index);
+						$("#nav-words-container p").removeClass("activ");
+						$("#nav-words-container p").removeClass("pulse");
+						$("#nav-words-container p").eq(index).addClass("activ");
+						$("#nav-words-container p").eq(index).addClass("pulse");
+					}*/
+				}else{
+					prepareToThird = 0;
+				}
+				whereGo = 0;
+				var index = $("#nav-words-container p.activ").index();
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setActWord(id);
+				setNavWordPosition(index);
+				//alert(learnedWords);
+				setTimeout(function(){
+					setWordToMethod(1);
+				}, 100);
+				nbMethod = 5;
+				//nbStep = 1;
+				nbStep = 0; //zmiana
+				whereGo = -1; //zmiana
+			}else if(nbStep == 1){
+				whereGo = -1;
+				$("#nav-words-container p.activ").eq(index).addClass("pulse");
+				//saveNotice($("#confirm-text-1").val());
+				var id = ($("#nav-words-container p").eq(index)).data('word-id');
+				setTimeout(function(){
+					setWordToMethod(6);
+				}, 100);
+				nbStep = 0;
+			}else{
+				round = 5;
+				thirdCycle = false;
+				nextStep();
+				return;
+			}		
+		}else if(round == 5){
+			/*if(canNextStep == 0){
+				canNextStep = 1; 
+				if(id_powt > 0){
+					if(id_powt == snd_id){
+						ile_s = 2;
+					}else if(id_powt == thd_id){
+						ile_t = 2;
+					}
+				}
+			}
+			$("#nav-words-container p").removeClass("pulse");
+			if(stepow == 0){
+				//alert("t1");
+				if(ile_s == 0) snd_id = -1;
+				if(ile_t == 0) thd_id = -1;
+				updateThirdNav();
+				if(s_nowe == 0 && s_bylo == 0 && snd_id > 0){
+					id_powt = snd_id;
+				}else if(t_nowe == 0 && t_bylo == 0 && thd_id > 0){
+					id_powt = thd_id;
+				}else{
+					id_powt = -1;
+				}
+			}
+			if(id_powt > 0){
+				if(stepow == 0){
+					repeatThrid(id_powt, 1);
+					stepow = 1;
+					return;
+				}else{
+					repeatThrid(id_powt, 6);
+					stepow = 0;
+					if(id_powt == snd_id){
+						ile_s--;
+						s_bylo = 1;
+					}
+					if(id_powt == thd_id){
+						ile_t--;
+						t_bylo = 1;
+					}
+					last_r_s = id_powt;
+					return;
+				}
+			}*/
+			//end-powtórka
+			//warunke przejścia dalej
+				/*if(snd_id > 0 || thd_id > 0){
+					s_bylo = 0;
+					t_bylo = 0;
+					s_nowe = 0;
+					t_nowe = 0;
+					nextStep();
+					return;
+				}else{*/
+					thirdCycle = false;
+					nextStep();
+					return;
+				//}
+			//
+		}
+	}else{
+		nextPack();
+	}
+}
+
+function nextPack(){
+	blockClear = true;
+	$('.confirm-swipe table').hide();
+	$(".left-time").text((countCatsToLearnToday - (learnetCatToday-1))* minCat);
+	
+	var percent = Math.round((learnetCatToday-1)/(countCatsToLearnToday)*100);
+	$("#progess-btn-stan-end").addClass('p'+percent);
+	removeProgressClassMin($("#progess-btn-stan-end"), percent);
+	
+	setTimeout(function(){		
+		blockClear = false;
+		//$('.confirm-swipe table').addClass('goLeft');
+		if(isRepeatCycle){
+			$(".timeLernedToday").text((learnetCatToday-1) * minCat);
+			$(".allTimeToday").text(countCatsToLearnToday * minCat);
+			$('section').hide();
+			$("#end-cat").show();	
+			setTimeout(function(){				
+				$("#end-cat").removeClass('next-cat-left');
+				$("#learn-container").addClass('next-cat-left');
+			}, 50);
+			isRepeatCycle = false;
+		}else{
+			$("#end-cat").addClass('next-cat-right');
+			setTimeout(function(){	
+				$("#end-cat").hide();		
+				$("#end-cat").removeClass('next-cat-right');
+				$("#end-cat").addClass('next-cat-left');	
+				packControler();
+			}, 800);
+		}
+	}, 500);
+}
+
+var fst_id = 0;
+var snd_id = 0;
+var thd_id = 0;
+var temid = 0;
+var fin_id = 0;
+var repeatFstRound = true;
+//var repeatSecRound = false;
+function repeatThrid(id, met){
+	if(met == 6) whereGo = -1;
+	else whereGo = 0;
+	setTimeout(function(){
+		setActWord(id);
+		setTimeout(function(){
+			setWordToMethod(met);
+			pulseThdNav(id);
+		}, 5);
+	}, 100);
+}
+
+function updateThirdNav(){
+	var i = 1;
+	var ids = [];
+	ids.push(snd_id);
+	ids.push(thd_id);
+	$("#nav-words-container-thd p").hide();
+	$("#nav-words-container-thd p").attr('data-word-id', 0);
+	$("#nav-words-container p").each(function(){
+		var id = $(this).attr('data-word-id');
+		var src = $(this).children('img').attr('src');
+		for(k = 0; k < ids.length; k++){
+			if(id == ids[k]){
+				$("#nav-th-"+i).children('img').attr('src', src);
+				$("#nav-th-"+i).attr('data-word-id', id);
+				$("#nav-th-"+i).show();
+				i++;
+				ids.splice(k, 1);
+				break;
+			}
+		}
+	});
+}
+
+function pulseThdNav(idW){
+	setTimeout(function(){
+		$("#nav-words-container p").removeClass('pulse');
+		$("#nav-words-container-thd p").removeClass('pulse');
+		$("#nav-words-container-thd p").removeClass("activ");
+		$("#nav-words-container-thd p").each(function(){
+			var id = $(this).attr('data-word-id');
+			if(idW == id){
+				$(this).addClass('pulse');
+				$(this).addClass('activ');
+			}
+		});
+	}, 200);
+}
+/*END ALGORYTHM MANAGAMENT*/
+
+
+
+
 
 function setTextWidth(){
 	alert("2");
