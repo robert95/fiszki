@@ -110,11 +110,14 @@ var app = {
 		document.addEventListener("resume", hideBars, false);
 		/*var autoHideNavigationBar = true;
 		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar); */
+		
+		/*
 		if($( window ).width() > 600) {
 			StatusBar.hide();	
 		}else{
 			AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 		}
+		*/
 		
 		document.addEventListener('onAdDismiss',function(data){
 			//prepareAd();	
@@ -178,13 +181,13 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
-
+/*
 	if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
-
+*/
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
