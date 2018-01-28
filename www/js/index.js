@@ -2075,6 +2075,888 @@ function pulseThdNav(idW){
 }
 /*END ALGORYTHM MANAGAMENT*/
 
+function showAllNote(){
+	showNote(1);
+	showNote(2);
+	showNote(3);
+	showNote(4);
+	showNote(5);
+	showNote(6);
+	$(".recText").hide();
+}
+function showNote(x){
+	var target = "#l-n-" + x;
+	var target2 = "#l-t-" + x;
+	var targetE = "#l-e-" + x;
+	$(target2).hide();
+	if($(target).is(":visible") == true){
+		$(target).hide();
+		$(targetE).show();
+		showTrans(x);
+	}else{
+		$(targetE).hide();
+		$(target).show();
+	}
+}
+
+function showTrans(x){
+	var target = "#l-n-" + x;
+	var target2 = "#l-t-" + x;
+	var targetE = "#l-e-" + x;
+	$(target).hide();
+	if($(target2).is(":visible") == true){
+		$(target2).hide();
+		$(targetE).show();
+	}else{
+		$(targetE).hide();
+		$(target2).show();
+	}
+}
+
+function backToNormalStateNote(){
+	$("#l-n-1").hide();
+	$("#l-n-2").hide();
+	$("#l-n-3").hide();
+	$("#l-n-4").hide();
+	$("#l-n-5").hide();
+	$("#l-n-6").hide();
+	$("#l-e-1").hide();
+	$("#l-e-2").hide();
+	$("#l-e-3").hide();
+	$("#l-e-4").hide();
+	$("#l-e-5").hide();
+	$("#l-e-6").hide();
+	$("#l-t-1").show();
+	$("#l-t-2").show();
+	$("#l-t-3").show();
+	$("#l-t-4").show();
+	$("#l-t-5").show();
+	$("#l-t-6").show();
+	hideKeyboard();
+	hideHoverNoteBtn('.note-btn');
+}
+
+function hideKeyboard(){
+	$("#l-n-1").blur();
+	$("#l-n-2").blur();
+	$("#l-n-3").blur();
+	$("#l-n-4").blur();
+	$("#l-n-5").blur();
+	$("#l-n-6").blur();
+}
+
+function showNoteForTut(x){
+	var target = "#t-l-n-" + x;
+	var target2 = "#t-l-t-" + x;
+	var targetE = "#t-l-e-" + x;
+	$(target2).hide();
+	if($(target).is(":visible") == true){
+		$(target).hide();
+		$(targetE).show();
+	}else{
+		$(targetE).hide();
+		$(target).show();
+	}
+}
+
+function showTransForTut(x){
+	var target = "#t-l-n-" + x;
+	var target2 = "#t-l-t-" + x;
+	var targetE = "#t-l-e-" + x;
+	$(target).hide();
+	if($(target2).is(":visible") == true){
+		$(target2).hide();
+		$(targetE).show();
+	}else{
+		$(targetE).hide();
+		$(target2).show();
+	}
+}
+
+function tellMeNow(obj){
+	//var par = $(obj).parent().parent();
+	//if(parseInt(par.css('top')) == 0){
+		tellMe();
+	//}
+}
+
+function prepareGlobalForCycle(i){
+	switch(i){
+		case 1:
+			$("#nav-words-container-thd p").hide();
+			round = 1;
+			nbMethod = 2;
+			isPreparetoFirst = false;
+			firstCycle = true;
+			secondCycle = false;
+			thirdCycle = false;
+			break;
+		case 2:
+			$("#nav-words-container-thd p").hide();
+			round = 2;
+			nbMethod = 2;
+			nbStep = 0;
+			noPlus = 0;
+			canNextStep = 1;
+			noLerntStep = 0;
+			firstCycle = false;
+			secondCycle = true;
+			thirdCycle = false;
+			break;
+		case 3:
+			$("#nav-words-container-thd p").hide();
+			round = 4;
+			nbStep = 0;
+			canNextStep = 1;
+			prepareToThird = 1;
+			fst_id = 0;
+			snd_id = 0;
+			thd_id = 0;
+			temid = 0;
+			fin_id = 0;
+			firstCycle = false;
+			secondCycle = false;
+			thirdCycle = true;
+			repeatSec = 1;
+			repeatThd = 1;
+			s_nowe = 0;
+			t_nowe = 0;
+			id_powt = -1;
+			s_bylo = 0;
+			t_bylo = 0;
+			stepow = 0;
+			ile_s = 0;
+			ile_t = 0;
+			last_r_s = -1;
+			break;
+	}
+	$("#nav-words-container p").removeClass("activ");
+	$("#nav-words-container p").removeClass("pulse");
+	$("#nav-words-container p").eq(0).addClass("activ");
+	$("#nav-words-container p").eq(0).addClass("pulse");
+}
+
+function addFunction(a, b) {
+	if(Number.isInteger(b)) return a + b;
+	else return a;
+}
+
+var continueLearning = false;
+var nameCat;
+var newCategoryisSet = false;
+var learnetCatToday = 1;
+var learnetCatTodayCopytBTN = 1;
+var isRepeatCycle = false;
+var copyOfLearnArray = [];
+function packControler(){
+	waintingLearned = 0;
+	var endThis = false;
+	$("#startDay").hide();
+	$("#words-nav").show();
+	$("#ok-no-panel").show();
+
+	if(toLearn.reduce(function(a, b) { return a + b; }, 0) != -10){
+		/*$("#learn-container").show();*/
+		setTimeout(function(){				
+			$("#learn-container").removeClass('next-cat-left');
+		}, 500);
+	}
+	for(var i = 0; i < 10 && !endThis; i++){
+		continueLearning = false;
+		if(toLearn[i] != -1){
+			clearNoticeFields();
+			setEveryThingToStartCat(toLearn[i]);
+			getSubCatName(toLearn[i]);
+			endThis = true;
+			continueLearning = true;
+			switch(i){
+				case 0:
+					clearDraggableField();
+					isRepeatCycle = false;
+					copyOfLearnArray = toLearn.slice();
+					learnedWordsCopy = learnedWords;
+					learnetCatTodayCopytBTN = learnetCatToday;
+					showAd();
+					countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
+					learnedWordsInCat = 0;
+					prepareGlobalForCycle(1);
+					setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
+					break;
+				case 1:
+					isRepeatCycle = true;
+					prepareGlobalForCycle(2);
+					setTimeout(function(){ nextStep(); }, 300);
+					learnetCatToday++;
+					break;
+				case 2:
+					clearDraggableField();
+					isRepeatCycle = false;
+					copyOfLearnArray = toLearn.slice();
+					learnedWordsCopy = learnedWords;
+					learnetCatTodayCopytBTN = learnetCatToday;
+					showAd();
+					countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
+					learnedWordsInCat = 0;
+					prepareGlobalForCycle(2);
+					setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
+					break;
+				case 3:
+					isRepeatCycle = true;
+					prepareGlobalForCycle(3);
+					setTimeout(function(){ nextStep(); }, 300);
+					learnetCatToday++;
+					break;
+				case 4:
+					clearDraggableField();
+					isRepeatCycle = false;
+					copyOfLearnArray = toLearn.slice();
+					learnedWordsCopy = learnedWords;
+					learnetCatTodayCopytBTN = learnetCatToday;
+					showAd();
+					countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
+					learnedWordsInCat = 0;
+					prepareGlobalForCycle(2);
+					setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
+					break;
+				case 5:
+					isRepeatCycle = true;
+					prepareGlobalForCycle(3);
+					setTimeout(function(){ nextStep(); }, 300);
+					learnetCatToday++;
+					break;
+				case 6:
+					clearDraggableField();
+					isRepeatCycle = false;
+					copyOfLearnArray = toLearn.slice();
+					learnedWordsCopy = learnedWords;
+					learnetCatTodayCopytBTN = learnetCatToday;
+					showAd();
+					countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
+					learnedWordsInCat = 0;
+					prepareGlobalForCycle(2);
+					setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
+					//learnetCatToday++;
+					break;
+				case 7:
+					//clearDraggableField();
+					isRepeatCycle = true;
+					//showAd();
+					//countWordsToLearnInThisCycle = wordsInOneCat;
+					//learnedWordsInCat = 0;
+					prepareGlobalForCycle(3);
+					setTimeout(function(){ nextStep(); }, 300);
+					//setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
+					learnetCatToday++;
+					break;
+				case 8:
+					clearDraggableField();
+					isRepeatCycle = false;
+					countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat*2;
+					learnedWordsInCat = 0;
+					learnetCatTodayCopytBTN = learnetCatToday;
+					newCategoryisSet = true;
+					prepareGlobalForCycle(1);
+					setTimeout(function(){ nextStep(); }, 300);
+					break;
+				case 9:
+					isRepeatCycle = false;
+					newCategoryisSet = true;
+					prepareGlobalForCycle(2);
+					setTimeout(function(){ nextStep(); }, 300);
+					break;
+				default:
+					break;
+			}
+			toLearn[i] = -1; 
+		}
+	}	
+	if(!continueLearning){
+		if(newCategoryisSet){
+			endTodayLesson = true;
+			saveDay();
+		}else{
+			showAd();
+			copyOfLearnArray = toLearn.slice();
+			learnedWordsCopy = learnedWords;
+			startChoiceNewCategory();
+			//startSetNewCategory();
+		}
+	}
+	
+}
+
+function clearNoticeFields(){
+	$("#confirm-text-1").val("");
+	$("#confirm-text-2").val("");
+	$("#confirm-text-3").val("");
+	$("#confirm-text-4").val("");
+	$("#confirm-text-5").val("");
+	$("#confirm-text-6").val("");
+}
+
+function setEveryThingToStartCat(cat){
+	var res = cat.split("/");
+	var p = res[0];
+	var c = res[1];
+	$("#myParentCat").val(p);
+	$("#myCat").val(c);
+	setTimeout(function(){
+			getWordList();
+	}, 10);
+}
+
+function whereGoNow(){ //-1 - left, 1- right, 0-no;
+	return whereGo;
+}
+
+function getsecondCycle(){
+	return secondCycle;
+}
+function getfirstCycle(){
+	return firstCycle;
+}
+function getNoFlipIfWrong(){
+	return noFlipIfWrong;
+}
+function setNoFlipIfWrong(val){
+	noFlipIfWrong = val;
+}
+function isRoundTwoAndTheSameMethod(){
+	return ((round == 3 && theSameMethod) || round == 4 || round == 1);
+}
+
+function showStartCat(count, name){
+    removeAllProgressClass($("#progess-btn-stan"));
+	$("#start-next-cat").show();
+	$("#nav-circle-word").hide();
+	$("#learn-container").hide();
+	$("#main-text-next-cat").text(count + "/" + countCatsToLearn);
+	$("#main-text-next-cat-end").text(count + "/" + countCatsToLearn);
+	$(".all-words-to-end-sesion-in-repeat").text(countWordsToLearn-learnedWords);
+	$("#name-next-cat").text(name);
+	
+	var percent = Math.round(((count-1)/countCatsToLearn)*100);
+	//$("#progess-btn-stan").addClass('p'+percent);
+	$("#progess-btn-per").text(percent+"%");
+	
+	setTimeout(function(){				
+		$("#start-next-cat").removeClass('next-cat-left');
+		setTimeout(function(){				
+			loadProgressBarToFull();
+		}, 500);
+	}, 500);
+}
+var ix = 1;
+function loadProgressBarToFull(){
+	ix = 1;
+	smoothLoadProgressBar();
+}
+
+function smoothLoadProgressBar() {          
+   setTimeout(function () {    
+      $("#progess-btn-stan").addClass('p'+ix);        
+      ix++;                   
+      if (ix < 101) {           
+         smoothLoadProgressBar();        
+      }                   
+   }, 15)
+}
+
+function nextCatBtn(){
+	$("#start-next-cat").addClass('next-cat-right');
+	$("#learn-container").addClass('next-cat-left');
+	setTimeout(function(){					  
+		$("#nav-circle-word").show();
+		$("#learn-container").show();
+		setTimeout(function(){				
+			$("#learn-container").removeClass('next-cat-left');
+			removeAllProgress();
+		}, 500);
+		$("#start-next-cat").hide();
+		$("#start-next-cat").removeClass('next-cat-right');
+		$("#start-next-cat").addClass('next-cat-left');
+		nextStep();
+	}, 500);
+}
+
+function removeAllProgress(){
+	for(var i = 1; i < 102; i++){
+		$("#progess-btn-stan").removeClass('p'+i); 
+	}
+}
+
+var waintingLearned = 0;
+
+function increaseLearned(){
+	if(waintingLearned > 0){
+		waintingLearned--;
+	}else{
+		if(thirdCycle){
+			var bylo = false;
+			$("#nav-words-container-thd p").each(function(){
+				if($(this).hasClass('activ')){
+					bylo = true;
+				}
+			});
+			setTimeout(function(){
+				if(!bylo){
+					learnedWords++;
+					learnedWordsInCat++;
+				}
+			}, 50);
+		}else{
+			learnedWords++;
+			learnedWordsInCat++;
+		}
+	}
+}
+
+function setWaintingLearned(){
+	if(getfirstCycle()){
+		waintingLearned = 1;
+	}else if(getsecondCycle()){
+		if(nbMethod == 6){
+			waintingLearned += 3;
+		}else{
+			if(nbStep == 2){
+				waintingLearned += 0;
+			}else{
+				waintingLearned += 2;
+			}
+		}
+	}
+	if(thirdCycle){
+		var bylo = false;
+		$("#nav-words-container-thd p").each(function(){
+			if($(this).hasClass('activ')){
+				bylo = true;
+			}
+		});
+		setTimeout(function(){
+			if(!bylo){
+				learnedWords++;
+				learnedWordsInCat++;
+			}
+		}, 50);
+	}
+}
+/*END APP*/
+function endLearn(){
+	$("#learn-container").addClass('next-cat-right');
+	$("#saving-progress-today").addClass('next-cat-right');
+	
+	if(todayEndedCat != "") allEndedCats.push(todayEndedCat);
+	uniqueallEndedCats = allEndedCats.filter(function(item, pos) {
+		return allEndedCats.indexOf(item) == pos;
+	});
+	
+	$(".allWords").text(dayJSON.words); 
+	$(".countKMLearned").text( Math.floor( (dayJSON.km)*minCat / 60) );
+	$(".countMinLearned").text( Math.floor( (dayJSON.km)*minCat % 60) );
+
+	if(allCats.sort().toString() == uniqueallEndedCats.sort().toString() && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
+		setTimeout(function(){
+			//showAd();
+			$("#learn-container").hide();
+			$("#saving-progress-today").hide();
+			$("#end-course").show();
+			setTimeout(function(){				
+				$("#end-course").removeClass('next-cat-left');
+				showRating();
+			}, 100);
+		}, 500);
+	}else{
+		setTimeout(function(){
+			var allStartedCats = allUsedCats.concat(inProgressCat);
+			var uniqueallUsedCats = allStartedCats.filter(function(item, pos) {
+				return allStartedCats.indexOf(item) == pos;
+			});
+			if(allCats.sort().toString() == uniqueallUsedCats.sort().toString()){
+				showEndNewMaterialsInfo();
+			}
+			
+			$("#learn-container").hide();
+			$("#saving-progress-today").hide();
+			$("#end-panel").show();
+			setTimeout(function(){				
+				$("#end-panel").removeClass('next-cat-left');
+				showRating();
+			}, 100);
+		}, 500);
+	}
+	
+}
+/*END END APP*/
+/*TUTORIAL*/
+var stepTut = 1;
+var visiblesSectionsBeforeStart;
+function startTut(){
+	visiblesSectionsBeforeStart = $('body > section:visible:not(.next-cat-left):not(.next-cat-right):not(#new-tutorial):not(#ok-no-panel-TUT):not(#word-lern-2-TUT)');
+	
+		var acc = []
+		visiblesSectionsBeforeStart.each(function(index, value) {
+			acc.push($(this).attr('id'));
+		});
+		console.log(JSON.stringify(acc));
+
+	visiblesSectionsBeforeStart.addClass('next-cat-left');
+	setTimeout(function(){				
+		visiblesSectionsBeforeStart.hide();
+		$("#new-tutorial").show();
+		$("#ok-no-panel-TUT, #word-lern-2-TUT, #popup-TUT-1").show();
+		$(".popup-TUT").removeClass('next-cat-left');
+		$(".popup-TUT").removeClass('next-cat-right');
+		$(".popup-TUT:not(#popup-TUT-1)").addClass('next-cat-right-right');
+		$("#popup-TUT-1").removeClass('next-cat-right-right');
+		
+		setTimeout(function(){		
+			$("body").addClass('tutorial-body-darkness');
+			$(".background").addClass('background-tutorial-darkness');
+			stepTut = 1;
+			$("#choose-lang").hide();
+			$(".cursor-TUT").hide();
+			$("#menu-switch").addClass('half-opacity');
+			
+			$("#new-tutorial").removeClass('next-cat-left');
+			$("#new-tutorial").removeClass('next-cat-right');
+		}, 200);
+	}, 500);
+}
+function nextTutStep(){
+	$("#popup-TUT-"+stepTut).addClass('next-cat-left');
+	stepTut++;
+	removeFullOpacity();
+	removeAllCursors();
+	setTimeout(function(){
+		$("#popup-TUT-"+parseInt(stepTut-1)).hide();
+		$("#popup-TUT-"+parseInt(stepTut-1)).addClass('next-cat-right-right');
+		$("#popup-TUT-"+stepTut).show();
+		$("#popup-TUT-"+stepTut).removeClass('next-cat-right-right');
+		$(".cursor-TUT").addClass('cursor-TUT-' + stepTut);
+		
+		switch(stepTut){
+			case 2:
+				$("#new-tutorial-repeat-text span").addClass('full-opacity');
+				break;
+			case 3:
+				$("#progess-btn-stan-in-cycle-TUT").addClass('full-opacity');
+				break;
+			case 4:
+				$("#new-tutorial .mic-container").addClass('full-opacity');
+				break;
+			case 5:
+				$("#notebtn-TUT").addClass('full-opacity');
+				break;
+			case 6:
+				$(".star-liked-TUT").addClass('full-opacity');
+				break;
+			case 7:
+				$("#menu-switch").addClass('full-opacity');
+				break;	
+			case 9:
+				endTutWrap();
+				break;		
+		}		
+	}, 800);
+}
+
+function removeFullOpacity(){
+	$("#new-tutorial-repeat-text span").removeClass('full-opacity');
+	$("#progess-btn-stan-in-cycle-TUT").removeClass('full-opacity');
+	$("#new-tutorial .mic-container").removeClass('full-opacity');
+	$("#notebtn-TUT").removeClass('full-opacity');
+	$(".star-liked-TUT").removeClass('full-opacity');
+	$("#menu-switch").removeClass('full-opacity');
+}
+
+function removeAllCursors(){
+	$(".cursor-TUT").removeClass('cursor-TUT-1');
+	$(".cursor-TUT").removeClass('cursor-TUT-2');
+	$(".cursor-TUT").removeClass('cursor-TUT-3');
+	$(".cursor-TUT").removeClass('cursor-TUT-4');
+	$(".cursor-TUT").removeClass('cursor-TUT-5');
+	$(".cursor-TUT").removeClass('cursor-TUT-6');
+	$(".cursor-TUT").removeClass('cursor-TUT-7');
+	$(".cursor-TUT").removeClass('cursor-TUT-8');
+	$(".cursor-TUT").removeClass('cursor-TUT-9');
+}
+
+function updateProgressTut(step){
+	var percent = 100 - Math.round(((step)/(12))*100);
+	$("#progess-btn-stan-in-cycle-tut2").addClass('p'+percent);
+	removeProgressClassMin($("#progess-btn-stan-in-cycle-tut2"), percent);
+}
+function endTutWrap(){ 
+	$("#menu-switch").removeClass('half-opacity');
+	$("body").removeClass('tutorial-body-darkness');
+	$(".background").removeClass('background-tutorial-darkness');
+	$("#new-tutorial").addClass('next-cat-right');
+	$(".popup-TUT").hide();
+	$(".popup-TUT").addClass('next-cat-right-right');
+	stepTut = 0;
+	visiblesSectionsBeforeStart.addClass('next-cat-left');
+	setTimeout(function(){	
+		visiblesSectionsBeforeStart.show();
+		setTimeout(function(){			
+			if(startLearn){
+				//zacznij naukę
+				getDay();
+				//showStartLessonPage();
+				startLearn = false;
+			}else{
+				//powrót do głównego
+						var acc = []
+						visiblesSectionsBeforeStart.each(function(index, value) {
+							acc.push($(this).attr('id'));
+						});
+						
+				visiblesSectionsBeforeStart.removeClass('next-cat-left');
+			}
+		}, 400);
+		$("#new-tutorial").hide();
+		$(".popup-TUT").show();	
+		$("#startDay").addClass('next-cat-left');
+	}, 600);
+}
+function endTut(){ 
+	$("#startDay").addClass('next-cat-left');
+	stepTut = 0;
+	$("#tutorial").hide();
+	$(".tut-method").hide();
+	$("#page-after-tutorial").addClass('next-cat-left');
+	setTimeout(function(){				
+		$("#page-after-tutorial").hide();
+		if(startLearn){
+			//zacznij naukę
+			showStartLessonPage();
+			startLearn = false;
+		}else{
+			//powrót do głównego
+		}
+	}, 1000);
+}
+function startSetNewCategory(){
+	getCatList();
+	$("#new-category-choice").addClass('next-cat-left');
+	setTimeout(function(){	
+		if(firstGenerationCat){
+			firstGenerationCat = false;
+			activateSearch();
+		}
+		$("#new-category-choice").hide();			
+		setTimeout(function(){		
+			$("#choose-cat").show();
+		}, 75);
+		setTimeout(function(){		
+			$("#choose-cat").removeClass('next-cat-right');
+		}, 150);
+		$("#cats").show();
+	}, 700);
+}
+var firstGenerationCatAllCats = true;
+function runList(){
+	setTimeout(function(){	
+		if(firstGenerationCatAllCats){
+			firstGenerationCatAllCats = false;
+			activateSearchAllCats();
+		}
+	}, 700);
+}
+function closeManualSettingCat(){
+	$("#new-category-choice").show();	
+	$("#choose-cat").addClass('next-cat-right');
+	setTimeout(function(){		
+		$("#new-category-choice").removeClass('next-cat-left');
+		$("#choose-cat").hide();
+	}, 700);
+}
+function backToSetNewCategory(){
+	$("#choose-cat").addClass('next-cat-right');
+	setTimeout(function(){				
+		$("#choose-cat").hide();
+		$("#new-category-choice").show();	
+		setTimeout(function(){				
+			$("#new-category-choice").removeClass('next-cat-left');
+			$("#learn-container").addClass('next-cat-left');
+			$("#progess-btn-stan-in-cycle").addClass('p100');
+			$(".progess-btn-stan-in-session").addClass('p100');
+			setTimeout(function(){	loadProgressBarToFull2(); }, 200);
+		}, 50);
+	}, 500);
+}
+function startChoiceNewCategory(){
+	if(sugGetIsSetter){
+		$("#suggest-new-category-text").text(suggestedCatName);
+		showMuteIcon();
+		$('section').hide();
+		$("#new-category-choice").show();
+		hasNewCatsToday = true;
+		setTimeout(function(){				
+			if($("#new-category-choice").hasClass('next-cat-right')){
+				$("#new-category-choice").removeClass('next-cat-right');
+			}else{
+				$("#new-category-choice").removeClass('next-cat-left');
+			}
+			$("#learn-container").addClass('next-cat-left');
+			$(".progess-btn-stan-in-session").addClass('p100');
+			$("#progess-btn-stan-in-cycle").addClass('p100');
+			setTimeout(function(){	loadProgressBarToFull2(); }, 200);
+			setPopupAboutNoAudioLesson();
+		}, 50);
+	}else{
+		endTodayLesson = true;
+		saveDay();
+	}
+}
+
+var ix2 = 1;
+function loadProgressBarToFull2(){
+	ix2 = 1;
+	smoothLoadProgressBar2();
+}
+
+function smoothLoadProgressBar2() {          
+   setTimeout(function () {    
+      $("#progess-btn-stan-in-cycle-ncat").addClass('p'+ix2);  
+      ix2++;                   
+      if (ix2 < 101) {           
+         smoothLoadProgressBar2();        
+      }                   
+   }, 15)
+}
+
+function removeAllProgress2(){
+	for(var i = 1; i < 102; i++){
+		$("#progess-btn-stan-in-cycle-ncat").removeClass('p'+i); 
+	}
+}
+
+function setSuggestedCat(par, cat){
+	var idLang = $("#myLang").val();
+	$.get("date/"+ idLang + "/" + par + "/subcat.json", function(result) {
+		var scat = JSON.parse(result);
+		for(var x in scat){
+			var c = scat[x];
+			if(c.id == cat) {	
+				getCatWithPos(c.pos, 1);
+			}
+		}
+    });
+}
+
+var userChoiceCat = false;
+function setThisAsSuggestedCat(par, cat){
+	var idLang = $("#myLang").val();
+	userChoiceCat = true;
+	$.get("date/"+ idLang + "/" + par + "/subcat.json", function(result) {
+		var scat = JSON.parse(result);
+		for(var x in scat){
+			var c = scat[x];
+			if(c.id == cat) {	
+				getCatWithPos(c.pos, 0);
+			}
+		}
+    });
+}
+
+function setSuggestedCatName(idp, idc){
+	var idLang = $("#myLang").val();
+	$.get("date/"+ idLang + "/" + idp + "/subcat.json", function(result) {
+		var scat = JSON.parse(result);
+		for(var x in scat){
+			var cat = scat[x];
+			if(cat.id == idc) {	
+				getCatWithPos(cat.pos, 1);
+			}
+		}
+    });
+}
+
+function setSuggestedCatAsNew(){
+	$("#new-category-choice").addClass('next-cat-right');
+	setTimeout(function(){
+		$("#new-category-choice").hide();
+		dayJSONwordsCopy = dayJSON.words;
+		dayJSON.words = dayJSON.words + wordsInOneCat;
+		var res = suggestedCatPath.split("/");
+		var parent = res[0];
+		var cat = res[1];
+		$("#learn-container").addClass('next-cat-left');
+		$(".countOfNewWordsToday").text(wordsInOneCat);
+		setTimeout(function(){
+			setNewCat(parent, cat);
+			$("#myCat").val(cat);
+			$("#myParentCat").val(parent);
+			$("#learn-container").show();	
+			packControler();
+			$("#words-nav").show();
+		}, 300);
+	}, 500);
+}
+
+function showStartLessonPage(){
+	gameIsBegin = true;
+	$('seciton').hide();
+	$("#startDay").show();
+	setTimeout(function(){				
+		$("#startDay").removeClass('next-cat-left');
+		setTimeout(function(){	
+			if(lessonsJumpToFuture > 0){
+				var text = "Przeskoczyliśmy " + lessonsJumpToFuture + " lekcję, bo wcześniej nie było nic do nauki";
+				
+				window.plugins.toast.showWithOptions(
+					{
+						message: text,
+						duration: "long", 
+						position: "bottom"
+					}
+				);
+			}
+		}, 500);
+	}, 100);
+}
+
+function startLesson(){
+	packControler();	
+}
+
+function removeAllProgressClass(obj){
+	return;
+}
+
+function removeProgressClassMin(obj, min){
+	for(var i = 100; i > min; i--){
+		obj.removeClass('p'+i);
+	}
+}
+
+function updateProgressBar(){
+	removeAllProgressClass($("#progess-btn-stan-in-cycle"));
+	removeAllProgressClass($(".progess-btn-stan-in-cycle-2"));
+	removeAllProgressClass($(".progess-btn-stan-in-cycle-3"));
+	setTimeout(function(){				
+		var percent = 100 - Math.round(((learnedWords)/(countWordsToLearn))*100);
+		var percent2 = 100 - Math.round(((learnedWordsInCat)/(countWordsToLearnInThisCycle))*100);
+		var percent3 = Math.round(((learnedWordsInCat)/(countWordsToLearnInThisCycle))*100);
+		var percent4 = Math.round(((learnedWords)/(countWordsToLearn))*100);
+		$("#progess-btn-stan-in-cycle").addClass('p'+percent4);
+		$(".progess-btn-stan-in-session").addClass('p'+percent2);
+		$(".progess-btn-stan-in-cycle-2").addClass('p'+percent3);
+		$(".progess-btn-stan-in-cycle-3").addClass('p'+percent);
+		removeProgressClassMin($("#progess-btn-stan-in-cycle"), percent4);
+		removeProgressClassMin($(".progess-btn-stan-in-session"), percent2);
+		removeProgressClassMin($(".progess-btn-stan-in-cycle-2"), percent3);
+		removeProgressClassMin($(".progess-btn-stan-in-cycle-3"), percent);
+		$(".all-words-to-end").text(countWordsToLearn-learnedWords);
+		$("#learn-container .all-words-to-end").text(parseInt((learnedWordsInCat)/countWordsToLearnInThisCycle * 100) + "%");
+		if((countWordsToLearn-learnedWords) != (countWordsToLearnInThisCycle-learnedWordsInCat)){
+			$(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle-learnedWordsInCat);
+		}else{
+			$(".all-words-to-end-sesion").text('');
+		} 
+	}, 50);
+}
+/*END TUTORIAL*/
 
 
 
