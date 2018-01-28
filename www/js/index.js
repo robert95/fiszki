@@ -148,16 +148,340 @@ var app = {
     }
 };
 
+function emptyFunctionS(){
+	console.log("jestem");
+}
+function hideBars() {
+
+	if($( window ).width() > 600) {
+		StatusBar.hide();	
+	}else{
+		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
+	}
+
+}
+/* OBSŁUGA ŚCIEŻKI */
+var mainPath;
+function path(){
+	var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
+	mainPath = (res.toString()).replace(/,/g,'/');
+	return (res.toString()).replace(/,/g,'/');
+}
+var demoPathsrc;
+function demoPath(){
+	if(isPremium){
+		var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
+		demoPathsrc = (res.toString()).replace(/,/g,'/');
+		demoPathsrc = demoPathsrc.substring(0, demoPathsrc.length - 10) + "/files/";
+		return demoPathsrc;
+	}else{
+		demoPathsrc = path();
+		return demoPathsrc;
+	}
+}
+
+var premiumPathsrc;
+function premiumPath(){
+	if(isPremium){
+		premiumPathsrc = path();
+		return premiumPathsrc;
+	}else{
+		var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
+		premiumPathsrc = (res.toString()).replace(/,/g,'/');
+		premiumPathsrc = premiumPathsrc.substring(0, premiumPathsrc.length - 7) + "Pro/files/";
+		return premiumPathsrc;
+	}
+}
+/* END OBSŁUGA ŚCIEŻKI */
+
+/* READ FILE3 */
+function readDayF() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess3, onFSError);
+}
+function onFSSuccess3(fileSystem) {
+    fileSystem.root.getFile(srcFile3, {create:false, exclusive:false}, gotFileEntry3, onFSError);
+}
+function gotFileEntry3(fileEntry) {
+    fileEntry.file(gotFile3, onFSError);
+}
+function gotFile3(file) {
+    readAsText3(file);
+}
+function readAsText3(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(e) {
+		res3 = e.target.result;
+  };
+  reader.readAsText(file);    
+}
+/* END READ FILE */
+
+/* READ LANG */
+function readLang() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLangR, onFSErrorLangR);
+}
+function onFSSuccessLangR(fileSystem) {
+    fileSystem.root.getFile(srcLang, {create:false, exclusive:false}, gotFileEntryLangR, onFSErrorLangR);
+	rootURL = fileSystem.root.toURL();
+}
+function gotFileEntryLangR(fileEntry) {
+    fileEntry.file(gotFileLangR, onFSErrorLangR);
+}
+function gotFileLangR(file) {
+    readAsTextLangR(file);
+}
+function readAsTextLangR(file) {
+	var reader = new FileReader();
+	reader.onloadend = function(evt) {
+		resLang = evt.target.result;
+	};
+	reader.readAsText(file);    
+}
+function onFSErrorLangR(err) {
+	var p = path();
+	//alert("Pierwsze uruchomienie");
+	//copyFirstPath();
+	resLang = '{"lang":-1}';
+}
+/* END READ FILE */
+
+/* READ FILE */
+function readWriteFile() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onFSError);
+}
+function onFSSuccess(fileSystem) {
+    fileSystem.root.getFile(srcFile, {create:false, exclusive:false}, gotFileEntry, onFSError);
+}
+function gotFileEntry(fileEntry) {
+    fileEntry.file(gotFile, onFSError);
+}
+function gotFile(file) {
+    readAsText(file);
+}
+function readAsText(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(e) {
+		afterReadToLearn(e.target.result);
+  };
+  reader.readAsText(file);    
+}
+function onFSError(err) {
+	var p = path();
+	//alert("Ładownie...proszę czekać...");
+	//copyFirstPath();
+	res = "[]";
+}
+/* END READ FILE */
+
+/* READ FILE2 */
+function readWriteFile2() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess2, onFSError);
+}
+function onFSSuccess2(fileSystem) {
+    fileSystem.root.getFile(srcFile2, {create:false, exclusive:false}, gotFileEntry2, onFSError);
+}
+function gotFileEntry2(fileEntry) {
+    fileEntry.file(gotFile2, onFSError);
+}
+function gotFile2(file) {
+    readAsText2(file);
+}
+function readAsText2(file) {
+	var reader = new FileReader();
+	reader.onloadend = function(e) {
+		afterNoticeRead(e.target.result);
+	};
+	reader.readAsText(file);    
+}
+/* END READ FILE */
+
+/* SAVE FILE */
+
+var srcSaveTmp = false;
+var srcSaveOld = false;
+var srcSaveDayTmp = false;
+var endTodayLesson = false;
+
+function saveFile(){
+	
+	//				endLearn();
+		
+	srcSaveTmp = path() + "save_tmp.json";
+	srcSaveOld = path() + "save_old.json";
+	//renameFile(srcSave,'',srcSaveOld, renameSuccessSave);
+	saveFileOld();
+}
+
+function renameSuccessSave(){
+	saveFileOld();
+}
+
+function saveFileOld(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN2, failN);
+}
+
+function gotFSN2(fileSystem) {
+	fileSystem.root.getFile(srcSaveTmp, {create: true}, gotFileEntryN2, failN);
+}
+
+function gotFileEntryN2(fileEntry) {
+	fileEntry.createWriter(gotFileWriterN2, failN);
+}
+
+function gotFileWriterN2(writer) {
+
+	writer.onwriteend = function (e) {
+		renameFile(srcSaveTmp,'',srcSave, renameSuccessSaveEnd);
+	};
+	
+	writer.write(JSON.stringify(datesJSON));
+	writer.abort();
+}
+
+function renameSuccessSaveEnd(){
+	//zapisz dzień
+	saveFile5();
+}
+
+function failN(error) {
+	//alert("error : "+error.code);
+}
+/* END SAVE FILE */
+
+/* SAVE LANG */
+function saveMyLang(mylang){
+	langJSON.lang = mylang;
+	getCatWithPos(0, 1);
+	saveLang();
+}
+function saveLang(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSNLang, failN);
+}
+
+function gotFSNLang(fileSystem) {
+	fileSystem.root.getFile(srcLang, {create: true}, gotFileEntryLang, failN);
+}
+
+function gotFileEntryLang(fileEntry) {
+	fileEntry.createWriter(gotFileWriterLang, failN);
+}
+
+function gotFileWriterLang(writer) {
+	writer.onwrite = function(evt) {
+		console.log("write success");
+	};
+	writer.write(JSON.stringify(langJSON));
+	writer.abort();
+}
+/* END SAVE FILE */
+
+/* SAVE FILE2 - DAY*/
+function saveFile5(){
+	srcSave5 = path() + "day.json";
+	srcSaveDayTmp = path() + "day_tmp.json";
+	saveFileDay();
+}
+
+function saveFileDay(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN5, failN);
+}
+
+function gotFSN5(fileSystem) {
+	fileSystem.root.getFile(srcSaveDayTmp, {create: true}, gotFileEntryN5, failN);
+}
+
+function gotFileEntryN5(fileEntry) {
+	fileEntry.createWriter(gotFileWriterN5, failN);
+}
+
+function gotFileWriterN5(writer) {
+	writer.onwriteend = function (e) {
+		renameFile(srcSaveDayTmp,'',srcSave5, renameSuccessSaveDayEnd);
+	};
+	
+	//alert(JSON.stringify(datesJSON5));
+	writer.write(JSON.stringify(datesJSON5));
+	writer.abort();
+}
+
+function renameSuccessSaveDayEnd(){
+	if(endTodayLesson){
+		endLearn();
+	}
+}
+
+/* END SAVE FILE */
+
+/*POTRZEBNE ZMIENNE*/
+var wordsInOneCat = 10;
+var minCat = 7;
+var countOfCycle = 2;
+var countCatInFirstBigCat = 10;
+var firstCycle = false;
+var secondCycle = false;
+var thirdCycle = false;
+var srcSave = false;
+var srcSave5 = false;
+var srcLang = false;
+var datesJSON = false;
+var datesJSON5 = false;
+var dayJSONwordsCopy = 0;
+var learnedWordsCopy = 0;
+
+
+var langJSON = JSON.parse('{"lang":-1}');
+var dayJSON = false;
+var toLearnJSON = [];
+
+/*
+var langJSON = JSON.parse('{"lang":2}');
+var dayJSON = JSON.parse('{"day": 3, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"10"}]');
+*/
+
+var dayJSONwordsCopy = dayJSON.words;
+var	toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
+var resLang = false;
+var res = false;
+var srcFile = false;
+var res2 = false;
+var srcFile2 = false;
+var res3 = false;
+var srcFile3 = false; 
+var noticeJSON = [];
+var likedJSON = [];
+var isFirstCycle = true;
+var startLearn = false;
+var toLearn = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 ];
+var countWord = 0;
+var countCatsToLearn = 0; //without repeatitions
+var countCatsToLearnToday = 1; //with repeatitions
+var countWordsToLearn = wordsInOneCat + (wordsInOneCat*2)//wordsInOneCat*2; //2 cykle w nowej kategorii po 10 słów
+var learnedWords = 0;
+var learnedWordsInCat = 0;
+var countWordsToLearnInThisCycle = 0;
+var suggestedCatPath = "";
+var suggestedCatName = "";
+var learnedCat = [];
+var inProgressCat = [];
+var missingCat = [];
+var gameIsBegin = false;
+var allCats = [];
+var allUsedCats = [];
+var allEndedCats = [];
+var todayEndedCat = "";
+var rootURL = "";
+var lessonsJumpToFuture = 0;
+var hasNewCatsToday = false;
+
+
+
 function startApp(){
 	alert("1");
 }
 
 function setTextWidth(){
 	alert("2");
-}
-
-function hideBars(){
-	alert("3");
 }
 
 function volumeTest(){
@@ -167,3 +491,5 @@ function volumeTest(){
 function checkConnection() {
 	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
 }
+
+
