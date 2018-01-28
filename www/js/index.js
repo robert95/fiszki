@@ -3564,17 +3564,126 @@ function startVoiceToText(){
 
 }
 
+function startRecognize(){
+	//$(".support-word-in-speach").show();
+	stopTelling();
+	
+	var langText = "en-US"
+	var options = {
+		language: langText,
+		matches: 2,
+		prompt: ((nbMethod == 6 || nbMethod == 5 || (nbMethod == 4 && nbStep == 0 && $("#nav-words-container p.activ").index() == 9)) ? act_trans : act_word),
+		showPopup: true
+	};
 
-/*
-function setTextWidth(){
-	alert("2");
+	window.plugins.speechRecognition.startListening(
+		function(matches){
+			if(matches[0] != ''){
+				var text = matches[0];
+				$(".recText").text(text);
+		
+				$("#l-n-1").hide();
+				$("#l-n-2").hide();
+				$("#l-n-3").hide();
+				$("#l-n-4").hide();
+				$("#l-n-5").hide();
+				$("#l-n-6").hide();
+				
+				$("#l-e-1").hide();
+				$("#l-e-2").hide();
+				$("#l-e-3").hide();
+				$("#l-e-4").hide();
+				$("#l-e-5").hide();
+				$("#l-e-6").hide();
+				
+				$("#l-t-1").hide();
+				$("#l-t-2").hide();
+				$("#l-t-3").hide();
+				$("#l-t-4").hide();
+				$("#l-t-5").hide();
+				$("#l-t-6").hide();
+				
+				$(".recTextWrap").show();				
+				$(".recText").show();
+				
+				$(".show-hidden-word").next("p").show();
+				$(".show-hidden-word").hide();
+				
+				compareRecognizedText(text);
+				$(".support-word-in-speach").hide();
+			}
+		},
+		function(){
+			$(".support-word-in-speach").hide();
+		},
+		options
+	);
 }
 
-function volumeTest(){
-	alert("4");
+function compareRecognizedText(text){
+	var correctText = $(".learnMethod:visible .text-trans-word").text();
+	if(text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')){
+		countOfWrongRecognized = 0;
+		$(".learnMethod").addClass('goodRec');
+		$(".learnMethod").removeClass('badRec');
+		$(".cloud-again").hide();
+		$(".cloud-next-task").hide();
+		setTimeout(function(){ isOkWrap(); }, 500);
+	}else{
+		$(".learnMethod").removeClass('goodRec');
+		$(".learnMethod").addClass('badRec');
+		$(".cloud-again").show();
+		$(".cloud-next-task").show();
+		$(".remind-img").hide();
+		countOfWrongRecognized++;
+		if(countOfWrongRecognized == 1){
+			tellMe();
+		}
+		if(countOfWrongRecognized == 2){
+			showRecognizedAlert();
+		}
+		if(countOfWrongRecognized == 3){
+			showRecognizedAlert2();
+		}
+		if(countOfWrongRecognized == 4){
+			countOfWrongRecognized = 0;
+			showRecognizedAlert3();
+		}
+	}
 }
 
-function checkConnection() {
-	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
+function showRecognizedAlert(){
+	navigator.notification.confirm(
+		getTrans(t_recognize_error_first_text),
+		showRecognizedAlertCallback,
+		getTrans(t_recognize_error_title),
+		getTrans(t_recognize_error_try_again) + "," + getTrans(t_recognize_error_skip)
+	);
 }
-*/
+
+function showRecognizedAlert2(){
+	navigator.notification.confirm(
+		getTrans(t_recognize_error_second_text),
+		showRecognizedAlertCallback,
+		getTrans(t_recognize_error_title),
+		getTrans(t_recognize_error_try_again) + "," + getTrans(t_recognize_error_skip)
+	);
+}
+
+function showRecognizedAlert3(){
+	navigator.notification.confirm(
+		getTrans(t_recognize_error_third_text),
+		showRecognizedAlertCallback,
+		getTrans(t_recognize_error_title),
+		getTrans(t_recognize_error_try_again) + "," + getTrans(t_recognize_error_skip)
+	);
+}
+
+function showRecognizedAlertCallback(buttonIndex){
+	if(buttonIndex == 1){
+		startVoiceToText();
+	}
+	if(buttonIndex == 2){
+		isOkWrap();
+	}
+}
