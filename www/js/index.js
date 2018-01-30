@@ -3719,7 +3719,7 @@ function renameFail() {
    // alert('failed');
 }
 
-/*
+
 function skipRepetition(){
 	$("#start-next-cat").addClass('next-cat-left');
 	$("#learn-container").hide();
@@ -3740,8 +3740,8 @@ function skipRepetition(){
 		packControler();
 	}, 500);
 }
-*/
 
+/*
 function showEndNewMaterialsInfo(){
 	if(hasNewCatsToday){
 		navigator.notification.confirm(
@@ -3756,7 +3756,7 @@ function showEndNewMaterialsInfo(){
 function showEndNewMaterialsInfoCallback(buttonIndex){
 	return 1;
 }
-
+*/
 
 function returnInLearn(){
 	$("#learn-container").addClass('next-cat-left');
