@@ -3708,7 +3708,7 @@ function renameFile(currentName, currentDir, newName, successFunction) {
     }, renameFail);
 }
 
-/*
+
 //and the sample success function
 function renameSuccess() {
     //alert('renamed!');
@@ -3719,6 +3719,7 @@ function renameFail() {
    // alert('failed');
 }
 
+/*
 function skipRepetition(){
 	$("#start-next-cat").addClass('next-cat-left');
 	$("#learn-container").hide();
