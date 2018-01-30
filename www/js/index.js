@@ -1,3 +1,21 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 
 t_not_connected_text = ['Make sure that your Wi-Fi or cellular mobile data is turned on and then try again.', 'Upewnij się, że Wifi lub  dane komórkowe są włączone, a następnie spróbuj ponownie.', 'Asegúrate que el WiFi o datos móviles están activados e inténtalo otra vez.', 'Vergewissere dich, dass dein WLAN oder Mobilfunknetz eingeschaltet ist und versuche es dann nochmal.', 'Assurez-vous que le Wi-Fi ou les données mobiles sont activées et essayez de nouveau.'];
 t_not_connected_title = ['No internet connection', 'Nie można połączyć się z internetem', 'No hay conexión a internet', 'Keine Internetverbindung', 'Pas de connexion Internet'];
@@ -75,11 +93,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
-		alert("aaa");
-
 		var src = '/android_asset/www/date/1.m4a';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
-
 		
 		if(!checkConnection()){	
 			navigator.notification.confirm(
@@ -92,10 +107,9 @@ var app = {
 			startApp();
 			setTextWidth();
 		}
-		
 		document.addEventListener("resume", hideBars, false);
-
-		
+		/*var autoHideNavigationBar = true;
+		if($( window ).width() < 600) window.navigationbar.setUp(autoHideNavigationBar); */
 		if($( window ).width() > 600) {
 			StatusBar.hide();	
 		}else{
@@ -125,14 +139,27 @@ var app = {
 			}, 50);
 			prepareAd();
 		});
-	
+		
+	/*	document.addEventListener("pause", function() {
+			navigator.notification.confirm(
+				"Jeżeli zamkniesz teraz aplikacje Twój dzisiejszy postęp nie zostanie zapisany!",
+				onConfirm,
+				"Uwaga!",
+				"Anuluj, Wyjście"
+			);
+		});*/
+		
 		document.addEventListener("backbutton", function (e) {
             e.preventDefault();
         }, false );
 		
 		setTextWidth();
 		
-		volumeTest();		
+		volumeTest();
+		
+		//smoothLoadProgressBarWelcome();
+		
+		
 
     },
     // Update DOM on a Received Event
@@ -147,7 +174,6 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
 function emptyFunctionS(){
 	console.log("jestem");
 }
@@ -473,9 +499,6 @@ var todayEndedCat = "";
 var rootURL = "";
 var lessonsJumpToFuture = 0;
 var hasNewCatsToday = false;
-
-
-
 
 /* START APP*/
 function startApp(){
@@ -3688,9 +3711,9 @@ function showRecognizedAlertCallback(buttonIndex){
 	}
 }
 
-
 //the function
 function renameFile(currentName, currentDir, newName, successFunction) {
+
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
 
         fileSystem.root.getFile(currentDir + currentName, null, function (fileEntry) {
@@ -3708,7 +3731,6 @@ function renameFile(currentName, currentDir, newName, successFunction) {
     }, renameFail);
 }
 
-
 //and the sample success function
 function renameSuccess() {
     //alert('renamed!');
@@ -3718,7 +3740,6 @@ function renameSuccess() {
 function renameFail() {
    // alert('failed');
 }
-
 
 function skipRepetition(){
 	$("#start-next-cat").addClass('next-cat-left');
@@ -3778,7 +3799,6 @@ function hideSpeachClouds(){
 	$(".cloud-perfect-all-words").hide();
 	$(".cloud-you-said-all-words").hide();
 }
-
 
 var checkingWordWrapper;
 function checkMeWord(word_text, obj){
@@ -4119,3 +4139,4 @@ function updatePlaceholders(){
 	$(".noteTEXT").attr("placeholder", getTrans(t_placeholder_hint_text));
 	console.log('bbb');
 }
+				
