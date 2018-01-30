@@ -3719,7 +3719,7 @@ function renameFail() {
    // alert('failed');
 }
 
-
+/*
 function skipRepetition(){
 	$("#start-next-cat").addClass('next-cat-left');
 	$("#learn-container").hide();
@@ -3740,7 +3740,7 @@ function skipRepetition(){
 		packControler();
 	}, 500);
 }
-
+*/
 
 function showEndNewMaterialsInfo(){
 	if(hasNewCatsToday){
@@ -3757,7 +3757,7 @@ function showEndNewMaterialsInfoCallback(buttonIndex){
 	return 1;
 }
 
-/*
+
 function returnInLearn(){
 	$("#learn-container").addClass('next-cat-left');
 	setTimeout(function(){
@@ -3780,4 +3780,3 @@ function hideSpeachClouds(){
 	$(".cloud-perfect-all-words").hide();
 	$(".cloud-you-said-all-words").hide();
 }
-*/
