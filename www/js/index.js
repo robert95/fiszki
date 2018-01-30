@@ -3780,3 +3780,344 @@ function hideSpeachClouds(){
 	$(".cloud-perfect-all-words").hide();
 	$(".cloud-you-said-all-words").hide();
 }
+
+
+var checkingWordWrapper;
+function checkMeWord(word_text, obj){
+	checkingWordWrapper = $(obj);
+	stopTelling();
+	$("#savedWordsContainer p").removeClass('good-telling-word');
+	$("#savedWordsContainer p").removeClass('bad-telling-word');
+	$("#show-all-cats-cats-wordlist p").removeClass('good-telling-word');
+	$("#show-all-cats-cats-wordlist p").removeClass('bad-telling-word');
+	
+	/*
+			if(((Math.random() * 10) + 1 ) > 5){
+				checkingWordWrapper.closest('.text').addClass('good-telling-word');
+			}else{
+				checkingWordWrapper.closest('.text').addClass('bad-telling-word');
+			}
+	*/
+	
+	
+	startRecognizeInAllWords(word_text);
+	
+}
+
+function startRecognizeInAllWords(correct_text){
+	var langText = "en-US"
+	var options = {
+		language: langText,
+		matches: 2,
+		prompt: correct_text,
+		showPopup: true
+	};
+
+	window.plugins.speechRecognition.startListening(
+		function(matches){
+			if(matches[0] != ''){
+				var text = matches[0];
+				compareRecognizedTextInAllWords(text, correct_text);
+			}
+		},
+		function(){
+			
+		},
+		options
+	);
+}
+
+function compareRecognizedTextInAllWords(text, correctText){
+	if(text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')){
+		checkingWordWrapper.closest('.text').addClass('good-telling-word');
+	}else{
+		checkingWordWrapper.closest('.text').addClass('bad-telling-word');
+	}
+}
+
+/* LIKED WORDS */
+function changeLiked(word_sygn){
+	if(isLikedWord(word_sygn)){
+		removeFromlikedJSON(word_sygn);
+		saveLikedWords();
+	}else{
+		addToLikedJSON(word_sygn)
+		saveLikedWords();
+	}
+}
+
+function removeFromlikedJSON(word_sygn){
+	window.plugins.toast.showWithOptions(
+		{
+			message: getTrans(t_liked_words_remove),
+			duration: "short", 
+			position: "bottom"
+		}
+	);
+	for(var i in likedJSON){
+		if(likedJSON[i] == word_sygn){
+			likedJSON.splice(i,1);
+			break;
+		}
+	}
+}
+
+function addToLikedJSON(word_sygn){
+	window.plugins.toast.showWithOptions(
+		{
+			message: getTrans(t_liked_words_added),
+			duration: "short", 
+			position: "bottom"
+		}
+	);
+	likedJSON.push(word_sygn);
+}
+
+function setActuLikedIcon(){
+	if(isLikedWord(getPathToActuWord())){
+		$(".star-liked").attr('src', 'img/star_check.png');
+	}else{
+		$(".star-liked").attr('src', 'img/star.png');
+	}
+}
+
+function isLikedWord(word_sygn){
+	if(likedJSON.length == 0){
+		return false;
+	}
+	for(var x in likedJSON){
+		var word = likedJSON[x];
+		if(word == word_sygn){
+			return true;
+		}
+		if(x == likedJSON.length -1){
+			return false;
+		}
+	}
+}
+
+function getPathToActuWord(){
+	var idParentCat = $("#myParentCat").val();
+	var idSubCat = $("#myCat").val();
+	var id = $('#idWord').val();
+	return (idParentCat+"\\"+idSubCat+"\\"+id);
+}
+
+//reading
+function readLikedWords() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLiked, onFSError);
+}
+function onFSSuccessLiked(fileSystem) {
+    fileSystem.root.getFile((path() + "liked.json"), {create:false, exclusive:false}, gotFileEntryLiked, onFSError);
+}
+function gotFileEntryLiked(fileEntry) {
+    fileEntry.file(gotFileLiked, onFSError);
+}
+function gotFileLiked(file) {
+    readAsTextLiked(file);
+}
+function readAsTextLiked(file) {
+  var reader = new FileReader();
+  reader.onloadend = function(e) {
+		afterReadLikedWords(e.target.result);
+  };
+  reader.readAsText(file);    
+}
+function afterReadLikedWords(res){
+	likedJSON = JSON.parse(res); //PARSOWANIE JSON!!!
+}
+
+//saving
+function saveLikedWords(){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSLiked, failN);
+}
+function gotFSLiked(fileSystem) {
+	fileSystem.root.getFile((path() + "liked.json"), {create: true}, gotFileEntryLikedW, failN);
+}
+function gotFileEntryLikedW(fileEntry) {
+	fileEntry.createWriter(gotFileWriterLiked, failN);
+}
+function gotFileWriterLiked(writer) {
+	writer.onwriteend = function (e) {
+		afterSaveLikedWords();
+	};
+
+	writer.write(JSON.stringify(likedJSON));
+	writer.abort();
+}
+function afterSaveLikedWords(){
+	//coś po zapisaniu liked
+}
+
+function showSavedWords(){
+	$("#savedWordsContainer").text("");
+	for(var x in likedJSON){
+		var word = likedJSON[x].split("\\");
+		showSavedWord(word);
+	}
+}
+function showSavedWord(word){
+	$.get("date/"+ langJSON.lang + "/" + word[0] + "/" + word[1] + "/words.json", function(result) {
+		$.get("date/1/" + word[0] + "/" + word[1] + "/words.json", function(transResult) {
+			var words = JSON.parse(result);
+			var trans = JSON.parse(transResult);
+			var w = words[word[2]-1];
+			var t = trans[word[2]-1];
+			$("#savedWordsContainer").append('<p class="text" onclick="tellMeWord(\'' + word[0] + "/" + word[1] + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\', this); return false;"></p>');
+		});
+	});
+}
+/* END LIKED WORDS */
+runNotifiAfterAd = false;
+function setPopupAboutNoAudioLesson(){
+	runNotifiAfterAd = false;
+	if(suggestedCatHasAudio == false){
+		if(getWaitForAd() == false){
+			navigator.notification.confirm(
+				getTrans(t_no_audio_lesson_text),
+				setPopupAboutNoAudioLessonBTNCallBack,
+				getTrans(t_no_audio_lesson_title),
+				getTrans(t_no_audio_lesson_learn_anyway) + "," + getTrans(t_no_audio_lesson_upgrade) + "," + getTrans(t_no_audio_lesson_skip)
+			);
+		}else{
+			runNotifiAfterAd = true;
+		}
+	}
+}
+
+function setPopupAboutNoAudioLessonInPhraseBrowser(){
+	navigator.notification.confirm(
+		getTrans(t_no_audio_lesson_text),
+		setPopupAboutNoAudioLessonBTNCallBack,
+		getTrans(t_no_audio_lesson_title),
+		getTrans(t_no_audio_lesson_learn_anyway) + "," + getTrans(t_no_audio_lesson_upgrade)
+	);
+}
+
+function setPopupAboutNoAudioLessonBTNCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		return true;
+	}
+	if(buttonIndex == 2){
+		goToPremiumVersion();
+	}
+	if(buttonIndex == 3){
+		showConfirmSkipLesson();
+	}
+}
+
+function actionAfterCloseAd(){
+	setWaitForAd(false);
+	if(runNotifiAfterAd){
+		setPopupAboutNoAudioLesson();
+	}
+	runNotifiAfterAd = false;
+}
+
+function showMuteIcon(){
+	if(suggestedCatHasAudio == false){
+		$("#suggest-new-category").addClass('no-audio-name');
+	}else{
+		$("#suggest-new-category").removeClass('no-audio-name');
+	}
+}
+
+function showConfirmBackAlert(){
+	navigator.notification.confirm(
+		getTrans(t_confirm_back_in_learn_text),
+		showConfirmBackAlertCallBack,
+		getTrans(t_confirm_back_in_learn_title),
+		getTrans(t_confirm_back_in_learn_back) + "," + getTrans(t_confirm_back_in_learn_cancel)
+	);
+}
+
+function showConfirmBackAlertCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		returnInLearn();
+	}
+	if(buttonIndex == 2){
+		return true;
+	}
+}
+
+/* CONFIRM LEARN THE SAME CATEGORY */
+var theSameSugCatObjTMP;
+function showConfirmLearnMissingCat(obj){
+	theSameSugCatObjTMP = obj;
+	navigator.notification.confirm(
+		getTrans(t_confirm_learn_missing_cat_text),
+		showConfirmLearnMissingCatCallBack,
+		getTrans(t_confirm_learn_missing_cat_title),
+		getTrans(t_confirm_learn_missing_cat_yes) + "," + getTrans(t_confirm_learn_missing_cat_cancel)
+	);
+}
+function showConfirmLearnMissingCatCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		agreeToCheckTheUsedCatAsSug = true;
+		getThisCatAsSug(theSameSugCatObjTMP);
+	}
+	if(buttonIndex == 2){
+		theSameSugCatObjTMP = false;
+		return true;
+	}
+}
+function showConfirmLearnInProgressCat(obj){
+	theSameSugCatObjTMP = obj;
+	navigator.notification.confirm(
+		getTrans(t_confirm_learn_inprogress_cat_text),
+		showConfirmLearnInProgressCatCallBack,
+		getTrans(t_confirm_learn_inprogress_cat_title),
+		getTrans(t_confirm_learn_inprogress_cat_yes) + "," + getTrans(t_confirm_learn_inprogress_cat_cancel)
+	);
+}
+function showConfirmLearnInProgressCatCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		agreeToCheckTheUsedCatAsSug = true;
+		getThisCatAsSug(theSameSugCatObjTMP);
+	}
+	if(buttonIndex == 2){
+		theSameSugCatObjTMP = false;
+		return true;
+	}
+}
+
+/* SKIP LESSON CONFIRM */
+function showConfirmSkipLesson(){
+	navigator.notification.confirm(
+		getTrans(t_confirm_skip_lesson_text),
+		showConfirmSkipLessonCallBack,
+		getTrans(t_confirm_skip_lesson_title),
+		getTrans(t_confirm_skip_lesson_skip) + "," + getTrans(t_confirm_skip_lesson_cancel)
+	);
+}
+
+function showConfirmSkipLessonCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		getNextSugCat();
+	}
+	if(buttonIndex == 2){
+		return true;
+	}
+}
+
+/* exit app */
+function showExitAppConfirm(){
+	navigator.notification.confirm(
+		getTrans(t_confirm_exit_text),
+		showExitAppConfirmCallBack,
+		getTrans(t_confirm_exit_title),
+		getTrans(t_confirm_exit_cancel) + "," + getTrans(t_confirm_exit_exit)
+	);
+}
+
+function showExitAppConfirmCallBack(button) {
+	if(button == 2){
+		navigator.app.exitApp();
+	}
+}
+
+function updatePlaceholders(){
+	$(".fuzzy-search").attr("placeholder", getTrans(t_placeholder_fuzzy_search));
+	$(".noteTEXT").attr("placeholder", getTrans(t_placeholder_hint_text));
+	console.log('bbb');
+}
