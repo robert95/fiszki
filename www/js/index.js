@@ -3691,9 +3691,6 @@ function showRecognizedAlertCallback(buttonIndex){
 
 //the function
 function renameFile(currentName, currentDir, newName, successFunction) {
-	return 1;
-
-	/*
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
 
         fileSystem.root.getFile(currentDir + currentName, null, function (fileEntry) {
@@ -3709,10 +3706,9 @@ function renameFile(currentName, currentDir, newName, successFunction) {
         }, renameFail);
 
     }, renameFail);
-	
-	*/
 }
 
+/*
 //and the sample success function
 function renameSuccess() {
     //alert('renamed!');
@@ -3781,3 +3777,4 @@ function hideSpeachClouds(){
 	$(".cloud-perfect-all-words").hide();
 	$(".cloud-you-said-all-words").hide();
 }
+*/
