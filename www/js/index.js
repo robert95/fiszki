@@ -3741,14 +3741,13 @@ function skipRepetition(){
 	}, 500);
 }
 
-/*
 function showEndNewMaterialsInfo(){
 	if(hasNewCatsToday){
 		navigator.notification.confirm(
 			getTrans(t_end_new_materials_text),
 			showEndNewMaterialsInfoCallback,
 			getTrans(t_end_new_materials_title),
-			getTrans(t_end_new_materials_ok),
+			getTrans(t_end_new_materials_ok)
 		);
 	}
 }
@@ -3756,7 +3755,6 @@ function showEndNewMaterialsInfo(){
 function showEndNewMaterialsInfoCallback(buttonIndex){
 	return 1;
 }
-*/
 
 function returnInLearn(){
 	$("#learn-container").addClass('next-cat-left');
