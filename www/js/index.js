@@ -3600,8 +3600,8 @@ function startVoiceToText(){
 					$(".cloud-again").show();
 					$(".cloud-next-task").show();
 					$(".remind-img").hide();
-			*/	}
-			
+				}
+			*/
 		
 		
 
