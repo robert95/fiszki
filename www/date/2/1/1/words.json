@@ -1,14 +1,62 @@
 [
-	{
-		"id": 1,
-		"name": "P1.1.1",
-		"notices": [
-		]
-	},
-	{
-		"id": 2,
-		"name": "P1.1.2",
-		"notices": [
-		]
-	}
-]
+		{
+			"id": 1,
+			"name": "hi/bye",
+			"notices": [
+			]
+		},
+		{
+			"id": 2,
+			"name": "dzień dobry",
+			"notices": [
+			]
+		},
+		{
+			"id": 3,
+			"name": "do widzenia",
+			"notices": [
+			]
+		},
+		{
+			"id": 4,
+			"name": "Cześć/ Do zobaczenia ",
+			"notices": [
+			]
+		},
+		{
+			"id": 5,
+			"name": "Przepraszam/ Nic się nie stało",
+			"notices": [
+			]
+		},
+		{
+			"id": 6,
+			"name": "Tak / Nie",
+			"notices": [
+			]
+		},
+		{
+			"id": 7,
+			"name": "Proszę/ Dziękuję",
+			"notices": [
+			]
+		},
+		{
+			"id": 8,
+			"name": "Dziękuję bardzo ",
+			"notices": [
+			]
+		},
+		{
+			"id": 9,
+			"name": "Nie ma za co",
+			"notices": [
+			]
+		},
+		{
+			"id": 10,
+			"name": "nie ma o czym mówić",
+			"notices": [
+			]
+		}
+	]
