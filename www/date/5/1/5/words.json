@@ -1,61 +1,13 @@
 [
 	{
 		"id": 1,
-		"name": "P1.5.1",
+		"name": "F1.5.1",
 		"notices": [
 		]
 	},
 	{
 		"id": 2,
-		"name": "P1.5.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "P1.5.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "P1.5.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "P1.5.5",
-		"notices": [
-		]
-	},
-	{
-		"id": 6,
-		"name": "P1.5.6",
-		"notices": [
-		]
-	},
-	{
-		"id": 7,
-		"name": "P1.5.7",
-		"notices": [
-		]
-	},
-	{
-		"id": 8,
-		"name": "P1.5.8",
-		"notices": [
-		]
-	},
-	{
-		"id": 9,
-		"name": "P1.5.9",
-		"notices": [
-		]
-	},
-	{
-		"id": 10,
-		"name": "P1.5.10",
+		"name": "F1.5.2",
 		"notices": [
 		]
 	}

@@ -30,9 +30,9 @@ t_recognize_error_first_text = ['Try to speak more clearly and loudly.', 'Staraj
 t_recognize_error_second_text = ["Please try to say the phrase in exactly the same way as you heard it. This applies to vocabulary and contractions.", 'Postaraj się wymówić wyrażenie w taki sam sposób w jaki je usłyszałeś (dotyczy to zarówno słownictwa jak i skrótów).', 'Trata de decir la frase exactamente de la misma forma que la has oído (haz lo mismo tanto con el vocabulario como con las contracciones).', 'Bitte wiederhole den Satz genauso, wie du ihn gehört hast. Das gilt auch für Vokabeln und Kontraktionen.', "Essayez de dire la phrase dans le même ordre que vous l'avez entendu (cela s'applique au vocabulaire et aux contractions)."];
 t_recognize_error_third_text = ["Remember sometimes speech recognition is not accurate.", 'Pamiętaj że czasami rozpoznawanie mowy jest niedokładne.', 'Recuerda que a veces el reconocimiento de voz no es preciso.', 'Denke daran, das die Spracherkennung manchmal nicht exakt ist.', "Souvenez- vous que parfois, le système de reconnaissance vocal n'est pas précis. Essayez à nouveau ou passez la tâche."];
 t_end_new_materials_title = ["Congratulations!", "Gratulacje!", "¡Enhorabuena!", "Herzlichen Glückwunsch!", "Félicitations!"];
-t_end_new_materials_text = ["You went through all the content. Now repeat the lessons to become a Pro.", "BRAK TŁUMACZENIA", "Ya has completado todo el contenido. Ahora, repite las lecciones para convertirte en un profesional.", "Du hast den gesamten Inhalt erarbeitet. Wiederhole jetzt die Lektionen, um ein Profi zu werden.", "Vous avez parcouru tout le contenu. Maintenant, répétez les leçons pour devenir un pro."];
+t_end_new_materials_text = ["You went through all the content. Now repeat the lessons to become a Pro.", "Ukończyłeś naukę wszystkich wyrażeń. Od następnej lekcji będziesz jedynie utrwalał materiał.", "Ya has completado todo el contenido. Ahora, repite las lecciones para convertirte en un profesional.", "Du hast den gesamten Inhalt erarbeitet. Wiederhole jetzt die Lektionen, um ein Profi zu werden.", "Vous avez parcouru tout le contenu. Maintenant, répétez les leçons pour devenir un pro."];
 t_end_new_materials_ok = ["OK", "OK", "OK", "OK", "OK"];
-t_liked_words_added = ["Phrase has been added to Favourites.", "Fraza została dodana do ulubionych.", "Frase añadida a Favoritos.", "Der Satz wurde zu deinen Favoriten hinzugefügt.", "La phrase a été ajoutée à vos favoris."];
+t_liked_words_added = ["Phrase has been added to Favourites.", "Fraza została dodana do zakładki ulubione.", "Frase añadida a Favoritos.", "Der Satz wurde zu deinen Favoriten hinzugefügt.", "La phrase a été ajoutée à vos favoris."];
 t_liked_words_remove = ["BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
 t_no_audio_lesson_title = ["Audio not available.", "Nagrania audio niedostępne.", "Audio no disponible.", "Audio nicht verfügbar.", "L'audio n'est pas disponible."];
 t_no_audio_lesson_text = ["This free version comes with 90 audio lessons. If you would like to get audio to all 180 lessons, upgrade to xxx Pro.", "Darmowa wersja aplikacji zawiera 90 lekcji audio. Jeśli chciałbyś otrzymać nagrania do wszystkich 180 lekcji kup xxx Pro.", "La versión gratuita de la aplicación contiene 90 lecciones de audio. Si deseas recibir las grabaciones de todas las 180 lecciones, compra xxx Pro.", "Diese kostenlose Version umfasst 90 Audiolektionen. Wenn du die Audios für alle 180 Lektionen haben möchtest, kauf dir xxx Pro.", "Cette version gratuite contient 90 leçons audios. Si vous voulez recevoir les audios pour l'ensemble des 180 leçons, achetez xxx Pro."];
@@ -44,12 +44,12 @@ t_confirm_back_in_learn_text = ["Your progress won't be saved.", "Twój postęp 
 t_confirm_back_in_learn_back = ["Go back", "Wróć", "Volver", "Zurück", "Revenir en arrière"];
 t_confirm_back_in_learn_cancel = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
 t_confirm_learn_missing_cat_title = ["Are you sure?", "Czy jesteś pewien?", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
-t_confirm_learn_missing_cat_text = ["Do you want to learn previously skipped lesson?", "Lekcja została ostatnio pominięta.", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+t_confirm_learn_missing_cat_text = ["Do you want to learn previously skipped lesson?", "Lekcja została ostatnio pominięta. Czy chcesz się uczyć pominiętej lekcji?", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
 t_confirm_learn_missing_cat_yes = ["Learn anyway", "Ucz się", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
 t_confirm_learn_missing_cat_cancel = ["Cancel", "Anuluj", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
 t_confirm_learn_inprogress_cat_title = ["Are you sure?", "Czy jesteś pewien?", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
-t_confirm_learn_inprogress_cat_text = ["You are learning this lesson already.", "Uczysz się już tej lekcji.", "OK", "OK", "OK"];
-t_confirm_learn_inprogress_cat_yes = ["Learn anyway", "Ucz się", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+t_confirm_learn_inprogress_cat_text = ["You are learning this lesson already.", "Uczyłeś się już tej lekcji.", "OK", "OK", "OK"];
+t_confirm_learn_inprogress_cat_yes = ["Learn anyway", "Ucz się mimo to", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
 t_confirm_learn_inprogress_cat_cancel = ["Cancel", "Anuluj", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
 t_confirm_skip_lesson_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro?", "Bist du sicher?", "Etes-vous sûr?"];
 t_confirm_skip_lesson_text = ["Repetition is crucial for your long-term memory.", "Powtarzanie jest kluczowe w procesie zapamiętywania.", "La repetición tiene una importancia fundamental para la memorización a largo plazo.", "Wiederholungen sind für das Langzeitgedächtnis sehr wichtig.", "Répéter est essentiel pour la mémoire à long terme."];
@@ -62,6 +62,9 @@ t_confirm_exit_exit = ["Exit", "Wyjście", "Salir", "Beenden", "Quitter"];
 t_placeholder_fuzzy_search = ["Search for lesson…", "Szukaj lekcji…", "Buscar lección….", "Lektion … suchen", "Chercher la leçon..."];
 t_placeholder_hint_text = ["Click here to write your hint", "PL_Click here to write your hint", "ESP_Click here to write your hint", "DE_Click here to write your hint", "FR_Click here to write your hint"];
 t_lang_rank = ["en", "pl", "es", "de", "fr"];
+t_after_premium_copy_text = ["BRAK TŁUMACZENIA", "Pomyślnie przeniesiono Twój postęp z wersji demo. Jeżeli pominąłeś lekcje, a chciałbyś do nich wrócić, musisz wybrać je ręcznie", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+t_after_premium_copy_title = ["Import data from demo version", "Import danych z wersji demo", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
+t_after_premium_copy_ok = ["OK", "OK", "OK", "OK", "OK"];
 
 //trans["a"] = ["OK", "OK", "OK", "OK", "OK"];
 
@@ -178,13 +181,13 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
-
+/*
 	if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
-
+*/
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -462,7 +465,7 @@ var toLearnJSON = [];
 /*
 var langJSON = JSON.parse('{"lang":2}');
 var dayJSON = JSON.parse('{"day": 3, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"10"}]');
+var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
 */
 
 var dayJSONwordsCopy = dayJSON.words;
@@ -526,6 +529,7 @@ function startApp(){
 			getDay(); //pobierz numer dnia
 			getNotice(); //pobierz notice
 			readLikedWords(); //pobierz liked words
+			updatePlaceholders();
 		}
 	}, 2500);
 }
@@ -596,7 +600,7 @@ function afterGetDay(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	readWriteFile2();
+	//readWriteFile2();
 }
 function afterNoticeRead(resNotice){
 	noticeJSON = JSON.parse(resNotice);
@@ -1329,7 +1333,7 @@ function copyFirstPath(){
 				copyFirstPathPremium();
 			}
 		}, 
-		function() { alert('fail'); }
+		function() { console.log('fail'); }
 	);
 } 
 function copyFirstPathPremium(){
@@ -1348,9 +1352,13 @@ function copyFileFromDemo(srcPath, nameFile, lastfile){
 				fileEntry.copyTo(dirEntry, nameFile,
 					function(){
 						if(lastfile){
+							//pokazujemy info, że progress został pomyślnie skopiowany z wersji demo i jak chce się uczyć pominiętych lekcji to może
+							showAfterCopyToPremiumConfirm();
+							/*
 							setTimeout(function(){ 
 								location.reload(); 
 							}, 100);
+							*/
 						}
 						//alert('copying was successful')
 					},
@@ -1375,6 +1383,29 @@ function copyFileFromDemo(srcPath, nameFile, lastfile){
 		console.log("Error: " + err.toString());
 	});
 }
+
+
+function showAfterCopyToPremiumConfirm(){
+	navigator.notification.confirm(
+		getTrans(t_after_premium_copy_text),
+		showAfterCopyToPremiumConfirmCallBack,
+		getTrans(t_after_premium_copy_title),
+		getTrans(t_after_premium_copy_ok)
+	);
+}
+
+function showAfterCopyToPremiumConfirmCallBack(button) {
+	if(button == 1){
+		setTimeout(function(){ 
+			location.reload(); 
+		}, 100);
+	}else{
+		setTimeout(function(){ 
+			location.reload(); 
+		}, 100);
+	}
+}
+
 /*END TELL ME*/
 
 /*START SAVE NOTATION*/
@@ -3569,8 +3600,8 @@ function startVoiceToText(){
 					$(".cloud-again").show();
 					$(".cloud-next-task").show();
 					$(".remind-img").hide();
-				}
-			*/
+			*/	}
+			
 		
 		
 
@@ -3739,6 +3770,24 @@ function renameSuccess() {
 //and the sample fail function
 function renameFail() {
    // alert('failed');
+}
+
+function showConfirmSkipRepetition(){	
+	navigator.notification.confirm(
+		getTrans(t_confirm_skip_lesson_text),
+		showConfirmSkipRepetitionCallBack,
+		getTrans(t_confirm_skip_lesson_title),
+		getTrans(t_confirm_skip_lesson_skip) + "," + getTrans(t_confirm_skip_lesson_cancel)
+	);
+}
+
+function showConfirmSkipRepetitionCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		skipRepetition();
+	}
+	if(buttonIndex == 2){
+		return true;
+	}
 }
 
 function skipRepetition(){
@@ -4101,12 +4150,14 @@ function showConfirmLearnInProgressCatCallBack(buttonIndex){
 
 /* SKIP LESSON CONFIRM */
 function showConfirmSkipLesson(){
-	navigator.notification.confirm(
-		getTrans(t_confirm_skip_lesson_text),
-		showConfirmSkipLessonCallBack,
-		getTrans(t_confirm_skip_lesson_title),
-		getTrans(t_confirm_skip_lesson_skip) + "," + getTrans(t_confirm_skip_lesson_cancel)
-	);
+	getNextSugCat();
+	
+	//navigator.notification.confirm(
+	//	getTrans(t_confirm_skip_lesson_text),
+	//	showConfirmSkipLessonCallBack,
+	//	getTrans(t_confirm_skip_lesson_title),
+	//	getTrans(t_confirm_skip_lesson_skip) + "," + getTrans(t_confirm_skip_lesson_cancel)
+	//);
 }
 
 function showConfirmSkipLessonCallBack(buttonIndex){

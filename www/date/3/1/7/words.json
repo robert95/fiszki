@@ -1,61 +1,13 @@
 [
 	{
 		"id": 1,
-		"name": "F1.7.1",
+		"name": "H1.7.1",
 		"notices": [
 		]
 	},
 	{
 		"id": 2,
-		"name": "F1.7.2",
-		"notices": [
-		]
-	},
-	{
-		"id": 3,
-		"name": "F1.7.3",
-		"notices": [
-		]
-	},
-	{
-		"id": 4,
-		"name": "F1.7.4",
-		"notices": [
-		]
-	},
-	{
-		"id": 5,
-		"name": "F1.7.5",
-		"notices": [
-		]
-	},
-	{
-		"id": 6,
-		"name": "F1.7.6",
-		"notices": [
-		]
-	},
-	{
-		"id": 7,
-		"name": "F1.7.7",
-		"notices": [
-		]
-	},
-	{
-		"id": 8,
-		"name": "F1.7.8",
-		"notices": [
-		]
-	},
-	{
-		"id": 9,
-		"name": "F1.7.9",
-		"notices": [
-		]
-	},
-	{
-		"id": 10,
-		"name": "F1.7.10",
+		"name": "H1.7.2",
 		"notices": [
 		]
 	}

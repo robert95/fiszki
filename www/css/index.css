@@ -560,10 +560,10 @@ textarea:focus, textarea:hover, textarea:active{
 	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.62) 1%,rgba(255,255,255,0) 8%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.62) 1%,rgba(255,255,255,0) 8%);
 	color: white !important;
-	border-bottom: 1px solid white;
-	border-radius: 25px;
-	border-top: 1px solid white;
 	top: 70px;
+	border-radius: 25px;
+	border-bottom: 1px solid white;
+	border-top: 1px solid white;
 }
 #word-lern-6{
 	position: relative;
@@ -977,10 +977,19 @@ section{
 	z-index: 0;
 }
 .note-skip-btn div{
+	/*
 	width: 50%;
 	height: 87px;
 	float: left;
 	font-size: 24px;
+	*/
+
+	width: 49%;
+    height: 87px;
+    /*float: left;*/
+    font-size: 24px;
+    display: inline-block;
+	position: relative;
 }
 .note-skip-btn  .note-btn-hover{
 	/*background: transparent url("../img/note-btn-h.png") repeat scroll 0% 0% / cover !important;
@@ -1011,21 +1020,23 @@ section{
 	border-radius: 25px;
 	border-top: 1px solid white;*/
 }
-.note-skip-btn  .note-btn p{
+.note-skip-btn .note-btn p{
 	padding-left: 15px;
 	text-align: left;
 	margin-top: 48px;
 	font-size: 21px;
 	font-weight: bold;
+	position: relative;
+    display: block;
 }
-.note-skip-btn  .note-btn p span.text{
+.note-skip-btn .note-btn p span.text{
     margin-top: -29px;
     margin-left: -10px;
-    width: auto;
-    padding: 6px 0;
-    font-size: 16px;
+    padding: 11px 0;
+    font-size: 11px;
     display: inline-block;
     width: 80%;
+	min-width: 0 !important;
 }
 #new-category-choice .note-skip-btn  .note-btn p span.text{
 	padding: 11px 15px !important;
@@ -1054,20 +1065,22 @@ section{
 .note-skip-btn  .skip-btn p span.text{
 	margin-top: -29px;
 	margin-right: -10px;
-	padding: 6px 25px;
+	padding: 11px 0 !important;
 	width: auto;
+	min-width: 0 !important;
 }
 #learn-container .note-skip-btn  .skip-btn p span.text, #new-tutorial .note-skip-btn  .skip-btn p span.text{
-	padding: 6px 0;
-	font-size: 15px;
+	padding: 11px 0;
+	font-size: 11px;
 	display: inline-block;
 	width: 80%;
+	min-width: 0 !important;
 }
 #learn-container .note-skip-btn  .skip-btn p span.text img, #new-tutorial .note-skip-btn  .skip-btn p span.text img{
-	margin-left: -3px;
-    height: 16px;
-    position: relative;
-    top: 3px;
+	margin-left: 2px;
+	height: 11px;
+	position: relative;
+	top: 2px;
 }
 #new-category-choice .note-skip-btn  .skip-btn p span.text{
     font-size: 11px;
@@ -1194,8 +1207,10 @@ section{
 	display: none;
 	position: absolute;
 	top: -5px;
-	left: 5px;
-	width: 29%;
+	/*left: 5px;
+	width: 29%;*/
+	left: 13px;
+	width: 54%;
 }
 #first-use-loading-page #progress-circle{
 	position: absolute;
@@ -1847,9 +1862,9 @@ textarea, textarea[placeholder]{
     font-size: 19px !important;
 }
 #learn-panel table tr td .empty-text span{
-	position: absolute;
+	/*position: absolute;
 	bottom: 20px;
-	left: 20px;
+	left: 20px;*/
     font-size: 15px !important;
 }
 #learn-panel table tr td{
@@ -1952,8 +1967,8 @@ textarea, textarea[placeholder]{
 }
 #list-word-in-sug-cat{
 	display: block;
-	height: 325px;
-	height: calc(100vh - 350px);
+	height: 300px;
+	height: calc(100vh - 320px);
 	overflow: scroll;
 	margin-top: 50px;
 }
@@ -1994,7 +2009,7 @@ textarea, textarea[placeholder]{
 	font-size: 20px;
 	text-align: center;
 	color: white;
-	margin: 27% 24px 0;
+	margin: 35% 24px 0;
 	border: 2px solid white;
 	padding: 33px 15px;
 	border-radius: 40px;
@@ -2190,7 +2205,7 @@ h3{
     display: block;
     word-wrap: normal;
 	font-size: 16px;
-	line-height: 1.3;
+	line-height: 2.5;
     padding-top: 29px;
 }
 .phrases-cloud{
@@ -2260,7 +2275,7 @@ h3{
 	background: black;
 }
 .background-tutorial-darkness{
-	opacity: 0.4;
+	opacity: 0.3;
 }
 .popup-TUT{
     position: absolute;
@@ -2283,6 +2298,11 @@ h3{
 	-webkit-transform: translate3d(0,0,0);
 	-webkit-perspective: 0px; 
     perspective: 0px;
+	
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
 }
 .popup-TUT .title-TUT{
     font-weight: 400;
@@ -2292,11 +2312,14 @@ h3{
     color: #33b5e5;
     text-align: left;
     padding-left: 14px;
+	font-weight: bold;
 }
 .popup-TUT .text-TUT{
-    max-width: 90%;
+    max-width: 93%;
     margin: auto auto;
-    min-height: 95px;
+	margin: 15px auto 5px;
+    /*min-height: 95px;*/
+	font-weight: bold;
 }
 .btns-TUT{
     font-weight: 600;
@@ -2317,7 +2340,7 @@ h3{
 	font-size: 19px !important;
 }
 .btns-TUT span{
-	font-size: 14px !important;
+	font-size: 16px !important;
 }
 .btns-TUT p{
 	margin-bottom: 8px;
@@ -2377,9 +2400,9 @@ h3{
 }
 .skip-this-part-cloud{
     position: absolute;
-	width: 230% !important;
-	left: -140%;
-	top: -84%;
+	width: 278% !important;
+	left: -188%;
+	top: -92%;
 }
 #statistic h3{
 	margin-top: -35px !important;
