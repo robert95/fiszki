@@ -188,7 +188,6 @@ function hideBars() {
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
 
-
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -465,8 +464,8 @@ var toLearnJSON = [];
 
 /*
 var langJSON = JSON.parse('{"lang":2}');
-var dayJSON = JSON.parse('{"day": 3, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":1,"catid":1,"start":"1"}]');
+var dayJSON = JSON.parse('{"day": 2, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
+var toLearnJSON = JSON.parse('[{"subid":4,"catid":1,"start":"1"}]');
 */
 
 var dayJSONwordsCopy = dayJSON.words;
@@ -601,7 +600,7 @@ function afterGetDay(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	//readWriteFile2();
+	readWriteFile2();
 }
 function afterNoticeRead(resNotice){
 	noticeJSON = JSON.parse(resNotice);
@@ -685,7 +684,9 @@ function afterReadToLearn(tolearnfromFile){
 		} 
 		
 		if(x == ( toLearnJSON.length -1 )){
-			if(!suggestedCatName) getCatWithPos(0, 1);
+			if(!suggestedCatName){
+				getCatWithPos(0, 1);
+			}
 			
 			setTimeout(showInProgressCat, 200);
 			setTimeout(function(){
@@ -3046,6 +3047,10 @@ function getCatWithPos(pos, off){
 									}
 								}
 								off++;
+//
+getCatWithPos(pos, off++);
+return;	
+								
 							}else{
 								userChoiceCat = false;
 								$("#sugCatPar").val(idP);
