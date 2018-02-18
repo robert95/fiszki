@@ -96,7 +96,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 	
     onDeviceReady: function() {
-		var src = '/android_asset/www/date/1.m4a';
+		var src = '/android_asset/www/date/1.mp3';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
 		
 		if(!checkConnection()){	
@@ -1259,7 +1259,7 @@ function tellMe(){
 	var idParentCat = $("#myParentCat").val();
 	var idSubCat = $("#myCat").val();
 	//var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".ogg";
-	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".m4a";
+	var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".mp4";
 	setTimeout(function(){
 		if(my_media!=null){/*jak coś to do usunięcia*/
 				my_media.stop();
@@ -1299,7 +1299,7 @@ function tellMeWord(sygn, id){
 	}
 	var idLang = $("#learnLang").val();
 	//var src = '/android_asset/www/date/' + idLang + "/" + idParentCat + "/" + idSubCat + "/sound/" + id + ".ogg";
-	var src = '/android_asset/www/date/' + idLang + "/" + sygn + "/sound/" + id + ".m4a";
+	var src = '/android_asset/www/date/' + idLang + "/" + sygn + "/sound/" + id + ".mp3";
 	setTimeout(function(){
 		if(my_media!=null){/*jak coś to do usunięcia*/
 				my_media.stop();
