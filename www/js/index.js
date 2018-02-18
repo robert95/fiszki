@@ -77,7 +77,7 @@ function getTrans(key){
 	}
 }
 
-var isPremium = true;
+var isPremium = false;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -181,13 +181,14 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
-/*
+
 	if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
-*/
+
+
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
