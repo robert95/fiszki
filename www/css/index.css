@@ -808,6 +808,7 @@ textarea:focus, textarea:hover, textarea:active{
 #name-next-cat{
 	min-height: 75px;
 	margin-top: 7%;
+	font-size: 22px;
 }
 #invite-to-ads{
     margin-top: 50px;
@@ -875,7 +876,7 @@ textarea:focus, textarea:hover, textarea:active{
 	background: url("../img/ok_mic.png");
 	background-size: 100% 100%;
 }
-#progess-btn-stan-in-cycle-ncat.c100::after, #progess-btn-stan-in-cycle-welcome.c100::after{
+#progess-btn-stan-in-cycle-ncat.c100::after, #progess-btn-stan-in-cycle-welcome.c100::after, #progess-btn-stan.c100::after{
 	background: url("../img/okEmpty.png");
 	background-size: 100% 100%;
 }
@@ -1033,7 +1034,7 @@ section{
     margin-top: -29px;
     margin-left: -10px;
     padding: 11px 0;
-    font-size: 11px;
+    font-size: 15px;
     display: inline-block;
     width: 80%;
 	min-width: 0 !important;
@@ -1071,19 +1072,19 @@ section{
 }
 #learn-container .note-skip-btn  .skip-btn p span.text, #new-tutorial .note-skip-btn  .skip-btn p span.text{
 	padding: 11px 0;
-	font-size: 11px;
+	font-size: 15px;
 	display: inline-block;
 	width: 80%;
 	min-width: 0 !important;
 }
 #learn-container .note-skip-btn  .skip-btn p span.text img, #new-tutorial .note-skip-btn  .skip-btn p span.text img{
 	margin-left: 2px;
-	height: 11px;
+	height: 15px;
 	position: relative;
 	top: 2px;
 }
 #new-category-choice .note-skip-btn  .skip-btn p span.text{
-    font-size: 11px;
+    font-size: 10px;
 	top: 10px;
 	display: inline-block;
 	padding: 11px 0 !important;
@@ -1206,11 +1207,9 @@ section{
 .remind-img{
 	display: none;
 	position: absolute;
-	top: -5px;
-	/*left: 5px;
-	width: 29%;*/
-	left: 13px;
-	width: 54%;
+	top: -3px;
+	left: 16px;
+	height: 38px;
 }
 #first-use-loading-page #progress-circle{
 	position: absolute;
@@ -1911,9 +1910,23 @@ textarea, textarea[placeholder]{
 #show-all-cats-cats > div > h1{
 	padding: 20px 0 !important;
 }
-#show-all-cats-cats .list-of-subcat-all-material{
-	width: 92%;
+#cats .list-of-subcat{
+	width: 90% !important;
 	margin-left: 8%;
+}
+#cats .list-of-subcat p.text{
+	padding: 10px 0px 10px 10px;
+    text-align: left;
+	min-width: 1px !important;
+}
+#show-all-cats-cats .list-of-subcat-all-material{
+	width: 90% !important;
+	margin-left: 8%;
+}
+#show-all-cats-cats .list-of-subcat-all-material p.text{
+	padding: 10px 0px 10px 10px;
+    text-align: left;
+	min-width: 1px !important;
 }
 #show-all-cats-cats-wordlist, #savedWordsContainer{
 	display: block;
@@ -1923,10 +1936,10 @@ textarea, textarea[placeholder]{
 }
 #show-all-cats-cats-wordlist .text, #savedWordsContainer .text{
 	padding-right: 45px;
-	width: 70%;
-	font-weight: 600;
+	width: 66%;
+	font-weight: 400;
 	text-align: left;
-	padding-left: 15px;
+	padding-left: 46px;
 	position: relative;
 }
 #show-all-cats-cats-wordlist .text:after, #savedWordsContainer .text:after{
@@ -1950,6 +1963,13 @@ textarea, textarea[placeholder]{
 	right: 3px;
 	margin-top: -22px;
 }
+#show-all-cats-cats-wordlist .text img.left-img, #savedWordsContainer .text img.left-img{
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    margin-top: -27px;
+    padding: 10px;
+}
 #show-all-cats-cats-wordlist .text span, #savedWordsContainer .text span{
 	display: block;
 	font-size: 13px;
@@ -1964,6 +1984,8 @@ textarea, textarea[placeholder]{
 	margin: 45px auto 0;
     margin-right: 5%;
     margin-top: -5px;
+	font-size: 20px !important;
+	min-height: 45px;
 }
 #list-word-in-sug-cat{
 	display: block;
@@ -2179,7 +2201,7 @@ h3{
 	display: none;
 }
 .cloud-next-task{
-	width: 29%;
+	height: 40px;
 	position: relative;
 	top: 25px;
 }
@@ -2199,20 +2221,20 @@ h3{
 .support-word-in-speach p{
 	font-size: 25px !important;
 }
-#progess-btn-per-in-cycle-ncat, #progess-btn-per-in-cycle-welcome{
+#progess-btn-per-in-cycle-ncat, #progess-btn-per-in-cycle-welcome, #progess-btn-perr{
 	color: white;
     width: 100px;
     display: block;
     word-wrap: normal;
-	font-size: 16px;
-	line-height: 2.5;
+	font-size: 22px;
+	line-height: 1.6;
     padding-top: 29px;
 }
 .phrases-cloud{
 	position: absolute;
-	width: 41%;
-	left: 3%;
+	left: 6%;
 	top: -42px;
+	height: 47px;
 }
 #return_in_learn, #return_in_learn-TUT{
 	position: absolute;
@@ -2241,10 +2263,9 @@ h3{
 	color: white !important;
 }
 .phrase_browser_cloud{
-	position: absolute;
-    right: 10%;
-    bottom: 155px;
-	width: 92px;
+	right: 11%;
+	bottom: 155px;
+	height: 47px;
 }
 #ok-no-panel-TUT, #perfect-cloud-TUT{
 	display: block !important;
@@ -2303,6 +2324,7 @@ h3{
 	-moz-border-radius: 8px;
 	-o-border-radius: 8px;
 	border-radius: 8px;
+	font-family: 'Arial';
 }
 .popup-TUT .title-TUT{
     font-weight: 400;
@@ -2319,7 +2341,7 @@ h3{
     margin: auto auto;
 	margin: 15px auto 5px;
     /*min-height: 95px;*/
-	font-weight: bold;
+	font-weight: 400;
 }
 .btns-TUT{
     font-weight: 600;
@@ -2399,10 +2421,10 @@ h3{
 	right: 5%;
 }
 .skip-this-part-cloud{
-    position: absolute;
-	width: 278% !important;
-	left: -188%;
+    position: absolute
+	;right: 4px;
 	top: -92%;
+	height: 47px;
 }
 #statistic h3{
 	margin-top: -35px !important;

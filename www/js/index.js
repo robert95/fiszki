@@ -35,9 +35,9 @@ t_end_new_materials_ok = ["OK", "OK", "OK", "OK", "OK"];
 t_liked_words_added = ["Phrase has been added to Favourites.", "Fraza została dodana do zakładki ulubione.", "Frase añadida a Favoritos.", "Der Satz wurde zu deinen Favoriten hinzugefügt.", "La phrase a été ajoutée à vos favoris."];
 t_liked_words_remove = ["BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
 t_no_audio_lesson_title = ["Audio not available.", "Nagrania audio niedostępne.", "Audio no disponible.", "Audio nicht verfügbar.", "L'audio n'est pas disponible."];
-t_no_audio_lesson_text = ["This free version comes with 90 audio lessons. If you would like to get audio to all 180 lessons, upgrade to xxx Pro.", "Darmowa wersja aplikacji zawiera 90 lekcji audio. Jeśli chciałbyś otrzymać nagrania do wszystkich 180 lekcji kup xxx Pro.", "La versión gratuita de la aplicación contiene 90 lecciones de audio. Si deseas recibir las grabaciones de todas las 180 lecciones, compra xxx Pro.", "Diese kostenlose Version umfasst 90 Audiolektionen. Wenn du die Audios für alle 180 Lektionen haben möchtest, kauf dir xxx Pro.", "Cette version gratuite contient 90 leçons audios. Si vous voulez recevoir les audios pour l'ensemble des 180 leçons, achetez xxx Pro."];
+t_no_audio_lesson_text = ["This free version comes with 90 audio lessons. If you would like to get audio to all 180 lessons, upgrade to SpeakLabs Pro.", "Darmowa wersja aplikacji zawiera 90 lekcji audio. Jeśli chciałbyś otrzymać nagrania do wszystkich 180 lekcji kup SpeakLabs Pro.", "La versión gratuita de la aplicación contiene 90 lecciones de audio. Si deseas recibir las grabaciones de todas las 180 lecciones, compra SpeakLabs Pro.", "Diese kostenlose Version umfasst 90 Audiolektionen. Wenn du die Audios für alle 180 Lektionen haben möchtest, kauf dir SpeakLabs Pro.", "Cette version gratuite contient 90 leçons audios. Si vous voulez recevoir les audios pour l'ensemble des 180 leçons, achetez SpeakLabs Pro."];
 t_no_audio_lesson_learn_anyway = ["Learn anyway", "Ucz się bez nagrań", "Aprender sin grabaciones", "Trotzdem lernen", "Apprenez sans audio"];
-t_no_audio_lesson_upgrade = ["Upgrade", "Kup xxx Pro", "Compra xxx Pro", "xxx Pro kaufen", "Achetez xxx Pro"];
+t_no_audio_lesson_upgrade = ["Upgrade", "Kup SpeakLabs Pro", "Compra SpeakLabs Pro", "SpeakLabs Pro kaufen", "Achetez SpeakLabs Pro"];
 t_no_audio_lesson_skip = ["Skip lesson", "Pomiń lekcję", "Omitir lección", "Lektion überspringen", "Passez la leçon"];
 t_confirm_back_in_learn_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro?", "Bist du sicher?", "Etes-vous sûr?"];
 t_confirm_back_in_learn_text = ["Your progress won't be saved.", "Twój postęp nie zostanie zapisany.", "Tu progreso no será guardado.", "Deine Fortschritte werden nicht gespeichert.", "Votre progrès ne sera pas sauvegardé."];
@@ -65,8 +65,11 @@ t_lang_rank = ["en", "pl", "es", "de", "fr"];
 t_after_premium_copy_text = ["BRAK TŁUMACZENIA", "Pomyślnie przeniesiono Twój postęp z wersji demo. Jeżeli pominąłeś lekcje, a chciałbyś do nich wrócić, musisz wybrać je ręcznie", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
 t_after_premium_copy_title = ["Import data from demo version", "Import danych z wersji demo", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA", "BRAK TŁUMACZENIA"];
 t_after_premium_copy_ok = ["OK", "OK", "OK", "OK", "OK"];
+t_confirm_remove_saved_word_text = ["ENG_Chcesz usunąć tą frazę z ulubionych?", "Chcesz usunąć tą frazę z ulubionych?", "ESP_Chcesz usunąć tą frazę z ulubionych?", "DE_Chcesz usunąć tą frazę z ulubionych?", "FR_Chcesz usunąć tą frazę z ulubionych?"];
+t_confirm_remove_saved_word_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro?", "Bist du sicher?", "Etes-vous sûr?"];
+t_confirm_remove_saved_word_cancel = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+t_confirm_remove_saved_word_remove = ["ENG_USUŃ", "USUŃ", "ESP_USUŃ", "DE_USUŃ", "FR_USUŃ"];
 
-//trans["a"] = ["OK", "OK", "OK", "OK", "OK"];
 
 /*translacje*/
 function getTrans(key){
@@ -465,7 +468,7 @@ var toLearnJSON = [];
 /*
 var langJSON = JSON.parse('{"lang":2}');
 var dayJSON = JSON.parse('{"day": 2, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
-var toLearnJSON = JSON.parse('[{"subid":4,"catid":1,"start":"1"}]');
+var toLearnJSON = JSON.parse('[{"subid":13,"catid":1,"start":"1"}]');
 */
 
 var dayJSONwordsCopy = dayJSON.words;
@@ -609,9 +612,9 @@ function getToLearn(){
 	srcFile = path() + "save.json";
 	readWriteFile();
 	//getToLearnHelper();
-	/*
-			afterReadToLearn(JSON.stringify(toLearnJSON)); //do usunięcia
-	*/
+	
+	//		afterReadToLearn(JSON.stringify(toLearnJSON)); //do usunięcia
+	
 }
 function afterReadToLearn(tolearnfromFile){
 	toLearnJSON = JSON.parse(tolearnfromFile);
@@ -1005,7 +1008,7 @@ function showSubCatList(s, parentId){
 			cl = "inProgressCat";
 		}
 		cl2 = (cat.audio == true) ? '': 'no-audio'; 
-		tmp += '<p class="text setCat '+ cl + ' ' + cl2 +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parentId + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '">' + cat.name + '<span class="inProgressCatInfo">' + getTrans(t_during_learning) + '</span> <span class="missingCatInfo">' + getTrans(t_lesson_skipped) + '</span> <span class="learnedCatInfo">' + getTrans(t_learned_lesson) + '</span></p>';
+		tmp += '<p class="text setCat '+ cl + ' ' + cl2 +'" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parentId + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '"><strong>' + (cat.name).substring(0,2) + '</strong> ' + (cat.name).substring(2) + '<span class="inProgressCatInfo">' + getTrans(t_during_learning) + '</span> <span class="missingCatInfo">' + getTrans(t_lesson_skipped) + '</span> <span class="learnedCatInfo">' + getTrans(t_learned_lesson) + '</span></p>';
 		if(firstGenerationCat) $("#cat-list .list").append('<li><p class="cat-name" data-id="' + cat.id + '" data-par="' + parentId + '">' + cat.name + '</p></li>');
 	}
 	tmp += '</div>';
@@ -1483,13 +1486,13 @@ function setWordToMethod(idM){
 		case 1:
 			$(".show-hidden-word").show(); //zmiana
 			$("#confirm-correct-1").hide(); //zmiana
-			$("#confirm-correct-1").html(act_word); //zmiana
-			$("#confirm-trans-1").html(act_trans);
+			$("#confirm-correct-1").html('<p>' + act_word + '</p>'); //zmiana
+			$("#confirm-trans-1").html('<p>' + act_trans + '</p>');
 			$("#confirm-text-1").val(act_text);	
 			break;
 		case 2:
-			$("#confirm-correct-2").html(act_word);
-			$("#confirm-trans-2").html(act_trans);
+			$("#confirm-correct-2").html('<p>' + act_word + '</p>');
+			$("#confirm-trans-2").html('<p>' + act_trans + '</p>');
 			$("#confirm-text-2").val(act_text);			
 			break;
 		case 3:
@@ -1498,10 +1501,10 @@ function setWordToMethod(idM){
 			break;
 		case 4:
 			tellMe();
-			$("#confirm-correct-4").html(act_word);		
+			$("#confirm-correct-4").html('<span>' + act_word + '</span>');		
 			$(".show-hidden-word").show(); //zmiana
 			$("#confirm-trans-4").hide(); //zmiana
-			$("#confirm-trans-4").html(act_trans); //zmiana
+			$("#confirm-trans-4").html('<span>' + act_trans + '</span>'); //zmiana
 			$("#confirm-text-4").val(act_text);			
 			break;
 		case 5:
@@ -1509,10 +1512,10 @@ function setWordToMethod(idM){
 			$("#question-5").val("");
 			break;
 		case 6:
-			$("#confirm-correct-6").html(act_word);
+			$("#confirm-correct-6").html('<p>' + act_word + '</p>');
 			$(".show-hidden-word").show(); //zmiana
 			$("#confirm-trans-6").hide(); //zmiana
-			$("#confirm-trans-6").html(act_trans); //zmiana
+			$("#confirm-trans-6").html('<p>' + act_trans + '</p>'); //zmiana
 			$("#confirm-text-6").val(act_text);			
 			break;
 		default:
@@ -3197,7 +3200,7 @@ function getThisCatAsSug(obj){
 
 /* SAVE PROGRESS */
 var progressJSON = [];
-var srcSaveProgress = "myProgress.fiszki";
+var srcSaveProgress = "myProgress.speaklabs";
 function saveProgressInFile(){
 	var progress = '{"langJSON": "", "dayJSON": "", "toLearnJSON": "", "noticeJSON": "", "likedJSON": ""}';
 	progressJSON = JSON.parse(progress);
@@ -3402,7 +3405,7 @@ function checkConnection() {
 }
 function showRating() {
 	AppRate.preferences = {
-	  displayAppName: 'XXX',
+	  displayAppName: 'SpeakLabs',
 	  storeAppURL: {
 		android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
 	  },
@@ -3501,6 +3504,7 @@ function okNoSound(){
 }
 
 function getAllCatsToShowAllCats(){
+	$("#show-all-cats-cats").html('');
 	$.get("date/"+ langJSON.lang + "/cat.json", function(result) {
 		var tmp = '';
 		var cats = JSON.parse(result);
@@ -3535,7 +3539,7 @@ function getAllCatsToShowAllCats(){
 						}
 						cl2 = (subcat.audio == true) ? '': 'no-audio'; 
 						hasAudio = (subcat.audio == true) ? 1: 0; 
-						tmp += '<p class="text catsInAllMaterial '+ cl + ' ' + cl2 +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\', ' + hasAudio + ')" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '">' + subcat.name + '<span class="inProgressCatInfo">' + getTrans(t_during_learning) + '</span> <span class="missingCatInfo">' + getTrans(t_lesson_skipped) + '</span> <span class="learnedCatInfo">' + getTrans(t_learned_lesson) + '</span></p>';
+						tmp += '<p class="text catsInAllMaterial '+ cl + ' ' + cl2 +'" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\', ' + hasAudio + ')" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '"><strong>' + (subcat.name).substring(0,2) + '</strong> ' + (subcat.name).substring(2) + '<span class="inProgressCatInfo">' + getTrans(t_during_learning) + '</span> <span class="missingCatInfo">' + getTrans(t_lesson_skipped) + '</span> <span class="learnedCatInfo">' + getTrans(t_learned_lesson) + '</span></p>';
 						$("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
 					}
 					//tmp += '</div>' + '</div>' + extraEnd;
@@ -3557,7 +3561,7 @@ function getWordForCatShowList(sygn){
 			for(var x in words){
 				var w = words[x];
 				var t = trans[x];
-				$("#show-all-cats-cats-wordlist").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\', this); return false;"></p>');
+				$("#show-all-cats-cats-wordlist").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')"><img src="img/spiker_white.png" class="left-img">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + (t.name).replace(/(['"])/g, "\\$1") + '\', this); return false;"></p>');
 			}
 		});
     });
@@ -3628,11 +3632,11 @@ function startRecognize(){
 	//$(".support-word-in-speach").show();
 	stopTelling();
 	
-	var langText = "en-US"
+	var langText = "en-GB"
 	var options = {
 		language: langText,
 		matches: 2,
-		prompt: ((nbMethod == 6 || nbMethod == 5 || (nbMethod == 4 && nbStep == 0 && $("#nav-words-container p.activ").index() == 9)) ? act_trans : act_word),
+		prompt: ((nbMethod == 6 || nbMethod == 5 || (nbMethod == 4 && nbStep == 0 && $("#nav-words-container p.activ").index() == 9)) ? clearTextToShowOnRecognize(act_trans) : clearTextToShowOnRecognize(act_word)),
 		showPopup: true
 	};
 
@@ -3878,11 +3882,11 @@ function checkMeWord(word_text, obj){
 }
 
 function startRecognizeInAllWords(correct_text){
-	var langText = "en-US"
+	var langText = "en-GB"
 	var options = {
 		language: langText,
 		matches: 2,
-		prompt: correct_text,
+		prompt: clearTextToShowOnRecognize(correct_text),
 		showPopup: true
 	};
 
@@ -4036,9 +4040,38 @@ function showSavedWord(word){
 			var trans = JSON.parse(transResult);
 			var w = words[word[2]-1];
 			var t = trans[word[2]-1];
-			$("#savedWordsContainer").append('<p class="text" onclick="tellMeWord(\'' + word[0] + "/" + word[1] + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + t.name + '\', this); return false;"></p>');
+			$("#savedWordsContainer").append('<p class="text" onclick="tellMeWord(\'' + word[0] + "/" + word[1] + '\',' + w.id + ')"><img src="img/star_check.png" class="left-img" onclick="confirmRemoveSavedWord(this, \'' + word[0] + "/" + word[1] + "/" + word[2] + '\',' + w.id + ')">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + (t.name).replace(/(['"])/g, "\\$1") + '\', this); return false;"></p>');
 		});
 	});
+}
+
+var wordToRemoveFromSaved;
+var objWordToRemoveFromSaved;
+function confirmRemoveSavedWord(obj, word){
+	objWordToRemoveFromSaved = obj;
+	wordToRemoveFromSaved = word.replace(/\//g, '\\');
+	
+	navigator.notification.confirm(
+		getTrans(t_confirm_remove_saved_word_text),
+		confirmRemoveSavedWordCallBack,
+		getTrans(t_confirm_remove_saved_word_title),
+		getTrans(t_confirm_remove_saved_word_remove) + "," + getTrans(t_confirm_remove_saved_word_cancel)
+	);
+}
+function confirmRemoveSavedWordCallBack(buttonIndex){
+	if(buttonIndex == 1){
+		removeFromSavedWords(objWordToRemoveFromSaved, wordToRemoveFromSaved);
+		setActuLikedIcon();
+	}
+	if(buttonIndex == 2){
+		return true;
+	}
+}
+
+function removeFromSavedWords(obj, word){
+	$(obj).parent().remove();
+	removeFromlikedJSON(word);
+	saveLikedWords();
 }
 /* END LIKED WORDS */
 runNotifiAfterAd = false;
@@ -4194,6 +4227,10 @@ function showExitAppConfirmCallBack(button) {
 function updatePlaceholders(){
 	$(".fuzzy-search").attr("placeholder", getTrans(t_placeholder_fuzzy_search));
 	$(".noteTEXT").attr("placeholder", getTrans(t_placeholder_hint_text));
-	console.log('bbb');
 }
+
+function clearTextToShowOnRecognize(text){
+	return text.replace('<b>', '').replace('</b>', '');
+}
+				
 				

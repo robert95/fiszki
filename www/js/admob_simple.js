@@ -44,7 +44,8 @@ function showAd(){
 			waitForAd = true;
 			countAd++;
 			if(countAd%2 == 0){
-				$("#myCall-big-ad").show();
+				//$("#myCall-big-ad").show();
+				if(AdMob) AdMob.showInterstitial();
 			}else{
 				if(AdMob) AdMob.showInterstitial();
 			}

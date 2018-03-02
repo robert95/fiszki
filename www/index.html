@@ -28,7 +28,7 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 		<link rel="stylesheet" type="text/css" href="css/circle.css">
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>SpeakApp</title>
+        <title>SpeakLabs</title>
     </head>
     <body> 
 		<input type="file" id="readP">
@@ -83,11 +83,11 @@
 					<span class="l5">Favoris</span>
 				</li>
 				<li id="m6" class="text">
-					<span class="l1">Upgrade to xxx Pro</span>
-					<span class="l2">Kup xxx Pro</span>
-					<span class="l3">Comprar xxx Pro</span>
-					<span class="l4">xxx Pro kaufen</span>
-					<span class="l5">Passez à xxx Pro</span>
+					<span class="l1">Upgrade to SpeakLabs Pro</span>
+					<span class="l2">Kup SpeakLabs Pro</span>
+					<span class="l3">Comprar SpeakLabs Pro</span>
+					<span class="l4">SpeakLabs Pro kaufen</span>
+					<span class="l5">Passez à SpeakLabs Pro</span>
 				</li>
 				<li id="m8" class="text">
 					<span class="l1">Change theme</span>
@@ -144,7 +144,7 @@
 		<input type="hidden" id="sugCatSub" value="-1">
 		<img class="back" src="img/back.png" />
 		<section id="first-use-loading-page">
-			<p id="welcome-text">Welcome to<br>SpeakApp</p>
+			<p id="welcome-text">Welcome to<br>SpeakLabs</p>
 			<p id="loading-files-text">Loading...</p>
 			<div id="progress-circle">
 				<div id="progress-welcome" class="c100 p35">
@@ -251,22 +251,27 @@
 						<tr id="l-n-1" class="hidden"><td colspan="3"><textarea id="confirm-text-1" class="text noteTEXT" placeholder="Click here to write your hint"></textarea></td></tr>
 						<tr id="l-rg-1" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3">
-						<p class="text text-reverse empty-text show-hidden-word">
-							<span class="l1">Click here to show the sentence</span>
-							<span class="l2">Kliknij tutaj aby zobaczyć zdanie</span>
-							<span class="l3">Pulsa aquí para ver la frase</span>
-							<span class="l4">Klicke hier, um den Satz anzuzeigen</span>
-							<span class="l5">Cliquez ici pour afficher la phrase</span>
-						</p><p class="text text-reverse text-trans-word" id="confirm-correct-1" onclick="tellMe();"></p></td></tr>
+						<tr>
+							<td colspan="3">
+								<p class="text text-reverse empty-text show-hidden-word">
+									<span class="l1">Click here to show the sentence</span>
+									<span class="l2">Kliknij tutaj aby zobaczyć zdanie</span>
+									<span class="l3">Pulsa aquí para ver la frase</span>
+									<span class="l4">Klicke hier, um den Satz anzuzeigen</span>
+									<span class="l5">Cliquez ici pour afficher la phrase</span>
+								</p>
+								<p class="text text-reverse text-trans-word" onclick="tellMe();" id="confirm-correct-1">
+								</p>
+							</td>
+						</tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >
-							<span class="l1">Repeat</span>
-							<span class="l2">Powtórz</span>
-							<span class="l3">Repite</span>
-							<span class="l4">Wiederhole</span>
-							<span class="l5">Répétez</span>
+							<span class="l1">Translate</span>
+							<span class="l2">Przetłumacz</span>
+							<span class="l3">Traduce</span>
+							<span class="l4">Übersetze</span>
+							<span class="l5">Traduisez</span>
 						</p>
 					</div>
 				</section>
@@ -288,7 +293,7 @@
 						<tr id="l-n-2" class="hidden"><td colspan="3"><textarea id="confirm-text-2" class="text noteTEXT" placeholder="Click here to write your hint"></textarea></td></tr>
 						<tr id="l-rg-2" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse text-trans-word" id="confirm-correct-2" onclick="tellMe();"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word" onclick="tellMe();" id="confirm-correct-2"></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >
@@ -355,7 +360,7 @@
 						<tr id="l-n-4" class="hidden"><td colspan="3"><textarea id="confirm-text-4" class="text noteTEXT" placeholder="Click here to write your hint"></textarea></td></tr>
 						<tr id="l-rg-4" class="hidden recTextWrap"><td colspan="3"><p class="text recText"></p></td></tr>
 						<tr class="middle-line-tr"><td class="middle-line"></td><td class="middle-noline"><span class="nbWordInCycle">1/10</span></td><td class="middle-line"></td></tr>
-						<tr><td colspan="3"><p class="text text-reverse text-trans-word" id="confirm-correct-4" onclick="tellMe();"></p></td></tr>
+						<tr><td colspan="3"><p class="text text-reverse text-trans-word" onclick="tellMe();" id="confirm-correct-4" ></p></td></tr>
 					</table>
 					<div class="skip-btn only-tablet">
 						<p class="bad-bad" ontouchstart="isNo();" >
@@ -510,11 +515,11 @@
 			<img src="img/cursor.png" class="cursor-TUT">
 			<div id="popup-TUT-1" class="popup-TUT">
 				<p class="title-TUT">
-					<span class="l1">Welcome to XXX</span>
-					<span class="l2">Witamy w XXX</span>
-					<span class="l3">Bienvenido a XXX</span>
-					<span class="l4">Willkommen bei XXX</span>
-					<span class="l5">Bienvenue à XXX</span>
+					<span class="l1">Welcome to SpeakLabs</span>
+					<span class="l2">Witamy w SpeakLabs</span>
+					<span class="l3">Bienvenido a SpeakLabs</span>
+					<span class="l4">Willkommen bei SpeakLabs</span>
+					<span class="l5">Bienvenue à SpeakLabs</span>
 				</p>
 				<p class="text-TUT">
 					<span class="l1">Take a moment to learn how to use this App. It will take less than 1 minute.</span>
@@ -769,35 +774,35 @@
 			
 			<div id="popup-TUT-8" class="popup-TUT next-cat-right-right">
 				<p class="title-TUT">
-					<span class="l1">Get xxx Pro</span>
-					<span class="l2">Kup xxx Pro</span>
-					<span class="l3">Comprar versión xxx Pro</span>
-					<span class="l4">Kauf dir die Version xxx Pro</span>
-					<span class="l5">Achetez la version xxx Pro</span>
+					<span class="l1">Get SpeakLabs Pro</span>
+					<span class="l2">Kup SpeakLabs Pro</span>
+					<span class="l3">Comprar versión SpeakLabs Pro</span>
+					<span class="l4">Kauf dir die Version SpeakLabs Pro</span>
+					<span class="l5">Achetez la version SpeakLabs Pro</span>
 				</p>
 				<p class="text-TUT">
 					<span class="l1">
-						Get xxx Pro to receive:<br>
+						Get SpeakLabs Pro to receive:<br>
 						- Audio recordings for all 180 lessons<br>
 						- Add-free content
 					</span>
 					<span class="l2">
-						Kup xxx pro, a otrzymasz:<br>
+						Kup SpeakLabs pro, a otrzymasz:<br>
 						- nagrania audio do wszystkich 180 lekcji<br>
 						- wersje bez reklam
 					</span>
 					<span class="l3">
-						Compra la versión xxx Pro y recibirás:<br>
+						Compra la versión SpeakLabs Pro y recibirás:<br>
 						- Grabaciones audio para las 180 lecciones<br>
 						- Contenido sin publicidad 
 					</span>
 					<span class="l4">
-						Kauf dir die Version xxx Pro, dann erhältst du:<br>
+						Kauf dir die Version SpeakLabs Pro, dann erhältst du:<br>
 						- Audios für alle 180 Lektionen<br>
 						- werbefreie Inhalte
 					</span>
 					<span class="l5">
-						Achetez la version xxx Pro pour obtenir:<br>
+						Achetez la version SpeakLabs Pro pour obtenir:<br>
 						-les audios pour toutes les 180 leçons<br>
 						-une version sans publicités
 					</span>
@@ -970,23 +975,6 @@
 				</div>
 			</section>
 		</section>
-		<!--
-		<section id="page-after-tutorial" class="next-cat-left">
-			<p id="end-tut-title">You are very welcome<br>to SpeakApp</p>
-			<p class="goToReverse">
-				<span class="l1">E_Przejdź do powtórek</span>
-				<span class="l2">E_Przejdź do powtórek</span>
-				<span class="l3">F_Przejdź do powtórek</span>
-				<span class="l4">N_Przejdź do powtórek</span>
-				<span class="l5">Let's begin</span>
-			</p>
-			<div id="start-day-ok-no-panel">
-				<div id="start-day-wrap-ok-no">
-					<img src="img/okNoEmptyP.png" class="good-bad" ontouchstart="endTut();"/>
-				</div>
-			</div>	
-		</section>
-		-->
 		<section id="start-next-cat" class="next-cat-left">
 			<h1>
 				<span class="l1">Repetition</span>
@@ -1014,7 +1002,7 @@
 			<div id="btn-next-cat">
 				<div id="progress-circle">
 					<div id="progess-btn-stan" class="c100 p0" ontouchstart="nextCatBtn();">
-						<span id="progess-btn-perr"></span>
+						<span id="progess-btn-perr">START</span>
 						<div class="slice">
 							<div class="bar"></div>
 							<div class="fill"></div>
@@ -1056,8 +1044,8 @@
 				<span class="l5">terminée</span>
 			</h1>
 			<p class="main-text-repetition main-text-end-repetition">
-				<span class="l1">Approximate time left to complete the lesson1:</span>
-				<span class="l2">Przybliżony czas potrzebny do ukończenia lekcji1:</span>
+				<span class="l1">Approximate time left to complete the lesson:</span>
+				<span class="l2">Przybliżony czas potrzebny do ukończenia lekcji:</span>
 				<span class="l3">Tiempo estimado para completar la lección:</span>
 				<span class="l4">Ungefähre Restzeit bis zum Ende der Lektion:</span>
 				<span class="l5">Temps restant approximatif pour finir la leçon:</span>
@@ -1130,8 +1118,8 @@
 			</div>
 			<h1>
 				<span class="l1">Lesson </span>
-				<span class="l2">Witamy w lekcji </span>
-				<span class="l3">Bienvenido a la lección </span>
+				<span class="l2">Lekcja </span>
+				<span class="l3">Lección </span>
 				<span class="l4">Lektion </span>
 				<span class="l5">Leçon </span>
 				<span id="nrDayFiled"></span>/180
@@ -1204,7 +1192,7 @@
 					<span class="l3"> minutos</span>
 					<span class="l4"> Minuten</span>
 					<span class="l5"> min</span>
-					/80h
+					/70h
 				</span>
 			</p>
 			<p class="main-text-end-panel-2">
@@ -1215,7 +1203,7 @@
 				<span class="l5">Expressions apprises</span>
 				<br>
 				<span class="timeToEndTodayWrap">
-					<span class="timeToEndTodayWrap allWords"></span>/2000
+					<span class="timeToEndTodayWrap allWords"></span>/1530
 				</span> 
 			</p>
 			<p class="you-start-learned3">
@@ -1238,10 +1226,10 @@
 				<span class="l3">Lección</span>
 				<span class="l4">Lektion</span>
 				<span class="l5">Leçon</span>
-				<span id="end-nr-lesson"></span>/200
+				<span id="end-nr-lesson"></span>/180
 				<br>
 				<span class="l1">completed</span>
-				<span class="l3">ukończona</span>
+				<span class="l2">ukończona</span>
 				<span class="l3">completada</span>
 				<span class="l4">abgeschlossen</span>
 				<span class="l5">terminée</span>
@@ -1260,7 +1248,7 @@
 					<span class="l3"> minutos</span>
 					<span class="l4"> Minuten</span>
 					<span class="l5"> min</span>
-					/80h
+					/70h
 				</span>
 			</p>
 			<p class="main-text-end-panel-2">
@@ -1271,7 +1259,7 @@
 				<span class="l5">Expressions apprises</span>
 				<br>
 				<span class="timeToEndTodayWrap">
-					<span class="timeToEndTodayWrap allWords"></span>/2000
+					<span class="timeToEndTodayWrap allWords"></span>/1530
 				</span> 
 			</p>
 			<div id="end-day-ok-no-panel">
@@ -1404,7 +1392,7 @@
 						<span class="l3"> minutos</span>
 						<span class="l4"> Minuten</span>
 						<span class="l5"> min</span>
-						/80h
+						/70h
 					</span>
 				</p>
 				<p class="main-text-end-panel-2">
@@ -1414,7 +1402,7 @@
 					<span class="l4">Gelernte Sätze</span>
 					<span class="l5">Expressions apprises</span><br>
 					<span class="timeToEndTodayWrap">
-						<span class="timeToEndTodayWrap allWords"></span>/2000
+						<span class="timeToEndTodayWrap allWords"></span>/1530
 					</span> 
 				</p>
 			</div>
@@ -1491,7 +1479,7 @@
 		</section>
 		<section id="show-all-cats-word-list" class="goLeft">
 			<p class="img-close-cont" ontouchstart="hideAllCatsWordList();"><img src="img/back2.png"></p>
-			<h1 class="cat-name-word-list"></h1>
+			<h1 class="cat-name-word-list">asd asd asd asd </h1>
 			<div id="show-all-cats-cats-wordlist">
 			</div>
 		</section>
@@ -2015,7 +2003,7 @@
 				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
 			}
 			function goToWebSite(){
-				window.open('http://www.speakapp.eu', '_system');
+				window.open('http://www.speaklabs.eu', '_system');
 			}
 		</script>
 		<script>
