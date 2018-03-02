@@ -2233,7 +2233,7 @@ h3{
 .phrases-cloud{
 	position: absolute;
 	left: 6%;
-	top: -42px;
+	top: -52px;
 	height: 47px;
 }
 #return_in_learn, #return_in_learn-TUT{
@@ -2263,6 +2263,7 @@ h3{
 	color: white !important;
 }
 .phrase_browser_cloud{
+	position: absolute;
 	right: 11%;
 	bottom: 155px;
 	height: 47px;
