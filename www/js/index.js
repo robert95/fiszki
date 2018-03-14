@@ -187,13 +187,13 @@ function emptyFunctionS(){
 	console.log("jestem");
 }
 function hideBars() {
-/*
+
 	if($( window ).width() > 600) {
 		StatusBar.hide();	
 	}else{
 		AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
 	}
-*/
+
 }
 /* OBSŁUGA ŚCIEŻKI */
 var mainPath;
@@ -463,16 +463,16 @@ var datesJSON5 = false;
 var dayJSONwordsCopy = 0;
 var learnedWordsCopy = 0;
 
-/*
+
 var langJSON = JSON.parse('{"lang":-1}');
 var dayJSON = false;
 var toLearnJSON = [];
-*/
 
+/*
 var langJSON = JSON.parse('{"lang":2}');
 var dayJSON = JSON.parse('{"day": 2, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');//false;//
 var toLearnJSON = JSON.parse('[{"subid":13,"catid":1,"start":"1"}]');
-
+*/
 
 var dayJSONwordsCopy = dayJSON.words;
 var	toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
@@ -542,8 +542,8 @@ function startApp(){
 /*END START APP*/
 function getMyLang(){
 	srcLang = path() + "lang.json";
-	//readLang();
-	//setTimeout(function() {getMyLangHelper();}, 100);
+	readLang();
+	setTimeout(function() {getMyLangHelper();}, 100);
 }
 function getMyLangHelper(){
 	if(resLang == false){
@@ -557,15 +557,15 @@ function getMyLangHelper(){
 }
 function getDay(){
 	srcFile3 = path() + "day.json";
-	//readDayF();
-	//getDayHelper();	
+	readDayF();
+	getDayHelper();	
 	
-	
+	/*
 			getAllCatsInArray();
 			getAllCatsToShowAllCats();
 			
 			afterGetDay();
-	
+	*/
 }
 function getDayHelper(){
 	if(res3 == false){
@@ -606,17 +606,17 @@ function afterGetDay(){
 }
 function getNotice(){
 	srcFile2 = path() + "notice.json";
-	//readWriteFile2();
+	readWriteFile2();
 }
 function afterNoticeRead(resNotice){
 	noticeJSON = JSON.parse(resNotice);
 }
 function getToLearn(){
 	srcFile = path() + "save.json";
-	//readWriteFile();
-	////getToLearnHelper();
+	readWriteFile();
+	//getToLearnHelper();
 	
-			afterReadToLearn(JSON.stringify(toLearnJSON)); //do usunięcia
+	//		afterReadToLearn(JSON.stringify(toLearnJSON)); //do usunięcia
 	
 }
 function afterReadToLearn(tolearnfromFile){

@@ -28,15 +28,15 @@ function setWaitForAd( value ){
 }
 
 function prepareAd(){
-	/*
+	
 	if(!isPremium){
 		if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 	}
-	*/
+	
 }
 
 function showAd(){
-	/*
+	
 	if(!isPremium){
 		if(countAd == 0){
 			countAd = 1;
@@ -51,5 +51,5 @@ function showAd(){
 			}
 		}
 	}
-	*/
+	
 }
