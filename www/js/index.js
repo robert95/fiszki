@@ -252,6 +252,7 @@ function readAsText3(file) {
 
 /* READ LANG */
 function readLang() {
+	alert(1);
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLangR, onFSErrorLangR);
 }
 function onFSSuccessLangR(fileSystem) {
