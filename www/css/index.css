@@ -290,7 +290,8 @@ body{
 	padding: 30px 0;
 }
 #choose-cat h1{    
-	padding-top: 63px;
+	padding-top: 35px;
+	font-size: 19px;
 }
 #choose-cat, #list-of-word{
 	display: none;
@@ -1295,18 +1296,18 @@ section{
 	height: 100%;
 	position: relative;
 }
-#menu #submenu-wrapper, #menu #submenu-wrapper-2{
+#menu #submenu-wrapper, #menu #submenu-wrapper-2, #menu #submenu-wrapper-3{
 	display: none; 
 	list-style: none;
 }
-#menu #submenu, #menu #submenu-2{
+#menu #submenu, #menu #submenu-2, #menu #submenu-3{
 	padding-top: 0;
 	margin-top: -15px;
 }
-#menu #submenu  li, #menu #submenu-2 li{
+#menu #submenu li, #menu #submenu-2 li, #menu #submenu-2 #submenu-3 li{
     font-size: 18px;
-	width: 85% !important; 
-	margin-left: 10% !important ;
+	width: 90% !important;	
+	margin-left: 9% !important;
 }
 #menu-switch{
 	position: fixed;
@@ -1900,6 +1901,9 @@ textarea, textarea[placeholder]{
 	font-weight: 600;
 	margin-top: 55%;
 	margin-bottom: 43%;
+}
+#show-all-cats > h1{
+	font-size: 19px;
 }
 #show-all-cats-cats{
 	display: block;

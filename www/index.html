@@ -30,7 +30,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>SpeakLabs</title>
     </head>
-    <body class="lang2"> 
+    <body> 
 		<input type="file" id="readP">
 		<img src="img/menu.png" id="menu-switch">
 		<div id="menu">
@@ -48,16 +48,16 @@
 					<span class="l2">Twoje postępy</span>
 					<span class="l3">Tu progreso</span>
 					<span class="l4">Deine Fortschritte</span>
-					<span class="l5">Votre progrès</span>
+					<span class="l5">Vos progrès</span>
 				</li>
-				<li id="submenu-wrapper">
+				<li id="submenu-wrapper" class="submenu">
 					<ul id="submenu">
 						<li id="m4" class="text">
 							<span class="l1">Your progress</span>
 							<span class="l2">Twoje postępy</span>
 							<span class="l3">Tu progreso</span>
 							<span class="l4">Deine Fortschritte</span>
-							<span class="l5">Votre progrès</span>
+							<span class="l5">Vos progrès</span>
 						</li>
 						<li id="m1" class="text">
 							<span class="l1">Save progress to a file</span>
@@ -103,21 +103,67 @@
 					<span class="l4">Über uns</span>
 					<span class="l5">Info</span>
 				</li>
-				<li id="submenu-wrapper-2">
+				<li id="submenu-wrapper-2" class="submenu">
 					<ul id="submenu-2">
-						<li id="m7" class="text">
-							<span class="l1">Visit our website</span>
-							<span class="l2">Odwiedź naszą stronę internetową</span>
-							<span class="l3">Visita nuestra página web</span>
-							<span class="l4">Besuche unsere Website</span>
-							<span class="l5">Visitez notre site web</span>
-						</li>
 						<li id="m13" class="text">
 							<span class="l1">Check out our tutorial</span>
 							<span class="l2">Tutorial</span>
 							<span class="l3">Tutorial</span>
 							<span class="l4">Sieh dir unser Tutorial an</span>
 							<span class="l5">Regardez notre didacticiel</span>
+						</li>
+						<li id="m7" class="text">
+							<span class="l1">Visit our website </span>
+							<span class="l2">Odwiedź naszą stronę internetową</span>
+							<span class="l3">Visita nuestra página web</span>
+							<span class="l4">Besuche unsere Website</span>
+							<span class="l5">Visitez notre site web</span>
+						</li>
+						<li id="m15" class="text">
+							<span class="l1">Rate us!</span>
+							<span class="l2">Oceń nas!</span>
+							<span class="l3">¡Valóranos!</span>
+							<span class="l4">Bewerte uns!</span>
+							<span class="l5">Évaluez-nous!</span>
+						</li>
+						<li id="m16" class="text">
+							<span class="l1">Terms and conditions</span>
+							<span class="l2">Regulamin</span>
+							<span class="l3">Términos y condiciones</span>
+							<span class="l4">Geschäftsbedingungen</span>
+							<span class="l5">Termes et conditions</span>
+						</li>
+						<li id="m17" class="text">
+							<span class="l1">Third-party notices</span>
+							<span class="l2">Third-party notices</span>
+							<span class="l3">Third-party notices</span>
+							<span class="l4">Third-party notices</span>
+							<span class="l5">Third-party notices</span>
+						</li>
+						<li id="m18" class="text">
+							<span class="l1">Contact us</span>
+							<span class="l2">Kontakt</span>
+							<span class="l3">Contáctanos</span>
+							<span class="l4">Kontaktiere uns</span>
+							<span class="l5">Contactez-nous</span>
+						</li>
+						<li id="submenu-wrapper-3" class="submenu">
+							<ul id="submenu-3">
+								<li id="m19" class="text">
+									<span class="l1">info@speaklabs.eu</span>
+									<span class="l2">info@speaklabs.eu</span>
+									<span class="l3">info@speaklabs.eu</span>
+									<span class="l4">info@speaklabs.eu</span>
+									<span class="l5">info@speaklabs.eu</span>
+								</li>
+								<li id="m20" class="text">
+									<span class="l1">Find us on Facebook</span>
+									<span class="l2">Znajdź nas na Facebooku</span>
+									<span class="l3">Encuéntranos en Facebook</span>
+									<span class="l4">Finde uns auf Facebook</span>
+									<span class="l5">Retrouvez-nous sur Facebook</span>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</li>
@@ -168,11 +214,11 @@
 		<section id="choose-cat" class="next-cat-right">
 			<p class="img-close-cont" ontouchstart="closeManualSettingCat();"><img src="img/back2.png"></p>
 			<h1>
-				<span class="l1">Choose lesson:</span>
-				<span class="l2">Choose lesson:</span>
-				<span class="l3">Choose lesson:</span>
-				<span class="l4">Choose lesson:</span>
-				<span class="l5">Choose lesson:</span>
+				<span class="l1">Phrase browser:</span>
+				<span class="l2">Przeglądanie zwrotów:</span>
+				<span class="l3">Buscador de frases:</span>
+				<span class="l4">Phrasenbrowser:</span>
+				<span class="l5">Lexique d'expressions:</span>
 			</h1>
 			<div id="cat-list">
 				<input type="text" class="fuzzy-search" placeholder="Search..."/>
@@ -519,14 +565,14 @@
 					<span class="l2">Witamy w SpeakLabs</span>
 					<span class="l3">Bienvenido a SpeakLabs</span>
 					<span class="l4">Willkommen bei SpeakLabs</span>
-					<span class="l5">Bienvenue à SpeakLabs</span>
+					<span class="l5">Bienvenue sur SpeakLabs</span>
 				</p>
 				<p class="text-TUT">
-					<span class="l1">Take a moment to learn how to use this App. It will take less than 1 minute.</span>
-					<span class="l2">Poświęć chwilę aby dowiedzieć się w jaki sposób korzystać z aplikacji.</span>
-					<span class="l3">Dedica un momento para aprender a utilizar esta aplicación. Te llevará menos de un minuto.</span>
+					<span class="l1">Take a moment to learn how to use this App.</span>
+					<span class="l2">Dowiedz się w jaki sposób korzystać z aplikacji.</span>
+					<span class="l3">Dedica un momento para aprender a utilizar esta aplicación.</span>
 					<span class="l4">Nimm dir einen Moment Zeit, um zu lernen, wie man diese App benutzt. Das wird weniger als eine Minute dauern.</span>
-					<span class="l5">Prenez un instant pour apprendre à utiliser cette application. Cela vous prendra moins d'une minute.</span>
+					<span class="l5">Prenez un instant pour apprendre à utiliser cette application.</span>
 				</p>
 				<div class="btns-TUT">
 					<div>
@@ -541,10 +587,10 @@
 					<div ontouchstart="nextTutStep();">
 						<p class="nestStep-TUT">
 							<span class="l1">NEXT ></span>
-							<span class="l2">NEXT ></span>
-							<span class="l3">NEXT ></span>
-							<span class="l4">NEXT ></span>
-							<span class="l5">NEXT ></span>
+							<span class="l2">DALEJ ></span>
+							<span class="l3">Siguiente ></span>
+							<span class="l4">Nächster ></span>
+							<span class="l5">Suivante ></span>
 						</p>
 					</div>
 				</div>
@@ -563,25 +609,25 @@
 					<span class="l2">Wykonuj zadania podane powyżej.<br>Pamiętaj że wszystkie wyrażenia należy powtórzyć lub przetłumaczyć na głos</span>
 					<span class="l3">Realiza las tareas indicadas anteriormente.<br>Debes repetir o traducir cada frase en voz alta.</span>
 					<span class="l4">Löse die oben stehenden Aufgaben.<br>Du musst jeden Satz laut wiederholen oder übersetzen.</span>
-					<span class="l5">Faites les exercices ci-dessus.<br>Vous devez répéter ou traduire chaque phrase à haute voix.</span>
+					<span class="l5">Faites les exercices ci-dessus.<br>Vous devez répéter ou traduire chaque phrase à voix haute.</span>
 				</p>
 				<div class="btns-TUT">
 					<div>
 						<p>
 							<span class="l1">STEP 1/7</span>
-							<span class="l2">STEP 1/7</span>
-							<span class="l3">STEP 1/7</span>
-							<span class="l4">STEP 1/7</span>
-							<span class="l5">STEP 1/7</span>
+							<span class="l2">KROK 1/7</span>
+							<span class="l3">Paso 1/7</span>
+							<span class="l4">Schritt 1/7</span>
+							<span class="l5">Etape 1/7</span>
 						</p>
 					</div>
 					<div ontouchstart="nextTutStep();">
 						<p class="nestStep-TUT">
 							<span class="l1">NEXT ></span>
-							<span class="l2">NEXT ></span>
-							<span class="l3">NEXT ></span>
-							<span class="l4">NEXT ></span>
-							<span class="l5">NEXT ></span>
+							<span class="l2">DALEJ ></span>
+							<span class="l3">Siguiente ></span>
+							<span class="l4">Nächster ></span>
+							<span class="l5">Suivante ></span>
 						</p>
 					</div>
 				</div>
@@ -606,19 +652,19 @@
 					<div>
 						<p>
 							<span class="l1">STEP 2/7</span>
-							<span class="l2">STEP 2/7</span>
-							<span class="l3">STEP 2/7</span>
-							<span class="l4">STEP 2/7</span>
-							<span class="l5">STEP 2/7</span>
+							<span class="l2">KROK 2/7</span>
+							<span class="l3">Paso 2/7</span>
+							<span class="l4">Schritt 2/7</span>
+							<span class="l5">Etape 2/7</span>
 						</p>
 					</div>
 					<div ontouchstart="nextTutStep();">
 						<p class="nestStep-TUT">
 							<span class="l1">NEXT ></span>
-							<span class="l2">NEXT ></span>
-							<span class="l3">NEXT ></span>
-							<span class="l4">NEXT ></span>
-							<span class="l5">NEXT ></span>
+							<span class="l2">DALEJ ></span>
+							<span class="l3">Siguiente ></span>
+							<span class="l4">Nächster ></span>
+							<span class="l5">Suivante ></span>
 						</p>
 					</div>
 				</div>
@@ -635,7 +681,7 @@
 				<p class="text-TUT">
 					<span class="l1">You can always skip the task by choosing the following button.</span>
 					<span class="l2">W każdej chwili możesz pominąć zadanie naciskając przysik poniżej.</span>
-					<span class="l3">Pulsando este botón, podrás omitir una tarea determinada.</span>
+					<span class="l3">Presiona el botón para omitir una tarea determina.</span>
 					<span class="l4">Du kannst Aufgaben jederzeit überspringen, indem du die folgende Taste drückst.</span>
 					<span class="l5">Vous pouvez toujours passer un exercice en appuyant sur<br>le bouton suivant.</span>
 				</p>
@@ -643,19 +689,19 @@
 					<div>
 						<p>
 							<span class="l1">STEP 3/7</span>
-							<span class="l2">STEP 3/7</span>
-							<span class="l3">STEP 3/7</span>
-							<span class="l4">STEP 3/7</span>
-							<span class="l5">STEP 3/7</span>
+							<span class="l2">KROK 3/7</span>
+							<span class="l3">Paso 3/7</span>
+							<span class="l4">Schritt 3/7</span>
+							<span class="l5">Etape 3/7</span>
 						</p>
 					</div>
 					<div ontouchstart="nextTutStep();">
 						<p class="nestStep-TUT">
 							<span class="l1">NEXT ></span>
-							<span class="l2">NEXT ></span>
-							<span class="l3">NEXT ></span>
-							<span class="l4">NEXT ></span>
-							<span class="l5">NEXT ></span>
+							<span class="l2">DALEJ ></span>
+							<span class="l3">Siguiente ></span>
+							<span class="l4">Nächster ></span>
+							<span class="l5">Suivante ></span>
 						</p>
 					</div>
 				</div>
@@ -663,36 +709,36 @@
 			
 			<div id="popup-TUT-5" class="popup-TUT next-cat-right-right">
 				<p class="title-TUT">
-					<span class="l1">Learn smarter</span>
-					<span class="l2">Ucz się sprytnie</span>
-					<span class="l3">Aprende de forma inteligente</span>
-					<span class="l4">Intelligenter lernen</span>
-					<span class="l5">Apprenez plus intelligemment</span>
+					<span class="l1">Learn smarter!</span>
+					<span class="l2">Ucz się efektywniej!</span>
+					<span class="l3">Aprende de forma inteligente!</span>
+					<span class="l4">Intelligenter lernen!</span>
+					<span class="l5">Apprenez plus intelligemment!</span>
 				</p>
 				<p class="text-TUT">
-					<span class="l1">Create your own hints to remember new words faster and better.<br>Check out our website to learn more.</span>
-					<span class="l2">Twórz własne podpowiedzi aby zapamiętywać nowe słowa szybciej i lepiej.<br>Odwiedź naszą stronę internetową aby dowiedzieć się więcej.</span>
-					<span class="l3">Crea tus propias indicaciones para memorizar las respuestas rápidamente y mejor.<br>Visita nuestra página web para obtener más información.</span>
+					<span class="l1">Create your own  hints to remember new words faster and better.<br>Check out our website to learn more.</span>
+					<span class="l2">Twórz własne podpowiedzi aby zapamiętywać nowe słowa szybciej i lepiej.</span>
+					<span class="l3">Crea tus propias indicaciones para memorizar las respuestas rápidamente y mejor.</span>
 					<span class="l4">Erstelle deine eigenen Hinweise, um dir neue Wörter schneller und leichter zu merken.<br>Besuche unsere Website, um mehr darüber zu erfahren.</span>
-					<span class="l5">Créez vos propres indices pour mémoriser les nouveaux mots plus vite et plus facilement.<br>Visitez notre site web pour en savoir plus.</span>
+					<span class="l5">Créez vos propres indices pour mémoriser les nouveaux mots plus vite et plus facilement.</span>
 				</p>
 				<div class="btns-TUT">
 					<div>
 						<p>
 							<span class="l1">STEP 4/7</span>
-							<span class="l2">STEP 4/7</span>
-							<span class="l3">STEP 4/7</span>
-							<span class="l4">STEP 4/7</span>
-							<span class="l5">STEP 4/7</span>
+							<span class="l2">KROK 4/7</span>
+							<span class="l3">Paso 4/7</span>
+							<span class="l4">Schritt 4/7</span>
+							<span class="l5">Etape 4/7</span>
 						</p>
 					</div>
 					<div ontouchstart="nextTutStep();">
 						<p class="nestStep-TUT">
 							<span class="l1">NEXT ></span>
-							<span class="l2">NEXT ></span>
-							<span class="l3">NEXT ></span>
-							<span class="l4">NEXT ></span>
-							<span class="l5">NEXT ></span>
+							<span class="l2">DALEJ ></span>
+							<span class="l3">Siguiente ></span>
+							<span class="l4">Nächster ></span>
+							<span class="l5">Suivante ></span>
 						</p>
 					</div>
 				</div>
@@ -708,8 +754,8 @@
 				</p>
 				<p class="text-TUT">
 					<span class="l1">You can add phrases to favourites and review them later at any time.</span>
-					<span class="l2">Zwroty możesz dodawać do ulubionych i przeglądać je<br>w dowolnym momencie.</span>
-					<span class="l3">Puedes añadir frases favoritos<br>y revisarlas en cualquier momento.</span>
+					<span class="l2">Dodawaj zwroty do zakładki "ulubione" i przeglądaj je<br>w dowolnym momencie.</span>
+					<span class="l3">Puedes añadir frases a favoritos<br>y revisarlas en cualquier momento.</span>
 					<span class="l4">Du kannst die Sätze zu deinen Favoriten hinzufügen und sie später jederzeit wiederholen.</span>
 					<span class="l5">Vous pouvez ajouter des expressions à vos favoris et les revoir plus tard quand vous voulez.</span>
 				</p>
@@ -717,19 +763,19 @@
 					<div>
 						<p>
 							<span class="l1">STEP 5/7</span>
-							<span class="l2">STEP 5/7</span>
-							<span class="l3">STEP 5/7</span>
-							<span class="l4">STEP 5/7</span>
-							<span class="l5">STEP 5/7</span>
+							<span class="l2">KROK 5/7</span>
+							<span class="l3">Paso 5/7</span>
+							<span class="l4">Schritt 5/7</span>
+							<span class="l5">Etape 5/7</span>
 						</p>
 					</div>
 					<div ontouchstart="nextTutStep();">
 						<p class="nestStep-TUT">
 							<span class="l1">NEXT ></span>
-							<span class="l2">NEXT ></span>
-							<span class="l3">NEXT ></span>
-							<span class="l4">NEXT ></span>
-							<span class="l5">NEXT ></span>
+							<span class="l2">DALEJ ></span>
+							<span class="l3">Siguiente ></span>
+							<span class="l4">Nächster ></span>
+							<span class="l5">Suivante ></span>
 						</p>
 					</div>
 				</div>
@@ -741,32 +787,32 @@
 					<span class="l2">Przeglądanie zwrotów</span>
 					<span class="l3">Buscador de frases</span>
 					<span class="l4">Phrasenbrowser</span>
-					<span class="l5">Navigateur d'expressions</span>
+					<span class="l5">Lexique d'expressions</span>
 				</p>
 				<p class="text-TUT">
 					<span class="l1">Browse through all the expressions in the phrase browser.</span>
-					<span class="l2">Funkcja przeglądania zwrotów dostępna jest na ekranie głównym oraz w menu aplikacji.</span>
+					<span class="l2">Przeglądanie wszystkich zwrotów jest dostępne na ekranie początkowym oraz w menu aplikacji.</span>
 					<span class="l3">Navegar por todas las expresiones en el navegador<br>de frases.</span>
 					<span class="l4">Mit dem Phrasenbrowser kannst du alle Sätze durchsuchen.</span>
-					<span class="l5">Vous pouvez naviguer à travers toutes les expressions dans le navigateur des expressions.</span>
+					<span class="l5">Vous pouvez naviguer à travers toutes les expressions dans le moteur de recherche des expressions.</span>
 				</p>
 				<div class="btns-TUT">
 					<div>
 						<p>
 							<span class="l1">STEP 6/7</span>
-							<span class="l2">STEP 6/7</span>
-							<span class="l3">STEP 6/7</span>
-							<span class="l4">STEP 6/7</span>
-							<span class="l5">STEP 6/7</span>
+							<span class="l2">KROK 6/7</span>
+							<span class="l3">Paso 6/7</span>
+							<span class="l4">Schritt 6/7</span>
+							<span class="l5">Etape 6/7</span>
 						</p>
 					</div>
 					<div ontouchstart="nextTutStep();">
 						<p class="nestStep-TUT">
 							<span class="l1">NEXT ></span>
-							<span class="l2">NEXT ></span>
-							<span class="l3">NEXT ></span>
-							<span class="l4">NEXT ></span>
-							<span class="l5">NEXT ></span>
+							<span class="l2">DALEJ ></span>
+							<span class="l3">Siguiente ></span>
+							<span class="l4">Nächster ></span>
+							<span class="l5">Suivante ></span>
 						</p>
 					</div>
 				</div>
@@ -776,7 +822,7 @@
 				<p class="title-TUT">
 					<span class="l1">Get SpeakLabs Pro</span>
 					<span class="l2">Kup SpeakLabs Pro</span>
-					<span class="l3">Comprar versión SpeakLabs Pro</span>
+					<span class="l3">Compra versión SpeakLabs Pro</span>
 					<span class="l4">Kauf dir die Version SpeakLabs Pro</span>
 					<span class="l5">Achetez la version SpeakLabs Pro</span>
 				</p>
@@ -788,12 +834,12 @@
 					</span>
 					<span class="l2">
 						Kup SpeakLabs pro, a otrzymasz:<br>
-						- nagrania audio do wszystkich 180 lekcji<br>
-						- wersje bez reklam
+						- nagrania audio do wszystkich lekcji<br>
+						- wersję bez reklam
 					</span>
 					<span class="l3">
 						Compra la versión SpeakLabs Pro y recibirás:<br>
-						- Grabaciones audio para las 180 lecciones<br>
+						- Los audios de las 180 lecciones<br>
 						- Contenido sin publicidad 
 					</span>
 					<span class="l4">
@@ -803,7 +849,7 @@
 					</span>
 					<span class="l5">
 						Achetez la version SpeakLabs Pro pour obtenir:<br>
-						-les audios pour toutes les 180 leçons<br>
+						-les audios pour toutes les leçons<br>
 						-une version sans publicités
 					</span>
 				</p>
@@ -811,19 +857,19 @@
 					<div>
 						<p>
 							<span class="l1">STEP 7/7</span>
-							<span class="l2">STEP 7/7</span>
-							<span class="l3">STEP 7/7</span>
-							<span class="l4">STEP 7/7</span>
-							<span class="l5">STEP 7/7</span>
+							<span class="l2">KROK 7/7</span>
+							<span class="l3">Paso 7/7</span>
+							<span class="l4">Schritt 7/7</span>
+							<span class="l5">Etape 7/7</span>
 						</p>
 					</div>
 					<div ontouchstart="nextTutStep();">
 						<p class="nestStep-TUT">
-							<span class="l1">Let's begin!</span>
-							<span class="l2">Let's begin!</span>
-							<span class="l3">Let's begin!</span>
-							<span class="l4">Let's begin!</span>
-							<span class="l5">Let's begin!</span>
+							<span class="l1">START</span>
+							<span class="l2">START</span>
+							<span class="l3">START</span>
+							<span class="l4">START</span>
+							<span class="l5">START</span>
 						</p>
 					</div>
 				</div>
@@ -987,7 +1033,7 @@
 			<p id="name-next-cat"></p>
 			<p class="main-text-repetition">
 				<span class="l1">Estimated time of completion:</span>
-				<span class="l2">Przybliżony czas nauki:</span>
+				<span class="l2">Przewidywany czas nauki:</span>
 				<span class="l3">Tiempo estimado para finalizar esta parte:</span>
 				<span class="l4">Geschätzte Dauer:</span>
 				<span class="l5">Durée estimée:</span> <br>
@@ -1039,7 +1085,7 @@
 				<span id="main-text-next-cat-end">1/5</span><br>
 				<span class="l1">completed</span>
 				<span class="l2">ukończona</span>
-				<span class="l3">completada</span>
+				<span class="l3">completa</span>
 				<span class="l4">abgeschlossen</span>
 				<span class="l5">terminée</span>
 			</h1>
@@ -1125,12 +1171,16 @@
 				<span id="nrDayFiled"></span>/180
 				<span id="repetition-only-info">
 					<br>
-					Repetition only
+					<span class="l1">Repetition only </span>
+					<span class="l2">Powtórki </span>
+					<span class="l3">Repetición </span>
+					<span class="l4">Nur Wiederholung </span>
+					<span class="l5">Répétiton </span>
 				</span>
 			</h1>
 			<p class="first-page-main-text">
 				<span class="l1">Estimated lesson time:</span>
-				<span class="l2">Przybliżony czas nauki:</span>
+				<span class="l2">Przewidywany czas nauki:</span>
 				<span class="l3">Tiempo estimado para finalizar la lección:</span>
 				<span class="l4">Geschätzte Dauer der Lektion:</span>
 				<span class="l5">Durée estimée de la leçon:</span> 
@@ -1181,7 +1231,7 @@
 			<p class="main-text-end-panel-1">
 				<span class="l1">Speaking time</span>
 				<span class="l2">Łączny czas nauki</span>
-				<span class="l3">Tiempo dedicado a hablar</span>
+				<span class="l3">Tiempo total de aprendizaje</span>
 				<span class="l4">Sprechzeit</span>
 				<span class="l5">Temps de parole</span>
 				<br>
@@ -1230,14 +1280,14 @@
 				<br>
 				<span class="l1">completed</span>
 				<span class="l2">ukończona</span>
-				<span class="l3">completada</span>
+				<span class="l3">completa</span>
 				<span class="l4">abgeschlossen</span>
 				<span class="l5">terminée</span>
 			</h1>
 			<p class="main-text-end-panel-1">
 				<span class="l1">Speaking time</span>
 				<span class="l2">Łączny czas nauki</span>
-				<span class="l3">Tiempo total hablando</span>
+				<span class="l3">Tiempo total de aprendizaje</span>
 				<span class="l4">Sprechzeit</span>
 				<span class="l5">Temps de parole</span>
 				<br>
@@ -1272,7 +1322,7 @@
 			<p>
 				<span class="l1">Saving progress...</span>
 				<span class="l2">Zapisywanie postępu...</span>
-				<span class="l3">Guardar progreso...</span>
+				<span class="l3">Guardando progreso...</span>
 				<span class="l4">Fortschritt wird gespeichert...</span>
 				<span class="l5">Sauvegarde du progrès en cours...</span>
 			</p>
@@ -1375,13 +1425,13 @@
 				<span class="l2">Twój postęp</span>
 				<span class="l3">Tu progreso</span>
 				<span class="l4">Deine Fortschritte</span>
-				<span class="l5">Votre progrès</span>
+				<span class="l5">Vos progrès</span>
 			</h3>
 			<div class="your-progress-simple-info">
 				<p class="main-text-end-panel-1">
 					<span class="l1">Speaking time</span>
 					<span class="l2">Łączny czas nauki</span>
-					<span class="l3">Tiempo dedicado a hablar</span>
+					<span class="l3">Tiempo total de aprendizaje</span>
 					<span class="l4">Sprechzeit</span>
 					<span class="l5">Temps de parole</span>
 					<br>
@@ -1463,11 +1513,11 @@
 		<section id="show-all-cats" class="goLeft">
 			<p class="img-close-cont" ontouchstart="hideAllCats();"><img src="img/back2.png"></p>
 			<h1>
-				<span class="l1">Choose lesson:</span>
-				<span class="l2">Choose lesson:</span>
-				<span class="l3">Choose lesson:</span>
-				<span class="l4">Choose lesson:</span>
-				<span class="l5">Choose lesson:</span>
+				<span class="l1">Phrase browser:</span>
+				<span class="l2">Przeglądanie zwrotów:</span>
+				<span class="l3">Buscador de frases:</span>
+				<span class="l4">Phrasenbrowser:</span>
+				<span class="l5">Lexique d'expressions:</span>
 			</h1>
 			<div id="show-all-cats-cat-list">
 				<input type="text" class="fuzzy-search" placeholder="Search..."/>
@@ -1914,6 +1964,7 @@
 			});
 			function hideMenu(){
 				$("#menu").removeClass('showmenu');
+				$("#menu .submenu").hide();
 			}
 			$("#m1").click(function(){
 				saveProgressInFile();
@@ -1988,6 +2039,24 @@
 					startTut();
 				}, 300);
 			});
+			$("#m15").click(function(){
+				goToCurrentVersion();
+			});
+			$("#m16").click(function(){
+				goToWebSitePrivatyPolicy();
+			});
+			$("#m17").click(function(){
+				goToWebSiteThirdPartyNotices();
+			});
+			$("#m18").click(function(){
+				$("#submenu-wrapper-3").toggle();
+			});
+			$("#m19").click(function(){
+				goToMailContact();
+			});
+			$("#m20").click(function(){
+				goToFacebook();
+			});
 			$(".mycalllink").click(function(){
 				window.open('https://www.mycall.no', '_system');
 			});
@@ -2004,6 +2073,21 @@
 			}
 			function goToWebSite(){
 				window.open('http://www.speaklabs.eu', '_system');
+			}
+			function goToWebSitePrivatyPolicy(){
+				window.open('http://www.speaklabs.eu/private-policy', '_system');
+			}
+			function goToWebSiteThirdPartyNotices(){
+				window.open('http://www.speaklabs.eu/third-party-notices', '_system');
+			}
+			function goToFacebook(){
+				window.open('https://www.facebook.com/SpeakLabs-347844995715942/', '_system');
+			}
+			function goToCurrentVersion(){
+				window.open('market://details?id=com.gameloft.android.ANMP.GloftA8HM', '_system');
+			}
+			function goToMailContact(){
+				window.open('mailto:info@speaklabs.eu', '_system');
 			}
 		</script>
 		<script>
