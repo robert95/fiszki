@@ -1306,7 +1306,12 @@ section{
 }
 #menu #submenu li, #menu #submenu-2 li, #menu #submenu-2 #submenu-3 li{
     font-size: 18px;
-	width: 90% !important;	
+	width: 10% !important;	
+	margin-left: 9% !important;
+}
+#menu #submenu-2 li#submenu-wrapper-3 li{
+    font-size: 18px;
+	width: 1% !important;	
 	margin-left: 9% !important;
 }
 #menu-switch{
@@ -2451,8 +2456,11 @@ h3{
 }
 .no-audio{
 	position: relative;
+	padding-left: 0px;
+	width: calc(90% - 0px);
+}
+.no-audio strong{
 	padding-left: 30px;
-	width: calc(90% - 30px);
 }
 .no-audio:after{
 	display: block;
@@ -2462,9 +2470,9 @@ h3{
 	background: transparent url('../img/mute.png') no-repeat;
 	position: absolute;
 	background-size: 100%;
-	top: 50%;
+	top: 0%;
 	left: 12px;
-	margin-top: -15px;
+	margin-top: 10px;
 }
 #suggest-new-category .mute-icon{
 	display: none;
