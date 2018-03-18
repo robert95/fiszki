@@ -3424,9 +3424,11 @@ function showRating() {
 	  }
 	};
 	
+	setTimeout(function(){ 
+		AppRate.promptForRating();
+	}, 1000);
 	//var day = parseInt($("#nrDayFiled").text());
 	//if(day%5 == 0 && day > 0 && dayJSON.rating == false){
-		//AppRate.promptForRating();
 	//}
 }
 function setRatingToTrue() {
