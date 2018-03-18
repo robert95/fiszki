@@ -2210,9 +2210,9 @@ h3{
 	display: none;
 }
 .cloud-next-task{
-	height: 40px;
+	height: 38px;
 	position: relative;
-	top: 25px;
+	top: 27px;
 }
 .cloud-browse{
 	position: absolute;
@@ -2242,8 +2242,8 @@ h3{
 .phrases-cloud{
 	position: absolute;
 	left: 6%;
-	top: -52px;
-	height: 47px;
+	top: -50px;
+	height: 43px;
 }
 #return_in_learn, #return_in_learn-TUT{
 	position: absolute;

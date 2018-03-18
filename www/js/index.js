@@ -616,7 +616,7 @@ function getToLearn(){
 	readWriteFile();
 	//getToLearnHelper();
 	
-	//		afterReadToLearn(JSON.stringify(toLearnJSON)); //do usunięcia
+		//	afterReadToLearn(JSON.stringify(toLearnJSON)); //do usunięcia
 	
 }
 function afterReadToLearn(tolearnfromFile){
@@ -3197,6 +3197,7 @@ function getThisCatAsSug(obj){
 			$("#suggest-new-category-text").text(suggestedCatName);
 			showMuteIcon();
 			backToSetNewCategory();
+			setPopupAboutNoAudioLesson();
 		}, 100);
 	}
 }
@@ -3407,8 +3408,9 @@ function checkConnection() {
 	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
 }
 function showRating() {
+	alert(getTrans(t_lang_rank));
 	AppRate.preferences = {
-	  displayAppName: 'SpeakLabs',
+	  displayAppName: 'SpeakLabs Pro',
 	  storeAppURL: {
 		android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
 	  },
@@ -3709,10 +3711,10 @@ function compareRecognizedText(text){
 		if(countOfWrongRecognized == 2){
 			showRecognizedAlert();
 		}
-		if(countOfWrongRecognized == 3){
+		//if(countOfWrongRecognized == 3){
 			//showRecognizedAlert2();
-		}
-		if(countOfWrongRecognized == 4){
+		//}
+		if(countOfWrongRecognized == 3){
 			countOfWrongRecognized = 0;
 			showRecognizedAlert3();
 		}
