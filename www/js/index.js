@@ -536,7 +536,6 @@ function startApp(){
 			getNotice(); //pobierz notice
 			readLikedWords(); //pobierz liked words
 			updatePlaceholders();
-			showRating();
 		}
 	}, 2500);
 }
@@ -3425,10 +3424,10 @@ function showRating() {
 	  }
 	};
 	
-	//var day = parseInt($("#nrDayFiled").text());
-	//if(day%5 == 0 && day > 0 && dayJSON.rating == false){
+	var day = parseInt($("#nrDayFiled").text());
+	if(day%5 == 0 && day > 0 && dayJSON.rating == false){
 		AppRate.promptForRating();
-	//}
+	}
 }
 function setRatingToTrue() {
 	endTodayLesson = false;
