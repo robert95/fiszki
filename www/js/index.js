@@ -3415,7 +3415,7 @@ function showRating() {
 	  storeAppURL: {
 		android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
 	  },
-	  useLanguage: getTrans(t_lang_rank),
+	  useLanguage: 'pl',
 	  callbacks: {
 		onButtonClicked: function(buttonIndex){
 			if(buttonIndex == 1){
