@@ -83,7 +83,8 @@ function getTrans(key){
 	}
 }
 
-var isPremium = true;
+// PREMIUM CHANGE
+var isPremium = false;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -3408,8 +3409,9 @@ function checkConnection() {
 	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
 }
 function showRating() {
+	// PREMIUM CHANGE
 	AppRate.preferences = {
-	  displayAppName: 'SpeakLabs Pro',
+	  displayAppName: 'SpeakLabs',
 	  storeAppURL: {
 		android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
 	  },
