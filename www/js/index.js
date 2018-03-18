@@ -3414,7 +3414,7 @@ function showRating() {
 	  storeAppURL: {
 		android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
 	  },
-	  useLanguage: getTrans(t_lang_rank),
+	  useLanguage: 'en',
 	  callbacks: {
 		onButtonClicked: function(buttonIndex){
 			if(buttonIndex == 1){
@@ -3424,11 +3424,9 @@ function showRating() {
 	  }
 	};
 	
-	setTimeout(function(){ 
-		AppRate.promptForRating();
-	}, 1000);
 	//var day = parseInt($("#nrDayFiled").text());
 	//if(day%5 == 0 && day > 0 && dayJSON.rating == false){
+		AppRate.promptForRating();
 	//}
 }
 function setRatingToTrue() {
