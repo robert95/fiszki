@@ -3409,13 +3409,12 @@ function checkConnection() {
 	return(!(navigator.connection.type==0 || navigator.connection.type=='none'));
 }
 function showRating() {
-	alert(getTrans(t_lang_rank));
 	AppRate.preferences = {
 	  displayAppName: 'SpeakLabs Pro',
 	  storeAppURL: {
 		android: 'market://details?id=com.AwesomeIndustries.DriftZone2'
 	  },
-	  useLanguage: 'pl',
+	  useLanguage: getTrans(t_lang_rank),
 	  callbacks: {
 		onButtonClicked: function(buttonIndex){
 			if(buttonIndex == 1){
@@ -3427,7 +3426,7 @@ function showRating() {
 	
 	//var day = parseInt($("#nrDayFiled").text());
 	//if(day%5 == 0 && day > 0 && dayJSON.rating == false){
-		AppRate.promptForRating();
+		//AppRate.promptForRating();
 	//}
 }
 function setRatingToTrue() {
