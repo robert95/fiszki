@@ -28,6 +28,7 @@
   <plugin name="cordova-plugin-inappbrowser" source="npm" spec="1.7.2"/>
   <plugin name="cordova-plugin-media" source="npm" spec="3.0.1" />
   <plugin name="cordova-plugin-network-information" source="npm" spec="1.3.4" />
+  <plugin name="cordova-plugin-admobpro" source="npm" spec="2.31.1" />
   <plugin name="com.gkcgautam.asset2sd" />
   <plugin name="cordova-plugin-filepath" />
   <plugin name="cordova-plugin-fullscreen"/>
@@ -35,7 +36,6 @@
   <plugin src="https://github.com/macdonst/SpeechRecognitionPlugin.git" />
   <plugin src="https://github.com/pbakondy/cordova-plugin-speechrecognition.git" />
   <plugin src="http://github.com/don/cordova-filechooser.git" />
-  <plugin src="https://github.com/floatinghotpot/cordova-admob-pro.git" />
   <plugin src="https://github.com/apache/cordova-plugin-statusbar.git" />
   <plugin src="https://github.com/cranberrygame/cordova-plugin-navigationbar.git" />
   <plugin src="https://github.com/mesmotronic/cordova-plugin-fullscreen.git" />
