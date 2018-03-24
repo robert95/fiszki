@@ -28,6 +28,14 @@ function setWaitForAd( value ){
 	waitForAd = value;
 }
 
+var adIsReady = false;
+function getAdIsReady(){
+	return adIsReady;
+}
+function setAdIsReady( value ){
+	adIsReady = value;
+}
+
 function prepareAd(){
 	
 	if(!isPremium){
@@ -42,13 +50,16 @@ function showAd(){
 		if(countAd == 0){
 			countAd = 1;
 		}else{
-			waitForAd = true;
-			countAd++;
-			if(countAd%2 == 0){
-				//$("#myCall-big-ad").show();
-				if(AdMob) AdMob.showInterstitial();
-			}else{
-				if(AdMob) AdMob.showInterstitial();
+			if(adIsReady)
+			{
+				waitForAd = true;
+				countAd++;
+				if(countAd%2 == 0){
+					//$("#myCall-big-ad").show();
+					if(AdMob) AdMob.showInterstitial();
+				}else{
+					if(AdMob) AdMob.showInterstitial();
+				}
 			}
 		}
 	}
