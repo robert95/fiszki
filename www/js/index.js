@@ -150,10 +150,6 @@ var app = {
 			prepareAd();
 		});
 		
-		document.addEventListener('onAdFailLoad', function(e){
-			alert(e);
-		});
-		
 	/*	document.addEventListener("pause", function() {
 			navigator.notification.confirm(
 				"Jeżeli zamkniesz teraz aplikacje Twój dzisiejszy postęp nie zostanie zapisany!",
