@@ -1306,14 +1306,14 @@ section{
 }
 #menu #submenu li, #menu #submenu-2 li, #menu #submenu-2 #submenu-3 li{
 	font-size: 18px;
-	width: auto !important;
+	width: 10% !important;
 	margin-left: 9% !important;
 	text-align: left;
 	padding-left: 19px;
 }
 #menu #submenu-2 li#submenu-wrapper-3 li{
     font-size: 18px;
-	width: auto !important;
+	width: 1% !important;
 	margin-left: 9% !important;
 }
 #menu-switch{
