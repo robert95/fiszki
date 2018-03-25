@@ -1310,11 +1310,13 @@ section{
 	margin-left: 9% !important;
 	text-align: left;
 	padding-left: 19px;
+	min-width: 85% !important;
+	max-width: 85% !important;
 }
 #menu #submenu-2 li#submenu-wrapper-3 li{
     font-size: 18px;
 	width: 1% !important;
-	margin-left: 9% !important;
+	margin-left: 7% !important;
 }
 #menu-switch{
 	position: fixed;
