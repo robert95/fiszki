@@ -84,7 +84,7 @@ function getTrans(key){
 }
 
 // PREMIUM CHANGE
-var isPremium = true;
+var isPremium = false;
 var app = {
     // Application Constructor
     initialize: function() {
