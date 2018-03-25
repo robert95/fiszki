@@ -1305,13 +1305,15 @@ section{
 	margin-top: -15px;
 }
 #menu #submenu li, #menu #submenu-2 li, #menu #submenu-2 #submenu-3 li{
-    font-size: 18px;
-	width: 10% !important;	
+	font-size: 18px;
+	width: auto !important;
 	margin-left: 9% !important;
+	text-align: left;
+	padding-left: 19px;
 }
 #menu #submenu-2 li#submenu-wrapper-3 li{
     font-size: 18px;
-	width: 1% !important;	
+	width: auto !important;
 	margin-left: 9% !important;
 }
 #menu-switch{
