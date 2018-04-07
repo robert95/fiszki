@@ -3421,7 +3421,7 @@ function showRating() {
 	AppRate.preferences = {
 	  displayAppName: 'SpeakLabs',
 	  storeAppURL: {
-		android: 'market://details?id=com.speaklabs.speaklabs'
+		android: 'market://details?id=com.speaklabs.english.speaklabs'
 	  },
 	  useLanguage: getTrans(t_lang_rank),
 	  simpleMode: true,
