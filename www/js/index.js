@@ -84,7 +84,7 @@ function getTrans(key){
 }
 
 // PREMIUM CHANGE
-var isPremium = true;
+var isPremium = false;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -3421,7 +3421,7 @@ function showRating() {
 	AppRate.preferences = {
 	  displayAppName: 'SpeakLabs',
 	  storeAppURL: {
-		android: 'market://details?id=com.speaklabs.english.speaklabsPro'
+		android: 'market://details?id=com.speaklabs.english.speaklabs'
 	  },
 	  useLanguage: getTrans(t_lang_rank),
 	  simpleMode: true,
