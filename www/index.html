@@ -111,6 +111,13 @@
 					<span class="l4">Thema ändern</span>
 					<span class="l5">Changer de thème</span>
 				</li>
+				<li id="m15" class="text">
+					<span class="l1">Rate us!</span>
+					<span class="l2">Oceń nas!</span>
+					<span class="l3">¡Valóranos!</span>
+					<span class="l4">Bewerte uns!</span>
+					<span class="l5">Évaluez-nous!</span>
+				</li>
 				<li id="m14" class="text">
 					<span class="l1">About</span>
 					<span class="l2">Info</span>
@@ -133,13 +140,6 @@
 							<span class="l3">Visita nuestra página web</span>
 							<span class="l4">Besuche unsere Website</span>
 							<span class="l5">Visitez notre site web</span>
-						</li>
-						<li id="m15" class="text">
-							<span class="l1">Rate us!</span>
-							<span class="l2">Oceń nas!</span>
-							<span class="l3">¡Valóranos!</span>
-							<span class="l4">Bewerte uns!</span>
-							<span class="l5">Évaluez-nous!</span>
 						</li>
 						<li id="m16" class="text">
 							<span class="l1">Terms and conditions</span>
@@ -522,7 +522,7 @@
 						<span class="l5">
 							<img src="img/5_try_again.png" class="cloud cloud-next-task">
 						</span>
-						<div id="progess-btn-stan-in-cycle" class="c100 main-btn-in-learn p100" onclick="startVoiceToText();">
+						<div id="progess-btn-stan-in-cycle" class="c100 main-btn-in-learn p100" ontouchstart="startVoiceToText();">
 							<span id="progess-btn-per-in-cycle"></span>
 							<div class="slice">
 								<div class="bar"></div>
@@ -2389,7 +2389,7 @@
 			
 			function setCatToViewWords(sygn, name, hasAudio){
 				$(".cat-name-word-list").text(name);
-				getWordForCatShowList(sygn);
+				getWordForCatShowList(sygn, hasAudio);
 				
 				$("#show-all-cats-word-list").show();
 				setTimeout(function(){

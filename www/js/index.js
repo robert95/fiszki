@@ -625,7 +625,7 @@ function getToLearn(){
 	readWriteFile();
 	//getToLearnHelper();
 	
-		//	afterReadToLearn(JSON.stringify(toLearnJSON)); //do usunięcia
+	//		afterReadToLearn(JSON.stringify(toLearnJSON)); //do usunięcia
 	
 }
 function afterReadToLearn(tolearnfromFile){
@@ -3435,7 +3435,7 @@ function showRating() {
 	};
 	
 	var day = parseInt($("#nrDayFiled").text());
-	if(day%5 == 0 && day > 0 && dayJSON.rating == false){
+	if(day%2 == 0 && day > 0 && dayJSON.rating == false){
 		AppRate.promptForRating();
 	}
 }
@@ -3567,7 +3567,7 @@ function getAllCatsToShowAllCats(){
     });
 }
 
-function getWordForCatShowList(sygn){
+function getWordForCatShowList(sygn, hasAudio){
 	$.get("date/"+ langJSON.lang + "/" + sygn + "/words.json", function(result) {
 		$("#show-all-cats-cats-wordlist").text("");
 		$.get("date/1/" + sygn + "/words.json", function(transResult) {
@@ -3576,7 +3576,8 @@ function getWordForCatShowList(sygn){
 			for(var x in words){
 				var w = words[x];
 				var t = trans[x];
-				$("#show-all-cats-cats-wordlist").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')"><img src="img/spiker_white.png" class="left-img">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + (t.name).replace(/(['"])/g, "\\$1") + '\', this); return false;"></p>');
+				var audio_icon = hasAudio ? 'img/spiker_white.png' : 'img/spiker_no_audio_white.png' ;
+				$("#show-all-cats-cats-wordlist").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')"><img src="' + audio_icon + '" class="left-img">' + t.name + '<span>' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + (t.name).replace(/(['"])/g, "\\$1") + '\', this); return false;"></p>');
 			}
 		});
     });
