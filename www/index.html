@@ -522,7 +522,7 @@
 						<span class="l5">
 							<img src="img/5_try_again.png" class="cloud cloud-next-task">
 						</span>
-						<div id="progess-btn-stan-in-cycle" class="c100 main-btn-in-learn p100" ontouchstart="startVoiceToText();">
+						<div id="progess-btn-stan-in-cycle" class="c100 main-btn-in-learn p100" ontouchstart="startVoiceToText();" ontouchend="removeHoverOnMainBtn();">
 							<span id="progess-btn-per-in-cycle"></span>
 							<div class="slice">
 								<div class="bar"></div>
@@ -2274,6 +2274,10 @@
 				startVoiceToText();
 				$("#progess-btn-stan-in-cycle").addClass('hover-progres-round');
 				setTimeout(function(){$("#progess-btn-stan-in-cycle").removeClass('hover-progres-round');}, 150);
+			}
+			
+			function removeHoverOnMainBtn(){
+				$("#progess-btn-stan-in-cycle").removeClass('hover-progres-round');
 			}
 		</script>
 		<script>
