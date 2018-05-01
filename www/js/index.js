@@ -3641,6 +3641,8 @@ function startVoiceToText(){
 	}else{
 		startRecognize();
 	}
+	
+	setTimeout(function(){$("#progess-btn-stan-in-cycle").removeClass('hover-progres-round');}, 150);
 
 }
 
