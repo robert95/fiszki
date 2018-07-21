@@ -2,26 +2,26 @@
 	{
 		"id": 1,
 		"name": "English",
-		"label": "I speak English"
+		"label": "English"
 	},
 	{
 		"id": 5,
 		"name": "Français",
-		"label": "Je parle french"
+		"label": "Français"
 	},
 	{
 		"id": 4,
 		"name": "Deutsch",
-		"label": "Ich spreche German"
+		"label": "Deutsch"
 	},
 	{
 		"id": 3,
 		"name": "Español",
-		"label": "Yo hablo spanish"
+		"label": "Español"
 	},
 	{
 		"id": 2,
 		"name": "Polski",
-		"label": "Mówię po Polsku"
+		"label": "Polski"
 	}
 ]
