@@ -1,5 +1,5 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.speaklabs.english.speaklabsPro" version="1.0.2">
-  <name>SpeakLabs Pro</name>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.speaklabs.english.speaklabs" version="1.0.3">
+  <name>SpeakLabs</name>
   <description>Application for learn languages</description>
   <author href="http://speaklabs.eu" email="info@speaklabs.eu">SpeakLabs Team</author>
   <content src="index.html"/>

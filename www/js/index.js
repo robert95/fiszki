@@ -35,9 +35,9 @@ t_end_new_materials_ok = ["OK", "OK", "OK", "OK", "OK"];
 t_liked_words_added = ["Phrase has been added to Favourites.", "Fraza została dodana do zakładki ulubione.", "Frase añadida a Favoritos.", "Der Satz wurde zu deinen Favoriten hinzugefügt.", "La phrase a été ajoutée à vos favoris."];
 t_liked_words_remove =["The phrase has been deleted from favourites", "Zwrot został usunięty z zakładki ''Ulubione''", "Frase eliminada de Favoritos", "Die Phrase wurde aus den Favoriten gelöscht", "La phrase a été effacée des favoris"];
 t_no_audio_lesson_title = ["Audio not available.", "Nagrania audio niedostępne.", "Audio no disponible.", "Audio nicht verfügbar.", "L'audio n'est pas disponible."];
-t_no_audio_lesson_text = ["This free version comes with 90 audio lessons. If you would like to get audio to all 180 lessons, upgrade to SpeakLabs Pro.", "Darmowa wersja aplikacji zawiera 90 jedynie lekcji audio. Jeśli chciałbyś otrzymać nagrania do wszystkich 180 lekcji kup SpeakLabs Pro.", "La versión gratuita de la aplicación contiene 90 lecciones de audio. Si deseas recibir las grabaciones de todas las 180 lecciones, compra SpeakLabs Pro.", "Diese kostenlose Version umfasst 90 Audiolektionen. Wenn du die Audios für alle 180 Lektionen haben möchtest, kauf dir SpeakLabs Pro.", "Cette version gratuite contient 90 leçons audios. Si vous voulez recevoir les audios pour l'ensemble des 180 leçons, achetez SpeakLabs Pro."];
+t_no_audio_lesson_text = ["This free version comes with 10 audio lessons. If you would like to get audio to all 180 lessons, upgrade to SpeakLabs Pro.", "Darmowa wersja aplikacji zawiera jedynie 10 lekcji audio. Jeśli chciałbyś otrzymać nagrania do wszystkich 180 lekcji kup SpeakLabs Pro.", "La versión gratuita de la aplicación contiene 10 lecciones de audio. Si deseas recibir las grabaciones de todas las 180 lecciones, compra SpeakLabs Pro.", "Diese kostenlose Version umfasst 10 Audiolektionen. Wenn du die Audios für alle 180 Lektionen haben möchtest, kauf dir SpeakLabs Pro.", "Cette version gratuite contient 10 leçons audios. Si vous voulez recevoir les audios pour l'ensemble des 180 leçons, achetez SpeakLabs Pro."];
 t_no_audio_lesson_learn_anyway = ["Learn anyway", "Ucz się bez nagrań", "Aprender sin grabaciones", "Trotzdem lernen", "Apprenez sans audio"];
-t_no_audio_lesson_upgrade = ["Upgrade", "Kup SpeakLabs Pro", "Compra SpeakLabs Pro", "SpeakLabs Pro kaufen", "Achetez SpeakLabs Pro"];
+t_no_audio_lesson_upgrade = ["Upgrade (-50%)", "Kup SpeakLabs Pro (-50%)", "Compra SpeakLabs Pro (-50%)", "SpeakLabs Pro kaufen (-50%)", "Achetez SpeakLabs Pro (-50%)"];
 t_no_audio_lesson_skip = ["Skip lesson", "Pomiń lekcję", "Omitir lección", "Lektion überspringen", "Passez la leçon"];
 t_confirm_back_in_learn_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro(a)?", "Bist du sicher?", "Etes-vous sûr?"];
 t_confirm_back_in_learn_text = ["Your progress won't be saved.", "Twój postęp nie zostanie zapisany.", "Tu progreso no será guardado.", "Deine Fortschritte werden nicht gespeichert.", "Votre progrès ne sera pas sauvegardé."];
@@ -476,11 +476,6 @@ var learnedWordsCopy = 0;
 var langJSON = dev ? JSON.parse('{"lang":2}') : JSON.parse('{"lang":-1}');
 var dayJSON = dev ? JSON.parse('{"day": 5, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}') : false;
 var toLearnJSON = dev ? JSON.parse('[{"subid":13,"catid":1,"start":"1"}]') : [];
-
-// var langJSON = JSON.parse('{"lang":2}');
-// var dayJSON = JSON.parse('{"day": 5, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}');
-// var toLearnJSON = JSON.parse('[{"subid":13,"catid":1,"start":"1"}]');
-
 
 var dayJSONwordsCopy = dayJSON.words;
 var	toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
@@ -2054,7 +2049,6 @@ function showAllNote(){
 	showNote(4);
 	showNote(5);
 	showNote(6);
-	$(".recText").hide();
 }
 function showNote(x){
 	var target = "#l-n-" + x;
@@ -2104,6 +2098,12 @@ function backToNormalStateNote(){
 	$("#l-t-4").show();
 	$("#l-t-5").show();
 	$("#l-t-6").show();
+	$("#l-c-1").show();
+	$("#l-c-2").show();
+	$("#l-c-3").show();
+	$("#l-c-4").show();
+	$("#l-c-5").show();
+	$("#l-c-6").show();
 	hideKeyboard();
 	hideHoverNoteBtn('.note-btn');
 }
@@ -3354,7 +3354,8 @@ function showRating() {
 	
 	var day = parseInt($("#nrDayFiled").text());
 	if(day%2 == 0 && day > 0 && dayJSON.rating == false){
-		AppRate.promptForRating();
+		// chwilowo wyłączone
+		// AppRate.promptForRating();
 	}
 }
 function setRatingToTrue() {
@@ -3496,26 +3497,26 @@ var countOfWrongRecognized = 0;
 function startVoiceToText(){
 	if (dev) {
         $(".recText").text("To powiedziałem");
-        $("#l-n-1").hide();
-        $("#l-n-2").hide();
-        $("#l-n-3").hide();
-        $("#l-n-4").hide();
-        $("#l-n-5").hide();
-        $("#l-n-6").hide();
+        // $("#l-n-1").hide();
+        // $("#l-n-2").hide();
+        // $("#l-n-3").hide();
+        // $("#l-n-4").hide();
+        // $("#l-n-5").hide();
+        // $("#l-n-6").hide();
 
-        $("#l-e-1").hide();
-        $("#l-e-2").hide();
-        $("#l-e-3").hide();
-        $("#l-e-4").hide();
-        $("#l-e-5").hide();
-        $("#l-e-6").hide();
+        $("#l-c-1").hide();
+        $("#l-c-2").hide();
+        $("#l-c-3").hide();
+        $("#l-c-4").hide();
+        $("#l-c-5").hide();
+        $("#l-c-6").hide();
 
-        $("#l-t-1").hide();
-        $("#l-t-2").hide();
-        $("#l-t-3").hide();
-        $("#l-t-4").hide();
-        $("#l-t-5").hide();
-        $("#l-t-6").hide();
+        // $("#l-t-1").hide();
+        // $("#l-t-2").hide();
+        // $("#l-t-3").hide();
+        // $("#l-t-4").hide();
+        // $("#l-t-5").hide();
+        // $("#l-t-6").hide();
 
         $(".recTextWrap").show();
         $(".recText").show();
@@ -3570,27 +3571,27 @@ function startRecognize(){
 			if(matches[0] != ''){
 				var text = matches[0];
 				$(".recText").text(text);
-		
-				$("#l-n-1").hide();
-				$("#l-n-2").hide();
-				$("#l-n-3").hide();
-				$("#l-n-4").hide();
-				$("#l-n-5").hide();
-				$("#l-n-6").hide();
-				
-				$("#l-e-1").hide();
-				$("#l-e-2").hide();
-				$("#l-e-3").hide();
-				$("#l-e-4").hide();
-				$("#l-e-5").hide();
-				$("#l-e-6").hide();
-				
-				$("#l-t-1").hide();
-				$("#l-t-2").hide();
-				$("#l-t-3").hide();
-				$("#l-t-4").hide();
-				$("#l-t-5").hide();
-				$("#l-t-6").hide();
+
+                // $("#l-n-1").hide();
+                // $("#l-n-2").hide();
+                // $("#l-n-3").hide();
+                // $("#l-n-4").hide();
+                // $("#l-n-5").hide();
+                // $("#l-n-6").hide();
+
+                $("#l-c-1").hide();
+                $("#l-c-2").hide();
+                $("#l-c-3").hide();
+                $("#l-c-4").hide();
+                $("#l-c-5").hide();
+                $("#l-c-6").hide();
+
+                // $("#l-t-1").hide();
+                // $("#l-t-2").hide();
+                // $("#l-t-3").hide();
+                // $("#l-t-4").hide();
+                // $("#l-t-5").hide();
+                // $("#l-t-6").hide();
 				
 				$(".recTextWrap").show();				
 				$(".recText").show();
