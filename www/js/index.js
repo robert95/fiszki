@@ -85,7 +85,7 @@ function getTrans(key){
 
 var dev = false;
 // PREMIUM CHANGE
-var isPremium = true;
+var isPremium = false;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -475,7 +475,7 @@ var learnedWordsCopy = 0;
 
 var langJSON = dev ? JSON.parse('{"lang":2}') : JSON.parse('{"lang":-1}');
 var dayJSON = dev ? JSON.parse('{"day": 5, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}') : false;
-var toLearnJSON = dev ? JSON.parse('[{"subid":13,"catid":1,"start":"1"}]') : [];
+var toLearnJSON = dev ? JSON.parse('[{"subid":13,"catid":1,"start":"3"}]') : [];
 
 var dayJSONwordsCopy = dayJSON.words;
 var	toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
@@ -3579,34 +3579,34 @@ function startRecognize(){
 			if(matches[0] != ''){
 				var text = matches[0];
 				$(".recText").text(text);
+        
+                $("#l-n-1").hide();
+                $("#l-n-2").hide();
+                $("#l-n-3").hide();
+                $("#l-n-4").hide();
+                $("#l-n-5").hide();
+                $("#l-n-6").hide();
 
-				$("#l-n-1").hide();
-				$("#l-n-2").hide();
-				$("#l-n-3").hide();
-				$("#l-n-4").hide();
-				$("#l-n-5").hide();
-				$("#l-n-6").hide();
+                $("#l-e-1").hide();
+                $("#l-e-2").hide();
+                $("#l-e-3").hide();
+                $("#l-e-4").hide();
+                $("#l-e-5").hide();
+                $("#l-e-6").hide();
 
-				$("#l-e-1").hide();
-				$("#l-e-2").hide();
-				$("#l-e-3").hide();
-				$("#l-e-4").hide();
-				$("#l-e-5").hide();
-				$("#l-e-6").hide();
+                $("#l-t-1").hide();
+                $("#l-t-2").hide();
+                $("#l-t-3").hide();
+                $("#l-t-4").hide();
+                $("#l-t-5").hide();
+                $("#l-t-6").hide();
 
-				$("#l-t-1").hide();
-				$("#l-t-2").hide();
-				$("#l-t-3").hide();
-				$("#l-t-4").hide();
-				$("#l-t-5").hide();
-				$("#l-t-6").hide();
-
-				$("#l-c-1").show();
-				$("#l-c-2").show();
-				$("#l-c-3").show();
-				$("#l-c-4").show();
-				$("#l-c-5").show();
-				$("#l-c-6").show();
+                $("#l-c-1").show();
+                $("#l-c-2").show();
+                $("#l-c-3").show();
+                $("#l-c-4").show();
+                $("#l-c-5").show();
+                $("#l-c-6").show();
 				
 				$(".recTextWrap").show();				
 				$(".recText").show();
