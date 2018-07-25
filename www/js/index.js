@@ -3579,7 +3579,7 @@ function startRecognize(){
 			if(matches[0] != ''){
 				var text = matches[0];
 				$(".recText").text(text);
-
+        
                 $("#l-n-1").hide();
                 $("#l-n-2").hide();
                 $("#l-n-3").hide();
