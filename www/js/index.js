@@ -3580,26 +3580,33 @@ function startRecognize(){
 				var text = matches[0];
 				$(".recText").text(text);
 
-                // $("#l-n-1").hide();
-                // $("#l-n-2").hide();
-                // $("#l-n-3").hide();
-                // $("#l-n-4").hide();
-                // $("#l-n-5").hide();
-                // $("#l-n-6").hide();
+				$("#l-n-1").hide();
+				$("#l-n-2").hide();
+				$("#l-n-3").hide();
+				$("#l-n-4").hide();
+				$("#l-n-5").hide();
+				$("#l-n-6").hide();
 
-                $("#l-c-1").hide();
-                $("#l-c-2").hide();
-                $("#l-c-3").hide();
-                $("#l-c-4").hide();
-                $("#l-c-5").hide();
-                $("#l-c-6").hide();
+				$("#l-e-1").hide();
+				$("#l-e-2").hide();
+				$("#l-e-3").hide();
+				$("#l-e-4").hide();
+				$("#l-e-5").hide();
+				$("#l-e-6").hide();
 
-                // $("#l-t-1").hide();
-                // $("#l-t-2").hide();
-                // $("#l-t-3").hide();
-                // $("#l-t-4").hide();
-                // $("#l-t-5").hide();
-                // $("#l-t-6").hide();
+				$("#l-t-1").hide();
+				$("#l-t-2").hide();
+				$("#l-t-3").hide();
+				$("#l-t-4").hide();
+				$("#l-t-5").hide();
+				$("#l-t-6").hide();
+
+				$("#l-c-1").show();
+				$("#l-c-2").show();
+				$("#l-c-3").show();
+				$("#l-c-4").show();
+				$("#l-c-5").show();
+				$("#l-c-6").show();
 				
 				$(".recTextWrap").show();				
 				$(".recText").show();
