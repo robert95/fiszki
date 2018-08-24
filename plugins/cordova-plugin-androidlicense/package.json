@@ -1,0 +1,55 @@
+{
+  "_from": "git+https://github.com/mobilino/Phonegap-android-license-plugin.git",
+  "_id": "cordova-plugin-androidlicense@1.0.3",
+  "_inBundle": false,
+  "_location": "/cordova-plugin-androidlicense",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/mobilino/Phonegap-android-license-plugin.git",
+    "rawSpec": "https://github.com/mobilino/Phonegap-android-license-plugin.git",
+    "saveSpec": "git+https://github.com/mobilino/Phonegap-android-license-plugin.git",
+    "fetchSpec": "https://github.com/mobilino/Phonegap-android-license-plugin.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/mobilino/Phonegap-android-license-plugin.git#e8ee501ceca346aacac55a71aaf650045715a74c",
+  "_spec": "https://github.com/mobilino/Phonegap-android-license-plugin.git",
+  "_where": "C:\\Users\\Robert\\projects\\phonegap-project\\fiszki",
+  "author": {
+    "name": "Christof Lange"
+  },
+  "bugs": {
+    "url": "https://github.com/mobilino/Phonegap-android-license-plugin/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-androidlicense",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "android phonegap plugin for server based license checking (formerly AndroidLicensePlugin)",
+  "homepage": "https://github.com/mobilino/Phonegap-android-license-plugin#readme",
+  "keywords": [
+    "cordova",
+    "android",
+    "ecosystem:cordova",
+    "cordova-android",
+    "AndroidLicensePlugin",
+    "Google Play License Verification Library",
+    "LVL",
+    "License Verification Library"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-androidlicense",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobilino/Phonegap-android-license-plugin.git"
+  },
+  "version": "1.0.3"
+}

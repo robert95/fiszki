@@ -85,7 +85,7 @@ function getTrans(key){
 
 var dev = false;
 // PREMIUM CHANGE
-var isPremium = false;
+var isPremium = true;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -106,7 +106,13 @@ var app = {
     onDeviceReady: function() {
 		var src = '/android_asset/www/date/1.mp3';
 		my_media = new Media(src, function () { }, function (err) { console.log("M: " + err.message + " - " + err.code); });
-		
+
+		alert("test start");
+        AndroidLicensePlugin.check(
+            function(data) { alert( JSON.stringify(data));},
+            function(errorString) { alert("error: " + errorString);}
+        );
+
 		if(!checkConnection()){	
 			navigator.notification.confirm(
 				getTrans(t_not_connected_text),

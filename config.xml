@@ -1,87 +1,89 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.speaklabs.english.speaklabs" version="1.0.5">
-  <name>SpeakLabs</name>
-  <description>Application for learn languages</description>
-  <author href="http://speaklabs.eu" email="info@speaklabs.eu">SpeakLabs Team</author>
-  <content src="index.html"/>
-  <preference name="permissions" value="none"/>
-  <preference name="orientation" value="portrait"/>
-  <preference name="target-device" value="universal"/>
-  <preference name="fullscreen" value="false"/>
-  <preference name="webviewbounce" value="true"/>
-  <preference name="prerendered-icon" value="true"/>
-  <preference name="iosPersistentFileLocation" value="Compatibility" />
-  <preference name="AndroidPersistentFileLocation" value="Compatibility" />
-  <preference name="stay-in-webview" value="false"/>
-  <preference name="ios-statusbarstyle" value="black-opaque"/>
-  <preference name="detect-data-types" value="true"/>
-  <preference name="exit-on-suspend" value="false"/>
-  <preference name="show-splash-screen-spinner" value="true"/>
-  <preference name="auto-hide-splash-screen" value="true"/>
-  <preference name="disable-cursor" value="false"/>
-  <preference name="android-minSdkVersion" value="14"/>
-  <preference name="android-installLocation" value="auto"/>
-  <preference name="AndroidLaunchMode" value="singleInstance" />
-  <preference name="DisallowOverscroll" value="true" />
-  <preference name="KeepRunning" value="true" />
-  <plugin name="cordova-plugin-file" source="npm" spec="4.3.3"/>
-  <plugin name="cordova-plugin-file-transfer" spec="~1.6.1" source="npm"/>
-  <plugin name="cordova-plugin-inappbrowser" source="npm" spec="1.7.2"/>
-  <plugin name="cordova-plugin-media" source="npm" spec="3.0.1" />
-  <plugin name="cordova-plugin-network-information" source="npm" spec="1.3.4" />
-  <plugin name="cordova-plugin-admobpro" source="npm" spec="2.31.1" />
-  <plugin name="com.gkcgautam.asset2sd" />
-  <plugin name="cordova-plugin-filepath" />
-  <plugin name="cordova-plugin-fullscreen"/>
-  <plugin name="cordova-plugin-x-toast" />
-  <plugin src="https://github.com/macdonst/SpeechRecognitionPlugin.git" />
-  <plugin src="https://github.com/pbakondy/cordova-plugin-speechrecognition.git" />
-  <plugin src="http://github.com/don/cordova-filechooser.git" />
-  <plugin src="https://github.com/apache/cordova-plugin-statusbar.git" />
-  <plugin src="https://github.com/cranberrygame/cordova-plugin-navigationbar.git" />
-  <plugin src="https://github.com/mesmotronic/cordova-plugin-fullscreen.git" />
-  <plugin src="https://github.com/pushandplay/cordova-plugin-apprate.git" />
-  <plugin src="https://github.com/apache/cordova-plugin-inappbrowser.git" />
-  <plugin src="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" />
-  <plugin src="https://github.com/g-w/cordova-volume.git" />
-  <plugin src="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" />
-  <icon src="icon.png"/>
-  <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
-  <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
-  <icon src="www/res/icon/android/icon-72-hdpi.png" gap:platform="android" gap:qualifier="hdpi"/>
-  <icon src="www/res/icon/android/icon-96-xhdpi.png" gap:platform="android" gap:qualifier="xhdpi"/>
-  <icon src="www/res/icon/blackberry/icon-80.png" gap:platform="blackberry"/>
-  <icon src="www/res/icon/blackberry/icon-80.png" gap:platform="blackberry" gap:state="hover"/>
-  <icon src="www/res/icon/ios/icon-57.png" gap:platform="ios" width="57" height="57"/>
-  <icon src="www/res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72"/>
-  <icon src="www/res/icon/ios/icon-57-2x.png" gap:platform="ios" width="114" height="114"/>
-  <icon src="www/res/icon/ios/icon-72-2x.png" gap:platform="ios" width="144" height="144"/>
-  <icon src="www/res/icon/webos/icon-64.png" gap:platform="webos"/>
-  <icon src="www/res/icon/windows-phone/icon-48.png" gap:platform="winphone"/>
-  <icon src="www/res/icon/windows-phone/icon-173-tile.png" gap:platform="winphone" gap:role="background"/>
-  <gap:splash src="www/res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="port-ldpi"/>
-  <gap:splash src="www/res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:qualifier="port-mdpi"/>
-  <gap:splash src="www/res/screen/android/screen-hdpi-portrait.png" gap:platform="android" gap:qualifier="port-hdpi"/>
-  <gap:splash src="www/res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:qualifier="port-xhdpi"/>
-  <gap:splash src="www/res/screen/blackberry/screen-225.png" gap:platform="blackberry"/>
-  <gap:splash src="www/res/screen/ios/screen-iphone-portrait.png" gap:platform="ios" width="320" height="480"/>
-  <gap:splash src="www/res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios" width="640" height="960"/>
-  <gap:splash src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136"/>
-  <gap:splash src="www/res/screen/ios/screen-ipad-portrait.png" gap:platform="ios" width="768" height="1024"/>
-  <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
-  <gap:splash src="www/res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone"/>
-  <access origin="*"/>
-  <plugin name="cordova-plugin-whitelist" version="1"/>
-  <allow-intent href="http://*/*"/>
-  <allow-intent href="https://*/*"/>
-  <allow-intent href="tel:*"/>
-  <allow-intent href="sms:*"/>
-  <allow-intent href="mailto:*"/>
-  <allow-intent href="geo:*"/>
-  <platform name="android">
-    <allow-intent href="market:*"/>
-  </platform>
-  <platform name="ios">
-    <allow-intent href="itms:*"/>
-    <allow-intent href="itms-apps:*"/>
-  </platform>
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.speaklabs.english.speaklabsPro" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>SpeakLabsPro</name>
+    <description>Application for learn languages</description>
+    <author email="info@speaklabs.eu" href="http://speaklabs.eu">SpeakLabs Team</author>
+    <content src="index.html" />
+    <preference name="permissions" value="none" />
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="iosPersistentFileLocation" value="Compatibility" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="AndroidLaunchMode" value="singleInstance" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="KeepRunning" value="true" />
+    <plugin name="cordova-plugin-file" source="npm" spec="4.3.3" />
+    <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.6.1" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="1.7.2" />
+    <plugin name="cordova-plugin-media" source="npm" spec="3.0.1" />
+    <plugin name="cordova-plugin-network-information" source="npm" spec="1.3.4" />
+    <plugin name="cordova-plugin-admobpro" source="npm" spec="2.31.1" />
+    <plugin name="com.gkcgautam.asset2sd" />
+    <plugin name="cordova-plugin-filepath" />
+    <plugin name="cordova-plugin-fullscreen" />
+    <plugin name="cordova-plugin-x-toast" />
+    <plugin src="https://github.com/macdonst/SpeechRecognitionPlugin.git" />
+    <plugin src="https://github.com/pbakondy/cordova-plugin-speechrecognition.git" />
+    <plugin src="http://github.com/don/cordova-filechooser.git" />
+    <plugin src="https://github.com/apache/cordova-plugin-statusbar.git" />
+    <plugin src="https://github.com/cranberrygame/cordova-plugin-navigationbar.git" />
+    <plugin src="https://github.com/mesmotronic/cordova-plugin-fullscreen.git" />
+    <plugin src="https://github.com/pushandplay/cordova-plugin-apprate.git" />
+    <plugin src="https://github.com/apache/cordova-plugin-inappbrowser.git" />
+    <plugin src="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" />
+    <plugin src="https://github.com/g-w/cordova-volume.git" />
+    <plugin src="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" />
+    <icon src="icon.png" />
+    <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
+    <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
+    <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />
+    <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />
+    <icon gap:platform="blackberry" src="www/res/icon/blackberry/icon-80.png" />
+    <icon gap:platform="blackberry" gap:state="hover" src="www/res/icon/blackberry/icon-80.png" />
+    <icon gap:platform="ios" height="57" src="www/res/icon/ios/icon-57.png" width="57" />
+    <icon gap:platform="ios" height="72" src="www/res/icon/ios/icon-72.png" width="72" />
+    <icon gap:platform="ios" height="114" src="www/res/icon/ios/icon-57-2x.png" width="114" />
+    <icon gap:platform="ios" height="144" src="www/res/icon/ios/icon-72-2x.png" width="144" />
+    <icon gap:platform="webos" src="www/res/icon/webos/icon-64.png" />
+    <icon gap:platform="winphone" src="www/res/icon/windows-phone/icon-48.png" />
+    <icon gap:platform="winphone" gap:role="background" src="www/res/icon/windows-phone/icon-173-tile.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="www/res/screen/android/screen-ldpi-portrait.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="www/res/screen/android/screen-mdpi-portrait.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="www/res/screen/android/screen-hdpi-portrait.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/screen-xhdpi-portrait.png" />
+    <gap:splash gap:platform="blackberry" src="www/res/screen/blackberry/screen-225.png" />
+    <gap:splash gap:platform="ios" height="480" src="www/res/screen/ios/screen-iphone-portrait.png" width="320" />
+    <gap:splash gap:platform="ios" height="960" src="www/res/screen/ios/screen-iphone-portrait-2x.png" width="640" />
+    <gap:splash gap:platform="ios" height="1136" src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
+    <gap:splash gap:platform="ios" height="1024" src="www/res/screen/ios/screen-ipad-portrait.png" width="768" />
+    <gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/screen-ipad-landscape.png" width="1024" />
+    <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
+    <access origin="*" />
+    <plugin name="cordova-plugin-whitelist" version="1" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin name="cordova-plugin-androidlicense" spec="https://github.com/mobilino/Phonegap-android-license-plugin.git" />
 </widget>

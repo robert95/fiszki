@@ -1,103 +1,111 @@
 {
-    "com.gkcgautam.asset2sd": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/gkcgautam/Asset2SD.git",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {}
+  "com.gkcgautam.asset2sd": {
+    "source": {
+      "type": "git",
+      "url": "https://github.com/gkcgautam/Asset2SD.git",
+      "subdir": "."
     },
-    "com.megster.cordova.FileChooser": {
-        "source": {
-            "type": "git",
-            "url": "http://github.com/don/cordova-filechooser.git",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com.megster.cordova.FileChooser": {
+    "source": {
+      "type": "git",
+      "url": "http://github.com/don/cordova-filechooser.git",
+      "subdir": "."
     },
-    "cordova-plugin-filepath": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-filepath"
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-filepath": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-filepath"
     },
-    "cordova-plugin-admobpro": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-admobpro"
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-admobpro": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-admobpro"
     },
-    "cordova-plugin-admob": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/floatinghotpot/cordova-plugin-admob",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-admob": {
+    "source": {
+      "type": "git",
+      "url": "https://github.com/floatinghotpot/cordova-plugin-admob",
+      "subdir": "."
     },
-    "cordova-plugin-admob-simple": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-admob-simple"
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-admob-simple": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-admob-simple"
     },
-    "cordova-admob": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-admob"
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-admob": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-admob"
     },
-    "cordova-plugin-fullscreen": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-fullscreen"
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-fullscreen": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-fullscreen"
     },
-    "cordova-plugin-x-toast": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-x-toast"
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-x-toast": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-x-toast"
     },
-    "com.develcode.plugins.volumeControl": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/manusimpson/Phonegap-Android-VolumeControl.git",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com.develcode.plugins.volumeControl": {
+    "source": {
+      "type": "git",
+      "url": "https://github.com/manusimpson/Phonegap-Android-VolumeControl.git",
+      "subdir": "."
     },
-    "cordova-plugin-speechrecognition": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-speechrecognition"
-        },
-        "is_top_level": true,
-        "variables": {}
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-speechrecognition": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-speechrecognition"
     },
-    "org.apache.cordova.speech.speechrecognition": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/macdonst/SpeechRecognitionPlugin",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {}
-    }
+    "is_top_level": true,
+    "variables": {}
+  },
+  "org.apache.cordova.speech.speechrecognition": {
+    "source": {
+      "type": "git",
+      "url": "https://github.com/macdonst/SpeechRecognitionPlugin",
+      "subdir": "."
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-androidlicense": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/mobilino/Phonegap-android-license-plugin.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
 }
