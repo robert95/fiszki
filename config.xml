@@ -42,9 +42,9 @@
     <plugin src="https://github.com/mesmotronic/cordova-plugin-fullscreen.git" />
     <plugin src="https://github.com/pushandplay/cordova-plugin-apprate.git" />
     <plugin src="https://github.com/apache/cordova-plugin-inappbrowser.git" />
-    <plugin src="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" />
     <plugin src="https://github.com/g-w/cordova-volume.git" />
     <plugin src="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" />
+    <plugin name="cordova-plugin-androidlicense" spec="https://github.com/mobilino/Phonegap-android-license-plugin.git" />
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
@@ -85,6 +85,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <plugin name="cordova-plugin-androidlicense" spec="https://github.com/mobilino/Phonegap-android-license-plugin.git" />
-    <plugin name="cordova-android-support-gradle-release" spec="~1.4.4" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="~5.4.1" />
 </widget>
