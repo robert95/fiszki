@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.speaklabs.english.speaklabsPro" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>SpeakLabsPro</name>
+    <name>SpeakLabs Pro</name>
     <description>Application for learn languages</description>
     <author email="info@speaklabs.eu" href="http://speaklabs.eu">SpeakLabs Team</author>
     <content src="index.html" />
@@ -86,4 +86,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <plugin name="cordova-plugin-androidlicense" spec="https://github.com/mobilino/Phonegap-android-license-plugin.git" />
+    <plugin name="cordova-android-support-gradle-release" spec="~1.4.4" />
 </widget>
