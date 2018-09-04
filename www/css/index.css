@@ -384,7 +384,7 @@ section{
 	height: 100%;
 	overflow-x: hidden;
 }
-#wrap-ok-no, #wrap-ok-no-TUT, #tut-wrap-ok-no, #start-day-wrap-ok-no, #start-day-wrap-ok-no-end-course, #end-day-wrap-ok-no, #new-cat-wrap-ok-no{
+#wrap-ok-no, #wrap-ok-no-TUT, #tut-wrap-ok-no, #start-day-wrap-ok-no, #start-day-wrap-ok-no-end-course, .round-central-big-button,  #end-day-wrap-ok-no, #new-cat-wrap-ok-no{
 	position: relative;
 	text-align: center;
 }
@@ -709,7 +709,7 @@ textarea:focus, textarea:hover, textarea:active{
 	position: relative;
 	top: 0%;/*-50px;*/
 }
-#ok-no-panel, #ok-no-panel-TUT, #tut-ok-no-panel, #start-day-ok-no-panel-after-tut, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel{
+#ok-no-panel, #ok-no-panel-TUT, #tut-ok-no-panel, #start-day-ok-no-panel-after-tut, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel, .round-central-big-button-wrapper{
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -717,7 +717,7 @@ textarea:focus, textarea:hover, textarea:active{
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
 } 
-#tut-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel, #start-day-ok-no-panel-after-tut{
+#tut-ok-no-panel, #start-day-ok-no-panel-end-course, .round-central-big-button-wrapper, #end-day-ok-no-panel, #new-cat-ok-no-panel, #start-day-ok-no-panel-after-tut{
 	padding-bottom: 20px !important;    
 }
 #tut-ok-no-panel{
@@ -928,6 +928,28 @@ textarea:focus, textarea:hover, textarea:active{
 #first-use-loading-page p:first-of-type{
 	margin: 0px 0px;
 	padding: 100px 0px;
+}
+.info-page{
+	text-align: center;
+	font-size: 28px;
+	color: white;
+	font-weight: bold;
+	font-weight: 600;
+    display: none;
+}
+.info-page h1{
+    margin: 0px 0px;
+    padding: 100px 0px;
+    padding-bottom: 45px;
+}
+.info-page p {
+    font-size: 18px;
+    margin: 20px 20px;
+}
+.info-page .small-text {
+    font-size: 16px;
+    margin: 500px 25px;
+    font-weight: normal;
 }
 #saving-progress-today{
 	text-align: center;
@@ -1157,7 +1179,7 @@ section{
 	font-weight: 600;
 	font-size: 28px;
 }
-#start-day-wrap-ok-no-end-course img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
+#start-day-wrap-ok-no-end-course img, .round-central-big-button img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img{
 	font-size: 120px;
 	width: 120px;
 	margin-top: 22px;
@@ -1245,6 +1267,7 @@ section{
 	background: transparent url("../img/bg.jpg") repeat scroll 0% 0%;
 	background-size: 100% 100%;
 	height: 100%;
+	display: none;
 }
 .theme2 #menu{
 	background: transparent url("../img/bg2.jpg") repeat scroll 0% 0% !important;
@@ -2273,10 +2296,10 @@ h3{
 .good-telling-word{
 	color: #31ee31 !important;
 }
-.bad-telling-word{
+.bad-telling-word span{
 	color: red !important;
 }
-.good-telling-word span, .bad-telling-word span{
+.good-telling-word span{
 	color: white !important;
 }
 .phrase_browser_cloud{
@@ -2545,6 +2568,11 @@ h3{
 		font-family: 'Ubuntu-Bold'; 
 		padding-top: 54px;
 	}
+	.info-page {
+		font-size: 44px;
+		font-family: 'Ubuntu-Bold';
+		padding-top: 54px;
+	}
 	#startDay h1, #start-next-cat h1, #end-cat h1, #new-category-choice h1, .goToReverse {
 		font-size: 44px;
 		font-family: 'Ubuntu-Bold'; 
@@ -2661,7 +2689,7 @@ h3{
 	#count-word-to-learn-tut{
 		bottom: 12% !important; 
 	}
-	#progress-circle-end .c100, #progress-circle-saving-progress .c100, #progress-circle .c100, #wrap-ok-no .c100, #tut-wrap-ok-no .c100, #start-day-wrap-ok-no .c100, #start-day-wrap-ok-no-end-course .c100, #end-day-wrap-ok-no .c100, #new-cat-wrap-ok-no .c100{
+	#progress-circle-end .c100, #progress-circle-saving-progress .c100, #progress-circle .c100, #wrap-ok-no .c100, #tut-wrap-ok-no .c100, #start-day-wrap-ok-no .c100, #start-day-wrap-ok-no-end-course .c100, .round-central-big-button .c100, #end-day-wrap-ok-no .c100, #new-cat-wrap-ok-no .c100{
 		transform: scale(1.8);
 		-webkit-transform: scale(1.8);
 		margin: 35px auto;
@@ -2673,12 +2701,12 @@ h3{
 		margin: 35px auto;
 		margin-bottom: 68px;
 	} 
-	#start-day-ok-no-panel-after-tut img, #start-day-wrap-ok-no-end-course img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img {
+	#start-day-ok-no-panel-after-tut img, #start-day-wrap-ok-no-end-course img, .round-central-big-button img, #start-day-wrap-ok-no img, #new-cat-ok-no-panel img, #end-day-ok-no-panel img, #tut-wrap-ok-no img {
 		transform: scale(1.8);
 		-webkit-transform: scale(1.8);
 		margin-top: 35px;
 	}
-	#start-day-ok-no-panel-after-tut, #tut-ok-no-panel, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, #end-day-ok-no-panel, #new-cat-ok-no-panel {
+	#start-day-ok-no-panel-after-tut, #tut-ok-no-panel, #start-day-ok-no-panel, #start-day-ok-no-panel-end-course, .round-central-big-button-wrapper, #end-day-ok-no-panel, #new-cat-ok-no-panel {
 		padding-bottom: 66px !important;
 	}
 	#new-cat-ok-no-panel {
