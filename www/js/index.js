@@ -4409,10 +4409,14 @@ function clearTextToShowOnRecognize(text) {
 }
 
 function testLegalAppAndRunIfIsLegal() {
+    alert(321);
     if(legalValidation === true) {
         logEventInServer('request for verify app', {});
         AndroidLicensePlugin.check(
             function (data) {
+
+                alert(data);
+
                 var verifiData = data;
                 verifiData.packageName = getPackageName();
                 var url = getVerifiApiUrl();
@@ -4422,17 +4426,22 @@ function testLegalAppAndRunIfIsLegal() {
                     contentType: "application/json",
                     data: JSON.stringify(verifiData)
                 }).done(function (data) {
+                    alert(data);
                     if(data === true) {
                         startAppBecauseIsLegal();
                     } else {
                         blockAppBecauseNotLegal();
                     }
                 }).fail(function (a, b, c) {
+                    alert(a);
+                    alert(b);
+                    alert(c);
                     //coś nie tak z serwerem -> musimy wpuścić do apki
                     startAppBecauseIsLegal();
                 });
             },
             function (errorString) {
+                alert(errorString);
                 //coś nie tak z pluginem -> musimy wpuścic do apki
                 startAppBecauseIsLegal();
             }
