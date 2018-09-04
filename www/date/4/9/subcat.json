@@ -1,1 +1,1 @@
-[{"id":1,"name":"B1 Am Tisch","pos":88,"audio":false},{"id":2,"name":"B1 Getränke","pos":87,"audio":false},{"id":4,"name":"B1 Im Pub","pos":90,"audio":false},{"id":3,"name":"B1 Im Restaurant","pos":89,"audio":false}]
+[{"id":1,"name":"B1 Am Tisch","pos":88,"audio":true},{"id":2,"name":"B1 Getränke","pos":87,"audio":true},{"id":4,"name":"B1 Im Pub","pos":90,"audio":true},{"id":3,"name":"B1 Im Restaurant","pos":89,"audio":true}]
