@@ -4422,18 +4422,19 @@ function testLegalAppAndRunIfIsLegal() {
                     contentType: "application/json",
                     data: JSON.stringify(verifiData)
                 }).done(function (data) {
-                    alert(data);
                     if(data === true) {
                         startAppBecauseIsLegal();
                     } else {
                         blockAppBecauseNotLegal();
                     }
                 }).fail(function (a, b, c) {
-                    blockAppBecauseNotLegal();
+                    //coś nie tak z serwerem -> musimy wpuścić do apki
+                    startAppBecauseIsLegal();
                 });
             },
             function (errorString) {
-                blockAppBecauseNotLegal();
+                //coś nie tak z pluginem -> musimy wpuścic do apki
+                startAppBecauseIsLegal();
             }
         );
     } else {
