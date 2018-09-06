@@ -113,7 +113,7 @@ var app = {
             console.log("M: " + err.message + " - " + err.code);
         });
 	    
-	alert('tadam2');
+	alert(device.uuid);
 
         $("#first-use-loading-page").show();
         logEventInServer('run application', {});
