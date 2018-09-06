@@ -570,12 +570,20 @@ function afterReadMyLang(langData) {
     langJSON = JSON.parse(langData);
     if(typeof langData.lang != 'undefined' && langData.lang > 0) {
         $("body").addClass('lang' + lang);
+        testAndRunAppIfIsOk(startApp);
+    } else {
+        if (!isPremium) {
+            $("#first-use-loading-page").hide();
+            startLearn = true; //po tutorialu zacznie naukę
+            getLangList(); //wybierz swój język
+            $("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
+        }
+        copyFirstPath();
+        updatePlaceholders();
     }
-
-    testAndRunAppIfIsOk();
 }
 
-function testAndRunAppIfIsOk() {
+function testAndRunAppIfIsOk(callbackAfterValid) {
     if (!checkConnection()) {
         navigator.notification.confirm(
             getTrans(t_not_connected_text),
@@ -584,7 +592,7 @@ function testAndRunAppIfIsOk() {
             getTrans(t_not_connected_exit)
         );
     } else {
-        testLegalAppAndRunIfIsLegal();
+        testLegalAppAndRunIfIsLegal(callbackAfterValid);
     }
 }
 
@@ -821,23 +829,9 @@ function saveDay() {
     }, 500);
 }
 
-function aaa() {
-
-    $("#learn-container").addClass('next-cat-right');
-    setTimeout(function () {
-        $("#learn-container").hide();
-        $("#saving-progress-today").show();
-        setTimeout(function () {
-            $("#saving-progress-today").removeClass('next-cat-left');
-        }, 100);
-    }, 500);
-}
-
 function getLangList() {
-    //getDay();
     $.get("date/lang.json", function (result) {
         showLangList(result);
-        //startTmp();
     });
 }
 
@@ -4403,7 +4397,7 @@ function clearTextToShowOnRecognize(text) {
     return text.replace('<b>', '').replace('</b>', '');
 }
 
-function testLegalAppAndRunIfIsLegal() {
+function testLegalAppAndRunIfIsLegal(callbackAfterValid) {
     if(legalValidation === true) {
         logEventInServer('request for verify app', {});
         AndroidLicensePlugin.check(
@@ -4418,7 +4412,7 @@ function testLegalAppAndRunIfIsLegal() {
                     data: JSON.stringify(verifiData)
                 }).done(function (data) {
                     if(data === true) {
-                        startAppBecauseIsLegal();
+                        startAppBecauseIsLegal(callbackAfterValid);
                     } else {
                         blockAppBecauseNotLegal();
                     }
@@ -4457,10 +4451,10 @@ function blockAppBecauseNotLegal() {
     }, 50);
 }
 
-function startAppBecauseIsLegal() {
+function startAppBecauseIsLegal(callbackAfterValid) {
     isLegal = true;
     logEventInServer('good verify app', {});
-    startApp();
+    callbackAfterValid();
 }
 
 function blockAppIfNotLegal() {

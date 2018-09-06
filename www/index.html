@@ -1793,34 +1793,21 @@
 				var mylang = $(obj).data('mylang');
 				$("#myLang").val(mylang);
 				$("body").addClass('lang'+mylang);
-				//$("#choose-lang").hide();
 				$("#list-of-word").hide();
-				//$(".back").show();
 				$(".nav-circle p").removeClass("activ");
 				$(".nav-circle p").eq(1).addClass("activ");
 				getCatList();
 				saveMyLang(mylang);
 				$("#choose-lang").hide();
-				startTut();
 				setTimeout(function(){
 					getAllCatsInArray();
 					getCatWithPos(0,1);
 					getAllCatsInArray();
 					getAllCatsToShowAllCats();
 					updatePlaceholders();
+                    testAndRunAppIfIsOk(startTut);
 				}, 300);
-			}
-			
-			function startTmp(){
-				/*$("#myLang").val(1);
-				$("#learnLang").val(2);
-				$("#choose-lang").hide();
-				$("#list-of-word").hide();
-				$(".back").show();
-				$(".nav-circle p").removeClass("activ");
-				$(".nav-circle p").eq(1).addClass("activ");
-				getCatList();
-				$("#choose-cat").show();*/
+
 			}
 			
 			function setCat(obj){
