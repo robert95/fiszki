@@ -112,18 +112,11 @@ var app = {
         }, function (err) {
             console.log("M: " + err.message + " - " + err.code);
         });
-	    
-	alert(device.uuid);
 
         $("#first-use-loading-page").show();
         logEventInServer('run application', {});
-	    
-	    
-	alert('tadam3');
-	    
         getMyLang();
 
-	    
         document.addEventListener("resume", hideBars, false);
         if ($(window).width() > 600) {
             StatusBar.hide();
@@ -293,12 +286,6 @@ function readAsTextLangR(file) {
 }
 
 function onFSErrorLangR(err) {
-	
-	alert('tadam5');
-    var p = path();
-    //alert("Pierwsze uruchomienie");
-    //copyFirstPath();
-    // resLang = '{"lang":-1}';
     afterReadMyLang('{"lang":-1}');
 }
 
@@ -573,8 +560,6 @@ function startApp() {
 function getMyLang() {
     srcLang = path() + "lang.json";
     if (!dev) {
-	    
-	alert('tadam4');
         readLang();
     } else {
         afterReadMyLang(JSON.stringify(langJSON));

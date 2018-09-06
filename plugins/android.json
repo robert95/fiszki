@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-x-socialsharing": {
       "PACKAGE_NAME": "com.speaklabs.english.speaklabsPro"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.speaklabs.english.speaklabsPro"
     }
   },
   "dependent_plugins": {
