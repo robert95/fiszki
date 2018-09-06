@@ -107,19 +107,23 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 
     onDeviceReady: function () {
-	    
-	alert('tadam');
-	    
         var src = '/android_asset/www/date/1.mp3';
         my_media = new Media(src, function () {
         }, function (err) {
             console.log("M: " + err.message + " - " + err.code);
         });
+	    
+	alert('tadam2');
 
         $("#first-use-loading-page").show();
         logEventInServer('run application', {});
+	    
+	    
+	alert('tadam3');
+	    
         getMyLang();
 
+	    
         document.addEventListener("resume", hideBars, false);
         if ($(window).width() > 600) {
             StatusBar.hide();
@@ -289,6 +293,8 @@ function readAsTextLangR(file) {
 }
 
 function onFSErrorLangR(err) {
+	
+	alert('tadam5');
     var p = path();
     //alert("Pierwsze uruchomienie");
     //copyFirstPath();
@@ -567,6 +573,8 @@ function startApp() {
 function getMyLang() {
     srcLang = path() + "lang.json";
     if (!dev) {
+	    
+	alert('tadam4');
         readLang();
     } else {
         afterReadMyLang(JSON.stringify(langJSON));
