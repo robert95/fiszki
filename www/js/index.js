@@ -289,7 +289,8 @@ function onFSErrorLangR(err) {
     var p = path();
     //alert("Pierwsze uruchomienie");
     //copyFirstPath();
-    resLang = '{"lang":-1}';
+    // resLang = '{"lang":-1}';
+    afterReadMyLang('{"lang":-1}');
 }
 
 /* END READ FILE */
@@ -462,7 +463,6 @@ function gotFileWriterN5(writer) {
         renameFile(srcSaveDayTmp, '', srcSave5, renameSuccessSaveDayEnd);
     };
 
-    //alert(JSON.stringify(datesJSON5));
     writer.write(JSON.stringify(datesJSON5));
     writer.abort();
 }
@@ -1035,7 +1035,6 @@ function showWordList(w, t) {
             var tran = trans[x];
             tmp += '<div class="word" data-id="' + word.id + '" data-check="1" onclick="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
         }
-        //alert("jesten");
         $("#words").html(tmp);
         isFirstCycle = false;
     } else {
@@ -4409,14 +4408,10 @@ function clearTextToShowOnRecognize(text) {
 }
 
 function testLegalAppAndRunIfIsLegal() {
-    alert(321);
     if(legalValidation === true) {
         logEventInServer('request for verify app', {});
         AndroidLicensePlugin.check(
             function (data) {
-
-                alert(data);
-
                 var verifiData = data;
                 verifiData.packageName = getPackageName();
                 var url = getVerifiApiUrl();
@@ -4426,22 +4421,17 @@ function testLegalAppAndRunIfIsLegal() {
                     contentType: "application/json",
                     data: JSON.stringify(verifiData)
                 }).done(function (data) {
-                    alert(data);
                     if(data === true) {
                         startAppBecauseIsLegal();
                     } else {
                         blockAppBecauseNotLegal();
                     }
                 }).fail(function (a, b, c) {
-                    alert(a);
-                    alert(b);
-                    alert(c);
                     //coś nie tak z serwerem -> musimy wpuścić do apki
                     startAppBecauseIsLegal();
                 });
             },
             function (errorString) {
-                alert(errorString);
                 //coś nie tak z pluginem -> musimy wpuścic do apki
                 startAppBecauseIsLegal();
             }
