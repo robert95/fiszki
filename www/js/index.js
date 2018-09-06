@@ -107,6 +107,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
 
     onDeviceReady: function () {
+	    
+	alert('tadam');
+	    
         var src = '/android_asset/www/date/1.mp3';
         my_media = new Media(src, function () {
         }, function (err) {
