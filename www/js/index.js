@@ -113,6 +113,8 @@ var app = {
             console.log("M: " + err.message + " - " + err.code);
         });
 
+        $('#menu-switch').hide();
+        $('#menu').hide();
         $("#first-use-loading-page").show();
         logEventInServer('run application', {});
         getMyLang();
@@ -280,12 +282,15 @@ function gotFileLangR(file) {
 function readAsTextLangR(file) {
     var reader = new FileReader();
     reader.onloadend = function (e) {
+        alert(e.target.result);
         afterReadMyLang(e.target.result);
     };
     reader.readAsText(file);
 }
 
 function onFSErrorLangR(err) {
+    alert('jest błąd w pobieraniu');
+    alert(err.message);
     afterReadMyLang('{"lang":-1}');
 }
 
@@ -401,6 +406,7 @@ function renameSuccessSaveEnd() {
 }
 
 function failN(error) {
+    alert('błąd przy zapisie jezyka: ' + error.message);
     //alert("error : "+error.code);
 }
 
@@ -427,6 +433,7 @@ function gotFileEntryLang(fileEntry) {
 
 function gotFileWriterLang(writer) {
     writer.onwrite = function (evt) {
+        alert('zapisano jezyk: ' + JSON.stringify(langJSON));
         console.log("write success");
     };
     writer.write(JSON.stringify(langJSON));
@@ -546,6 +553,8 @@ function startApp() {
         }
         else {
             //NIE
+            $('#menu-switch').show();
+            $('#menu').show();
             $("#myLang").val(lang);
             $("body").addClass('lang' + lang);
             getDay(); //pobierz numer dnia
@@ -571,7 +580,9 @@ function afterReadMyLang(langData) {
     if(typeof langData.lang != 'undefined' && langData.lang > 0) {
         $("body").addClass('lang' + lang);
         testAndRunAppIfIsOk(startApp);
+        alert('tu nie powinno mnie być za pierwszym razem');
     } else {
+        alert('tu');
         if (!isPremium) {
             $("#first-use-loading-page").hide();
             startLearn = true; //po tutorialu zacznie naukę
@@ -1300,6 +1311,7 @@ function copyFirstPath() {
         },
         function () {
             if (isPremium) {
+                alert('skopiowałem wszystko');
                 copyFirstPathPremium();
             }
         },
@@ -1310,6 +1322,7 @@ function copyFirstPath() {
 }
 
 function copyFirstPathPremium() {
+    alert('próbuje skopiować z demo');
     var demoPathsrc = demoPath();
     copyFileFromDemo(demoPathsrc, 'lang.json', false);
     copyFileFromDemo(demoPathsrc, 'day.json', false);
@@ -1345,6 +1358,7 @@ function copyFileFromDemo(srcPath, nameFile, lastfile) {
         }, function (err) {
             //Tutaj wiemy, że tam nie ma takiego pliku, nie ma zaintalowanej wersji demo
             if (nameFile == 'lang.json') {
+                alert('logowanie z demo sie nie udało');
                 $("#first-use-loading-page").hide();
                 startLearn = true; //po tutorialu zacznie naukę
                 getLangList(); //wybierz swój język
