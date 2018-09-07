@@ -1347,6 +1347,7 @@ section{
 	right: 11px;
 	width: 3%;
 	z-index: 1000;
+	display: none;
 }
 #readP{
 	display: none;

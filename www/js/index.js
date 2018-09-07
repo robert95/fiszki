@@ -17,7 +17,7 @@
  * under the License.
  */
 
-t_not_connected_text = ['Make sure that your Wi-Fi or cellular mobile data is turned on and then try again.', 'Upewnij się, że Wifi lub  dane komórkowe są włączone, a następnie spróbuj ponownie.', 'Asegúrate que el WiFi o datos móviles están activados e inténtalo otra vez.', 'Vergewissere dich, dass dein WLAN oder Mobilfunknetz eingeschaltet ist und versuche es dann nochmal.', 'Assurez-vous que le Wi-Fi ou les données mobiles sont activées et essayez de nouveau.'];
+t_not_connected_text = ['Make sure that your Wi-Fi or cellular mobile data is turned on and then try again.', 'Upewnij się, że Wifi lub dane komórkowe są włączone, a następnie spróbuj ponownie.', 'Asegúrate que el WiFi o datos móviles están activados e inténtalo otra vez.', 'Vergewissere dich, dass dein WLAN oder Mobilfunknetz eingeschaltet ist und versuche es dann nochmal.', 'Assurez-vous que le Wi-Fi ou les données mobiles sont activées et essayez de nouveau.'];
 t_not_connected_title = ['No internet connection', 'Nie można połączyć się z internetem', 'No hay conexión a internet', 'Keine Internetverbindung', 'Pas de connexion Internet'];
 t_not_connected_exit = ['OK', 'OK', 'OK', 'OK', 'OK'];
 t_during_learning = ['Lesson in progress', 'W trakcie nauki', 'En progreso', 'Lektion im Gange', 'Leçon en cours'];
@@ -3884,7 +3884,7 @@ function compareRecognizedTextInAllWords(text, correctText) {
         $bottomText
             .addClass('wrong-speach-text')
             .attr('data-origin-text', $bottomText.html())
-            .html('błędnie powiedziany text');
+            .html(text);
     }
 }
 
@@ -4040,7 +4040,7 @@ function showSavedWord(word) {
             var trans = JSON.parse(transResult);
             var w = words[word[2] - 1];
             var t = trans[word[2] - 1];
-            $("#savedWordsContainer").append('<p class="text" data-source="liked-word" data-category="'+ word[0] +'" data-subcategory="'+ word[1] +'" data-word="'+ word[2] +'" onclick="tellMeWord(\'' + word[0] + "/" + word[1] + '\',' + w.id + ', this)"><img src="img/star_check.png" class="left-img" onclick="confirmRemoveSavedWord(this, \'' + word[0] + "/" + word[1] + "/" + word[2] + '\',' + w.id + ')">' + t.name + '<span class="small-text-in-text-box">' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + (t.name).replace(/(['"])/g, "\\$1") + '\', this); return false;"></p>');
+            $("#savedWordsContainer").append('<p class="text" data-source="liked-word" data-category="'+ word[0] +'" data-subcategory="'+ word[1] +'" data-word="'+ word[2] +'" onclick="tellMeWordFrom(\'' + word[0] + "/" + word[1] + '\',' + w.id + ', this)"><img src="img/star_check.png" class="left-img" onclick="confirmRemoveSavedWord(this, \'' + word[0] + "/" + word[1] + "/" + word[2] + '\',' + w.id + ')">' + t.name + '<span class="small-text-in-text-box">' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + (t.name).replace(/(['"])/g, "\\$1") + '\', this); return false;"></p>');
         });
     });
 }
@@ -4375,15 +4375,14 @@ function tellMeWordFrom(sygn, id, obj) {
     switch ($item.attr('data-source')) {
         case 'liked-word':
             eventName = 'run sound in liked';
+            logEventInServer('run sound in liked', {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')});
             break;
         case 'new-lesson':
-            eventName = 'run sound in new lesson start page';
+            logEventInServer('run sound in new lesson start page', {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')});
             break;
         case 'all-words':
-            eventName = 'run sound in browsing phrases';
+            logEventInServer('run sound in browsing phrases', {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')});
             break;
     }
-
-    logEventInServer(eventName, {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')});
 }
 
