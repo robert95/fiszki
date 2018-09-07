@@ -3475,7 +3475,7 @@ function getAllCatsToShowAllCats() {
 }
 
 function getWordForCatShowList(sygn, hasAudio) {
-    var splitedWordSygn = sygn.split('\\');
+    var splitedWordSygn = sygn.split('/');
     $.get("date/" + langJSON.lang + "/" + sygn + "/words.json", function (result) {
         $("#show-all-cats-cats-wordlist").text("");
         $.get("date/1/" + sygn + "/words.json", function (transResult) {
