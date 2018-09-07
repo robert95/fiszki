@@ -4370,8 +4370,8 @@ function isOnlyNewLessonToEndDay(toLearn){
 function tellMeWordFrom(sygn, id, obj) {
     tellMeWord(sygn, id);
 
-    alert($item.attr('data-source'));
     var $item = $(obj);
+    alert($item.attr('data-source'));
     switch ($item.attr('data-source')) {
         case 'liked-word':
             alert('1');
