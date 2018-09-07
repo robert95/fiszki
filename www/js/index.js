@@ -4374,7 +4374,6 @@ function tellMeWordFrom(sygn, id, obj) {
     var eventName = '';
     switch ($item.attr('data-source')) {
         case 'liked-word':
-            eventName = 'run sound in liked';
             logEventInServer('run sound in liked', {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')});
             break;
         case 'new-lesson':
