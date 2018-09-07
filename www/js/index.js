@@ -282,15 +282,12 @@ function gotFileLangR(file) {
 function readAsTextLangR(file) {
     var reader = new FileReader();
     reader.onloadend = function (e) {
-        alert(e.target.result);
         afterReadMyLang(e.target.result);
     };
     reader.readAsText(file);
 }
 
 function onFSErrorLangR(err) {
-    alert('jest błąd w pobieraniu');
-    alert(err.message);
     afterReadMyLang('{"lang":-1}');
 }
 
@@ -322,9 +319,6 @@ function readAsText(file) {
 }
 
 function onFSError(err) {
-    var p = path();
-    //alert("Ładownie...proszę czekać...");
-    //copyFirstPath();
     res = "[]";
 }
 
@@ -406,8 +400,7 @@ function renameSuccessSaveEnd() {
 }
 
 function failN(error) {
-    alert('błąd przy zapisie jezyka: ' + error.message);
-    //alert("error : "+error.code);
+
 }
 
 /* END SAVE FILE */
@@ -433,7 +426,6 @@ function gotFileEntryLang(fileEntry) {
 
 function gotFileWriterLang(writer) {
     writer.onwrite = function (evt) {
-        alert('zapisano jezyk: ' + JSON.stringify(langJSON));
         console.log("write success");
     };
     writer.write(JSON.stringify(langJSON));
@@ -577,12 +569,10 @@ function getMyLang() {
 
 function afterReadMyLang(langData) {
     langJSON = JSON.parse(langData);
-    if(typeof langData.lang != 'undefined' && langData.lang > 0) {
+    if(typeof langJSON.lang != 'undefined' && langJSON.lang > 0) {
         $("body").addClass('lang' + lang);
         testAndRunAppIfIsOk(startApp);
-        alert('tu nie powinno mnie być za pierwszym razem');
     } else {
-        alert('tu');
         if (!isPremium) {
             $("#first-use-loading-page").hide();
             startLearn = true; //po tutorialu zacznie naukę
@@ -1086,7 +1076,6 @@ function getNavWordList() {
             $("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/' + i + '.png" class="no-activ-img"><img src="img/' + i + '.png" class="activ-img"></p>');
         }
         setTimeout(function () {
-            //	alert($("#nav-words-container").text(""));
             setNavWordPosition(0);
             $("#nav-words-container p").removeClass("activ");
             $("#nav-words-container p").removeClass("pulse");
@@ -1311,7 +1300,6 @@ function copyFirstPath() {
         },
         function () {
             if (isPremium) {
-                alert('skopiowałem wszystko');
                 copyFirstPathPremium();
             }
         },
@@ -1322,7 +1310,6 @@ function copyFirstPath() {
 }
 
 function copyFirstPathPremium() {
-    alert('próbuje skopiować z demo');
     var demoPathsrc = demoPath();
     copyFileFromDemo(demoPathsrc, 'lang.json', false);
     copyFileFromDemo(demoPathsrc, 'day.json', false);
@@ -1346,7 +1333,6 @@ function copyFileFromDemo(srcPath, nameFile, lastfile) {
 							}, 100);
 							*/
                         }
-                        //alert('copying was successful')
                     },
                     function (err) {
                         console.log("Error: " + err.toString());
@@ -1358,13 +1344,11 @@ function copyFileFromDemo(srcPath, nameFile, lastfile) {
         }, function (err) {
             //Tutaj wiemy, że tam nie ma takiego pliku, nie ma zaintalowanej wersji demo
             if (nameFile == 'lang.json') {
-                alert('logowanie z demo sie nie udało');
                 $("#first-use-loading-page").hide();
                 startLearn = true; //po tutorialu zacznie naukę
                 getLangList(); //wybierz swój język
                 $("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
             }
-            //alert("Plik jest nieprawidłowy!" + (srcPath + nameFile));
         });
     }, function (err) {
         console.log("Error: " + err.toString());
@@ -1447,10 +1431,8 @@ function gotFileWriterN(writer) {
         console.log("write success");
     };
 
-    //alert(JSON.stringify(noticeJSON));
     writer.write(JSON.stringify(noticeJSON));
     writer.abort();
-    // contents of file now 'some different text'
 }
 
 function failN(error) {
@@ -1655,7 +1637,6 @@ function nextStep() {
                 var length = $("#nav-words-container p").length;
                 var index = $("#nav-words-container p.activ").index() + 1;
                 //learnedWords++;
-                //alert(learnedWords);
                 if (length <= index) {
                     round = 2;
                     firstCycle = false;
@@ -1698,7 +1679,6 @@ function nextStep() {
             theSameMethod = false;
             noFlipIfWrong = false;
             if (nbMethod == 4 && nbStep == 0) {
-                //alert("tu1");
                 //saveNotice($("#confirm-text-4").val());
                 whereGo = 1;
                 var length = $("#nav-words-container p").length;
@@ -1742,7 +1722,6 @@ function nextStep() {
                     nbStep = 1;
                 }
             } else if (nbMethod == 4 && nbStep != 0) {
-                //alert("tu2");
                 whereGo = 0;
                 //saveNotice($("#confirm-text-4").val());
                 var index = $("#nav-words-container p.activ").index() - 1;
@@ -1763,14 +1742,12 @@ function nextStep() {
                 whereGo = -1;
                 theSameMethod = true;
             } else if (nbMethod == 1 && nbStep == 1) {
-                //alert("tu3");
                 whereGo = -1;
                 nbMethod = 6;
                 setWordToMethod(6);
                 nbStep = 2;
                 noFlipIfWrong = true;
             } else if (nbMethod == 6) {
-                //alert("tu4");
                 var index = $("#nav-words-container p.activ").index() + 1;
                 var length = $("#nav-words-container p").length;
                 if (index < length - 1) {
@@ -1782,7 +1759,6 @@ function nextStep() {
                     nextStep();
                     return;
                 } else {
-                    //alert("jtest");
                     whereGo = 0;
                     var index = $("#nav-words-container p.activ").index() + 1;
                     var id = ($("#nav-words-container p").eq(index)).data('word-id');
@@ -1799,31 +1775,7 @@ function nextStep() {
                     whereGo = -1;
                     theSameMethod = true;
                 }
-                /*
-				whereGo = -1;
-			//	learnedWords++;
-			//	alert(learnedWords);
-				var index = $("#nav-words-container p.activ").index() + 1;
-				var id = ($("#nav-words-container p").eq(index)).data('word-id');
-				setActWord(id);
-				setNavWordPosition(index);
-				$("#nav-words-container p").removeClass("activ");
-				$("#nav-words-container p").removeClass("pulse");
-				$("#nav-words-container p").eq(index).addClass("activ");
-				$("#nav-words-container p").eq(index).addClass("pulse");
-				setTimeout(function(){
-					if(index == 9){
-						//whereGo = 0;
-						whereGo = -1;
-						theSameMethod = true;
-					}
-					setWordToMethod(1);
-				}, 100);
-				nbMethod = 1;
-
-				*/
             } else if (nbMethod == 1 && nbStep == 2) {
-                //alert("tu5");
                 whereGo = -1;
                 nbMethod = 4;
                 nbStep = 0;
@@ -1869,73 +1821,6 @@ function nextStep() {
                     $("#nav-words-container p").removeClass("pulse");  //zmiana
                     $("#nav-words-container p").eq(index).addClass("activ");  //zmiana
                     $("#nav-words-container p").eq(index).addClass("pulse");  //zmiana
-                    //}else{
-                    //powtórka
-                    //$("#nav-words-container p").removeClass("pulse");
-                    //alert(snd_id + " " + s_nowe + " " + s_bylo + " " + ile_s + " " + thd_id + " " + t_nowe + " " + t_bylo + " " + ile_t);
-                    /*if(stepow == 0){
-							if(ile_s == 0) snd_id = -1;
-							if(ile_t == 0) thd_id = -1;
-							updateThirdNav();
-							if(s_nowe == 0 && s_bylo == 0 && snd_id > 0){
-								id_powt = snd_id;
-							}else if(t_nowe == 0 && t_bylo == 0 && thd_id > 0){
-								id_powt = thd_id;
-							}else{
-								id_powt = -1;
-							}
-						}*/
-                    //alert(id_powt + " " + stepow);
-                    /*if(id_powt > 0){
-							if(stepow == 0){
-								repeatThrid(id_powt, 1);
-								stepow = 1;
-								return;
-							}else{
-								repeatThrid(id_powt, 6);
-								stepow = 0;
-								if(id_powt == snd_id){
-									ile_s--;
-									s_bylo = 1;
-								}
-								if(id_powt == thd_id){
-									ile_t--;
-									t_bylo = 1;
-								}
-								last_r_s = id_powt;
-								return;
-							}
-						}*/
-                    //end-powtórka
-                    //warunke przejścia dalej
-                    /*if(snd_id > 0 && thd_id > 0){
-								s_bylo = 0;
-								t_bylo = 0;
-								s_nowe = 0;
-								t_nowe = 0;
-								nextStep();
-								return;
-							}*/
-                    //
-                    /*		id_powt = -1;
-						t_nowe = 0;
-						s_nowe = 0;
-						repeatSec = 1;
-						repeatThd = 1;
-						wasSndTime = 0;
-						wasThdTime = 0;
-						s_bylo = 0;
-						t_bylo = 0;
-						$("#nav-words-container-thd p").removeClass('pulse');
-						$("#nav-words-container-thd p").removeClass("activ");
-						var id = ($("#nav-words-container p").eq(index)).data('word-id');
-						setActWord(id);
-						setNavWordPosition(index);
-						$("#nav-words-container p").removeClass("activ");
-						$("#nav-words-container p").removeClass("pulse");
-						$("#nav-words-container p").eq(index).addClass("activ");
-						$("#nav-words-container p").eq(index).addClass("pulse");
-					}*/
                 } else {
                     prepareToThird = 0;
                 }
@@ -1944,7 +1829,6 @@ function nextStep() {
                 var id = ($("#nav-words-container p").eq(index)).data('word-id');
                 setActWord(id);
                 setNavWordPosition(index);
-                //alert(learnedWords);
                 setTimeout(function () {
                     setWordToMethod(1);
                 }, 100);
@@ -1968,65 +1852,9 @@ function nextStep() {
                 return;
             }
         } else if (round == 5) {
-            /*if(canNextStep == 0){
-				canNextStep = 1;
-				if(id_powt > 0){
-					if(id_powt == snd_id){
-						ile_s = 2;
-					}else if(id_powt == thd_id){
-						ile_t = 2;
-					}
-				}
-			}
-			$("#nav-words-container p").removeClass("pulse");
-			if(stepow == 0){
-				//alert("t1");
-				if(ile_s == 0) snd_id = -1;
-				if(ile_t == 0) thd_id = -1;
-				updateThirdNav();
-				if(s_nowe == 0 && s_bylo == 0 && snd_id > 0){
-					id_powt = snd_id;
-				}else if(t_nowe == 0 && t_bylo == 0 && thd_id > 0){
-					id_powt = thd_id;
-				}else{
-					id_powt = -1;
-				}
-			}
-			if(id_powt > 0){
-				if(stepow == 0){
-					repeatThrid(id_powt, 1);
-					stepow = 1;
-					return;
-				}else{
-					repeatThrid(id_powt, 6);
-					stepow = 0;
-					if(id_powt == snd_id){
-						ile_s--;
-						s_bylo = 1;
-					}
-					if(id_powt == thd_id){
-						ile_t--;
-						t_bylo = 1;
-					}
-					last_r_s = id_powt;
-					return;
-				}
-			}*/
-            //end-powtórka
-            //warunke przejścia dalej
-            /*if(snd_id > 0 || thd_id > 0){
-					s_bylo = 0;
-					t_bylo = 0;
-					s_nowe = 0;
-					t_nowe = 0;
-					nextStep();
-					return;
-				}else{*/
             thirdCycle = false;
             nextStep();
             return;
-            //}
-            //
         }
     } else {
         nextPack();
@@ -3305,7 +3133,7 @@ function gotFileWriterNProgress(writer) {
 }
 
 function failN(error) {
-    //alert("error : "+error.code);
+
 }
 
 /* END SAVE FILE */
@@ -3357,7 +3185,6 @@ function loadProgress(uri) {
                 reader.readAsText(readyFile);
             });
         }, function (err) {
-            //alert('### ERR: filesystem.directoryUp() - ' + (JSON.stringify(err)));
             getTrans(t_import_from_file_error);
         });
     });
@@ -3831,9 +3658,6 @@ function compareRecognizedText(text) {
         if (countOfWrongRecognized == 2) {
             showRecognizedAlert();
         }
-        //if(countOfWrongRecognized == 3){
-        //showRecognizedAlert2();
-        //}
         if (countOfWrongRecognized == 3) {
             countOfWrongRecognized = 0;
             showRecognizedAlert3();
@@ -3900,12 +3724,12 @@ function renameFile(currentName, currentDir, newName, successFunction) {
 
 //and the sample success function
 function renameSuccess() {
-    //alert('renamed!');
+
 }
 
 //and the sample fail function
 function renameFail() {
-    // alert('failed');
+
 }
 
 function showConfirmSkipRepetition() {
