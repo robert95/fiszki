@@ -4371,19 +4371,15 @@ function tellMeWordFrom(sygn, id, obj) {
     tellMeWord(sygn, id);
 
     var $item = $(obj);
-    alert($item.attr('data-source'));
     switch ($item.attr('data-source')) {
         case 'liked-word':
-            alert('1');
-            logEventInServer('run sound in liked', {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')});
+            logEventInServer('run sound in liked', {category: $item.attr('data-category'), subcategory: $item.attr('data-subcategory'), word: $item.attr('data-word')});
             break;
         case 'new-lesson':
-            alert('2');
-            logEventInServer('run sound in new lesson start page', {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')});
+            logEventInServer('run sound in new lesson start page', {category: $item.attr('data-category'), subcategory: $item.attr('data-subcategory'), word: $item.attr('data-word')});
             break;
         case 'all-words':
-            alert('3');
-            logEventInServer('run sound in browsing phrases', {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')});
+            logEventInServer('run sound in browsing phrases', {category: $item.attr('data-category'), subcategory: $item.attr('data-subcategory'), word: $item.attr('data-word')});
             break;
     }
 }
