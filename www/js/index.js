@@ -570,7 +570,7 @@ function getMyLang() {
 function afterReadMyLang(langData) {
     langJSON = JSON.parse(langData);
     if(typeof langJSON.lang != 'undefined' && langJSON.lang > 0) {
-        $("body").addClass('lang' + lang);
+        $("body").addClass('lang' + langJSON.lang);
         testAndRunAppIfIsOk(startApp);
     } else {
         if (!isPremium) {
