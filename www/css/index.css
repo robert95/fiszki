@@ -2414,15 +2414,7 @@ h3{
 	width: 25px;
 	display: none;
 }
-.cursor-TUT-2{
-	display: inline !important;
-	-ms-transform: rotate(50deg);
-	-webkit-transform: rotate(50deg);
-	transform: rotate(50deg);
-	top: 87px;
-	left: 31%;
-}
-.cursor-TUT-3{
+.cursor-TUT-1{
 	display: inline !important;
 	-ms-transform: rotate(155deg);
 	-webkit-transform: rotate(155deg);
@@ -2430,7 +2422,7 @@ h3{
 	bottom: 127px;
 	left: 31%;
 }
-.cursor-TUT-4{
+.cursor-TUT-2{
 	display: inline !important;
 	-ms-transform: rotate(155deg);
 	-webkit-transform: rotate(155deg);
@@ -2438,15 +2430,7 @@ h3{
 	bottom: 143px;
 	right: 23%;
 }
-.cursor-TUT-5{
-	display: inline !important;
-	-ms-transform: rotate(155deg);
-	-webkit-transform: rotate(155deg);
-	transform: rotate(155deg);
-	bottom: 50px;
-	left: 9%;
-}
-.cursor-TUT-6{
+.cursor-TUT-3{
 	display: inline !important;
 	-ms-transform: rotate(155deg);
 	-webkit-transform: rotate(155deg);
@@ -2454,13 +2438,13 @@ h3{
 	top: 145px;
 	right: 14%;
 }
-.cursor-TUT-7{
+.cursor-TUT-4{
 	display: inline !important;
-	-ms-transform: rotate(50deg);
-	-webkit-transform: rotate(50deg);
-	transform: rotate(50deg);
-	top: 48px;
-	right: 5%;
+	-ms-transform: rotate(155deg);
+	-webkit-transform: rotate(155deg);
+	transform: rotate(155deg);
+	bottom: 50px;
+	left: 9%;
 }
 .skip-this-part-cloud{
     position: absolute
