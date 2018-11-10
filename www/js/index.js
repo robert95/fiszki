@@ -4251,11 +4251,12 @@ function testLegalAppAndRunIfIsLegal(callbackAfterValid) {
                     contentType: "application/json",
                     data: JSON.stringify(verifiData)
                 }).done(function (data) {
-                    if(data === true) {
+                    // CHANGE !!! UNCOMMENT
+                    // if(data === true) {
                         startAppBecauseIsLegal(callbackAfterValid);
-                    } else {
-                        blockAppBecauseNotLegal();
-                    }
+                    // } else {
+                    //     blockAppBecauseNotLegal();
+                    // }
                 }).fail(function (a, b, c) {
                     //coś nie tak z serwerem -> musimy wpuścić do apki
                     startAppBecauseIsLegal();
