@@ -21,14 +21,6 @@ if( /(android)/i.test(navigator.userAgent) ) {
     };
 }
 
-var waitForAd = false;
-function getWaitForAd(){
-	return waitForAd;
-}
-function setWaitForAd( value ){
-	waitForAd = value;
-}
-
 var adIsReady = false;
 function getAdIsReady(){
 	return adIsReady;
@@ -53,7 +45,6 @@ function showAd(){
 			}else{
 				if(adIsReady)
 				{
-					waitForAd = true;
 					countAd++;
 					if(countAd%2 == 0){
 						//$("#myCall-big-ad").show();

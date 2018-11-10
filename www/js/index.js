@@ -136,12 +136,6 @@ var app = {
                 loadProgressBarToFull();
                 loadProgressBarToFull2();
             }, 100);
-            actionAfterCloseAd();
-        });
-
-        document.addEventListener('onAdLeaveApp', function (data) {
-            //prepareAd();
-            actionAfterCloseAd();
         });
 
         document.addEventListener('onAdPresent', function (data) {
@@ -4077,22 +4071,15 @@ function removeFromSavedWords(obj, word) {
 }
 
 /* END LIKED WORDS */
-runNotifiAfterAd = false;
 
 function setPopupAboutNoAudioLesson() {
-    // alert('2 ' + runNotifiAfterAd + ' ' + suggestedCatHasAudio + ' ' + getWaitForAd());
-    runNotifiAfterAd = false;
     if (suggestedCatHasAudio == false) {
-        if (getWaitForAd() == false || true) {
-            navigator.notification.confirm(
-                getTrans(t_no_audio_lesson_text),
-                setPopupAboutNoAudioLessonBTNCallBack,
-                getTrans(t_no_audio_lesson_title),
-                getTrans(t_no_audio_lesson_learn_anyway) + "," + getTrans(t_no_audio_lesson_upgrade) + "," + getTrans(t_no_audio_lesson_skip)
-            );
-        } else {
-            runNotifiAfterAd = true;
-        }
+        navigator.notification.confirm(
+            getTrans(t_no_audio_lesson_text),
+            setPopupAboutNoAudioLessonBTNCallBack,
+            getTrans(t_no_audio_lesson_title),
+            getTrans(t_no_audio_lesson_learn_anyway) + "," + getTrans(t_no_audio_lesson_upgrade) + "," + getTrans(t_no_audio_lesson_skip)
+        );
     }
 }
 
@@ -4115,14 +4102,6 @@ function setPopupAboutNoAudioLessonBTNCallBack(buttonIndex) {
     if (buttonIndex == 3) {
         showConfirmSkipLesson();
     }
-}
-
-function actionAfterCloseAd() {
-    setWaitForAd(false);
-    if (runNotifiAfterAd) {
-        setPopupAboutNoAudioLesson();
-    }
-    runNotifiAfterAd = false;
 }
 
 function showMuteIcon() {
@@ -4250,12 +4229,11 @@ function testLegalAppAndRunIfIsLegal(callbackAfterValid) {
                     contentType: "application/json",
                     data: JSON.stringify(verifiData)
                 }).done(function (data) {
-                    // CHANGE !!! UNCOMMENT
-                    // if(data === true) {
+                    if(data === true) {
                         startAppBecauseIsLegal(callbackAfterValid);
-                    // } else {
-                    //     blockAppBecauseNotLegal();
-                    // }
+                    } else {
+                        blockAppBecauseNotLegal();
+                    }
                 }).fail(function (a, b, c) {
                     //coś nie tak z serwerem -> musimy wpuścić do apki
                     startAppBecauseIsLegal();
