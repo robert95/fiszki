@@ -4080,10 +4080,10 @@ function removeFromSavedWords(obj, word) {
 runNotifiAfterAd = false;
 
 function setPopupAboutNoAudioLesson() {
-    alert('2 ' + runNotifiAfterAd + ' ' + suggestedCatHasAudio + ' ' + getWaitForAd());
+    // alert('2 ' + runNotifiAfterAd + ' ' + suggestedCatHasAudio + ' ' + getWaitForAd());
     runNotifiAfterAd = false;
     if (suggestedCatHasAudio == false) {
-        if (getWaitForAd() == false) {
+        if (getWaitForAd() == false || true) {
             navigator.notification.confirm(
                 getTrans(t_no_audio_lesson_text),
                 setPopupAboutNoAudioLessonBTNCallBack,
@@ -4118,7 +4118,6 @@ function setPopupAboutNoAudioLessonBTNCallBack(buttonIndex) {
 }
 
 function actionAfterCloseAd() {
-    alert('1 ' + runNotifiAfterAd);
     setWaitForAd(false);
     if (runNotifiAfterAd) {
         setPopupAboutNoAudioLesson();
