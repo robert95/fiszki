@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.speaklabs.english.speaklabsPro" version="1.0.9" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>English1500+ Pro</name>
+<widget id="com.speaklabs.english.speaklabs" version="1.0.9" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>English1500+</name>
     <description>Application for learn languages</description>
     <author email="info@speaklabs.eu" href="http://speaklabs.eu">English1500+ Team</author>
     <content src="index.html" />
