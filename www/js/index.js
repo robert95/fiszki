@@ -3563,8 +3563,14 @@ function startRecognize() {
 
         logEventInServer('start speach recognize in lesson', getDataAboutCurrentWordToLog());
 
-        SpeechRecognition.hasPermission()
-            .then((hasPermission: boolean) => alert(hasPermission));
+        window.plugins.speechRecognition.hasPermission(
+            function (hasPermission) {
+                alert(hasPermission);
+            },
+            function (error) {
+                alert(error);
+            });
+
 
         //$(".support-word-in-speach").show();
         stopTelling();
