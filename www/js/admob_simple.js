@@ -3,7 +3,7 @@ var admobid = {};
 var firstShownAd = true; 
 var countAd = 0;
 	// PREMIUM CHANGE
-var isPremium = false;
+var isPremium = true;
 if( /(android)/i.test(navigator.userAgent) ) { 
     admobid = { // for Android
         banner: 'ca-app-pub-5149183983154394/3906975069',
