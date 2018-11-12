@@ -3565,72 +3565,80 @@ function startRecognize() {
 
         window.plugins.speechRecognition.hasPermission(
             function (hasPermission) {
-                alert(hasPermission);
-            },
-            function (error) {
-                alert(error);
-            });
+                if(hasPermission == false) {
+                    window.plugins.speechRecognition.requestPermission(
+                        function () {
+                            alert("tadam");
 
+                            stopTelling();
 
-        //$(".support-word-in-speach").show();
-        stopTelling();
+                            var langText = "en-GB";
+                            var options = {
+                                language: langText,
+                                matches: 2,
+                                prompt: ((nbMethod == 6 || nbMethod == 5 || (nbMethod == 4 && nbStep == 0 && $("#nav-words-container p.activ").index() == 9)) ? clearTextToShowOnRecognize(act_trans) : clearTextToShowOnRecognize(act_word)),
+                                showPopup: true
+                            };
 
-        var langText = "en-GB";
-        var options = {
-            language: langText,
-            matches: 2,
-            prompt: ((nbMethod == 6 || nbMethod == 5 || (nbMethod == 4 && nbStep == 0 && $("#nav-words-container p.activ").index() == 9)) ? clearTextToShowOnRecognize(act_trans) : clearTextToShowOnRecognize(act_word)),
-            showPopup: true
-        };
+                            window.plugins.speechRecognition.startListening(
+                                function (matches) {
+                                    if (matches[0] != '') {
+                                        var text = matches[0];
+                                        $(".recText").text(text);
 
-        window.plugins.speechRecognition.startListening(
-            function (matches) {
-                if (matches[0] != '') {
-                    var text = matches[0];
-                    $(".recText").text(text);
+                                        $("#l-n-1").hide();
+                                        $("#l-n-2").hide();
+                                        $("#l-n-3").hide();
+                                        $("#l-n-4").hide();
+                                        $("#l-n-5").hide();
+                                        $("#l-n-6").hide();
 
-                    $("#l-n-1").hide();
-                    $("#l-n-2").hide();
-                    $("#l-n-3").hide();
-                    $("#l-n-4").hide();
-                    $("#l-n-5").hide();
-                    $("#l-n-6").hide();
+                                        $("#l-e-1").hide();
+                                        $("#l-e-2").hide();
+                                        $("#l-e-3").hide();
+                                        $("#l-e-4").hide();
+                                        $("#l-e-5").hide();
+                                        $("#l-e-6").hide();
 
-                    $("#l-e-1").hide();
-                    $("#l-e-2").hide();
-                    $("#l-e-3").hide();
-                    $("#l-e-4").hide();
-                    $("#l-e-5").hide();
-                    $("#l-e-6").hide();
+                                        $("#l-t-1").hide();
+                                        $("#l-t-2").hide();
+                                        $("#l-t-3").hide();
+                                        $("#l-t-4").hide();
+                                        $("#l-t-5").hide();
+                                        $("#l-t-6").hide();
 
-                    $("#l-t-1").hide();
-                    $("#l-t-2").hide();
-                    $("#l-t-3").hide();
-                    $("#l-t-4").hide();
-                    $("#l-t-5").hide();
-                    $("#l-t-6").hide();
+                                        $("#l-c-1").show();
+                                        $("#l-c-2").show();
+                                        $("#l-c-3").show();
+                                        $("#l-c-4").show();
+                                        $("#l-c-5").show();
+                                        $("#l-c-6").show();
 
-                    $("#l-c-1").show();
-                    $("#l-c-2").show();
-                    $("#l-c-3").show();
-                    $("#l-c-4").show();
-                    $("#l-c-5").show();
-                    $("#l-c-6").show();
+                                        $(".recTextWrap").show();
+                                        $(".recText").show();
 
-                    $(".recTextWrap").show();
-                    $(".recText").show();
+                                        $(".show-hidden-word").next("p").show();
+                                        $(".show-hidden-word").hide();
 
-                    $(".show-hidden-word").next("p").show();
-                    $(".show-hidden-word").hide();
-
-                    compareRecognizedText(text);
-                    $(".support-word-in-speach").hide();
+                                        compareRecognizedText(text);
+                                        $(".support-word-in-speach").hide();
+                                    }
+                                },
+                                function () {
+                                    $(".support-word-in-speach").hide();
+                                },
+                                options
+                            );
+                        },
+                        function (error) {
+                            alert(error);
+                        }
+                    );
                 }
             },
-            function () {
-                $(".support-word-in-speach").hide();
-            },
-            options
+            function (error) {
+
+            }
         );
     }
 }
