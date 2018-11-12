@@ -3563,10 +3563,13 @@ function startRecognize() {
 
         logEventInServer('start speach recognize in lesson', getDataAboutCurrentWordToLog());
 
+        SpeechRecognition.hasPermission()
+            .then((hasPermission: boolean) => alert(hasPermission));
+
         //$(".support-word-in-speach").show();
         stopTelling();
 
-        var langText = "en-GB"
+        var langText = "en-GB";
         var options = {
             language: langText,
             matches: 2,
