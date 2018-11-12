@@ -4229,24 +4229,17 @@ function testLegalAppAndRunIfIsLegal(callbackAfterValid) {
                     contentType: "application/json",
                     data: JSON.stringify(verifiData)
                 }).done(function (data) {
-                    alert(1);
-                    alert(data);
                     if(data === true) {
                         startAppBecauseIsLegal(callbackAfterValid);
                     } else {
                         blockAppBecauseNotLegal();
                     }
                 }).fail(function (a, b, c) {
-                    alert(2);
-                    alert(a);
-                    alert(b);
-                    alert(c);
                     //coś nie tak z serwerem -> musimy wpuścić do apki
                     startAppBecauseIsLegal(callbackAfterValid);
                 });
             },
             function (errorString) {
-                alert(errorString);
                 //coś nie tak z pluginem -> musimy wpuścic do apki
                 startAppBecauseIsLegal(callbackAfterValid);
             }
