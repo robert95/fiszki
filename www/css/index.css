@@ -2063,12 +2063,7 @@ textarea, textarea[placeholder]{
 	margin-top: 4px;
 	font-weight: 200;
 }
-.first-page-main-text, .main-text-repetition, .main-text-end-panel-1, .main-text-end-panel-2{
-	font-weight: 400;
-	font-size: 20px;
-	text-align: center;
-	color: white;
-	margin: 35% 24px 0;
+.first-page-main-text, .main-text-repetition, .main-text-end-panel-1, .main-text-end-panel-2, .loading-files-text{
 	border: 2px solid white;
 	padding: 33px 15px;
 	border-radius: 40px;
@@ -2077,15 +2072,56 @@ textarea, textarea[placeholder]{
 	box-shadow: 0px 3px 12px 1px rgba(0,0,0,0.35);
 	text-shadow: 0px 3px 12px 1px rgba(0,0,0,0.35);
 }
+.first-page-main-text, .main-text-repetition, .main-text-end-panel-1, .main-text-end-panel-2{
+	font-weight: 400;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	margin: 35% 24px 0;
+}
+.first-page-main-text {
+	position: relative;
+	margin-top: 45%;
+}
+.first-page-main-text .teacher{
+	position: absolute;
+	width: 87px;
+	top: -104px;
+	left: 8%;
+}
+.loading-files-text {
+	position: relative;
+	margin: 19% 70px 0;
+}
+.loading-files-text .teacher{
+	position: absolute;
+	width: 96px;
+	top: -115px;
+	left: calc(50% - 43px);
+}
 .main-text-repetition{
-	margin-top: -10px;
+	position: relative;
+	margin-top: 25%;
+}
+.main-text-repetition .teacher{
+	position: absolute;
+	width: 87px;
+	top: -104px;
+	left: 8%;
 }
 .main-text-end-repetition{
     padding: 21px;
-    margin-top: 20%;
+    margin-top: 35%;
 }
 .main-text-end-panel-1{
-	margin: 15% 20px 0;
+	margin: 20% 20px 0;
+	position: relative;
+}
+.main-text-end-panel-1 .teacher{
+	position: absolute;
+	width: 69px;
+	top: -82px;
+	left: 2%;
 }
 .main-text-end-panel-2{
 	margin: 10% 20px 0;
