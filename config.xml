@@ -44,7 +44,6 @@
     <plugin src="https://github.com/cranberrygame/cordova-plugin-navigationbar.git" />
     <plugin src="https://github.com/mesmotronic/cordova-plugin-fullscreen.git" />
     <plugin src="https://github.com/pushandplay/cordova-plugin-apprate.git" />
-    <plugin src="https://github.com/apache/cordova-plugin-inappbrowser.git" />
     <plugin src="https://github.com/g-w/cordova-volume.git" />
     <plugin src="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" />
     <plugin name="cordova-plugin-androidlicense" spec="https://github.com/mobilino/Phonegap-android-license-plugin.git" />
