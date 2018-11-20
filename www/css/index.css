@@ -2096,7 +2096,7 @@ textarea, textarea[placeholder]{
 .loading-files-text .teacher{
 	position: absolute;
 	width: 96px;
-	top: -115px;
+	top: -114px;
 	left: calc(50% - 43px);
 }
 .main-text-repetition{
@@ -2223,7 +2223,7 @@ h3{
 .cloud-perfect, .cloud-you-said{
 	display: none;
 	position: absolute;
-	width: 16%;
+	width: 20%;
 	left: 8%;
 	bottom: -65px;
 }
