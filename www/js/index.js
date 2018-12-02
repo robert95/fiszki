@@ -181,6 +181,8 @@ var app = {
     },
 
     initStore: function () {
+        alert("jestem");
+
         if (!window.store) {
             alert("Coś nie tak, nie mam sklepu!");
             return;
@@ -214,6 +216,10 @@ var app = {
             else {
                 alert('You are not subscribed');
             }
+        });
+
+        store.ready(function() {
+            alert('tadam');
         });
 
         store.refresh();
