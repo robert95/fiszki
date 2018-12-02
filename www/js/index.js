@@ -166,7 +166,9 @@ var app = {
 
         //smoothLoadProgressBarWelcome();
 
-        initStore();
+        if(!isPremium) {
+            initStore();
+        }
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -595,11 +597,9 @@ function testAndRunAppIfIsOk(callbackAfterValid) {
                 getTrans(t_not_connected_exit)
             );
         } else {
-            checkIsPayedProVersion();
             testLegalAppAndRunIfIsLegal(callbackAfterValid);
         }
     } else {
-        checkIsPayedProVersion();
         startAppBecauseIsLegal(callbackAfterValid);
     }
 }
@@ -4422,19 +4422,7 @@ function canTellThisWord(catSygn, word) {
     );
 }
 
-function checkIsPayedProVersion() {
-    if(!isPremium) {
-        if(false) {
-            changeToPro();
-        } else {
-            changeToDemo();
-        }
-    }
-}
-
 function initStore() {
-    alert("jestem");
-
     if (!window.store) {
         alert("Coś nie tak, nie mam sklepu!");
         return;
@@ -4455,18 +4443,20 @@ function initStore() {
         p.verify();
     });
     store.when("subscription.premium").verified(function(p) {
-        alert("subscription verified");
+        alert("subscription verified (tutaj jakiś thank page?)");
         p.finish();
     });
     store.when("subscription.premium").unverified(function(p) {
         alert("subscription unverified");
     });
     store.when("subscription.premium").updated(function(p) {
+        alert("sunscription updated, status " + p.state + ", is owned: " + p.owned);
+
         if (p.owned) {
-            alert('You are a lucky subscriber!');
-        }
-        else {
-            alert('You are not subscribed');
+            alert('TADAM!');
+            changeToPro();
+        } else {
+            changeToDemo();
         }
     });
 
@@ -4474,7 +4464,32 @@ function initStore() {
 
         alert("Robię walidacje produktu: " + product.id);
 
+        var verifiData = product.transaction;
+        verifiData.packageName = getPackageName();
+
+        alert(JSON.stringify(verifiData));
         callback(true, {}); // success!
+
+        // var url = getVerifiApiUrl();
+        // $.ajax({
+        //     type: "POST",
+        //     url: url,
+        //     contentType: "application/json",
+        //     data: JSON.stringify(verifiData)
+        // }).done(function (data) {
+        //     alert(data);
+        //
+        //     if(data === true) {
+        //         callback(true, {}); // success!
+        //     } else {
+        //         callback(false, "Impossible to proceed with validation");
+        //     }
+        // }).fail(function (a, b, c) {
+        //     alert("coś poszło nie tak!");
+        //
+        //     callback(false, "Impossible to proceed with validation");
+        // });
+
 
         //
         // // OR
@@ -4489,10 +4504,6 @@ function initStore() {
         // callback(false, "Impossible to proceed with validation");
 
     };
-
-    store.ready(function() {
-        alert('tadam');
-    });
 
     store.refresh();
 }
