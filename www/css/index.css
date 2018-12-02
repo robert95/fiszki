@@ -2545,6 +2545,23 @@ h3{
 }
 .ui-loading .ui-loader { display: block; }
 .ui-loader { display: none !important; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
+
+.payed-version .show-in-payed-version{
+	display: block !important;
+}
+
+.unpayed-version .show-in-payed-version{
+	display: none !important;
+}
+
+.payed-version .show-in-unpayed-version{
+	display: none !important;
+}
+
+.unpayed-version .show-in-unpayed-version{
+	display: block !important;
+}
+
 @media (min-width : 500px) {
 	.remind-img {
 		left: 5px;

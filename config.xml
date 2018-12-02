@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.speaklabs.english.speaklabsPro" version="1.0.14" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>English1500+ Pro</name>
+    <name>English1500+</name>
     <description>Application for learn languages</description>
     <author email="info@speaklabs.eu" href="http://speaklabs.eu">English1500+ Team</author>
     <content src="index.html" />
@@ -89,4 +89,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cc.fovea.cordova.purchase" version="6.0.0">
+        <variable name="BILLING_KEY" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAirFk1qVRSvszi1Uy/MHrQ21EP8ROdIKvnI9ZrNIwycMrKTeSyK5gEjobopBUcDzSrfY9bXsIRBYs6rd4F6CMHtnfSdO01MkPjZpJqhPgvJvlH0MWLYzXIfIH60KAe0O/C08injUuoW5R+lf1Qsti6sk59Kb6PTOCkk6B8enNnJv6TIiwKGffk73NphKSw0XCO4E2cQDId72FZ57t9nKbzTzG68IL4T+dsxRjGGexRpqM8fen9gBVghtbss12GHf3yvYLfCmo7rM2GA8aamzg9ukP7tj3m9McJLoU2ooeYGQMfRYy50ucSppihPJGSdH61RL6MFtjiDZ6cYhY1bFDxQIDAQAB" />
+    </plugin>
 </widget>
