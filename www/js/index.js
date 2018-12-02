@@ -166,7 +166,7 @@ var app = {
 
         //smoothLoadProgressBarWelcome();
 
-        this.initStore();
+        initStore();
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -178,51 +178,6 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    },
-
-    initStore: function () {
-        alert("jestem");
-
-        if (!window.store) {
-            alert("Coś nie tak, nie mam sklepu!");
-            return;
-        }
-
-        store.error(function(error) {
-            alert('ERROR ' + error.code + ': ' + error.message);
-        });
-
-        store.register({
-            id:    'subscription.premium', // id without package name!
-            alias: 'subscription.premium',
-            type:  store.PAID_SUBSCRIPTION
-        });
-
-        store.when("subscription.premium").approved(function(p) {
-            alert("verify subscription");
-            p.verify();
-        });
-        store.when("subscription.premium").verified(function(p) {
-            alert("subscription verified");
-            p.finish();
-        });
-        store.when("subscription.premium").unverified(function(p) {
-            alert("subscription unverified");
-        });
-        store.when("subscription.premium").updated(function(p) {
-            if (p.owned) {
-                alert('You are a lucky subscriber!');
-            }
-            else {
-                alert('You are not subscribed');
-            }
-        });
-
-        store.ready(function() {
-            alert('tadam');
-        });
-
-        store.refresh();
     }
 };
 
@@ -4475,6 +4430,51 @@ function checkIsPayedProVersion() {
             changeToDemo();
         }
     }
+}
+
+function initStore() {
+    alert("jestem");
+
+    if (!window.store) {
+        alert("Coś nie tak, nie mam sklepu!");
+        return;
+    }
+
+    store.error(function(error) {
+        alert('ERROR ' + error.code + ': ' + error.message);
+    });
+
+    store.register({
+        id:    'subscription.premium', // id without package name!
+        alias: 'subscription.premium',
+        type:  store.PAID_SUBSCRIPTION
+    });
+
+    store.when("subscription.premium").approved(function(p) {
+        alert("verify subscription");
+        p.verify();
+    });
+    store.when("subscription.premium").verified(function(p) {
+        alert("subscription verified");
+        p.finish();
+    });
+    store.when("subscription.premium").unverified(function(p) {
+        alert("subscription unverified");
+    });
+    store.when("subscription.premium").updated(function(p) {
+        if (p.owned) {
+            alert('You are a lucky subscriber!');
+        }
+        else {
+            alert('You are not subscribed');
+        }
+    });
+
+    store.ready(function() {
+        alert('tadam');
+    });
+
+    store.refresh();
 }
 
 function buyPremiumSubscription() {
