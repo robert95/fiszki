@@ -215,6 +215,8 @@ var app = {
                 alert('You are not subscribed');
             }
         });
+
+        store.refresh();
     }
 };
 
