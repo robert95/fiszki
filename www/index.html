@@ -88,7 +88,7 @@
 				<!-- PREMIUM CHANGE --> 
 				<!-- HIDE ONLY IN PREMIUM -->
 
-				<li id="m6"  class="text show-in-unpayed-version" data-itemName="upgrade to pro">
+				<li id="m6" class="text show-in-unpayed-version" data-itemName="upgrade to pro">
 					<span class="l1">Upgrade to English 1500+ Pro</span>
 					<span class="l2">Kup Angielski 1500+ Pro</span>
 					<span class="l3">Comprar Inglés 1500+ Pro</span>
@@ -1159,11 +1159,11 @@
 				</span> 
 			</p>
 			<p class="you-start-learned3">
-				<span class="l1" ontouchstart="goToPremiumVersion();">Check out our other apps!</span>
-				<span class="l2" ontouchstart="goToPremiumVersion();">Sprawdź nasze pozostałe aplikacje!</span>
-				<span class="l3" ontouchstart="goToPremiumVersion();">Conoce nuestras otras aplicaciones!</span>
-				<span class="l4" ontouchstart="goToPremiumVersion();">Schau dir unsere anderen Apps an!</span>
-				<span class="l5" ontouchstart="goToPremiumVersion();">Regardez nos autres applications!</span>
+				<!--<span class="l1" ontouchstart="goToPremiumVersion();">Check out our other apps!</span>-->
+				<!--<span class="l2" ontouchstart="goToPremiumVersion();">Sprawdź nasze pozostałe aplikacje!</span>-->
+				<!--<span class="l3" ontouchstart="goToPremiumVersion();">Conoce nuestras otras aplicaciones!</span>-->
+				<!--<span class="l4" ontouchstart="goToPremiumVersion();">Schau dir unsere anderen Apps an!</span>-->
+				<!--<span class="l5" ontouchstart="goToPremiumVersion();">Regardez nos autres applications!</span>-->
 			</p>
 			<div id="start-day-ok-no-panel-end-course">
 				<div id="start-day-wrap-ok-no-end-course">
@@ -1988,7 +1988,8 @@
 				navigator.app.exitApp();
 			}
 			function goToPremiumVersion(){
-				window.open('market://details?id=com.speaklabs.english.speaklabsPro', '_system');
+				// window.open('market://details?id=com.speaklabs.english.speaklabsPro', '_system');
+				buyPremiumSubscription();
 			}
 			function goToWebSite(){
 				window.open('http://www.speaklabs.eu', '_system');

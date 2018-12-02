@@ -89,7 +89,8 @@ function getTrans(key) {
 var isPremium = false;
 var dev = false;
 var isLegal = false;
-var legalValidation = true;
+// PREMIUM CHANGE - właczyć!!!
+var legalValidation = false;
 var isPayedPro = false;
 
 var app = {
@@ -164,6 +165,8 @@ var app = {
         volumeTest();
 
         //smoothLoadProgressBarWelcome();
+
+        this.initStore();
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -175,6 +178,43 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    initStore: function () {
+        if (!window.store) {
+            alert("Coś nie tak, nie mam sklepu!");
+            return;
+        }
+
+        store.error(function(error) {
+            alert('ERROR ' + error.code + ': ' + error.message);
+        });
+
+        store.register({
+            id:    'subscription.premium', // id without package name!
+            alias: 'subscription.premium',
+            type:  store.PAID_SUBSCRIPTION
+        });
+
+        store.when("subscription.premium").approved(function(p) {
+            alert("verify subscription");
+            p.verify();
+        });
+        store.when("subscription.premium").verified(function(p) {
+            alert("subscription verified");
+            p.finish();
+        });
+        store.when("subscription.premium").unverified(function(p) {
+            alert("subscription unverified");
+        });
+        store.when("subscription.premium").updated(function(p) {
+            if (p.owned) {
+                alert('You are a lucky subscriber!');
+            }
+            else {
+                alert('You are not subscribed');
+            }
+        });
     }
 };
 
@@ -4427,4 +4467,8 @@ function checkIsPayedProVersion() {
             changeToDemo();
         }
     }
+}
+
+function buyPremiumSubscription() {
+    store.order('subscription.premium');
 }
