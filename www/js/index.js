@@ -4470,6 +4470,26 @@ function initStore() {
         }
     });
 
+    store.validator = function(product, callback) {
+
+        alert("Robię walidacje produktu: " + product.id);
+
+        callback(true, {}); // success!
+
+        //
+        // // OR
+        // callback(false, {
+        //     code: store.PURCHASE_EXPIRED,
+        //     error: {
+        //         message: "XYZ"
+        //     }
+        // });
+        //
+        // // OR
+        // callback(false, "Impossible to proceed with validation");
+
+    };
+
     store.ready(function() {
         alert('tadam');
     });
