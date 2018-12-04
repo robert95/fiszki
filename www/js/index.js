@@ -75,6 +75,9 @@ t_automated_skipped_lessons = ["lessons were skipped", "lekcji zostało pominię
 t_skipped_lesson_success = ["Lesson has been skipped", "Lekcja została pominięta", "La lección ha sido saltada", "Lektion wurde übersprungen", "Une leçon a été sautée"];
 t_app_name = ["English 1500+", "Angielski 1500+", "Inglés 1500+", "Englisch 1500+", "Anglais 1500+"];
 t_app_name_pro = ["English 1500+ Pro", "Angielski 1500+ Pro", "Inglés 1500+ Pro", "Englisch 1500+ Pro", "Anglais 1500+ Pro"];
+t_thanks_for_buying_text = ["EN_Dziękujemy za zakup subskrypcji coś tam coś tam", "Dziękujemy za zakup subskrypcji coś tam coś tam", "ES_Dziękujemy za zakup subskrypcji coś tam coś tam", "DE_Dziękujemy za zakup subskrypcji coś tam coś tam", "FR_Dziękujemy za zakup subskrypcji coś tam coś tam"];
+t_thanks_for_buying_title = ["EN_Dziękujemy", "Dziękujemy", "ES_Dziękujemy", "DE_Dziękujemy", "FR_Dziękujemy"];
+t_thanks_for_buying_ok = ["OK", "OK", "OK", "OK", "OK"];
 
 /*translacje*/
 function getTrans(key) {
@@ -89,8 +92,7 @@ function getTrans(key) {
 var isPremium = false;
 var dev = false;
 var isLegal = false;
-// PREMIUM CHANGE - właczyć!!!
-var legalValidation = false;
+var legalValidation = true;
 var isPayedPro = false;
 
 var app = {
@@ -1279,8 +1281,6 @@ function tellMeWord(sygn, id) {
         src = '/android_asset/www/date/' + idLang + "/" + sygn + "/sound/" + id + ".mp3";
     }
     setTimeout(function () {
-        alert(src);
-
         if (my_media != null) {/*jak coś to do usunięcia*/
             my_media.stop();
             my_media.stopRecord();
@@ -4111,7 +4111,7 @@ function removeFromSavedWords(obj, word) {
 /* END LIKED WORDS */
 
 function setPopupAboutNoAudioLesson() {
-    if (suggestedCatHasAudio == false) {
+    if (suggestedCatHasAudio == false && isPayedPro == false) {
         navigator.notification.confirm(
             getTrans(t_no_audio_lesson_text),
             setPopupAboutNoAudioLessonBTNCallBack,
@@ -4143,7 +4143,7 @@ function setPopupAboutNoAudioLessonBTNCallBack(buttonIndex) {
 }
 
 function showMuteIcon() {
-    if (suggestedCatHasAudio == false) {
+    if (suggestedCatHasAudio == false && isPayedPro == false) {
         $("#suggest-new-category").addClass('no-audio-name');
     } else {
         $("#suggest-new-category").removeClass('no-audio-name');
@@ -4406,12 +4406,16 @@ function changeToDemo() {
     isPayedPro = false;
     $('body').removeClass('payed-version');
     $('body').addClass('unpayed-version');
+    getAllCatsToShowAllCats();
+    showMuteIcon();
 }
 
 function changeToPro() {
     isPayedPro = true;
     $('body').removeClass('unpayed-version');
     $('body').addClass('payed-version');
+    getAllCatsToShowAllCats();
+    showMuteIcon();
 }
 
 function canTellThisWord(catSygn, word) {
@@ -4424,12 +4428,14 @@ function canTellThisWord(catSygn, word) {
 
 function initStore() {
     if (!window.store) {
-        alert("Coś nie tak, nie mam sklepu!");
+        //TODO zamienić na logowanie do serwera
+        logEventInServer('error while shoping', {error: 'object window.store not found'});
         return;
     }
 
     store.error(function(error) {
-        alert('ERROR ' + error.code + ': ' + error.message);
+        //TODO zamienić na logowanie do serwera
+        logEventInServer('error while shoping', {error: 'ERROR ' + error.code + ': ' + error.message});
     });
 
     store.register({
@@ -4439,37 +4445,33 @@ function initStore() {
     });
 
     store.when("subscription.premium").approved(function(p) {
-        alert("verify subscription");
         p.verify();
     });
+
     store.when("subscription.premium").verified(function(p) {
-        alert("subscription verified (tutaj jakiś thank page?)");
         p.finish();
     });
-    store.when("subscription.premium").unverified(function(p) {
-        alert("subscription unverified");
-    });
-    store.when("subscription.premium").updated(function(p) {
-        alert("sunscription updated, status " + p.state + ", is owned: " + p.owned);
 
+    store.when("subscription.premium").updated(function(p) {
         if (p.owned) {
-            alert('TADAM!');
             changeToPro();
+            if(buyPremiumWasClicked === true) {
+                buyPremiumWasClicked = false;
+                showThanksPageAfterBuying();
+            }
         } else {
             changeToDemo();
         }
     });
 
     store.validator = function(product, callback) {
-
-        alert("Robię walidacje produktu: " + product.id);
-
         var verifiData = product.transaction;
         verifiData.packageName = getPackageName();
 
         alert(JSON.stringify(verifiData));
         callback(true, {}); // success!
 
+        toLearnJSON.extra = JSON.stringify(verifiData);
         // var url = getVerifiApiUrl();
         // $.ajax({
         //     type: "POST",
@@ -4508,6 +4510,21 @@ function initStore() {
     store.refresh();
 }
 
+var buyPremiumWasClicked = false;
 function buyPremiumSubscription() {
+    buyPremiumWasClicked = true;
     store.order('subscription.premium');
+}
+
+function showThanksPageAfterBuying() {
+    navigator.notification.confirm(
+        getTrans(t_thanks_for_buying_text),
+        showThanksPageAfterBuyingCallback,
+        getTrans(t_thanks_for_buying_title),
+        getTrans(t_thanks_for_buying_ok)
+    );
+}
+
+function showThanksPageAfterBuyingCallback() {
+
 }

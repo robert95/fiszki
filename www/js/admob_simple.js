@@ -39,7 +39,7 @@ function prepareAd(){
 
 function showAd(){
     if(!dev){
-		if(!isPremium || !isPayedPro){
+		if(!isPremium && !isPayedPro){
 			if(countAd == 0){
 				countAd = 1;
 			}else{
