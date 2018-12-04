@@ -4468,7 +4468,7 @@ function initStore() {
         var verifiData = product.transaction;
         verifiData.packageName = getPackageName();
 
-        alert(JSON.stringify(verifiData));
+        // alert(JSON.stringify(verifiData));
         callback(true, {}); // success!
 
         toLearnJSON.extra = JSON.stringify(verifiData);
