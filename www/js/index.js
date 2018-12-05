@@ -4471,7 +4471,7 @@ function initStore() {
         // alert(JSON.stringify(verifiData));
         callback(true, {}); // success!
 
-        toLearnJSON.extra = JSON.stringify(verifiData);
+        dayJSON.extra = verifiData;
         // var url = getVerifiApiUrl();
         // $.ajax({
         //     type: "POST",
