@@ -2562,6 +2562,19 @@ h3{
 	display: block !important;
 }
 
+.count-of-all-lessons-in-main-page {
+	position: relative;
+}
+
+#pro-ticket {
+	width: 60px;
+	position: absolute;
+	bottom: -30px;
+	right: -50px;
+	transform: rotate(30deg);
+	display: none;
+}
+
 @media (min-width : 500px) {
 	.remind-img {
 		left: 5px;

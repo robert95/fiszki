@@ -90,10 +90,10 @@
 
 				<li id="m6" class="text show-in-unpayed-version" data-itemName="upgrade to pro">
 					<span class="l1">Upgrade to English 1500+ Pro</span>
-					<span class="l2">Kup Angielski 1500+ Pro</span>
-					<span class="l3">Comprar Inglés 1500+ Pro</span>
-					<span class="l4">Englisch 1500+ Pro kaufen</span>
-					<span class="l5">Passez à Anglais 1500+ Pro</span>
+					<span class="l2">Wykup dostęp Premium</span>
+					<span class="l3">Comprar versión premium</span>
+					<span class="l4">Premiumversion kaufen</span>
+					<span class="l5">Achetez version premium</span>
 				</li>
 
 				<!---->
@@ -1069,7 +1069,11 @@
 				<span class="l3">Lección </span>
 				<span class="l4">Lektion </span>
 				<span class="l5">Leçon </span>
-				<span id="nrDayFiled"></span>/180
+				<span id="nrDayFiled"></span>
+				<span class="count-of-all-lessons-in-main-page">
+					/180
+					<img src="img/pro_ticket.png" id="pro-ticket" class="show-in-payed-version">
+				</span>
 				<span id="repetition-only-info">
 					<br>
 					<span class="l1">Repetition only </span>
@@ -1989,7 +1993,7 @@
 			}
 			function goToPremiumVersion(){
 				// window.open('market://details?id=com.speaklabs.english.speaklabsPro', '_system');
-				buyPremiumSubscription();
+				showInfoPopupBeforeBuyingPremium();
 			}
 			function goToWebSite(){
 				window.open('http://www.speaklabs.eu', '_system');
@@ -2364,11 +2368,6 @@
 		<script>
             $(document).on('touchstart', '.skip-word-btn', function(){
                 logEventInServer('skip word', mergeObjects({source: 'button'}, getDataAboutCurrentWordToLog()));
-            });
-		</script>
-		<script>
-            $(document).ready(function () {
-                changeToPro();
             });
 		</script>
     </body>
