@@ -4434,6 +4434,8 @@ function canTellThisWord(catSygn, word) {
     );
 }
 
+var buyPremiumSubscription = false;
+var buyPremiumProduct = false;
 function initStore() {
     if (!window.store) {
         logEventInServer('error while shoping', {error: 'object window.store not found'});
@@ -4451,21 +4453,22 @@ function initStore() {
     });
 
     store.when("premium.product").approved(function(p) {
-        alert("approved premium.product");
         p.finish();
     });
 
     store.when("premium.product").updated(function(p) {
         if (p.owned) {
-            alert('owned premium.product');
-            // changeToPro();
-            // if(buyPremiumWasClicked === true) {
-            //     buyPremiumWasClicked = false;
-            //     showThanksPageAfterBuying();
-            // }
+            buyPremiumProduct = true;
+            changeToPro();
+            if(buyPremiumWasClicked === true) {
+                buyPremiumWasClicked = false;
+                showThanksPageAfterBuying();
+            }
         } else {
-            alert("no owned premium.product");
-            // changeToDemo();
+            buyPremiumProduct = false;
+            if(!buyPremiumSubscription) {
+                changeToDemo();
+            }
         }
     });
 
@@ -4485,18 +4488,17 @@ function initStore() {
 
     store.when("subscription.premium").updated(function(p) {
         if (p.owned) {
+            buyPremiumSubscription = true;
             changeToPro();
-            if(buyPremiumWasClicked === true) {
-                buyPremiumWasClicked = false;
-                showThanksPageAfterBuying();
-            }
         } else {
-            changeToDemo();
+            buyPremiumSubscription = false;
+            if(!buyPremiumProduct) {
+                changeToDemo();
+            }
         }
     });
 
     store.validator = function(product, callback) {
-        alert("waliduje: " + product.title);
         var verifiData = product.transaction;
         verifiData.packageName = getPackageName();
         verifiData.receiptId = verifiData.id;
