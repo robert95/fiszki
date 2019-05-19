@@ -4530,7 +4530,7 @@ function buyPremiumProduct() {
     buyPremiumWasClicked = true;
     store.order('premium.product');
 }
-function goToPremiumVersionBySub() {
+function buyPremiumSubscription() {
     buyPremiumWasClicked = true;
     store.order('subscription.premium');
 }
