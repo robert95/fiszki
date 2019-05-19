@@ -39,13 +39,6 @@
 		<div id="menu">
 			<p class="img-close-cont" onclick="hideMenu();"><img src="img/back2.png"></p>
 			<ul>
-				<li id="m91" class="text" data-itemName="phrase browser">
-					<span class="l1">Phrase browser</span>
-					<span class="l2">Przeglądanie zwrotów</span>
-					<span class="l3">Navegador de expresiones</span>
-					<span class="l4">Phrasenbrowser</span>
-					<span class="l5">Navigateur d'expressions</span>
-				</li>
 				<li id="m9" class="text" data-itemName="phrase browser">
 					<span class="l1">Phrase browser</span>
 					<span class="l2">Przeglądanie zwrotów</span>
@@ -95,7 +88,7 @@
 				<!-- PREMIUM CHANGE --> 
 				<!-- HIDE ONLY IN PREMIUM -->
 
-				<li id="m6" class="text" data-itemName="upgrade to pro">
+				<li id="m6" class="text show-in-unpayed-version" data-itemName="upgrade to pro">
 					<span class="l1">Upgrade to English 1500+ Pro</span>
 					<span class="l2">Wykup dostęp Premium</span>
 					<span class="l3">Comprar versión premium</span>
@@ -1933,10 +1926,6 @@
 			});
 			$("#m6").click(function(){
 				goToPremiumVersion();
-                logEventInServer('click menu item', {itemName: $(this).attr('data-itemName')});
-			});
-			$("#m91").click(function(){
-                buyPremiumSubscription();
                 logEventInServer('click menu item', {itemName: $(this).attr('data-itemName')});
 			});
 			$("#m7").click(function(){

@@ -12,6 +12,10 @@
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.speaklabs.english.speaklabsPro"
+    },
+    "cc.fovea.cordova.purchase": {
+      "BILLING_KEY": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAirFk1qVRSvszi1Uy/MHrQ21EP8ROdIKvnI9ZrNIwycMrKTeSyK5gEjobopBUcDzSrfY9bXsIRBYs6rd4F6CMHtnfSdO01MkPjZpJqhPgvJvlH0MWLYzXIfIH60KAe0O/C08injUuoW5R+lf1Qsti6sk59Kb6PTOCkk6B8enNnJv6TIiwKGffk73NphKSw0XCO4E2cQDId72FZ57t9nKbzTzG68IL4T+dsxRjGGexRpqM8fen9gBVghtbss12GHf3yvYLfCmo7rM2GA8aamzg9ukP7tj3m9McJLoU2ooeYGQMfRYy50ucSppihPJGSdH61RL6MFtjiDZ6cYhY1bFDxQIDAQAB",
+      "PACKAGE_NAME": "com.speaklabs.english.speaklabsPro"
     }
   },
   "dependent_plugins": {
