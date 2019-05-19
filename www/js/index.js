@@ -4434,8 +4434,8 @@ function canTellThisWord(catSygn, word) {
     );
 }
 
-var buyPremiumSubscription = false;
-var buyPremiumProduct = false;
+var premiumSubscriptionIsBought = false;
+var premiumProductIsBought = false;
 function initStore() {
     if (!window.store) {
         logEventInServer('error while shoping', {error: 'object window.store not found'});
@@ -4458,15 +4458,15 @@ function initStore() {
 
     store.when("premium.product").updated(function(p) {
         if (p.owned) {
-            buyPremiumProduct = true;
+            premiumProductIsBought = true;
             changeToPro();
             if(buyPremiumWasClicked === true) {
                 buyPremiumWasClicked = false;
                 showThanksPageAfterBuying();
             }
         } else {
-            buyPremiumProduct = false;
-            if(!buyPremiumSubscription) {
+            premiumProductIsBought = false;
+            if(!premiumSubscriptionIsBought) {
                 changeToDemo();
             }
         }
@@ -4488,11 +4488,11 @@ function initStore() {
 
     store.when("subscription.premium").updated(function(p) {
         if (p.owned) {
-            buyPremiumSubscription = true;
+            premiumSubscriptionIsBought = true;
             changeToPro();
         } else {
-            buyPremiumSubscription = false;
-            if(!buyPremiumProduct) {
+            premiumSubscriptionIsBought = false;
+            if(!premiumProductIsBought) {
                 changeToDemo();
             }
         }
@@ -4526,9 +4526,13 @@ function initStore() {
 }
 
 var buyPremiumWasClicked = false;
-function buyPremiumSubscription() {
+function buyPremiumProduct() {
     buyPremiumWasClicked = true;
     store.order('premium.product');
+}
+function goToPremiumVersionBySub() {
+    buyPremiumWasClicked = true;
+    store.order('subscription.premium');
 }
 
 function showThanksPageAfterBuying() {
@@ -4555,6 +4559,6 @@ function showInfoPopupBeforeBuyingPremium(){
 
 function showInfoPopupBeforeBuyingPremiumCallback(buttonIndex) {
     if (buttonIndex == 2) {
-        buyPremiumSubscription();
+        buyPremiumProduct();
     }
 }
