@@ -95,7 +95,7 @@
 				<!-- PREMIUM CHANGE --> 
 				<!-- HIDE ONLY IN PREMIUM -->
 
-				<li id="m6" class="text show-in-unpayed-version" data-itemName="upgrade to pro">
+				<li id="m6" class="text" data-itemName="upgrade to pro">
 					<span class="l1">Upgrade to English 1500+ Pro</span>
 					<span class="l2">Wykup dostęp Premium</span>
 					<span class="l3">Comprar versión premium</span>
@@ -1936,7 +1936,7 @@
                 logEventInServer('click menu item', {itemName: $(this).attr('data-itemName')});
 			});
 			$("#m91").click(function(){
-				goToPremiumVersionBySub();
+                buyPremiumSubscription();
                 logEventInServer('click menu item', {itemName: $(this).attr('data-itemName')});
 			});
 			$("#m7").click(function(){
