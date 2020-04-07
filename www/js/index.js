@@ -175,6 +175,8 @@ var app = {
         if(!isPremium) {
             initStore();
         }
+
+        cordova.plugins.SmartlookPlugin.setupAndStartRecording({smartlookAPIKey: "70f466a8977392a04ffc35ff04236a21842722f8"});
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
