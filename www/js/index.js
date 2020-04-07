@@ -93,11 +93,11 @@ function getTrans(key) {
 }
 
 // PREMIUM CHANGE
-var isPremium = false;
+var isPremium = true;
 var dev = false;
-var isLegal = false;
-var legalValidation = true;
-var isPayedPro = false;
+var isLegal = true;
+var legalValidation = false;
+var isPayedPro = true;
 
 var app = {
     // Application Constructor
