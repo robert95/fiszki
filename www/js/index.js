@@ -850,9 +850,8 @@ function getLangList() {
 }
 
 function showLangList(l) {
-    alert('tu');
-    alert(l);
-    var langs = JSON.parse(l);
+    // var langs = JSON.parse(l);
+    var langs = l;
     alert(langs);
     var lang;
     for (lang of langs) {
