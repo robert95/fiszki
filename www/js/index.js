@@ -866,20 +866,18 @@ var subcats = false;
 
 function getCatList() {
     var idCat = $("#myLang").val();
-    $.get("date/" + idCat + "/cat.json", function (result) {
+    $.getJSON("date/" + idCat + "/cat.json", function (result) {
         setTimeout(
             function () {
                 setTimeout(
                     function () {
                         showCatList(result);
                     }, 200);
-                //getToLearn();
             }, 200);
     });
 }
 
-function showCatList(c) {
-    var cats = JSON.parse(c);
+function showCatList(cats) {
     $("#cats").html("");
     var tmp = '';
     for (var x in cats) {
@@ -899,8 +897,7 @@ function getSubCatName(cs) {
     var idp = res[0];
     var idc = res[1];
     var idLang = $("#myLang").val();
-    $.get("date/" + idLang + "/" + idp + "/subcat.json", function (result) {
-        var scat = JSON.parse(result);
+    $.getJSON("date/" + idLang + "/" + idp + "/subcat.json", function (scat) {
         for (var x in scat) {
             var cat = scat[x];
             if (cat.id == idc) {
@@ -915,11 +912,9 @@ function getWordToSuggestCat(cs) {
     var idp = res[0];
     var idc = res[1];
     var idLang = $("#myLang").val();
-    $.get("date/" + idLang + "/" + idp + "/" + idc + "/words.json", function (result) {
-        $.get("date/1/" + idp + "/" + idc + "/words.json", function (transResult) {
+    $.getJSON("date/" + idLang + "/" + idp + "/" + idc + "/words.json", function (words) {
+        $.getJSON("date/1/" + idp + "/" + idc + "/words.json", function (trans) {
             $("#list-word-in-sug-cat").html("");
-            var words = JSON.parse(result);
-            var trans = JSON.parse(transResult);
             var i = 0;
             for (var x in words) {
                 i++;
@@ -1017,9 +1012,9 @@ function getWordList() {
     var idLernLang = $("#learnLang").val();
     var words = false;
     var trans = false;
-    $.get("date/" + idLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function (result) {
+    $.getJSON("date/" + idLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function (result) {
         words = result;
-        $.get("date/" + idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function (trans) {
+        $.getJSON("date/" + idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function (trans) {
             showWordList(words, trans);
         });
     });
@@ -1028,8 +1023,8 @@ function getWordList() {
 var words, trans;
 
 function showWordList(w, t) {
-    words = JSON.parse(w);
-    trans = JSON.parse(t);
+    words = w;
+    trans = t;
     isFirstCycle = false;
     if (isFirstCycle) {
         $("#words").html("");
@@ -2791,8 +2786,7 @@ function removeAllProgress2() {
 
 function setSuggestedCat(par, cat) {
     var idLang = $("#myLang").val();
-    $.get("date/" + idLang + "/" + par + "/subcat.json", function (result) {
-        var scat = JSON.parse(result);
+    $.getJSON("date/" + idLang + "/" + par + "/subcat.json", function (scat) {
         for (var x in scat) {
             var c = scat[x];
             if (c.id == cat) {
@@ -2807,8 +2801,7 @@ var userChoiceCat = false;
 function setThisAsSuggestedCat(par, cat) {
     var idLang = $("#myLang").val();
     userChoiceCat = true;
-    $.get("date/" + idLang + "/" + par + "/subcat.json", function (result) {
-        var scat = JSON.parse(result);
+    $.getJSON("date/" + idLang + "/" + par + "/subcat.json", function (scat) {
         for (var x in scat) {
             var c = scat[x];
             if (c.id == cat) {
@@ -2820,8 +2813,7 @@ function setThisAsSuggestedCat(par, cat) {
 
 function setSuggestedCatName(idp, idc) {
     var idLang = $("#myLang").val();
-    $.get("date/" + idLang + "/" + idp + "/subcat.json", function (result) {
-        var scat = JSON.parse(result);
+    $.getJSON("date/" + idLang + "/" + idp + "/subcat.json", function (scat) {
         for (var x in scat) {
             var cat = scat[x];
             if (cat.id == idc) {
@@ -2924,8 +2916,7 @@ var scdCycleInSearchSub = false;
 var suggestedCatHasAudio = true;
 
 function getCatWithPos(pos, off) {
-    $.get("date/" + langJSON.lang + "/cat.json", function (result) {
-        var cats = JSON.parse(result);
+    $.getJSON("date/" + langJSON.lang + "/cat.json", function (cats) {
         var catSize = cats.length;
         for (var x in cats) {
             var cat = cats[x];
@@ -2987,8 +2978,7 @@ function getCatWithPos(pos, off) {
 }
 
 function getAllCatsInArray() {
-    $.get("date/" + langJSON.lang + "/cat.json", function (result) {
-        var cats = JSON.parse(result);
+    $.getJSON("date/" + langJSON.lang + "/cat.json", function (cats) {
         for (var x in cats) {
             var cat = cats[x];
             var idP = cat.id;
@@ -3229,8 +3219,7 @@ function setinProgressCatList(idp, idc) {
     if (!(isInList.indexOf(idp + "/" + idc) >= 0)) {
         isInList.push(idp + "/" + idc);
         var idLang = $("#myLang").val();
-        $.get("date/" + idLang + "/" + idp + "/subcat.json", function (result) {
-            var scat = JSON.parse(result);
+        $.getJSON("date/" + idLang + "/" + idp + "/subcat.json", function (scat) {
             for (var x in scat) {
                 var cat = scat[x];
                 if (cat.id == idc) {
@@ -3257,11 +3246,9 @@ function fillTableListWordInCatMain(idp, idc) {
     var sygn = idp + "/" + idc;
     var i = 1;
 
-    $.get("date/" + langJSON.lang + "/" + sygn + "/words.json", function (result) {
+    $.getJSON("date/" + langJSON.lang + "/" + sygn + "/words.json", function (words) {
         $("#listWordOfCatInInPorgress").text("");
-        $.get("date/1/" + sygn + "/words.json", function (transResult) {
-            var words = JSON.parse(result);
-            var trans = JSON.parse(transResult);
+        $.getJSON("date/1/" + sygn + "/words.json", function (trans) {
             for (var x in words) {
                 var w = words[x];
                 var t = trans[x];
@@ -3291,8 +3278,7 @@ function fillTableListWordInCatMain(idp, idc) {
 function fillTableListWordInCat(idp, idc) {
     var idLang = $("#myLang").val();
     var i = 1;
-    $.get("date/" + idLang + "/" + idp + "/" + idc + "/words.json", function (result) {
-        var words = JSON.parse(result);
+    $.getJSON("date/" + idLang + "/" + idp + "/" + idc + "/words.json", function (words) {
         for (var x in words) {
             var w = words[x];
             $(".t" + i).html(w.name);
@@ -3440,9 +3426,8 @@ function okNoSound() {
 
 function getAllCatsToShowAllCats() {
     $("#show-all-cats-cats").html('');
-    $.get("date/" + langJSON.lang + "/cat.json", function (result) {
+    $.getJSON("date/" + langJSON.lang + "/cat.json", function (cats) {
         var tmp = '';
-        var cats = JSON.parse(result);
         for (var x in cats) {
             subcats = false;
             var cat = cats[x];
@@ -3489,11 +3474,9 @@ function getAllCatsToShowAllCats() {
 
 function getWordForCatShowList(sygn, hasAudio) {
     var splitedWordSygn = sygn.split('/');
-    $.get("date/" + langJSON.lang + "/" + sygn + "/words.json", function (result) {
+    $.getJSON("date/" + langJSON.lang + "/" + sygn + "/words.json", function (words) {
         $("#show-all-cats-cats-wordlist").text("");
-        $.get("date/1/" + sygn + "/words.json", function (transResult) {
-            var words = JSON.parse(result);
-            var trans = JSON.parse(transResult);
+        $.getJSON("date/1/" + sygn + "/words.json", function (trans) {
             for (var x in words) {
                 var w = words[x];
                 var t = trans[x];
@@ -4071,10 +4054,8 @@ function showSavedWords() {
 }
 
 function showSavedWord(word) {
-    $.get("date/" + langJSON.lang + "/" + word[0] + "/" + word[1] + "/words.json", function (result) {
-        $.get("date/1/" + word[0] + "/" + word[1] + "/words.json", function (transResult) {
-            var words = JSON.parse(result);
-            var trans = JSON.parse(transResult);
+    $.getJSON("date/" + langJSON.lang + "/" + word[0] + "/" + word[1] + "/words.json", function (words) {
+        $.getJSON("date/1/" + word[0] + "/" + word[1] + "/words.json", function (trans) {
             var w = words[word[2] - 1];
             var t = trans[word[2] - 1];
             $("#savedWordsContainer").append('<p class="text" data-source="liked-word" data-category="'+ word[0] +'" data-subcategory="'+ word[1] +'" data-word="'+ word[2] +'" onclick="tellMeWordFrom(\'' + word[0] + "/" + word[1] + '\',' + w.id + ', this)"><img src="img/star_check.png" class="left-img" onclick="confirmRemoveSavedWord(this, \'' + word[0] + "/" + word[1] + "/" + word[2] + '\',' + w.id + ')">' + t.name + '<span class="small-text-in-text-box">' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + (t.name).replace(/(['"])/g, "\\$1") + '\', this); return false;"></p>');
