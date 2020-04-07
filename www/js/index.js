@@ -846,18 +846,18 @@ function saveDay() {
 function getLangList() {
     $.get("date/lang.json", function (result) {
         alert("jestem");
+        alert(result);
         showLangList(result);
-    }).fail(function( jqXHR, textStatus, errorThrown ) {
-        alert(jqXHR);
-        alert(textStatus);
-        alert(errorThrown);
     });
 }
 
 function showLangList(l) {
     var langs = JSON.parse(l);
+    alert(langs);
     for (var x in langs) {
         var lang = langs[x];
+        alert(lang.id);
+        alert(lang.label);
         var tmp = '<h1 class="text" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" >' + lang.label + '</h1>';
         if (x > 0) $("#langs").append(tmp);
     }
