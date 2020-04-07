@@ -858,7 +858,9 @@ function showLangList(l) {
         alert(lang.id);
         alert(lang.label);
         var tmp = '<h1 class="text" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" >' + lang.label + '</h1>';
-        if (x > 0) $("#langs").append(tmp);
+        if (lang.id != 1) {
+            $("#langs").append(tmp);
+        }
     }
 }
 
