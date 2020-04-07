@@ -1,1 +1,4564 @@
-var _0x34a7=['\x27,\x20\x27','\x27,\x20',')\x22\x20data-parent=\x22','#show-all-cats-cat-list\x20.list','<li><p\x20class=\x22cat-name-all-material\x22\x20data-id=\x22','</p></li>','#show-all-cats-cats','img/spiker_white.png','#show-all-cats-cats-wordlist','<p\x20class=\x22text\x22\x20data-source=\x22all-words\x22\x20data-category=\x22',',\x20this)\x22><img\x20src=\x22','<span\x20class=\x22small-text-in-text-box\x22>','</span><img\x20src=\x22img/mic_icon.png\x22\x20ontouchstart=\x22checkMeWord(\x27','\x27,\x20this);\x20return\x20false;\x22></p>','To\x20powiedziałem','#l-n-1','#l-e-1','#l-t-5','#l-c-2','#l-c-4','random','hover-progres-round','speechRecognition','hasPermission','requestPermission','en-GB','startListening','next','.learnMethod:visible\x20.text-trans-word','toLowerCase','good\x20speach\x20in\x20lesson','skip\x20word','wrong\x20speach\x20recognize','moveTo','return\x20while\x20learning','.cloud-perfect-all-words','.cloud-you-said-all-words','#savedWordsContainer\x20p','good-telling-word','bad-telling-word','#show-all-cats-cats-wordlist\x20p','closest','find','wrong-speach-text','data-origin-text','data-source','liked-word','start\x20speach\x20recognize\x20in\x20liked','start\x20speach\x20recognize\x20in\x20browsing\x20phrase','data-category','data-subcategory','good\x20speach\x20in\x20liked','good\x20speach\x20in\x20browsing\x20phrases','bad\x20speach\x20in\x20liked','bad\x20speach\x20in\x20browsing\x20phrases','.small-text-in-text-box','.wrong-speach-text','remove\x20word\x20from\x20liked','.star-liked','img/star_check.png','img/star.png','onwriteend','#savedWordsContainer','<p\x20class=\x22text\x22\x20data-source=\x22liked-word\x22\x20data-category=\x22','\x22\x20onclick=\x22tellMeWordFrom(\x27',',\x20this)\x22><img\x20src=\x22img/star_check.png\x22\x20class=\x22left-img\x22\x20onclick=\x22confirmRemoveSavedWord(this,\x20\x27','\x5c$1','parent','remove','#suggest-new-category','no-audio-name','skip\x20lesson','exitApp','.fuzzy-search','placeholder','.noteTEXT','request\x20for\x20verify\x20app','POST','application/json','com.speaklabs.english.speaklabsPro','com.speaklabs.english.speaklabs','http://api.speaklabs.eu/api/verification_licences','http://api.speaklabs.eu/api/verification_purchases','#illegal-app-page','http://api.speaklabs.eu/api/app_event_logs','uuid','model','done','run\x20sound\x20in\x20new\x20lesson\x20start\x20page','all-words','run\x20sound\x20in\x20browsing\x20phrases','payed-version','unpayed-version','error\x20while\x20shoping','object\x20window.store\x20not\x20found','ERROR\x20','register','premium.product','NON_CONSUMABLE','when','approved','owned','PAID_SUBSCRIPTION','subscription.premium','verified','updated','validator','packageName','receiptId','Impossible\x20to\x20proceed\x20with\x20validation','refresh','order','Make\x20sure\x20that\x20your\x20Wi-Fi\x20or\x20cellular\x20mobile\x20data\x20is\x20turned\x20on\x20and\x20then\x20try\x20again.','Upewnij\x20się,\x20że\x20Wifi\x20lub\x20dane\x20komórkowe\x20są\x20włączone,\x20a\x20następnie\x20spróbuj\x20ponownie.','Asegúrate\x20que\x20el\x20WiFi\x20o\x20datos\x20móviles\x20están\x20activados\x20e\x20inténtalo\x20otra\x20vez.','Vergewissere\x20dich,\x20dass\x20dein\x20WLAN\x20oder\x20Mobilfunknetz\x20eingeschaltet\x20ist\x20und\x20versuche\x20es\x20dann\x20nochmal.','Assurez-vous\x20que\x20le\x20Wi-Fi\x20ou\x20les\x20données\x20mobiles\x20sont\x20activées\x20et\x20essayez\x20de\x20nouveau.','No\x20internet\x20connection','Nie\x20można\x20połączyć\x20się\x20z\x20internetem','Keine\x20Internetverbindung','Pas\x20de\x20connexion\x20Internet','Lesson\x20in\x20progress','En\x20progreso','Lektion\x20im\x20Gange','Leçon\x20en\x20cours','Skipped','Pominięta','Omitida','Übersprungen','Leçon\x20sautée','Completed','Ukończona','Finalizada','Didn\x27t\x20catch\x20that','No\x20lo\x20entendemos','Das\x20habe\x20ich\x20nicht\x20verstanden','Nous\x20n\x27avons\x20pas\x20compris','Try\x20again','Spróbuj\x20ponownie','Inténtalo\x20de\x20nuevo','Versuche\x20es\x20nochmal','Essayez\x20de\x20nouveau','Pomiń\x20zadanie','Omitir\x20tarea','Aufgabe\x20überspringen','Passez\x20l\x27exercice','Staraj\x20się\x20mówić\x20głośno\x20i\x20wyraźnie.','Trata\x20de\x20hablar\x20más\x20alto\x20y\x20claro.','Essayez\x20de\x20parler\x20plus\x20clairement\x20et\x20plus\x20fort.','Please\x20try\x20to\x20say\x20the\x20phrase\x20in\x20exactly\x20the\x20same\x20way\x20as\x20you\x20heard\x20it.\x20This\x20applies\x20to\x20vocabulary\x20and\x20contractions.','Postaraj\x20się\x20wymówić\x20wyrażenie\x20w\x20taki\x20sam\x20sposób\x20w\x20jaki\x20je\x20usłyszałeś\x20(dotyczy\x20to\x20zarówno\x20słownictwa\x20jak\x20i\x20skrótów).','Bitte\x20wiederhole\x20den\x20Satz\x20genauso,\x20wie\x20du\x20ihn\x20gehört\x20hast.\x20Das\x20gilt\x20auch\x20für\x20Vokabeln\x20und\x20Kontraktionen.','Essayez\x20de\x20dire\x20la\x20phrase\x20dans\x20le\x20même\x20ordre\x20que\x20vous\x20l\x27avez\x20entendu\x20(cela\x20s\x27applique\x20au\x20vocabulaire\x20et\x20aux\x20contractions).','Remember\x20sometimes\x20speech\x20recognition\x20is\x20not\x20accurate.','Pamiętaj,\x20że\x20rozpoznawanie\x20mowy\x20nie\x20zawsze\x20jest\x20bezbłędne.','Recuerda\x20que\x20a\x20veces\x20el\x20reconocimiento\x20de\x20voz\x20no\x20es\x20preciso.','Denke\x20daran,\x20das\x20die\x20Spracherkennung\x20manchmal\x20nicht\x20exakt\x20ist.','Congratulations!','Gratulacje!','¡Enhorabuena!','Herzlichen\x20Glückwunsch!','Félicitations!','You\x20went\x20through\x20all\x20the\x20content.\x20Now\x20repeat\x20the\x20lessons\x20to\x20become\x20a\x20Pro.','Ukończyłeś\x20naukę\x20wszystkich\x20wyrażeń.\x20Od\x20następnej\x20lekcji\x20będziesz\x20jedynie\x20utrwalał\x20materiał.','Ya\x20has\x20completado\x20todo\x20el\x20contenido.\x20Ahora,\x20repite\x20las\x20lecciones\x20para\x20convertirte\x20en\x20un\x20profesional.','Du\x20hast\x20den\x20gesamten\x20Inhalt\x20erarbeitet.\x20Wiederhole\x20jetzt\x20die\x20Lektionen,\x20um\x20ein\x20Profi\x20zu\x20werden.','Phrase\x20has\x20been\x20added\x20to\x20Favourites.','Fraza\x20została\x20dodana\x20do\x20zakładki\x20ulubione.','Frase\x20añadida\x20a\x20Favoritos.','La\x20phrase\x20a\x20été\x20ajoutée\x20à\x20vos\x20favoris.','Zwrot\x20został\x20usunięty\x20z\x20zakładki\x20\x27\x27Ulubione\x27\x27','Frase\x20eliminada\x20de\x20Favoritos','Die\x20Phrase\x20wurde\x20aus\x20den\x20Favoriten\x20gelöscht','La\x20phrase\x20a\x20été\x20effacée\x20des\x20favoris','Nagrania\x20audio\x20niedostępne.','Audio\x20no\x20disponible.','Audio\x20nicht\x20verfügbar.','L\x27audio\x20n\x27est\x20pas\x20disponible.','This\x20free\x20version\x20comes\x20with\x2030\x20audio\x20lessons.\x20If\x20you\x20would\x20like\x20to\x20get\x20audio\x20to\x20all\x20180\x20lessons,\x20upgrade\x20to\x20English\x20Premium.','Spośród\x20180\x20dostępnych\x20lekcji,\x2030\x20zawiera\x20nagrania\x20audio.\x20Wykup\x20dostęp\x20Premium,\x20a\x20otrzymasz\x20nagrania\x20do\x20wszystkich\x20lekcji.','Englisch\x201500+\x20beinhaltet\x20insgesamt\x20180\x20Lektionen\x20,von\x20denen\x20nur\x2030\x20eine\x20Audioaufnahme\x20enthalten.\x20Falls\x20du\x20alle\x20180\x20Audioaufnahmen\x20erhalten\x20möchtest,\x20kauf\x20bitte\x20Premiumversion.','Learn\x20anyway','Ucz\x20się\x20bez\x20nagrań','Aprender\x20sin\x20grabaciones','Apprenez\x20sans\x20audio','Upgrade','Wykup\x20dostęp\x20Premium','Premiumversion\x20kaufen','Achetez\x20version\x20premium','Skip\x20lesson','Lektion\x20überspringen','Passez\x20la\x20leçon','Are\x20you\x20sure?','Czy\x20jesteś\x20pewien?','¿Estás\x20seguro(a)?','Bist\x20du\x20sicher?','Etes-vous\x20sûr?','Your\x20progress\x20won\x27t\x20be\x20saved.','Twój\x20postęp\x20nie\x20zostanie\x20zapisany.','Tu\x20progreso\x20no\x20será\x20guardado.','Deine\x20Fortschritte\x20werden\x20nicht\x20gespeichert.','Wyjdź','Zurück','Revenir\x20en\x20arrière','Cancel','Anuluj','Cancelar','Annulez','Lekcja\x20została\x20już\x20pominięta','¿Quereis\x20aprender\x20la\x20lección\x20anterior?','Die\x20Lektion\x20wurde\x20früher\x20übersprungen.','Voulez-vous\x20apprendre\x20une\x20leçon\x20que\x20vous\x20avez\x20passée?','Ucz\x20się','Aprender','Lernen','Apprendre','You\x20are\x20learning\x20this\x20lesson\x20already.','Uczyłeś\x20się\x20już\x20tej\x20lekcji.','Has\x20aprendido\x20está\x20lección.','Vous\x20avez\x20déjà\x20appris\x20cette\x20leçon.','Ucz\x20się\x20mimo\x20to','Abbrechen','Repetition\x20is\x20crucial\x20for\x20your\x20long-term\x20memory.','La\x20repetición\x20tiene\x20una\x20importancia\x20fundamental\x20para\x20la\x20memorización\x20a\x20largo\x20plazo.','Répéter\x20est\x20essentiel\x20pour\x20la\x20mémoire\x20à\x20long\x20terme.','Skip','Pomiń','Omitir','Passez','Please\x20complete\x20the\x20lesson\x20before\x20exiting.\x20Otherwise,\x20your\x20progress\x20won\x27t\x20be\x20saved.','Ukończ\x20lekcję\x20przed\x20zamknięciem\x20aplikacji.W\x20przeciwnym\x20wypadku\x20postęp\x20nie\x20zostanie\x20zapisany.','Por\x20favor,\x20completa\x20la\x20lección\x20antes\x20de\x20salir.\x20De\x20lo\x20contrario,\x20tu\x20progreso\x20no\x20será\x20guardado.','Beende\x20die\x20Lektion,\x20bevor\x20du\x20die\x20Anwendung\x20schließt.\x20Sonst\x20werden\x20deine\x20Fortschritte\x20nicht\x20gespeichert.','Terminez\x20la\x20leçon\x20avant\x20de\x20fermer\x20l\x27application.\x20Autrement\x20votre\x20progrès\x20ne\x20sera\x20pas\x20sauvegardé.','Exit','Salir','Quitter','Szukaj\x20lekcji…','Buscar\x20lección….','Lektion\x20…\x20suchen','Chercher\x20la\x20leçon...','Kliknij\x20tutaj\x20napisać\x20własną\x20podpowiedź','Cliquez\x20ici\x20pour\x20écrire\x20vos\x20indices','You\x20can\x20now\x20safely\x20uninstall\x20the\x20previous\x20version\x20of\x20the\x20application.','Możesz\x20teraz\x20bepiecznie\x20odinstalować\x20poprzednią\x20wersję\x20aplikacji.','Tu\x20progreso\x20ha\x20sido\x20cargado\x20exitosamente.','Du\x20kannst\x20jetzt\x20die\x20vorherige\x20Version\x20der\x20App\x20sicher\x20deinstallieren.','Vous\x20pouvez\x20maintenant\x20désinstaller\x20en\x20toute\x20sécurité\x20la\x20précédente\x20version\x20de\x20l\x27application.','Your\x20progress\x20was\x20successfully\x20loaded','Tu\x20progreso\x20ha\x20sido\x20cargado\x20exitosamente','Vos\x20progrès\x20ont\x20été\x20téléchargés\x20avec\x20succès','The\x20phrase\x20has\x20been\x20deleted\x20from\x20favourites','Czy\x20chcesz\x20usunąć\x20zwrot\x20z\x20zakładki\x20\x22ulubione\x22?','¿Desea\x20eliminar\x20la\x20frase\x20de\x20\x22Favoritos\x22?','Möchten\x20Sie\x20die\x20Phrase\x20aus\x20\x22Favoriten\x22\x20löschen?','Voulez-vous\x20supprimer\x20la\x20phrase\x20des\x20favoris?','El\x20archivo\x20es\x20inválido!','Diese\x20Datei\x20ist\x20ungültig!','Data\x20loaded\x20successfully.','Postęp\x20został\x20poprawnie\x20wczytany','Daten\x20wurden\x20erfolgreich\x20geladen.','Les\x20données\x20ont\x20été\x20téléchargées\x20avec\x20succès.','lessons\x20were\x20skipped','Lektionen\x20wurden\x20übersprungen','Lesson\x20has\x20been\x20skipped','La\x20lección\x20ha\x20sido\x20saltada','Lektion\x20wurde\x20übersprungen','Une\x20leçon\x20a\x20été\x20sautée','English\x201500+','Angielski\x201500+','Inglés\x201500+','Englisch\x201500+','Anglais\x201500+','English\x201500+\x20Pro','Angielski\x201500+\x20Pro','Inglés\x201500+\x20Pro','Englisch\x201500+\x20Pro','The\x20premium\x20version\x20is\x20active.','La\x20version\x20premium\x20est\x20active.','Buy\x20premium\x20version.','Wykup\x20dostęp\x20Premium,\x20a\x20otrzymasz:\x0a-\x20nagrania\x20audio\x20do\x20wszystkich\x20lekcji\x0a-\x20wersję\x20bez\x20reklam','Compra\x20la\x20versión\x20premium\x20y\x20recibirás:\x0a-\x20Los\x20audios\x20de\x20las\x20180\x20lecciones\x0a-\x20Contenido\x20sin\x20publicidad','Kauf\x20dir\x20die\x20Premiumversion,\x20dann\x20erhältst\x20du:\x0a-\x20Audios\x20für\x20alle\x20180\x20Lektionen\x0a-\x20werbefreie\x20Inhalte','Wersja\x20premium','La\x20versión\x20premium','Die\x20Premiumversion','La\x20version\x20premium','Buy\x20premium\x20version','Comprar\x20versión\x20premium','lang','bindEvents','addEventListener','deviceready','/android_asset/www/date/1.mp3','\x20-\x20','code','#menu','hide','show','run\x20application','resume','onAdDismiss','onAdPresent','onAdFailLoad','onAdLoaded','preventDefault','getElementById','querySelector','.received','setAttribute','style','display:none;','display:block;','log','Received\x20Event:\x20','jestem','width','immersiveMode','file','externalDataDirectory','split','slice','replace','toString','substring','length','Pro/files/','requestFileSystem','PERSISTENT','root','getFile','onloadend','target','result','toURL','readAsText','{\x22lang\x22:-1}','save_tmp.json','save_old.json','write','stringify','abort','createWriter','onwrite','day.json','day_tmp.json','parse','{\x22lang\x22:\x202}','{\x22day\x22:\x205,\x20\x22words\x22:\x2010,\x20\x22km\x22:\x2010,\x20\x22skiped\x22:\x20[\x221/10\x22],\x20\x22rating\x22:\x20false,\x20\x22theme\x22:\x201}','[{\x22subid\x22:13,\x22catid\x22:1,\x22start\x22:\x223\x22}]','#first-use-loading-page','#choose-lang','#myLang','val','body','addClass','lang.json','undefined','notification','confirm','words','start\x20day','day','#nrDayFiled','text','.allWords','#end-nr-lesson','.equivalentLessons','.all-words-to-end','.all-words-to-end-sesion','.countKMLearned','floor','skiped','push','theme','save.json','start','catid','subid','filter','sort','#countWordsToLearn','.allTimeToday','#repetition-only-info','#end-course','next-cat-left','#learn-container','#saving-progress-today','removeClass','get','date/lang.json','<h1\x20class=\x22text\x22\x20ontouchstart=\x22setLang(this);\x22\x20data-mylang=\x22','label','#langs','append','date/','#cats','<div><h1\x20class=\x22text\x20supercat\x22\x20onclick=\x22expand(this);\x22>','name','</div></div>','</div>','/words.json','date/1/','#list-word-in-sug-cat','\x22\x20data-subcategory=\x22','\x22\x20data-word=\x22',',\x20this)\x22>','<span>','</span></p>','ajax','/subcat.json','html','<div\x20class=\x22list-of-subcat\x22>','learnedCat','indexOf','inProgressCat','audio','no-audio','<p\x20class=\x22text\x20setCat\x20','\x22\x20onclick=\x22getThisCatAsSug(this);\x22\x20data-name=\x22','\x22\x20data-parent=\x22','\x22\x20data-subcat=\x22','\x22\x20data-pos=\x22','\x22><strong>','</strong>\x20','<span\x20class=\x22inProgressCatInfo\x22>','</span>\x20<span\x20class=\x22missingCatInfo\x22>','</span>\x20<span\x20class=\x22learnedCatInfo\x22>','#cat-list\x20.list','<li><p\x20class=\x22cat-name\x22\x20data-id=\x22','\x22\x20data-par=\x22','#myParentCat','#myCat','#learnLang','<div\x20class=\x22word\x22\x20data-id=\x22','</p></td><td\x20rowspan=\x222\x22><img\x20src=\x22img/check.png\x22></td></tr><tr><td><p\x20class=\x22text\x22>','</p></td></tr></table></div>','#nav-words-container','attr','data','\x22><img\x20src=\x22img/','.png\x22\x20class=\x22no-activ-img\x22><img\x20src=\x22img/','.png\x22\x20class=\x22activ-img\x22></p>','#nav-words-container\x20p','activ','pulse','<p\x20data-word-id=\x22','fadeOut','fadeIn','moja\x20notatka','#my-text','#idWord','#word-lern-1','data-id','data-word','data-trans','#my-trans','focus','#nav-words-container\x20p.activ','index','.confirm-swipe','Wszystkiego\x20już\x20się\x20nauczyłeś:)','word-id','word','notice','#confirm-my','css','.confirm-swipe\x20table','good','bad','good-right','goRight','stop','stopRecord','release','/android_asset/www/date/no_sound.mp3','/android_asset/www/date/','/sound/','.mp3','play','copyDir','www/firstPatch','fail','notice.json','liked.json','getDirectory','copyTo','Error:\x20','write\x20hint','write\x20success','error\x20:\x20','.learnMethod','.bad-bad','.remind-img','#confirm-correct-1','<p>','#confirm-trans-1','</p>','#confirm-text-1','#confirm-correct-2','#confirm-trans-2','#confirm-text-2','#confirm-text-3','#confirm-correct-4','</span>','.show-hidden-word','#confirm-trans-4','#confirm-text-4','#confirm-text-5','#question-5','#confirm-correct-6','#confirm-trans-6','#confirm-text-6','error','.support-word-in-speach\x20p','#word-lern-','.nbWordInCycle','.recTextWrap','.recText','badRec','goodRec','.cloud-again','.cloud-next-task','.support-word-in-speach','.left-time','round','#progess-btn-stan-end','.timeLernedToday','section','#end-cat','end\x20repetition','next-cat-right','#nav-words-container-thd\x20p','data-word-id','children','img','src','#nav-th-','splice','each','#l-c-','#l-e-',':visible','#learn-panel\x20.learnMethod:visible','substr','#confirm-text-','show\x20hint','#l-n-','#l-n-3','#l-n-4','#l-n-6','#l-e-2','#l-e-3','#l-e-4','#l-e-5','#l-e-6','#l-t-1','#l-t-2','#l-t-3','#l-t-4','#l-t-6','#l-c-1','#l-c-3','#l-c-5','#l-c-6','.note-btn','blur','#l-n-2','#l-n-5','#t-l-n-','#t-l-e-','isInteger','#words-nav','#ok-no-panel','reduce','#start-next-cat','#nav-circle-word','#main-text-next-cat-end','.all-words-to-end-sesion-in-repeat','#progess-btn-per','#progess-btn-stan','start\x20repetition','hasClass','.countMinLearned','#end-panel','end\x20day','body\x20>\x20section:visible:not(.next-cat-left):not(.next-cat-right):not(#new-tutorial):not(#ok-no-panel-TUT):not(#word-lern-2-TUT)','#new-tutorial','#ok-no-panel-TUT,\x20#word-lern-2-TUT,\x20#popup-TUT-1','.popup-TUT','.popup-TUT:not(#popup-TUT-1)','next-cat-right-right','#popup-TUT-1','full-opacity','tutorial-body-darkness','.background','.cursor-TUT','cursor-TUT-1','#popup-TUT-','cursor-TUT-','#progess-btn-stan-in-cycle-TUT','#new-tutorial\x20.mic-container','.star-liked-TUT','#notebtn-TUT','#new-tutorial-repeat-text\x20span','#menu-switch','cursor-TUT-2','cursor-TUT-4','cursor-TUT-6','cursor-TUT-7','cursor-TUT-8','cursor-TUT-9','#progess-btn-stan-in-cycle-tut2','half-opacity','background-tutorial-darkness','#startDay','#tutorial','.tut-method','#page-after-tutorial','search\x20lesson','#new-category-choice','#choose-cat','#progess-btn-stan-in-cycle','p100','.progess-btn-stan-in-session','#suggest-new-category-text','#progess-btn-stan-in-cycle-ncat','pos','start\x20suggested\x20lesson','seciton','plugins','toast','showWithOptions','long','bottom','.progess-btn-stan-in-cycle-2','.progess-btn-stan-in-cycle-3','#learn-container\x20.all-words-to-end','/cat.json','#sugCatPar','#sugCatSub','short','missingCat','data-subcat','choose\x20manual\x20lesson','myProgress.speaklabs','langJSON','dayJSON','toLearnJSON','likedJSON','FilePath','resolveNativePath','resolveLocalFileSystemURL','noticeJSON','reload','.catNameInListWord','<p\x20class=\x22text\x22\x20onclick=\x22showMeWordInThisCat(',',\x20\x27','\x27)\x22>','#list-of-word-in-cat','goLeft','#listWordOfCatInInPorgress','<br><strong>Linkword:</strong>\x20','<p\x20class=\x22text\x22\x20onclick=\x22tellMeWord(\x27',')\x22>','connection','type','preferences','market://details?id=com.speaklabs.english.speaklabsPro','promptForRating','theme3','theme2','.text','min-width','My\x20progress','Save\x20progress','Share\x20completed?\x20','completed','Shared\x20to\x20app:\x20','app','Sharing\x20failed\x20with\x20message:\x20','shareWithOptions','Warning!','<div><h1\x20class=\x22text\x20supercat-all-material\x22\x20onclick=\x22expand(this);\x22>','</h1>','<div\x20class=\x22list-of-subcat-all-material\x22>','<p\x20class=\x22text\x20catsInAllMaterial\x20','\x22\x20onclick=\x22setCatToViewWords(\x27'];(function(_0x1a122e,_0x5b64bd){var _0x39110a=function(_0x1d84c1){while(--_0x1d84c1){_0x1a122e['push'](_0x1a122e['shift']());}};_0x39110a(++_0x5b64bd);}(_0x34a7,0x70));var _0x5370=function(_0x533a22,_0x558d35){_0x533a22=_0x533a22-0x0;var _0x15e06f=_0x34a7[_0x533a22];return _0x15e06f;};t_not_connected_text=[_0x5370('0x0'),_0x5370('0x1'),_0x5370('0x2'),_0x5370('0x3'),_0x5370('0x4')];t_not_connected_title=[_0x5370('0x5'),_0x5370('0x6'),'No\x20hay\x20conexión\x20a\x20internet',_0x5370('0x7'),_0x5370('0x8')];t_not_connected_exit=['OK','OK','OK','OK','OK'];t_during_learning=[_0x5370('0x9'),'W\x20trakcie\x20nauki',_0x5370('0xa'),_0x5370('0xb'),_0x5370('0xc')];t_lesson_skipped=[_0x5370('0xd'),_0x5370('0xe'),_0x5370('0xf'),_0x5370('0x10'),_0x5370('0x11')];t_learned_lesson=[_0x5370('0x12'),_0x5370('0x13'),_0x5370('0x14'),'Abgeschlossen','Terminée'];t_recognize_error_title=[_0x5370('0x15'),'Niepoprawna\x20odpowiedź',_0x5370('0x16'),_0x5370('0x17'),_0x5370('0x18')];t_recognize_error_try_again=[_0x5370('0x19'),_0x5370('0x1a'),_0x5370('0x1b'),_0x5370('0x1c'),_0x5370('0x1d')];t_recognize_error_skip=['Skip\x20the\x20task',_0x5370('0x1e'),_0x5370('0x1f'),_0x5370('0x20'),_0x5370('0x21')];t_recognize_error_first_text=['Try\x20to\x20speak\x20more\x20clearly\x20and\x20loudly.',_0x5370('0x22'),_0x5370('0x23'),'Versuche,\x20deutlicher\x20und\x20lauter\x20zu\x20sprechen.',_0x5370('0x24')];t_recognize_error_second_text=[_0x5370('0x25'),_0x5370('0x26'),'Trata\x20de\x20decir\x20la\x20frase\x20exactamente\x20de\x20la\x20misma\x20forma\x20que\x20la\x20has\x20oído\x20(haz\x20lo\x20mismo\x20tanto\x20con\x20el\x20vocabulario\x20como\x20con\x20las\x20contracciones).',_0x5370('0x27'),_0x5370('0x28')];t_recognize_error_third_text=[_0x5370('0x29'),_0x5370('0x2a'),_0x5370('0x2b'),_0x5370('0x2c'),'Souvenez-\x20vous\x20que\x20parfois,\x20le\x20système\x20de\x20reconnaissance\x20vocal\x20n\x27est\x20pas\x20précis.\x20Essayez\x20à\x20nouveau\x20ou\x20passez\x20la\x20tâche.'];t_end_new_materials_title=[_0x5370('0x2d'),_0x5370('0x2e'),_0x5370('0x2f'),_0x5370('0x30'),_0x5370('0x31')];t_end_new_materials_text=[_0x5370('0x32'),_0x5370('0x33'),_0x5370('0x34'),_0x5370('0x35'),'Vous\x20avez\x20parcouru\x20tout\x20le\x20contenu.\x20Maintenant,\x20répétez\x20les\x20leçons\x20pour\x20devenir\x20un\x20pro.'];t_end_new_materials_ok=['OK','OK','OK','OK','OK'];t_liked_words_added=[_0x5370('0x36'),_0x5370('0x37'),_0x5370('0x38'),'Der\x20Satz\x20wurde\x20zu\x20deinen\x20Favoriten\x20hinzugefügt.',_0x5370('0x39')];t_liked_words_remove=['The\x20phrase\x20has\x20been\x20deleted\x20from\x20favourites',_0x5370('0x3a'),_0x5370('0x3b'),_0x5370('0x3c'),_0x5370('0x3d')];t_no_audio_lesson_title=['Audio\x20not\x20available.',_0x5370('0x3e'),_0x5370('0x3f'),_0x5370('0x40'),_0x5370('0x41')];t_no_audio_lesson_text=[_0x5370('0x42'),_0x5370('0x43'),'Inglés\x201500+\x20viene\x20con\x20180\x20lecciones\x20de\x20las\x20cuales\x2030\x20contienen\x20audio.\x20Si\x20deseas\x20recibir\x20todas\x20las\x20grabaciones\x20de\x20las\x20180\x20lecciones,\x20comprar\x20versión\x20premium.',_0x5370('0x44'),'Sur\x20les\x20180\x20leçons\x20disponibles,\x2030\x20contiennent\x20des\x20enregistrements\x20audio.\x20Achetez\x20version\x20premium\x20et\x20vous\x20obtiendrez\x20les\x20enregistrements\x20audio\x20pour\x20toutes\x20les\x20leçons.'];t_no_audio_lesson_learn_anyway=[_0x5370('0x45'),_0x5370('0x46'),_0x5370('0x47'),'Trotzdem\x20lernen',_0x5370('0x48')];t_no_audio_lesson_upgrade=[_0x5370('0x49'),_0x5370('0x4a'),'Comprar\x20versión\x20premium',_0x5370('0x4b'),_0x5370('0x4c')];t_no_audio_lesson_skip=[_0x5370('0x4d'),'Pomiń\x20lekcję','Omitir\x20lección',_0x5370('0x4e'),_0x5370('0x4f')];t_confirm_back_in_learn_title=[_0x5370('0x50'),_0x5370('0x51'),_0x5370('0x52'),_0x5370('0x53'),_0x5370('0x54')];t_confirm_back_in_learn_text=[_0x5370('0x55'),_0x5370('0x56'),_0x5370('0x57'),_0x5370('0x58'),'Votre\x20progrès\x20ne\x20sera\x20pas\x20sauvegardé.'];t_confirm_back_in_learn_back=['Go\x20back',_0x5370('0x59'),'Volver',_0x5370('0x5a'),_0x5370('0x5b')];t_confirm_back_in_learn_cancel=[_0x5370('0x5c'),_0x5370('0x5d'),_0x5370('0x5e'),'Abbrechen',_0x5370('0x5f')];t_confirm_learn_missing_cat_title=[_0x5370('0x50'),_0x5370('0x51'),_0x5370('0x52'),_0x5370('0x53'),_0x5370('0x54')];t_confirm_learn_missing_cat_text=['Do\x20you\x20want\x20to\x20learn\x20previously\x20skipped\x20lesson?',_0x5370('0x60'),_0x5370('0x61'),_0x5370('0x62'),_0x5370('0x63')];t_confirm_learn_missing_cat_yes=[_0x5370('0x45'),_0x5370('0x64'),_0x5370('0x65'),_0x5370('0x66'),_0x5370('0x67')];t_confirm_learn_missing_cat_cancel=[_0x5370('0x5c'),_0x5370('0x5d'),'Cancelar','Abbrechen',_0x5370('0x5f')];t_confirm_learn_inprogress_cat_title=[_0x5370('0x50'),_0x5370('0x51'),_0x5370('0x52'),_0x5370('0x53'),_0x5370('0x54')];t_confirm_learn_inprogress_cat_text=[_0x5370('0x68'),_0x5370('0x69'),_0x5370('0x6a'),'Du\x20hast\x20diese\x20Lektion\x20gelernt.',_0x5370('0x6b')];t_confirm_learn_inprogress_cat_yes=[_0x5370('0x45'),_0x5370('0x6c'),'Aprender',_0x5370('0x66'),_0x5370('0x67')];t_confirm_learn_inprogress_cat_cancel=[_0x5370('0x5c'),'Anuluj','Cancelar',_0x5370('0x6d'),_0x5370('0x5f')];t_confirm_skip_lesson_title=['Are\x20you\x20sure?',_0x5370('0x51'),_0x5370('0x52'),'Bist\x20du\x20sicher?',_0x5370('0x54')];t_confirm_skip_lesson_text=[_0x5370('0x6e'),'Powtarzanie\x20jest\x20kluczowe\x20w\x20procesie\x20zapamiętywania.',_0x5370('0x6f'),'Wiederholungen\x20sind\x20für\x20das\x20Langzeitgedächtnis\x20sehr\x20wichtig.',_0x5370('0x70')];t_confirm_skip_lesson_skip=[_0x5370('0x71'),_0x5370('0x72'),_0x5370('0x73'),'Überspringen',_0x5370('0x74')];t_confirm_skip_lesson_cancel=[_0x5370('0x5c'),_0x5370('0x5d'),_0x5370('0x5e'),_0x5370('0x6d'),'Annulez'];t_confirm_exit_title=[_0x5370('0x50'),_0x5370('0x51'),_0x5370('0x52'),_0x5370('0x53'),_0x5370('0x54')];t_confirm_exit_text=[_0x5370('0x75'),_0x5370('0x76'),_0x5370('0x77'),_0x5370('0x78'),_0x5370('0x79')];t_confirm_exit_cancel=[_0x5370('0x5c'),_0x5370('0x5d'),_0x5370('0x5e'),_0x5370('0x6d'),_0x5370('0x5f')];t_confirm_exit_exit=[_0x5370('0x7a'),'Wyjście',_0x5370('0x7b'),'Beenden',_0x5370('0x7c')];t_placeholder_fuzzy_search=['Search\x20for\x20lesson…',_0x5370('0x7d'),_0x5370('0x7e'),_0x5370('0x7f'),_0x5370('0x80')];t_placeholder_hint_text=['Click\x20here\x20to\x20write\x20your\x20hint',_0x5370('0x81'),'Presiona\x20aquí\x20para\x20escribir\x20tus\x20indicaciones','Klick\x20hier,\x20um\x20deinen\x20Hinweis\x20zu\x20schreiben',_0x5370('0x82')];t_lang_rank=['en','pl','es','de','fr'];t_after_premium_copy_text=[_0x5370('0x83'),_0x5370('0x84'),_0x5370('0x85'),_0x5370('0x86'),_0x5370('0x87')];t_after_premium_copy_title=[_0x5370('0x88'),'Postęp\x20został\x20poprawnie\x20wczytany',_0x5370('0x89'),'Daten\x20wurden\x20erfolgreich\x20geladen',_0x5370('0x8a')];t_after_premium_copy_ok=['OK','OK','OK','OK','OK'];t_confirm_remove_saved_word_text=[_0x5370('0x8b'),_0x5370('0x8c'),_0x5370('0x8d'),_0x5370('0x8e'),_0x5370('0x8f')];t_confirm_remove_saved_word_title=['Are\x20you\x20sure?','Czy\x20jesteś\x20pewien?',_0x5370('0x52'),_0x5370('0x53'),'Etes-vous\x20sûr?'];t_confirm_remove_saved_word_cancel=[_0x5370('0x5c'),_0x5370('0x5d'),_0x5370('0x5e'),'Abbrechen','Annulez'];t_confirm_remove_saved_word_remove=['OK','OK','OK','OK','OK'];t_import_from_file_error=['This\x20file\x20is\x20invalid!','Plik\x20jest\x20nieprawidłowy!',_0x5370('0x90'),_0x5370('0x91'),'Ce\x20fichier\x20est\x20invalide!'];t_import_from_file_success=[_0x5370('0x92'),_0x5370('0x93'),_0x5370('0x85'),_0x5370('0x94'),_0x5370('0x95')];t_automated_skipped_lessons=[_0x5370('0x96'),'lekcji\x20zostało\x20pominiętych','lecciones\x20han\x20sido\x20saltadas',_0x5370('0x97'),'leçons\x20ont\x20été\x20sautées'];t_skipped_lesson_success=[_0x5370('0x98'),'Lekcja\x20została\x20pominięta',_0x5370('0x99'),_0x5370('0x9a'),_0x5370('0x9b')];t_app_name=[_0x5370('0x9c'),_0x5370('0x9d'),_0x5370('0x9e'),_0x5370('0x9f'),_0x5370('0xa0')];t_app_name_pro=[_0x5370('0xa1'),_0x5370('0xa2'),_0x5370('0xa3'),_0x5370('0xa4'),'Anglais\x201500+\x20Pro'];t_thanks_for_buying_text=[_0x5370('0xa5'),'Wersja\x20premium\x20jest\x20aktywna.','La\x20versión\x20premium\x20está\x20activa.','Die\x20Premiumversion\x20ist\x20aktiv.',_0x5370('0xa6')];t_thanks_for_buying_title=[_0x5370('0x2d'),_0x5370('0x2e'),_0x5370('0x2f'),_0x5370('0x30'),'Félicitations!'];t_thanks_for_buying_ok=['OK','OK','OK','OK','OK'];t_before_buy_premium_text=[_0x5370('0xa7'),_0x5370('0xa8'),_0x5370('0xa9'),_0x5370('0xaa'),'Achetez\x20la\x20version\x20premium\x20pour\x20obtenir:\x0a-\x20les\x20audios\x20pour\x20toutes\x20les\x20leçons\x0a-\x20une\x20version\x20sans\x20publicités'];t_before_buy_premium_title=['The\x20premium\x20version',_0x5370('0xab'),_0x5370('0xac'),_0x5370('0xad'),_0x5370('0xae')];t_before_buy_premium_cancel=['Cancel','Anuluj',_0x5370('0x5e'),_0x5370('0x6d'),_0x5370('0x5f')];t_before_buy_premium_buy=[_0x5370('0xaf'),_0x5370('0x4a'),_0x5370('0xb0'),'Premiumversion\x20kaufen','Achetez\x20version\x20premium'];function getTrans(_0x4b6fd7){if(langJSON['lang']>0x0){return _0x4b6fd7[parseInt(langJSON[_0x5370('0xb1')]-0x1)];}else{return _0x4b6fd7[0x0];}}var isPremium=![];var dev=![];var isLegal=![];var legalValidation=!![];var isPayedPro=![];var app={'initialize':function(){this[_0x5370('0xb2')]();},'bindEvents':function(){document[_0x5370('0xb3')](_0x5370('0xb4'),this['onDeviceReady'],![]);},'onDeviceReady':function(){var _0x581baa=_0x5370('0xb5');my_media=new Media(_0x581baa,function(){},function(_0x39fa9b){console['log']('M:\x20'+_0x39fa9b['message']+_0x5370('0xb6')+_0x39fa9b[_0x5370('0xb7')]);});$('#menu-switch')['hide']();$(_0x5370('0xb8'))[_0x5370('0xb9')]();$('#first-use-loading-page')[_0x5370('0xba')]();logEventInServer(_0x5370('0xbb'),{});getMyLang();document['addEventListener'](_0x5370('0xbc'),hideBars,![]);if($(window)['width']()>0x258){StatusBar[_0x5370('0xb9')]();}else{AndroidFullScreen['immersiveMode'](emptyFunctionS,emptyFunctionS);}document[_0x5370('0xb3')](_0x5370('0xbd'),function(_0x3e105e){removeAllProgress();removeAllProgress2();setTimeout(function(){loadProgressBarToFull();loadProgressBarToFull2();},0x64);});document[_0x5370('0xb3')](_0x5370('0xbe'),function(_0x4ebea1){setTimeout(function(){removeAllProgress();removeAllProgress2();},0x32);prepareAd();});document[_0x5370('0xb3')](_0x5370('0xbf'),function(_0x3fc8ce){setAdIsReady(![]);});document[_0x5370('0xb3')](_0x5370('0xc0'),function(_0x106a95){setAdIsReady(!![]);});document[_0x5370('0xb3')]('backbutton',function(_0x2f7fe2){_0x2f7fe2[_0x5370('0xc1')]();},![]);setTextWidth();volumeTest();if(!isPremium){initStore();}},'receivedEvent':function(_0x2d322a){var _0xec3379=document[_0x5370('0xc2')](_0x2d322a);var _0x1d77c2=_0xec3379[_0x5370('0xc3')]('.listening');var _0x54f38b=_0xec3379['querySelector'](_0x5370('0xc4'));_0x1d77c2[_0x5370('0xc5')](_0x5370('0xc6'),_0x5370('0xc7'));_0x54f38b[_0x5370('0xc5')](_0x5370('0xc6'),_0x5370('0xc8'));console[_0x5370('0xc9')](_0x5370('0xca')+_0x2d322a);}};function emptyFunctionS(){console[_0x5370('0xc9')](_0x5370('0xcb'));}function hideBars(){if(!dev){if($(window)[_0x5370('0xcc')]()>0x258){StatusBar[_0x5370('0xb9')]();}else{AndroidFullScreen[_0x5370('0xcd')](emptyFunctionS,emptyFunctionS);}}}var mainPath;function path(){var _0x3e80ac=cordova[_0x5370('0xce')][_0x5370('0xcf')][_0x5370('0xd0')]('/')[_0x5370('0xd1')](-0x5);mainPath=_0x3e80ac['toString']()[_0x5370('0xd2')](/,/g,'/');return _0x3e80ac[_0x5370('0xd3')]()[_0x5370('0xd2')](/,/g,'/');}var demoPathsrc;function demoPath(){if(isPremium){var _0x1f2b70=cordova[_0x5370('0xce')][_0x5370('0xcf')][_0x5370('0xd0')]('/')[_0x5370('0xd1')](-0x5);demoPathsrc=_0x1f2b70[_0x5370('0xd3')]()['replace'](/,/g,'/');demoPathsrc=demoPathsrc[_0x5370('0xd4')](0x0,demoPathsrc[_0x5370('0xd5')]-0xa)+'/files/';return demoPathsrc;}else{demoPathsrc=path();return demoPathsrc;}}var premiumPathsrc;function premiumPath(){if(isPremium){premiumPathsrc=path();return premiumPathsrc;}else{var _0x41da42=cordova['file'][_0x5370('0xcf')][_0x5370('0xd0')]('/')[_0x5370('0xd1')](-0x5);premiumPathsrc=_0x41da42[_0x5370('0xd3')]()[_0x5370('0xd2')](/,/g,'/');premiumPathsrc=premiumPathsrc[_0x5370('0xd4')](0x0,premiumPathsrc[_0x5370('0xd5')]-0x7)+_0x5370('0xd6');return premiumPathsrc;}}function readDayF(){window[_0x5370('0xd7')](LocalFileSystem[_0x5370('0xd8')],0x0,onFSSuccess3,onFSError);}function onFSSuccess3(_0x546c32){_0x546c32[_0x5370('0xd9')][_0x5370('0xda')](srcFile3,{'create':![],'exclusive':![]},gotFileEntry3,onFSError);}function gotFileEntry3(_0x300ab8){_0x300ab8[_0x5370('0xce')](gotFile3,onFSError);}function gotFile3(_0x4f72a4){readAsText3(_0x4f72a4);}function readAsText3(_0x4aeda8){var _0x284600=new FileReader();_0x284600[_0x5370('0xdb')]=function(_0x430fc9){res3=_0x430fc9[_0x5370('0xdc')][_0x5370('0xdd')];};_0x284600['readAsText'](_0x4aeda8);}function readLang(){window['requestFileSystem'](LocalFileSystem[_0x5370('0xd8')],0x0,onFSSuccessLangR,onFSErrorLangR);}function onFSSuccessLangR(_0x3719b7){_0x3719b7[_0x5370('0xd9')][_0x5370('0xda')](srcLang,{'create':![],'exclusive':![]},gotFileEntryLangR,onFSErrorLangR);rootURL=_0x3719b7[_0x5370('0xd9')][_0x5370('0xde')]();}function gotFileEntryLangR(_0x35e7c4){_0x35e7c4[_0x5370('0xce')](gotFileLangR,onFSErrorLangR);}function gotFileLangR(_0x4e5c7b){readAsTextLangR(_0x4e5c7b);}function readAsTextLangR(_0x59a9c3){var _0x3ce130=new FileReader();_0x3ce130['onloadend']=function(_0x51e328){afterReadMyLang(_0x51e328[_0x5370('0xdc')][_0x5370('0xdd')]);};_0x3ce130[_0x5370('0xdf')](_0x59a9c3);}function onFSErrorLangR(_0x4c3f05){afterReadMyLang(_0x5370('0xe0'));}function readWriteFile(){window['requestFileSystem'](LocalFileSystem[_0x5370('0xd8')],0x0,onFSSuccess,onFSError);}function onFSSuccess(_0x18ca34){_0x18ca34[_0x5370('0xd9')][_0x5370('0xda')](srcFile,{'create':![],'exclusive':![]},gotFileEntry,onFSError);}function gotFileEntry(_0x4685cf){_0x4685cf['file'](gotFile,onFSError);}function gotFile(_0x5d504c){readAsText(_0x5d504c);}function readAsText(_0x11d2e9){var _0x12d40e=new FileReader();_0x12d40e[_0x5370('0xdb')]=function(_0x21f3f8){afterReadToLearn(_0x21f3f8[_0x5370('0xdc')][_0x5370('0xdd')]);};_0x12d40e[_0x5370('0xdf')](_0x11d2e9);}function onFSError(_0x8e3ae6){res='[]';}function readWriteFile2(){window['requestFileSystem'](LocalFileSystem[_0x5370('0xd8')],0x0,onFSSuccess2,onFSError);}function onFSSuccess2(_0x2a1eb0){_0x2a1eb0['root'][_0x5370('0xda')](srcFile2,{'create':![],'exclusive':![]},gotFileEntry2,onFSError);}function gotFileEntry2(_0x202b9c){_0x202b9c[_0x5370('0xce')](gotFile2,onFSError);}function gotFile2(_0x505100){readAsText2(_0x505100);}function readAsText2(_0x32e390){var _0x33cd87=new FileReader();_0x33cd87[_0x5370('0xdb')]=function(_0x5cec44){afterNoticeRead(_0x5cec44['target']['result']);};_0x33cd87[_0x5370('0xdf')](_0x32e390);}var srcSaveTmp=![];var srcSaveOld=![];var srcSaveDayTmp=![];var endTodayLesson=![];function saveFile(){srcSaveTmp=path()+_0x5370('0xe1');srcSaveOld=path()+_0x5370('0xe2');saveFileOld();}function renameSuccessSave(){saveFileOld();}function saveFileOld(){window[_0x5370('0xd7')](LocalFileSystem[_0x5370('0xd8')],0x0,gotFSN2,failN);}function gotFSN2(_0x4274dc){_0x4274dc[_0x5370('0xd9')][_0x5370('0xda')](srcSaveTmp,{'create':!![]},gotFileEntryN2,failN);}function gotFileEntryN2(_0x126133){_0x126133['createWriter'](gotFileWriterN2,failN);}function gotFileWriterN2(_0x464640){_0x464640['onwriteend']=function(_0x54b94d){renameFile(srcSaveTmp,'',srcSave,renameSuccessSaveEnd);};_0x464640[_0x5370('0xe3')](JSON[_0x5370('0xe4')](datesJSON));_0x464640[_0x5370('0xe5')]();}function renameSuccessSaveEnd(){saveFile5();}function failN(_0x34a5a9){}function saveMyLang(_0x2a7e7f){langJSON['lang']=_0x2a7e7f;getCatWithPos(0x0,0x1);saveLang();}function saveLang(){window[_0x5370('0xd7')](LocalFileSystem[_0x5370('0xd8')],0x0,gotFSNLang,failN);}function gotFSNLang(_0x19ecab){_0x19ecab[_0x5370('0xd9')][_0x5370('0xda')](srcLang,{'create':!![]},gotFileEntryLang,failN);}function gotFileEntryLang(_0x327a14){_0x327a14[_0x5370('0xe6')](gotFileWriterLang,failN);}function gotFileWriterLang(_0x58a0de){_0x58a0de[_0x5370('0xe7')]=function(_0x4bd4ff){console['log']('write\x20success');};_0x58a0de[_0x5370('0xe3')](JSON['stringify'](langJSON));_0x58a0de[_0x5370('0xe5')]();}function saveFile5(){srcSave5=path()+_0x5370('0xe8');srcSaveDayTmp=path()+_0x5370('0xe9');saveFileDay();}function saveFileDay(){window[_0x5370('0xd7')](LocalFileSystem[_0x5370('0xd8')],0x0,gotFSN5,failN);}function gotFSN5(_0xb9fb0){_0xb9fb0[_0x5370('0xd9')][_0x5370('0xda')](srcSaveDayTmp,{'create':!![]},gotFileEntryN5,failN);}function gotFileEntryN5(_0x1582bd){_0x1582bd[_0x5370('0xe6')](gotFileWriterN5,failN);}function gotFileWriterN5(_0x5603af){_0x5603af['onwriteend']=function(_0x11b395){renameFile(srcSaveDayTmp,'',srcSave5,renameSuccessSaveDayEnd);};_0x5603af[_0x5370('0xe3')](JSON[_0x5370('0xe4')](datesJSON5));_0x5603af[_0x5370('0xe5')]();}function renameSuccessSaveDayEnd(){if(endTodayLesson){endLearn();}}var wordsInOneCat=0xa;var minCat=0x7;var countOfCycle=0x2;var countCatInFirstBigCat=0xa;var firstCycle=![];var secondCycle=![];var thirdCycle=![];var srcSave=![];var srcSave5=![];var srcLang=![];var datesJSON=![];var datesJSON5=![];var dayJSONwordsCopy=0x0;var learnedWordsCopy=0x0;var langJSON=dev?JSON[_0x5370('0xea')](_0x5370('0xeb')):JSON[_0x5370('0xea')](_0x5370('0xe0'));var dayJSON=dev?JSON['parse'](_0x5370('0xec')):![];var toLearnJSON=dev?JSON[_0x5370('0xea')](_0x5370('0xed')):[];var dayJSONwordsCopy=dayJSON['words'];var toLearnJSONcopyForBackBTN=JSON[_0x5370('0xea')](JSON[_0x5370('0xe4')](toLearnJSON));var resLang=![];var res=![];var srcFile=![];var res2=![];var srcFile2=![];var res3=![];var srcFile3=![];var noticeJSON=[];var likedJSON=[];var isFirstCycle=!![];var startLearn=![];var toLearn=[-0x1,-0x1,-0x1,-0x1,-0x1,-0x1,-0x1,-0x1,-0x1,-0x1];var countWord=0x0;var countCatsToLearn=0x0;var countCatsToLearnToday=0x1;var countWordsToLearn=wordsInOneCat+wordsInOneCat*0x2;var learnedWords=0x0;var learnedWordsInCat=0x0;var countWordsToLearnInThisCycle=0x0;var suggestedCatPath='';var suggestedCatName='';var learnedCat=[];var inProgressCat=[];var missingCat=[];var gameIsBegin=![];var allCats=[];var allUsedCats=[];var allEndedCats=[];var catsWithAudioInDemo=[];var todayEndedCat='';var rootURL='';var lessonsJumpToFuture=0x0;var hasNewCatsToday=![];function startApp(){setTextWidth();hideBars();setTimeout(function(){var _0x5b21fa=langJSON[_0x5370('0xb1')];prepareAd();if(_0x5b21fa<0x1){if(!isPremium){$(_0x5370('0xee'))[_0x5370('0xb9')]();startLearn=!![];getLangList();$(_0x5370('0xef'))[_0x5370('0xba')]();}copyFirstPath();updatePlaceholders();}else{$('#menu-switch')[_0x5370('0xba')]();$(_0x5370('0xb8'))[_0x5370('0xba')]();$(_0x5370('0xf0'))[_0x5370('0xf1')](_0x5b21fa);$(_0x5370('0xf2'))[_0x5370('0xf3')](_0x5370('0xb1')+_0x5b21fa);getDay();getNotice();readLikedWords();updatePlaceholders();}},0xc8);}function getMyLang(){srcLang=path()+_0x5370('0xf4');if(!dev){readLang();}else{afterReadMyLang(JSON[_0x5370('0xe4')](langJSON));}}function afterReadMyLang(_0x5d19f0){langJSON=JSON[_0x5370('0xea')](_0x5d19f0);if(typeof langJSON[_0x5370('0xb1')]!=_0x5370('0xf5')&&langJSON[_0x5370('0xb1')]>0x0){$(_0x5370('0xf2'))[_0x5370('0xf3')](_0x5370('0xb1')+langJSON['lang']);testAndRunAppIfIsOk(startApp);}else{if(!isPremium){$(_0x5370('0xee'))[_0x5370('0xb9')]();startLearn=!![];getLangList();$(_0x5370('0xef'))[_0x5370('0xba')]();}copyFirstPath();updatePlaceholders();}}function testAndRunAppIfIsOk(_0x279ac5){if(!dev){if(!checkConnection()){navigator[_0x5370('0xf6')][_0x5370('0xf7')](getTrans(t_not_connected_text),onNoInternetConfirm,getTrans(t_not_connected_title),getTrans(t_not_connected_exit));}else{testLegalAppAndRunIfIsLegal(_0x279ac5);}}else{startAppBecauseIsLegal(_0x279ac5);}}function getDay(){srcFile3=path()+'day.json';if(!dev){readDayF();getDayHelper();}else{getAllCatsInArray();getAllCatsToShowAllCats();afterGetDay();}}function getDayHelper(){if(res3==![]){setTimeout(getDayHelper,0x64);return;}else{getAllCatsInArray();getAllCatsToShowAllCats();dayJSON=JSON['parse'](res3);dayJSONwordsCopy=dayJSON[_0x5370('0xf8')];afterGetDay();}}function afterGetDay(){logEventInServer(_0x5370('0xf9'),{'day':dayJSON[_0x5370('0xfa')],'lang':langJSON[_0x5370('0xb1')]});countWordsToLearn=wordsInOneCat+wordsInOneCat*0x2;countOfCycle=0x2;countCatsToLearn=0x0;countCatsToLearnToday=0x1;inProgressCat=[];$(_0x5370('0xfb'))[_0x5370('0xfc')](dayJSON[_0x5370('0xfa')]);$(_0x5370('0xfd'))['text'](dayJSON[_0x5370('0xf8')]);$(_0x5370('0xfe'))[_0x5370('0xfc')](dayJSON[_0x5370('0xfa')]);$('#countWordsToLearn')[_0x5370('0xfc')](dayJSON[_0x5370('0xfa')]-0x1);$(_0x5370('0xff'))[_0x5370('0xfc')](dayJSON[_0x5370('0xfa')]-0x1);$(_0x5370('0x100'))['text'](countWordsToLearn);$(_0x5370('0x101'))[_0x5370('0xfc')](countWordsToLearnInThisCycle);$(_0x5370('0x102'))[_0x5370('0xfc')](Math[_0x5370('0x103')](dayJSON['km']*minCat/0x3c));$('.countMinLearned')[_0x5370('0xfc')](dayJSON['km']*minCat%0x3c);for(var _0x126e63 in dayJSON[_0x5370('0x104')]){var _0x17e955=dayJSON[_0x5370('0x104')][_0x126e63];allUsedCats[_0x5370('0x105')](_0x17e955);allEndedCats[_0x5370('0x105')](_0x17e955);}$(_0x5370('0xf2'))[_0x5370('0xf3')](_0x5370('0x106')+dayJSON['theme']);getToLearn();}function getNotice(){srcFile2=path()+'notice.json';if(!dev){readWriteFile2();}}function afterNoticeRead(_0x2de184){noticeJSON=JSON[_0x5370('0xea')](_0x2de184);}function getToLearn(){srcFile=path()+_0x5370('0x107');if(!dev){readWriteFile();}else{afterReadToLearn(JSON[_0x5370('0xe4')](toLearnJSON));}}function afterReadToLearn(_0x1683b3){toLearnJSON=JSON[_0x5370('0xea')](_0x1683b3);toLearnJSONcopyForBackBTN=JSON[_0x5370('0xea')](JSON[_0x5370('0xe4')](toLearnJSON));if(toLearnJSON['length']==0x0){getCatWithPos(0x0,0x1);startLessonAfterSetUpEverything();}for(var _0x69f0bd in toLearnJSON){var _0x10c60c=toLearnJSON[_0x69f0bd];var _0x463b89=dayJSON[_0x5370('0xfa')];var _0x50b8a7=_0x463b89-_0x10c60c[_0x5370('0x108')];allUsedCats[_0x5370('0x105')](_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c['subid']);if(_0x50b8a7>=0x1b){learnedCat[_0x5370('0x105')](_0x10c60c['catid']+'/'+_0x10c60c[_0x5370('0x10a')]);allEndedCats[_0x5370('0x105')](_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c[_0x5370('0x10a')]);}if(_0x50b8a7<0x1b){inProgressCat[_0x5370('0x105')](_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c[_0x5370('0x10a')]);inProgressCatcopyForBackBTN=inProgressCat[_0x5370('0xd1')]();}switch(_0x50b8a7){case 0x1:break;case 0x2:toLearn[0x2]=_0x10c60c['catid']+'/'+_0x10c60c[_0x5370('0x10a')];toLearn[0x3]=_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c[_0x5370('0x10a')];countCatsToLearn++;countOfCycle++;countOfCycle++;countWordsToLearn+=wordsInOneCat*0x2;countWordsToLearn+=wordsInOneCat;setSuggestedCat(_0x10c60c[_0x5370('0x109')],_0x10c60c[_0x5370('0x10a')]);inProgressCat[_0x5370('0x105')](_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c[_0x5370('0x10a')]);break;case 0xa:toLearn[0x4]=_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c[_0x5370('0x10a')];toLearn[0x5]=_0x10c60c['catid']+'/'+_0x10c60c[_0x5370('0x10a')];countCatsToLearn++;countOfCycle++;countOfCycle++;countWordsToLearn+=wordsInOneCat*0x2;countWordsToLearn+=wordsInOneCat;inProgressCat[_0x5370('0x105')](_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c[_0x5370('0x10a')]);break;case 0x1b:toLearn[0x6]=_0x10c60c['catid']+'/'+_0x10c60c[_0x5370('0x10a')];toLearn[0x7]=_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c[_0x5370('0x10a')];todayEndedCat=_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c['subid'];countCatsToLearn++;countOfCycle++;countOfCycle++;countWordsToLearn+=wordsInOneCat*0x2;countWordsToLearn+=wordsInOneCat;inProgressCat[_0x5370('0x105')](_0x10c60c[_0x5370('0x109')]+'/'+_0x10c60c[_0x5370('0x10a')]);break;default:break;}if(_0x69f0bd==toLearnJSON['length']-0x1){if(!suggestedCatName){getCatWithPos(0x0,0x1);}setTimeout(showInProgressCat,0xc8);setTimeout(function(){uniqueallUsedCats=allUsedCats[_0x5370('0x10b')](function(_0x4e1c38,_0x27f584){return allUsedCats['indexOf'](_0x4e1c38)==_0x27f584;});if(allCats['sort']()[_0x5370('0xd3')]()==uniqueallUsedCats[_0x5370('0x10c')]()[_0x5370('0xd3')]()){countWordsToLearn-=wordsInOneCat+wordsInOneCat*0x2;countOfCycle-=0x2;$(_0x5370('0x10d'))[_0x5370('0xfc')](dayJSON[_0x5370('0xfa')]-0x1);$(_0x5370('0xff'))[_0x5370('0xfc')](dayJSON[_0x5370('0xfa')]-0x1);$(_0x5370('0x100'))[_0x5370('0xfc')](countWordsToLearn);$('.all-words-to-end-sesion')['text'](countWordsToLearnInThisCycle);countCatsToLearnToday+=countCatsToLearn-0x1;$(_0x5370('0x10e'))[_0x5370('0xfc')](countCatsToLearnToday*minCat);if(countCatsToLearn>0x0){$(_0x5370('0x10f'))[_0x5370('0xba')]();startLessonAfterSetUpEverything();}else{if(inProgressCat[_0x5370('0xd5')]>0x0){dayJSON['day']=dayJSON['day']+0x1;afterGetDay();lessonsJumpToFuture++;}else{$(_0x5370('0xee'))['hide']();$(_0x5370('0x110'))[_0x5370('0xf3')](_0x5370('0x111'));$(_0x5370('0x110'))[_0x5370('0xba')]();setTimeout(function(){$(_0x5370('0x110'))['removeClass']('next-cat-left');showRating();},0x64);}}}else{$(_0x5370('0x10d'))[_0x5370('0xfc')](dayJSON[_0x5370('0xfa')]-0x1);$(_0x5370('0xff'))[_0x5370('0xfc')](dayJSON['day']-0x1);$(_0x5370('0x100'))[_0x5370('0xfc')](countWordsToLearn);$(_0x5370('0x101'))[_0x5370('0xfc')](countWordsToLearnInThisCycle);countCatsToLearnToday+=countCatsToLearn;$(_0x5370('0x10e'))[_0x5370('0xfc')](countCatsToLearnToday*minCat);startLessonAfterSetUpEverything();}},0xfa);}}}function startLessonAfterSetUpEverything(){setTimeout(function(){gameIsBegin=!![];$(_0x5370('0xee'))['hide']();showStartLessonPage();},0xc8);}function setCountWord(){for(var _0x155eee=0x0;_0x155eee<0x8;_0x155eee++){if(toLearn[_0x155eee]>0x0){countWord+=wordsInOneCat;}}}function saveDay(){dayJSON['day']=dayJSON[_0x5370('0xfa')]+0x1;dayJSON['km']=dayJSON['km']+countOfCycle/0x2;datesJSON5=dayJSON;$(_0x5370('0x112'))[_0x5370('0xf3')]('next-cat-right');setTimeout(function(){$('#learn-container')[_0x5370('0xb9')]();$(_0x5370('0x113'))[_0x5370('0xba')]();setTimeout(function(){$(_0x5370('0x113'))[_0x5370('0x114')]('next-cat-left');setTimeout(function(){datesJSON=toLearnJSON;srcSave=path()+_0x5370('0x107');saveFile();},0x5dc);},0x64);},0x1f4);}function getLangList(){$[_0x5370('0x115')](_0x5370('0x116'),function(_0x283fa1){showLangList(_0x283fa1);});}function showLangList(_0x18dbf3){var _0x353717=JSON[_0x5370('0xea')](_0x18dbf3);for(var _0x104ca4 in _0x353717){var _0x11a481=_0x353717[_0x104ca4];var _0x24741a=_0x5370('0x117')+_0x11a481['id']+'\x22\x20>'+_0x11a481[_0x5370('0x118')]+'</h1>';if(_0x104ca4>0x0)$(_0x5370('0x119'))[_0x5370('0x11a')](_0x24741a);}}var subcats=![];function getCatList(){var _0x3e8a06=$(_0x5370('0xf0'))[_0x5370('0xf1')]();$[_0x5370('0x115')](_0x5370('0x11b')+_0x3e8a06+'/cat.json',function(_0x48017d){setTimeout(function(){setTimeout(function(){showCatList(_0x48017d);},0xc8);},0xc8);});}function showCatList(_0x2edbe4){var _0x1ff580=JSON[_0x5370('0xea')](_0x2edbe4);$(_0x5370('0x11c'))['html']('');var _0x11cc3f='';for(var _0x67891e in _0x1ff580){subcats=![];var _0x27a76a=_0x1ff580[_0x67891e];_0x11cc3f+=_0x5370('0x11d')+_0x27a76a[_0x5370('0x11e')]+'</h1>';var _0x281d46=parseInt(_0x67891e)+0x1==parseInt(_0x1ff580[_0x5370('0xd5')])?_0x5370('0x11f'):'';_0x11cc3f+=getSubCatList(_0x27a76a['id'])+_0x5370('0x120');}$(_0x5370('0x11c'))[_0x5370('0x11a')](_0x11cc3f);}function getSubCatName(_0x549aac){var _0x3191e8=_0x549aac[_0x5370('0xd0')]('/');var _0x4ea721=_0x3191e8[0x0];var _0x4bcb96=_0x3191e8[0x1];var _0x15d645=$(_0x5370('0xf0'))['val']();$['get'](_0x5370('0x11b')+_0x15d645+'/'+_0x4ea721+'/subcat.json',function(_0x50ea2e){var _0x13f2da=JSON[_0x5370('0xea')](_0x50ea2e);for(var _0x11ab19 in _0x13f2da){var _0x295391=_0x13f2da[_0x11ab19];if(_0x295391['id']==_0x4bcb96){nameCat=_0x295391[_0x5370('0x11e')];}}});}function getWordToSuggestCat(_0x25ad7a){var _0x9e597b=_0x25ad7a[_0x5370('0xd0')]('/');var _0x532666=_0x9e597b[0x0];var _0x2e2627=_0x9e597b[0x1];var _0x23664f=$(_0x5370('0xf0'))['val']();$[_0x5370('0x115')](_0x5370('0x11b')+_0x23664f+'/'+_0x532666+'/'+_0x2e2627+_0x5370('0x121'),function(_0x548af9){$[_0x5370('0x115')](_0x5370('0x122')+_0x532666+'/'+_0x2e2627+_0x5370('0x121'),function(_0x1e029e){$(_0x5370('0x123'))['html']('');var _0x5eb681=JSON[_0x5370('0xea')](_0x548af9);var _0xa5b894=JSON['parse'](_0x1e029e);var _0xf4155=0x0;for(var _0x44115a in _0x5eb681){_0xf4155++;var _0x22de95=_0x5eb681[_0x44115a];var _0x4ac55a=_0xa5b894[_0x44115a];$(_0x5370('0x123'))[_0x5370('0x11a')]('<p\x20class=\x22text\x22\x20data-source=\x22new-lesson\x22\x20data-category=\x22'+_0x532666+_0x5370('0x124')+_0x2e2627+_0x5370('0x125')+_0x22de95['id']+'\x22\x20\x20onclick=\x22tellMeWordFrom(\x27'+_0x25ad7a+'\x27,'+_0x22de95['id']+_0x5370('0x126')+_0xf4155+'.\x20'+_0x4ac55a['name']+_0x5370('0x127')+_0x22de95[_0x5370('0x11e')]+_0x5370('0x128'));}});});}var parent=![];var firstGenerationCat=!![];function getSubCatList(_0x5af7d9){getNotice();var _0x5cb6bc=$('#myLang')['val']();parent=_0x5af7d9;var _0x1bfd60=null;$[_0x5370('0x129')]({'url':'date/'+_0x5cb6bc+'/'+_0x5af7d9+_0x5370('0x12a'),'type':'get','dataType':_0x5370('0x12b'),'async':![],'success':function(_0x2544f3){_0x1bfd60=showSubCatList(_0x2544f3,_0x5af7d9);}});return _0x1bfd60;}function showSubCatList(_0x21fda7,_0x8a6b1d){var _0x57d794=JSON[_0x5370('0xea')](_0x21fda7);var _0x552260=_0x5370('0x12c');for(var _0x5dd1c7 in _0x57d794){var _0x2a195d=_0x57d794[_0x5dd1c7];var _0x5284bb='';var _0x3b4c67=_0x8a6b1d+'/'+_0x2a195d['id'];if(dayJSON[_0x5370('0x104')]['indexOf'](_0x3b4c67)>=0x0){_0x5284bb='missingCat';}if(learnedCat['indexOf'](_0x3b4c67)>=0x0){_0x5284bb=_0x5370('0x12d');}if(inProgressCat[_0x5370('0x12e')](_0x3b4c67)>=0x0){_0x5284bb=_0x5370('0x12f');}cl2=_0x2a195d[_0x5370('0x130')]==!![]||isPayedPro==!![]?'':_0x5370('0x131');_0x552260+=_0x5370('0x132')+_0x5284bb+'\x20'+cl2+_0x5370('0x133')+_0x2a195d['name']+_0x5370('0x134')+_0x8a6b1d+_0x5370('0x135')+_0x2a195d['id']+_0x5370('0x136')+_0x2a195d['id']+_0x5370('0x137')+_0x2a195d[_0x5370('0x11e')][_0x5370('0xd4')](0x0,0x2)+_0x5370('0x138')+_0x2a195d[_0x5370('0x11e')][_0x5370('0xd4')](0x2)+_0x5370('0x139')+getTrans(t_during_learning)+_0x5370('0x13a')+getTrans(t_lesson_skipped)+_0x5370('0x13b')+getTrans(t_learned_lesson)+_0x5370('0x128');if(firstGenerationCat)$(_0x5370('0x13c'))[_0x5370('0x11a')](_0x5370('0x13d')+_0x2a195d['id']+_0x5370('0x13e')+_0x8a6b1d+'\x22>'+_0x2a195d['name']+'</p></li>');}_0x552260+='</div>';subcats=_0x552260;return _0x552260;}var inProgressCatcopyForBackBTN=[];function setNewCat(_0x236a9d,_0x38a01f){toLearn[0x8]=_0x236a9d+'/'+_0x38a01f;toLearn[0x9]=_0x236a9d+'/'+_0x38a01f;setTimeout(function(){srt=$(_0x5370('0xfb'))['text']();toLearnJSONcopyForBackBTN=JSON[_0x5370('0xea')](JSON[_0x5370('0xe4')](toLearnJSON));toLearnJSON[_0x5370('0x105')]({'subid':_0x38a01f,'catid':_0x236a9d,'start':srt});inProgressCatcopyForBackBTN=inProgressCat[_0x5370('0xd1')]();inProgressCat[_0x5370('0x105')](_0x236a9d+'/'+_0x38a01f);},0x96);}function showtoLearn(){for(var _0x11ea68=0x0;_0x11ea68<0xa;_0x11ea68++);}var idWord=![];var nameWord=![];function getWordList(){var _0x4024ba=$(_0x5370('0xf0'))[_0x5370('0xf1')]();var _0x17e2da=$(_0x5370('0x13f'))[_0x5370('0xf1')]();var _0x370a0c=$(_0x5370('0x140'))[_0x5370('0xf1')]();var _0x4da956=$(_0x5370('0x141'))['val']();var _0x3eed24=![];var _0x260a23=![];$['get'](_0x5370('0x11b')+_0x4024ba+'/'+_0x17e2da+'/'+_0x370a0c+'/words.json',function(_0x304f18){_0x3eed24=_0x304f18;$[_0x5370('0x115')](_0x5370('0x11b')+_0x4da956+'/'+_0x17e2da+'/'+_0x370a0c+_0x5370('0x121'),function(_0x260a23){showWordList(_0x3eed24,_0x260a23);});});}var words,trans;function showWordList(_0x3a8a5e,_0x4bd1ee){words=JSON['parse'](_0x3a8a5e);trans=JSON['parse'](_0x4bd1ee);isFirstCycle=![];if(isFirstCycle){$('#words')[_0x5370('0x12b')]('');var _0x3743f0='';for(var _0x3e21df in words){nameWord=![];var _0x316feb=words[_0x3e21df];var _0x434f71=trans[_0x3e21df];_0x3743f0+=_0x5370('0x142')+_0x316feb['id']+'\x22\x20data-check=\x221\x22\x20onclick=\x22checkWord(this);\x22><table><tr><td><p\x20class=\x22text\x22>'+_0x316feb[_0x5370('0x11e')]+_0x5370('0x143')+_0x434f71[_0x5370('0x11e')]+_0x5370('0x144');}$('#words')[_0x5370('0x12b')](_0x3743f0);isFirstCycle=![];}else{getNavWordList();}}function getNavWordList(){$(_0x5370('0x145'))[_0x5370('0xfc')]('');var _0x66f03b=0x0;var _0x327dfa=-0x1;if(isFirstCycle){$('.word')['each'](function(_0x27a871){if($(this)[_0x5370('0x146')]('data-check')!=0x0){_0x66f03b++;var _0x461729=$(this)[_0x5370('0x147')]('id');if(_0x66f03b==0x1){_0x327dfa=_0x461729;setActWord(_0x461729);}$(_0x5370('0x145'))[_0x5370('0x11a')]('<p\x20data-word-id=\x22'+_0x461729+_0x5370('0x148')+_0x66f03b+_0x5370('0x149')+_0x66f03b+_0x5370('0x14a'));}});isFirstCycle=![];setTimeout(function(){setNavWordPosition(0x0);$(_0x5370('0x14b'))['removeClass'](_0x5370('0x14c'));$(_0x5370('0x14b'))[_0x5370('0x114')]('pulse');$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')](_0x5370('0x14c'));$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')](_0x5370('0x14d'));},0x32);}else{for(var _0x26f962 in words){var _0x2869d8=words[_0x26f962];var _0x53b711=_0x2869d8['id'];_0x66f03b++;if(_0x66f03b==0x1){_0x327dfa=_0x53b711;setActWord(_0x53b711);}$(_0x5370('0x145'))[_0x5370('0x11a')](_0x5370('0x14e')+_0x53b711+_0x5370('0x148')+_0x66f03b+'.png\x22\x20class=\x22no-activ-img\x22><img\x20src=\x22img/'+_0x66f03b+_0x5370('0x14a'));}setTimeout(function(){setNavWordPosition(0x0);$(_0x5370('0x14b'))[_0x5370('0x114')]('activ');$('#nav-words-container\x20p')[_0x5370('0x114')](_0x5370('0x14d'));$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')](_0x5370('0x14c'));$('#nav-words-container\x20p')['eq'](0x0)[_0x5370('0xf3')](_0x5370('0x14d'));},0x32);}}function setNavWordPosition(_0x3959e3,_0x35c8b2){var _0x35c8b2=_0x35c8b2||0x3;var _0x472a89;if(_0x35c8b2==0x3){if(_0x3959e3==0x0)_0x472a89=0x3;else{_0x472a89=_0x3959e3+0x2;_0x3959e3--;}}else if(_0x35c8b2==0x1){_0x472a89=_0x3959e3+0x1;}else if(_0x35c8b2==0x2){_0x472a89=_0x3959e3+0x1;_0x3959e3--;}$(_0x5370('0x14b'))[_0x5370('0xb9')]()[_0x5370('0xd1')](_0x3959e3,_0x472a89)[_0x5370('0xba')]();}function setWordToLearn(_0x349e17,_0x4ba35b){$(_0x5370('0x14b'))['removeClass'](_0x5370('0x14c'));$(_0x4ba35b)['addClass'](_0x5370('0x14c'));$('#word-lern-1')[_0x5370('0x14f')]()[_0x5370('0x150')]();var _0x232a41=setWordById(_0x349e17);var _0x2fe548=setTransById(_0x349e17);var _0x25e19a=_0x5370('0x151');setNoteById(_0x349e17);$(_0x5370('0x152'))[_0x5370('0x146')]('data-id',_0x349e17);$(_0x5370('0x153'))['val'](_0x349e17);$(_0x5370('0x154'))[_0x5370('0x146')](_0x5370('0x155'),_0x349e17);$(_0x5370('0x154'))[_0x5370('0x146')](_0x5370('0x156'),_0x232a41);$(_0x5370('0x154'))[_0x5370('0x146')](_0x5370('0x157'),_0x2fe548);$('#my-trans')[_0x5370('0xf1')]('');$(_0x5370('0x158'))[_0x5370('0x159')]();var _0x1efa54=$(_0x5370('0x15a'))[_0x5370('0x15b')]();setNavWordPosition(_0x1efa54);setTimeout(tellMe,0x64);}function nextWord(){$(_0x5370('0x15c'))[_0x5370('0xb9')]();$(_0x5370('0x158'))[_0x5370('0x159')]();var _0x155021=$(_0x5370('0x14b'))['length'];var _0x19a593=$('#nav-words-container\x20p.activ')[_0x5370('0x15b')]()+0x1;if(_0x155021<=_0x19a593)console['log'](_0x5370('0x15d'));else{var _0x37afc6=$(_0x5370('0x14b'))['eq'](_0x19a593)[_0x5370('0x147')](_0x5370('0x15e'));setWordToLearn(_0x37afc6,$(_0x5370('0x14b'))['eq'](_0x19a593));setNavWordPosition(_0x19a593);}}function setWordById(_0x580c53){$('#idWord')[_0x5370('0xf1')](_0x580c53);for(var _0x8b9061 in trans){var _0x392f3f=trans[_0x8b9061];if(_0x392f3f['id']==_0x580c53){act_word=_0x392f3f['name'];}}}function setNoteById(_0x5a5ab7){act_text='';var _0x124828=$(_0x5370('0xf0'))['val']();var _0x42f4b8=$(_0x5370('0x13f'))[_0x5370('0xf1')]();var _0x28ea5e=$(_0x5370('0x140'))[_0x5370('0xf1')]();var _0x11e62a=$(_0x5370('0x141'))[_0x5370('0xf1')]();var _0x2a1cfa=_0x124828+'\x5c'+_0x42f4b8+'\x5c'+_0x28ea5e+'\x5c'+_0x11e62a+'\x5c'+_0x5a5ab7;for(var _0xd2c1c4 in noticeJSON){var _0x3428ca=noticeJSON[_0xd2c1c4];if(_0x3428ca[_0x5370('0x15f')]==_0x2a1cfa){act_text=_0x3428ca[_0x5370('0x160')];return;}}}function setTransById(_0x4d9656){for(var _0x38b1dd in words){var _0x4a3a5e=words[_0x38b1dd];if(_0x4a3a5e['id']==_0x4d9656){act_trans=_0x4a3a5e[_0x5370('0x11e')];}}}function checkMySelf(){$('#word-lern-1')[_0x5370('0xb9')]();$(_0x5370('0x161'))[_0x5370('0xfc')]($(_0x5370('0x158'))[_0x5370('0xf1')]());$(_0x5370('0x15c'))[_0x5370('0xba')]();$('.confirm-swipe\x20table')[_0x5370('0xba')]();$('.confirm-swipe\x20table')[_0x5370('0x162')]({'top':'0px'});$(_0x5370('0x163'))[_0x5370('0x114')](_0x5370('0x164'));$(_0x5370('0x163'))[_0x5370('0x114')]('bad');}var blockClear=![];function clearDraggableField(){if(!blockClear){$(_0x5370('0x163'))[_0x5370('0xba')]();setTimeout(function(){$(_0x5370('0x15c'))[_0x5370('0x114')]('flipper-hide');$(_0x5370('0x163'))[_0x5370('0x114')]('good');$(_0x5370('0x163'))[_0x5370('0x114')](_0x5370('0x165'));$(_0x5370('0x163'))[_0x5370('0x114')](_0x5370('0x166'));$(_0x5370('0x163'))[_0x5370('0x114')]('bad-right');$(_0x5370('0x163'))[_0x5370('0x114')]('goLeft');$(_0x5370('0x163'))[_0x5370('0x114')](_0x5370('0x167'));setTimeout(function(){antyNaparzanka=![];},0x1f4);},0x32);}}var my_media;function tellMe(){if(my_media!=null){my_media[_0x5370('0x168')]();my_media[_0x5370('0x169')]();my_media[_0x5370('0x16a')]();my_media=null;}var _0x1b7c65=$(_0x5370('0x153'))[_0x5370('0xf1')]();var _0x1de5c7=$(_0x5370('0x141'))[_0x5370('0xf1')]();var _0x49d339=$('#myParentCat')[_0x5370('0xf1')]();var _0xcb5a99=$(_0x5370('0x140'))['val']();var _0x26a5dc=_0x49d339+'/'+_0xcb5a99;var _0x35ec57=_0x5370('0x16b');if(canTellThisWord(_0x26a5dc,_0x1b7c65)===!![]){_0x35ec57=_0x5370('0x16c')+_0x1de5c7+'/'+_0x26a5dc+_0x5370('0x16d')+_0x1b7c65+_0x5370('0x16e');}setTimeout(function(){if(my_media!=null){my_media[_0x5370('0x168')]();my_media[_0x5370('0x169')]();my_media[_0x5370('0x16a')]();my_media=null;}my_media=new Media(_0x35ec57,function(){},function(_0x2c64e8){});my_media[_0x5370('0x16f')]();},0x64);}function stopTelling(){if(my_media!=null){my_media['stop']();my_media[_0x5370('0x169')]();my_media['release']();my_media=null;}}function tellMeWord(_0xbda0ca,_0x5aa7eb){if(my_media!=null){my_media['stop']();my_media[_0x5370('0x169')]();my_media[_0x5370('0x16a')]();my_media=null;}var _0x3ddea8=$(_0x5370('0x141'))[_0x5370('0xf1')]();var _0x31e3e0=_0x5370('0x16b');if(canTellThisWord(_0xbda0ca,_0x5aa7eb)===!![]){_0x31e3e0=_0x5370('0x16c')+_0x3ddea8+'/'+_0xbda0ca+_0x5370('0x16d')+_0x5aa7eb+'.mp3';}setTimeout(function(){if(my_media!=null){my_media[_0x5370('0x168')]();my_media[_0x5370('0x169')]();my_media[_0x5370('0x16a')]();my_media=null;}my_media=new Media(_0x31e3e0,function(){},function(_0x1c0cbc){});my_media[_0x5370('0x16f')]();},0x64);}function copyFirstPath(){asset2sd[_0x5370('0x170')]({'asset_directory':_0x5370('0x171'),'destination_directory':mainPath},function(){if(isPremium){copyFirstPathPremium();}},function(){console[_0x5370('0xc9')](_0x5370('0x172'));});}function copyFirstPathPremium(){var _0x296398=demoPath();copyFileFromDemo(_0x296398,'lang.json',![]);copyFileFromDemo(_0x296398,_0x5370('0xe8'),![]);copyFileFromDemo(_0x296398,_0x5370('0x173'),![]);copyFileFromDemo(_0x296398,_0x5370('0x174'),![]);copyFileFromDemo(_0x296398,_0x5370('0x107'),!![]);}function copyFileFromDemo(_0x3d44ef,_0x3e82f3,_0x4eb023){window[_0x5370('0xd7')](LocalFileSystem[_0x5370('0xd8')],0x0,function(_0x1eeaec){_0x1eeaec[_0x5370('0xd9')]['getFile'](_0x3d44ef+_0x3e82f3,{'create':![]},function(_0x43f891){_0x1eeaec['root'][_0x5370('0x175')](premiumPath(),{'create':!![]},function(_0x15a0c8){_0x43f891[_0x5370('0x176')](_0x15a0c8,_0x3e82f3,function(){if(_0x4eb023){showAfterCopyToPremiumConfirm();}},function(_0x5042cb){console[_0x5370('0xc9')]('Error:\x20'+_0x5042cb[_0x5370('0xd3')]());});},function(_0x1e1038){console[_0x5370('0xc9')](_0x5370('0x177')+_0x1e1038[_0x5370('0xd3')]());});},function(_0x3cc56){if(_0x3e82f3==_0x5370('0xf4')){$(_0x5370('0xee'))[_0x5370('0xb9')]();startLearn=!![];getLangList();$(_0x5370('0xef'))['show']();}});},function(_0x255225){console[_0x5370('0xc9')](_0x5370('0x177')+_0x255225['toString']());});}function showAfterCopyToPremiumConfirm(){navigator[_0x5370('0xf6')]['confirm'](getTrans(t_after_premium_copy_text),showAfterCopyToPremiumConfirmCallBack,getTrans(t_after_premium_copy_title),getTrans(t_after_premium_copy_ok));}function showAfterCopyToPremiumConfirmCallBack(_0x139145){if(_0x139145==0x1){setTimeout(function(){location['reload']();},0x64);}else{setTimeout(function(){location['reload']();},0x64);}}function saveNotice(_0x440de1){if(_0x440de1=='')return;act_text=_0x440de1;var _0x32b3eb=$(_0x5370('0xf0'))['val']();var _0x54a689=$('#myParentCat')['val']();var _0x35c769=$('#myCat')[_0x5370('0xf1')]();var _0x3ddf98=$(_0x5370('0x141'))[_0x5370('0xf1')]();var _0x4081c7=$('#idWord')[_0x5370('0xf1')]();var _0x19b6ee=_0x32b3eb+'\x5c'+_0x54a689+'\x5c'+_0x35c769+'\x5c'+_0x3ddf98+'\x5c'+_0x4081c7;var _0x4f1575=![];if(noticeJSON[_0x5370('0xd5')]==0x0){logEventInServer(_0x5370('0x178'),{'text':_0x440de1,'category':_0x54a689,'subcategory':_0x35c769,'word':_0x4081c7});noticeJSON['push']({'word':_0x19b6ee,'notice':_0x440de1});window[_0x5370('0xd7')](LocalFileSystem['PERSISTENT'],0x0,gotFSN,failN);}else{for(var _0x5659cd in noticeJSON){var _0x5164b8=noticeJSON[_0x5659cd];if(_0x5164b8[_0x5370('0x15f')]==_0x19b6ee){if(_0x5164b8['notice']!=_0x440de1){logEventInServer(_0x5370('0x178'),{'text':_0x440de1,'category':_0x54a689,'subcategory':_0x35c769,'word':_0x4081c7});}_0x5164b8['notice']=_0x440de1;_0x4f1575=!![];}if(_0x5659cd==noticeJSON[_0x5370('0xd5')]-0x1){if(!_0x4f1575){logEventInServer(_0x5370('0x178'),{'text':_0x440de1,'category':_0x54a689,'subcategory':_0x35c769,'word':_0x4081c7});noticeJSON[_0x5370('0x105')]({'word':_0x19b6ee,'notice':_0x440de1});}window[_0x5370('0xd7')](LocalFileSystem[_0x5370('0xd8')],0x0,gotFSN,failN);}}}}function gotFSN(_0x30dafe){var _0x2387d6=path()+_0x5370('0x173');_0x30dafe[_0x5370('0xd9')][_0x5370('0xda')](_0x2387d6,{'create':![]},gotFileEntryN,failN);}function gotFileEntryN(_0x188f43){_0x188f43[_0x5370('0xe6')](gotFileWriterN,failN);}function gotFileWriterN(_0x48eb19){_0x48eb19['onwrite']=function(_0x5b5868){console[_0x5370('0xc9')](_0x5370('0x179'));};_0x48eb19['write'](JSON[_0x5370('0xe4')](noticeJSON));_0x48eb19[_0x5370('0xe5')]();}function failN(_0x4dec5a){console[_0x5370('0xc9')](_0x5370('0x17a')+_0x4dec5a[_0x5370('0xb7')]);}var act_word='';var act_trans='';var act_text='';function setWordToMethod(_0x216cfc){$(_0x5370('0x17b'))[_0x5370('0xb9')]();$(_0x5370('0x17c'))[_0x5370('0x114')](_0x5370('0x14c'));setTimeout(function(){if(_0x216cfc==0x6||_0x216cfc==0x1&&!thirdCycle)$(_0x5370('0x17c'))[_0x5370('0xf3')](_0x5370('0x14c'));else $(_0x5370('0x17c'))['removeClass'](_0x5370('0x14c'));},0x320);if(act_text!='')$(_0x5370('0x17d'))[_0x5370('0xba')]();else $('.remind-img')[_0x5370('0xb9')]();switch(_0x216cfc){case 0x1:$('.show-hidden-word')[_0x5370('0xba')]();$('#confirm-correct-1')['hide']();$(_0x5370('0x17e'))['html'](_0x5370('0x17f')+act_word+'</p>');$(_0x5370('0x180'))[_0x5370('0x12b')](_0x5370('0x17f')+act_trans+_0x5370('0x181'));$(_0x5370('0x182'))[_0x5370('0xf1')](act_text);break;case 0x2:$(_0x5370('0x183'))['html']('<p>'+act_word+_0x5370('0x181'));$(_0x5370('0x184'))[_0x5370('0x12b')](_0x5370('0x17f')+act_trans+_0x5370('0x181'));$(_0x5370('0x185'))[_0x5370('0xf1')](act_text);break;case 0x3:$(_0x5370('0x186'))[_0x5370('0xf1')](act_text);$('#question-3')[_0x5370('0xf1')]('');break;case 0x4:tellMe();$(_0x5370('0x187'))[_0x5370('0x12b')]('<span>'+act_word+_0x5370('0x188'));$(_0x5370('0x189'))[_0x5370('0xba')]();$(_0x5370('0x18a'))[_0x5370('0xb9')]();$(_0x5370('0x18a'))[_0x5370('0x12b')](_0x5370('0x127')+act_trans+_0x5370('0x188'));$(_0x5370('0x18b'))[_0x5370('0xf1')](act_text);break;case 0x5:$(_0x5370('0x18c'))[_0x5370('0xf1')](act_text);$(_0x5370('0x18d'))[_0x5370('0xf1')]('');break;case 0x6:$(_0x5370('0x18e'))[_0x5370('0x12b')](_0x5370('0x17f')+act_word+_0x5370('0x181'));$(_0x5370('0x189'))[_0x5370('0xba')]();$(_0x5370('0x18f'))[_0x5370('0xb9')]();$(_0x5370('0x18f'))[_0x5370('0x12b')](_0x5370('0x17f')+act_trans+_0x5370('0x181'));$(_0x5370('0x190'))[_0x5370('0xf1')](act_text);break;default:console[_0x5370('0xc9')](_0x5370('0x191'));}$(_0x5370('0x192'))[_0x5370('0xfc')](act_word);$(_0x5370('0x193')+_0x216cfc)[_0x5370('0xba')]();$(_0x5370('0x194'))['text'](learnedWordsInCat+0x1+'/'+countWordsToLearnInThisCycle);}function setActWord(_0x365679){$('#idWord')[_0x5370('0xf1')](_0x365679);setWordById(_0x365679);setNoteById(_0x365679);setTransById(_0x365679);setActuLikedIcon();}var round=0x1;var nbMethod=0x2;var nbStep=0x0;var canNextStep=0x1;var noLerntStep=0x0;var ileSnd=0x0;var ileThd=0x0;function nextStepBlock(){canNextStep=0x0;}function noLearnt(){canNextStep=0x0;setTimeout(function(){clearDraggableField();},0x64);noLerntStep=0x1;if(noLerntStep==0x0){whereGo=0x0;setWordToMethod(0x3);noLerntStep=0x1;}else{theSameMethod=!![];whereGo=-0x1;setWordToMethod(0x4);noLerntStep=0x0;canNextStep=0x2;}}var noPlus=0x0;var prepareToThird=0x1;var isPreparetoFirst=![];var readyToSaveNotice=![];var whereGo=0x0;var noFlipIfWrong=![];var lastWordSecondRound=!![];var repeatSec=0x1;var repeatThd=0x1;var s_nowe=0x0;var t_nowe=0x0;var id_powt=-0x1;var s_bylo=0x0;var t_bylo=0x0;var stepow=0x0;var ile_s=0x0;var ile_t=0x0;var last_r_s=-0x1;var theSameMethod=![];var antyNaparzanka=![];function getAntyNaparzanka(){return antyNaparzanka;}function setAntyNaparzankaToTrue(){antyNaparzanka=!![];}function nextStep(){countOfWrongRecognized=0x0;antyNaparzanka=!![];hideBars();backToNormalStateNote();$(_0x5370('0x195'))['hide']();$(_0x5370('0x196'))[_0x5370('0xfc')]('');$(_0x5370('0x17b'))[_0x5370('0x114')](_0x5370('0x197'));$(_0x5370('0x17b'))[_0x5370('0x114')](_0x5370('0x198'));$(_0x5370('0x199'))['hide']();$(_0x5370('0x19a'))[_0x5370('0xb9')]();$(_0x5370('0x19b'))[_0x5370('0xb9')]();updateProgressBar();if(round==0x3){if(canNextStep==0x2){noPlus=0x1;canNextStep=0x1;nbMethod=0x4;nbStep=0x0;}if(canNextStep==0x0){noLearnt();return;}}setTimeout(function(){clearDraggableField();},0x12c);if(firstCycle){if(!isPreparetoFirst){whereGo=-0x1;setActWord($(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0x147')](_0x5370('0x15e')));$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')]('activ');$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')](_0x5370('0x14d'));setWordToMethod(0x2);setNavWordPosition(0x0);isPreparetoFirst=!![];tellMe();}else{if(!canNextStep){whereGo=0x0;nbMethod=0x2;setWordToMethod(0x2);canNextStep=!![];tellMe();return;}if(nbMethod==0x1||nbMethod==0x2){whereGo=-0x1;nbMethod=0x1;var _0x119877=$(_0x5370('0x14b'))[_0x5370('0xd5')];var _0x227ffd=$(_0x5370('0x15a'))[_0x5370('0x15b')]()+0x1;if(_0x119877<=_0x227ffd){round=0x2;firstCycle=![];nextStep();return;}else{var _0x5063e3=$('#nav-words-container\x20p')['eq'](_0x227ffd)[_0x5370('0x147')](_0x5370('0x15e'));setActWord(_0x5063e3);setNavWordPosition(_0x227ffd);$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14c'));$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14d'));$('#nav-words-container\x20p')['eq'](_0x227ffd)[_0x5370('0xf3')](_0x5370('0x14d'));$(_0x5370('0x14b'))['eq'](_0x227ffd)[_0x5370('0xf3')](_0x5370('0x14c'));setTimeout(function(){setWordToMethod(0x2);tellMe();},0x32);}}}}else if(secondCycle){if(round==0x2){lastWordSecondRound=!![];whereGo=-0x1;var _0x5063e3=$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0x147')]('word-id');setActWord(_0x5063e3);setNavWordPosition(0x1);$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14c'));$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14d'));$(_0x5370('0x14b'))['eq'](0x0)['addClass'](_0x5370('0x14c'));$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')](_0x5370('0x14d'));setTimeout(function(){setWordToMethod(0x4);tellMe();},0x64);theSameMethod=!![];round=0x3;nbMethod=0x4;}else if(round==0x3){theSameMethod=![];noFlipIfWrong=![];if(nbMethod==0x4&&nbStep==0x0){whereGo=0x1;var _0x119877=$(_0x5370('0x14b'))[_0x5370('0xd5')];if(!![])var _0x227ffd=$(_0x5370('0x15a'))[_0x5370('0x15b')]()+0x1;else{var _0x227ffd=$(_0x5370('0x15a'))[_0x5370('0x15b')]();noPlus=0x0;}if(_0x119877<=_0x227ffd){$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14c'));$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14d'));$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')]('activ');$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')](_0x5370('0x14d'));round=0x4;secondCycle=![];nextStep();return;}else{var _0x5063e3=$(_0x5370('0x14b'))['eq'](_0x227ffd)[_0x5370('0x147')]('word-id');setActWord(_0x5063e3);setNavWordPosition(_0x227ffd);$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14c'));$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14d'));$(_0x5370('0x14b'))['eq'](_0x227ffd)['addClass'](_0x5370('0x14c'));$('#nav-words-container\x20p')['eq'](_0x227ffd)[_0x5370('0xf3')](_0x5370('0x14d'));setTimeout(function(){setWordToMethod(0x4);tellMe();},0x64);nbMethod=0x4;nbStep=0x1;}}else if(nbMethod==0x4&&nbStep!=0x0){whereGo=0x0;var _0x227ffd=$(_0x5370('0x15a'))[_0x5370('0x15b')]()-0x1;var _0x5063e3=$('#nav-words-container\x20p')['eq'](_0x227ffd)[_0x5370('0x147')](_0x5370('0x15e'));setActWord(_0x5063e3);$('#nav-words-container\x20p')[_0x5370('0x114')](_0x5370('0x14c'));$(_0x5370('0x14b'))['removeClass']('pulse');$('#nav-words-container\x20p')['eq'](_0x227ffd)[_0x5370('0xf3')](_0x5370('0x14c'));$(_0x5370('0x14b'))['eq'](_0x227ffd)['addClass']('pulse');setTimeout(function(){setWordToMethod(0x1);},0x64);nbStep=0x2;nbMethod=0x6;whereGo=-0x1;theSameMethod=!![];}else if(nbMethod==0x1&&nbStep==0x1){whereGo=-0x1;nbMethod=0x6;setWordToMethod(0x6);nbStep=0x2;noFlipIfWrong=!![];}else if(nbMethod==0x6){var _0x227ffd=$(_0x5370('0x15a'))[_0x5370('0x15b')]()+0x1;var _0x119877=$('#nav-words-container\x20p')[_0x5370('0xd5')];if(_0x227ffd<_0x119877-0x1){$(_0x5370('0x14b'))[_0x5370('0x114')]('activ');$(_0x5370('0x14b'))['eq'](_0x227ffd)[_0x5370('0xf3')](_0x5370('0x14c'));whereGo=-0x1;nbMethod=0x4;nbStep=0x0;nextStep();return;}else{whereGo=0x0;var _0x227ffd=$(_0x5370('0x15a'))['index']()+0x1;var _0x5063e3=$(_0x5370('0x14b'))['eq'](_0x227ffd)[_0x5370('0x147')](_0x5370('0x15e'));setActWord(_0x5063e3);$(_0x5370('0x14b'))[_0x5370('0x114')]('activ');$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14d'));$(_0x5370('0x14b'))['eq'](_0x227ffd)['addClass'](_0x5370('0x14c'));$(_0x5370('0x14b'))['eq'](_0x227ffd)['addClass'](_0x5370('0x14d'));setTimeout(function(){setWordToMethod(0x1);},0x64);nbStep=0x0;nbMethod=0x4;whereGo=-0x1;theSameMethod=!![];}}else if(nbMethod==0x1&&nbStep==0x2){whereGo=-0x1;nbMethod=0x4;nbStep=0x0;nextStep();return;}}}else if(thirdCycle){if(round==0x4){var _0x227ffd=$(_0x5370('0x15a'))[_0x5370('0x15b')]();var _0x5063e3=$('#nav-words-container\x20p')['eq'](_0x227ffd)[_0x5370('0x147')](_0x5370('0x15e'));if(nbStep==0x0){if(prepareToThird!=0x1){var _0x119877=$('#nav-words-container\x20p')[_0x5370('0xd5')];var _0x227ffd=$(_0x5370('0x15a'))[_0x5370('0x15b')]()+0x1;if(_0x119877<=_0x227ffd){round=0x5;nextStep();return;}$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14c'));$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14d'));$('#nav-words-container\x20p')['eq'](_0x227ffd)[_0x5370('0xf3')](_0x5370('0x14c'));$(_0x5370('0x14b'))['eq'](_0x227ffd)['addClass'](_0x5370('0x14d'));}else{prepareToThird=0x0;}whereGo=0x0;var _0x227ffd=$(_0x5370('0x15a'))[_0x5370('0x15b')]();var _0x5063e3=$(_0x5370('0x14b'))['eq'](_0x227ffd)[_0x5370('0x147')](_0x5370('0x15e'));setActWord(_0x5063e3);setNavWordPosition(_0x227ffd);setTimeout(function(){setWordToMethod(0x1);},0x64);nbMethod=0x5;nbStep=0x0;whereGo=-0x1;}else if(nbStep==0x1){whereGo=-0x1;$(_0x5370('0x15a'))['eq'](_0x227ffd)[_0x5370('0xf3')](_0x5370('0x14d'));var _0x5063e3=$('#nav-words-container\x20p')['eq'](_0x227ffd)['data'](_0x5370('0x15e'));setTimeout(function(){setWordToMethod(0x6);},0x64);nbStep=0x0;}else{round=0x5;thirdCycle=![];nextStep();return;}}else if(round==0x5){thirdCycle=![];nextStep();return;}}else{nextPack();}}function nextPack(){blockClear=!![];$(_0x5370('0x163'))['hide']();$(_0x5370('0x19c'))['text']((countCatsToLearnToday-(learnetCatToday-0x1))*minCat);var _0x5360d2=Math[_0x5370('0x19d')]((learnetCatToday-0x1)/countCatsToLearnToday*0x64);$(_0x5370('0x19e'))[_0x5370('0xf3')]('p'+_0x5360d2);removeProgressClassMin($(_0x5370('0x19e')),_0x5360d2);setTimeout(function(){blockClear=![];if(isRepeatCycle){$(_0x5370('0x19f'))[_0x5370('0xfc')]((learnetCatToday-0x1)*minCat);$(_0x5370('0x10e'))[_0x5370('0xfc')](countCatsToLearnToday*minCat);$(_0x5370('0x1a0'))[_0x5370('0xb9')]();$(_0x5370('0x1a1'))[_0x5370('0xba')]();logEventInServer(_0x5370('0x1a2'),getDataAboutCurrentWordToLog());setTimeout(function(){$('#end-cat')['removeClass'](_0x5370('0x111'));$(_0x5370('0x112'))['addClass']('next-cat-left');},0x32);isRepeatCycle=![];}else{$(_0x5370('0x1a1'))[_0x5370('0xf3')]('next-cat-right');setTimeout(function(){$(_0x5370('0x1a1'))[_0x5370('0xb9')]();$(_0x5370('0x1a1'))[_0x5370('0x114')](_0x5370('0x1a3'));$(_0x5370('0x1a1'))[_0x5370('0xf3')](_0x5370('0x111'));packControler();},0x320);}},0x1f4);}var fst_id=0x0;var snd_id=0x0;var thd_id=0x0;var temid=0x0;var fin_id=0x0;var repeatFstRound=!![];function repeatThrid(_0x2e3306,_0x135454){if(_0x135454==0x6)whereGo=-0x1;else whereGo=0x0;setTimeout(function(){setActWord(_0x2e3306);setTimeout(function(){setWordToMethod(_0x135454);pulseThdNav(_0x2e3306);},0x5);},0x64);}function updateThirdNav(){var _0x37328e=0x1;var _0x590894=[];_0x590894[_0x5370('0x105')](snd_id);_0x590894['push'](thd_id);$('#nav-words-container-thd\x20p')['hide']();$(_0x5370('0x1a4'))[_0x5370('0x146')](_0x5370('0x1a5'),0x0);$(_0x5370('0x14b'))['each'](function(){var _0x1ae759=$(this)[_0x5370('0x146')](_0x5370('0x1a5'));var _0x13cf29=$(this)[_0x5370('0x1a6')](_0x5370('0x1a7'))['attr']('src');for(k=0x0;k<_0x590894[_0x5370('0xd5')];k++){if(_0x1ae759==_0x590894[k]){$('#nav-th-'+_0x37328e)[_0x5370('0x1a6')](_0x5370('0x1a7'))[_0x5370('0x146')](_0x5370('0x1a8'),_0x13cf29);$(_0x5370('0x1a9')+_0x37328e)['attr'](_0x5370('0x1a5'),_0x1ae759);$(_0x5370('0x1a9')+_0x37328e)[_0x5370('0xba')]();_0x37328e++;_0x590894[_0x5370('0x1aa')](k,0x1);break;}}});}function pulseThdNav(_0x27554d){setTimeout(function(){$(_0x5370('0x14b'))[_0x5370('0x114')](_0x5370('0x14d'));$(_0x5370('0x1a4'))[_0x5370('0x114')](_0x5370('0x14d'));$(_0x5370('0x1a4'))[_0x5370('0x114')](_0x5370('0x14c'));$(_0x5370('0x1a4'))[_0x5370('0x1ab')](function(){var _0x1d9a26=$(this)[_0x5370('0x146')]('data-word-id');if(_0x27554d==_0x1d9a26){$(this)[_0x5370('0xf3')](_0x5370('0x14d'));$(this)['addClass']('activ');}});},0xc8);}function showAllNote(){showNote(0x1);showNote(0x2);showNote(0x3);showNote(0x4);showNote(0x5);showNote(0x6);}function showNote(_0x57e145){var _0x395d1d='#l-n-'+_0x57e145;var _0x3bbada=_0x5370('0x1ac')+_0x57e145;var _0x4fd1e4=_0x5370('0x1ad')+_0x57e145;$(_0x3bbada)[_0x5370('0xb9')]();if($(_0x395d1d)['is'](_0x5370('0x1ae'))==!![]){$(_0x395d1d)[_0x5370('0xb9')]();$(_0x4fd1e4)[_0x5370('0xba')]();showTrans(_0x57e145);var _0x4f56bf=$(_0x5370('0x1af'))[_0x5370('0x146')]('id');var _0x5c837c=_0x4f56bf[_0x5370('0x1b0')](_0x4f56bf[_0x5370('0xd5')]-0x1);if(_0x5c837c==_0x57e145){logEventInServer('close\x20hint',{'day':dayJSON[_0x5370('0xfa')],'category':$('#myParentCat')[_0x5370('0xf1')](),'subcategory':$(_0x5370('0x140'))[_0x5370('0xf1')](),'word':$(_0x5370('0x153'))[_0x5370('0xf1')](),'notice':$(_0x5370('0x1b1')+_0x5c837c)['val']()});}}else{$(_0x4fd1e4)[_0x5370('0xb9')]();$(_0x395d1d)[_0x5370('0xba')]();var _0x4f56bf=$(_0x5370('0x1af'))['attr']('id');var _0x5c837c=_0x4f56bf[_0x5370('0x1b0')](_0x4f56bf['length']-0x1);if(_0x5c837c==_0x57e145){logEventInServer(_0x5370('0x1b2'),{'day':dayJSON[_0x5370('0xfa')],'category':$(_0x5370('0x13f'))[_0x5370('0xf1')](),'subcategory':$(_0x5370('0x140'))['val'](),'word':$(_0x5370('0x153'))[_0x5370('0xf1')](),'notice':$(_0x5370('0x1b1')+_0x5c837c)[_0x5370('0xf1')]()});}}}function showTrans(_0x4b6d8f){var _0x1c8960=_0x5370('0x1b3')+_0x4b6d8f;var _0x3d9597=_0x5370('0x1ac')+_0x4b6d8f;var _0x1a798e='#l-e-'+_0x4b6d8f;$(_0x1c8960)[_0x5370('0xb9')]();if($(_0x3d9597)['is'](_0x5370('0x1ae'))==!![]){$(_0x3d9597)[_0x5370('0xb9')]();$(_0x1a798e)[_0x5370('0xba')]();}else{$(_0x1a798e)[_0x5370('0xb9')]();$(_0x3d9597)[_0x5370('0xba')]();}}function backToNormalStateNote(){$('#l-n-1')[_0x5370('0xb9')]();$('#l-n-2')[_0x5370('0xb9')]();$(_0x5370('0x1b4'))[_0x5370('0xb9')]();$(_0x5370('0x1b5'))[_0x5370('0xb9')]();$('#l-n-5')['hide']();$(_0x5370('0x1b6'))[_0x5370('0xb9')]();$('#l-e-1')['hide']();$(_0x5370('0x1b7'))[_0x5370('0xb9')]();$(_0x5370('0x1b8'))[_0x5370('0xb9')]();$(_0x5370('0x1b9'))[_0x5370('0xb9')]();$(_0x5370('0x1ba'))[_0x5370('0xb9')]();$(_0x5370('0x1bb'))[_0x5370('0xb9')]();$(_0x5370('0x1bc'))[_0x5370('0xba')]();$(_0x5370('0x1bd'))['show']();$(_0x5370('0x1be'))[_0x5370('0xba')]();$(_0x5370('0x1bf'))[_0x5370('0xba')]();$('#l-t-5')[_0x5370('0xba')]();$(_0x5370('0x1c0'))[_0x5370('0xba')]();$(_0x5370('0x1c1'))['show']();$('#l-c-2')[_0x5370('0xba')]();$(_0x5370('0x1c2'))['show']();$('#l-c-4')[_0x5370('0xba')]();$(_0x5370('0x1c3'))[_0x5370('0xba')]();$(_0x5370('0x1c4'))[_0x5370('0xba')]();hideKeyboard();hideHoverNoteBtn(_0x5370('0x1c5'));}function hideKeyboard(){$('#l-n-1')[_0x5370('0x1c6')]();$(_0x5370('0x1c7'))['blur']();$(_0x5370('0x1b4'))[_0x5370('0x1c6')]();$('#l-n-4')[_0x5370('0x1c6')]();$(_0x5370('0x1c8'))[_0x5370('0x1c6')]();$(_0x5370('0x1b6'))[_0x5370('0x1c6')]();}function showNoteForTut(_0x2986ae){var _0x3abb9a=_0x5370('0x1c9')+_0x2986ae;var _0x20ad98='#t-l-t-'+_0x2986ae;var _0x2cac95=_0x5370('0x1ca')+_0x2986ae;$(_0x20ad98)[_0x5370('0xb9')]();if($(_0x3abb9a)['is'](_0x5370('0x1ae'))==!![]){$(_0x3abb9a)[_0x5370('0xb9')]();$(_0x2cac95)['show']();}else{$(_0x2cac95)[_0x5370('0xb9')]();$(_0x3abb9a)[_0x5370('0xba')]();}}function showTransForTut(_0x5ba413){var _0x241b27='#t-l-n-'+_0x5ba413;var _0xd33a13='#t-l-t-'+_0x5ba413;var _0x281e3c=_0x5370('0x1ca')+_0x5ba413;$(_0x241b27)[_0x5370('0xb9')]();if($(_0xd33a13)['is'](_0x5370('0x1ae'))==!![]){$(_0xd33a13)[_0x5370('0xb9')]();$(_0x281e3c)[_0x5370('0xba')]();}else{$(_0x281e3c)[_0x5370('0xb9')]();$(_0xd33a13)['show']();}}function tellMeNow(_0x4c2adb){tellMe();}function prepareGlobalForCycle(_0x30e646){switch(_0x30e646){case 0x1:$(_0x5370('0x1a4'))[_0x5370('0xb9')]();round=0x1;nbMethod=0x2;isPreparetoFirst=![];firstCycle=!![];secondCycle=![];thirdCycle=![];break;case 0x2:$('#nav-words-container-thd\x20p')[_0x5370('0xb9')]();round=0x2;nbMethod=0x2;nbStep=0x0;noPlus=0x0;canNextStep=0x1;noLerntStep=0x0;firstCycle=![];secondCycle=!![];thirdCycle=![];break;case 0x3:$(_0x5370('0x1a4'))[_0x5370('0xb9')]();round=0x4;nbStep=0x0;canNextStep=0x1;prepareToThird=0x1;fst_id=0x0;snd_id=0x0;thd_id=0x0;temid=0x0;fin_id=0x0;firstCycle=![];secondCycle=![];thirdCycle=!![];repeatSec=0x1;repeatThd=0x1;s_nowe=0x0;t_nowe=0x0;id_powt=-0x1;s_bylo=0x0;t_bylo=0x0;stepow=0x0;ile_s=0x0;ile_t=0x0;last_r_s=-0x1;break;}$(_0x5370('0x14b'))[_0x5370('0x114')]('activ');$('#nav-words-container\x20p')[_0x5370('0x114')](_0x5370('0x14d'));$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')](_0x5370('0x14c'));$(_0x5370('0x14b'))['eq'](0x0)[_0x5370('0xf3')](_0x5370('0x14d'));}function addFunction(_0x3bea5d,_0x37e1a3){if(Number[_0x5370('0x1cb')](_0x37e1a3))return _0x3bea5d+_0x37e1a3;else return _0x3bea5d;}var continueLearning=![];var nameCat;var newCategoryisSet=![];var learnetCatToday=0x1;var learnetCatTodayCopytBTN=0x1;var isRepeatCycle=![];var copyOfLearnArray=[];function packControler(){waintingLearned=0x0;var _0x5aa634=![];$('#startDay')[_0x5370('0xb9')]();$(_0x5370('0x1cc'))['show']();$(_0x5370('0x1cd'))['show']();if(toLearn[_0x5370('0x1ce')](function(_0x180e08,_0x1a5fea){return _0x180e08+_0x1a5fea;},0x0)!=-0xa){setTimeout(function(){$(_0x5370('0x112'))[_0x5370('0x114')](_0x5370('0x111'));},0x1f4);}for(var _0x34d9eb=0x0;_0x34d9eb<0xa&&!_0x5aa634;_0x34d9eb++){continueLearning=![];if(toLearn[_0x34d9eb]!=-0x1){clearNoticeFields();setEveryThingToStartCat(toLearn[_0x34d9eb]);getSubCatName(toLearn[_0x34d9eb]);_0x5aa634=!![];continueLearning=!![];switch(_0x34d9eb){case 0x0:clearDraggableField();isRepeatCycle=![];copyOfLearnArray=toLearn['slice']();learnedWordsCopy=learnedWords;learnetCatTodayCopytBTN=learnetCatToday;showAd();countWordsToLearnInThisCycle=wordsInOneCat+wordsInOneCat*0x2;learnedWordsInCat=0x0;prepareGlobalForCycle(0x1);setTimeout(function(){showStartCat(learnetCatToday,nameCat);},0x64);break;case 0x1:isRepeatCycle=!![];prepareGlobalForCycle(0x2);setTimeout(function(){nextStep();},0x12c);learnetCatToday++;break;case 0x2:clearDraggableField();isRepeatCycle=![];copyOfLearnArray=toLearn[_0x5370('0xd1')]();learnedWordsCopy=learnedWords;learnetCatTodayCopytBTN=learnetCatToday;showAd();countWordsToLearnInThisCycle=wordsInOneCat+wordsInOneCat*0x2;learnedWordsInCat=0x0;prepareGlobalForCycle(0x2);setTimeout(function(){showStartCat(learnetCatToday,nameCat);},0x64);break;case 0x3:isRepeatCycle=!![];prepareGlobalForCycle(0x3);setTimeout(function(){nextStep();},0x12c);learnetCatToday++;break;case 0x4:clearDraggableField();isRepeatCycle=![];copyOfLearnArray=toLearn['slice']();learnedWordsCopy=learnedWords;learnetCatTodayCopytBTN=learnetCatToday;showAd();countWordsToLearnInThisCycle=wordsInOneCat+wordsInOneCat*0x2;learnedWordsInCat=0x0;prepareGlobalForCycle(0x2);setTimeout(function(){showStartCat(learnetCatToday,nameCat);},0x64);break;case 0x5:isRepeatCycle=!![];prepareGlobalForCycle(0x3);setTimeout(function(){nextStep();},0x12c);learnetCatToday++;break;case 0x6:clearDraggableField();isRepeatCycle=![];copyOfLearnArray=toLearn[_0x5370('0xd1')]();learnedWordsCopy=learnedWords;learnetCatTodayCopytBTN=learnetCatToday;showAd();countWordsToLearnInThisCycle=wordsInOneCat+wordsInOneCat*0x2;learnedWordsInCat=0x0;prepareGlobalForCycle(0x2);setTimeout(function(){showStartCat(learnetCatToday,nameCat);},0x64);break;case 0x7:isRepeatCycle=!![];prepareGlobalForCycle(0x3);setTimeout(function(){nextStep();},0x12c);learnetCatToday++;break;case 0x8:clearDraggableField();isRepeatCycle=![];countWordsToLearnInThisCycle=wordsInOneCat+wordsInOneCat*0x2;learnedWordsInCat=0x0;learnetCatTodayCopytBTN=learnetCatToday;newCategoryisSet=!![];prepareGlobalForCycle(0x1);setTimeout(function(){nextStep();},0x12c);break;case 0x9:isRepeatCycle=![];newCategoryisSet=!![];prepareGlobalForCycle(0x2);setTimeout(function(){nextStep();},0x12c);break;default:break;}toLearn[_0x34d9eb]=-0x1;}}if(!continueLearning){if(newCategoryisSet){endTodayLesson=!![];saveDay();}else{showAd();copyOfLearnArray=toLearn[_0x5370('0xd1')]();learnedWordsCopy=learnedWords;startChoiceNewCategory();}}}function clearNoticeFields(){$(_0x5370('0x182'))[_0x5370('0xf1')]('');$(_0x5370('0x185'))[_0x5370('0xf1')]('');$(_0x5370('0x186'))[_0x5370('0xf1')]('');$(_0x5370('0x18b'))[_0x5370('0xf1')]('');$(_0x5370('0x18c'))['val']('');$(_0x5370('0x190'))[_0x5370('0xf1')]('');}function setEveryThingToStartCat(_0x5f17a9){var _0x3fe65d=_0x5f17a9[_0x5370('0xd0')]('/');var _0x45708a=_0x3fe65d[0x0];var _0x44fd84=_0x3fe65d[0x1];$(_0x5370('0x13f'))['val'](_0x45708a);$(_0x5370('0x140'))[_0x5370('0xf1')](_0x44fd84);setTimeout(function(){getWordList();},0xa);}function whereGoNow(){return whereGo;}function getsecondCycle(){return secondCycle;}function getfirstCycle(){return firstCycle;}function getNoFlipIfWrong(){return noFlipIfWrong;}function setNoFlipIfWrong(_0xb2de42){noFlipIfWrong=_0xb2de42;}function isRoundTwoAndTheSameMethod(){return round==0x3&&theSameMethod||round==0x4||round==0x1;}function showStartCat(_0x535809,_0x2a113a){removeAllProgressClass($('#progess-btn-stan'));$(_0x5370('0x1cf'))['show']();$(_0x5370('0x1d0'))[_0x5370('0xb9')]();$(_0x5370('0x112'))['hide']();$('#main-text-next-cat')[_0x5370('0xfc')](_0x535809+'/'+countCatsToLearn);$(_0x5370('0x1d1'))[_0x5370('0xfc')](_0x535809+'/'+countCatsToLearn);$(_0x5370('0x1d2'))[_0x5370('0xfc')](countWordsToLearn-learnedWords);$('#name-next-cat')[_0x5370('0xfc')](_0x2a113a);var _0xb5bbd4=Math[_0x5370('0x19d')]((_0x535809-0x1)/countCatsToLearn*0x64);$(_0x5370('0x1d3'))[_0x5370('0xfc')](_0xb5bbd4+'%');setTimeout(function(){$('#start-next-cat')[_0x5370('0x114')](_0x5370('0x111'));setTimeout(function(){loadProgressBarToFull();},0x1f4);},0x1f4);}var ix=0x1;function loadProgressBarToFull(){ix=0x1;smoothLoadProgressBar();}function smoothLoadProgressBar(){setTimeout(function(){$(_0x5370('0x1d4'))[_0x5370('0xf3')]('p'+ix);ix++;if(ix<0x65){smoothLoadProgressBar();}},0xf);}function nextCatBtn(){logEventInServer(_0x5370('0x1d5'),{'category':$(_0x5370('0x13f'))[_0x5370('0xf1')](),'subcategory':$('#myCat')[_0x5370('0xf1')]()});$(_0x5370('0x1cf'))['addClass'](_0x5370('0x1a3'));$(_0x5370('0x112'))[_0x5370('0xf3')](_0x5370('0x111'));setTimeout(function(){$('#nav-circle-word')['show']();$(_0x5370('0x112'))['show']();setTimeout(function(){$(_0x5370('0x112'))[_0x5370('0x114')](_0x5370('0x111'));removeAllProgress();},0x1f4);$(_0x5370('0x1cf'))[_0x5370('0xb9')]();$(_0x5370('0x1cf'))[_0x5370('0x114')](_0x5370('0x1a3'));$(_0x5370('0x1cf'))[_0x5370('0xf3')](_0x5370('0x111'));nextStep();},0x1f4);}function removeAllProgress(){for(var _0x325145=0x1;_0x325145<0x66;_0x325145++){$(_0x5370('0x1d4'))[_0x5370('0x114')]('p'+_0x325145);}}var waintingLearned=0x0;function increaseLearned(){if(waintingLearned>0x0){waintingLearned--;}else{if(thirdCycle){var _0x29cc6b=![];$('#nav-words-container-thd\x20p')[_0x5370('0x1ab')](function(){if($(this)['hasClass']('activ')){_0x29cc6b=!![];}});setTimeout(function(){if(!_0x29cc6b){learnedWords++;learnedWordsInCat++;}},0x32);}else{learnedWords++;learnedWordsInCat++;}}}function setWaintingLearned(){if(getfirstCycle()){waintingLearned=0x1;}else if(getsecondCycle()){if(nbMethod==0x6){waintingLearned+=0x3;}else{if(nbStep==0x2){waintingLearned+=0x0;}else{waintingLearned+=0x2;}}}if(thirdCycle){var _0x58d389=![];$(_0x5370('0x1a4'))[_0x5370('0x1ab')](function(){if($(this)[_0x5370('0x1d6')](_0x5370('0x14c'))){_0x58d389=!![];}});setTimeout(function(){if(!_0x58d389){learnedWords++;learnedWordsInCat++;}},0x32);}}function endLearn(){$(_0x5370('0x112'))[_0x5370('0xf3')](_0x5370('0x1a3'));$(_0x5370('0x113'))[_0x5370('0xf3')](_0x5370('0x1a3'));if(todayEndedCat!='')allEndedCats[_0x5370('0x105')](todayEndedCat);uniqueallEndedCats=allEndedCats[_0x5370('0x10b')](function(_0x10b0a8,_0x54722a){return allEndedCats[_0x5370('0x12e')](_0x10b0a8)==_0x54722a;});$(_0x5370('0xfd'))[_0x5370('0xfc')](dayJSON[_0x5370('0xf8')]);$(_0x5370('0x102'))[_0x5370('0xfc')](Math[_0x5370('0x103')](dayJSON['km']*minCat/0x3c));$(_0x5370('0x1d7'))[_0x5370('0xfc')](Math[_0x5370('0x103')](dayJSON['km']*minCat%0x3c));if(allCats[_0x5370('0x10c')]()[_0x5370('0xd3')]()==uniqueallEndedCats[_0x5370('0x10c')]()[_0x5370('0xd3')]()&&(inProgressCat[_0x5370('0xd5')]==0x0||inProgressCat['length']==0x1&&inProgressCat[0x0]==todayEndedCat)){setTimeout(function(){$('#learn-container')[_0x5370('0xb9')]();$(_0x5370('0x113'))[_0x5370('0xb9')]();$('#end-course')[_0x5370('0xba')]();setTimeout(function(){$(_0x5370('0x110'))[_0x5370('0x114')](_0x5370('0x111'));showRating();},0x64);},0x1f4);}else{setTimeout(function(){var _0x570938=allUsedCats['concat'](inProgressCat);var _0x5591b6=_0x570938[_0x5370('0x10b')](function(_0xb041ff,_0x14ce6c){return _0x570938['indexOf'](_0xb041ff)==_0x14ce6c;});if(allCats['sort']()[_0x5370('0xd3')]()==_0x5591b6[_0x5370('0x10c')]()['toString']()){showEndNewMaterialsInfo();}$(_0x5370('0x112'))['hide']();$(_0x5370('0x113'))[_0x5370('0xb9')]();$(_0x5370('0x1d8'))[_0x5370('0xba')]();logEventInServer(_0x5370('0x1d9'),getDataAboutCurrentWordToLog());setTimeout(function(){$(_0x5370('0x1d8'))[_0x5370('0x114')](_0x5370('0x111'));showRating();},0x64);},0x1f4);}}var stepTut=0x1;var visiblesSectionsBeforeStart;function startTut(){visiblesSectionsBeforeStart=$(_0x5370('0x1da'));var _0x520182=[];visiblesSectionsBeforeStart[_0x5370('0x1ab')](function(_0xeb9cee,_0x332e41){_0x520182[_0x5370('0x105')]($(this)[_0x5370('0x146')]('id'));});visiblesSectionsBeforeStart[_0x5370('0xf3')](_0x5370('0x111'));setTimeout(function(){visiblesSectionsBeforeStart[_0x5370('0xb9')]();$(_0x5370('0x1db'))[_0x5370('0xba')]();$(_0x5370('0x1dc'))[_0x5370('0xba')]();$('.popup-TUT')[_0x5370('0x114')]('next-cat-left');$(_0x5370('0x1dd'))[_0x5370('0x114')](_0x5370('0x1a3'));$(_0x5370('0x1de'))[_0x5370('0xf3')](_0x5370('0x1df'));$(_0x5370('0x1e0'))[_0x5370('0x114')]('next-cat-right-right');$('#progess-btn-stan-in-cycle-TUT')[_0x5370('0xf3')](_0x5370('0x1e1'));setTimeout(function(){$(_0x5370('0xf2'))['addClass'](_0x5370('0x1e2'));$(_0x5370('0x1e3'))[_0x5370('0xf3')]('background-tutorial-darkness');stepTut=0x1;$(_0x5370('0xef'))[_0x5370('0xb9')]();$(_0x5370('0x1e4'))[_0x5370('0xf3')](_0x5370('0x1e5'));$('#menu-switch')[_0x5370('0xf3')]('half-opacity');$('#new-tutorial')[_0x5370('0x114')](_0x5370('0x111'));$(_0x5370('0x1db'))['removeClass']('next-cat-right');},0xc8);},0x1f4);}function nextTutStep(){$(_0x5370('0x1e6')+stepTut)[_0x5370('0xf3')](_0x5370('0x111'));stepTut++;removeFullOpacity();removeAllCursors();setTimeout(function(){$('#popup-TUT-'+parseInt(stepTut-0x1))[_0x5370('0xb9')]();$(_0x5370('0x1e6')+parseInt(stepTut-0x1))['addClass'](_0x5370('0x1df'));$(_0x5370('0x1e6')+stepTut)[_0x5370('0xba')]();$(_0x5370('0x1e6')+stepTut)[_0x5370('0x114')](_0x5370('0x1df'));$('.cursor-TUT')[_0x5370('0xf3')](_0x5370('0x1e7')+stepTut);switch(stepTut){case 0x1:$(_0x5370('0x1e8'))[_0x5370('0xf3')](_0x5370('0x1e1'));break;case 0x2:$(_0x5370('0x1e9'))[_0x5370('0xf3')]('full-opacity');break;case 0x3:$(_0x5370('0x1ea'))[_0x5370('0xf3')](_0x5370('0x1e1'));break;case 0x4:$(_0x5370('0x1eb'))[_0x5370('0xf3')](_0x5370('0x1e1'));break;case 0x5:endTutWrap();break;}},0x320);}function removeFullOpacity(){$(_0x5370('0x1ec'))['removeClass'](_0x5370('0x1e1'));$('#progess-btn-stan-in-cycle-TUT')[_0x5370('0x114')](_0x5370('0x1e1'));$(_0x5370('0x1e9'))['removeClass'](_0x5370('0x1e1'));$(_0x5370('0x1eb'))[_0x5370('0x114')](_0x5370('0x1e1'));$(_0x5370('0x1ea'))[_0x5370('0x114')]('full-opacity');$(_0x5370('0x1ed'))[_0x5370('0x114')](_0x5370('0x1e1'));}function removeAllCursors(){$('.cursor-TUT')[_0x5370('0x114')](_0x5370('0x1e5'));$(_0x5370('0x1e4'))[_0x5370('0x114')](_0x5370('0x1ee'));$('.cursor-TUT')[_0x5370('0x114')]('cursor-TUT-3');$(_0x5370('0x1e4'))[_0x5370('0x114')](_0x5370('0x1ef'));$(_0x5370('0x1e4'))['removeClass']('cursor-TUT-5');$(_0x5370('0x1e4'))['removeClass'](_0x5370('0x1f0'));$(_0x5370('0x1e4'))['removeClass'](_0x5370('0x1f1'));$(_0x5370('0x1e4'))[_0x5370('0x114')](_0x5370('0x1f2'));$(_0x5370('0x1e4'))[_0x5370('0x114')](_0x5370('0x1f3'));}function updateProgressTut(_0x422f0e){var _0x198082=0x64-Math[_0x5370('0x19d')](_0x422f0e/0xc*0x64);$(_0x5370('0x1f4'))[_0x5370('0xf3')]('p'+_0x198082);removeProgressClassMin($(_0x5370('0x1f4')),_0x198082);}function endTutWrap(){$(_0x5370('0x1ed'))[_0x5370('0x114')](_0x5370('0x1f5'));$(_0x5370('0xf2'))[_0x5370('0x114')](_0x5370('0x1e2'));$(_0x5370('0x1e3'))[_0x5370('0x114')](_0x5370('0x1f6'));$(_0x5370('0x1db'))['addClass'](_0x5370('0x1a3'));$(_0x5370('0x1dd'))[_0x5370('0xb9')]();$('.popup-TUT')['addClass'](_0x5370('0x1df'));stepTut=0x0;visiblesSectionsBeforeStart[_0x5370('0xf3')](_0x5370('0x111'));setTimeout(function(){visiblesSectionsBeforeStart['show']();setTimeout(function(){if(startLearn){getDay();startLearn=![];}else{var _0x18bd3e=[];visiblesSectionsBeforeStart[_0x5370('0x1ab')](function(_0x2696c7,_0xa888e0){_0x18bd3e[_0x5370('0x105')]($(this)[_0x5370('0x146')]('id'));});visiblesSectionsBeforeStart[_0x5370('0x114')](_0x5370('0x111'));}},0x190);$(_0x5370('0x1db'))[_0x5370('0xb9')]();$(_0x5370('0x1dd'))[_0x5370('0xba')]();$(_0x5370('0x1f7'))[_0x5370('0xf3')]('next-cat-left');},0x258);}function endTut(){$('#startDay')[_0x5370('0xf3')]('next-cat-left');stepTut=0x0;$(_0x5370('0x1f8'))[_0x5370('0xb9')]();$(_0x5370('0x1f9'))[_0x5370('0xb9')]();$(_0x5370('0x1fa'))[_0x5370('0xf3')](_0x5370('0x111'));setTimeout(function(){$(_0x5370('0x1fa'))[_0x5370('0xb9')]();if(startLearn){showStartLessonPage();startLearn=![];}else{}},0x3e8);}function startSetNewCategory(){logEventInServer(_0x5370('0x1fb'),{});getCatList();$(_0x5370('0x1fc'))[_0x5370('0xf3')]('next-cat-left');setTimeout(function(){if(firstGenerationCat){firstGenerationCat=![];activateSearch();}$(_0x5370('0x1fc'))[_0x5370('0xb9')]();setTimeout(function(){$(_0x5370('0x1fd'))[_0x5370('0xba')]();},0x4b);setTimeout(function(){$('#choose-cat')[_0x5370('0x114')](_0x5370('0x1a3'));},0x96);$(_0x5370('0x11c'))[_0x5370('0xba')]();},0x2bc);}var firstGenerationCatAllCats=!![];function runList(){setTimeout(function(){if(firstGenerationCatAllCats){firstGenerationCatAllCats=![];activateSearchAllCats();}},0x2bc);}function closeManualSettingCat(){$(_0x5370('0x1fc'))['show']();$(_0x5370('0x1fd'))[_0x5370('0xf3')](_0x5370('0x1a3'));setTimeout(function(){$(_0x5370('0x1fc'))[_0x5370('0x114')](_0x5370('0x111'));$(_0x5370('0x1fd'))[_0x5370('0xb9')]();},0x2bc);}function backToSetNewCategory(){$(_0x5370('0x1fd'))[_0x5370('0xf3')]('next-cat-right');setTimeout(function(){$(_0x5370('0x1fd'))[_0x5370('0xb9')]();$('#new-category-choice')[_0x5370('0xba')]();setTimeout(function(){$(_0x5370('0x1fc'))[_0x5370('0x114')]('next-cat-left');$(_0x5370('0x112'))[_0x5370('0xf3')](_0x5370('0x111'));$(_0x5370('0x1fe'))[_0x5370('0xf3')](_0x5370('0x1ff'));$(_0x5370('0x200'))[_0x5370('0xf3')](_0x5370('0x1ff'));setTimeout(function(){loadProgressBarToFull2();},0xc8);},0x32);},0x1f4);}function startChoiceNewCategory(){if(sugGetIsSetter){$(_0x5370('0x201'))[_0x5370('0xfc')](suggestedCatName);showMuteIcon();$(_0x5370('0x1a0'))[_0x5370('0xb9')]();$(_0x5370('0x1fc'))[_0x5370('0xba')]();hasNewCatsToday=!![];setTimeout(function(){if($('#new-category-choice')[_0x5370('0x1d6')]('next-cat-right')){$(_0x5370('0x1fc'))[_0x5370('0x114')](_0x5370('0x1a3'));}else{$('#new-category-choice')[_0x5370('0x114')](_0x5370('0x111'));}$(_0x5370('0x112'))[_0x5370('0xf3')](_0x5370('0x111'));$(_0x5370('0x200'))[_0x5370('0xf3')](_0x5370('0x1ff'));$(_0x5370('0x1fe'))[_0x5370('0xf3')]('p100');setTimeout(function(){loadProgressBarToFull2();},0xc8);setPopupAboutNoAudioLesson();},0x32);}else{endTodayLesson=!![];saveDay();}}var ix2=0x1;function loadProgressBarToFull2(){ix2=0x1;smoothLoadProgressBar2();}function smoothLoadProgressBar2(){setTimeout(function(){$(_0x5370('0x202'))[_0x5370('0xf3')]('p'+ix2);ix2++;if(ix2<0x65){smoothLoadProgressBar2();}},0xf);}function removeAllProgress2(){for(var _0x330c65=0x1;_0x330c65<0x66;_0x330c65++){$(_0x5370('0x202'))['removeClass']('p'+_0x330c65);}}function setSuggestedCat(_0x36c8bb,_0x431f45){var _0x2a99fe=$(_0x5370('0xf0'))[_0x5370('0xf1')]();$[_0x5370('0x115')](_0x5370('0x11b')+_0x2a99fe+'/'+_0x36c8bb+_0x5370('0x12a'),function(_0xb2eef9){var _0x1e43cd=JSON[_0x5370('0xea')](_0xb2eef9);for(var _0x14e2cd in _0x1e43cd){var _0x2a8e9e=_0x1e43cd[_0x14e2cd];if(_0x2a8e9e['id']==_0x431f45){getCatWithPos(_0x2a8e9e[_0x5370('0x203')],0x1);}}});}var userChoiceCat=![];function setThisAsSuggestedCat(_0x3da028,_0x314e61){var _0x37118d=$('#myLang')['val']();userChoiceCat=!![];$[_0x5370('0x115')](_0x5370('0x11b')+_0x37118d+'/'+_0x3da028+'/subcat.json',function(_0x295929){var _0x39fe97=JSON[_0x5370('0xea')](_0x295929);for(var _0x2a01f4 in _0x39fe97){var _0x1bbfc7=_0x39fe97[_0x2a01f4];if(_0x1bbfc7['id']==_0x314e61){getCatWithPos(_0x1bbfc7[_0x5370('0x203')],0x0);}}});}function setSuggestedCatName(_0x3d75c4,_0x4a9609){var _0x14c512=$(_0x5370('0xf0'))[_0x5370('0xf1')]();$[_0x5370('0x115')](_0x5370('0x11b')+_0x14c512+'/'+_0x3d75c4+_0x5370('0x12a'),function(_0x1d9c95){var _0x5e975e=JSON[_0x5370('0xea')](_0x1d9c95);for(var _0x4820a in _0x5e975e){var _0x469cc1=_0x5e975e[_0x4820a];if(_0x469cc1['id']==_0x4a9609){getCatWithPos(_0x469cc1[_0x5370('0x203')],0x1);}}});}function setSuggestedCatAsNew(){$(_0x5370('0x1fc'))[_0x5370('0xf3')](_0x5370('0x1a3'));setTimeout(function(){$(_0x5370('0x1fc'))[_0x5370('0xb9')]();dayJSONwordsCopy=dayJSON['words'];dayJSON['words']=dayJSON[_0x5370('0xf8')]+wordsInOneCat;var _0x2561c5=suggestedCatPath[_0x5370('0xd0')]('/');var _0x18d18b=_0x2561c5[0x0];var _0x13e58f=_0x2561c5[0x1];logEventInServer(_0x5370('0x204'),{'day':dayJSON[_0x5370('0xfa')],'category':_0x18d18b,'subcategory':_0x13e58f});$('#learn-container')[_0x5370('0xf3')](_0x5370('0x111'));$('.countOfNewWordsToday')[_0x5370('0xfc')](wordsInOneCat);setTimeout(function(){setNewCat(_0x18d18b,_0x13e58f);$('#myCat')[_0x5370('0xf1')](_0x13e58f);$(_0x5370('0x13f'))[_0x5370('0xf1')](_0x18d18b);$(_0x5370('0x112'))[_0x5370('0xba')]();packControler();$('#words-nav')[_0x5370('0xba')]();},0x12c);},0x1f4);}function showStartLessonPage(){gameIsBegin=!![];$(_0x5370('0x205'))[_0x5370('0xb9')]();$(_0x5370('0x1f7'))[_0x5370('0xba')]();setTimeout(function(){$(_0x5370('0x1f7'))[_0x5370('0x114')](_0x5370('0x111'));setTimeout(function(){if(lessonsJumpToFuture>0x0){var _0x2b1b9b=lessonsJumpToFuture+'\x20'+getTrans(t_automated_skipped_lessons);window[_0x5370('0x206')][_0x5370('0x207')][_0x5370('0x208')]({'message':_0x2b1b9b,'duration':_0x5370('0x209'),'position':_0x5370('0x20a')});}},0x1f4);},0x64);}function startLesson(){logEventInServer('start\x20learn',{'toLearnToday':toLearn});packControler();}function removeAllProgressClass(_0x207313){return;}function removeProgressClassMin(_0x293a72,_0x370490){for(var _0x3d29ee=0x64;_0x3d29ee>_0x370490;_0x3d29ee--){_0x293a72[_0x5370('0x114')]('p'+_0x3d29ee);}}function updateProgressBar(){removeAllProgressClass($(_0x5370('0x1fe')));removeAllProgressClass($(_0x5370('0x20b')));removeAllProgressClass($(_0x5370('0x20c')));setTimeout(function(){var _0x1c93f2=0x64-Math[_0x5370('0x19d')](learnedWords/countWordsToLearn*0x64);var _0x4e9928=0x64-Math['round'](learnedWordsInCat/countWordsToLearnInThisCycle*0x64);var _0x26986d=Math[_0x5370('0x19d')](learnedWordsInCat/countWordsToLearnInThisCycle*0x64);var _0x54c7f8=Math[_0x5370('0x19d')](learnedWords/countWordsToLearn*0x64);$(_0x5370('0x1fe'))[_0x5370('0xf3')]('p'+_0x54c7f8);$('.progess-btn-stan-in-session')[_0x5370('0xf3')]('p'+_0x4e9928);$(_0x5370('0x20b'))[_0x5370('0xf3')]('p'+_0x26986d);$(_0x5370('0x20c'))['addClass']('p'+_0x1c93f2);removeProgressClassMin($(_0x5370('0x1fe')),_0x54c7f8);removeProgressClassMin($(_0x5370('0x200')),_0x4e9928);removeProgressClassMin($(_0x5370('0x20b')),_0x26986d);removeProgressClassMin($('.progess-btn-stan-in-cycle-3'),_0x1c93f2);$(_0x5370('0x100'))[_0x5370('0xfc')](countWordsToLearn-learnedWords);$(_0x5370('0x20d'))[_0x5370('0xfc')](parseInt(learnedWordsInCat/countWordsToLearnInThisCycle*0x64)+'%');if(countWordsToLearn-learnedWords!=countWordsToLearnInThisCycle-learnedWordsInCat){$(_0x5370('0x101'))[_0x5370('0xfc')](countWordsToLearnInThisCycle-learnedWordsInCat);}else{$(_0x5370('0x101'))[_0x5370('0xfc')]('');}},0x32);}var sugGetIsSetter=![];var scdCycleInSearchSub=![];var suggestedCatHasAudio=!![];function getCatWithPos(_0x2e3a2c,_0x5cf963){$[_0x5370('0x115')](_0x5370('0x11b')+langJSON[_0x5370('0xb1')]+_0x5370('0x20e'),function(_0x7a2f75){var _0x2548cd=JSON[_0x5370('0xea')](_0x7a2f75);var _0x5c6f2f=_0x2548cd[_0x5370('0xd5')];for(var _0x56e126 in _0x2548cd){var _0x3f8e2d=_0x2548cd[_0x56e126];var _0x35965d=_0x3f8e2d['id'];$[_0x5370('0x129')]({'url':_0x5370('0x11b')+langJSON[_0x5370('0xb1')]+'/'+_0x35965d+_0x5370('0x12a'),'type':'get','dataType':_0x5370('0x12b'),'async':![],'success':function(_0x7a2f75){var _0x5843de=JSON[_0x5370('0xea')](_0x7a2f75);var _0x1e0ecf=_0x5843de[_0x5370('0xd5')];for(var _0x52f0c4 in _0x5843de){var _0x269c5d=_0x5843de[_0x52f0c4];if(parseInt(_0x269c5d[_0x5370('0x203')])==parseInt(_0x2e3a2c)+_0x5cf963){if(!userChoiceCat&&(dayJSON[_0x5370('0x104')][_0x5370('0x12e')](_0x35965d+'/'+_0x269c5d['id'])>=0x0||learnedCat[_0x5370('0x12e')](_0x35965d+'/'+_0x269c5d['id'])>=0x0||inProgressCat[_0x5370('0x12e')](_0x35965d+'/'+_0x269c5d['id'])>=0x0)){if(parseInt(_0x56e126)+0x1==_0x5c6f2f&&parseInt(_0x52f0c4)+0x1==_0x1e0ecf){if(scdCycleInSearchSub){isNotNewCat();return;}else{scdCycleInSearchSub=!![];getCatWithPos(0x1,0x0);return;}}_0x5cf963++;getCatWithPos(_0x2e3a2c,_0x5cf963++);return;}else{userChoiceCat=![];$(_0x5370('0x20f'))[_0x5370('0xf1')](_0x35965d);$('#sugCatSub')['val'](_0x269c5d['id']);suggestedCatHasAudio=_0x269c5d['audio']==!![]||isPayedPro==!![];suggestedCatPath=_0x35965d+'/'+_0x269c5d['id'];suggestedCatName=_0x269c5d['name'];getWordToSuggestCat(_0x35965d+'/'+_0x269c5d['id']);sugGetIsSetter=!![];return;}}else if(_0x2e3a2c==allCats[_0x5370('0xd5')]&&allCats[_0x5370('0xd5')]>0x0&&parseInt(_0x269c5d['pos'])==_0x2e3a2c){if(scdCycleInSearchSub){isNotNewCat();return;}else{scdCycleInSearchSub=!![];getCatWithPos(0x1,0x0);return;}}}}});}});}function getAllCatsInArray(){$[_0x5370('0x115')](_0x5370('0x11b')+langJSON[_0x5370('0xb1')]+_0x5370('0x20e'),function(_0x234f6b){var _0x6c4f8f=JSON[_0x5370('0xea')](_0x234f6b);for(var _0x1deca5 in _0x6c4f8f){var _0x4dc319=_0x6c4f8f[_0x1deca5];var _0x52398a=_0x4dc319['id'];$[_0x5370('0x129')]({'url':_0x5370('0x11b')+langJSON['lang']+'/'+_0x52398a+_0x5370('0x12a'),'type':_0x5370('0x115'),'dataType':_0x5370('0x12b'),'async':![],'success':function(_0x234f6b){var _0x4cf31a=JSON[_0x5370('0xea')](_0x234f6b);for(var _0x2bf793 in _0x4cf31a){var _0x542b0d=_0x4cf31a[_0x2bf793];allCats[_0x5370('0x105')](_0x52398a+'/'+_0x542b0d['id']);if(_0x542b0d['audio']==!![]){catsWithAudioInDemo[_0x5370('0x105')](_0x52398a+'/'+_0x542b0d['id']);}}}});}});}function isNotNewCat(){if(gameIsBegin){suggestedCatHasAudio=-0x1;$(_0x5370('0x1fc'))[_0x5370('0xf3')]('next-cat-right');endTodayLesson=!![];saveDay();setTimeout(function(){$(_0x5370('0x1fc'))[_0x5370('0xb9')]();},0x1f4);}}function getNextSugCat(){$(_0x5370('0x1fc'))['addClass'](_0x5370('0x111'));setTimeout(function(){scdCycleInSearchSub=![];var _0x40ce82=$(_0x5370('0x20f'))[_0x5370('0xf1')]();var _0x28c62a=$(_0x5370('0x210'))['val']();setSuggestedCat(_0x40ce82,_0x28c62a);addCatToMissing(_0x40ce82+'/'+_0x28c62a);setTimeout(function(){$('#suggest-new-category-text')['text'](suggestedCatName);$(_0x5370('0x1fc'))[_0x5370('0x114')](_0x5370('0x111'));setTimeout(function(){setPopupAboutNoAudioLesson();showMuteIcon();},0x1f4);},0xc8);},0x2bc);var _0x2bbb9e=getTrans(t_skipped_lesson_success);window[_0x5370('0x206')][_0x5370('0x207')][_0x5370('0x208')]({'message':_0x2bbb9e,'duration':_0x5370('0x211'),'position':'bottom'});}function addCatToMissing(_0x3ad3a5){dayJSON['skiped']['push'](_0x3ad3a5);allEndedCats['push'](_0x3ad3a5);allUsedCats['push'](_0x3ad3a5);}var agreeToCheckTheUsedCatAsSug=![];function getThisCatAsSug(_0x89d623){if($(_0x89d623)[_0x5370('0x1d6')](_0x5370('0x212'))&&!agreeToCheckTheUsedCatAsSug){showConfirmLearnMissingCat(_0x89d623);}else if(($(_0x89d623)[_0x5370('0x1d6')](_0x5370('0x12f'))||$(_0x89d623)[_0x5370('0x1d6')](_0x5370('0x12d')))&&!agreeToCheckTheUsedCatAsSug){showConfirmLearnInProgressCat(_0x89d623);}else{agreeToCheckTheUsedCatAsSug=![];var _0x5bb203=$(_0x89d623)[_0x5370('0x146')]('data-parent');var _0x10597c=$(_0x89d623)['attr'](_0x5370('0x213'));logEventInServer(_0x5370('0x214'),{'day':dayJSON[_0x5370('0xfa')],'category':_0x5bb203,'subcategory':_0x10597c});setThisAsSuggestedCat(_0x5bb203,_0x10597c);setTimeout(function(){$('#suggest-new-category-text')[_0x5370('0xfc')](suggestedCatName);showMuteIcon();backToSetNewCategory();setPopupAboutNoAudioLesson();},0x64);}}var progressJSON=[];var srcSaveProgress=_0x5370('0x215');function saveProgressInFile(){var _0x207643='{\x22langJSON\x22:\x20\x22\x22,\x20\x22dayJSON\x22:\x20\x22\x22,\x20\x22toLearnJSON\x22:\x20\x22\x22,\x20\x22noticeJSON\x22:\x20\x22\x22,\x20\x22likedJSON\x22:\x20\x22\x22}';progressJSON=JSON[_0x5370('0xea')](_0x207643);progressJSON[_0x5370('0x216')]=langJSON;progressJSON[_0x5370('0x217')]=dayJSON;progressJSON[_0x5370('0x218')]=toLearnJSON;progressJSON['noticeJSON']=noticeJSON;progressJSON[_0x5370('0x219')]=likedJSON;saveFileProgress();}function saveFileProgress(){window[_0x5370('0xd7')](LocalFileSystem['PERSISTENT'],0x0,gotFSNProgress,failN);}function gotFSNProgress(_0x15bcc8){_0x15bcc8[_0x5370('0xd9')][_0x5370('0xda')](srcSaveProgress,{'create':!![]},gotFileEntryNProgress,failN);}function gotFileEntryNProgress(_0x12eb4f){_0x12eb4f['createWriter'](gotFileWriterNProgress,failN);srcToShare=_0x12eb4f[_0x5370('0xde')]();}function gotFileWriterNProgress(_0x5168c6){_0x5168c6['onwrite']=function(_0x226d97){console['log'](_0x5370('0x179'));};_0x5168c6[_0x5370('0xe3')](JSON[_0x5370('0xe4')](progressJSON));_0x5168c6[_0x5370('0xe5')]();}function failN(_0x59ce32){}var srcLoadProgress='';function loadProgress(_0x4a2cc7){srcLoadProgress=_0x4a2cc7;window[_0x5370('0x21a')][_0x5370('0x21b')](srcLoadProgress,function(_0x5bfc3c){window[_0x5370('0x21c')](_0x5bfc3c,function(_0x16992c){_0x16992c[_0x5370('0xce')](function(_0x192258){var _0x1224fa=new FileReader();_0x1224fa[_0x5370('0xdb')]=function(_0x11b1e5){if(IsJsonString(_0x11b1e5[_0x5370('0xdc')][_0x5370('0xdd')])){var _0x40a2de=JSON[_0x5370('0xea')](_0x11b1e5[_0x5370('0xdc')][_0x5370('0xdd')]);langJSON=_0x40a2de[_0x5370('0x216')];dayJSON=_0x40a2de[_0x5370('0x217')];toLearnJSON=_0x40a2de['toLearnJSON'];noticeJSON=_0x40a2de[_0x5370('0x21d')];likedJSON=_0x40a2de['likedJSON'];saveLang();window[_0x5370('0xd7')](LocalFileSystem[_0x5370('0xd8')],0x0,gotFSN,failN);endTodayLesson=![];datesJSON5=dayJSON;srcSave5=path()+_0x5370('0xe8');saveFile5();setTimeout(function(){datesJSON=toLearnJSON;srcSave=path()+_0x5370('0x107');saveFile();},0xc8);setTimeout(function(){getTrans(t_import_from_file_success);setTimeout(function(){location[_0x5370('0x21e')]();},0x1f4);},0x1f4);}else{getTrans(t_import_from_file_error);}};_0x1224fa[_0x5370('0xdf')](_0x192258);});},function(_0xfc4f28){getTrans(t_import_from_file_error);});});}function IsJsonString(_0x5ae322){try{JSON[_0x5370('0xea')](_0x5ae322);}catch(_0x1dc816){return![];}return!![];}var isInList=[];function showInProgressCat(){for(var _0x49fb9c in inProgressCat){var _0x48e85c=inProgressCat[_0x49fb9c]['split']('/');var _0x4aaaaa=_0x48e85c[0x0];var _0x3c08ab=_0x48e85c[0x1];setinProgressCatList(_0x4aaaaa,_0x3c08ab);}}function setinProgressCatList(_0x1c9faa,_0x117546){if(!(isInList[_0x5370('0x12e')](_0x1c9faa+'/'+_0x117546)>=0x0)){isInList[_0x5370('0x105')](_0x1c9faa+'/'+_0x117546);var _0x54b75d=$('#myLang')[_0x5370('0xf1')]();$['get']('date/'+_0x54b75d+'/'+_0x1c9faa+_0x5370('0x12a'),function(_0x21ee25){var _0x125f3e=JSON[_0x5370('0xea')](_0x21ee25);for(var _0x5e1089 in _0x125f3e){var _0x29b487=_0x125f3e[_0x5e1089];if(_0x29b487['id']==_0x117546){$(_0x5370('0x21f'))[_0x5370('0xfc')](_0x29b487[_0x5370('0x11e')]);$('.inProgressCatList')[_0x5370('0x11a')](_0x5370('0x220')+_0x1c9faa+',\x20'+_0x117546+_0x5370('0x221')+_0x29b487['name']+_0x5370('0x222')+_0x29b487[_0x5370('0x11e')]+_0x5370('0x181'));}}});}}function showMeWordInThisCat(_0x45072c,_0x2a2806,_0xdbbf2a){$('.catNameInListWord')[_0x5370('0xfc')](_0xdbbf2a);fillTableListWordInCatMain(_0x45072c,_0x2a2806);$(_0x5370('0x223'))[_0x5370('0xba')]();setTimeout(function(){$(_0x5370('0x223'))[_0x5370('0x114')](_0x5370('0x224'));},0x12c);}function fillTableListWordInCatMain(_0x2be6ec,_0x354883){var _0x552649=_0x2be6ec+'/'+_0x354883;var _0x3aa369=0x1;$[_0x5370('0x115')](_0x5370('0x11b')+langJSON[_0x5370('0xb1')]+'/'+_0x552649+_0x5370('0x121'),function(_0x51a3df){$(_0x5370('0x225'))[_0x5370('0xfc')]('');$['get'](_0x5370('0x122')+_0x552649+_0x5370('0x121'),function(_0x26df14){var _0xc768f6=JSON[_0x5370('0xea')](_0x51a3df);var _0x4cb036=JSON[_0x5370('0xea')](_0x26df14);for(var _0x5418a4 in _0xc768f6){var _0x3a6f54=_0xc768f6[_0x5418a4];var _0x5790e4=_0x4cb036[_0x5418a4];var _0x20034e='';var _0xb6ef62=![];for(var _0x18bd94 in noticeJSON){var _0x5c338e=noticeJSON[_0x18bd94];var _0x38dc0d=langJSON[_0x5370('0xb1')]+'\x5c'+_0x2be6ec+'\x5c'+_0x354883+'\x5c'+0x1+'\x5c'+(parseInt(_0x5418a4)+0x1);if(_0x5c338e[_0x5370('0x15f')]==_0x38dc0d){_0x20034e=_0x5370('0x226')+_0x5c338e['notice'];$('#listWordOfCatInInPorgress')['append'](_0x5370('0x227')+_0x552649+'\x27,'+_0x3a6f54['id']+')\x22>'+_0x3aa369+'.\x20'+_0x5790e4[_0x5370('0x11e')]+_0x5370('0x127')+_0x3a6f54[_0x5370('0x11e')]+_0x20034e+_0x5370('0x128'));_0xb6ef62=!![];}if(!_0xb6ef62&&_0x18bd94==noticeJSON['length']-0x1){$(_0x5370('0x225'))[_0x5370('0x11a')](_0x5370('0x227')+_0x552649+'\x27,'+_0x3a6f54['id']+_0x5370('0x228')+_0x3aa369+'.\x20'+_0x5790e4['name']+_0x5370('0x127')+_0x3a6f54[_0x5370('0x11e')]+_0x5370('0x128'));}}if(noticeJSON[_0x5370('0xd5')]==0x0){$(_0x5370('0x225'))[_0x5370('0x11a')](_0x5370('0x227')+_0x552649+'\x27,'+_0x3a6f54['id']+_0x5370('0x228')+_0x3aa369+'.\x20'+_0x5790e4[_0x5370('0x11e')]+'<span>'+_0x3a6f54[_0x5370('0x11e')]+_0x5370('0x128'));}_0x3aa369++;}});});}function fillTableListWordInCat(_0x21f26a,_0x1152b5){var _0x493a5e=$(_0x5370('0xf0'))['val']();var _0x511a08=0x1;$[_0x5370('0x115')](_0x5370('0x11b')+_0x493a5e+'/'+_0x21f26a+'/'+_0x1152b5+_0x5370('0x121'),function(_0x4510ff){var _0x4f3cd2=JSON[_0x5370('0xea')](_0x4510ff);for(var _0x3b1b51 in _0x4f3cd2){var _0x2f378b=_0x4f3cd2[_0x3b1b51];$('.t'+_0x511a08)[_0x5370('0x12b')](_0x2f378b[_0x5370('0x11e')]);_0x511a08++;}});}function fillTableListWordInCatWithNote(_0x20645b,_0x1e2541){var _0x1817be=$(_0x5370('0xf0'))[_0x5370('0xf1')]();var _0x2efb07=0x1;for(_0x2efb07=0x1;_0x2efb07<0xb;_0x2efb07++){$('.n'+_0x2efb07)['html']('');for(var _0x59c4ff in noticeJSON){var _0x4e1997=noticeJSON[_0x59c4ff];var _0x8b8e8d=_0x1817be+'\x5c'+_0x20645b+'\x5c'+_0x1e2541+'\x5c'+0x1+'\x5c'+_0x2efb07;if(_0x4e1997[_0x5370('0x15f')]==_0x8b8e8d){$('.n'+_0x2efb07)[_0x5370('0x12b')]('('+_0x4e1997[_0x5370('0x160')]+')');}}}}function checkConnection(){return!(navigator[_0x5370('0x229')][_0x5370('0x22a')]==0x0||navigator[_0x5370('0x229')][_0x5370('0x22a')]=='none');}function showRating(){if(isPremium){AppRate[_0x5370('0x22b')]={'displayAppName':getTrans(t_app_name_pro),'storeAppURL':{'android':_0x5370('0x22c')},'useLanguage':getTrans(t_lang_rank),'simpleMode':!![],'callbacks':{'onButtonClicked':function(_0x1feada){if(_0x1feada==0x1){setRatingToTrue();}}}};}else{AppRate[_0x5370('0x22b')]={'displayAppName':getTrans(t_app_name),'storeAppURL':{'android':'market://details?id=com.speaklabs.english.speaklabs'},'useLanguage':getTrans(t_lang_rank),'simpleMode':!![],'callbacks':{'onButtonClicked':function(_0x1c92c0){if(_0x1c92c0==0x1){setRatingToTrue();}}}};}var _0x591582=parseInt($(_0x5370('0xfb'))[_0x5370('0xfc')]());if(_0x591582%0x2==0x0&&_0x591582>0x0&&dayJSON['rating']==![]){if(isPremium){AppRate[_0x5370('0x22d')]();}}}function setRatingToTrue(){endTodayLesson=![];dayJSON['rating']=!![];datesJSON5=dayJSON;srcSave5=path()+_0x5370('0xe8');saveFile5();}function saveTheme(){endTodayLesson=![];var _0x4b64f5=0x1;if($(_0x5370('0xf2'))[_0x5370('0x1d6')](_0x5370('0x22e'))){var _0x4b64f5=0x3;}else if($('body')['hasClass'](_0x5370('0x22f'))){var _0x4b64f5=0x2;}else{var _0x4b64f5=0x1;}logEventInServer('change\x20theme',mergeObjects({'theme':_0x4b64f5},getDataAboutCurrentWordToLog()));dayJSON['theme']=_0x4b64f5;datesJSON5=dayJSON;srcSave5=path()+_0x5370('0xe8');saveFile5();}function setTextWidth(){$(_0x5370('0x230'))[_0x5370('0x162')](_0x5370('0x231'),$(window)['width']()*0.85);}var srcToShare='';function shareFile(){var _0x162d76={'message':'Save\x20progress','subject':_0x5370('0x232'),'files':[srcToShare],'url':null,'chooserTitle':_0x5370('0x233')};var _0x23d51c=function(_0x19e6be){console[_0x5370('0xc9')](_0x5370('0x234')+_0x19e6be[_0x5370('0x235')]);console[_0x5370('0xc9')](_0x5370('0x236')+_0x19e6be[_0x5370('0x237')]);};var _0x3fb767=function(_0x402eee){console['log'](_0x5370('0x238')+_0x402eee);};window[_0x5370('0x206')]['socialsharing'][_0x5370('0x239')](_0x162d76,_0x23d51c,_0x3fb767);}function volumeTest(){}function showVolumeInfo(){navigator[_0x5370('0xf6')][_0x5370('0xf7')]('Turn\x20up\x20the\x20volume\x20to\x20hear\x20the\x20sound',okNoSound,_0x5370('0x23a'),'OK');}function okNoSound(){return!![];}function getAllCatsToShowAllCats(){$('#show-all-cats-cats')[_0x5370('0x12b')]('');$[_0x5370('0x115')](_0x5370('0x11b')+langJSON[_0x5370('0xb1')]+'/cat.json',function(_0x200bfd){var _0x368e29='';var _0x400260=JSON[_0x5370('0xea')](_0x200bfd);for(var _0x236331 in _0x400260){subcats=![];var _0x13285e=_0x400260[_0x236331];_0x368e29+=_0x5370('0x23b')+_0x13285e[_0x5370('0x11e')]+_0x5370('0x23c');var _0x4fbeca=parseInt(_0x236331)+0x1==parseInt(_0x400260[_0x5370('0xd5')])?_0x5370('0x11f'):'';$[_0x5370('0x129')]({'url':_0x5370('0x11b')+langJSON[_0x5370('0xb1')]+'/'+_0x13285e['id']+_0x5370('0x12a'),'type':_0x5370('0x115'),'dataType':_0x5370('0x12b'),'async':![],'success':function(_0x1fa77c){var _0x25bba4=JSON['parse'](_0x1fa77c);_0x368e29+=_0x5370('0x23d');for(var _0x571b91 in _0x25bba4){var _0x1ec48d=_0x25bba4[_0x571b91];var _0x1b1b7e=_0x13285e['id']+'/'+_0x1ec48d['id'];var _0x5c573b='';if(dayJSON['skiped'][_0x5370('0x12e')](_0x1b1b7e)>=0x0){_0x5c573b=_0x5370('0x212');}if(learnedCat[_0x5370('0x12e')](_0x1b1b7e)>=0x0){_0x5c573b=_0x5370('0x12d');}if(inProgressCat['indexOf'](_0x1b1b7e)>=0x0){_0x5c573b='inProgressCat';}cl2=_0x1ec48d[_0x5370('0x130')]==!![]||isPayedPro==!![]?'':_0x5370('0x131');hasAudio=_0x1ec48d[_0x5370('0x130')]==!![]||isPayedPro==!![]?0x1:0x0;_0x368e29+=_0x5370('0x23e')+_0x5c573b+'\x20'+cl2+_0x5370('0x23f')+_0x1b1b7e+_0x5370('0x240')+_0x1ec48d['name']+_0x5370('0x241')+hasAudio+_0x5370('0x242')+_0x13285e['id']+_0x5370('0x135')+_0x1ec48d['id']+_0x5370('0x137')+_0x1ec48d[_0x5370('0x11e')][_0x5370('0xd4')](0x0,0x2)+'</strong>\x20'+_0x1ec48d[_0x5370('0x11e')][_0x5370('0xd4')](0x2)+_0x5370('0x139')+getTrans(t_during_learning)+_0x5370('0x13a')+getTrans(t_lesson_skipped)+_0x5370('0x13b')+getTrans(t_learned_lesson)+_0x5370('0x128');$(_0x5370('0x243'))[_0x5370('0x11a')](_0x5370('0x244')+_0x1ec48d['id']+_0x5370('0x13e')+_0x13285e['id']+'\x22>'+_0x1ec48d[_0x5370('0x11e')]+_0x5370('0x245'));}_0x368e29+=_0x5370('0x120')+_0x5370('0x120');}});}$(_0x5370('0x246'))[_0x5370('0x11a')](_0x368e29);});}function getWordForCatShowList(_0x286295,_0x370901){var _0xf36105=_0x286295[_0x5370('0xd0')]('/');$[_0x5370('0x115')](_0x5370('0x11b')+langJSON[_0x5370('0xb1')]+'/'+_0x286295+_0x5370('0x121'),function(_0x26c5a9){$('#show-all-cats-cats-wordlist')[_0x5370('0xfc')]('');$[_0x5370('0x115')](_0x5370('0x122')+_0x286295+_0x5370('0x121'),function(_0x1b0eb1){var _0x577a03=JSON[_0x5370('0xea')](_0x26c5a9);var _0x4cb293=JSON[_0x5370('0xea')](_0x1b0eb1);for(var _0x437a54 in _0x577a03){var _0x45e026=_0x577a03[_0x437a54];var _0x2f5a24=_0x4cb293[_0x437a54];var _0x293a18=_0x370901?_0x5370('0x247'):'img/spiker_no_audio_white.png';$(_0x5370('0x248'))['append'](_0x5370('0x249')+_0xf36105[0x0]+_0x5370('0x124')+_0xf36105[0x1]+_0x5370('0x125')+_0x45e026['id']+'\x22\x20onclick=\x22tellMeWordFrom(\x27'+_0x286295+'\x27,'+_0x45e026['id']+_0x5370('0x24a')+_0x293a18+'\x22\x20class=\x22left-img\x22>'+_0x2f5a24[_0x5370('0x11e')]+_0x5370('0x24b')+_0x45e026['name']+_0x5370('0x24c')+_0x2f5a24['name'][_0x5370('0xd2')](/(['"])/g,'\x5c$1')+_0x5370('0x24d'));}});});}var countOfWrongRecognized=0x0;function startVoiceToText(){if(dev){$(_0x5370('0x196'))[_0x5370('0xfc')](_0x5370('0x24e'));$(_0x5370('0x24f'))[_0x5370('0xb9')]();$(_0x5370('0x1c7'))[_0x5370('0xb9')]();$(_0x5370('0x1b4'))[_0x5370('0xb9')]();$(_0x5370('0x1b5'))['hide']();$(_0x5370('0x1c8'))[_0x5370('0xb9')]();$(_0x5370('0x1b6'))[_0x5370('0xb9')]();$(_0x5370('0x250'))[_0x5370('0xb9')]();$(_0x5370('0x1b7'))[_0x5370('0xb9')]();$(_0x5370('0x1b8'))[_0x5370('0xb9')]();$(_0x5370('0x1b9'))[_0x5370('0xb9')]();$(_0x5370('0x1ba'))[_0x5370('0xb9')]();$(_0x5370('0x1bb'))[_0x5370('0xb9')]();$(_0x5370('0x1bc'))['hide']();$(_0x5370('0x1bd'))[_0x5370('0xb9')]();$(_0x5370('0x1be'))[_0x5370('0xb9')]();$('#l-t-4')[_0x5370('0xb9')]();$(_0x5370('0x251'))[_0x5370('0xb9')]();$('#l-t-6')['hide']();$(_0x5370('0x1c1'))['show']();$(_0x5370('0x252'))[_0x5370('0xba')]();$(_0x5370('0x1c2'))[_0x5370('0xba')]();$(_0x5370('0x253'))['show']();$(_0x5370('0x1c3'))['show']();$(_0x5370('0x1c4'))[_0x5370('0xba')]();$(_0x5370('0x195'))[_0x5370('0xba')]();$(_0x5370('0x196'))[_0x5370('0xba')]();$('.show-hidden-word')['next']('p')[_0x5370('0xba')]();$(_0x5370('0x189'))[_0x5370('0xb9')]();if(Math[_0x5370('0x254')]()*0xa+0x1>0x5){$('.learnMethod')[_0x5370('0xf3')](_0x5370('0x198'));$('.learnMethod')[_0x5370('0x114')]('badRec');$(_0x5370('0x199'))[_0x5370('0xb9')]();$(_0x5370('0x19a'))[_0x5370('0xb9')]();setTimeout(function(){isOkWrap();},0x1f4);}else{$(_0x5370('0x17b'))['removeClass'](_0x5370('0x198'));$(_0x5370('0x17b'))[_0x5370('0xf3')](_0x5370('0x197'));$(_0x5370('0x199'))[_0x5370('0xba')]();$(_0x5370('0x19a'))[_0x5370('0xba')]();$(_0x5370('0x17d'))[_0x5370('0xb9')]();}}if(!checkConnection()){navigator[_0x5370('0xf6')][_0x5370('0xf7')](getTrans(t_not_connected_text),onNoInternetConfirm,getTrans(t_not_connected_title),getTrans(t_not_connected_exit));}else{checkPermissionsAndStartRecognize();}setTimeout(function(){$('#progess-btn-stan-in-cycle')['removeClass'](_0x5370('0x255'));},0x96);}function checkPermissionsAndStartRecognize(){if(blockAppIfNotLegal()===![]){logEventInServer('start\x20speach\x20recognize\x20in\x20lesson',getDataAboutCurrentWordToLog());window['plugins'][_0x5370('0x256')][_0x5370('0x257')](function(_0xb6f464){if(_0xb6f464===![]){window[_0x5370('0x206')][_0x5370('0x256')][_0x5370('0x258')](startRecognize);}else{startRecognize();}});}}function startRecognize(){stopTelling();var _0x3df605=_0x5370('0x259');var _0x3e0c9f={'language':_0x3df605,'matches':0x2,'prompt':nbMethod==0x6||nbMethod==0x5||nbMethod==0x4&&nbStep==0x0&&$(_0x5370('0x15a'))[_0x5370('0x15b')]()==0x9?clearTextToShowOnRecognize(act_trans):clearTextToShowOnRecognize(act_word),'showPopup':!![]};window[_0x5370('0x206')]['speechRecognition'][_0x5370('0x25a')](function(_0x23b10d){if(_0x23b10d[0x0]!=''){var _0x36ee78=_0x23b10d[0x0];$('.recText')[_0x5370('0xfc')](_0x36ee78);$(_0x5370('0x24f'))[_0x5370('0xb9')]();$(_0x5370('0x1c7'))['hide']();$(_0x5370('0x1b4'))[_0x5370('0xb9')]();$('#l-n-4')[_0x5370('0xb9')]();$('#l-n-5')['hide']();$('#l-n-6')[_0x5370('0xb9')]();$(_0x5370('0x250'))[_0x5370('0xb9')]();$(_0x5370('0x1b7'))[_0x5370('0xb9')]();$('#l-e-3')[_0x5370('0xb9')]();$(_0x5370('0x1b9'))['hide']();$(_0x5370('0x1ba'))[_0x5370('0xb9')]();$(_0x5370('0x1bb'))['hide']();$(_0x5370('0x1bc'))[_0x5370('0xb9')]();$(_0x5370('0x1bd'))['hide']();$(_0x5370('0x1be'))[_0x5370('0xb9')]();$('#l-t-4')[_0x5370('0xb9')]();$(_0x5370('0x251'))[_0x5370('0xb9')]();$(_0x5370('0x1c0'))[_0x5370('0xb9')]();$(_0x5370('0x1c1'))[_0x5370('0xba')]();$(_0x5370('0x252'))['show']();$(_0x5370('0x1c2'))[_0x5370('0xba')]();$(_0x5370('0x253'))[_0x5370('0xba')]();$(_0x5370('0x1c3'))['show']();$(_0x5370('0x1c4'))[_0x5370('0xba')]();$('.recTextWrap')[_0x5370('0xba')]();$('.recText')[_0x5370('0xba')]();$(_0x5370('0x189'))[_0x5370('0x25b')]('p')['show']();$('.show-hidden-word')[_0x5370('0xb9')]();compareRecognizedText(_0x36ee78);$(_0x5370('0x19b'))['hide']();}},function(){$('.support-word-in-speach')[_0x5370('0xb9')]();},_0x3e0c9f);}function compareRecognizedText(_0x1e8e57){var _0x28696e=clearTextToShowOnRecognize($(_0x5370('0x25c'))[_0x5370('0xfc')]());if(_0x1e8e57[_0x5370('0x25d')]()['replace'](/[^a-zA-Z0-9]/g,'')==_0x28696e['toLowerCase']()[_0x5370('0xd2')](/[^a-zA-Z0-9]/g,'')){logEventInServer(_0x5370('0x25e'),mergeObjects({'spokenText':_0x1e8e57},getDataAboutCurrentWordToLog()));countOfWrongRecognized=0x0;$(_0x5370('0x17b'))[_0x5370('0xf3')](_0x5370('0x198'));$(_0x5370('0x17b'))[_0x5370('0x114')](_0x5370('0x197'));$('.cloud-again')[_0x5370('0xb9')]();$(_0x5370('0x19a'))[_0x5370('0xb9')]();setTimeout(function(){isOkWrap();},0x1f4);}else{logEventInServer('bad\x20speach\x20in\x20lesson',mergeObjects({'spokenText':_0x1e8e57},getDataAboutCurrentWordToLog()));$('.learnMethod')[_0x5370('0x114')](_0x5370('0x198'));$(_0x5370('0x17b'))[_0x5370('0xf3')](_0x5370('0x197'));$(_0x5370('0x199'))[_0x5370('0xba')]();$(_0x5370('0x19a'))['show']();$(_0x5370('0x17d'))['hide']();countOfWrongRecognized++;if(countOfWrongRecognized==0x1){tellMe();}if(countOfWrongRecognized==0x2){showRecognizedAlert();}if(countOfWrongRecognized==0x3){countOfWrongRecognized=0x0;showRecognizedAlert3();}}}function showRecognizedAlert(){navigator[_0x5370('0xf6')]['confirm'](getTrans(t_recognize_error_first_text),showRecognizedAlertCallback,getTrans(t_recognize_error_title),getTrans(t_recognize_error_try_again)+','+getTrans(t_recognize_error_skip));}function showRecognizedAlert2(){navigator[_0x5370('0xf6')]['confirm'](getTrans(t_recognize_error_second_text),showRecognizedAlertCallback,getTrans(t_recognize_error_title),getTrans(t_recognize_error_try_again)+','+getTrans(t_recognize_error_skip));}function showRecognizedAlert3(){navigator['notification'][_0x5370('0xf7')](getTrans(t_recognize_error_third_text),showRecognizedAlertCallback,getTrans(t_recognize_error_title),getTrans(t_recognize_error_try_again)+','+getTrans(t_recognize_error_skip));}function showRecognizedAlertCallback(_0x3f7135){if(_0x3f7135==0x1){startVoiceToText();}if(_0x3f7135==0x2){logEventInServer(_0x5370('0x25f'),mergeObjects({'source':_0x5370('0x260')},getDataAboutCurrentWordToLog()));isOkWrap();}}function renameFile(_0x4ea467,_0x1ece26,_0x3976e5,_0x3cb524){window[_0x5370('0xd7')](LocalFileSystem[_0x5370('0xd8')],0x0,function(_0x32cfd1){_0x32cfd1[_0x5370('0xd9')][_0x5370('0xda')](_0x1ece26+_0x4ea467,null,function(_0x2485e1){_0x32cfd1[_0x5370('0xd9')][_0x5370('0x175')](_0x1ece26,{'create':!![]},function(_0x3d7e06){parentEntry=new DirectoryEntry(_0x4ea467,_0x1ece26+_0x4ea467);_0x2485e1[_0x5370('0x261')](_0x3d7e06,_0x3976e5,function(){_0x3cb524();},renameFail);},renameFail);},renameFail);},renameFail);}function renameSuccess(){}function renameFail(){}function showConfirmSkipRepetition(){navigator['notification'][_0x5370('0xf7')](getTrans(t_confirm_skip_lesson_text),showConfirmSkipRepetitionCallBack,getTrans(t_confirm_skip_lesson_title),getTrans(t_confirm_skip_lesson_skip)+','+getTrans(t_confirm_skip_lesson_cancel));}function showConfirmSkipRepetitionCallBack(_0x5631a5){if(_0x5631a5==0x1){skipRepetition();}if(_0x5631a5==0x2){return!![];}}function skipRepetition(){logEventInServer('skip\x20repetition',{'day':dayJSON[_0x5370('0xfa')],'category':$(_0x5370('0x13f'))[_0x5370('0xf1')](),'subcategory':$(_0x5370('0x140'))['val']()});$(_0x5370('0x1cf'))['addClass'](_0x5370('0x111'));$(_0x5370('0x112'))[_0x5370('0xb9')]();isRepeatCycle=![];learnetCatToday++;var _0x5e11c2=![];for(var _0x22a11e=0x0;_0x22a11e<0xa&&!_0x5e11c2;_0x22a11e++){if(toLearn[_0x22a11e]!=-0x1){_0x5e11c2=!![];toLearn[_0x22a11e]=-0x1;}}$(_0x5370('0x112'))[_0x5370('0xb9')]();learnedWords+=0x1e;setTimeout(function(){$(_0x5370('0x1cf'))['hide']();updateProgressBar();packControler();},0x1f4);}function showEndNewMaterialsInfo(){if(hasNewCatsToday){navigator[_0x5370('0xf6')][_0x5370('0xf7')](getTrans(t_end_new_materials_text),showEndNewMaterialsInfoCallback,getTrans(t_end_new_materials_title),getTrans(t_end_new_materials_ok));}}function showEndNewMaterialsInfoCallback(_0x33f2bb){return 0x1;}function returnInLearn(){$(_0x5370('0x112'))['addClass'](_0x5370('0x111'));setTimeout(function(){$('#learn-container')[_0x5370('0xb9')]();},0x1f4);isRepeatCycle=![];newCategoryisSet=![];toLearn=copyOfLearnArray['slice']();inProgressCat=inProgressCatcopyForBackBTN[_0x5370('0xd1')]();toLearnJSON=JSON[_0x5370('0xea')](JSON[_0x5370('0xe4')](toLearnJSONcopyForBackBTN));dayJSON[_0x5370('0xf8')]=dayJSONwordsCopy;learnedWords=learnedWordsCopy;learnetCatToday=learnetCatTodayCopytBTN;updateProgressBar();logEventInServer(_0x5370('0x262'),mergeObjects({'inNewLesson':isOnlyNewLessonToEndDay(toLearn)},getDataAboutCurrentWordToLog()));nextPack();}function hideSpeachClouds(){$(_0x5370('0x263'))[_0x5370('0xb9')]();$(_0x5370('0x264'))[_0x5370('0xb9')]();}var checkingWordWrapper;function checkMeWord(_0x55c4d7,_0x19f584){checkingWordWrapper=$(_0x19f584);stopTelling();$(_0x5370('0x265'))[_0x5370('0x114')](_0x5370('0x266'));$(_0x5370('0x265'))[_0x5370('0x114')](_0x5370('0x267'));$('#show-all-cats-cats-wordlist\x20p')['removeClass'](_0x5370('0x266'));$(_0x5370('0x268'))[_0x5370('0x114')](_0x5370('0x267'));returnOriginTextAfterSpeachRecognize();if(dev){if(Math[_0x5370('0x254')]()*0xa+0x1>0x5){checkingWordWrapper[_0x5370('0x269')](_0x5370('0x230'))[_0x5370('0xf3')]('good-telling-word');}else{checkingWordWrapper[_0x5370('0x269')](_0x5370('0x230'))['addClass'](_0x5370('0x267'));var _0x9dc8d=checkingWordWrapper[_0x5370('0x269')](_0x5370('0x230'))[_0x5370('0x26a')]('.small-text-in-text-box');_0x9dc8d[_0x5370('0xf3')](_0x5370('0x26b'))[_0x5370('0x146')](_0x5370('0x26c'),_0x9dc8d[_0x5370('0x12b')]())['html']('błędnie\x20powiedziany\x20text');}}checkPermissionsAndStartRecognizeInAllWords(_0x55c4d7);}function checkPermissionsAndStartRecognizeInAllWords(_0x9342e3){if(blockAppIfNotLegal()===![]){var _0x5b4a2e=checkingWordWrapper[_0x5370('0x269')](_0x5370('0x230'));var _0x49447b=_0x5b4a2e['attr'](_0x5370('0x26d'))==_0x5370('0x26e')?_0x5370('0x26f'):_0x5370('0x270');logEventInServer(_0x49447b,{'category':_0x5b4a2e[_0x5370('0x146')](_0x5370('0x271')),'subcategory':_0x5b4a2e[_0x5370('0x146')](_0x5370('0x272')),'word':_0x5b4a2e[_0x5370('0x146')](_0x5370('0x156'))});window[_0x5370('0x206')][_0x5370('0x256')][_0x5370('0x257')](function(_0x251099){if(_0x251099===![]){window['plugins'][_0x5370('0x256')][_0x5370('0x258')](function(){startRecognizeInAllWords(_0x9342e3);});}else{startRecognizeInAllWords(_0x9342e3);}});}}function startRecognizeInAllWords(_0x2fb9dd){var _0x47fb80=_0x5370('0x259');var _0x5bbd38={'language':_0x47fb80,'matches':0x2,'prompt':clearTextToShowOnRecognize(_0x2fb9dd),'showPopup':!![]};window[_0x5370('0x206')][_0x5370('0x256')][_0x5370('0x25a')](function(_0x599a52){if(_0x599a52[0x0]!=''){var _0x59d13e=_0x599a52[0x0];compareRecognizedTextInAllWords(_0x59d13e,_0x2fb9dd);}},function(){},_0x5bbd38);}function compareRecognizedTextInAllWords(_0x5ee602,_0x5161aa){var _0x59702e=checkingWordWrapper[_0x5370('0x269')]('.text');var _0x2e14f1={'category':_0x59702e[_0x5370('0x146')](_0x5370('0x271')),'subcategory':_0x59702e[_0x5370('0x146')](_0x5370('0x272')),'word':_0x59702e[_0x5370('0x146')](_0x5370('0x156'))};if(_0x5ee602[_0x5370('0x25d')]()[_0x5370('0xd2')](/[^a-zA-Z0-9]/g,'')==clearTextToShowOnRecognize(_0x5161aa)[_0x5370('0x25d')]()[_0x5370('0xd2')](/[^a-zA-Z0-9]/g,'')){var _0x11f72c=_0x59702e[_0x5370('0x146')](_0x5370('0x26d'))==_0x5370('0x26e')?_0x5370('0x273'):_0x5370('0x274');logEventInServer(_0x11f72c,mergeObjects({'spokenText':_0x5ee602},_0x2e14f1));checkingWordWrapper[_0x5370('0x269')](_0x5370('0x230'))[_0x5370('0xf3')](_0x5370('0x266'));}else{var _0x11f72c=_0x59702e[_0x5370('0x146')]('data-source')==_0x5370('0x26e')?_0x5370('0x275'):_0x5370('0x276');logEventInServer(_0x11f72c,mergeObjects({'spokenText':_0x5ee602},_0x2e14f1));checkingWordWrapper[_0x5370('0x269')](_0x5370('0x230'))[_0x5370('0xf3')](_0x5370('0x267'));var _0x59178a=checkingWordWrapper[_0x5370('0x269')]('.text')[_0x5370('0x26a')](_0x5370('0x277'));_0x59178a[_0x5370('0xf3')](_0x5370('0x26b'))['attr'](_0x5370('0x26c'),_0x59178a[_0x5370('0x12b')]())[_0x5370('0x12b')](_0x5ee602);}}function returnOriginTextAfterSpeachRecognize(){$(_0x5370('0x278'))[_0x5370('0x1ab')](function(){$(this)[_0x5370('0x12b')]($(this)[_0x5370('0x146')](_0x5370('0x26c')));});}function changeLiked(_0x2a61e1){if(isLikedWord(_0x2a61e1)){removeFromlikedJSON(_0x2a61e1);saveLikedWords();}else{addToLikedJSON(_0x2a61e1);saveLikedWords();}}function removeFromlikedJSON(_0x20b67c){window[_0x5370('0x206')][_0x5370('0x207')][_0x5370('0x208')]({'message':getTrans(t_liked_words_remove),'duration':_0x5370('0x211'),'position':_0x5370('0x20a')});for(var _0x37052d in likedJSON){if(likedJSON[_0x37052d]==_0x20b67c){likedJSON[_0x5370('0x1aa')](_0x37052d,0x1);break;}}var _0x184b30=_0x20b67c[_0x5370('0xd0')]('\x5c');logEventInServer(_0x5370('0x279'),{'day':dayJSON['day'],'category':_0x184b30[0x0],'subcategory':_0x184b30[0x1],'word':_0x184b30[0x2]});}function addToLikedJSON(_0x521842){window[_0x5370('0x206')][_0x5370('0x207')][_0x5370('0x208')]({'message':getTrans(t_liked_words_added),'duration':_0x5370('0x211'),'position':'bottom'});likedJSON[_0x5370('0x105')](_0x521842);var _0x1abf25=_0x521842[_0x5370('0xd0')]('\x5c');logEventInServer('add\x20word\x20to\x20liked',{'day':dayJSON[_0x5370('0xfa')],'category':_0x1abf25[0x0],'subcategory':_0x1abf25[0x1],'word':_0x1abf25[0x2]});}function setActuLikedIcon(){if(isLikedWord(getPathToActuWord())){$(_0x5370('0x27a'))[_0x5370('0x146')](_0x5370('0x1a8'),_0x5370('0x27b'));}else{$(_0x5370('0x27a'))[_0x5370('0x146')]('src',_0x5370('0x27c'));}}function isLikedWord(_0x40449a){if(likedJSON[_0x5370('0xd5')]==0x0){return![];}for(var _0x1020ab in likedJSON){var _0x1a4346=likedJSON[_0x1020ab];if(_0x1a4346==_0x40449a){return!![];}if(_0x1020ab==likedJSON[_0x5370('0xd5')]-0x1){return![];}}}function getPathToActuWord(){var _0x4a040f=$(_0x5370('0x13f'))[_0x5370('0xf1')]();var _0x47c0ef=$(_0x5370('0x140'))[_0x5370('0xf1')]();var _0x3d2f51=$(_0x5370('0x153'))[_0x5370('0xf1')]();return _0x4a040f+'\x5c'+_0x47c0ef+'\x5c'+_0x3d2f51;}function readLikedWords(){window[_0x5370('0xd7')](LocalFileSystem['PERSISTENT'],0x0,onFSSuccessLiked,onFSError);}function onFSSuccessLiked(_0x4087ba){_0x4087ba[_0x5370('0xd9')][_0x5370('0xda')](path()+_0x5370('0x174'),{'create':![],'exclusive':![]},gotFileEntryLiked,onFSError);}function gotFileEntryLiked(_0x4aa7c7){_0x4aa7c7['file'](gotFileLiked,onFSError);}function gotFileLiked(_0x251baf){readAsTextLiked(_0x251baf);}function readAsTextLiked(_0x580cf0){var _0x50d936=new FileReader();_0x50d936[_0x5370('0xdb')]=function(_0x5551f1){afterReadLikedWords(_0x5551f1[_0x5370('0xdc')]['result']);};_0x50d936[_0x5370('0xdf')](_0x580cf0);}function afterReadLikedWords(_0x2e94d1){likedJSON=JSON[_0x5370('0xea')](_0x2e94d1);}function saveLikedWords(){window[_0x5370('0xd7')](LocalFileSystem['PERSISTENT'],0x0,gotFSLiked,failN);}function gotFSLiked(_0x1debd5){_0x1debd5[_0x5370('0xd9')][_0x5370('0xda')](path()+_0x5370('0x174'),{'create':!![]},gotFileEntryLikedW,failN);}function gotFileEntryLikedW(_0x25e904){_0x25e904['createWriter'](gotFileWriterLiked,failN);}function gotFileWriterLiked(_0x2e10e2){_0x2e10e2[_0x5370('0x27d')]=function(_0x17b65f){afterSaveLikedWords();};_0x2e10e2[_0x5370('0xe3')](JSON[_0x5370('0xe4')](likedJSON));_0x2e10e2[_0x5370('0xe5')]();}function afterSaveLikedWords(){}function showSavedWords(){$(_0x5370('0x27e'))[_0x5370('0xfc')]('');for(var _0xc7e696 in likedJSON){var _0x1ea7bc=likedJSON[_0xc7e696][_0x5370('0xd0')]('\x5c');showSavedWord(_0x1ea7bc);}}function showSavedWord(_0x51e1ef){$[_0x5370('0x115')](_0x5370('0x11b')+langJSON[_0x5370('0xb1')]+'/'+_0x51e1ef[0x0]+'/'+_0x51e1ef[0x1]+_0x5370('0x121'),function(_0x5864a1){$[_0x5370('0x115')]('date/1/'+_0x51e1ef[0x0]+'/'+_0x51e1ef[0x1]+_0x5370('0x121'),function(_0x4fb8fc){var _0x18dc79=JSON[_0x5370('0xea')](_0x5864a1);var _0x4a1902=JSON[_0x5370('0xea')](_0x4fb8fc);var _0x5bcfc9=_0x18dc79[_0x51e1ef[0x2]-0x1];var _0xdfd4a4=_0x4a1902[_0x51e1ef[0x2]-0x1];$(_0x5370('0x27e'))[_0x5370('0x11a')](_0x5370('0x27f')+_0x51e1ef[0x0]+'\x22\x20data-subcategory=\x22'+_0x51e1ef[0x1]+_0x5370('0x125')+_0x51e1ef[0x2]+_0x5370('0x280')+_0x51e1ef[0x0]+'/'+_0x51e1ef[0x1]+'\x27,'+_0x5bcfc9['id']+_0x5370('0x281')+_0x51e1ef[0x0]+'/'+_0x51e1ef[0x1]+'/'+_0x51e1ef[0x2]+'\x27,'+_0x5bcfc9['id']+_0x5370('0x228')+_0xdfd4a4[_0x5370('0x11e')]+_0x5370('0x24b')+_0x5bcfc9[_0x5370('0x11e')]+_0x5370('0x24c')+_0xdfd4a4[_0x5370('0x11e')][_0x5370('0xd2')](/(['"])/g,_0x5370('0x282'))+_0x5370('0x24d'));});});}var wordToRemoveFromSaved;var objWordToRemoveFromSaved;function confirmRemoveSavedWord(_0x330946,_0x1132fc){objWordToRemoveFromSaved=_0x330946;wordToRemoveFromSaved=_0x1132fc[_0x5370('0xd2')](/\//g,'\x5c');navigator[_0x5370('0xf6')][_0x5370('0xf7')](getTrans(t_confirm_remove_saved_word_text),confirmRemoveSavedWordCallBack,getTrans(t_confirm_remove_saved_word_title),getTrans(t_confirm_remove_saved_word_remove)+','+getTrans(t_confirm_remove_saved_word_cancel));}function confirmRemoveSavedWordCallBack(_0x23b1f7){if(_0x23b1f7==0x1){removeFromSavedWords(objWordToRemoveFromSaved,wordToRemoveFromSaved);setActuLikedIcon();}if(_0x23b1f7==0x2){return!![];}}function removeFromSavedWords(_0x2fddbc,_0x190b3e){$(_0x2fddbc)[_0x5370('0x283')]()[_0x5370('0x284')]();removeFromlikedJSON(_0x190b3e);saveLikedWords();}function setPopupAboutNoAudioLesson(){if(suggestedCatHasAudio==![]&&isPayedPro==![]){navigator[_0x5370('0xf6')][_0x5370('0xf7')](getTrans(t_no_audio_lesson_text),setPopupAboutNoAudioLessonBTNCallBack,getTrans(t_no_audio_lesson_title),getTrans(t_no_audio_lesson_learn_anyway)+','+getTrans(t_no_audio_lesson_upgrade)+','+getTrans(t_no_audio_lesson_skip));}}function setPopupAboutNoAudioLessonInPhraseBrowser(){navigator['notification'][_0x5370('0xf7')](getTrans(t_no_audio_lesson_text),setPopupAboutNoAudioLessonBTNCallBack,getTrans(t_no_audio_lesson_title),getTrans(t_no_audio_lesson_learn_anyway)+','+getTrans(t_no_audio_lesson_upgrade));}function setPopupAboutNoAudioLessonBTNCallBack(_0x6638d3){if(_0x6638d3==0x1){return!![];}if(_0x6638d3==0x2){goToPremiumVersion();}if(_0x6638d3==0x3){showConfirmSkipLesson();}}function showMuteIcon(){if(suggestedCatHasAudio==![]&&isPayedPro==![]){$(_0x5370('0x285'))[_0x5370('0xf3')](_0x5370('0x286'));}else{$(_0x5370('0x285'))[_0x5370('0x114')](_0x5370('0x286'));}}function showConfirmBackAlert(){navigator['notification'][_0x5370('0xf7')](getTrans(t_confirm_back_in_learn_text),showConfirmBackAlertCallBack,getTrans(t_confirm_back_in_learn_title),getTrans(t_confirm_back_in_learn_back)+','+getTrans(t_confirm_back_in_learn_cancel));}function showConfirmBackAlertCallBack(_0x7f6a2){if(_0x7f6a2==0x1){returnInLearn();}if(_0x7f6a2==0x2){return!![];}}var theSameSugCatObjTMP;function showConfirmLearnMissingCat(_0x3c12b3){theSameSugCatObjTMP=_0x3c12b3;navigator['notification'][_0x5370('0xf7')](getTrans(t_confirm_learn_missing_cat_text),showConfirmLearnMissingCatCallBack,getTrans(t_confirm_learn_missing_cat_title),getTrans(t_confirm_learn_missing_cat_yes)+','+getTrans(t_confirm_learn_missing_cat_cancel));}function showConfirmLearnMissingCatCallBack(_0x3b9c46){if(_0x3b9c46==0x1){agreeToCheckTheUsedCatAsSug=!![];getThisCatAsSug(theSameSugCatObjTMP);}if(_0x3b9c46==0x2){theSameSugCatObjTMP=![];return!![];}}function showConfirmLearnInProgressCat(_0xb62fcd){theSameSugCatObjTMP=_0xb62fcd;navigator[_0x5370('0xf6')]['confirm'](getTrans(t_confirm_learn_inprogress_cat_text),showConfirmLearnInProgressCatCallBack,getTrans(t_confirm_learn_inprogress_cat_title),getTrans(t_confirm_learn_inprogress_cat_yes)+','+getTrans(t_confirm_learn_inprogress_cat_cancel));}function showConfirmLearnInProgressCatCallBack(_0x42c9ce){if(_0x42c9ce==0x1){agreeToCheckTheUsedCatAsSug=!![];getThisCatAsSug(theSameSugCatObjTMP);}if(_0x42c9ce==0x2){theSameSugCatObjTMP=![];return!![];}}function showConfirmSkipLesson(){logEventInServer(_0x5370('0x287'),{'day':dayJSON[_0x5370('0xfa')],'category':$(_0x5370('0x20f'))[_0x5370('0xf1')](),'subcategory':$('#sugCatSub')['val']()});getNextSugCat();}function showConfirmSkipLessonCallBack(_0x375eb5){if(_0x375eb5==0x1){getNextSugCat();}if(_0x375eb5==0x2){return!![];}}function showExitAppConfirm(){navigator['notification'][_0x5370('0xf7')](getTrans(t_confirm_exit_text),showExitAppConfirmCallBack,getTrans(t_confirm_exit_title),getTrans(t_confirm_exit_cancel)+','+getTrans(t_confirm_exit_exit));}function showExitAppConfirmCallBack(_0x2f22dc){if(_0x2f22dc==0x2){navigator[_0x5370('0x237')][_0x5370('0x288')]();}}function updatePlaceholders(){$(_0x5370('0x289'))[_0x5370('0x146')](_0x5370('0x28a'),getTrans(t_placeholder_fuzzy_search));$(_0x5370('0x28b'))[_0x5370('0x146')](_0x5370('0x28a'),getTrans(t_placeholder_hint_text));}function clearTextToShowOnRecognize(_0x26edb7){return _0x26edb7[_0x5370('0xd2')]('<b>','')[_0x5370('0xd2')]('</b>','');}function testLegalAppAndRunIfIsLegal(_0x318700){if(legalValidation===!![]){logEventInServer(_0x5370('0x28c'),{});AndroidLicensePlugin['check'](function(_0xcbd2ad){var _0x2925c3=_0xcbd2ad;_0x2925c3['packageName']=getPackageName();var _0x5bbc2e=getVerifiApiUrl();$[_0x5370('0x129')]({'type':_0x5370('0x28d'),'url':_0x5bbc2e,'contentType':_0x5370('0x28e'),'data':JSON[_0x5370('0xe4')](_0x2925c3)})['done'](function(_0xcbd2ad){if(_0xcbd2ad===!![]){startAppBecauseIsLegal(_0x318700);}else{blockAppBecauseNotLegal();}})[_0x5370('0x172')](function(_0x513f0d,_0x27054f,_0x49d5a7){startAppBecauseIsLegal(_0x318700);});},function(_0x54c26f){startAppBecauseIsLegal(_0x318700);});}else{startAppBecauseIsLegal(_0x318700);}}function getPackageName(){return isPremium?_0x5370('0x28f'):_0x5370('0x290');}function getVerifiApiUrl(){return _0x5370('0x291');}function getVerifiPurchaseApiUrl(){return _0x5370('0x292');}function blockAppBecauseNotLegal(){isLegal=![];logEventInServer('bad\x20verify\x20app',{});$(_0x5370('0x1a0'))[_0x5370('0xb9')]();$('#menu-switch')[_0x5370('0xb9')]();$(_0x5370('0xb8'))[_0x5370('0xb9')]();setTimeout(function(){$(_0x5370('0x293'))[_0x5370('0xba')]();},0x32);}function startAppBecauseIsLegal(_0x48f0d2){isLegal=!![];logEventInServer('good\x20verify\x20app',{});_0x48f0d2();}function blockAppIfNotLegal(){if(!isLegal&&legalValidation===!![]){blockAppBecauseNotLegal();}return!isLegal&&legalValidation===!![];}function getLogEventUri(){return _0x5370('0x294');}function getDeviceUUId(){return device[_0x5370('0x295')];}function getDeviceModel(){return device[_0x5370('0x296')];}function getSystemVersion(){return device['version'];}function logEventInServer(_0x452e9d,_0x37aab2){var _0x283122={'deviceUUId':getDeviceUUId(),'deviceModel':getDeviceModel(),'deviceSystemVersion':getSystemVersion(),'packageName':getPackageName(),'type':_0x452e9d,'extraData':JSON[_0x5370('0xe4')](_0x37aab2)};$[_0x5370('0x129')]({'type':_0x5370('0x28d'),'url':getLogEventUri(),'contentType':_0x5370('0x28e'),'data':JSON['stringify'](_0x283122)})[_0x5370('0x297')](function(_0x283122){})[_0x5370('0x172')](function(_0x2f5733,_0x36b87e,_0x23be1c){});}function getDataAboutCurrentWordToLog(){var _0x2d95fe=getPathToActuWord()[_0x5370('0xd0')]('\x5c');return{'day':dayJSON[_0x5370('0xfa')],'category':_0x2d95fe[0x0],'subcategory':_0x2d95fe[0x1],'word':_0x2d95fe[0x2]};}function mergeObjects(_0x48e0a8,_0x19d694){var _0x5d3afb={};for(var _0x563002 in _0x48e0a8){_0x5d3afb[_0x563002]=_0x48e0a8[_0x563002];}for(var _0x563002 in _0x19d694){_0x5d3afb[_0x563002]=_0x19d694[_0x563002];}return _0x5d3afb;}function isOnlyNewLessonToEndDay(_0x11ad7a){for(var _0x338192=0x0;_0x338192<_0x11ad7a['length']-0x2;_0x338192++){if(_0x11ad7a[_0x338192]>0x0){return![];}if(_0x338192==_0x11ad7a[_0x5370('0xd5')]-0x3){return!![];}}}function tellMeWordFrom(_0x3e14e3,_0x56ca78,_0x4ae651){tellMeWord(_0x3e14e3,_0x56ca78);var _0x19b1bd=$(_0x4ae651);switch(_0x19b1bd[_0x5370('0x146')]('data-source')){case _0x5370('0x26e'):logEventInServer('run\x20sound\x20in\x20liked',{'category':_0x19b1bd[_0x5370('0x146')](_0x5370('0x271')),'subcategory':_0x19b1bd[_0x5370('0x146')](_0x5370('0x272')),'word':_0x19b1bd['attr'](_0x5370('0x156'))});break;case'new-lesson':logEventInServer(_0x5370('0x298'),{'category':_0x19b1bd['attr']('data-category'),'subcategory':_0x19b1bd[_0x5370('0x146')](_0x5370('0x272')),'word':_0x19b1bd[_0x5370('0x146')](_0x5370('0x156'))});break;case _0x5370('0x299'):logEventInServer(_0x5370('0x29a'),{'category':_0x19b1bd[_0x5370('0x146')](_0x5370('0x271')),'subcategory':_0x19b1bd[_0x5370('0x146')](_0x5370('0x272')),'word':_0x19b1bd[_0x5370('0x146')](_0x5370('0x156'))});break;}}function changeToDemo(){isPayedPro=![];$(_0x5370('0xf2'))['removeClass'](_0x5370('0x29b'));$(_0x5370('0xf2'))[_0x5370('0xf3')](_0x5370('0x29c'));getAllCatsToShowAllCats();showMuteIcon();}function changeToPro(){isPayedPro=!![];$(_0x5370('0xf2'))[_0x5370('0x114')](_0x5370('0x29c'));$(_0x5370('0xf2'))[_0x5370('0xf3')](_0x5370('0x29b'));getAllCatsToShowAllCats();showMuteIcon();}function canTellThisWord(_0x5d0d3b,_0x177c49){return isPremium==!![]||isPayedPro==!![]||catsWithAudioInDemo[_0x5370('0x12e')](_0x5d0d3b)>=0x0;}var premiumSubscriptionIsBought=![];var premiumProductIsBought=![];function initStore(){if(!window['store']){logEventInServer(_0x5370('0x29d'),{'error':_0x5370('0x29e')});return;}store['error'](function(_0x38a64a){logEventInServer(_0x5370('0x29d'),{'error':_0x5370('0x29f')+_0x38a64a['code']+':\x20'+_0x38a64a['message']});});store[_0x5370('0x2a0')]({'id':_0x5370('0x2a1'),'alias':_0x5370('0x2a1'),'type':store[_0x5370('0x2a2')]});store[_0x5370('0x2a3')](_0x5370('0x2a1'))[_0x5370('0x2a4')](function(_0x4510b1){_0x4510b1['finish']();});store[_0x5370('0x2a3')](_0x5370('0x2a1'))['updated'](function(_0x3f0a97){if(_0x3f0a97[_0x5370('0x2a5')]){premiumProductIsBought=!![];changeToPro();if(buyPremiumWasClicked===!![]){buyPremiumWasClicked=![];showThanksPageAfterBuying();}}else{premiumProductIsBought=![];if(!premiumSubscriptionIsBought){changeToDemo();}}});store['register']({'id':'subscription.premium','alias':'subscription.premium','type':store[_0x5370('0x2a6')]});store['when'](_0x5370('0x2a7'))[_0x5370('0x2a4')](function(_0x91f80e){_0x91f80e['verify']();});store[_0x5370('0x2a3')](_0x5370('0x2a7'))[_0x5370('0x2a8')](function(_0x5965ed){_0x5965ed['finish']();});store[_0x5370('0x2a3')](_0x5370('0x2a7'))[_0x5370('0x2a9')](function(_0x44b034){if(_0x44b034[_0x5370('0x2a5')]){premiumSubscriptionIsBought=!![];changeToPro();}else{premiumSubscriptionIsBought=![];if(!premiumProductIsBought){changeToDemo();}}});store[_0x5370('0x2aa')]=function(_0x29851a,_0xe4730b){var _0x23985e=_0x29851a['transaction'];_0x23985e[_0x5370('0x2ab')]=getPackageName();_0x23985e[_0x5370('0x2ac')]=_0x23985e['id'];delete _0x23985e['id'];var _0x349519=getVerifiPurchaseApiUrl();$[_0x5370('0x129')]({'type':_0x5370('0x28d'),'url':_0x349519,'contentType':_0x5370('0x28e'),'data':JSON[_0x5370('0xe4')](_0x23985e)})[_0x5370('0x297')](function(_0x4e9075){if(_0x4e9075===!![]){_0xe4730b(!![],{});}else{_0xe4730b(![],_0x5370('0x2ad'));}})['fail'](function(_0x5ef922,_0x45a4f8,_0x2dbbee){_0xe4730b(![],_0x5370('0x2ad'));});};store[_0x5370('0x2ae')]();}var buyPremiumWasClicked=![];function buyPremiumProduct(){buyPremiumWasClicked=!![];store[_0x5370('0x2af')](_0x5370('0x2a1'));}function buyPremiumSubscription(){buyPremiumWasClicked=!![];store[_0x5370('0x2af')](_0x5370('0x2a7'));}function showThanksPageAfterBuying(){navigator['notification']['confirm'](getTrans(t_thanks_for_buying_text),showThanksPageAfterBuyingCallback,getTrans(t_thanks_for_buying_title),getTrans(t_thanks_for_buying_ok));}function showThanksPageAfterBuyingCallback(){}function showInfoPopupBeforeBuyingPremium(){navigator['notification'][_0x5370('0xf7')](getTrans(t_before_buy_premium_text),showInfoPopupBeforeBuyingPremiumCallback,getTrans(t_before_buy_premium_title),getTrans(t_before_buy_premium_cancel)+','+getTrans(t_before_buy_premium_buy));}function showInfoPopupBeforeBuyingPremiumCallback(_0x3707b2){if(_0x3707b2==0x2){buyPremiumProduct();}}
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+t_not_connected_text = ['Make sure that your Wi-Fi or cellular mobile data is turned on and then try again.', 'Upewnij się, że Wifi lub dane komórkowe są włączone, a następnie spróbuj ponownie.', 'Asegúrate que el WiFi o datos móviles están activados e inténtalo otra vez.', 'Vergewissere dich, dass dein WLAN oder Mobilfunknetz eingeschaltet ist und versuche es dann nochmal.', 'Assurez-vous que le Wi-Fi ou les données mobiles sont activées et essayez de nouveau.'];
+t_not_connected_title = ['No internet connection', 'Nie można połączyć się z internetem', 'No hay conexión a internet', 'Keine Internetverbindung', 'Pas de connexion Internet'];
+t_not_connected_exit = ['OK', 'OK', 'OK', 'OK', 'OK'];
+t_during_learning = ['Lesson in progress', 'W trakcie nauki', 'En progreso', 'Lektion im Gange', 'Leçon en cours'];
+t_lesson_skipped = ['Skipped', 'Pominięta', 'Omitida', 'Übersprungen', 'Leçon sautée'];
+t_learned_lesson = ['Completed', 'Ukończona', 'Finalizada', 'Abgeschlossen', 'Terminée'];
+t_recognize_error_title = ["Didn't catch that", 'Niepoprawna odpowiedź', 'No lo entendemos', 'Das habe ich nicht verstanden', "Nous n'avons pas compris"];
+t_recognize_error_try_again = ['Try again', 'Spróbuj ponownie', 'Inténtalo de nuevo', 'Versuche es nochmal', 'Essayez de nouveau'];
+t_recognize_error_skip = ['Skip the task', 'Pomiń zadanie', 'Omitir tarea', 'Aufgabe überspringen', "Passez l'exercice"];
+t_recognize_error_first_text = ['Try to speak more clearly and loudly.', 'Staraj się mówić głośno i wyraźnie.', 'Trata de hablar más alto y claro.', 'Versuche, deutlicher und lauter zu sprechen.', 'Essayez de parler plus clairement et plus fort.'];
+t_recognize_error_second_text = ["Please try to say the phrase in exactly the same way as you heard it. This applies to vocabulary and contractions.", 'Postaraj się wymówić wyrażenie w taki sam sposób w jaki je usłyszałeś (dotyczy to zarówno słownictwa jak i skrótów).', 'Trata de decir la frase exactamente de la misma forma que la has oído (haz lo mismo tanto con el vocabulario como con las contracciones).', 'Bitte wiederhole den Satz genauso, wie du ihn gehört hast. Das gilt auch für Vokabeln und Kontraktionen.', "Essayez de dire la phrase dans le même ordre que vous l'avez entendu (cela s'applique au vocabulaire et aux contractions)."];
+t_recognize_error_third_text = ["Remember sometimes speech recognition is not accurate.", 'Pamiętaj, że rozpoznawanie mowy nie zawsze jest bezbłędne.', 'Recuerda que a veces el reconocimiento de voz no es preciso.', 'Denke daran, das die Spracherkennung manchmal nicht exakt ist.', "Souvenez- vous que parfois, le système de reconnaissance vocal n'est pas précis. Essayez à nouveau ou passez la tâche."];
+t_end_new_materials_title = ["Congratulations!", "Gratulacje!", "¡Enhorabuena!", "Herzlichen Glückwunsch!", "Félicitations!"];
+t_end_new_materials_text = ["You went through all the content. Now repeat the lessons to become a Pro.", "Ukończyłeś naukę wszystkich wyrażeń. Od następnej lekcji będziesz jedynie utrwalał materiał.", "Ya has completado todo el contenido. Ahora, repite las lecciones para convertirte en un profesional.", "Du hast den gesamten Inhalt erarbeitet. Wiederhole jetzt die Lektionen, um ein Profi zu werden.", "Vous avez parcouru tout le contenu. Maintenant, répétez les leçons pour devenir un pro."];
+t_end_new_materials_ok = ["OK", "OK", "OK", "OK", "OK"];
+t_liked_words_added = ["Phrase has been added to Favourites.", "Fraza została dodana do zakładki ulubione.", "Frase añadida a Favoritos.", "Der Satz wurde zu deinen Favoriten hinzugefügt.", "La phrase a été ajoutée à vos favoris."];
+t_liked_words_remove = ["The phrase has been deleted from favourites", "Zwrot został usunięty z zakładki ''Ulubione''", "Frase eliminada de Favoritos", "Die Phrase wurde aus den Favoriten gelöscht", "La phrase a été effacée des favoris"];
+t_no_audio_lesson_title = ["Audio not available.", "Nagrania audio niedostępne.", "Audio no disponible.", "Audio nicht verfügbar.", "L'audio n'est pas disponible."];
+t_no_audio_lesson_text = ["This free version comes with 30 audio lessons. If you would like to get audio to all 180 lessons, upgrade to English Premium.", "Spośród 180 dostępnych lekcji, 30 zawiera nagrania audio. Wykup dostęp Premium, a otrzymasz nagrania do wszystkich lekcji.", "Inglés 1500+ viene con 180 lecciones de las cuales 30 contienen audio. Si deseas recibir todas las grabaciones de las 180 lecciones, comprar versión premium.", "Englisch 1500+ beinhaltet insgesamt 180 Lektionen ,von denen nur 30 eine Audioaufnahme enthalten. Falls du alle 180 Audioaufnahmen erhalten möchtest, kauf bitte Premiumversion.", "Sur les 180 leçons disponibles, 30 contiennent des enregistrements audio. Achetez version premium et vous obtiendrez les enregistrements audio pour toutes les leçons."];
+t_no_audio_lesson_learn_anyway = ["Learn anyway", "Ucz się bez nagrań", "Aprender sin grabaciones", "Trotzdem lernen", "Apprenez sans audio"];
+t_no_audio_lesson_upgrade = ["Upgrade", "Wykup dostęp Premium", "Comprar versión premium", "Premiumversion kaufen", "Achetez version premium"];
+t_no_audio_lesson_skip = ["Skip lesson", "Pomiń lekcję", "Omitir lección", "Lektion überspringen", "Passez la leçon"];
+t_confirm_back_in_learn_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro(a)?", "Bist du sicher?", "Etes-vous sûr?"];
+t_confirm_back_in_learn_text = ["Your progress won't be saved.", "Twój postęp nie zostanie zapisany.", "Tu progreso no será guardado.", "Deine Fortschritte werden nicht gespeichert.", "Votre progrès ne sera pas sauvegardé."];
+t_confirm_back_in_learn_back = ["Go back", "Wyjdź", "Volver", "Zurück", "Revenir en arrière"];
+t_confirm_back_in_learn_cancel = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+t_confirm_learn_missing_cat_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro(a)?", "Bist du sicher?", "Etes-vous sûr?"];
+t_confirm_learn_missing_cat_text = ["Do you want to learn previously skipped lesson?", "Lekcja została już pominięta", "¿Quereis aprender la lección anterior?", "Die Lektion wurde früher übersprungen.", "Voulez-vous apprendre une leçon que vous avez passée?"];
+t_confirm_learn_missing_cat_yes = ["Learn anyway", "Ucz się", "Aprender", "Lernen", "Apprendre"];
+t_confirm_learn_missing_cat_cancel = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+t_confirm_learn_inprogress_cat_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro(a)?", "Bist du sicher?", "Etes-vous sûr?"];
+t_confirm_learn_inprogress_cat_text = ["You are learning this lesson already.", "Uczyłeś się już tej lekcji.", "Has aprendido está lección.", "Du hast diese Lektion gelernt.", "Vous avez déjà appris cette leçon."];
+t_confirm_learn_inprogress_cat_yes = ["Learn anyway", "Ucz się mimo to", "Aprender", "Lernen", "Apprendre"];
+t_confirm_learn_inprogress_cat_cancel = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+t_confirm_skip_lesson_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro(a)?", "Bist du sicher?", "Etes-vous sûr?"];
+t_confirm_skip_lesson_text = ["Repetition is crucial for your long-term memory.", "Powtarzanie jest kluczowe w procesie zapamiętywania.", "La repetición tiene una importancia fundamental para la memorización a largo plazo.", "Wiederholungen sind für das Langzeitgedächtnis sehr wichtig.", "Répéter est essentiel pour la mémoire à long terme."];
+t_confirm_skip_lesson_skip = ["Skip", "Pomiń", "Omitir", "Überspringen", "Passez"];
+t_confirm_skip_lesson_cancel = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+t_confirm_exit_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro(a)?", "Bist du sicher?", "Etes-vous sûr?"];
+t_confirm_exit_text = ["Please complete the lesson before exiting. Otherwise, your progress won't be saved.", "Ukończ lekcję przed zamknięciem aplikacji.W przeciwnym wypadku postęp nie zostanie zapisany.", "Por favor, completa la lección antes de salir. De lo contrario, tu progreso no será guardado.", "Beende die Lektion, bevor du die Anwendung schließt. Sonst werden deine Fortschritte nicht gespeichert.", "Terminez la leçon avant de fermer l'application. Autrement votre progrès ne sera pas sauvegardé."];
+t_confirm_exit_cancel = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+t_confirm_exit_exit = ["Exit", "Wyjście", "Salir", "Beenden", "Quitter"];
+t_placeholder_fuzzy_search = ["Search for lesson…", "Szukaj lekcji…", "Buscar lección….", "Lektion … suchen", "Chercher la leçon..."];
+t_placeholder_hint_text = ["Click here to write your hint", "Kliknij tutaj napisać własną podpowiedź", "Presiona aquí para escribir tus indicaciones", "Klick hier, um deinen Hinweis zu schreiben", "Cliquez ici pour écrire vos indices"];
+t_lang_rank = ["en", "pl", "es", "de", "fr"];
+t_after_premium_copy_text = ["You can now safely uninstall the previous version of the application.", "Możesz teraz bepiecznie odinstalować poprzednią wersję aplikacji.", "Tu progreso ha sido cargado exitosamente.", "Du kannst jetzt die vorherige Version der App sicher deinstallieren.", "Vous pouvez maintenant désinstaller en toute sécurité la précédente version de l'application."];
+t_after_premium_copy_title = ["Your progress was successfully loaded", "Postęp został poprawnie wczytany", "Tu progreso ha sido cargado exitosamente", "Daten wurden erfolgreich geladen", "Vos progrès ont été téléchargés avec succès"];
+t_after_premium_copy_ok = ["OK", "OK", "OK", "OK", "OK"];
+t_confirm_remove_saved_word_text = ["The phrase has been deleted from favourites", "Czy chcesz usunąć zwrot z zakładki \"ulubione\"?", "¿Desea eliminar la frase de \"Favoritos\"?", "Möchten Sie die Phrase aus \"Favoriten\" löschen?", "Voulez-vous supprimer la phrase des favoris?"];
+t_confirm_remove_saved_word_title = ["Are you sure?", "Czy jesteś pewien?", "¿Estás seguro(a)?", "Bist du sicher?", "Etes-vous sûr?"];
+t_confirm_remove_saved_word_cancel = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+t_confirm_remove_saved_word_remove = ["OK", "OK", "OK", "OK", "OK"];
+t_import_from_file_error = ["This file is invalid!", "Plik jest nieprawidłowy!", "El archivo es inválido!", "Diese Datei ist ungültig!", "Ce fichier est invalide!"];
+t_import_from_file_success = ["Data loaded successfully.", "Postęp został poprawnie wczytany", "Tu progreso ha sido cargado exitosamente.", "Daten wurden erfolgreich geladen.", "Les données ont été téléchargées avec succès."];
+t_automated_skipped_lessons = ["lessons were skipped", "lekcji zostało pominiętych", "lecciones han sido saltadas", "Lektionen wurden übersprungen", "leçons ont été sautées"];
+t_skipped_lesson_success = ["Lesson has been skipped", "Lekcja została pominięta", "La lección ha sido saltada", "Lektion wurde übersprungen", "Une leçon a été sautée"];
+t_app_name = ["English 1500+", "Angielski 1500+", "Inglés 1500+", "Englisch 1500+", "Anglais 1500+"];
+t_app_name_pro = ["English 1500+ Pro", "Angielski 1500+ Pro", "Inglés 1500+ Pro", "Englisch 1500+ Pro", "Anglais 1500+ Pro"];
+t_thanks_for_buying_text = ["The premium version is active.", "Wersja premium jest aktywna.", "La versión premium está activa.", "Die Premiumversion ist aktiv.", "La version premium est active."];
+t_thanks_for_buying_title = ["Congratulations!", "Gratulacje!", "¡Enhorabuena!", "Herzlichen Glückwunsch!", "Félicitations!"];
+t_thanks_for_buying_ok = ["OK", "OK", "OK", "OK", "OK"];
+t_before_buy_premium_text = ["Buy premium version.", "Wykup dostęp Premium, a otrzymasz:\n- nagrania audio do wszystkich lekcji\n- wersję bez reklam", "Compra la versión premium y recibirás:\n- Los audios de las 180 lecciones\n- Contenido sin publicidad", "Kauf dir die Premiumversion, dann erhältst du:\n- Audios für alle 180 Lektionen\n- werbefreie Inhalte", "Achetez la version premium pour obtenir:\n- les audios pour toutes les leçons\n- une version sans publicités"];
+t_before_buy_premium_title = ["The premium version", "Wersja premium", "La versión premium", "Die Premiumversion", "La version premium"];
+t_before_buy_premium_cancel = ["Cancel", "Anuluj", "Cancelar", "Abbrechen", "Annulez"];
+t_before_buy_premium_buy = ["Buy premium version", "Wykup dostęp Premium", "Comprar versión premium", "Premiumversion kaufen", "Achetez version premium"];
+
+/*translacje*/
+function getTrans(key) {
+    if (langJSON.lang > 0) {
+        return key[parseInt(langJSON.lang - 1)];
+    } else {
+        return key[0];
+    }
+}
+
+// PREMIUM CHANGE
+var isPremium = false;
+var dev = false;
+var isLegal = false;
+var legalValidation = true;
+var isPayedPro = false;
+
+var app = {
+    // Application Constructor
+    initialize: function () {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function () {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
+
+    onDeviceReady: function () {
+        var src = '/android_asset/www/date/1.mp3';
+        my_media = new Media(src, function () {
+        }, function (err) {
+            console.log("M: " + err.message + " - " + err.code);
+        });
+
+        $('#menu-switch').hide();
+        $('#menu').hide();
+        $("#first-use-loading-page").show();
+        logEventInServer('run application', {});
+        getMyLang();
+
+        document.addEventListener("resume", hideBars, false);
+        if ($(window).width() > 600) {
+            StatusBar.hide();
+        } else {
+            AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
+        }
+
+        document.addEventListener('onAdDismiss', function (data) {
+            //prepareAd();
+            removeAllProgress();
+            removeAllProgress2();
+            setTimeout(function () {
+                loadProgressBarToFull();
+                loadProgressBarToFull2();
+            }, 100);
+        });
+
+        document.addEventListener('onAdPresent', function (data) {
+            setTimeout(function () {
+                removeAllProgress();
+                removeAllProgress2();
+            }, 50);
+            prepareAd();
+        });
+
+        document.addEventListener('onAdFailLoad', function (e) {
+            setAdIsReady(false);
+        });
+
+        document.addEventListener('onAdLoaded', function (data) {
+            setAdIsReady(true);
+        });
+
+        document.addEventListener("backbutton", function (e) {
+            e.preventDefault();
+        }, false);
+
+        setTextWidth();
+
+        volumeTest();
+
+        //smoothLoadProgressBarWelcome();
+
+        if(!isPremium) {
+            initStore();
+        }
+    },
+    // Update DOM on a Received Event
+    receivedEvent: function (id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+    }
+};
+
+function emptyFunctionS() {
+    console.log("jestem");
+}
+
+function hideBars() {
+    if (!dev) {
+        if ($(window).width() > 600) {
+            StatusBar.hide();
+        } else {
+            AndroidFullScreen.immersiveMode(emptyFunctionS, emptyFunctionS);
+        }
+    }
+}
+
+/* OBSŁUGA ŚCIEŻKI */
+var mainPath;
+
+function path() {
+    var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
+    mainPath = (res.toString()).replace(/,/g, '/');
+    return (res.toString()).replace(/,/g, '/');
+}
+
+var demoPathsrc;
+
+function demoPath() {
+    if (isPremium) {
+        var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
+        demoPathsrc = (res.toString()).replace(/,/g, '/');
+        demoPathsrc = demoPathsrc.substring(0, demoPathsrc.length - 10) + "/files/";
+        return demoPathsrc;
+    } else {
+        demoPathsrc = path();
+        return demoPathsrc;
+    }
+}
+
+var premiumPathsrc;
+
+function premiumPath() {
+    if (isPremium) {
+        premiumPathsrc = path();
+        return premiumPathsrc;
+    } else {
+        var res = (cordova.file.externalDataDirectory).split('/').slice(-5);
+        premiumPathsrc = (res.toString()).replace(/,/g, '/');
+        premiumPathsrc = premiumPathsrc.substring(0, premiumPathsrc.length - 7) + "Pro/files/";
+        return premiumPathsrc;
+    }
+}
+
+/* END OBSŁUGA ŚCIEŻKI */
+
+/* READ FILE3 */
+function readDayF() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess3, onFSError);
+}
+
+function onFSSuccess3(fileSystem) {
+    fileSystem.root.getFile(srcFile3, {create: false, exclusive: false}, gotFileEntry3, onFSError);
+}
+
+function gotFileEntry3(fileEntry) {
+    fileEntry.file(gotFile3, onFSError);
+}
+
+function gotFile3(file) {
+    readAsText3(file);
+}
+
+function readAsText3(file) {
+    var reader = new FileReader();
+    reader.onloadend = function (e) {
+        res3 = e.target.result;
+    };
+    reader.readAsText(file);
+}
+
+/* END READ FILE */
+
+/* READ LANG */
+function readLang() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLangR, onFSErrorLangR);
+}
+
+function onFSSuccessLangR(fileSystem) {
+    fileSystem.root.getFile(srcLang, {create: false, exclusive: false}, gotFileEntryLangR, onFSErrorLangR);
+    rootURL = fileSystem.root.toURL();
+}
+
+function gotFileEntryLangR(fileEntry) {
+    fileEntry.file(gotFileLangR, onFSErrorLangR);
+}
+
+function gotFileLangR(file) {
+    readAsTextLangR(file);
+}
+
+function readAsTextLangR(file) {
+    var reader = new FileReader();
+    reader.onloadend = function (e) {
+        afterReadMyLang(e.target.result);
+    };
+    reader.readAsText(file);
+}
+
+function onFSErrorLangR(err) {
+    afterReadMyLang('{"lang":-1}');
+}
+
+/* END READ FILE */
+
+/* READ FILE */
+function readWriteFile() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onFSError);
+}
+
+function onFSSuccess(fileSystem) {
+    fileSystem.root.getFile(srcFile, {create: false, exclusive: false}, gotFileEntry, onFSError);
+}
+
+function gotFileEntry(fileEntry) {
+    fileEntry.file(gotFile, onFSError);
+}
+
+function gotFile(file) {
+    readAsText(file);
+}
+
+function readAsText(file) {
+    var reader = new FileReader();
+    reader.onloadend = function (e) {
+        afterReadToLearn(e.target.result);
+    };
+    reader.readAsText(file);
+}
+
+function onFSError(err) {
+    res = "[]";
+}
+
+/* END READ FILE */
+
+/* READ FILE2 */
+function readWriteFile2() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess2, onFSError);
+}
+
+function onFSSuccess2(fileSystem) {
+    fileSystem.root.getFile(srcFile2, {create: false, exclusive: false}, gotFileEntry2, onFSError);
+}
+
+function gotFileEntry2(fileEntry) {
+    fileEntry.file(gotFile2, onFSError);
+}
+
+function gotFile2(file) {
+    readAsText2(file);
+}
+
+function readAsText2(file) {
+    var reader = new FileReader();
+    reader.onloadend = function (e) {
+        afterNoticeRead(e.target.result);
+    };
+    reader.readAsText(file);
+}
+
+/* END READ FILE */
+
+/* SAVE FILE */
+
+var srcSaveTmp = false;
+var srcSaveOld = false;
+var srcSaveDayTmp = false;
+var endTodayLesson = false;
+
+function saveFile() {
+
+    //				endLearn();
+
+    srcSaveTmp = path() + "save_tmp.json";
+    srcSaveOld = path() + "save_old.json";
+    //renameFile(srcSave,'',srcSaveOld, renameSuccessSave);
+    saveFileOld();
+}
+
+function renameSuccessSave() {
+    saveFileOld();
+}
+
+function saveFileOld() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN2, failN);
+}
+
+function gotFSN2(fileSystem) {
+    fileSystem.root.getFile(srcSaveTmp, {create: true}, gotFileEntryN2, failN);
+}
+
+function gotFileEntryN2(fileEntry) {
+    fileEntry.createWriter(gotFileWriterN2, failN);
+}
+
+function gotFileWriterN2(writer) {
+
+    writer.onwriteend = function (e) {
+        renameFile(srcSaveTmp, '', srcSave, renameSuccessSaveEnd);
+    };
+
+    writer.write(JSON.stringify(datesJSON));
+    writer.abort();
+}
+
+function renameSuccessSaveEnd() {
+    //zapisz dzień
+    saveFile5();
+}
+
+function failN(error) {
+
+}
+
+/* END SAVE FILE */
+
+/* SAVE LANG */
+function saveMyLang(mylang) {
+    langJSON.lang = mylang;
+    getCatWithPos(0, 1);
+    saveLang();
+}
+
+function saveLang() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSNLang, failN);
+}
+
+function gotFSNLang(fileSystem) {
+    fileSystem.root.getFile(srcLang, {create: true}, gotFileEntryLang, failN);
+}
+
+function gotFileEntryLang(fileEntry) {
+    fileEntry.createWriter(gotFileWriterLang, failN);
+}
+
+function gotFileWriterLang(writer) {
+    writer.onwrite = function (evt) {
+        console.log("write success");
+    };
+    writer.write(JSON.stringify(langJSON));
+    writer.abort();
+}
+
+/* END SAVE FILE */
+
+/* SAVE FILE2 - DAY*/
+function saveFile5() {
+    srcSave5 = path() + "day.json";
+    srcSaveDayTmp = path() + "day_tmp.json";
+    saveFileDay();
+}
+
+function saveFileDay() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN5, failN);
+}
+
+function gotFSN5(fileSystem) {
+    fileSystem.root.getFile(srcSaveDayTmp, {create: true}, gotFileEntryN5, failN);
+}
+
+function gotFileEntryN5(fileEntry) {
+    fileEntry.createWriter(gotFileWriterN5, failN);
+}
+
+function gotFileWriterN5(writer) {
+    writer.onwriteend = function (e) {
+        renameFile(srcSaveDayTmp, '', srcSave5, renameSuccessSaveDayEnd);
+    };
+
+    writer.write(JSON.stringify(datesJSON5));
+    writer.abort();
+}
+
+function renameSuccessSaveDayEnd() {
+    if (endTodayLesson) {
+        endLearn();
+    }
+}
+
+/* END SAVE FILE */
+
+/*POTRZEBNE ZMIENNE*/
+var wordsInOneCat = 10;
+var minCat = 7;
+var countOfCycle = 2;
+var countCatInFirstBigCat = 10;
+var firstCycle = false;
+var secondCycle = false;
+var thirdCycle = false;
+var srcSave = false;
+var srcSave5 = false;
+var srcLang = false;
+var datesJSON = false;
+var datesJSON5 = false;
+var dayJSONwordsCopy = 0;
+var learnedWordsCopy = 0;
+
+var langJSON = dev ? JSON.parse('{"lang": 2}') : JSON.parse('{"lang":-1}');
+var dayJSON = dev ? JSON.parse('{"day": 5, "words": 10, "km": 10, "skiped": ["1/10"], "rating": false, "theme": 1}') : false;
+var toLearnJSON = dev ? JSON.parse('[{"subid":13,"catid":1,"start":"3"}]') : [];
+
+var dayJSONwordsCopy = dayJSON.words;
+var toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
+var resLang = false;
+var res = false;
+var srcFile = false;
+var res2 = false;
+var srcFile2 = false;
+var res3 = false;
+var srcFile3 = false;
+var noticeJSON = [];
+var likedJSON = [];
+var isFirstCycle = true;
+var startLearn = false;
+var toLearn = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+var countWord = 0;
+var countCatsToLearn = 0; //without repeatitions
+var countCatsToLearnToday = 1; //with repeatitions
+var countWordsToLearn = wordsInOneCat + (wordsInOneCat * 2)//wordsInOneCat*2; //2 cykle w nowej kategorii po 10 słów
+var learnedWords = 0;
+var learnedWordsInCat = 0;
+var countWordsToLearnInThisCycle = 0;
+var suggestedCatPath = "";
+var suggestedCatName = "";
+var learnedCat = [];
+var inProgressCat = [];
+var missingCat = [];
+var gameIsBegin = false;
+var allCats = [];
+var allUsedCats = [];
+var allEndedCats = [];
+var catsWithAudioInDemo = [];
+var todayEndedCat = "";
+var rootURL = "";
+var lessonsJumpToFuture = 0;
+var hasNewCatsToday = false;
+
+/* START APP*/
+function startApp() {
+    setTextWidth();
+    hideBars();
+    setTimeout(function () {
+        var lang = langJSON.lang;
+        prepareAd();
+        //TAK
+        if (lang < 1) {
+            if (!isPremium) {
+                $("#first-use-loading-page").hide();
+                startLearn = true; //po tutorialu zacznie naukę
+                getLangList(); //wybierz swój język
+                $("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
+            }
+            copyFirstPath();
+            updatePlaceholders();
+        }
+        else {
+            //NIE
+            $('#menu-switch').show();
+            $('#menu').show();
+            $("#myLang").val(lang);
+            $("body").addClass('lang' + lang);
+            getDay(); //pobierz numer dnia
+            getNotice(); //pobierz notice
+            readLikedWords(); //pobierz liked words
+            updatePlaceholders();
+        }
+    }, 200);
+}
+
+/*END START APP*/
+function getMyLang() {
+    srcLang = path() + "lang.json";
+    if (!dev) {
+        readLang();
+    } else {
+        afterReadMyLang(JSON.stringify(langJSON));
+    }
+}
+
+function afterReadMyLang(langData) {
+    langJSON = JSON.parse(langData);
+    if(typeof langJSON.lang != 'undefined' && langJSON.lang > 0) {
+        $("body").addClass('lang' + langJSON.lang);
+        testAndRunAppIfIsOk(startApp);
+    } else {
+        if (!isPremium) {
+            $("#first-use-loading-page").hide();
+            startLearn = true; //po tutorialu zacznie naukę
+            getLangList(); //wybierz swój język
+            $("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
+        }
+        copyFirstPath();
+        updatePlaceholders();
+    }
+}
+
+function testAndRunAppIfIsOk(callbackAfterValid) {
+    if(!dev) {
+        if (!checkConnection()) {
+            navigator.notification.confirm(
+                getTrans(t_not_connected_text),
+                onNoInternetConfirm,
+                getTrans(t_not_connected_title),
+                getTrans(t_not_connected_exit)
+            );
+        } else {
+            testLegalAppAndRunIfIsLegal(callbackAfterValid);
+        }
+    } else {
+        startAppBecauseIsLegal(callbackAfterValid);
+    }
+}
+
+function getDay() {
+    srcFile3 = path() + "day.json";
+    if (!dev) {
+        readDayF();
+        getDayHelper();
+    } else {
+        getAllCatsInArray();
+        getAllCatsToShowAllCats();
+        afterGetDay();
+    }
+}
+
+function getDayHelper() {
+    if (res3 == false) {
+        setTimeout(getDayHelper, 100);
+        return;
+    } else {
+        getAllCatsInArray();
+        getAllCatsToShowAllCats();
+
+        dayJSON = JSON.parse(res3);
+        dayJSONwordsCopy = dayJSON.words;
+        afterGetDay();
+    }
+}
+
+function afterGetDay() {
+    logEventInServer('start day', {day: dayJSON.day, lang: langJSON.lang});
+    countWordsToLearn = wordsInOneCat + (wordsInOneCat * 2);
+    countOfCycle = 2;
+    countCatsToLearn = 0;
+    countCatsToLearnToday = 1;
+    inProgressCat = [];
+    $("#nrDayFiled").text(dayJSON.day);
+    $(".allWords").text(dayJSON.words);
+    $("#end-nr-lesson").text(dayJSON.day);
+    $("#countWordsToLearn").text(dayJSON.day - 1);
+    $(".equivalentLessons").text(dayJSON.day - 1); //usunąć
+    $(".all-words-to-end").text(countWordsToLearn);
+    $(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
+    $(".countKMLearned").text(Math.floor(dayJSON.km * minCat / 60)); //usunąć
+    $(".countMinLearned").text(dayJSON.km * minCat % 60); //usunąć
+    for (var x in dayJSON.skiped) {
+        var skip = dayJSON.skiped[x];
+        allUsedCats.push(skip);
+        allEndedCats.push(skip);
+    }
+    $("body").addClass('theme' + dayJSON.theme);
+
+    getToLearn();
+}
+
+function getNotice() {
+    srcFile2 = path() + "notice.json";
+    if (!dev) {
+        readWriteFile2();
+    }
+}
+
+function afterNoticeRead(resNotice) {
+    noticeJSON = JSON.parse(resNotice);
+}
+
+function getToLearn() {
+    srcFile = path() + "save.json";
+    if (!dev) {
+        readWriteFile();
+    } else {
+        afterReadToLearn(JSON.stringify(toLearnJSON));
+    }
+}
+
+function afterReadToLearn(tolearnfromFile) {
+    toLearnJSON = JSON.parse(tolearnfromFile);
+    toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
+
+    if (toLearnJSON.length == 0) {
+        getCatWithPos(0, 1);
+        startLessonAfterSetUpEverything();
+    }
+    for (var x in toLearnJSON) {
+        var pack = toLearnJSON[x];
+        var day = dayJSON.day;
+        var dayNr = day - pack.start;
+        allUsedCats.push(pack.catid + "/" + pack.subid);
+        if (dayNr >= 27) {
+            learnedCat.push(pack.catid + "/" + pack.subid);
+            allEndedCats.push(pack.catid + "/" + pack.subid);
+        }
+        if (dayNr < 27) {
+            inProgressCat.push(pack.catid + "/" + pack.subid);
+            inProgressCatcopyForBackBTN = inProgressCat.slice();
+        }
+        switch (dayNr) {
+            case 1:
+                /*
+			toLearn[0] = pack.catid + "/" + pack.subid;
+			toLearn[1] = pack.catid + "/" + pack.subid;
+			countCatsToLearn++;
+			countOfCycle++;
+			countOfCycle++;
+			countWordsToLearn += wordsInOneCat;
+			countWordsToLearn += wordsInOneCat*2;
+			inProgressCat.push(pack.catid + "/" + pack.subid);
+		*/
+                break;
+            case 2:
+                toLearn[2] = pack.catid + "/" + pack.subid;
+                toLearn[3] = pack.catid + "/" + pack.subid;
+                countCatsToLearn++;
+                countOfCycle++;
+                countOfCycle++;
+                countWordsToLearn += wordsInOneCat * 2;
+                countWordsToLearn += wordsInOneCat;
+                setSuggestedCat(pack.catid, pack.subid);
+                inProgressCat.push(pack.catid + "/" + pack.subid);
+                break;
+            case 10:
+                toLearn[4] = pack.catid + "/" + pack.subid;
+                toLearn[5] = pack.catid + "/" + pack.subid;
+                countCatsToLearn++;
+                countOfCycle++;
+                countOfCycle++;
+                countWordsToLearn += wordsInOneCat * 2;
+                countWordsToLearn += wordsInOneCat;
+                inProgressCat.push(pack.catid + "/" + pack.subid);
+                break;
+            case 27:
+                toLearn[6] = pack.catid + "/" + pack.subid;
+                toLearn[7] = pack.catid + "/" + pack.subid;
+                todayEndedCat = pack.catid + "/" + pack.subid;
+                countCatsToLearn++;
+                countOfCycle++;
+                countOfCycle++;
+                countWordsToLearn += wordsInOneCat * 2;
+                countWordsToLearn += wordsInOneCat;
+                inProgressCat.push(pack.catid + "/" + pack.subid);
+                break;
+            default:
+                break;
+        }
+
+        if (x == (toLearnJSON.length - 1)) {
+            if (!suggestedCatName) {
+                getCatWithPos(0, 1);
+            }
+
+            setTimeout(showInProgressCat, 200);
+            setTimeout(function () {
+                uniqueallUsedCats = allUsedCats.filter(function (item, pos) {
+                    return allUsedCats.indexOf(item) == pos;
+                });
+                if (allCats.sort().toString() == uniqueallUsedCats.sort().toString()) {
+                    countWordsToLearn -= wordsInOneCat + (wordsInOneCat * 2);
+                    countOfCycle -= 2;
+                    $("#countWordsToLearn").text(dayJSON.day - 1);
+                    $(".equivalentLessons").text(dayJSON.day - 1); //usunąć
+                    $(".all-words-to-end").text(countWordsToLearn);
+                    $(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
+                    countCatsToLearnToday += countCatsToLearn - 1;
+                    $(".allTimeToday").text(countCatsToLearnToday * minCat);
+                    //jeżeli nie ma już nowych kategorii ale są jeszcze powtórki
+                    if (countCatsToLearn > 0) {
+                        $("#repetition-only-info").show();
+                        startLessonAfterSetUpEverything();
+                    } else {
+                        //sprawdź czy są w trakcie nauki jeszcze jakieś kategorię
+                        if (inProgressCat.length > 0) {
+                            //przeskocz dzień do przodu
+                            dayJSON.day = dayJSON.day + 1;
+                            afterGetDay();
+                            lessonsJumpToFuture++;
+                        } else {
+                            //wyświetl, że to już koniec kursu
+                            $("#first-use-loading-page").hide();
+                            $("#end-course").addClass('next-cat-left');
+                            $("#end-course").show();
+                            setTimeout(function () {
+                                $("#end-course").removeClass('next-cat-left');
+                                showRating();
+                            }, 100);
+                        }
+                    }
+                } else {
+                    $("#countWordsToLearn").text(dayJSON.day - 1);
+                    $(".equivalentLessons").text(dayJSON.day - 1); //usunąć
+                    $(".all-words-to-end").text(countWordsToLearn);
+                    $(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle);
+                    countCatsToLearnToday += countCatsToLearn;
+                    $(".allTimeToday").text(countCatsToLearnToday * minCat);
+                    startLessonAfterSetUpEverything();
+                }
+            }, 250);
+        }
+    }
+}
+
+function startLessonAfterSetUpEverything() {
+    setTimeout(function () {
+        gameIsBegin = true;
+        $("#first-use-loading-page").hide();
+        showStartLessonPage();
+    }, 200);
+}
+
+function setCountWord() {
+    for (var i = 0; i < 8; i++) {
+        if (toLearn[i] > 0) {
+            countWord += wordsInOneCat;
+        }
+    }
+}
+
+function saveDay() {
+    dayJSON.day = dayJSON.day + 1;  //zmienić na 1
+    dayJSON.km = dayJSON.km + (countOfCycle / 2);
+    datesJSON5 = dayJSON;
+
+    $("#learn-container").addClass('next-cat-right');
+    setTimeout(function () {
+        $("#learn-container").hide();
+        $("#saving-progress-today").show();
+        setTimeout(function () {
+            $("#saving-progress-today").removeClass('next-cat-left');
+            setTimeout(function () {
+                datesJSON = toLearnJSON;
+                srcSave = path() + "save.json";
+                saveFile();
+            }, 1500);
+        }, 100);
+    }, 500);
+}
+
+function getLangList() {
+    $.get("date/lang.json", function (result) {
+        showLangList(result);
+    });
+}
+
+function showLangList(l) {
+    var langs = JSON.parse(l);
+    for (var x in langs) {
+        var lang = langs[x];
+        var tmp = '<h1 class="text" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" >' + lang.label + '</h1>';
+        if (x > 0) $("#langs").append(tmp);
+    }
+}
+
+/* END GET LAND LIST */
+
+/* GET CAT LIST */
+var subcats = false;
+
+function getCatList() {
+    var idCat = $("#myLang").val();
+    $.get("date/" + idCat + "/cat.json", function (result) {
+        setTimeout(
+            function () {
+                setTimeout(
+                    function () {
+                        showCatList(result);
+                    }, 200);
+                //getToLearn();
+            }, 200);
+    });
+}
+
+function showCatList(c) {
+    var cats = JSON.parse(c);
+    $("#cats").html("");
+    var tmp = '';
+    for (var x in cats) {
+        subcats = false;
+        var cat = cats[x];
+        //if(x == 0) tmp += '<div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Phrases</span></h1><div>';
+        //if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
+        tmp += '<div><h1 class="text supercat" onclick="expand(this);">' + cat.name + '</h1>';
+        var extraEnd = parseInt(x) + 1 == parseInt(cats.length) ? '</div></div>' : "";
+        tmp += getSubCatList(cat.id) + '</div>';
+    }
+    $("#cats").append(tmp);
+}
+
+function getSubCatName(cs) {
+    var res = cs.split("/");
+    var idp = res[0];
+    var idc = res[1];
+    var idLang = $("#myLang").val();
+    $.get("date/" + idLang + "/" + idp + "/subcat.json", function (result) {
+        var scat = JSON.parse(result);
+        for (var x in scat) {
+            var cat = scat[x];
+            if (cat.id == idc) {
+                nameCat = cat.name;
+            }
+        }
+    });
+}
+
+function getWordToSuggestCat(cs) {
+    var res = cs.split("/");
+    var idp = res[0];
+    var idc = res[1];
+    var idLang = $("#myLang").val();
+    $.get("date/" + idLang + "/" + idp + "/" + idc + "/words.json", function (result) {
+        $.get("date/1/" + idp + "/" + idc + "/words.json", function (transResult) {
+            $("#list-word-in-sug-cat").html("");
+            var words = JSON.parse(result);
+            var trans = JSON.parse(transResult);
+            var i = 0;
+            for (var x in words) {
+                i++;
+                var w = words[x];
+                var t = trans[x];
+                $("#list-word-in-sug-cat").append('<p class="text" data-source="new-lesson" data-category="'+ idp +'" data-subcategory="'+ idc +'" data-word="'+ w.id +'"  onclick="tellMeWordFrom(\'' + cs + '\',' + w.id + ', this)">' + i + '. ' + t.name + '<span>' + w.name + '</span></p>');
+            }
+        });
+    });
+}
+
+/* END GET CAT LIST */
+
+/* GET SUBCAT LIST */
+var parent = false;
+var firstGenerationCat = true;
+
+function getSubCatList(idCat) {
+    getNotice();
+    var idLang = $("#myLang").val();
+    parent = idCat;
+    /**/
+    var result = null;
+    $.ajax({
+        url: "date/" + idLang + "/" + idCat + "/subcat.json",
+        type: 'get',
+        dataType: 'html',
+        async: false,
+        success: function (data) {
+            result = showSubCatList(data, idCat);
+        }
+    });
+    return result;
+}
+
+function showSubCatList(s, parentId) {
+    var cats = JSON.parse(s);
+    var tmp = '<div class="list-of-subcat">';
+    for (var x in cats) {
+        var cat = cats[x];
+        var cl = "";
+        var catSgn = parentId + "/" + cat.id;
+        if (dayJSON.skiped.indexOf(catSgn) >= 0) {
+            cl = "missingCat";
+        }
+        if (learnedCat.indexOf(catSgn) >= 0) {
+            cl = "learnedCat";
+        }
+        if (inProgressCat.indexOf(catSgn) >= 0) {
+            cl = "inProgressCat";
+        }
+        cl2 = (cat.audio == true || isPayedPro == true) ? '' : 'no-audio';
+        tmp += '<p class="text setCat ' + cl + ' ' + cl2 + '" onclick="getThisCatAsSug(this);" data-name="' + cat.name + '" data-parent="' + parentId + '" data-subcat="' + cat.id + '" data-pos="' + cat.id + '"><strong>' + (cat.name).substring(0, 2) + '</strong> ' + (cat.name).substring(2) + '<span class="inProgressCatInfo">' + getTrans(t_during_learning) + '</span> <span class="missingCatInfo">' + getTrans(t_lesson_skipped) + '</span> <span class="learnedCatInfo">' + getTrans(t_learned_lesson) + '</span></p>';
+        if (firstGenerationCat) $("#cat-list .list").append('<li><p class="cat-name" data-id="' + cat.id + '" data-par="' + parentId + '">' + cat.name + '</p></li>');
+    }
+    tmp += '</div>';
+    subcats = tmp;
+    return tmp;
+}
+
+var inProgressCatcopyForBackBTN = [];
+
+/* END GET SUBCAT LIST */
+function setNewCat(c, s) {
+    toLearn[8] = c + "/" + s;
+    toLearn[9] = c + "/" + s;
+    setTimeout(function () {
+        srt = $("#nrDayFiled").text();
+
+        toLearnJSONcopyForBackBTN = JSON.parse(JSON.stringify(toLearnJSON));
+        toLearnJSON.push({"subid": s, "catid": c, "start": srt});
+
+        inProgressCatcopyForBackBTN = inProgressCat.slice();
+        inProgressCat.push(c + "/" + s);
+    }, 150);
+
+    /*datesJSON = toLearnJSON;
+	srcSave = path() + "save.json";
+	saveFile(); */  //ODKOMENTOWAĆ POTEM
+}
+
+function showtoLearn() {
+    for (var i = 0; i < 10; i++) ;
+    //(i + ")" + toLearn[i]);
+}
+
+/* GET WORD LIST */
+var idWord = false;
+var nameWord = false;
+
+function getWordList() {
+    var idLang = $("#myLang").val();
+    var idParentCat = $("#myParentCat").val();
+    var idSubCat = $("#myCat").val();
+    var idLernLang = $("#learnLang").val();
+    var words = false;
+    var trans = false;
+    $.get("date/" + idLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function (result) {
+        words = result;
+        $.get("date/" + idLernLang + "/" + idParentCat + "/" + idSubCat + "/words.json", function (trans) {
+            showWordList(words, trans);
+        });
+    });
+}
+
+var words, trans;
+
+function showWordList(w, t) {
+    words = JSON.parse(w);
+    trans = JSON.parse(t);
+    isFirstCycle = false;
+    if (isFirstCycle) {
+        $("#words").html("");
+        var tmp = "";
+        for (var x in words) {
+            nameWord = false;
+            var word = words[x];
+            var tran = trans[x];
+            tmp += '<div class="word" data-id="' + word.id + '" data-check="1" onclick="checkWord(this);"><table><tr><td><p class="text">' + word.name + '</p></td><td rowspan="2"><img src="img/check.png"></td></tr><tr><td><p class="text">' + tran.name + '</p></td></tr></table></div>';
+        }
+        $("#words").html(tmp);
+        isFirstCycle = false;
+    } else {
+        getNavWordList();
+    }
+}
+
+/* END GET WORD LIST */
+
+/* GET NAV WORD LIST */
+function getNavWordList() {
+    $("#nav-words-container").text("");
+    var i = 0;
+    var firstId = -1;
+    if (isFirstCycle) {
+        $(".word").each(function (index) {
+            if ($(this).attr('data-check') != 0) {
+                i++;
+                var id = $(this).data('id');
+                if (i == 1) {
+                    firstId = id;
+                    setActWord(id);
+                }
+                //$("#nav-words-container").append('<p ontouchstart="setWordToLearn(' + id + ', this)" data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+                //$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+                $("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/' + i + '.png" class="no-activ-img"><img src="img/' + i + '.png" class="activ-img"></p>');
+            }
+        });
+        isFirstCycle = false;
+        setTimeout(function () {
+            setNavWordPosition(0);
+            $("#nav-words-container p").removeClass("activ");
+            $("#nav-words-container p").removeClass("pulse");
+            $("#nav-words-container p").eq(0).addClass("activ");
+            $("#nav-words-container p").eq(0).addClass("pulse");
+        }, 50);
+    } else {
+        for (var x in words) {
+            var word = words[x];
+            var id = word.id;
+            i++;
+            if (i == 1) {
+                firstId = id;
+                setActWord(id);
+            }
+            //$("#nav-words-container").append('<p ontouchstart="setWordToLearn(' + id + ', this)" data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+            //$("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/nav-bg.png" class="no-activ-img"><img src="img/nav-bg-activ.png" class="activ-img"><span>' + i + '</span></p>');
+            $("#nav-words-container").append('<p data-word-id="' + id + '"><img src="img/' + i + '.png" class="no-activ-img"><img src="img/' + i + '.png" class="activ-img"></p>');
+        }
+        setTimeout(function () {
+            setNavWordPosition(0);
+            $("#nav-words-container p").removeClass("activ");
+            $("#nav-words-container p").removeClass("pulse");
+            $("#nav-words-container p").eq(0).addClass("activ");
+            $("#nav-words-container p").eq(0).addClass("pulse");
+        }, 50);
+    }
+}
+
+function setNavWordPosition(i, k) {
+    var k = k || 3;
+    var j;
+    if (k == 3) {
+        if (i == 0) j = 3;
+        else {
+            j = i + 2;
+            i--;
+        }
+    } else if (k == 1) {
+        j = i + 1;
+    } else if (k == 2) {
+        j = i + 1;
+        i--;
+    }
+
+    $('#nav-words-container p').hide().slice(i, j).show();
+}
+
+/*SET WORD TO LEARN*/
+function setWordToLearn(id, obj) {
+    $("#nav-words-container p").removeClass("activ");
+    $(obj).addClass("activ");
+    $("#word-lern-1").fadeOut().fadeIn();
+    var curWord = setWordById(id);
+    var curTrans = setTransById(id);
+    var curMyNote = "moja notatka";
+    setNoteById(id);
+    $("#my-text").attr("data-id", id);
+    $("#idWord").val(id);
+    $("#word-lern-1").attr("data-id", id);
+    $("#word-lern-1").attr("data-word", curWord);
+    $("#word-lern-1").attr("data-trans", curTrans);
+    $("#my-trans").val("");
+    $("#my-trans").focus();
+
+    var index = $("#nav-words-container p.activ").index();
+    setNavWordPosition(index);
+    setTimeout(tellMe, 100);
+}
+
+function nextWord() {
+    $('.confirm-swipe').hide();
+    $("#my-trans").focus();
+    //saveNotice();
+    var length = $("#nav-words-container p").length;
+    var index = $("#nav-words-container p.activ").index() + 1;
+    if (length <= index) console.log("Wszystkiego już się nauczyłeś:)");
+    else {
+        var id = ($("#nav-words-container p").eq(index)).data('word-id');
+        setWordToLearn(id, $("#nav-words-container p").eq(index));
+        setNavWordPosition(index);
+    }
+}
+
+function setWordById(id) {
+    $("#idWord").val(id);
+    for (var x in trans) {
+        var word = trans[x];
+        if (word.id == id) {
+            act_word = word.name;
+        }
+    }
+}
+
+function setNoteById(id) {
+    act_text = "";
+    var idLang = $("#myLang").val();
+    var idParentCat = $("#myParentCat").val();
+    var idSubCat = $("#myCat").val();
+    var idLernLang = $("#learnLang").val();
+    var tmp = idLang + "\\" + idParentCat + "\\" + idSubCat + "\\" + idLernLang + "\\" + id;
+
+    for (var x in noticeJSON) {
+        var notice = noticeJSON[x];
+        if (notice.word == tmp) {
+            act_text = notice.notice;
+            return;
+        }
+    }
+}
+
+function setTransById(id) {
+    for (var x in words) {
+        var word = words[x];
+        if (word.id == id) {
+            act_trans = word.name;
+        }
+    }
+}
+
+function checkMySelf() {
+    $("#word-lern-1").hide();
+    $("#confirm-my").text($("#my-trans").val());
+    $(".confirm-swipe").show();
+    $(".confirm-swipe table").show();
+    $(".confirm-swipe table").css({top: "0px"});
+    $('.confirm-swipe table').removeClass('good');
+    $('.confirm-swipe table').removeClass('bad');
+}
+
+var blockClear = false;
+
+function clearDraggableField() {
+    if (!blockClear) {
+        $(".confirm-swipe table").show();
+        setTimeout(function () {
+            $(".confirm-swipe").removeClass('flipper-hide');
+            $('.confirm-swipe table').removeClass('good');
+            $('.confirm-swipe table').removeClass('bad');
+            $('.confirm-swipe table').removeClass('good-right');
+            $('.confirm-swipe table').removeClass('bad-right');
+            $('.confirm-swipe table').removeClass('goLeft');
+            $('.confirm-swipe table').removeClass('goRight');
+            setTimeout(function () {
+                antyNaparzanka = false;
+            }, 500);
+        }, 50);
+    }
+}
+
+/*END SET WORD TO LEARN*/
+/*PLAY SOUND*/
+var my_media;
+
+function tellMe() {
+    if (my_media != null) {
+        my_media.stop();
+        my_media.stopRecord();
+        my_media.release();
+        my_media = null;
+    }
+    var id = $("#idWord").val();
+    var idLang = $("#learnLang").val();
+    var idParentCat = $("#myParentCat").val();
+    var idSubCat = $("#myCat").val();
+    var sygn = idParentCat + "/" + idSubCat;
+
+    var src = '/android_asset/www/date/no_sound.mp3';
+    if(canTellThisWord(sygn, id) === true) {
+        src = '/android_asset/www/date/' + idLang + "/" + sygn + "/sound/" + id + ".mp3";
+    }
+
+    setTimeout(function () {
+        if (my_media != null) {/*jak coś to do usunięcia*/
+            my_media.stop();
+            my_media.stopRecord();
+            my_media.release();
+            my_media = null;
+        }
+
+        my_media = new Media(src,
+            // success callback
+            function () { /*this.release();*/
+            },
+            // error callback
+            function (err) { /*console.log("M: " + err.message + " - " + err.code);*/
+            }
+        );
+        // Play audio
+        my_media.play();
+    }, 100);
+}
+
+function stopTelling() {
+    if (my_media != null) {
+        my_media.stop();
+        my_media.stopRecord();
+        my_media.release();
+        my_media = null;
+    }
+}
+
+function tellMeWord(sygn, id) {
+    if (my_media != null) {
+        my_media.stop();
+        my_media.stopRecord();
+        my_media.release();
+        my_media = null;
+    }
+    var idLang = $("#learnLang").val();
+
+    var src = '/android_asset/www/date/no_sound.mp3';
+    if(canTellThisWord(sygn, id) === true) {
+        src = '/android_asset/www/date/' + idLang + "/" + sygn + "/sound/" + id + ".mp3";
+    }
+    setTimeout(function () {
+        if (my_media != null) {/*jak coś to do usunięcia*/
+            my_media.stop();
+            my_media.stopRecord();
+            my_media.release();
+            my_media = null;
+        }
+
+        my_media = new Media(src,
+            // success callback
+            function () { /*this.release();*/
+            },
+            // error callback
+            function (err) { /*console.log("M: " + err.message + " - " + err.code);*/
+            }
+        );
+        // Play audio
+        my_media.play();
+    }, 100);
+}
+
+/*END PLAY SOUND*/
+
+/*COPY FIRST PATCH*/
+function copyFirstPath() {
+    asset2sd.copyDir({
+            asset_directory: "www/firstPatch",
+            destination_directory: mainPath
+        },
+        function () {
+            if (isPremium) {
+                copyFirstPathPremium();
+            }
+        },
+        function () {
+            console.log('fail');
+        }
+    );
+}
+
+function copyFirstPathPremium() {
+    var demoPathsrc = demoPath();
+    copyFileFromDemo(demoPathsrc, 'lang.json', false);
+    copyFileFromDemo(demoPathsrc, 'day.json', false);
+    copyFileFromDemo(demoPathsrc, 'notice.json', false);
+    copyFileFromDemo(demoPathsrc, 'liked.json', false);
+    copyFileFromDemo(demoPathsrc, 'save.json', true);
+}
+
+function copyFileFromDemo(srcPath, nameFile, lastfile) {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+        fileSystem.root.getFile((srcPath + nameFile), {create: false}, function (fileEntry) {
+            fileSystem.root.getDirectory(premiumPath(), {create: true}, function (dirEntry) {
+                fileEntry.copyTo(dirEntry, nameFile,
+                    function () {
+                        if (lastfile) {
+                            //pokazujemy info, że progress został pomyślnie skopiowany z wersji demo i jak chce się uczyć pominiętych lekcji to może
+                            showAfterCopyToPremiumConfirm();
+                            /*
+							setTimeout(function(){
+								location.reload();
+							}, 100);
+							*/
+                        }
+                    },
+                    function (err) {
+                        console.log("Error: " + err.toString());
+                    }
+                );
+            }, function (err) {
+                console.log("Error: " + err.toString());
+            });
+        }, function (err) {
+            //Tutaj wiemy, że tam nie ma takiego pliku, nie ma zaintalowanej wersji demo
+            if (nameFile == 'lang.json') {
+                $("#first-use-loading-page").hide();
+                startLearn = true; //po tutorialu zacznie naukę
+                getLangList(); //wybierz swój język
+                $("#choose-lang").show(); //zapisz język jest w funciton setLang w index.html
+            }
+        });
+    }, function (err) {
+        console.log("Error: " + err.toString());
+    });
+}
+
+
+function showAfterCopyToPremiumConfirm() {
+    navigator.notification.confirm(
+        getTrans(t_after_premium_copy_text),
+        showAfterCopyToPremiumConfirmCallBack,
+        getTrans(t_after_premium_copy_title),
+        getTrans(t_after_premium_copy_ok)
+    );
+}
+
+function showAfterCopyToPremiumConfirmCallBack(button) {
+    if (button == 1) {
+        setTimeout(function () {
+            location.reload();
+        }, 100);
+    } else {
+        setTimeout(function () {
+            location.reload();
+        }, 100);
+    }
+}
+
+/*END TELL ME*/
+
+/*START SAVE NOTATION*/
+function saveNotice(text) {
+    if (text == "") return;
+    act_text = text;
+    var idLang = $("#myLang").val();
+    var idParentCat = $("#myParentCat").val();
+    var idSubCat = $("#myCat").val();
+    var idLernLang = $("#learnLang").val();
+    var id = $('#idWord').val();
+
+    var tmp = idLang + "\\" + idParentCat + "\\" + idSubCat + "\\" + idLernLang + "\\" + id;
+    var add = false;
+
+    if (noticeJSON.length == 0) {
+        logEventInServer('write hint', {text: text, category: idParentCat, subcategory:idSubCat, word: id});
+        noticeJSON.push({"word": tmp, "notice": text});
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
+    } else {
+        for (var x in noticeJSON) {
+            var notice = noticeJSON[x];
+            if (notice.word == tmp) {
+                if (notice.notice != text) {
+                    logEventInServer('write hint', {text: text, category: idParentCat, subcategory:idSubCat, word: id});
+                }
+                notice.notice = text;
+                add = true;
+            }
+            if (x == (noticeJSON.length - 1)) {
+                if (!add) {
+                    logEventInServer('write hint', {text: text, category: idParentCat, subcategory:idSubCat, word: id});
+                    noticeJSON.push({"word": tmp, "notice": text});
+                }
+                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN);
+            }
+        }
+    }
+}
+
+function gotFSN(fileSystem) {
+    var srcFileNotice = path() + "notice.json";
+    fileSystem.root.getFile(srcFileNotice, {create: false}, gotFileEntryN, failN);
+}
+
+function gotFileEntryN(fileEntry) {
+    fileEntry.createWriter(gotFileWriterN, failN);
+}
+
+function gotFileWriterN(writer) {
+    writer.onwrite = function (evt) {
+        console.log("write success");
+    };
+
+    writer.write(JSON.stringify(noticeJSON));
+    writer.abort();
+}
+
+function failN(error) {
+    console.log("error : " + error.code);
+}
+
+/*END SAVE NATATION*/
+/*START ALGORYTHM MANAGAMENT*/
+var act_word = "";
+var act_trans = "";
+var act_text = "";
+
+function setWordToMethod(idM) {
+    $(".learnMethod").hide();
+    $(".bad-bad").removeClass('activ');
+    setTimeout(function () {
+        if (idM == 6 || (idM == 1 && !thirdCycle)) $(".bad-bad").addClass('activ');
+        else $(".bad-bad").removeClass('activ');
+    }, 800);
+    if (act_text != "") $(".remind-img").show();
+    else $(".remind-img").hide();
+    switch (idM) {
+        case 1:
+            $(".show-hidden-word").show(); //zmiana
+            $("#confirm-correct-1").hide(); //zmiana
+            $("#confirm-correct-1").html('<p>' + act_word + '</p>'); //zmiana
+            $("#confirm-trans-1").html('<p>' + act_trans + '</p>');
+            $("#confirm-text-1").val(act_text);
+            break;
+        case 2:
+            $("#confirm-correct-2").html('<p>' + act_word + '</p>');
+            $("#confirm-trans-2").html('<p>' + act_trans + '</p>');
+            $("#confirm-text-2").val(act_text);
+            break;
+        case 3:
+            $("#confirm-text-3").val(act_text);
+            $("#question-3").val("");
+            break;
+        case 4:
+            tellMe();
+            $("#confirm-correct-4").html('<span>' + act_word + '</span>');
+            $(".show-hidden-word").show(); //zmiana
+            $("#confirm-trans-4").hide(); //zmiana
+            $("#confirm-trans-4").html('<span>' + act_trans + '</span>'); //zmiana
+            $("#confirm-text-4").val(act_text);
+            break;
+        case 5:
+            $("#confirm-text-5").val(act_text);
+            $("#question-5").val("");
+            break;
+        case 6:
+            $("#confirm-correct-6").html('<p>' + act_word + '</p>');
+            $(".show-hidden-word").show(); //zmiana
+            $("#confirm-trans-6").hide(); //zmiana
+            $("#confirm-trans-6").html('<p>' + act_trans + '</p>'); //zmiana
+            $("#confirm-text-6").val(act_text);
+            break;
+        default:
+            console.log("error");
+    }
+    $(".support-word-in-speach p").text(act_word);
+    $("#word-lern-" + idM).show();
+
+    $(".nbWordInCycle").text((learnedWordsInCat + 1) + "/" + countWordsToLearnInThisCycle);
+}
+
+function setActWord(id) {
+    $('#idWord').val(id);
+    setWordById(id);
+    setNoteById(id);
+    setTransById(id);
+    setActuLikedIcon();
+}
+
+var round = 1;
+var nbMethod = 2;
+var nbStep = 0;
+var canNextStep = 1;
+var noLerntStep = 0;
+var ileSnd = 0;
+var ileThd = 0;
+
+function nextStepBlock() {
+    canNextStep = 0;
+}
+
+function noLearnt() {
+    canNextStep = 0;
+    setTimeout(function () {
+        clearDraggableField();
+    }, 100);
+    noLerntStep = 1;
+    if (noLerntStep == 0) {
+        whereGo = 0;
+        setWordToMethod(3);
+        noLerntStep = 1;
+    } else {
+        theSameMethod = true;
+        whereGo = -1;
+        setWordToMethod(4);
+        noLerntStep = 0;
+        canNextStep = 2;
+    }
+}
+
+var noPlus = 0;
+var prepareToThird = 1;
+var isPreparetoFirst = false;
+var readyToSaveNotice = false;
+var whereGo = 0;
+var noFlipIfWrong = false;
+var lastWordSecondRound = true;
+var repeatSec = 1;
+var repeatThd = 1;
+var s_nowe = 0;
+var t_nowe = 0;
+var id_powt = -1;
+var s_bylo = 0;
+var t_bylo = 0;
+var stepow = 0;
+var ile_s = 0;
+var ile_t = 0;
+var last_r_s = -1;
+var theSameMethod = false;
+var antyNaparzanka = false;
+
+function getAntyNaparzanka() {
+    return antyNaparzanka;
+}
+
+function setAntyNaparzankaToTrue() {
+    antyNaparzanka = true;
+}
+
+function nextStep() {
+    countOfWrongRecognized = 0;
+    //volumeTest();
+    antyNaparzanka = true;
+    hideBars();
+    //StatusBar.hide();
+    backToNormalStateNote();
+    $(".recTextWrap").hide();
+    $(".recText").text('');
+    $(".learnMethod").removeClass('badRec');
+    $(".learnMethod").removeClass('goodRec');
+    $(".cloud-again").hide();
+    $(".cloud-next-task").hide();
+    $(".support-word-in-speach").hide();
+
+    updateProgressBar();
+    /*
+	if(readyToSaveNotice){
+		saveNotice($("#confirm-text-"+nbMethod).val());
+	}else{
+		readyToSaveNotice = true;
+	}
+	*/
+    if (round == 3) {
+        if (canNextStep == 2) {
+            noPlus = 1;
+            canNextStep = 1;
+            nbMethod = 4;
+            nbStep = 0;
+        }
+        if (canNextStep == 0) {
+            noLearnt();
+            return;
+        }
+    }
+    setTimeout(function () {
+        clearDraggableField();
+    }, 300);
+    if (firstCycle) {
+        if (!isPreparetoFirst) {
+            whereGo = -1;
+            setActWord(($("#nav-words-container p").eq(0)).data('word-id'));
+            $("#nav-words-container p").eq(0).addClass("activ");
+            $("#nav-words-container p").eq(0).addClass("pulse");
+            setWordToMethod(2)
+            setNavWordPosition(0);
+            isPreparetoFirst = true;
+            tellMe();
+        } else {
+            if (!canNextStep) {
+                whereGo = 0;
+                nbMethod = 2;
+                setWordToMethod(2);
+                canNextStep = true;
+                tellMe();
+                return;
+            }
+            /*
+			if(nbMethod == 2){
+				whereGo = -1;
+				nbMethod = 1;
+				setWordToMethod(1);
+			}else
+			*/
+            if (nbMethod == 1 || nbMethod == 2) {
+                whereGo = -1;
+                nbMethod = 1;
+                var length = $("#nav-words-container p").length;
+                var index = $("#nav-words-container p.activ").index() + 1;
+                //learnedWords++;
+                if (length <= index) {
+                    round = 2;
+                    firstCycle = false;
+                    nextStep();
+                    return;
+                } else {
+                    var id = ($("#nav-words-container p").eq(index)).data('word-id');
+                    setActWord(id);
+                    setNavWordPosition(index);
+                    $("#nav-words-container p").removeClass("activ");
+                    $("#nav-words-container p").removeClass("pulse");
+                    $("#nav-words-container p").eq(index).addClass("pulse");
+                    $("#nav-words-container p").eq(index).addClass("activ");
+                    setTimeout(function () {
+                        setWordToMethod(2);
+                        tellMe();
+                    }, 50);
+                }
+            }
+        }
+    } else if (secondCycle) {
+        if (round == 2) {
+            lastWordSecondRound = true;
+            whereGo = -1;
+            var id = ($("#nav-words-container p").eq(0)).data('word-id');
+            setActWord(id);
+            setNavWordPosition(1);
+            $("#nav-words-container p").removeClass("activ");
+            $("#nav-words-container p").removeClass("pulse");
+            $("#nav-words-container p").eq(0).addClass("activ");
+            $("#nav-words-container p").eq(0).addClass("pulse");
+            setTimeout(function () {
+                setWordToMethod(4);
+                tellMe();
+            }, 100);
+            theSameMethod = true;
+            round = 3;
+            nbMethod = 4;
+        } else if (round == 3) {
+            theSameMethod = false;
+            noFlipIfWrong = false;
+            if (nbMethod == 4 && nbStep == 0) {
+                //saveNotice($("#confirm-text-4").val());
+                whereGo = 1;
+                var length = $("#nav-words-container p").length;
+                if (true) var index = $("#nav-words-container p.activ").index() + 1;
+                else {
+                    var index = $("#nav-words-container p.activ").index();
+                    noPlus = 0;
+                }
+                if (length <= index) {
+                    /*if(lastWordSecondRound){
+						index--;
+						setWordToMethod(6);
+						whereGo = -1;
+						var id = ($("#nav-words-container p").eq(index)).data('word-id');
+						setActWord(id);
+						lastWordSecondRound = false;
+					}else{*/
+                    $("#nav-words-container p").removeClass("activ");
+                    $("#nav-words-container p").removeClass("pulse");
+                    $("#nav-words-container p").eq(0).addClass("activ");
+                    $("#nav-words-container p").eq(0).addClass("pulse");
+                    round = 4;
+                    //nextStep();
+                    secondCycle = false;
+                    nextStep();
+                    return;
+                    //}
+                } else {
+                    var id = ($("#nav-words-container p").eq(index)).data('word-id');
+                    setActWord(id);
+                    setNavWordPosition(index);
+                    $("#nav-words-container p").removeClass("activ");
+                    $("#nav-words-container p").removeClass("pulse");
+                    $("#nav-words-container p").eq(index).addClass("activ");
+                    $("#nav-words-container p").eq(index).addClass("pulse");
+                    setTimeout(function () {
+                        setWordToMethod(4);
+                        tellMe();
+                    }, 100);
+                    nbMethod = 4;
+                    nbStep = 1;
+                }
+            } else if (nbMethod == 4 && nbStep != 0) {
+                whereGo = 0;
+                //saveNotice($("#confirm-text-4").val());
+                var index = $("#nav-words-container p.activ").index() - 1;
+                var id = ($("#nav-words-container p").eq(index)).data('word-id');
+                setActWord(id);
+                //setNavWordPosition(index);
+                $("#nav-words-container p").removeClass("activ");
+                $("#nav-words-container p").removeClass("pulse");
+                $("#nav-words-container p").eq(index).addClass("activ");
+                $("#nav-words-container p").eq(index).addClass("pulse");
+                setTimeout(function () {
+                    setWordToMethod(1);
+                }, 100);
+                //nbMethod = 1;
+                //nbStep = 1;
+                nbStep = 2;
+                nbMethod = 6;
+                whereGo = -1;
+                theSameMethod = true;
+            } else if (nbMethod == 1 && nbStep == 1) {
+                whereGo = -1;
+                nbMethod = 6;
+                setWordToMethod(6);
+                nbStep = 2;
+                noFlipIfWrong = true;
+            } else if (nbMethod == 6) {
+                var index = $("#nav-words-container p.activ").index() + 1;
+                var length = $("#nav-words-container p").length;
+                if (index < length - 1) {
+                    $("#nav-words-container p").removeClass("activ");
+                    $("#nav-words-container p").eq(index).addClass("activ");
+                    whereGo = -1;
+                    nbMethod = 4;
+                    nbStep = 0;
+                    nextStep();
+                    return;
+                } else {
+                    whereGo = 0;
+                    var index = $("#nav-words-container p.activ").index() + 1;
+                    var id = ($("#nav-words-container p").eq(index)).data('word-id');
+                    setActWord(id);
+                    $("#nav-words-container p").removeClass("activ");
+                    $("#nav-words-container p").removeClass("pulse");
+                    $("#nav-words-container p").eq(index).addClass("activ");
+                    $("#nav-words-container p").eq(index).addClass("pulse");
+                    setTimeout(function () {
+                        setWordToMethod(1);
+                    }, 100);
+                    nbStep = 0;
+                    nbMethod = 4;
+                    whereGo = -1;
+                    theSameMethod = true;
+                }
+            } else if (nbMethod == 1 && nbStep == 2) {
+                whereGo = -1;
+                nbMethod = 4;
+                nbStep = 0;
+                nextStep();
+                return;
+            }
+        }
+    } else if (thirdCycle) {
+        if (round == 4) {
+            //if(canNextStep == 0){
+            /*canNextStep = 1;
+				if(id_powt > 0){
+					if(id_powt == snd_id){
+						ile_s = 2;
+					}else if(id_powt == thd_id){
+						ile_t = 2;
+					}
+				}else{	*/
+            var index = $("#nav-words-container p.activ").index();
+            var id = ($("#nav-words-container p").eq(index)).data('word-id');
+            /*if(snd_id > 0){
+						thd_id = id;
+						t_nowe = 1;
+						ile_t = 2;
+					}else{
+						snd_id = id;
+						s_nowe = 1;
+						ile_s = 2;
+					}
+				}*/
+            //}
+            //updateThirdNav();
+            if (nbStep == 0) {
+                if (prepareToThird != 1) {
+                    var length = $("#nav-words-container p").length;
+                    var index = $("#nav-words-container p.activ").index() + 1;
+                    if (length <= index) {
+                        round = 5;
+                        nextStep();
+                        return;
+                    } //zmiana
+                    $("#nav-words-container p").removeClass("activ");  //zmiana
+                    $("#nav-words-container p").removeClass("pulse");  //zmiana
+                    $("#nav-words-container p").eq(index).addClass("activ");  //zmiana
+                    $("#nav-words-container p").eq(index).addClass("pulse");  //zmiana
+                } else {
+                    prepareToThird = 0;
+                }
+                whereGo = 0;
+                var index = $("#nav-words-container p.activ").index();
+                var id = ($("#nav-words-container p").eq(index)).data('word-id');
+                setActWord(id);
+                setNavWordPosition(index);
+                setTimeout(function () {
+                    setWordToMethod(1);
+                }, 100);
+                nbMethod = 5;
+                //nbStep = 1;
+                nbStep = 0; //zmiana
+                whereGo = -1; //zmiana
+            } else if (nbStep == 1) {
+                whereGo = -1;
+                $("#nav-words-container p.activ").eq(index).addClass("pulse");
+                //saveNotice($("#confirm-text-1").val());
+                var id = ($("#nav-words-container p").eq(index)).data('word-id');
+                setTimeout(function () {
+                    setWordToMethod(6);
+                }, 100);
+                nbStep = 0;
+            } else {
+                round = 5;
+                thirdCycle = false;
+                nextStep();
+                return;
+            }
+        } else if (round == 5) {
+            thirdCycle = false;
+            nextStep();
+            return;
+        }
+    } else {
+        nextPack();
+    }
+}
+
+function nextPack() {
+    blockClear = true;
+    $('.confirm-swipe table').hide();
+    $(".left-time").text((countCatsToLearnToday - (learnetCatToday - 1)) * minCat);
+
+    var percent = Math.round((learnetCatToday - 1) / (countCatsToLearnToday) * 100);
+    $("#progess-btn-stan-end").addClass('p' + percent);
+    removeProgressClassMin($("#progess-btn-stan-end"), percent);
+
+    setTimeout(function () {
+        blockClear = false;
+        //$('.confirm-swipe table').addClass('goLeft');
+        if (isRepeatCycle) {
+            $(".timeLernedToday").text((learnetCatToday - 1) * minCat);
+            $(".allTimeToday").text(countCatsToLearnToday * minCat);
+            $('section').hide();
+            $("#end-cat").show();
+            logEventInServer('end repetition', getDataAboutCurrentWordToLog());
+            setTimeout(function () {
+                $("#end-cat").removeClass('next-cat-left');
+                $("#learn-container").addClass('next-cat-left');
+            }, 50);
+            isRepeatCycle = false;
+        } else {
+            $("#end-cat").addClass('next-cat-right');
+            setTimeout(function () {
+                $("#end-cat").hide();
+                $("#end-cat").removeClass('next-cat-right');
+                $("#end-cat").addClass('next-cat-left');
+                packControler();
+            }, 800);
+        }
+    }, 500);
+}
+
+var fst_id = 0;
+var snd_id = 0;
+var thd_id = 0;
+var temid = 0;
+var fin_id = 0;
+var repeatFstRound = true;
+
+//var repeatSecRound = false;
+function repeatThrid(id, met) {
+    if (met == 6) whereGo = -1;
+    else whereGo = 0;
+    setTimeout(function () {
+        setActWord(id);
+        setTimeout(function () {
+            setWordToMethod(met);
+            pulseThdNav(id);
+        }, 5);
+    }, 100);
+}
+
+function updateThirdNav() {
+    var i = 1;
+    var ids = [];
+    ids.push(snd_id);
+    ids.push(thd_id);
+    $("#nav-words-container-thd p").hide();
+    $("#nav-words-container-thd p").attr('data-word-id', 0);
+    $("#nav-words-container p").each(function () {
+        var id = $(this).attr('data-word-id');
+        var src = $(this).children('img').attr('src');
+        for (k = 0; k < ids.length; k++) {
+            if (id == ids[k]) {
+                $("#nav-th-" + i).children('img').attr('src', src);
+                $("#nav-th-" + i).attr('data-word-id', id);
+                $("#nav-th-" + i).show();
+                i++;
+                ids.splice(k, 1);
+                break;
+            }
+        }
+    });
+}
+
+function pulseThdNav(idW) {
+    setTimeout(function () {
+        $("#nav-words-container p").removeClass('pulse');
+        $("#nav-words-container-thd p").removeClass('pulse');
+        $("#nav-words-container-thd p").removeClass("activ");
+        $("#nav-words-container-thd p").each(function () {
+            var id = $(this).attr('data-word-id');
+            if (idW == id) {
+                $(this).addClass('pulse');
+                $(this).addClass('activ');
+            }
+        });
+    }, 200);
+}
+
+/*END ALGORYTHM MANAGAMENT*/
+
+function showAllNote() {
+    showNote(1);
+    showNote(2);
+    showNote(3);
+    showNote(4);
+    showNote(5);
+    showNote(6);
+}
+
+function showNote(x) {
+    var target = "#l-n-" + x;
+    var target2 = "#l-c-" + x;
+    var targetE = "#l-e-" + x;
+    $(target2).hide();
+    if ($(target).is(":visible") == true) {
+        $(target).hide();
+        $(targetE).show();
+        showTrans(x);
+
+        var t = $("#learn-panel .learnMethod:visible").attr('id');
+        var nb = t.substr(t.length - 1);
+        if(nb == x) {
+            logEventInServer('close hint', {day: dayJSON.day, category: $("#myParentCat").val(), subcategory: $("#myCat").val(), word: $("#idWord").val(), notice: $("#confirm-text-"+nb).val()});
+        }
+    } else {
+        $(targetE).hide();
+        $(target).show();
+
+        var t = $("#learn-panel .learnMethod:visible").attr('id');
+        var nb = t.substr(t.length - 1);
+        if(nb == x) {
+            logEventInServer('show hint', {day: dayJSON.day, category: $("#myParentCat").val(), subcategory: $("#myCat").val(), word: $("#idWord").val(), notice: $("#confirm-text-"+nb).val()});
+        }
+    }
+}
+
+function showTrans(x) {
+    var target = "#l-n-" + x;
+    var target2 = "#l-c-" + x;
+    var targetE = "#l-e-" + x;
+    $(target).hide();
+    if ($(target2).is(":visible") == true) {
+        $(target2).hide();
+        $(targetE).show();
+    } else {
+        $(targetE).hide();
+        $(target2).show();
+    }
+}
+
+function backToNormalStateNote() {
+    $("#l-n-1").hide();
+    $("#l-n-2").hide();
+    $("#l-n-3").hide();
+    $("#l-n-4").hide();
+    $("#l-n-5").hide();
+    $("#l-n-6").hide();
+    $("#l-e-1").hide();
+    $("#l-e-2").hide();
+    $("#l-e-3").hide();
+    $("#l-e-4").hide();
+    $("#l-e-5").hide();
+    $("#l-e-6").hide();
+    $("#l-t-1").show();
+    $("#l-t-2").show();
+    $("#l-t-3").show();
+    $("#l-t-4").show();
+    $("#l-t-5").show();
+    $("#l-t-6").show();
+    $("#l-c-1").show();
+    $("#l-c-2").show();
+    $("#l-c-3").show();
+    $("#l-c-4").show();
+    $("#l-c-5").show();
+    $("#l-c-6").show();
+    hideKeyboard();
+    hideHoverNoteBtn('.note-btn');
+}
+
+function hideKeyboard() {
+    $("#l-n-1").blur();
+    $("#l-n-2").blur();
+    $("#l-n-3").blur();
+    $("#l-n-4").blur();
+    $("#l-n-5").blur();
+    $("#l-n-6").blur();
+}
+
+function showNoteForTut(x) {
+    var target = "#t-l-n-" + x;
+    var target2 = "#t-l-t-" + x;
+    var targetE = "#t-l-e-" + x;
+    $(target2).hide();
+    if ($(target).is(":visible") == true) {
+        $(target).hide();
+        $(targetE).show();
+    } else {
+        $(targetE).hide();
+        $(target).show();
+    }
+}
+
+function showTransForTut(x) {
+    var target = "#t-l-n-" + x;
+    var target2 = "#t-l-t-" + x;
+    var targetE = "#t-l-e-" + x;
+    $(target).hide();
+    if ($(target2).is(":visible") == true) {
+        $(target2).hide();
+        $(targetE).show();
+    } else {
+        $(targetE).hide();
+        $(target2).show();
+    }
+}
+
+function tellMeNow(obj) {
+    //var par = $(obj).parent().parent();
+    //if(parseInt(par.css('top')) == 0){
+    tellMe();
+    //}
+}
+
+function prepareGlobalForCycle(i) {
+    switch (i) {
+        case 1:
+            $("#nav-words-container-thd p").hide();
+            round = 1;
+            nbMethod = 2;
+            isPreparetoFirst = false;
+            firstCycle = true;
+            secondCycle = false;
+            thirdCycle = false;
+            break;
+        case 2:
+            $("#nav-words-container-thd p").hide();
+            round = 2;
+            nbMethod = 2;
+            nbStep = 0;
+            noPlus = 0;
+            canNextStep = 1;
+            noLerntStep = 0;
+            firstCycle = false;
+            secondCycle = true;
+            thirdCycle = false;
+            break;
+        case 3:
+            $("#nav-words-container-thd p").hide();
+            round = 4;
+            nbStep = 0;
+            canNextStep = 1;
+            prepareToThird = 1;
+            fst_id = 0;
+            snd_id = 0;
+            thd_id = 0;
+            temid = 0;
+            fin_id = 0;
+            firstCycle = false;
+            secondCycle = false;
+            thirdCycle = true;
+            repeatSec = 1;
+            repeatThd = 1;
+            s_nowe = 0;
+            t_nowe = 0;
+            id_powt = -1;
+            s_bylo = 0;
+            t_bylo = 0;
+            stepow = 0;
+            ile_s = 0;
+            ile_t = 0;
+            last_r_s = -1;
+            break;
+    }
+    $("#nav-words-container p").removeClass("activ");
+    $("#nav-words-container p").removeClass("pulse");
+    $("#nav-words-container p").eq(0).addClass("activ");
+    $("#nav-words-container p").eq(0).addClass("pulse");
+}
+
+function addFunction(a, b) {
+    if (Number.isInteger(b)) return a + b;
+    else return a;
+}
+
+var continueLearning = false;
+var nameCat;
+var newCategoryisSet = false;
+var learnetCatToday = 1;
+var learnetCatTodayCopytBTN = 1;
+var isRepeatCycle = false;
+var copyOfLearnArray = [];
+
+function packControler() {
+    waintingLearned = 0;
+    var endThis = false;
+    $("#startDay").hide();
+    $("#words-nav").show();
+    $("#ok-no-panel").show();
+
+    if (toLearn.reduce(function (a, b) {
+        return a + b;
+    }, 0) != -10) {
+        /*$("#learn-container").show();*/
+        setTimeout(function () {
+            $("#learn-container").removeClass('next-cat-left');
+        }, 500);
+    }
+    for (var i = 0; i < 10 && !endThis; i++) {
+        continueLearning = false;
+        if (toLearn[i] != -1) {
+            clearNoticeFields();
+            setEveryThingToStartCat(toLearn[i]);
+            getSubCatName(toLearn[i]);
+            endThis = true;
+            continueLearning = true;
+            switch (i) {
+                case 0:
+                    clearDraggableField();
+                    isRepeatCycle = false;
+                    copyOfLearnArray = toLearn.slice();
+                    learnedWordsCopy = learnedWords;
+                    learnetCatTodayCopytBTN = learnetCatToday;
+                    showAd();
+                    countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat * 2;
+                    learnedWordsInCat = 0;
+                    prepareGlobalForCycle(1);
+                    setTimeout(function () {
+                        showStartCat(learnetCatToday, nameCat);
+                    }, 100);
+                    break;
+                case 1:
+                    isRepeatCycle = true;
+                    prepareGlobalForCycle(2);
+                    setTimeout(function () {
+                        nextStep();
+                    }, 300);
+                    learnetCatToday++;
+                    break;
+                case 2:
+                    clearDraggableField();
+                    isRepeatCycle = false;
+                    copyOfLearnArray = toLearn.slice();
+                    learnedWordsCopy = learnedWords;
+                    learnetCatTodayCopytBTN = learnetCatToday;
+                    showAd();
+                    countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat * 2;
+                    learnedWordsInCat = 0;
+                    prepareGlobalForCycle(2);
+                    setTimeout(function () {
+                        showStartCat(learnetCatToday, nameCat);
+                    }, 100);
+                    break;
+                case 3:
+                    isRepeatCycle = true;
+                    prepareGlobalForCycle(3);
+                    setTimeout(function () {
+                        nextStep();
+                    }, 300);
+                    learnetCatToday++;
+                    break;
+                case 4:
+                    clearDraggableField();
+                    isRepeatCycle = false;
+                    copyOfLearnArray = toLearn.slice();
+                    learnedWordsCopy = learnedWords;
+                    learnetCatTodayCopytBTN = learnetCatToday;
+                    showAd();
+                    countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat * 2;
+                    learnedWordsInCat = 0;
+                    prepareGlobalForCycle(2);
+                    setTimeout(function () {
+                        showStartCat(learnetCatToday, nameCat);
+                    }, 100);
+                    break;
+                case 5:
+                    isRepeatCycle = true;
+                    prepareGlobalForCycle(3);
+                    setTimeout(function () {
+                        nextStep();
+                    }, 300);
+                    learnetCatToday++;
+                    break;
+                case 6:
+                    clearDraggableField();
+                    isRepeatCycle = false;
+                    copyOfLearnArray = toLearn.slice();
+                    learnedWordsCopy = learnedWords;
+                    learnetCatTodayCopytBTN = learnetCatToday;
+                    showAd();
+                    countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat * 2;
+                    learnedWordsInCat = 0;
+                    prepareGlobalForCycle(2);
+                    setTimeout(function () {
+                        showStartCat(learnetCatToday, nameCat);
+                    }, 100);
+                    //learnetCatToday++;
+                    break;
+                case 7:
+                    //clearDraggableField();
+                    isRepeatCycle = true;
+                    //showAd();
+                    //countWordsToLearnInThisCycle = wordsInOneCat;
+                    //learnedWordsInCat = 0;
+                    prepareGlobalForCycle(3);
+                    setTimeout(function () {
+                        nextStep();
+                    }, 300);
+                    //setTimeout(function(){ showStartCat(learnetCatToday, nameCat);}, 100);
+                    learnetCatToday++;
+                    break;
+                case 8:
+                    clearDraggableField();
+                    isRepeatCycle = false;
+                    countWordsToLearnInThisCycle = wordsInOneCat + wordsInOneCat * 2;
+                    learnedWordsInCat = 0;
+                    learnetCatTodayCopytBTN = learnetCatToday;
+                    newCategoryisSet = true;
+                    prepareGlobalForCycle(1);
+                    setTimeout(function () {
+                        nextStep();
+                    }, 300);
+                    break;
+                case 9:
+                    isRepeatCycle = false;
+                    newCategoryisSet = true;
+                    prepareGlobalForCycle(2);
+                    setTimeout(function () {
+                        nextStep();
+                    }, 300);
+                    break;
+                default:
+                    break;
+            }
+            toLearn[i] = -1;
+        }
+    }
+    if (!continueLearning) {
+        if (newCategoryisSet) {
+            endTodayLesson = true;
+            saveDay();
+        } else {
+            showAd();
+            copyOfLearnArray = toLearn.slice();
+            learnedWordsCopy = learnedWords;
+            startChoiceNewCategory();
+            //startSetNewCategory();
+        }
+    }
+
+}
+
+function clearNoticeFields() {
+    $("#confirm-text-1").val("");
+    $("#confirm-text-2").val("");
+    $("#confirm-text-3").val("");
+    $("#confirm-text-4").val("");
+    $("#confirm-text-5").val("");
+    $("#confirm-text-6").val("");
+}
+
+function setEveryThingToStartCat(cat) {
+    var res = cat.split("/");
+    var p = res[0];
+    var c = res[1];
+    $("#myParentCat").val(p);
+    $("#myCat").val(c);
+    setTimeout(function () {
+        getWordList();
+    }, 10);
+}
+
+function whereGoNow() { //-1 - left, 1- right, 0-no;
+    return whereGo;
+}
+
+function getsecondCycle() {
+    return secondCycle;
+}
+
+function getfirstCycle() {
+    return firstCycle;
+}
+
+function getNoFlipIfWrong() {
+    return noFlipIfWrong;
+}
+
+function setNoFlipIfWrong(val) {
+    noFlipIfWrong = val;
+}
+
+function isRoundTwoAndTheSameMethod() {
+    return ((round == 3 && theSameMethod) || round == 4 || round == 1);
+}
+
+function showStartCat(count, name) {
+    removeAllProgressClass($("#progess-btn-stan"));
+    $("#start-next-cat").show();
+    $("#nav-circle-word").hide();
+    $("#learn-container").hide();
+    $("#main-text-next-cat").text(count + "/" + countCatsToLearn);
+    $("#main-text-next-cat-end").text(count + "/" + countCatsToLearn);
+    $(".all-words-to-end-sesion-in-repeat").text(countWordsToLearn - learnedWords);
+    $("#name-next-cat").text(name);
+
+    var percent = Math.round(((count - 1) / countCatsToLearn) * 100);
+    //$("#progess-btn-stan").addClass('p'+percent);
+    $("#progess-btn-per").text(percent + "%");
+
+    setTimeout(function () {
+        $("#start-next-cat").removeClass('next-cat-left');
+        setTimeout(function () {
+            loadProgressBarToFull();
+        }, 500);
+    }, 500);
+}
+
+var ix = 1;
+
+function loadProgressBarToFull() {
+    ix = 1;
+    smoothLoadProgressBar();
+}
+
+function smoothLoadProgressBar() {
+    setTimeout(function () {
+        $("#progess-btn-stan").addClass('p' + ix);
+        ix++;
+        if (ix < 101) {
+            smoothLoadProgressBar();
+        }
+    }, 15)
+}
+
+function nextCatBtn() {
+    logEventInServer('start repetition', {category: $("#myParentCat").val(), subcategory: $("#myCat").val()});
+    $("#start-next-cat").addClass('next-cat-right');
+    $("#learn-container").addClass('next-cat-left');
+    setTimeout(function () {
+        $("#nav-circle-word").show();
+        $("#learn-container").show();
+        setTimeout(function () {
+            $("#learn-container").removeClass('next-cat-left');
+            removeAllProgress();
+        }, 500);
+        $("#start-next-cat").hide();
+        $("#start-next-cat").removeClass('next-cat-right');
+        $("#start-next-cat").addClass('next-cat-left');
+        nextStep();
+    }, 500);
+}
+
+function removeAllProgress() {
+    for (var i = 1; i < 102; i++) {
+        $("#progess-btn-stan").removeClass('p' + i);
+    }
+}
+
+var waintingLearned = 0;
+
+function increaseLearned() {
+    if (waintingLearned > 0) {
+        waintingLearned--;
+    } else {
+        if (thirdCycle) {
+            var bylo = false;
+            $("#nav-words-container-thd p").each(function () {
+                if ($(this).hasClass('activ')) {
+                    bylo = true;
+                }
+            });
+            setTimeout(function () {
+                if (!bylo) {
+                    learnedWords++;
+                    learnedWordsInCat++;
+                }
+            }, 50);
+        } else {
+            learnedWords++;
+            learnedWordsInCat++;
+        }
+    }
+}
+
+function setWaintingLearned() {
+    if (getfirstCycle()) {
+        waintingLearned = 1;
+    } else if (getsecondCycle()) {
+        if (nbMethod == 6) {
+            waintingLearned += 3;
+        } else {
+            if (nbStep == 2) {
+                waintingLearned += 0;
+            } else {
+                waintingLearned += 2;
+            }
+        }
+    }
+    if (thirdCycle) {
+        var bylo = false;
+        $("#nav-words-container-thd p").each(function () {
+            if ($(this).hasClass('activ')) {
+                bylo = true;
+            }
+        });
+        setTimeout(function () {
+            if (!bylo) {
+                learnedWords++;
+                learnedWordsInCat++;
+            }
+        }, 50);
+    }
+}
+
+/*END APP*/
+function endLearn() {
+    $("#learn-container").addClass('next-cat-right');
+    $("#saving-progress-today").addClass('next-cat-right');
+
+    if (todayEndedCat != "") allEndedCats.push(todayEndedCat);
+    uniqueallEndedCats = allEndedCats.filter(function (item, pos) {
+        return allEndedCats.indexOf(item) == pos;
+    });
+
+    $(".allWords").text(dayJSON.words);
+    $(".countKMLearned").text(Math.floor((dayJSON.km) * minCat / 60));
+    $(".countMinLearned").text(Math.floor((dayJSON.km) * minCat % 60));
+
+    if (allCats.sort().toString() == uniqueallEndedCats.sort().toString() && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))) {
+        setTimeout(function () {
+            //showAd();
+            $("#learn-container").hide();
+            $("#saving-progress-today").hide();
+            $("#end-course").show();
+            setTimeout(function () {
+                $("#end-course").removeClass('next-cat-left');
+                showRating();
+            }, 100);
+        }, 500);
+    } else {
+        setTimeout(function () {
+            var allStartedCats = allUsedCats.concat(inProgressCat);
+            var uniqueallUsedCats = allStartedCats.filter(function (item, pos) {
+                return allStartedCats.indexOf(item) == pos;
+            });
+            if (allCats.sort().toString() == uniqueallUsedCats.sort().toString()) {
+                showEndNewMaterialsInfo();
+            }
+
+            $("#learn-container").hide();
+            $("#saving-progress-today").hide();
+            $("#end-panel").show();
+            logEventInServer('end day', getDataAboutCurrentWordToLog());
+            setTimeout(function () {
+                $("#end-panel").removeClass('next-cat-left');
+                showRating();
+            }, 100);
+        }, 500);
+    }
+
+}
+
+/*END END APP*/
+/*TUTORIAL*/
+var stepTut = 1;
+var visiblesSectionsBeforeStart;
+
+function startTut() {
+    visiblesSectionsBeforeStart = $('body > section:visible:not(.next-cat-left):not(.next-cat-right):not(#new-tutorial):not(#ok-no-panel-TUT):not(#word-lern-2-TUT)');
+
+    var acc = []
+    visiblesSectionsBeforeStart.each(function (index, value) {
+        acc.push($(this).attr('id'));
+    });
+
+    visiblesSectionsBeforeStart.addClass('next-cat-left');
+    setTimeout(function () {
+        visiblesSectionsBeforeStart.hide();
+        $("#new-tutorial").show();
+        $("#ok-no-panel-TUT, #word-lern-2-TUT, #popup-TUT-1").show();
+        $(".popup-TUT").removeClass('next-cat-left');
+        $(".popup-TUT").removeClass('next-cat-right');
+        $(".popup-TUT:not(#popup-TUT-1)").addClass('next-cat-right-right');
+        $("#popup-TUT-1").removeClass('next-cat-right-right');
+        $("#progess-btn-stan-in-cycle-TUT").addClass('full-opacity');
+
+        setTimeout(function () {
+            $("body").addClass('tutorial-body-darkness');
+            $(".background").addClass('background-tutorial-darkness');
+            stepTut = 1;
+            $("#choose-lang").hide();
+            $(".cursor-TUT").addClass('cursor-TUT-1');
+            $("#menu-switch").addClass('half-opacity');
+
+            $("#new-tutorial").removeClass('next-cat-left');
+            $("#new-tutorial").removeClass('next-cat-right');
+        }, 200);
+    }, 500);
+}
+
+function nextTutStep() {
+    $("#popup-TUT-" + stepTut).addClass('next-cat-left');
+    stepTut++;
+    removeFullOpacity();
+    removeAllCursors();
+    setTimeout(function () {
+        $("#popup-TUT-" + parseInt(stepTut - 1)).hide();
+        $("#popup-TUT-" + parseInt(stepTut - 1)).addClass('next-cat-right-right');
+        $("#popup-TUT-" + stepTut).show();
+        $("#popup-TUT-" + stepTut).removeClass('next-cat-right-right');
+        $(".cursor-TUT").addClass('cursor-TUT-' + stepTut);
+
+        switch (stepTut) {
+            case 1:
+                $("#progess-btn-stan-in-cycle-TUT").addClass('full-opacity');
+                break;
+            case 2:
+                $("#new-tutorial .mic-container").addClass('full-opacity');
+                break;
+            case 3:
+                $(".star-liked-TUT").addClass('full-opacity');
+                break;
+            case 4:
+                $("#notebtn-TUT").addClass('full-opacity');
+                break;
+            case 5:
+                endTutWrap();
+                break;
+        }
+    }, 800);
+}
+
+function removeFullOpacity() {
+    $("#new-tutorial-repeat-text span").removeClass('full-opacity');
+    $("#progess-btn-stan-in-cycle-TUT").removeClass('full-opacity');
+    $("#new-tutorial .mic-container").removeClass('full-opacity');
+    $("#notebtn-TUT").removeClass('full-opacity');
+    $(".star-liked-TUT").removeClass('full-opacity');
+    $("#menu-switch").removeClass('full-opacity');
+}
+
+function removeAllCursors() {
+    $(".cursor-TUT").removeClass('cursor-TUT-1');
+    $(".cursor-TUT").removeClass('cursor-TUT-2');
+    $(".cursor-TUT").removeClass('cursor-TUT-3');
+    $(".cursor-TUT").removeClass('cursor-TUT-4');
+    $(".cursor-TUT").removeClass('cursor-TUT-5');
+    $(".cursor-TUT").removeClass('cursor-TUT-6');
+    $(".cursor-TUT").removeClass('cursor-TUT-7');
+    $(".cursor-TUT").removeClass('cursor-TUT-8');
+    $(".cursor-TUT").removeClass('cursor-TUT-9');
+}
+
+function updateProgressTut(step) {
+    var percent = 100 - Math.round(((step) / (12)) * 100);
+    $("#progess-btn-stan-in-cycle-tut2").addClass('p' + percent);
+    removeProgressClassMin($("#progess-btn-stan-in-cycle-tut2"), percent);
+}
+
+function endTutWrap() {
+    $("#menu-switch").removeClass('half-opacity');
+    $("body").removeClass('tutorial-body-darkness');
+    $(".background").removeClass('background-tutorial-darkness');
+    $("#new-tutorial").addClass('next-cat-right');
+    $(".popup-TUT").hide();
+    $(".popup-TUT").addClass('next-cat-right-right');
+    stepTut = 0;
+    visiblesSectionsBeforeStart.addClass('next-cat-left');
+    setTimeout(function () {
+        visiblesSectionsBeforeStart.show();
+        setTimeout(function () {
+            if (startLearn) {
+                //zacznij naukę
+                getDay();
+                //showStartLessonPage();
+                startLearn = false;
+            } else {
+                //powrót do głównego
+                var acc = []
+                visiblesSectionsBeforeStart.each(function (index, value) {
+                    acc.push($(this).attr('id'));
+                });
+
+                visiblesSectionsBeforeStart.removeClass('next-cat-left');
+            }
+        }, 400);
+        $("#new-tutorial").hide();
+        $(".popup-TUT").show();
+        $("#startDay").addClass('next-cat-left');
+    }, 600);
+}
+
+function endTut() {
+    $("#startDay").addClass('next-cat-left');
+    stepTut = 0;
+    $("#tutorial").hide();
+    $(".tut-method").hide();
+    $("#page-after-tutorial").addClass('next-cat-left');
+    setTimeout(function () {
+        $("#page-after-tutorial").hide();
+        if (startLearn) {
+            //zacznij naukę
+            showStartLessonPage();
+            startLearn = false;
+        } else {
+            //powrót do głównego
+        }
+    }, 1000);
+}
+
+function startSetNewCategory() {
+    logEventInServer('search lesson', {});
+    getCatList();
+    $("#new-category-choice").addClass('next-cat-left');
+    setTimeout(function () {
+        if (firstGenerationCat) {
+            firstGenerationCat = false;
+            activateSearch();
+        }
+        $("#new-category-choice").hide();
+        setTimeout(function () {
+            $("#choose-cat").show();
+        }, 75);
+        setTimeout(function () {
+            $("#choose-cat").removeClass('next-cat-right');
+        }, 150);
+        $("#cats").show();
+    }, 700);
+}
+
+var firstGenerationCatAllCats = true;
+
+function runList() {
+    setTimeout(function () {
+        if (firstGenerationCatAllCats) {
+            firstGenerationCatAllCats = false;
+            activateSearchAllCats();
+        }
+    }, 700);
+}
+
+function closeManualSettingCat() {
+    $("#new-category-choice").show();
+    $("#choose-cat").addClass('next-cat-right');
+    setTimeout(function () {
+        $("#new-category-choice").removeClass('next-cat-left');
+        $("#choose-cat").hide();
+    }, 700);
+}
+
+function backToSetNewCategory() {
+    $("#choose-cat").addClass('next-cat-right');
+    setTimeout(function () {
+        $("#choose-cat").hide();
+        $("#new-category-choice").show();
+        setTimeout(function () {
+            $("#new-category-choice").removeClass('next-cat-left');
+            $("#learn-container").addClass('next-cat-left');
+            $("#progess-btn-stan-in-cycle").addClass('p100');
+            $(".progess-btn-stan-in-session").addClass('p100');
+            setTimeout(function () {
+                loadProgressBarToFull2();
+            }, 200);
+        }, 50);
+    }, 500);
+}
+
+function startChoiceNewCategory() {
+    if (sugGetIsSetter) {
+        $("#suggest-new-category-text").text(suggestedCatName);
+        showMuteIcon();
+        $('section').hide();
+        $("#new-category-choice").show();
+        hasNewCatsToday = true;
+        setTimeout(function () {
+            if ($("#new-category-choice").hasClass('next-cat-right')) {
+                $("#new-category-choice").removeClass('next-cat-right');
+            } else {
+                $("#new-category-choice").removeClass('next-cat-left');
+            }
+            $("#learn-container").addClass('next-cat-left');
+            $(".progess-btn-stan-in-session").addClass('p100');
+            $("#progess-btn-stan-in-cycle").addClass('p100');
+            setTimeout(function () {
+                loadProgressBarToFull2();
+            }, 200);
+            setPopupAboutNoAudioLesson();
+        }, 50);
+    } else {
+        endTodayLesson = true;
+        saveDay();
+    }
+}
+
+var ix2 = 1;
+
+function loadProgressBarToFull2() {
+    ix2 = 1;
+    smoothLoadProgressBar2();
+}
+
+function smoothLoadProgressBar2() {
+    setTimeout(function () {
+        $("#progess-btn-stan-in-cycle-ncat").addClass('p' + ix2);
+        ix2++;
+        if (ix2 < 101) {
+            smoothLoadProgressBar2();
+        }
+    }, 15)
+}
+
+function removeAllProgress2() {
+    for (var i = 1; i < 102; i++) {
+        $("#progess-btn-stan-in-cycle-ncat").removeClass('p' + i);
+    }
+}
+
+function setSuggestedCat(par, cat) {
+    var idLang = $("#myLang").val();
+    $.get("date/" + idLang + "/" + par + "/subcat.json", function (result) {
+        var scat = JSON.parse(result);
+        for (var x in scat) {
+            var c = scat[x];
+            if (c.id == cat) {
+                getCatWithPos(c.pos, 1);
+            }
+        }
+    });
+}
+
+var userChoiceCat = false;
+
+function setThisAsSuggestedCat(par, cat) {
+    var idLang = $("#myLang").val();
+    userChoiceCat = true;
+    $.get("date/" + idLang + "/" + par + "/subcat.json", function (result) {
+        var scat = JSON.parse(result);
+        for (var x in scat) {
+            var c = scat[x];
+            if (c.id == cat) {
+                getCatWithPos(c.pos, 0);
+            }
+        }
+    });
+}
+
+function setSuggestedCatName(idp, idc) {
+    var idLang = $("#myLang").val();
+    $.get("date/" + idLang + "/" + idp + "/subcat.json", function (result) {
+        var scat = JSON.parse(result);
+        for (var x in scat) {
+            var cat = scat[x];
+            if (cat.id == idc) {
+                getCatWithPos(cat.pos, 1);
+            }
+        }
+    });
+}
+
+function setSuggestedCatAsNew() {
+    $("#new-category-choice").addClass('next-cat-right');
+    setTimeout(function () {
+        $("#new-category-choice").hide();
+        dayJSONwordsCopy = dayJSON.words;
+        dayJSON.words = dayJSON.words + wordsInOneCat;
+        var res = suggestedCatPath.split("/");
+        var parent = res[0];
+        var cat = res[1];
+        logEventInServer('start suggested lesson', {day: dayJSON.day, category: parent, subcategory: cat});
+        $("#learn-container").addClass('next-cat-left');
+        $(".countOfNewWordsToday").text(wordsInOneCat);
+        setTimeout(function () {
+            setNewCat(parent, cat);
+            $("#myCat").val(cat);
+            $("#myParentCat").val(parent);
+            $("#learn-container").show();
+            packControler();
+            $("#words-nav").show();
+        }, 300);
+    }, 500);
+}
+
+function showStartLessonPage() {
+    gameIsBegin = true;
+    $('seciton').hide();
+    $("#startDay").show();
+    setTimeout(function () {
+        $("#startDay").removeClass('next-cat-left');
+        setTimeout(function () {
+            if (lessonsJumpToFuture > 0) {
+                var text = lessonsJumpToFuture + " " + getTrans(t_automated_skipped_lessons);
+
+                window.plugins.toast.showWithOptions(
+                    {
+                        message: text,
+                        duration: "long",
+                        position: "bottom"
+                    }
+                );
+            }
+        }, 500);
+    }, 100);
+}
+
+function startLesson() {
+    logEventInServer('start learn', {toLearnToday: toLearn});
+    packControler();
+}
+
+function removeAllProgressClass(obj) {
+    return;
+}
+
+function removeProgressClassMin(obj, min) {
+    for (var i = 100; i > min; i--) {
+        obj.removeClass('p' + i);
+    }
+}
+
+function updateProgressBar() {
+    removeAllProgressClass($("#progess-btn-stan-in-cycle"));
+    removeAllProgressClass($(".progess-btn-stan-in-cycle-2"));
+    removeAllProgressClass($(".progess-btn-stan-in-cycle-3"));
+    setTimeout(function () {
+        var percent = 100 - Math.round(((learnedWords) / (countWordsToLearn)) * 100);
+        var percent2 = 100 - Math.round(((learnedWordsInCat) / (countWordsToLearnInThisCycle)) * 100);
+        var percent3 = Math.round(((learnedWordsInCat) / (countWordsToLearnInThisCycle)) * 100);
+        var percent4 = Math.round(((learnedWords) / (countWordsToLearn)) * 100);
+        $("#progess-btn-stan-in-cycle").addClass('p' + percent4);
+        $(".progess-btn-stan-in-session").addClass('p' + percent2);
+        $(".progess-btn-stan-in-cycle-2").addClass('p' + percent3);
+        $(".progess-btn-stan-in-cycle-3").addClass('p' + percent);
+        removeProgressClassMin($("#progess-btn-stan-in-cycle"), percent4);
+        removeProgressClassMin($(".progess-btn-stan-in-session"), percent2);
+        removeProgressClassMin($(".progess-btn-stan-in-cycle-2"), percent3);
+        removeProgressClassMin($(".progess-btn-stan-in-cycle-3"), percent);
+        $(".all-words-to-end").text(countWordsToLearn - learnedWords);
+        $("#learn-container .all-words-to-end").text(parseInt((learnedWordsInCat) / countWordsToLearnInThisCycle * 100) + "%");
+        if ((countWordsToLearn - learnedWords) != (countWordsToLearnInThisCycle - learnedWordsInCat)) {
+            $(".all-words-to-end-sesion").text(countWordsToLearnInThisCycle - learnedWordsInCat);
+        } else {
+            $(".all-words-to-end-sesion").text('');
+        }
+    }, 50);
+}
+
+/*END TUTORIAL*/
+var sugGetIsSetter = false;
+var scdCycleInSearchSub = false;
+var suggestedCatHasAudio = true;
+
+function getCatWithPos(pos, off) {
+    $.get("date/" + langJSON.lang + "/cat.json", function (result) {
+        var cats = JSON.parse(result);
+        var catSize = cats.length;
+        for (var x in cats) {
+            var cat = cats[x];
+            var idP = cat.id;
+            $.ajax({
+                url: "date/" + langJSON.lang + "/" + idP + "/subcat.json",
+                type: 'get',
+                dataType: 'html',
+                async: false,
+                success: function (result) {
+                    var scats = JSON.parse(result);
+                    var scatSize = scats.length;
+                    for (var sc in scats) {
+                        var scat = scats[sc];
+                        if (parseInt(scat.pos) == (parseInt(pos) + off)) {
+                            if (!userChoiceCat && (dayJSON.skiped.indexOf(idP + "/" + scat.id) >= 0 || learnedCat.indexOf(idP + "/" + scat.id) >= 0 || inProgressCat.indexOf(idP + "/" + scat.id) >= 0)) {
+                                if ((parseInt(x) + 1) == catSize && (parseInt(sc) + 1) == scatSize) {
+                                    if (scdCycleInSearchSub) {
+                                        isNotNewCat();
+                                        return;
+                                    }
+                                    else {
+                                        scdCycleInSearchSub = true;
+                                        getCatWithPos(1, 0);
+                                        return;
+                                    }
+                                }
+                                off++;
+//
+                                getCatWithPos(pos, off++);
+                                return;
+
+                            } else {
+                                userChoiceCat = false;
+                                $("#sugCatPar").val(idP);
+                                $("#sugCatSub").val(scat.id);
+                                suggestedCatHasAudio = (scat.audio == true || isPayedPro == true);
+                                suggestedCatPath = idP + "/" + scat.id;
+                                suggestedCatName = scat.name;
+                                getWordToSuggestCat(idP + "/" + scat.id);
+                                sugGetIsSetter = true;
+                                return;
+                            }
+                        } else if (pos == allCats.length && allCats.length > 0 && parseInt(scat.pos) == pos) {
+                            if (scdCycleInSearchSub) {
+                                isNotNewCat();
+                                return;
+                            } else {
+                                scdCycleInSearchSub = true;
+                                getCatWithPos(1, 0);
+                                return;
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    });
+}
+
+function getAllCatsInArray() {
+    $.get("date/" + langJSON.lang + "/cat.json", function (result) {
+        var cats = JSON.parse(result);
+        for (var x in cats) {
+            var cat = cats[x];
+            var idP = cat.id;
+            $.ajax({
+                url: "date/" + langJSON.lang + "/" + idP + "/subcat.json",
+                type: 'get',
+                dataType: 'html',
+                async: false,
+                success: function (result) {
+                    var scats = JSON.parse(result);
+                    for (var sc in scats) {
+                        var scat = scats[sc];
+                        allCats.push(idP + "/" + scat.id);
+                        if(scat.audio == true) {
+                            catsWithAudioInDemo.push(idP + "/" + scat.id);
+                        }
+                    }
+                }
+            });
+        }
+    });
+}
+
+function isNotNewCat() {
+    if (gameIsBegin) {
+        suggestedCatHasAudio = -1;
+        $("#new-category-choice").addClass('next-cat-right');
+        endTodayLesson = true;
+        saveDay();
+        setTimeout(function () {
+            $("#new-category-choice").hide();
+            /*
+			if(todayEndedCat != "") allEndedCats.push(todayEndedCat);
+			uniqueallEndedCats = allEndedCats.filter(function(item, pos) {
+				return allEndedCats.indexOf(item) == pos;
+			});
+			if(allCats.sort().toString() == uniqueallEndedCats.sort().toString() && (inProgressCat.length == 0 || (inProgressCat.length == 1 && inProgressCat[0] == todayEndedCat))){
+				$("#new-category-choice").hide();
+				$("#end-course").show();
+				$(".countKMLearned").text( Math.floor( (dayJSON.km )*minCat / 60) );
+				$(".countMinLearned").text( Math.floor( (dayJSON.km )*minCat % 60) );
+				setTimeout(function(){
+					$("#end-course").removeClass('next-cat-left');
+					showRating();
+				}, 100);
+			}else{
+
+				showEndNewMaterialsInfo();
+
+				$("#new-category-choice").hide();
+				$("#end-panel").show();
+				setTimeout(function(){
+					$("#end-panel").removeClass('next-cat-left');
+					showRating();
+				}, 100);
+			}
+			*/
+        }, 500);
+    }
+}
+
+function getNextSugCat() {
+    $("#new-category-choice").addClass('next-cat-left');
+    setTimeout(function () {
+        scdCycleInSearchSub = false;
+        var p = $("#sugCatPar").val();
+        var c = $("#sugCatSub").val();
+        setSuggestedCat(p, c);
+        addCatToMissing(p + "/" + c);
+        setTimeout(function () {
+            $("#suggest-new-category-text").text(suggestedCatName);
+            $("#new-category-choice").removeClass('next-cat-left');
+            setTimeout(function () {
+                setPopupAboutNoAudioLesson();
+                showMuteIcon();
+            }, 500);
+        }, 200);
+    }, 700);
+
+    var text = getTrans(t_skipped_lesson_success);
+    window.plugins.toast.showWithOptions(
+        {
+            message: text,
+            duration: "short",
+            position: "bottom"
+        }
+    );
+}
+
+function addCatToMissing(catSgn) {
+    dayJSON.skiped.push(catSgn);
+    allEndedCats.push(catSgn);
+    allUsedCats.push(catSgn);
+}
+
+var agreeToCheckTheUsedCatAsSug = false;
+
+function getThisCatAsSug(obj) {
+    if ($(obj).hasClass('missingCat') && !agreeToCheckTheUsedCatAsSug) {
+        //pokaż powiadomienie, że zeskipowałeś tą kategorię ale i tak chcesz się jej uczyć
+        showConfirmLearnMissingCat(obj);
+    } else if (($(obj).hasClass('inProgressCat') || ($(obj).hasClass('learnedCat'))) && !agreeToCheckTheUsedCatAsSug) {
+        //pokaż powiadomienie, że już się jej uczysz i czy chcesz zacząć od nowa
+        showConfirmLearnInProgressCat(obj);
+    } else {
+        agreeToCheckTheUsedCatAsSug = false;
+        var p = $(obj).attr('data-parent');
+        var c = $(obj).attr('data-subcat');
+        logEventInServer('choose manual lesson', {day: dayJSON.day, category: p, subcategory: c});
+        setThisAsSuggestedCat(p, c);
+        setTimeout(function () {
+            $("#suggest-new-category-text").text(suggestedCatName);
+            showMuteIcon();
+            backToSetNewCategory();
+            setPopupAboutNoAudioLesson();
+        }, 100);
+    }
+}
+
+/* SAVE PROGRESS */
+var progressJSON = [];
+var srcSaveProgress = "myProgress.speaklabs";
+
+function saveProgressInFile() {
+    var progress = '{"langJSON": "", "dayJSON": "", "toLearnJSON": "", "noticeJSON": "", "likedJSON": ""}';
+    progressJSON = JSON.parse(progress);
+    progressJSON.langJSON = langJSON;
+    progressJSON.dayJSON = dayJSON;
+    progressJSON.toLearnJSON = toLearnJSON;
+    progressJSON.noticeJSON = noticeJSON;
+    progressJSON.likedJSON = likedJSON;
+    saveFileProgress();
+}
+
+function saveFileProgress() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSNProgress, failN);
+}
+
+function gotFSNProgress(fileSystem) {
+    fileSystem.root.getFile(srcSaveProgress, {create: true}, gotFileEntryNProgress, failN);
+}
+
+function gotFileEntryNProgress(fileEntry) {
+    fileEntry.createWriter(gotFileWriterNProgress, failN);
+    srcToShare = fileEntry.toURL();
+}
+
+function gotFileWriterNProgress(writer) {
+    writer.onwrite = function (evt) {
+        console.log("write success");
+    };
+
+    writer.write(JSON.stringify(progressJSON));
+    writer.abort();
+}
+
+function failN(error) {
+
+}
+
+/* END SAVE FILE */
+
+/* READ PROGRESS */
+var srcLoadProgress = "";
+
+function loadProgress(uri) {
+    srcLoadProgress = uri;
+    window.FilePath.resolveNativePath(srcLoadProgress, function (localFileUri) {
+        window.resolveLocalFileSystemURL(localFileUri, function (oFile) {
+            oFile.file(function (readyFile) {
+                var reader = new FileReader();
+                reader.onloadend = function (evt) {
+                    if (IsJsonString(evt.target.result)) {
+                        var res = JSON.parse(evt.target.result);
+                        langJSON = res.langJSON;
+                        dayJSON = res.dayJSON;
+                        toLearnJSON = res.toLearnJSON;
+                        noticeJSON = res.noticeJSON;
+                        likedJSON = res.likedJSON;
+
+                        saveLang(); //save lang
+                        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSN, failN); //save notice
+                        /*save day*/
+                        endTodayLesson = false;
+                        datesJSON5 = dayJSON;
+                        srcSave5 = path() + "day.json";
+                        saveFile5();
+                        /*end day*/
+                        /*save tolearn*/
+                        setTimeout(function () {
+                            datesJSON = toLearnJSON;
+                            srcSave = path() + "save.json";
+                            saveFile();
+                        }, 200);
+                        /*end tolearn*/
+                        /*komunikat i restart*/
+                        setTimeout(function () {
+                            getTrans(t_import_from_file_success);
+                            setTimeout(function () {
+                                location.reload();
+                            }, 500);
+                        }, 500);
+                    } else {
+                        getTrans(t_import_from_file_error);
+                    }
+                };
+                reader.readAsText(readyFile);
+            });
+        }, function (err) {
+            getTrans(t_import_from_file_error);
+        });
+    });
+}
+
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+/* END READ FILE */
+/* START statistic */
+var isInList = [];
+
+function showInProgressCat() {
+    for (var p in inProgressCat) {
+        var res = inProgressCat[p].split("/");
+        var idp = res[0];
+        var idc = res[1];
+        setinProgressCatList(idp, idc);
+    }
+}
+
+function setinProgressCatList(idp, idc) {
+    if (!(isInList.indexOf(idp + "/" + idc) >= 0)) {
+        isInList.push(idp + "/" + idc);
+        var idLang = $("#myLang").val();
+        $.get("date/" + idLang + "/" + idp + "/subcat.json", function (result) {
+            var scat = JSON.parse(result);
+            for (var x in scat) {
+                var cat = scat[x];
+                if (cat.id == idc) {
+                    $(".catNameInListWord").text(cat.name);
+                    $(".inProgressCatList").append('<p class="text" onclick="showMeWordInThisCat(' + idp + ', ' + idc + ', \'' + cat.name + '\')">' + cat.name + '</p>');
+                }
+            }
+        });
+    }
+}
+
+function showMeWordInThisCat(idp, idc, name) {
+    $(".catNameInListWord").text(name);
+    fillTableListWordInCatMain(idp, idc);
+    //fillTableListWordInCat(idp, idc);
+    //fillTableListWordInCatWithNote(idp, idc);
+    $("#list-of-word-in-cat").show();
+    setTimeout(function () {
+        $("#list-of-word-in-cat").removeClass('goLeft');
+    }, 300);
+}
+
+function fillTableListWordInCatMain(idp, idc) {
+    var sygn = idp + "/" + idc;
+    var i = 1;
+
+    $.get("date/" + langJSON.lang + "/" + sygn + "/words.json", function (result) {
+        $("#listWordOfCatInInPorgress").text("");
+        $.get("date/1/" + sygn + "/words.json", function (transResult) {
+            var words = JSON.parse(result);
+            var trans = JSON.parse(transResult);
+            for (var x in words) {
+                var w = words[x];
+                var t = trans[x];
+                var linkwordwrap = "";
+                var hasLinkword = false;
+                for (var z in noticeJSON) {
+                    var notice = noticeJSON[z];
+                    var tmp = langJSON.lang + "\\" + idp + "\\" + idc + "\\" + 1 + "\\" + (parseInt(x) + 1);
+                    if (notice.word == tmp) {
+                        linkwordwrap = "<br><strong>Linkword:</strong> " + notice.notice;
+                        $("#listWordOfCatInInPorgress").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + i + '. ' + t.name + '<span>' + w.name + linkwordwrap + '</span></p>');
+                        hasLinkword = true;
+                    }
+                    if (!hasLinkword && z == (noticeJSON.length - 1)) {
+                        $("#listWordOfCatInInPorgress").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + i + '. ' + t.name + '<span>' + w.name + '</span></p>');
+                    }
+                }
+                if (noticeJSON.length == 0) {
+                    $("#listWordOfCatInInPorgress").append('<p class="text" onclick="tellMeWord(\'' + sygn + '\',' + w.id + ')">' + i + '. ' + t.name + '<span>' + w.name + '</span></p>');
+                }
+                i++;
+            }
+        });
+    });
+}
+
+function fillTableListWordInCat(idp, idc) {
+    var idLang = $("#myLang").val();
+    var i = 1;
+    $.get("date/" + idLang + "/" + idp + "/" + idc + "/words.json", function (result) {
+        var words = JSON.parse(result);
+        for (var x in words) {
+            var w = words[x];
+            $(".t" + i).html(w.name);
+            i++;
+        }
+    });
+}
+
+function fillTableListWordInCatWithNote(idp, idc) {
+    var idLang = $("#myLang").val();
+    var i = 1;
+    for (i = 1; i < 11; i++) {
+        $(".n" + i).html("");
+        for (var x in noticeJSON) {
+            var notice = noticeJSON[x];
+            var tmp = idLang + "\\" + idp + "\\" + idc + "\\" + 1 + "\\" + i;
+            if (notice.word == tmp) {
+                $(".n" + i).html("(" + notice.notice + ")");
+            }
+        }
+    }
+}
+
+/* END statistic */
+function checkConnection() {
+    return (!(navigator.connection.type == 0 || navigator.connection.type == 'none'));
+}
+
+function showRating() {
+    if (isPremium) {
+        AppRate.preferences = {
+            displayAppName: getTrans(t_app_name_pro),
+            storeAppURL: {
+                android: 'market://details?id=com.speaklabs.english.speaklabsPro'
+            },
+            useLanguage: getTrans(t_lang_rank),
+            simpleMode: true,
+            callbacks: {
+                onButtonClicked: function (buttonIndex) {
+                    if (buttonIndex == 1) {
+                        setRatingToTrue();
+                    }
+                }
+            }
+        };
+    } else {
+        AppRate.preferences = {
+            displayAppName: getTrans(t_app_name),
+            storeAppURL: {
+                android: 'market://details?id=com.speaklabs.english.speaklabs'
+            },
+            useLanguage: getTrans(t_lang_rank),
+            simpleMode: true,
+            callbacks: {
+                onButtonClicked: function (buttonIndex) {
+                    if (buttonIndex == 1) {
+                        setRatingToTrue();
+                    }
+                }
+            }
+        };
+    }
+
+    var day = parseInt($("#nrDayFiled").text());
+    if (day % 2 == 0 && day > 0 && dayJSON.rating == false) {
+        if (isPremium) {
+            AppRate.promptForRating();
+        }
+    }
+}
+
+function setRatingToTrue() {
+    endTodayLesson = false;
+    dayJSON.rating = true;
+    datesJSON5 = dayJSON;
+    srcSave5 = path() + "day.json";
+    saveFile5();
+}
+
+function saveTheme() {
+    endTodayLesson = false;
+    var themeNb = 1;
+    if ($("body").hasClass('theme3')) {
+        var themeNb = 3;
+    } else if ($("body").hasClass('theme2')) {
+        var themeNb = 2;
+    } else {
+        var themeNb = 1;
+    }
+    logEventInServer('change theme', mergeObjects({theme: themeNb}, getDataAboutCurrentWordToLog()));
+    dayJSON.theme = themeNb;
+    datesJSON5 = dayJSON;
+    srcSave5 = path() + "day.json";
+    saveFile5();
+}
+
+function setTextWidth() {
+    $(".text").css('min-width', $(window).width() * 0.85);
+}
+
+var srcToShare = "";
+
+function shareFile() {
+    var optionsToShare = {
+        message: 'Save progress', // not supported on some apps (Facebook, Instagram)
+        subject: 'My progress', // fi. for email
+        files: [srcToShare], // an array of filenames either locally or remotely
+        url: null,
+        chooserTitle: 'Save progress' // Android only, you can override the default share sheet title
+    }
+
+    var onSuccessShare = function (result) {
+        console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+        console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+    }
+
+    var onErrorShare = function (msg) {
+        console.log("Sharing failed with message: " + msg);
+    }
+
+    window.plugins.socialsharing.shareWithOptions(optionsToShare, onSuccessShare, onErrorShare);
+}
+
+function volumeTest() {
+    //podgłośnienie
+    /*window.plugin.volume.getVolume(function(volume) {
+		if(volume < 0.20){
+			showVolumeInfo();
+		}
+	});*/
+}
+
+function showVolumeInfo() {
+    navigator.notification.confirm(
+        "Turn up the volume to hear the sound",
+        okNoSound,
+        "Warning!",
+        "OK"
+    );
+}
+
+function okNoSound() {
+    return true;
+}
+
+function getAllCatsToShowAllCats() {
+    $("#show-all-cats-cats").html('');
+    $.get("date/" + langJSON.lang + "/cat.json", function (result) {
+        var tmp = '';
+        var cats = JSON.parse(result);
+        for (var x in cats) {
+            subcats = false;
+            var cat = cats[x];
+            //if(x == 0) tmp += '<div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Fiszki</span><span class="l3">F_Fiszki</span><span class="l4">N_Fiszki</span><span class="l5">Phrases</span></h1><div>';
+            //if(x == countCatInFirstBigCat) tmp += '</div></div><div><h1 class="text superbigcat-all-material" onclick="expand(this);"><span class="l2">E_Gramatyka</span><span class="l3">F_Gramatyka</span><span class="l4">N_Gramatyka</span><span class="l5">Gramatyka</span></h1><div>';
+            tmp += '<div><h1 class="text supercat-all-material" onclick="expand(this);">' + cat.name + '</h1>';
+            var extraEnd = parseInt(x) + 1 == parseInt(cats.length) ? '</div></div>' : "";
+
+            $.ajax({
+                url: "date/" + langJSON.lang + "/" + cat.id + "/subcat.json",
+                type: 'get',
+                dataType: 'html',
+                async: false,
+                success: function (data) {
+                    var subcats = JSON.parse(data);
+                    tmp += '<div class="list-of-subcat-all-material">';
+                    for (var y in subcats) {
+                        var subcat = subcats[y];
+                        var catSgn = cat.id + "/" + subcat.id;
+                        var cl = "";
+                        if (dayJSON.skiped.indexOf(catSgn) >= 0) {
+                            cl = "missingCat";
+                        }
+                        if (learnedCat.indexOf(catSgn) >= 0) {
+                            cl = "learnedCat";
+                        }
+                        if (inProgressCat.indexOf(catSgn) >= 0) {
+                            cl = "inProgressCat";
+                        }
+                        cl2 = (subcat.audio == true || isPayedPro == true) ? '' : 'no-audio';
+                        hasAudio = (subcat.audio == true || isPayedPro == true) ? 1 : 0;
+                        tmp += '<p class="text catsInAllMaterial ' + cl + ' ' + cl2 + '" onclick="setCatToViewWords(\'' + catSgn + '\', \'' + subcat.name + '\', ' + hasAudio + ')" data-parent="' + cat.id + '" data-subcat="' + subcat.id + '"><strong>' + (subcat.name).substring(0, 2) + '</strong> ' + (subcat.name).substring(2) + '<span class="inProgressCatInfo">' + getTrans(t_during_learning) + '</span> <span class="missingCatInfo">' + getTrans(t_lesson_skipped) + '</span> <span class="learnedCatInfo">' + getTrans(t_learned_lesson) + '</span></p>';
+                        $("#show-all-cats-cat-list .list").append('<li><p class="cat-name-all-material" data-id="' + subcat.id + '" data-par="' + cat.id + '">' + subcat.name + '</p></li>');
+                    }
+                    //tmp += '</div>' + '</div>' + extraEnd;
+                    tmp += '</div>' + '</div>';
+                }
+            });
+        }
+
+        $("#show-all-cats-cats").append(tmp);
+    });
+}
+
+function getWordForCatShowList(sygn, hasAudio) {
+    var splitedWordSygn = sygn.split('/');
+    $.get("date/" + langJSON.lang + "/" + sygn + "/words.json", function (result) {
+        $("#show-all-cats-cats-wordlist").text("");
+        $.get("date/1/" + sygn + "/words.json", function (transResult) {
+            var words = JSON.parse(result);
+            var trans = JSON.parse(transResult);
+            for (var x in words) {
+                var w = words[x];
+                var t = trans[x];
+                var audio_icon = hasAudio ? 'img/spiker_white.png' : 'img/spiker_no_audio_white.png';
+                $("#show-all-cats-cats-wordlist").append('<p class="text" data-source="all-words" data-category="'+ splitedWordSygn[0] +'" data-subcategory="'+ splitedWordSygn[1] +'" data-word="'+ w.id +'" onclick="tellMeWordFrom(\'' + sygn + '\',' + w.id + ', this)"><img src="' + audio_icon + '" class="left-img">' + t.name + '<span class="small-text-in-text-box">' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + (t.name).replace(/(['"])/g, "\\$1") + '\', this); return false;"></p>');
+            }
+        });
+    });
+}
+
+var countOfWrongRecognized = 0;
+
+function startVoiceToText() {
+    if (dev) {
+        $(".recText").text("To powiedziałem");
+        $("#l-n-1").hide();
+        $("#l-n-2").hide();
+        $("#l-n-3").hide();
+        $("#l-n-4").hide();
+        $("#l-n-5").hide();
+        $("#l-n-6").hide();
+
+        $("#l-e-1").hide();
+        $("#l-e-2").hide();
+        $("#l-e-3").hide();
+        $("#l-e-4").hide();
+        $("#l-e-5").hide();
+        $("#l-e-6").hide();
+
+        $("#l-t-1").hide();
+        $("#l-t-2").hide();
+        $("#l-t-3").hide();
+        $("#l-t-4").hide();
+        $("#l-t-5").hide();
+        $("#l-t-6").hide();
+
+        $("#l-c-1").show();
+        $("#l-c-2").show();
+        $("#l-c-3").show();
+        $("#l-c-4").show();
+        $("#l-c-5").show();
+        $("#l-c-6").show();
+
+        $(".recTextWrap").show();
+        $(".recText").show();
+
+        $(".show-hidden-word").next("p").show();
+        $(".show-hidden-word").hide();
+
+        if (((Math.random() * 10) + 1) > 5) {
+            $(".learnMethod").addClass('goodRec');
+            $(".learnMethod").removeClass('badRec');
+            $(".cloud-again").hide();
+            $(".cloud-next-task").hide();
+            setTimeout(function () {
+                isOkWrap();
+            }, 500);
+        } else {
+            $(".learnMethod").removeClass('goodRec');
+            $(".learnMethod").addClass('badRec');
+            $(".cloud-again").show();
+            $(".cloud-next-task").show();
+            $(".remind-img").hide();
+        }
+    }
+
+    if (!checkConnection()) {
+        navigator.notification.confirm(
+            getTrans(t_not_connected_text),
+            onNoInternetConfirm,
+            getTrans(t_not_connected_title),
+            getTrans(t_not_connected_exit)
+        );
+    } else {
+        checkPermissionsAndStartRecognize();
+    }
+
+    setTimeout(function () {
+        $("#progess-btn-stan-in-cycle").removeClass('hover-progres-round');
+    }, 150);
+
+}
+
+function checkPermissionsAndStartRecognize() {
+    if(blockAppIfNotLegal() === false) {
+        logEventInServer('start speach recognize in lesson', getDataAboutCurrentWordToLog());
+
+        window.plugins.speechRecognition.hasPermission(
+            function (hasPermission) {
+                if(hasPermission === false) {
+                    window.plugins.speechRecognition.requestPermission(startRecognize);
+                } else {
+                    startRecognize();
+                }
+            }
+        );
+    }
+}
+
+function startRecognize() {
+    stopTelling();
+
+    var langText = "en-GB";
+    var options = {
+        language: langText,
+        matches: 2,
+        prompt: ((nbMethod == 6 || nbMethod == 5 || (nbMethod == 4 && nbStep == 0 && $("#nav-words-container p.activ").index() == 9)) ? clearTextToShowOnRecognize(act_trans) : clearTextToShowOnRecognize(act_word)),
+        showPopup: true
+    };
+
+    window.plugins.speechRecognition.startListening(
+        function (matches) {
+            if (matches[0] != '') {
+                var text = matches[0];
+                $(".recText").text(text);
+
+                $("#l-n-1").hide();
+                $("#l-n-2").hide();
+                $("#l-n-3").hide();
+                $("#l-n-4").hide();
+                $("#l-n-5").hide();
+                $("#l-n-6").hide();
+
+                $("#l-e-1").hide();
+                $("#l-e-2").hide();
+                $("#l-e-3").hide();
+                $("#l-e-4").hide();
+                $("#l-e-5").hide();
+                $("#l-e-6").hide();
+
+                $("#l-t-1").hide();
+                $("#l-t-2").hide();
+                $("#l-t-3").hide();
+                $("#l-t-4").hide();
+                $("#l-t-5").hide();
+                $("#l-t-6").hide();
+
+                $("#l-c-1").show();
+                $("#l-c-2").show();
+                $("#l-c-3").show();
+                $("#l-c-4").show();
+                $("#l-c-5").show();
+                $("#l-c-6").show();
+
+                $(".recTextWrap").show();
+                $(".recText").show();
+
+                $(".show-hidden-word").next("p").show();
+                $(".show-hidden-word").hide();
+
+                compareRecognizedText(text);
+                $(".support-word-in-speach").hide();
+            }
+        },
+        function () {
+            $(".support-word-in-speach").hide();
+        },
+        options
+    );
+}
+
+function compareRecognizedText(text) {
+    var correctText = clearTextToShowOnRecognize($(".learnMethod:visible .text-trans-word").text());
+    if (text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == correctText.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')) {
+        logEventInServer('good speach in lesson', mergeObjects({spokenText: text}, getDataAboutCurrentWordToLog()));
+        countOfWrongRecognized = 0;
+        $(".learnMethod").addClass('goodRec');
+        $(".learnMethod").removeClass('badRec');
+        $(".cloud-again").hide();
+        $(".cloud-next-task").hide();
+        setTimeout(function () {
+            isOkWrap();
+        }, 500);
+    } else {
+        logEventInServer('bad speach in lesson', mergeObjects({spokenText: text}, getDataAboutCurrentWordToLog()));
+        $(".learnMethod").removeClass('goodRec');
+        $(".learnMethod").addClass('badRec');
+        $(".cloud-again").show();
+        $(".cloud-next-task").show();
+        $(".remind-img").hide();
+        countOfWrongRecognized++;
+        if (countOfWrongRecognized == 1) {
+            tellMe();
+        }
+        if (countOfWrongRecognized == 2) {
+            showRecognizedAlert();
+        }
+        if (countOfWrongRecognized == 3) {
+            countOfWrongRecognized = 0;
+            showRecognizedAlert3();
+        }
+    }
+}
+
+function showRecognizedAlert() {
+    navigator.notification.confirm(
+        getTrans(t_recognize_error_first_text),
+        showRecognizedAlertCallback,
+        getTrans(t_recognize_error_title),
+        getTrans(t_recognize_error_try_again) + "," + getTrans(t_recognize_error_skip)
+    );
+}
+
+function showRecognizedAlert2() {
+    navigator.notification.confirm(
+        getTrans(t_recognize_error_second_text),
+        showRecognizedAlertCallback,
+        getTrans(t_recognize_error_title),
+        getTrans(t_recognize_error_try_again) + "," + getTrans(t_recognize_error_skip)
+    );
+}
+
+function showRecognizedAlert3() {
+    navigator.notification.confirm(
+        getTrans(t_recognize_error_third_text),
+        showRecognizedAlertCallback,
+        getTrans(t_recognize_error_title),
+        getTrans(t_recognize_error_try_again) + "," + getTrans(t_recognize_error_skip)
+    );
+}
+
+function showRecognizedAlertCallback(buttonIndex) {
+    if (buttonIndex == 1) {
+        startVoiceToText();
+    }
+    if (buttonIndex == 2) {
+        logEventInServer('skip word', mergeObjects({source: 'wrong speach recognize'}, getDataAboutCurrentWordToLog()));
+        isOkWrap();
+    }
+}
+
+//the function
+function renameFile(currentName, currentDir, newName, successFunction) {
+
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+
+        fileSystem.root.getFile(currentDir + currentName, null, function (fileEntry) {
+            fileSystem.root.getDirectory(currentDir, {create: true}, function (dirEntry) {
+                parentEntry = new DirectoryEntry(currentName, currentDir + currentName);
+
+                fileEntry.moveTo(dirEntry, newName, function () {
+
+                    successFunction();
+
+                }, renameFail);
+            }, renameFail);
+        }, renameFail);
+
+    }, renameFail);
+}
+
+//and the sample success function
+function renameSuccess() {
+
+}
+
+//and the sample fail function
+function renameFail() {
+
+}
+
+function showConfirmSkipRepetition() {
+    navigator.notification.confirm(
+        getTrans(t_confirm_skip_lesson_text),
+        showConfirmSkipRepetitionCallBack,
+        getTrans(t_confirm_skip_lesson_title),
+        getTrans(t_confirm_skip_lesson_skip) + "," + getTrans(t_confirm_skip_lesson_cancel)
+    );
+}
+
+function showConfirmSkipRepetitionCallBack(buttonIndex) {
+    if (buttonIndex == 1) {
+        skipRepetition();
+    }
+    if (buttonIndex == 2) {
+        return true;
+    }
+}
+
+function skipRepetition() {
+    logEventInServer('skip repetition', {day: dayJSON.day, category: $("#myParentCat").val(), subcategory: $("#myCat").val()});
+    $("#start-next-cat").addClass('next-cat-left');
+    $("#learn-container").hide();
+    isRepeatCycle = false;
+    learnetCatToday++;
+    var endThis = false;
+    for (var i = 0; i < 10 && !endThis; i++) {
+        if (toLearn[i] != -1) {
+            endThis = true;
+            toLearn[i] = -1;
+        }
+    }
+    $("#learn-container").hide();
+    learnedWords += 30;
+    setTimeout(function () {
+        $("#start-next-cat").hide();
+        updateProgressBar();
+        packControler();
+    }, 500);
+}
+
+function showEndNewMaterialsInfo() {
+    if (hasNewCatsToday) {
+        navigator.notification.confirm(
+            getTrans(t_end_new_materials_text),
+            showEndNewMaterialsInfoCallback,
+            getTrans(t_end_new_materials_title),
+            getTrans(t_end_new_materials_ok)
+        );
+    }
+}
+
+function showEndNewMaterialsInfoCallback(buttonIndex) {
+    return 1;
+}
+
+function returnInLearn() {
+    $("#learn-container").addClass('next-cat-left');
+    setTimeout(function () {
+        $("#learn-container").hide();
+    }, 500);
+
+    isRepeatCycle = false;
+    newCategoryisSet = false;
+    toLearn = copyOfLearnArray.slice();
+    inProgressCat = inProgressCatcopyForBackBTN.slice();
+    toLearnJSON = JSON.parse(JSON.stringify(toLearnJSONcopyForBackBTN));
+    dayJSON.words = dayJSONwordsCopy;
+    learnedWords = learnedWordsCopy;
+    learnetCatToday = learnetCatTodayCopytBTN;
+    updateProgressBar();
+    logEventInServer('return while learning', mergeObjects({inNewLesson: isOnlyNewLessonToEndDay(toLearn)}, getDataAboutCurrentWordToLog()));
+    nextPack();
+}
+
+function hideSpeachClouds() {
+    $(".cloud-perfect-all-words").hide();
+    $(".cloud-you-said-all-words").hide();
+}
+
+var checkingWordWrapper;
+
+function checkMeWord(word_text, obj) {
+    checkingWordWrapper = $(obj);
+    stopTelling();
+    $("#savedWordsContainer p").removeClass('good-telling-word');
+    $("#savedWordsContainer p").removeClass('bad-telling-word');
+    $("#show-all-cats-cats-wordlist p").removeClass('good-telling-word');
+    $("#show-all-cats-cats-wordlist p").removeClass('bad-telling-word');
+    returnOriginTextAfterSpeachRecognize();
+
+    if (dev) {
+        if (((Math.random() * 10) + 1) > 5) {
+            checkingWordWrapper.closest('.text').addClass('good-telling-word');
+        } else {
+            checkingWordWrapper.closest('.text').addClass('bad-telling-word');
+            var $bottomText = checkingWordWrapper.closest('.text').find('.small-text-in-text-box');
+            $bottomText
+                .addClass('wrong-speach-text')
+                .attr('data-origin-text', $bottomText.html())
+                .html('błędnie powiedziany text');
+        }
+    }
+
+    checkPermissionsAndStartRecognizeInAllWords(word_text);
+
+}
+
+function checkPermissionsAndStartRecognizeInAllWords(correct_text) {
+    if(blockAppIfNotLegal() === false) {
+        var $textContainer = checkingWordWrapper.closest('.text');
+        var eventName = $textContainer.attr('data-source') == 'liked-word' ? 'start speach recognize in liked' : 'start speach recognize in browsing phrase';
+        logEventInServer(eventName, {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')});
+
+        window.plugins.speechRecognition.hasPermission(
+            function (hasPermission) {
+                if(hasPermission === false) {
+                    window.plugins.speechRecognition.requestPermission(function() {
+                        startRecognizeInAllWords(correct_text);
+                    });
+                } else {
+                    startRecognizeInAllWords(correct_text);
+                }
+            }
+        );
+    }
+}
+
+function startRecognizeInAllWords(correct_text) {
+    var langText = "en-GB"
+    var options = {
+        language: langText,
+        matches: 2,
+        prompt: clearTextToShowOnRecognize(correct_text),
+        showPopup: true
+    };
+
+    window.plugins.speechRecognition.startListening(
+        function (matches) {
+            if (matches[0] != '') {
+                var text = matches[0];
+                compareRecognizedTextInAllWords(text, correct_text);
+            }
+        },
+        function () {
+
+        },
+        options
+    );
+}
+
+function compareRecognizedTextInAllWords(text, correctText) {
+    var $textContainer = checkingWordWrapper.closest('.text');
+    var wordData = {category: $textContainer.attr('data-category'), subcategory: $textContainer.attr('data-subcategory'), word: $textContainer.attr('data-word')};
+
+    if (text.toLowerCase().replace(/[^a-zA-Z0-9]/g, '') == clearTextToShowOnRecognize(correctText).toLowerCase().replace(/[^a-zA-Z0-9]/g, '')) {
+        var eventName = $textContainer.attr('data-source') == 'liked-word' ? 'good speach in liked' : 'good speach in browsing phrases';
+        logEventInServer(eventName, mergeObjects({spokenText: text}, wordData));
+        checkingWordWrapper.closest('.text').addClass('good-telling-word');
+    } else {
+        var eventName = $textContainer.attr('data-source') == 'liked-word' ? 'bad speach in liked' : 'bad speach in browsing phrases';
+        logEventInServer(eventName, mergeObjects({spokenText: text}, wordData));
+        checkingWordWrapper.closest('.text').addClass('bad-telling-word');
+        var $bottomText = checkingWordWrapper.closest('.text').find('.small-text-in-text-box');
+        $bottomText
+            .addClass('wrong-speach-text')
+            .attr('data-origin-text', $bottomText.html())
+            .html(text);
+    }
+}
+
+function returnOriginTextAfterSpeachRecognize()
+{
+    $('.wrong-speach-text').each(function () {
+        $(this).html($(this).attr('data-origin-text'));
+        // $(this).removeChild('wrong-speach-text');
+    });
+}
+
+/* LIKED WORDS */
+function changeLiked(word_sygn) {
+    if (isLikedWord(word_sygn)) {
+        removeFromlikedJSON(word_sygn);
+        saveLikedWords();
+    } else {
+        addToLikedJSON(word_sygn);
+        saveLikedWords();
+    }
+}
+
+function removeFromlikedJSON(word_sygn) {
+    window.plugins.toast.showWithOptions(
+        {
+            message: getTrans(t_liked_words_remove),
+            duration: "short",
+            position: "bottom"
+        }
+    );
+    for (var i in likedJSON) {
+        if (likedJSON[i] == word_sygn) {
+            likedJSON.splice(i, 1);
+            break;
+        }
+    }
+
+    var splitedWordSygn = word_sygn.split('\\');
+    logEventInServer('remove word from liked', {day: dayJSON.day, category: splitedWordSygn[0], subcategory: splitedWordSygn[1], word: splitedWordSygn[2]});
+}
+
+function addToLikedJSON(word_sygn) {
+    window.plugins.toast.showWithOptions(
+        {
+            message: getTrans(t_liked_words_added),
+            duration: "short",
+            position: "bottom"
+        }
+    );
+    likedJSON.push(word_sygn);
+
+    var splitedWordSygn = word_sygn.split('\\');
+    logEventInServer('add word to liked', {day: dayJSON.day, category: splitedWordSygn[0], subcategory: splitedWordSygn[1], word: splitedWordSygn[2]});
+}
+
+function setActuLikedIcon() {
+    if (isLikedWord(getPathToActuWord())) {
+        $(".star-liked").attr('src', 'img/star_check.png');
+    } else {
+        $(".star-liked").attr('src', 'img/star.png');
+    }
+}
+
+function isLikedWord(word_sygn) {
+    if (likedJSON.length == 0) {
+        return false;
+    }
+    for (var x in likedJSON) {
+        var word = likedJSON[x];
+        if (word == word_sygn) {
+            return true;
+        }
+        if (x == likedJSON.length - 1) {
+            return false;
+        }
+    }
+}
+
+function getPathToActuWord() {
+    var idParentCat = $("#myParentCat").val();
+    var idSubCat = $("#myCat").val();
+    var id = $('#idWord').val();
+    return (idParentCat + "\\" + idSubCat + "\\" + id);
+}
+
+//reading
+function readLikedWords() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccessLiked, onFSError);
+}
+
+function onFSSuccessLiked(fileSystem) {
+    fileSystem.root.getFile((path() + "liked.json"), {create: false, exclusive: false}, gotFileEntryLiked, onFSError);
+}
+
+function gotFileEntryLiked(fileEntry) {
+    fileEntry.file(gotFileLiked, onFSError);
+}
+
+function gotFileLiked(file) {
+    readAsTextLiked(file);
+}
+
+function readAsTextLiked(file) {
+    var reader = new FileReader();
+    reader.onloadend = function (e) {
+        afterReadLikedWords(e.target.result);
+    };
+    reader.readAsText(file);
+}
+
+function afterReadLikedWords(res) {
+    likedJSON = JSON.parse(res); //PARSOWANIE JSON!!!
+}
+
+//saving
+function saveLikedWords() {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSLiked, failN);
+}
+
+function gotFSLiked(fileSystem) {
+    fileSystem.root.getFile((path() + "liked.json"), {create: true}, gotFileEntryLikedW, failN);
+}
+
+function gotFileEntryLikedW(fileEntry) {
+    fileEntry.createWriter(gotFileWriterLiked, failN);
+}
+
+function gotFileWriterLiked(writer) {
+    writer.onwriteend = function (e) {
+        afterSaveLikedWords();
+    };
+
+    writer.write(JSON.stringify(likedJSON));
+    writer.abort();
+}
+
+function afterSaveLikedWords() {
+    //coś po zapisaniu liked
+}
+
+function showSavedWords() {
+    $("#savedWordsContainer").text("");
+    for (var x in likedJSON) {
+        var word = likedJSON[x].split("\\");
+        showSavedWord(word);
+    }
+}
+
+function showSavedWord(word) {
+    $.get("date/" + langJSON.lang + "/" + word[0] + "/" + word[1] + "/words.json", function (result) {
+        $.get("date/1/" + word[0] + "/" + word[1] + "/words.json", function (transResult) {
+            var words = JSON.parse(result);
+            var trans = JSON.parse(transResult);
+            var w = words[word[2] - 1];
+            var t = trans[word[2] - 1];
+            $("#savedWordsContainer").append('<p class="text" data-source="liked-word" data-category="'+ word[0] +'" data-subcategory="'+ word[1] +'" data-word="'+ word[2] +'" onclick="tellMeWordFrom(\'' + word[0] + "/" + word[1] + '\',' + w.id + ', this)"><img src="img/star_check.png" class="left-img" onclick="confirmRemoveSavedWord(this, \'' + word[0] + "/" + word[1] + "/" + word[2] + '\',' + w.id + ')">' + t.name + '<span class="small-text-in-text-box">' + w.name + '</span><img src="img/mic_icon.png" ontouchstart="checkMeWord(\'' + (t.name).replace(/(['"])/g, "\\$1") + '\', this); return false;"></p>');
+        });
+    });
+}
+
+var wordToRemoveFromSaved;
+var objWordToRemoveFromSaved;
+
+function confirmRemoveSavedWord(obj, word) {
+    objWordToRemoveFromSaved = obj;
+    wordToRemoveFromSaved = word.replace(/\//g, '\\');
+
+    navigator.notification.confirm(
+        getTrans(t_confirm_remove_saved_word_text),
+        confirmRemoveSavedWordCallBack,
+        getTrans(t_confirm_remove_saved_word_title),
+        getTrans(t_confirm_remove_saved_word_remove) + "," + getTrans(t_confirm_remove_saved_word_cancel)
+    );
+}
+
+function confirmRemoveSavedWordCallBack(buttonIndex) {
+    if (buttonIndex == 1) {
+        removeFromSavedWords(objWordToRemoveFromSaved, wordToRemoveFromSaved);
+        setActuLikedIcon();
+    }
+    if (buttonIndex == 2) {
+        return true;
+    }
+}
+
+function removeFromSavedWords(obj, word) {
+    $(obj).parent().remove();
+    removeFromlikedJSON(word);
+    saveLikedWords();
+}
+
+/* END LIKED WORDS */
+
+function setPopupAboutNoAudioLesson() {
+    if (suggestedCatHasAudio == false && isPayedPro == false) {
+        navigator.notification.confirm(
+            getTrans(t_no_audio_lesson_text),
+            setPopupAboutNoAudioLessonBTNCallBack,
+            getTrans(t_no_audio_lesson_title),
+            getTrans(t_no_audio_lesson_learn_anyway) + "," + getTrans(t_no_audio_lesson_upgrade) + "," + getTrans(t_no_audio_lesson_skip)
+        );
+    }
+}
+
+function setPopupAboutNoAudioLessonInPhraseBrowser() {
+    navigator.notification.confirm(
+        getTrans(t_no_audio_lesson_text),
+        setPopupAboutNoAudioLessonBTNCallBack,
+        getTrans(t_no_audio_lesson_title),
+        getTrans(t_no_audio_lesson_learn_anyway) + "," + getTrans(t_no_audio_lesson_upgrade)
+    );
+}
+
+function setPopupAboutNoAudioLessonBTNCallBack(buttonIndex) {
+    if (buttonIndex == 1) {
+        return true;
+    }
+    if (buttonIndex == 2) {
+        goToPremiumVersion();
+    }
+    if (buttonIndex == 3) {
+        showConfirmSkipLesson();
+    }
+}
+
+function showMuteIcon() {
+    if (suggestedCatHasAudio == false && isPayedPro == false) {
+        $("#suggest-new-category").addClass('no-audio-name');
+    } else {
+        $("#suggest-new-category").removeClass('no-audio-name');
+    }
+}
+
+function showConfirmBackAlert() {
+    navigator.notification.confirm(
+        getTrans(t_confirm_back_in_learn_text),
+        showConfirmBackAlertCallBack,
+        getTrans(t_confirm_back_in_learn_title),
+        getTrans(t_confirm_back_in_learn_back) + "," + getTrans(t_confirm_back_in_learn_cancel)
+    );
+}
+
+function showConfirmBackAlertCallBack(buttonIndex) {
+    if (buttonIndex == 1) {
+        returnInLearn();
+    }
+    if (buttonIndex == 2) {
+        return true;
+    }
+}
+
+/* CONFIRM LEARN THE SAME CATEGORY */
+var theSameSugCatObjTMP;
+
+function showConfirmLearnMissingCat(obj) {
+    theSameSugCatObjTMP = obj;
+    navigator.notification.confirm(
+        getTrans(t_confirm_learn_missing_cat_text),
+        showConfirmLearnMissingCatCallBack,
+        getTrans(t_confirm_learn_missing_cat_title),
+        getTrans(t_confirm_learn_missing_cat_yes) + "," + getTrans(t_confirm_learn_missing_cat_cancel)
+    );
+}
+
+function showConfirmLearnMissingCatCallBack(buttonIndex) {
+    if (buttonIndex == 1) {
+        agreeToCheckTheUsedCatAsSug = true;
+        getThisCatAsSug(theSameSugCatObjTMP);
+    }
+    if (buttonIndex == 2) {
+        theSameSugCatObjTMP = false;
+        return true;
+    }
+}
+
+function showConfirmLearnInProgressCat(obj) {
+    theSameSugCatObjTMP = obj;
+    navigator.notification.confirm(
+        getTrans(t_confirm_learn_inprogress_cat_text),
+        showConfirmLearnInProgressCatCallBack,
+        getTrans(t_confirm_learn_inprogress_cat_title),
+        getTrans(t_confirm_learn_inprogress_cat_yes) + "," + getTrans(t_confirm_learn_inprogress_cat_cancel)
+    );
+}
+
+function showConfirmLearnInProgressCatCallBack(buttonIndex) {
+    if (buttonIndex == 1) {
+        agreeToCheckTheUsedCatAsSug = true;
+        getThisCatAsSug(theSameSugCatObjTMP);
+    }
+    if (buttonIndex == 2) {
+        theSameSugCatObjTMP = false;
+        return true;
+    }
+}
+
+/* SKIP LESSON CONFIRM */
+function showConfirmSkipLesson() {
+    logEventInServer('skip lesson', {day: dayJSON.day, category: $("#sugCatPar").val(), subcategory: $("#sugCatSub").val()});
+    getNextSugCat();
+}
+
+function showConfirmSkipLessonCallBack(buttonIndex) {
+    if (buttonIndex == 1) {
+        getNextSugCat();
+    }
+    if (buttonIndex == 2) {
+        return true;
+    }
+}
+
+/* exit app */
+function showExitAppConfirm() {
+    navigator.notification.confirm(
+        getTrans(t_confirm_exit_text),
+        showExitAppConfirmCallBack,
+        getTrans(t_confirm_exit_title),
+        getTrans(t_confirm_exit_cancel) + "," + getTrans(t_confirm_exit_exit)
+    );
+}
+
+function showExitAppConfirmCallBack(button) {
+    if (button == 2) {
+        navigator.app.exitApp();
+    }
+}
+
+function updatePlaceholders() {
+    $(".fuzzy-search").attr("placeholder", getTrans(t_placeholder_fuzzy_search));
+    $(".noteTEXT").attr("placeholder", getTrans(t_placeholder_hint_text));
+}
+
+function clearTextToShowOnRecognize(text) {
+    return text.replace('<b>', '').replace('</b>', '');
+}
+
+function testLegalAppAndRunIfIsLegal(callbackAfterValid) {
+    if(legalValidation === true) {
+        logEventInServer('request for verify app', {});
+        AndroidLicensePlugin.check(
+            function (data) {
+                var verifiData = data;
+                verifiData.packageName = getPackageName();
+                var url = getVerifiApiUrl();
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    contentType: "application/json",
+                    data: JSON.stringify(verifiData)
+                }).done(function (data) {
+                    if(data === true) {
+                        startAppBecauseIsLegal(callbackAfterValid);
+                    } else {
+                        blockAppBecauseNotLegal();
+                    }
+                }).fail(function (a, b, c) {
+                    //coś nie tak z serwerem -> musimy wpuścić do apki
+                    startAppBecauseIsLegal(callbackAfterValid);
+                });
+            },
+            function (errorString) {
+                //coś nie tak z pluginem -> musimy wpuścic do apki
+                startAppBecauseIsLegal(callbackAfterValid);
+            }
+        );
+    } else {
+        startAppBecauseIsLegal(callbackAfterValid);
+    }
+}
+
+function getPackageName() {
+    return isPremium ? "com.speaklabs.english.speaklabsPro" : "com.speaklabs.english.speaklabs";
+}
+
+function getVerifiApiUrl() {
+    return 'http://api.speaklabs.eu/api/verification_licences';
+}
+
+function getVerifiPurchaseApiUrl() {
+    return 'http://api.speaklabs.eu/api/verification_purchases';
+}
+
+function blockAppBecauseNotLegal() {
+    isLegal = false;
+
+    logEventInServer('bad verify app', {});
+    $('section').hide();
+    $('#menu-switch').hide();
+    $('#menu').hide();
+    setTimeout(function () {
+        $('#illegal-app-page').show();
+    }, 50);
+}
+
+function startAppBecauseIsLegal(callbackAfterValid) {
+    isLegal = true;
+    logEventInServer('good verify app', {});
+    callbackAfterValid();
+}
+
+function blockAppIfNotLegal() {
+    if (!isLegal && legalValidation === true) {
+        blockAppBecauseNotLegal();
+    }
+
+    return !isLegal && legalValidation === true;
+}
+
+function getLogEventUri() {
+    return 'http://api.speaklabs.eu/api/app_event_logs';
+}
+
+function getDeviceUUId() {
+    return device.uuid;
+}
+
+function getDeviceModel() {
+    return device.model;
+}
+
+function getSystemVersion() {
+    return device.version;
+}
+
+function logEventInServer(type, extraData) {
+    var data = {
+        deviceUUId: getDeviceUUId(),
+        deviceModel: getDeviceModel(),
+        deviceSystemVersion: getSystemVersion(),
+        packageName: getPackageName(),
+        type: type,
+        extraData: JSON.stringify(extraData)
+    };
+
+    $.ajax({
+        type: "POST",
+        url: getLogEventUri(),
+        contentType: "application/json",
+        data: JSON.stringify(data)
+    }).done(function (data) {
+    }).fail(function (a, b, c) {
+    });
+}
+
+function getDataAboutCurrentWordToLog() {
+    var splitedWordSygn = getPathToActuWord().split('\\');
+    return {
+        day: dayJSON.day,
+        category: splitedWordSygn[0],
+        subcategory: splitedWordSygn[1],
+        word: splitedWordSygn[2]
+    };
+}
+
+function mergeObjects(obj1,obj2) {
+    var obj3 = {};
+    for (var attrname in obj1) { obj3[attrname] = obj1[attrname]; }
+    for (var attrname in obj2) { obj3[attrname] = obj2[attrname]; }
+    return obj3;
+}
+
+function isOnlyNewLessonToEndDay(toLearn){
+    for (var i = 0; i < (toLearn.length - 2); i++) {
+        if (toLearn[i] > 0) {
+            return false;
+        }
+        if(i == (toLearn.length - 3)) {
+            return true;
+        }
+    }
+}
+
+function tellMeWordFrom(sygn, id, obj) {
+    tellMeWord(sygn, id);
+
+    var $item = $(obj);
+    switch ($item.attr('data-source')) {
+        case 'liked-word':
+            logEventInServer('run sound in liked', {category: $item.attr('data-category'), subcategory: $item.attr('data-subcategory'), word: $item.attr('data-word')});
+            break;
+        case 'new-lesson':
+            logEventInServer('run sound in new lesson start page', {category: $item.attr('data-category'), subcategory: $item.attr('data-subcategory'), word: $item.attr('data-word')});
+            break;
+        case 'all-words':
+            logEventInServer('run sound in browsing phrases', {category: $item.attr('data-category'), subcategory: $item.attr('data-subcategory'), word: $item.attr('data-word')});
+            break;
+    }
+}
+
+function changeToDemo() {
+    isPayedPro = false;
+    $('body').removeClass('payed-version');
+    $('body').addClass('unpayed-version');
+    getAllCatsToShowAllCats();
+    showMuteIcon();
+}
+
+function changeToPro() {
+    isPayedPro = true;
+    $('body').removeClass('unpayed-version');
+    $('body').addClass('payed-version');
+    getAllCatsToShowAllCats();
+    showMuteIcon();
+}
+
+function canTellThisWord(catSygn, word) {
+    return (
+        isPremium == true || //wersja premium
+        isPayedPro == true || //lub wersja demo opłacona
+        catsWithAudioInDemo.indexOf(catSygn) >= 0 //lub są dostępne nagrania w wersji demo
+    );
+}
+
+var premiumSubscriptionIsBought = false;
+var premiumProductIsBought = false;
+function initStore() {
+    if (!window.store) {
+        logEventInServer('error while shoping', {error: 'object window.store not found'});
+        return;
+    }
+
+    store.error(function(error) {
+        logEventInServer('error while shoping', {error: 'ERROR ' + error.code + ': ' + error.message});
+    });
+
+    store.register({
+        id:    'premium.product', // id without package name!
+        alias: 'premium.product',
+        type:  store.NON_CONSUMABLE
+    });
+
+    store.when("premium.product").approved(function(p) {
+        p.finish();
+    });
+
+    store.when("premium.product").updated(function(p) {
+        if (p.owned) {
+            premiumProductIsBought = true;
+            changeToPro();
+            if(buyPremiumWasClicked === true) {
+                buyPremiumWasClicked = false;
+                showThanksPageAfterBuying();
+            }
+        } else {
+            premiumProductIsBought = false;
+            if(!premiumSubscriptionIsBought) {
+                changeToDemo();
+            }
+        }
+    });
+
+    store.register({
+        id:    'subscription.premium', // id without package name!
+        alias: 'subscription.premium',
+        type:  store.PAID_SUBSCRIPTION
+    });
+
+    store.when("subscription.premium").approved(function(p) {
+        p.verify();
+    });
+
+    store.when("subscription.premium").verified(function(p) {
+        p.finish();
+    });
+
+    store.when("subscription.premium").updated(function(p) {
+        if (p.owned) {
+            premiumSubscriptionIsBought = true;
+            changeToPro();
+        } else {
+            premiumSubscriptionIsBought = false;
+            if(!premiumProductIsBought) {
+                changeToDemo();
+            }
+        }
+    });
+
+    store.validator = function(product, callback) {
+        var verifiData = product.transaction;
+        verifiData.packageName = getPackageName();
+        verifiData.receiptId = verifiData.id;
+        delete verifiData.id;
+
+
+        var url = getVerifiPurchaseApiUrl();
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: "application/json",
+            data: JSON.stringify(verifiData)
+        }).done(function (data) {
+            if(data === true) {
+                callback(true, {}); // success!
+            } else {
+                callback(false, "Impossible to proceed with validation");
+            }
+        }).fail(function (a, b, c) {
+            callback(false, "Impossible to proceed with validation");
+        });
+    };
+
+    store.refresh();
+}
+
+var buyPremiumWasClicked = false;
+function buyPremiumProduct() {
+    buyPremiumWasClicked = true;
+    store.order('premium.product');
+}
+function buyPremiumSubscription() {
+    buyPremiumWasClicked = true;
+    store.order('subscription.premium');
+}
+
+function showThanksPageAfterBuying() {
+    navigator.notification.confirm(
+        getTrans(t_thanks_for_buying_text),
+        showThanksPageAfterBuyingCallback,
+        getTrans(t_thanks_for_buying_title),
+        getTrans(t_thanks_for_buying_ok)
+    );
+}
+
+function showThanksPageAfterBuyingCallback() {
+
+}
+
+function showInfoPopupBeforeBuyingPremium(){
+    navigator.notification.confirm(
+        getTrans(t_before_buy_premium_text),
+        showInfoPopupBeforeBuyingPremiumCallback,
+        getTrans(t_before_buy_premium_title),
+        getTrans(t_before_buy_premium_cancel) + "," + getTrans(t_before_buy_premium_buy)
+    );
+}
+
+function showInfoPopupBeforeBuyingPremiumCallback(buttonIndex) {
+    if (buttonIndex == 2) {
+        buyPremiumProduct();
+    }
+}
