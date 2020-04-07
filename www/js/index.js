@@ -844,15 +844,12 @@ function saveDay() {
 }
 
 function getLangList() {
-    $.get("date/lang.json", function (result) {
+    $.getJSON("date/lang.json", function (result) {
         showLangList(result);
     });
 }
 
-function showLangList(l) {
-    // var langs = JSON.parse(l);
-    var langs = l;
-    alert(langs);
+function showLangList(langs) {
     var lang;
     for (lang of langs) {
         var tmp = '<h1 class="text" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" >' + lang.label + '</h1>';
