@@ -174,6 +174,8 @@ var app = {
 
         if(!isPremium) {
             initStore();
+        } else {
+            changeToPro();
         }
     },
     // Update DOM on a Received Event
