@@ -93,11 +93,11 @@ function getTrans(key) {
 }
 
 // PREMIUM CHANGE
-var isPremium = true;
+var isPremium = false;
 var dev = false;
-var isLegal = true;
-var legalValidation = false;
-var isPayedPro = true;
+var isLegal = false;
+var legalValidation = true;
+var isPayedPro = false;
 
 var app = {
     // Application Constructor
@@ -174,8 +174,6 @@ var app = {
 
         if(!isPremium) {
             initStore();
-        } else {
-            changeToPro();
         }
     },
     // Update DOM on a Received Event
