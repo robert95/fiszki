@@ -845,7 +845,12 @@ function saveDay() {
 
 function getLangList() {
     $.get("date/lang.json", function (result) {
+        alert("jestem");
         showLangList(result);
+    }).fail(function( jqXHR, textStatus, errorThrown ) {
+        alert(jqXHR);
+        alert(textStatus);
+        alert(errorThrown);
     });
 }
 
