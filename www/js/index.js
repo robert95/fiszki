@@ -853,9 +853,8 @@ function getLangList() {
 
 function showLangList(l) {
     var langs = JSON.parse(l);
-    alert(langs);
-    for (var x in langs) {
-        var lang = langs[x];
+    var lang;
+    for (lang of langs) {
         alert(lang.id);
         alert(lang.label);
         var tmp = '<h1 class="text" ontouchstart="setLang(this);" data-mylang="' + lang.id + '" >' + lang.label + '</h1>';
